@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuegos & Copas Catering | Servicio Gastronómico & Barras Móviles para Eventos en San Juan</title>
+  <meta name="description" content="Servicio de catering gourmet, asado criollo a la estaca, finger food y barras móviles para casamientos y fiestas en San Juan. Cotizá tu menú por WhatsApp.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fuegos & Copas Catering - Eventos en San Juan">
+  <meta property="og:description" content="Catering de alta gastronomía y coctelería para casamientos y eventos corporativos en San Juan.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%3E<text y=%2226%22 font-size=%2224%22>🔥</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 flex flex-col min-h-screen selection:bg-amber-500 selection:text-zinc-950">
+
+  <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 2) -->
+  <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span class="font-bold text-slate-300">Cluster 2: Catálogos & Eventos</span>
+        <span class="text-slate-500 hidden sm:inline">•</span>
+        <span class="text-slate-400 text-[11px] hidden sm:inline">3 Estilos de diseño:</span>
+      </div>
+
+      <!-- Selector de variaciones con Tabs -->
+      <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+        <a href="/demos/cluster-2/" class="px-2.5 py-1 rounded-lg font-medium text-[11px] text-slate-400 hover:text-white transition-colors">
+          1. Vajilla & Menaje
+        </a>
+        <a href="/demos/cluster-2/catering.html" class="px-2.5 py-1 rounded-lg font-bold text-[11px] bg-amber-500 text-zinc-950 shadow-xs">
+          2. Catering & Barras
+        </a>
+        <a href="/demos/cluster-2/salones.html" class="px-2.5 py-1 rounded-lg font-medium text-[11px] text-slate-400 hover:text-white transition-colors">
+          3. Salones & Quintas
+        </a>
+      </div>
+
+      <!-- Controles de navegación -->
+      <div class="flex items-center gap-2">
+        <a href="/demos/cluster-2/" class="p-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </a>
+        <a href="/demos/cluster-2/salones.html" class="p-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Siguiente variación">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+        <a href="/" class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-2.5 py-1 rounded-lg transition-colors">
+          <span>🏠 Salir al Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVBAR CATERING -->
+  <header class="sticky top-9 z-40 bg-zinc-900/95 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between py-3">
+      <a href="#" class="flex flex-col">
+        <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span>🔥</span>
+          <span>FUEGOS <span class="text-amber-400">&</span> COPAS</span>
+        </span>
+        <span class="text-[10px] font-bold text-amber-400 tracking-widest uppercase">Catering & Coctelería para Eventos • San Juan</span>
+      </a>
+
+      <button data-wa-msg="Hola Fuegos & Copas! Quisiera cotizar el servicio de catering y barra para un evento en San Juan."
+              class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Cotizar Menú Online</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO DARK LUXURY CATERING -->
+    <section class="relative pt-16 pb-24 overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 text-xs font-semibold mb-6">
+            <span>✨</span>
+            <span>Degustación Previa para Novios y Quinceañeras en San Juan</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+            Gastronomía de autor y barras que sorprenden a tus invitados
+          </h1>
+
+          <p class="text-zinc-300 text-base sm:text-lg leading-relaxed mb-8">
+            Asados a la estaca, islas gourmet y coctelería premium para fiestas inolvidables en San Juan. Personal de servicio completo, vajilla y cristalería incluidas en cada menú.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button data-wa-msg="Hola Fuegos & Copas! Quisiera cotizar el servicio de catering para un evento en San Juan."
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-base px-8 py-4 rounded-2xl shadow-glow-green hover:scale-102 transition-all cursor-pointer">
+              <svg class="w-5 h-5 text-zinc-950" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Pedir Presupuesto por WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚS & PROPUESTAS GASTRONÓMICAS -->
+    <section class="py-16 bg-zinc-900/50 border-y border-zinc-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-zinc-900 border border-amber-500/30 px-3 py-1 rounded-full">Nuestras Propuestas</span>
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mt-3 mb-2">Menús Adaptables a tu Fiesta</h2>
+          <p class="text-zinc-400 text-sm">Opciones formales e informales preparadas en vivo por nuestros chefs.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <div class="bg-zinc-900 rounded-3xl p-6 border border-zinc-800 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+            <div>
+              <span class="text-3xl block mb-3">🥩</span>
+              <h3 class="font-serif font-bold text-xl text-white mb-2">Fuegos & Asado a la Estaca</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">Costillares al asador, vacío, chorizo artesanal, morcilla, vegetales asados al rescoldo y ensaladas gourmet.</p>
+              <div class="text-xs text-amber-400 font-bold mb-4">Incluye cocineros y asadores en vivo</div>
+            </div>
+            <button data-wa-service="Menú Fuegos y Asado Criollo" data-wa-msg="Hola Fuegos & Copas! Quisiera cotizar el {servicio} para mi fiesta en San Juan." class="w-full py-3 rounded-xl bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-white text-xs font-bold transition-colors cursor-pointer">
+              Cotizar Asado
+            </button>
+          </div>
+
+          <div class="bg-zinc-900 rounded-3xl p-6 border border-zinc-800 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+            <div>
+              <span class="text-3xl block mb-3">🍸</span>
+              <h3 class="font-serif font-bold text-xl text-white mb-2">Finger Food & Recepción Premium</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">Islas temáticas de quesos sanjuaninos y fiambres ahumados, mini cazuelas de lomo al Malbec y pinchos tibios.</p>
+              <div class="text-xs text-amber-400 font-bold mb-4">Formato dinámico ideal para cócteles</div>
+            </div>
+            <button data-wa-service="Menú Finger Food & Recepción" data-wa-msg="Hola Fuegos & Copas! Quisiera cotizar el {servicio} para mi fiesta en San Juan." class="w-full py-3 rounded-xl bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-white text-xs font-bold transition-colors cursor-pointer">
+              Cotizar Finger Food
+            </button>
+          </div>
+
+          <div class="bg-zinc-900 rounded-3xl p-6 border border-zinc-800 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+            <div>
+              <span class="text-3xl block mb-3">🍹</span>
+              <h3 class="font-serif font-bold text-xl text-white mb-2">Barra Móvil & Coctelería Libre</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">Barra iluminada, bartenders profesionales, hielo, cristalería y primeras marcas de bebidas toda la noche.</p>
+              <div class="text-xs text-amber-400 font-bold mb-4">Contratable solo o con catering</div>
+            </div>
+            <button data-wa-service="Barra Móvil de Tragos" data-wa-msg="Hola Fuegos & Copas! Quisiera cotizar la {servicio} para mi fiesta en San Juan." class="w-full py-3 rounded-xl bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-white text-xs font-bold transition-colors cursor-pointer">
+              Cotizar Barra
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER CON BACKLINK OBLIGATORIO A ERIK WEB STUDIO -->
+  <footer class="bg-black text-zinc-500 py-8 text-xs border-t border-zinc-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-serif font-bold text-zinc-300 text-sm">Fuegos & Copas Catering • Eventos San Juan</p>
+        <p class="text-zinc-500">Cocina de producción en Santa Lucía • Cobertura en toda la provincia de San Juan</p>
+      </div>
+      <div class="text-zinc-400 text-xs">
+        Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-amber-400 font-bold hover:underline">Erik Web Studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

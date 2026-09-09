@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroSanJuan 24hs | Electricista Matriculado & Plomería de Urgencia en San Juan</title>
+  <meta name="description" content="Servicio técnico urgente a domicilio en Gran San Juan. Cortocircuitos, pérdidas de agua, destapaciones y gasistas. Llegamos en menos de 45 minutos.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ElectroSanJuan 24hs | Urgencias del Hogar en San Juan">
+  <meta property="og:description" content="Técnicos matriculados a domicilio en Capital, Rivadavia, Rawson, Santa Lucía y Chimbas.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%3E<text y=%2226%22 font-size=%2224%22>⚡</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 3) -->
+  <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+        <span class="font-bold text-slate-300">Cluster 3: Autoridad & Servicios</span>
+        <span class="text-slate-500 hidden sm:inline">•</span>
+        <span class="text-slate-400 text-[11px] hidden sm:inline">3 Estilos de diseño:</span>
+      </div>
+
+      <!-- Selector de variaciones con Tabs -->
+      <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+        <a href="/demos/cluster-3/" class="px-2.5 py-1 rounded-lg font-medium text-[11px] text-slate-400 hover:text-white transition-colors">
+          1. Abogados / Legal
+        </a>
+        <a href="/demos/cluster-3/urgencias.html" class="px-2.5 py-1 rounded-lg font-bold text-[11px] bg-sky-600 text-white shadow-xs">
+          2. Urgencias Hogar 24hs
+        </a>
+        <a href="/demos/cluster-3/contable.html" class="px-2.5 py-1 rounded-lg font-medium text-[11px] text-slate-400 hover:text-white transition-colors">
+          3. Estudio Contable
+        </a>
+      </div>
+
+      <!-- Controles de navegación -->
+      <div class="flex items-center gap-2">
+        <a href="/demos/cluster-3/" class="p-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </a>
+        <a href="/demos/cluster-3/contable.html" class="p-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Siguiente variación">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+        <a href="/" class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-2.5 py-1 rounded-lg transition-colors">
+          <span>🏠 Salir al Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- BARRA DE EMERGENCIA -->
+  <div class="bg-red-600 text-white text-xs py-2 px-4 font-bold flex items-center justify-between">
+    <div class="max-w-6xl mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+        <span>GUARDIA TÉCNICA ACTIVA LAS 24HS EN GRAN SAN JUAN</span>
+      </div>
+      <span class="hidden sm:inline">Llegada estimada en móvil equipado: <strong>30 a 45 minutos</strong></span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-9 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3">
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-blue-700 text-white flex items-center justify-center font-black text-xl shadow-xs">
+          ⚡
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">ElectroSanJuan</span>
+          <span class="text-[10px] font-bold text-sky-600 uppercase tracking-wider">Reparaciones Urgentes 24hs</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:2640000000" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs">
+          📞 Llamar (264)
+        </a>
+        <button data-wa-msg="URGENCIA SAN JUAN: Hola! Necesito un técnico a domicilio urgente."
+                class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Pedir Auxilio WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO DINÁMICO DE ALTA ACCIÓN -->
+    <section class="pt-10 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-sky-50 via-white to-slate-100">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold">
+              <span>🔧</span>
+              <span>Técnicos con Matrícula Provincial en San Juan</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 leading-tight">
+              Reparaciones eléctricas y plomería en tu domicilio hoy mismo
+            </h1>
+
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Solucionamos cortocircuitos, pérdidas de agua, cañerías tapadas y artefactos de gas con garantía de 6 meses por escrito. Presupuesto previo sin sorpresas.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+              <button data-wa-msg="Hola ElectroSanJuan! Tengo una urgencia en mi casa en San Juan y necesito un técnico."
+                      class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base px-7 py-4 rounded-2xl shadow-glow-green hover:scale-102 transition-all cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span>Enviar WhatsApp a la Guardia</span>
+              </button>
+              <a href="tel:2640000000" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-base px-6 py-4 rounded-2xl border border-slate-300 shadow-xs">
+                <span>Llamar Directo (264)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-white p-6 rounded-3xl border border-slate-200 shadow-xl space-y-4">
+            <h3 class="font-display font-bold text-slate-900 text-lg">Zonas de Atención Inmediata en San Juan</h3>
+            <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-700">
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">✓ Capital</div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">✓ Rivadavia</div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">✓ Rawson</div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">✓ Santa Lucía</div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">✓ Chimbas</div>
+              <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">✓ Pocito</div>
+            </div>
+            <p class="text-[11px] text-slate-500 text-center pt-2">Vehículos con repuestos estándar para resolver en la primera visita.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER CON BACKLINK OBLIGATORIO A ERIK WEB STUDIO -->
+  <footer class="bg-slate-950 text-slate-400 py-8 text-xs border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-display font-bold text-slate-200 text-sm">ElectroSanJuan 24hs • Reparaciones del Hogar</p>
+        <p class="text-slate-500">Gran San Juan, Argentina • Técnicos con Matrícula Provincial</p>
+      </div>
+      <div class="text-slate-400 text-xs">
+        Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-sky-400 font-bold hover:underline">Erik Web Studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/demos/servicios-hogar/app.js"></script>
+</body>
+</html>
