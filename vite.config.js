@@ -9,6 +9,7 @@ export default defineConfig({
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         eventos: resolve(__dirname, 'demos/eventos/index.html'),
         abogados: resolve(__dirname, 'demos/abogados/index.html'),
+        servicios_hogar: resolve(__dirname, 'demos/servicios-hogar/index.html'),
       },
     },
   },

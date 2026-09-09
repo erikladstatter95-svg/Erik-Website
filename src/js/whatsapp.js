@@ -3,7 +3,7 @@
  * Formato internacional estándar: 549 + código de área sin 0 + número sin 15
  */
 
-const DEFAULT_PORTFOLIO_PHONE = '5491130000000'; // Placeholder editable
+const DEFAULT_PORTFOLIO_PHONE = '5492640000000'; // Placeholder San Juan, Argentina (264)
 
 export function normalizePhone(phone) {
   if (!phone) return DEFAULT_PORTFOLIO_PHONE;
