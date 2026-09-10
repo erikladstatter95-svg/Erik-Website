@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Salones de Eventos - Erik Web Studio</title>
+    <style>
+        :root {
+            --bg: #090d16;
+            --card: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --accent: #3b82f6;
+            --green: #10b981;
+            --ig: #ec4899;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+        h1 { font-size: 1.6rem; color: #fff; }
+        p.subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+        .stats { display: flex; gap: 1rem; }
+        .stat-badge { background: #1f2937; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; border: 1px solid #374151; }
+        .stat-badge strong { color: var(--green); }
+        
+        .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+        th { background: #1a2234; padding: 1rem; font-weight: 600; color: #d1d5db; border-bottom: 1px solid var(--border); }
+        td { padding: 1rem; border-bottom: 1px solid #1e293b; vertical-align: middle; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+        
+        .badge-noweb { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .badge-ig { background: rgba(236, 72, 153, 0.15); color: #f472b6; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .badge-city { background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.8rem; }
+        
+        .btn-wa { display: inline-flex; align-items: center; gap: 0.4rem; background: #059669; color: white; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+        .btn-wa:hover { background: #10b981; }
+        .btn-wa .icon { width: 16px; height: 16px; }
+        
+        .btn-ig { display: inline-block; color: #f472b6; border: 1px solid #db2777; text-decoration: none; padding: 0.35rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 500; transition: all 0.2s; }
+        .btn-ig:hover { background: rgba(219, 39, 119, 0.15); }
+        
+        .text-muted { color: #6b7280; font-size: 0.85rem; }
+        .no-phone { color: #9ca3af; font-size: 0.85rem; }
+        
+        .status-select { background: #1f2937; color: #fff; border: 1px solid #374151; padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.85rem; outline: none; cursor: pointer; }
+        .status-select:focus { border-color: var(--accent); }
+        .row-contacted { opacity: 0.6; background: rgba(16, 185, 129, 0.05); }
+    </style>
+    <script>
+        function updateStatus(select, rowId) {
+            const row = document.getElementById(rowId);
+            if (select.value === 'contacted' || select.value === 'demo_sent' || select.value === 'closed') {
+                row.classList.add('row-contacted');
+            } else {
+                row.classList.remove('row-contacted');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Leads Calificados: Salones de Eventos (San Juan)</h1>
+                <p class="subtitle">Prospectos listos para contactar con mensaje pre-redactado de WhatsApp y demo del Cluster 2.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-badge">Total leads: <strong>20</strong></div>
+                <div class="stat-badge">Con WhatsApp: <strong>20</strong></div>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Negocio</th>
+                        <th>Zona</th>
+                        <th>Situación Web</th>
+                        <th>Red Social</th>
+                        <th>Acción Directa</th>
+                        <th>Mi Seguimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr id="row-0">
+        <td><strong>Finca El Algarrobal</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644650674?text=Hola%20gente%20de%20Finca%20El%20Algarrobal%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-0')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-1">
+        <td><strong>Salón San Marino</strong></td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644600536?text=Hola%20gente%20de%20Sal%C3%B3n%20San%20Marino%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-1')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-2">
+        <td><strong>FÚTBOL Y PÁDEL JACHAL</strong></td>
+        <td><span class="badge-city">San Jose de Jachal</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645278508?text=Hola%20gente%20de%20F%C3%9ATBOL%20Y%20P%C3%81DEL%20JACHAL%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-2')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-3">
+        <td><strong>VaBel salon de eventos</strong></td>
+        <td><span class="badge-city">San Jose de Jachal</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645047128?text=Hola%20gente%20de%20VaBel%20salon%20de%20eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-3')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-4">
+        <td><strong>Milenios Salón de Eventos</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645044038?text=Hola%20gente%20de%20Milenios%20Sal%C3%B3n%20de%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-4')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-5">
+        <td><strong>Galana Eventos en San Juan</strong></td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-ig">Solo Instagram / Red</span></td>
+        <td><a href="https://www.instagram.com/galanaeventos?igsh=MXMyaTEzbjc0NTd3cw==" target="_blank" class="btn-ig">Ver Perfil</a></td>
+        <td><a href="https://wa.me/5492644512041?text=Hola%20gente%20de%20Galana%20Eventos%20en%20San%20Juan%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-5')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-6">
+        <td><strong>Cabañas y Salón de Eventos La Retirada</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645729400?text=Hola%20gente%20de%20Caba%C3%B1as%20y%20Sal%C3%B3n%20de%20Eventos%20La%20Retirada%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-6')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-7">
+        <td><strong>Quinta Nazareno</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645081514?text=Hola%20gente%20de%20Quinta%20Nazareno%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-7')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-8">
+        <td><strong>Salon Peumayen Eventos</strong></td>
+        <td><span class="badge-city">Pocito</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644040316?text=Hola%20gente%20de%20Salon%20Peumayen%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-8')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-9">
+        <td><strong>Salón Viñas</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645691500?text=Hola%20gente%20de%20Sal%C3%B3n%20Vi%C3%B1as%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-9')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-10">
+        <td><strong>El Castillo Eventos</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Instagram / Red</span></td>
+        <td><a href="https://www.instagram.com/el.castilloeventos?igsh=NW9vbHhtYXBzeXFw" target="_blank" class="btn-ig">Ver Perfil</a></td>
+        <td><a href="https://wa.me/5492644110459?text=Hola%20gente%20de%20El%20Castillo%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-10')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-11">
+        <td><strong>ESPACIO PARA EVENTOS LA JOSEFINA</strong></td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645824713?text=Hola%20gente%20de%20ESPACIO%20PARA%20EVENTOS%20LA%20JOSEFINA%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-11')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-12">
+        <td><strong>Renacer Eventos</strong></td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-ig">Solo Instagram / Red</span></td>
+        <td><a href="https://www.instagram.com/renacer.eventos.pj?igsh=MzBwdmVzbW5oaXcx&utm_source=qr" target="_blank" class="btn-ig">Ver Perfil</a></td>
+        <td><a href="https://wa.me/5492646225743?text=Hola%20gente%20de%20Renacer%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-12')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-13">
+        <td><strong>Palmares Salón de Eventos</strong></td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644467560?text=Hola%20gente%20de%20Palmares%20Sal%C3%B3n%20de%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-13')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-14">
+        <td><strong>Posta Chacrita salon de eventos</strong></td>
+        <td><span class="badge-city">Nueve de Julio</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644478371?text=Hola%20gente%20de%20Posta%20Chacrita%20salon%20de%20eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-14')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-15">
+        <td><strong>Finca El Oasis</strong></td>
+        <td><span class="badge-city">Pampa del Chañar</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644183410?text=Hola%20gente%20de%20Finca%20El%20Oasis%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-15')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-16">
+        <td><strong>Le Parc Eventos</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492645836491?text=Hola%20gente%20de%20Le%20Parc%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-16')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-17">
+        <td><strong>Puerto Madero Eventos</strong></td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492646626166?text=Hola%20gente%20de%20Puerto%20Madero%20Eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-17')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-18">
+        <td><strong>Parque Mágico salón de eventos</strong></td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492646272636?text=Hola%20gente%20de%20Parque%20M%C3%A1gico%20sal%C3%B3n%20de%20eventos%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-18')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-19">
+        <td><strong>Salón El Prado</strong></td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://wa.me/5492644137277?text=Hola%20gente%20de%20Sal%C3%B3n%20El%20Prado%21%20Les%20escribo%20de%20Erik%20Web%20Studio%20en%20San%20Juan.%20Vi%20que%20tienen%20excelentes%20referencias%20pero%20no%20cuentan%20con%20web%20oficial%20para%20mostrar%20las%20instalaciones%20y%20fotos%20del%20sal%C3%B3n.%20%C2%BFLes%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20eventos%3F" target="_blank" class="btn-wa">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+        Escribir a WhatsApp
+    </a></td>
+        <td>
+            <select onchange="updateStatus(this, 'row-19')" class="status-select">
+                <option value="pending">Pendiente</option>
+                <option value="contacted">Contactado</option>
+                <option value="demo_sent">Demo Enviada</option>
+                <option value="interested">Interesado</option>
+                <option value="closed">Cerrado / Cliente</option>
+                <option value="rejected">No le interesa</option>
+            </select>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
