@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const zona = document.getElementById('tech-zone')?.value || 'San Juan';
       const desc = document.getElementById('tech-problem')?.value || 'Necesito un técnico a domicilio';
 
-      const message = `🚨 *URGENCIA A DOMICILIO - SAN JUAN*\n\n` +
+      const message = `*URGENCIA A DOMICILIO - SAN JUAN*\n\n` +
         `• *Servicio:* ${rubro}\n` +
         `• *Zona / Departamento:* ${zona}\n` +
         `• *Problema:* ${desc}\n\n` +

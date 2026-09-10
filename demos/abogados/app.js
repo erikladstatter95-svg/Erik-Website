@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const zone = document.getElementById('inquiry-zone')?.value || 'CABA / GBA';
       const detail = document.getElementById('inquiry-detail')?.value || '';
 
-      const message = `⚖️ *CONSULTA LEGAL INMEDIATA*\n\n` +
+      const message = `*CONSULTA LEGAL INMEDIATA*\n\n` +
         `• *Nombre:* ${name}\n` +
         `• *Área de práctica:* ${area}\n` +
         `• *Zona / Jurisdicción:* ${zone}\n` +

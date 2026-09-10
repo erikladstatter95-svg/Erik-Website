@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dra. Valentina Rossi | Medicina Estética & Spa | San Juan, Argentina</title>
+  <title>Dra. Valentina Rossi | Medicina Estética y Spa | San Juan, Argentina</title>
   <meta name="description" content="Tratamientos médicos estéticos personalizados en San Juan Capital. Armonización facial, toxina botulínica, ácido hialurónico y aparatología ANMAT. Reservá tu turno por WhatsApp.">
   
   <meta property="og:type" content="business.business">
-  <meta property="og:title" content="Dra. Valentina Rossi - Medicina Estética & Spa">
+  <meta property="og:title" content="Dra. Valentina Rossi - Medicina Estética y Spa">
   <meta property="og:description" content="Realzá tu belleza natural con tratamientos médicos de vanguardia en San Juan Capital.">
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23059669%22/><text x=%2216%22 y=%2222%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>E</text></svg>">
@@ -25,7 +25,7 @@
     <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span class="font-bold text-slate-300">Categoría: Turnos & Salud</span>
+        <span class="font-bold text-slate-300">Categoría: Turnos y Salud</span>
         <span class="text-slate-500 hidden sm:inline">•</span>
         <span class="text-slate-400 text-[11px] hidden sm:inline">3 Estilos de diseño:</span>
       </div>
@@ -63,7 +63,7 @@
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
       <div class="flex items-center gap-2">
         <svg class="w-3.5 h-3.5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-        <span>Av. Libertador Gral. San Martín 1450 Oeste, San Juan Capital • Lun a Vie 9 a 20hs / Sáb 9 a 14hs</span>
+        <span>Av. Libertador Gral. San Martín 1450 Oeste, San Juan Capital • Lun a Vie 9 a 20 hs / Sáb 9 a 14 hs</span>
       </div>
       <div class="font-semibold text-rose-700 flex items-center gap-1">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-rose-500"></span>
@@ -77,7 +77,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3">
       <a href="#" class="flex flex-col">
         <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-stone-900">Dra. Valentina Rossi</span>
-        <span class="text-[11px] font-semibold text-rose-700 tracking-wider uppercase">Medicina Estética & Antiage</span>
+        <span class="text-[11px] font-semibold text-rose-700 tracking-wider uppercase">Medicina Estética y Antiage</span>
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-stone-600">
@@ -85,6 +85,7 @@
         <a href="#sobre-mi" class="hover:text-rose-600 transition-colors">Sobre la Dra.</a>
         <a href="#testimonios" class="hover:text-rose-600 transition-colors">Reseñas Maps</a>
         <a href="#faq" class="hover:text-rose-600 transition-colors">Preguntas</a>
+        <a href="#ubicacion" class="hover:text-rose-600 transition-colors">Ubicación</a>
       </nav>
 
       <button data-wa-msg="Hola Dra. Rossi! Me comunico desde su web para consultar disponibilidad de turnos en San Juan." 
@@ -178,81 +179,445 @@
       </div>
     </section>
 
-    <!-- TRATAMIENTOS -->
+    <!-- TRATAMIENTOS CON FILTROS Y PRECIOS -->
     <section id="tratamientos" class="py-16 sm:py-24 bg-stone-50">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-10">
           <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Carta de Tratamientos</span>
           <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900 mt-3 mb-3">
-            Procedimientos Médicos & Estéticos
+            Procedimientos Médicos y Estéticos
           </h2>
           <p class="text-stone-600 text-sm">
-            Valores de referencia para mayor claridad antes de tu consulta.
+            Planes personalizados adaptados a tus objetivos. Valores de referencia para total claridad antes de tu consulta.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between">
+        <!-- Filtros de categoría -->
+        <div class="flex items-center justify-center gap-2 mb-10">
+          <button data-treatment-filter="all" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-rose-600 text-white transition-colors cursor-pointer">
+            Todos
+          </button>
+          <button data-treatment-filter="facial" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-stone-200/80 text-stone-700 hover:bg-stone-300 transition-colors cursor-pointer">
+            Facial y Antiage
+          </button>
+          <button data-treatment-filter="corporal" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-stone-200/80 text-stone-700 hover:bg-stone-300 transition-colors cursor-pointer">
+            Corporal y Bienestar
+          </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tratamiento 1 -->
+          <div data-treatment-category="facial" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
             <div>
-              <div class="h-44 rounded-2xl overflow-hidden mb-4 bg-stone-100">
-                <img src="https://images.unsplash.com/photo-1512290900672-1f4a47d25e01?auto=format&fit=crop&w=600&q=80" alt="Botox" class="w-full h-full object-cover">
+              <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
+                <img src="https://images.unsplash.com/photo-1512290900672-1f4a47d25e01?auto=format&fit=crop&w=700&q=80" alt="Toxina Botulínica" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                  30 min
+                </span>
               </div>
               <div class="flex justify-between items-center mb-2">
                 <span class="text-xs font-bold text-rose-700 uppercase">Antiage</span>
                 <span class="text-xs font-bold text-stone-500">Desde $95.000 ARS</span>
               </div>
               <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Toxina Botulínica (Botox)</h3>
-              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Suaviza líneas de frente, entrecejo y patas de gallo conservando tu expresión natural.</p>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Suaviza líneas de frente, entrecejo y patas de gallo conservando tu expresión natural y descansada.</p>
+              <div class="text-xs text-stone-500 space-y-1 mb-4">
+                <div class="flex items-center gap-1.5">✓ Efecto visible a partir del 4to día</div>
+                <div class="flex items-center gap-1.5">✓ Duración aproximada de 4 a 6 meses</div>
+              </div>
             </div>
-            <button data-wa-service="Toxina Botulínica" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+            <button data-wa-service="Toxina Botulínica (Botox)" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para realizarme {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
               Reservar Turno
             </button>
           </div>
 
-          <div class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between">
+          <!-- Tratamiento 2 -->
+          <div data-treatment-category="facial" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
             <div>
-              <div class="h-44 rounded-2xl overflow-hidden mb-4 bg-stone-100">
-                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Labios" class="w-full h-full object-cover">
+              <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Relleno de Labios" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                  45 min
+                </span>
               </div>
               <div class="flex justify-between items-center mb-2">
                 <span class="text-xs font-bold text-rose-700 uppercase">Armonización</span>
                 <span class="text-xs font-bold text-stone-500">Desde $140.000 ARS</span>
               </div>
-              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Relleno de Labios / Hialurónico</h3>
-              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Perfilado e hidratación profunda con volumen elegante y anestesia tópica sin dolor.</p>
+              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Relleno de Labios con Hialurónico</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Perfilado e hidratación profunda con volumen elegante y armónico. Anestesia tópica sin dolor.</p>
+              <div class="text-xs text-stone-500 space-y-1 mb-4">
+                <div class="flex items-center gap-1.5">✓ Jeringa 1ml estéril abierta en mano</div>
+                <div class="flex items-center gap-1.5">✓ Resultados inmediatos y naturales</div>
+              </div>
             </div>
-            <button data-wa-service="Relleno de Labios" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+            <button data-wa-service="Relleno de Labios con Ácido Hialurónico" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para realizarme {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
               Reservar Turno
             </button>
           </div>
 
-          <div class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between">
+          <!-- Tratamiento 3 -->
+          <div data-treatment-category="facial" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
             <div>
-              <div class="h-44 rounded-2xl overflow-hidden mb-4 bg-stone-100">
-                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80" alt="Limpieza" class="w-full h-full object-cover">
+              <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80" alt="Limpieza y Peeling" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                  60 min
+                </span>
               </div>
               <div class="flex justify-between items-center mb-2">
                 <span class="text-xs font-bold text-rose-700 uppercase">Skin Care</span>
                 <span class="text-xs font-bold text-stone-500">Desde $45.000 ARS</span>
               </div>
-              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Limpieza Médica + Peeling</h3>
-              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Extracción profunda, renovación con ácidos médicos y máscara descongestiva iluminadora.</p>
+              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Limpieza Médica y Peeling</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Extracción profunda, renovación con ácidos dermatológicos y máscara descongestiva iluminadora.</p>
+              <div class="text-xs text-stone-500 space-y-1 mb-4">
+                <div class="flex items-center gap-1.5">✓ Para todo tipo de piel y fototipos</div>
+                <div class="flex items-center gap-1.5">✓ Retorno inmediato a actividades habituales</div>
+              </div>
             </div>
-            <button data-wa-service="Limpieza Médica + Peeling" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+            <button data-wa-service="Limpieza Médica y Peeling" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para realizarme {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+              Reservar Turno
+            </button>
+          </div>
+
+          <!-- Tratamiento 4 -->
+          <div data-treatment-category="corporal" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
+            <div>
+              <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=700&q=80" alt="Bioestimuladores" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                  40 min
+                </span>
+              </div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-bold text-rose-700 uppercase">Tensor y Firmeza</span>
+                <span class="text-xs font-bold text-stone-500">Consultar pack</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Bioestimuladores de Colágeno</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Estimula la síntesis natural de colágeno combatiendo la flacidez de rostro, cuello y escote progresivamente.</p>
+              <div class="text-xs text-stone-500 space-y-1 mb-4">
+                <div class="flex items-center gap-1.5">✓ Efectos de larga duración (hasta 18 meses)</div>
+                <div class="flex items-center gap-1.5">✓ Tratamiento médico no quirúrgico</div>
+              </div>
+            </div>
+            <button data-wa-service="Bioestimuladores de Colágeno" data-wa-msg="Hola Dra. Rossi! Quisiera consultar por el plan de {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+              Consultar por WhatsApp
+            </button>
+          </div>
+
+          <!-- Tratamiento 5 -->
+          <div data-treatment-category="corporal" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
+            <div>
+              <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" alt="HIFU Corporal" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                  50 min
+                </span>
+              </div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-bold text-rose-700 uppercase">Modelado</span>
+                <span class="text-xs font-bold text-stone-500">Desde $38.000 ARS</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Reducción y Tonificación HIFU</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Ultrasonido focalizado para reducción localizada y tensado en abdomen, flancos y piernas sin agujas.</p>
+              <div class="text-xs text-stone-500 space-y-1 mb-4">
+                <div class="flex items-center gap-1.5">✓ Cabezal con frío integrado indoloro</div>
+                <div class="flex items-center gap-1.5">✓ Evaluación corporal médica previa</div>
+              </div>
+            </div>
+            <button data-wa-service="HIFU Corporal" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para realizarme {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+              Reservar Turno
+            </button>
+          </div>
+
+          <!-- Tratamiento 6 -->
+          <div data-treatment-category="corporal" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
+            <div>
+              <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
+                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=700&q=80" alt="Depilación Láser" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                  Rápido
+                </span>
+              </div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-bold text-rose-700 uppercase">Láser Médico</span>
+                <span class="text-xs font-bold text-stone-500">Desde $18.000 ARS</span>
+              </div>
+              <h3 class="font-serif font-bold text-xl text-stone-900 mb-2">Depilación Láser Diodo Trionda</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">Tecnología de triple longitud de onda para eliminar el vello de manera definitiva y segura en cualquier época del año.</p>
+              <div class="text-xs text-stone-500 space-y-1 mb-4">
+                <div class="flex items-center gap-1.5">✓ Cabezal ultra frío que no quema ni irrita</div>
+                <div class="flex items-center gap-1.5">✓ Promociones por paquetes de zonas</div>
+              </div>
+            </div>
+            <button data-wa-service="Depilación Láser Trionda" data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para {servicio}." class="w-full py-3 px-4 rounded-xl bg-stone-900 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
               Reservar Turno
             </button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- SOBRE LA PROFESIONAL -->
+    <section id="sobre-mi" class="py-16 sm:py-24 bg-white border-y border-stone-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 order-2 lg:order-1">
+            <div class="relative mx-auto max-w-sm rounded-3xl overflow-hidden shadow-xl border-4 border-stone-100 bg-stone-100">
+              <img src="https://images.unsplash.com/photo-1594824813580-c1b7570086eb?auto=format&fit=crop&w=800&q=80" 
+                   alt="Dra. Valentina Rossi Médica Estética" 
+                   class="w-full h-full object-cover">
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-3 text-center border border-stone-100">
+                <span class="font-serif font-bold text-stone-900 block text-sm">Dra. Valentina Rossi</span>
+                <span class="text-[11px] text-stone-500 font-medium">Médica Cirujana • M.N. 142.890 / M.P. San Juan 4.890</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2 space-y-5">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Atención Ética y Personalizada</span>
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900">
+              "Mi objetivo no es cambiar tus facciones, sino resaltar tu mejor versión"
+            </h2>
+            <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+              Graduada de la Universidad de Buenos Aires (UBA) con especialización de posgrado en Medicina Estética y Antiage, ejerciendo en la provincia de San Juan. Cuento con más de una década dedicada a perfeccionar técnicas mínimamente invasivas.
+            </p>
+            <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+              En mi consultorio no hay fórmulas genéricas. Cada rostro cuenta una historia única: evaluamos tus proporciones, tus expresiones y definimos juntos un plan armónico, seguro y con la más estricta trazabilidad de insumos médicos certificados por ANMAT.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+                <span class="font-bold text-stone-900 text-sm block mb-1">✓ Consulta de Diagnóstico</span>
+                <span class="text-xs text-stone-500">Evaluación fotográfica y análisis anatómico sin apuro.</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+                <span class="font-bold text-stone-900 text-sm block mb-1">✓ Seguimiento Post-Tratamiento</span>
+                <span class="text-xs text-stone-500">Control médico incluido a los 15 días posteriores.</span>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button data-wa-msg="Hola Dra. Rossi! Leí sobre su enfoque de atención y quisiera coordinar una consulta de diagnóstico en San Juan."
+                      class="inline-flex items-center gap-2 text-rose-700 font-bold hover:text-rose-800 text-sm cursor-pointer">
+                <span>Coordinar consulta de diagnóstico con la Dra. Rossi</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS ESTILO GOOGLE MAPS -->
+    <section id="testimonios" class="py-16 sm:py-24 bg-stone-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-bold text-stone-600 mb-2">
+              <svg class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Google Maps • Reseñas Verificadas en San Juan</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900">
+              Lo que opinan nuestras pacientes
+            </h2>
+          </div>
+
+          <div class="mt-4 sm:mt-0 flex items-center gap-3 bg-white px-4 py-2.5 rounded-2xl border border-stone-200 shadow-xs">
+            <span class="text-2xl font-extrabold text-stone-900">4.9</span>
+            <div>
+              <div class="flex text-amber-400 text-xs">★★★★★</div>
+              <span class="text-[11px] text-stone-500">184 opiniones en San Juan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-3xl p-6 border border-stone-200/90 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-rose-200 text-rose-800 font-bold flex items-center justify-center text-sm">
+                    MC
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-stone-900">Mariana Castiglioni</h4>
+                    <span class="text-[11px] text-stone-500">Local Guide • 42 opiniones</span>
+                  </div>
+                </div>
+                <div class="text-amber-400 text-xs">★★★★★</div>
+              </div>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+                "Me hice toxina botulínica por primera vez con mucho miedo de quedar congelada y el resultado fue increíble, súper natural. Valentina te explica todo con una paciencia única y el consultorio en San Juan es impecable."
+              </p>
+            </div>
+            <span class="text-[11px] text-stone-400">Hace 3 semanas • Tratamiento: Botox tercio superior</span>
+          </div>
+
+          <div class="bg-white rounded-3xl p-6 border border-stone-200/90 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-teal-200 text-teal-800 font-bold flex items-center justify-center text-sm">
+                    SL
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-stone-900">Sofía Larrea</h4>
+                    <span class="text-[11px] text-stone-500">Paciente verificada</span>
+                  </div>
+                </div>
+                <div class="text-amber-400 text-xs">★★★★★</div>
+              </div>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+                "Excelente atención. Me realicé relleno de labios con hialurónico. La anestesia tópica es genial, casi no se siente nada y te abre la caja del producto frente a tus ojos. La súper recomiendo en San Juan."
+              </p>
+            </div>
+            <span class="text-[11px] text-stone-400">Hace 1 mes • Tratamiento: Relleno de labios 1ml</span>
+          </div>
+
+          <div class="bg-white rounded-3xl p-6 border border-stone-200/90 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-amber-200 text-amber-800 font-bold flex items-center justify-center text-sm">
+                    AG
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-stone-900">Agustina Giménez</h4>
+                    <span class="text-[11px] text-stone-500">Local Guide • 18 opiniones</span>
+                  </div>
+                </div>
+                <div class="text-amber-400 text-xs">★★★★★</div>
+              </div>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+                "Hice el tratamiento de limpieza profunda con peeling médico y me dejó la piel con un brillo alucinante. Además puntualidad impecable para la atención de los turnos, un lujo tener profesionales así en la provincia."
+              </p>
+            </div>
+            <span class="text-[11px] text-stone-400">Hace 2 meses • Tratamiento: Limpieza y Peeling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="faq" class="py-16 sm:py-24 bg-white border-y border-stone-200/80">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Preguntas Frecuentes</span>
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900 mt-3 mb-3">
+            Todo lo que necesitás saber antes de tu turno
+          </h2>
+        </div>
+
+        <div class="space-y-4" data-accordion>
+          <div class="bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden" data-accordion-item>
+            <button class="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-stone-900 hover:text-rose-700 transition-colors" data-accordion-trigger aria-expanded="false">
+              <span class="text-base sm:text-lg">¿Cuáles son los medios de pago aceptados?</span>
+              <svg class="w-5 h-5 text-stone-500 transition-transform duration-200 flex-shrink-0" data-accordion-icon fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="px-5 pb-6 text-stone-600 text-sm leading-relaxed hidden" data-accordion-content>
+              Aceptamos <strong>Efectivo</strong> (con descuento especial sobre el valor de lista), <strong>Transferencia bancaria</strong> y todas las <strong>Tarjetas de Débito y Crédito</strong> con opción de cuotas. Emitimos factura médica oficial para reintegros.
+            </div>
+          </div>
+
+          <div class="bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden" data-accordion-item>
+            <button class="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-stone-900 hover:text-rose-700 transition-colors" data-accordion-trigger aria-expanded="false">
+              <span class="text-base sm:text-lg">¿Los procedimientos con agujas o cánulas duelen?</span>
+              <svg class="w-5 h-5 text-stone-500 transition-transform duration-200 flex-shrink-0" data-accordion-icon fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="px-5 pb-6 text-stone-600 text-sm leading-relaxed hidden" data-accordion-content>
+              La comodidad de la paciente es nuestra prioridad. Previo a la aplicación de toxina botulínica o ácido hialurónico, colocamos crema anestésica tópica de grado hospitalario durante 20 minutos. La mayoría refiere sentir apenas una leve molestia momentánea.
+            </div>
+          </div>
+
+          <div class="bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden" data-accordion-item>
+            <button class="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-stone-900 hover:text-rose-700 transition-colors" data-accordion-trigger aria-expanded="false">
+              <span class="text-base sm:text-lg">¿Puedo volver a trabajar inmediatamente después de la sesión?</span>
+              <svg class="w-5 h-5 text-stone-500 transition-transform duration-200 flex-shrink-0" data-accordion-icon fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="px-5 pb-6 text-stone-600 text-sm leading-relaxed hidden" data-accordion-content>
+              Sí, todos nuestros tratamientos son ambulatorios y no requieren reposo en cama. En aplicaciones de labios puede presentarse una leve inflamación durante las primeras 24 a 48 horas que cede rápidamente con frío local.
+            </div>
+          </div>
+
+          <div class="bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden" data-accordion-item>
+            <button class="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-stone-900 hover:text-rose-700 transition-colors" data-accordion-trigger aria-expanded="false">
+              <span class="text-base sm:text-lg">¿Cómo solicito un turno o consulta previa?</span>
+              <svg class="w-5 h-5 text-stone-500 transition-transform duration-200 flex-shrink-0" data-accordion-icon fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="px-5 pb-6 text-stone-600 text-sm leading-relaxed hidden" data-accordion-content>
+              Simplemente tocá el botón verde de WhatsApp en esta página. Te atenderá nuestra coordinadora médica para ofrecerte los días y horarios disponibles según tu conveniencia.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN Y CONTACTO -->
+    <section id="ubicacion" class="py-16 bg-stone-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-sm grid md:grid-cols-2 gap-8 items-center">
+          
+          <div class="space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Fácil Acceso</span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900">
+              Nuestro Consultorio en San Juan Capital
+            </h2>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Ubicado sobre Av. Libertador Gral. San Martín, zona céntrica de fácil acceso con líneas de transporte público y estacionamiento en las inmediaciones. Edificio médico con ascensor y seguridad.
+            </p>
+
+            <div class="space-y-2 text-sm text-stone-700 pt-2">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-rose-600 font-bold">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </span>
+                <span><strong>Av. Libertador Gral. San Martín 1450 Oeste, San Juan Capital</strong></span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-rose-600 font-bold">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
+                <span>Lunes a Viernes de 9:00 a 20:00 hs | Sábados de 9:00 a 14:00 hs</span>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-900 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-colors">
+                <svg class="w-4 h-4 text-rose-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Abrir ubicación en Google Maps</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-rose-600 to-rose-700 text-white rounded-3xl p-8 text-center space-y-5 shadow-xl">
+            <h3 class="font-serif font-bold text-2xl">¿Querés una consulta médica personalizada?</h3>
+            <p class="text-rose-100 text-sm leading-relaxed">
+              Escribinos ahora para chequear disponibilidad de turnos de esta semana o realizarnos cualquier pregunta médica sobre los tratamientos.
+            </p>
+            <button data-wa-msg="Hola Dra. Rossi! Me gustaría consultar por turnos disponibles en San Juan para esta semana."
+                    class="w-full py-4 px-6 rounded-2xl bg-white hover:bg-rose-50 text-rose-800 font-bold text-base flex items-center justify-center gap-3 shadow-lg hover:scale-102 transition-all cursor-pointer">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar por WhatsApp</span>
+            </button>
+            <span class="text-xs text-rose-200 block">Respuesta promedio en menos de 15 minutos</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER CON BACKLINK OBLIGATORIO A ERIK WEB STUDIO -->
+  <!-- FOOTER CLÍNICA CON BACKLINK -->
   <footer class="bg-stone-900 text-stone-400 py-8 text-xs border-t border-stone-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div>
         <p class="font-serif font-bold text-stone-200 text-sm">Dra. Valentina Rossi • Medicina Estética</p>
-        <p class="text-stone-500">Av. Libertador Gral. San Martín 1450 Oeste, San Juan Capital • M.P. San Juan 4.890</p>
+        <p class="text-stone-500">M.N. 142.890 / M.P. San Juan 4.890 • Av. Libertador Gral. San Martín 1450 Oeste, San Juan Capital</p>
       </div>
       <div class="text-stone-400 text-xs flex flex-wrap items-center justify-center sm:justify-end gap-2">
         <span>Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-rose-400 font-bold hover:underline">Erik Web Studio</a></span>
@@ -261,6 +626,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <aside class="fixed bottom-5 right-5 z-50 flex items-center group">
+    <span class="hidden sm:inline-block mr-3 bg-stone-900 text-white text-xs font-semibold py-1.5 px-3 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-stone-800">
+      Turnos por WhatsApp
+    </span>
+    <button data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para una consulta médica en San Juan."
+            class="whatsapp-pulse w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl transition-transform duration-200 hover:scale-110 active:scale-95 cursor-pointer focus:outline-hidden focus:ring-4 focus:ring-emerald-300"
+            aria-label="Abrir WhatsApp para pedir turno médico">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+    </button>
+  </aside>
 
   <script type="module" src="/demos/estetica/app.js"></script>
 </body>
