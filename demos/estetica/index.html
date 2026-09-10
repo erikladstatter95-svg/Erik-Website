@@ -20,21 +20,43 @@
 </head>
 <body class="bg-stone-50 text-stone-800 flex flex-col min-h-screen">
 
-  <!-- DEMO TOOLBAR: VUELTA AL PORTFOLIO -->
-  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 flex items-center justify-between z-50 sticky top-0 border-b border-slate-800">
-    <div class="flex items-center gap-2 font-medium">
-      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-      <span class="hidden sm:inline">Plantilla Modelo 1:</span>
-      <strong>Estética Médica y Spa</strong>
+  <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 1) -->
+  <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="font-bold text-slate-300">Categoría: Turnos y Salud</span>
+        <span class="text-slate-500 hidden sm:inline">•</span>
+        <span class="text-slate-400 text-[11px] hidden sm:inline">3 Estilos de diseño:</span>
+      </div>
+
+      <!-- Selector de variaciones con Tabs -->
+      <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+        <a href="/demos/estetica/" class="px-2.5 py-1 rounded-lg font-bold text-[11px] bg-rose-600 text-white shadow-xs">
+          1. Estética Médica
+        </a>
+        <a href="/demos/odontologia/" class="px-2.5 py-1 rounded-lg font-medium text-[11px] text-slate-400 hover:text-white transition-colors">
+          2. Odontología
+        </a>
+        <a href="/demos/psicologia/" class="px-2.5 py-1 rounded-lg font-medium text-[11px] text-slate-400 hover:text-white transition-colors">
+          3. Psicología
+        </a>
+      </div>
+
+      <!-- Controles de navegación -->
+      <div class="flex items-center gap-2">
+        <a href="/demos/psicologia/" class="p-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </a>
+        <a href="/demos/odontologia/" class="p-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Siguiente variación">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+        <a href="/" class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-2.5 py-1 rounded-lg transition-colors">
+          <span>Salir al Portfolio</span>
+        </a>
+      </div>
     </div>
-    <div class="flex items-center gap-3">
-      <span class="text-slate-400 hidden md:inline text-[11px]">Diseñada por Erik Web Studio</span>
-      <a href="/" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-3 py-1 rounded-lg transition-colors">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-        <span>Volver al Portfolio</span>
-      </a>
-    </div>
-  </div>
+  </aside>
 
   <!-- TOP BAR DE CONSULTORIO -->
   <div class="bg-rose-50/80 border-b border-rose-100 text-rose-900 text-xs py-2 px-4">
@@ -51,7 +73,7 @@
   </div>
 
   <!-- CLINIC HEADER -->
-  <header id="clinic-header" class="sticky top-8 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition-all duration-300">
+  <header id="clinic-header" class="sticky top-9 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3">
       <a href="#" class="flex flex-col">
         <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-stone-900">Dra. Valentina Rossi</span>
@@ -188,7 +210,7 @@
           <div data-treatment-category="facial" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
             <div>
               <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
-                <img src="https://images.unsplash.com/photo-1512290900672-1f4a47d25e01?auto=format&fit=crop&w=700&q=80" alt="Toxina Botulínica" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="Toxina Botulínica" class="w-full h-full object-cover">
                 <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
                   30 min
                 </span>
@@ -313,7 +335,7 @@
           <div data-treatment-category="corporal" class="bg-white rounded-3xl p-6 border border-stone-200 shadow-xs flex flex-col justify-between hover:shadow-lg transition-all">
             <div>
               <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-stone-100 relative">
-                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=700&q=80" alt="Depilación Láser" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80" alt="Depilación Láser" class="w-full h-full object-cover">
                 <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
                   Rápido
                 </span>
@@ -344,7 +366,7 @@
           
           <div class="lg:col-span-5 order-2 lg:order-1">
             <div class="relative mx-auto max-w-sm rounded-3xl overflow-hidden shadow-xl border-4 border-stone-100 bg-stone-100">
-              <img src="https://images.unsplash.com/photo-1594824813580-c1b7570086eb?auto=format&fit=crop&w=800&q=80" 
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" 
                    alt="Dra. Valentina Rossi Médica Estética" 
                    class="w-full h-full object-cover">
               <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-3 text-center border border-stone-100">
@@ -575,7 +597,7 @@
           <div class="bg-gradient-to-br from-rose-600 to-rose-700 text-white rounded-3xl p-8 text-center space-y-5 shadow-xl">
             <h3 class="font-serif font-bold text-2xl">¿Querés una consulta médica personalizada?</h3>
             <p class="text-rose-100 text-sm leading-relaxed">
-              Escribinos ahora para chequear disponibilidad de turnos en San Juan para esta semana o realizarnos cualquier pregunta médica sobre los tratamientos.
+              Escribinos ahora para chequear disponibilidad de turnos de esta semana o realizarnos cualquier pregunta médica sobre los tratamientos.
             </p>
             <button data-wa-msg="Hola Dra. Rossi! Me gustaría consultar por turnos disponibles en San Juan para esta semana."
                     class="w-full py-4 px-6 rounded-2xl bg-white hover:bg-rose-50 text-rose-800 font-bold text-base flex items-center justify-center gap-3 shadow-lg hover:scale-102 transition-all cursor-pointer">
