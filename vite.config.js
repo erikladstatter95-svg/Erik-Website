@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        terminos: resolve(__dirname, 'terminos.html'),
         // Cluster 1
         cluster1_estetica: resolve(__dirname, 'demos/cluster-1/index.html'),
         cluster1_odontologia: resolve(__dirname, 'demos/cluster-1/odontologia.html'),
