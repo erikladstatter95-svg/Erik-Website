@@ -620,25 +620,36 @@
         <p class="text-stone-500">M.N. 142.890 / M.P. San Juan 4.890 • Av. Libertador Gral. San Martín 1450 Oeste, San Juan Capital</p>
       </div>
       <div class="text-stone-400 text-xs flex flex-wrap items-center justify-center sm:justify-end gap-2">
-        <span>Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-rose-400 font-bold hover:underline">Erik Web Studio</a></span>
+        <span>Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-rose-400 font-bold hover:underline">erikwebsite.com</a></span>
         <span>•</span>
         <a href="/terminos.html" class="text-stone-400 hover:text-stone-200 underline">Términos y Condiciones</a>
       </div>
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <!-- BOTÓN VOLVER ARRIBA (MOBILE & DESKTOP) -->
+  <button id="btn-scroll-top"
+          class="fixed bottom-5 left-5 z-50 w-12 h-12 bg-slate-900/85 hover:bg-slate-900 text-white rounded-full flex items-center justify-center shadow-lg backdrop-blur-xs border border-slate-700/60 opacity-0 pointer-events-none translate-y-3 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+          aria-label="Volver arriba">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP (CONTACTAR A ERIK) -->
   <aside class="fixed bottom-5 right-5 z-50 flex items-center group">
-    <span class="hidden sm:inline-block mr-3 bg-stone-900 text-white text-xs font-semibold py-1.5 px-3 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-stone-800">
-      Turnos por WhatsApp
+    <span class="hidden sm:inline-block mr-3 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-slate-800">
+      Consultar por esta web
     </span>
-    <button data-wa-msg="Hola Dra. Rossi! Quisiera reservar un turno para una consulta médica en San Juan."
-            class="whatsapp-pulse w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl transition-transform duration-200 hover:scale-110 active:scale-95 cursor-pointer focus:outline-hidden focus:ring-4 focus:ring-emerald-300"
-            aria-label="Abrir WhatsApp para pedir turno médico">
+    <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Quiero%20una%20web%20para%20mi%20negocio.%20Estuve%20viendo%20el%20modelo%20de%20est%C3%A9tica%20m%C3%A9dica%20y%20me%20gust%C3%B3%20mucho%2C%20%C2%BFme%20pasas%20m%C3%A1s%20informaci%C3%B3n%3F"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl shadow-emerald-950/20 transition-transform duration-200 hover:scale-110 active:scale-95 cursor-pointer focus:outline-hidden focus:ring-4 focus:ring-emerald-300"
+       aria-label="Contactar a Erik por WhatsApp sobre este diseño web">
       <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
-    </button>
+    </a>
   </aside>
 
   <script type="module" src="/demos/estetica/app.js"></script>

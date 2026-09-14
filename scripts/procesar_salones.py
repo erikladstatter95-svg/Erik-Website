@@ -31,7 +31,7 @@ def format_whatsapp(phone, business_name):
         clean = "549" + digits
 
     # Pre-drafted WhatsApp message
-    msg = f"Hola gente de {business_name}! Les escribo de Erik Web Studio en San Juan. Vi que tienen excelentes referencias pero no cuentan con web oficial para mostrar las instalaciones y fotos del salón. ¿Les puedo compartir una demo rápida que armamos para eventos?"
+    msg = f"Hola gente de {business_name}! Les escribo de erikwebsite.com en San Juan. Vi que tienen excelentes referencias pero no cuentan con web oficial para mostrar las instalaciones y fotos del salón. ¿Les puedo compartir una demo rápida que armamos para eventos?"
     encoded_msg = urllib.parse.quote(msg)
     
     direct_link = f"https://wa.me/{clean}?text={encoded_msg}"
@@ -125,7 +125,7 @@ html_content = f'''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leads Salones de Eventos - Erik Web Studio</title>
+    <title>Leads Salones de Eventos - erikwebsite.com</title>
     <style>
         :root {{
             --bg: #090d16;

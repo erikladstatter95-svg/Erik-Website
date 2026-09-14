@@ -1,11 +1,13 @@
 import { initWhatsAppButtons, buildWhatsAppUrl } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
+import { initScrollTop } from '../../src/js/scroll-top.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const EVENTOS_PHONE = '5491130000000';
+  const EVENTOS_PHONE = '5492645185359';
 
   initWhatsAppButtons(EVENTOS_PHONE);
   initAccordion('[data-accordion]');
+  initScrollTop('btn-scroll-top');
 
   // Header scroll
   const header = document.getElementById('eventos-header');

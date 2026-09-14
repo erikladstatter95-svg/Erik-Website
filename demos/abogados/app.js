@@ -1,11 +1,13 @@
 import { initWhatsAppButtons, buildWhatsAppUrl } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
+import { initScrollTop } from '../../src/js/scroll-top.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const LAW_PHONE = '5491130000000';
+  const LAW_PHONE = '5492645185359';
 
   initWhatsAppButtons(LAW_PHONE);
   initAccordion('[data-accordion]');
+  initScrollTop('btn-scroll-top');
 
   // Header scroll
   const header = document.getElementById('abogados-header');

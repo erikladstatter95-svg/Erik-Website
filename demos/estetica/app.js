@@ -1,15 +1,19 @@
 import { initWhatsAppButtons } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
+import { initScrollTop } from '../../src/js/scroll-top.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Teléfono específico de la clínica estética (demo editable)
-  const CLINIC_PHONE = '5491130000000';
+  // Teléfono específico de la clínica estética
+  const CLINIC_PHONE = '5492645185359';
 
   // Inicializar botones de WhatsApp con número y parámetros
   initWhatsAppButtons(CLINIC_PHONE);
 
   // Inicializar acordeón de FAQs
   initAccordion('[data-accordion]');
+
+  // Inicializar botón volver arriba
+  initScrollTop('btn-scroll-top');
 
   // Header scroll shadow
   const header = document.getElementById('clinic-header');
