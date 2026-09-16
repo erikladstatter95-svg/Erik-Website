@@ -17,6 +17,7 @@ export default defineConfig({
         abogados: resolve(__dirname, 'demos/abogados/index.html'),
         urgencias_hogar: resolve(__dirname, 'demos/urgencias-hogar/index.html'),
         contable: resolve(__dirname, 'demos/contable/index.html'),
+        fitness: resolve(__dirname, 'demos/fitness/index.html'),
         // Retrocompatibilidad
         servicios_hogar_legacy: resolve(__dirname, 'demos/servicios-hogar/index.html'),
         eventos_legacy: resolve(__dirname, 'demos/eventos/index.html'),
@@ -29,6 +30,7 @@ export default defineConfig({
         cluster3_legacy: resolve(__dirname, 'demos/cluster-3/index.html'),
         cluster3_urgencias_legacy: resolve(__dirname, 'demos/cluster-3/urgencias.html'),
         cluster3_contable_legacy: resolve(__dirname, 'demos/cluster-3/contable.html'),
+        cluster3_fitness_legacy: resolve(__dirname, 'demos/cluster-3/fitness.html'),
       },
     },
   },
