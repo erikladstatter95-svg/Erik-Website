@@ -1,0 +1,39 @@
+# robots.txt para https://erikwebsite.com
+# Permitir acceso completo a motores de búsqueda y agentes de IA / LLMs
+
+User-agent: *
+Allow: /
+
+# Rastreadores de Inteligencia Artificial y Modelos de Lenguaje (LLMs)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Mapa del sitio
+Sitemap: https://erikwebsite.com/sitemap.xml
