@@ -159,8 +159,48 @@
       </div>
     </section>
 
+    <!-- STORIES / VISOR TÁCTIL DE ESPACIOS (COMPONENTE WOW) -->
+    <section class="py-8 bg-white border-b border-stone-200 reveal-on-scroll">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 text-center mb-5">Explorá los rincones de Finca Los Olivos</p>
+        <div class="flex items-center justify-start sm:justify-center gap-4 sm:gap-6 overflow-x-auto pb-2">
+          <a href="#galeria" class="flex flex-col items-center gap-1.5 shrink-0 tap-bounce group cursor-pointer">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-tr from-amber-400 to-emerald-600 shadow-md">
+              <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=200&q=80" 
+                   alt="El Parque y Palmeras" class="w-full h-full object-cover rounded-full border-2 border-white">
+            </div>
+            <span class="text-[11px] font-bold text-stone-700 group-hover:text-emerald-800">El Parque</span>
+          </a>
+
+          <a href="#galeria" class="flex flex-col items-center gap-1.5 shrink-0 tap-bounce group cursor-pointer">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-tr from-amber-400 to-emerald-600 shadow-md">
+              <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=200&q=80" 
+                   alt="Salón Climatizado" class="w-full h-full object-cover rounded-full border-2 border-white">
+            </div>
+            <span class="text-[11px] font-bold text-stone-700 group-hover:text-emerald-800">Salón VIP</span>
+          </a>
+
+          <a href="#galeria" class="flex flex-col items-center gap-1.5 shrink-0 tap-bounce group cursor-pointer">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-tr from-amber-400 to-emerald-600 shadow-md">
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=200&q=80" 
+                   alt="Piscina Iluminada" class="w-full h-full object-cover rounded-full border-2 border-white">
+            </div>
+            <span class="text-[11px] font-bold text-stone-700 group-hover:text-emerald-800">Piscina & Deck</span>
+          </a>
+
+          <a href="#galeria" class="flex flex-col items-center gap-1.5 shrink-0 tap-bounce group cursor-pointer">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-tr from-amber-400 to-emerald-600 shadow-md">
+              <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=200&q=80" 
+                   alt="Sector Asadores y Barra" class="w-full h-full object-cover rounded-full border-2 border-white">
+            </div>
+            <span class="text-[11px] font-bold text-stone-700 group-hover:text-emerald-800">Fuegos & Barra</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- INSTALACIONES / CARACTERÍSTICAS INSPIRADAS EN OZARA -->
-    <section id="instalaciones" class="py-16 sm:py-24 bg-white border-y border-stone-200">
+    <section id="instalaciones" class="py-16 sm:py-24 bg-white border-y border-stone-200 reveal-on-scroll">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-14">
           <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Equipamiento y Servicios</span>
@@ -448,6 +488,19 @@
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
     </a>
+  <!-- BARRA DE ACCIÓN FIJA INFERIOR PARA CELULARES (MOBILE ACTION DOCK) -->
+  <aside class="mobile-action-dock block sm:hidden bg-stone-900/95 border-t border-stone-800 shadow-2xl">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex flex-col">
+        <span class="text-xs font-bold text-white leading-tight">Finca Los Olivos</span>
+        <span class="text-[10px] text-emerald-400 font-medium">Salón y Quinta Pocito</span>
+      </div>
+      <button data-wa-msg="Hola Finca Los Olivos! Me gustaría consultar por fechas disponibles y agendar una visita al predio."
+              class="tap-bounce inline-flex items-center gap-2 bg-emerald-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Consultar Fecha</span>
+      </button>
+    </div>
   </aside>
 
   <script type="module" src="/src/js/main.js"></script>

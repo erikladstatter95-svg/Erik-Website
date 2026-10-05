@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Catering y Barras San Juan (Sin Sitio Web) - erikwebsite.com</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --accent: #38bdf8;
+            --green: #10b981;
+            --ig: #ec4899;
+            --maps: #f59e0b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+        h1 { font-size: 1.6rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+        p.subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+        .stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .stat-badge { background: #1f2937; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; border: 1px solid #374151; }
+        .stat-badge strong { color: var(--green); }
+        
+        .toolbar { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+        .search-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.55rem 1rem; color: #fff; font-size: 0.9rem; min-width: 280px; outline: none; }
+        .search-box:focus { border-color: var(--accent); }
+        
+        .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+        th { background: #172033; padding: 0.9rem 1rem; font-weight: 600; color: #cbd5e1; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        td { padding: 0.9rem 1rem; border-bottom: 1px solid #1e293b; vertical-align: middle; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+        
+        .subtitle-cell { font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem; }
+        .address-cell { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; max-width: 320px; }
+        .phone-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; text-align: center; }
+        .rating { color: #fbbf24; font-size: 0.8rem; margin-left: 0.4rem; font-weight: 600; }
+        .rating small { color: #94a3b8; font-weight: 400; }
+        
+        .badge-noweb { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .badge-ig { background: rgba(236, 72, 153, 0.15); color: #f472b6; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .badge-city { background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.8rem; }
+        
+        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: #059669; color: white; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: background 0.2s; white-space: nowrap; width: 100%; }
+        .btn-wa:hover { background: #10b981; }
+        .btn-wa .icon { width: 15px; height: 15px; }
+
+        .btn-gmaps { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 7px; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+        .btn-gmaps:hover { background: rgba(245, 158, 11, 0.25); border-color: #f59e0b; color: #fff; }
+        .btn-gmaps .icon { width: 14px; height: 14px; }
+        
+        .btn-social { display: inline-block; color: #f472b6; border: 1px solid #db2777; text-decoration: none; padding: 0.35rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 500; transition: all 0.2s; white-space: nowrap; }
+        .btn-social:hover { background: rgba(219, 39, 119, 0.15); }
+        
+        .text-muted { color: #64748b; font-size: 0.85rem; }
+        
+        .status-select { background: #1f2937; color: #fff; border: 1px solid #374151; padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.82rem; outline: none; cursor: pointer; }
+        .status-select:focus { border-color: var(--accent); }
+        .row-contacted { opacity: 0.65; background: rgba(16, 185, 129, 0.05); }
+        .row-interested { background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3b82f6; }
+        .row-closed { background: rgba(16, 185, 129, 0.12); border-left: 3px solid #10b981; }
+
+        .copy-banner { margin-top: 1.5rem; background: #172033; padding: 1.25rem; border-radius: 12px; border: 1px solid #1f2937; }
+        .copy-banner h3 { font-size: 0.95rem; color: #60a5fa; margin-bottom: 0.5rem; }
+        .copy-banner p { font-size: 0.85rem; color: #cbd5e1; line-height: 1.4; }
+    </style>
+    <script>
+        function updateStatus(select, rowId) {
+            const row = document.getElementById(rowId);
+            row.classList.remove('row-contacted', 'row-interested', 'row-closed');
+            if (select.value === 'contacted' || select.value === 'demo_sent') {
+                row.classList.add('row-contacted');
+            } else if (select.value === 'interested') {
+                row.classList.add('row-interested');
+            } else if (select.value === 'closed') {
+                row.classList.add('row-closed');
+            }
+            localStorage.setItem('lead_catering_' + rowId, select.value);
+        }
+
+        function filterTable() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(r => {
+                const text = r.innerText.toLowerCase();
+                r.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        window.onload = function() {
+            const selects = document.querySelectorAll('.status-select');
+            selects.forEach((s, idx) => {
+                const rowId = 'row-' + idx;
+                const saved = localStorage.getItem('lead_catering_' + rowId);
+                if (saved) {
+                    s.value = saved;
+                    updateStatus(s, rowId);
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Leads Calificados: Catering, Comidas y Bebidas en San Juan</h1>
+                <p class="subtitle">30 empresas y servicios gastronomicos sin sitio web listos para prospeccion comercial directa.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-badge">Total prospectos: <strong>30</strong></div>
+                <div class="stat-badge">100% Sin Sitio Web: <strong>30</strong></div>
+                <div class="stat-badge">Con WhatsApp: <strong>30</strong></div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <input type="text" id="search" class="search-box" placeholder="Buscar por nombre, categoria o direccion..." onkeyup="filterTable()">
+            <div style="font-size: 0.85rem; color: #94a3b8;">
+                Demo sugerida: <a href="https://erikwebsite.com/demos/catering/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">erikwebsite.com/demos/catering/</a>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="min-width: 240px;">Negocio / Servicio</th>
+                        <th>Zona</th>
+                        <th>Situacion Web</th>
+                        <th>Red Social</th>
+                        <th>Ficha Maps</th>
+                        <th style="min-width: 150px;">Accion WhatsApp</th>
+                        <th>Estado de Gestion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr id="row-0">
+        <td>
+            <strong>El Cóctel Bar de Barras Moviles</strong>
+            <div class="subtitle-cell">Coctelería <span class="rating">★ 5 <small>(8)</small></span></div>
+            <div class="address-cell">Ing. Quiroga 8949, J5413 Chimbas, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=El%20C%C3%B3ctel%20Bar%20de%20Barras%20Moviles&query_place_id=ChIJFbEJmQpBgZYRvZRWJEvLblI" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646717071?text=Hola%20El%20C%C3%B3ctel%20Bar%20de%20Barras%20Moviles%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 671-7071</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-0')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-1">
+        <td>
+            <strong>Lúbar Drinks</strong>
+            <div class="subtitle-cell">Bar <span class="rating">★ 4.6 <small>(56)</small></span></div>
+            <div class="address-cell">Cmte. Cabot Oeste 3207 Oeste, J5400 Rivadavia, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=L%C3%BAbar%20Drinks&query_place_id=ChIJ_13TXFpAgZYRWFYyPCivV7o" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644525043?text=Hola%20L%C3%BAbar%20Drinks%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 452-5043</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-1')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-2">
+        <td>
+            <strong>Bahía Drinks cocteles y tragos</strong>
+            <div class="subtitle-cell">Servicio de catering </div>
+            <div class="address-cell"></div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Bah%C3%ADa%20Drinks%20cocteles%20y%20tragos&query_place_id=ChIJN-6X8EHvwAQRABL5dPC6Pg4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646227103?text=Hola%20Bah%C3%ADa%20Drinks%20cocteles%20y%20tragos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 622-7103</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-2')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-3">
+        <td>
+            <strong>El Ciprés catering</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.7 <small>(52)</small></span></div>
+            <div class="address-cell">Av. Nazario Benavidez 819, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=El%20Cipr%C3%A9s%20catering&query_place_id=ChIJH-GxsXNqgZYRv69Ev6f_HUA" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644571315?text=Hola%20El%20Cipr%C3%A9s%20catering%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 457-1315</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-3')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-4">
+        <td>
+            <strong>Matias Sigalat</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.6 <small>(48)</small></span></div>
+            <div class="address-cell">J5400FYF, Jorge Luis Fontana Nte. 1026, J5400FYF San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Matias%20Sigalat&query_place_id=ChIJeWgoUclBgZYRFtjYmHSthN0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644416616?text=Hola%20Matias%20Sigalat%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 441-6616</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-4')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-5">
+        <td>
+            <strong>Palermo Soho eventos</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.8 <small>(5)</small></span></div>
+            <div class="address-cell">Mariano Moreno Este 836, J5402AZR San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Palermo%20Soho%20eventos&query_place_id=ChIJxfvj_f1rgZYRXODnJ_Jct60" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646274024?text=Hola%20Palermo%20Soho%20eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 627-4024</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-5')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-6">
+        <td>
+            <strong>Casa fernandez servicio para fiesta</strong>
+            <div class="subtitle-cell">Empresa de organización de eventos <span class="rating">★ 4.8 <small>(19)</small></span></div>
+            <div class="address-cell">Matías Zavalla Nte. 285 norte, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Casa%20fernandez%20servicio%20para%20fiesta&query_place_id=ChIJCSaNQ7VBgZYRcw8tiKJ6Hxk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644177571?text=Hola%20Casa%20fernandez%20servicio%20para%20fiesta%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 417-7571</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-6')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-7">
+        <td>
+            <strong>Gastronomia Ramos</strong>
+            <div class="subtitle-cell">Empresa de organización de eventos <span class="rating">★ 4.2 <small>(18)</small></span></div>
+            <div class="address-cell">Agustín Gómez Oeste 79, J5402 BYA, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">BYA</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Gastronomia%20Ramos&query_place_id=ChIJbTA2JB5AgZYRk1P0vPr_THk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644225825?text=Hola%20Gastronomia%20Ramos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-5825</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-7')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-8">
+        <td>
+            <strong>Candy Fiesta cátering</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.5 <small>(54)</small></span></div>
+            <div class="address-cell">B udap 4 mza b casa 17, J5425 Rawson, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.facebook.com/candyfiestacup/" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Candy%20Fiesta%20c%C3%A1tering&query_place_id=ChIJkY5QD2NAgZYRaeNlzA_2vnA" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645663980?text=Hola%20Candy%20Fiesta%20c%C3%A1tering%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 566-3980</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-8')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-9">
+        <td>
+            <strong>C y E catering y organizacion de eventos</strong>
+            <div class="subtitle-cell">Restaurante de comida para llevar <span class="rating">★ 4.9 <small>(9)</small></span></div>
+            <div class="address-cell">Alem y benjamin aguilar, J5425 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://instagram.com/c.e_pasteleria_catering_evento?igshid=YjM2YjNmNDA=" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=C%20y%20E%20catering%20y%20organizacion%20de%20eventos&query_place_id=ChIJSxVLcJxBgZYRrCgdQ23bwQw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645275135?text=Hola%20C%20y%20E%20catering%20y%20organizacion%20de%20eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 527-5135</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-9')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-10">
+        <td>
+            <strong>Tomasa Eventos/ Perniles de cerdo & Ternera</strong>
+            <div class="subtitle-cell">Comida a domicilio <span class="rating">★ 4.9 <small>(14)</small></span></div>
+            <div class="address-cell">Santa Maria de Oro 59 norte, J5411 Santa Lucía, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Tomasa%20Eventos%2F%20Perniles%20de%20cerdo%20%26%20Ternera&query_place_id=ChIJ9fFdhGdrgZYRCEUOp5M_0ZY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645313580?text=Hola%20Tomasa%20Eventos/%20Perniles%20de%20cerdo%20%26%20Ternera%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 531-3580</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-10')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-11">
+        <td>
+            <strong>Jorge Vargas Catering-Eventos</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.6 <small>(5)</small></span></div>
+            <div class="address-cell">C. Boulogne Sur Mer Este 1635 E, J5411 Santa Lucía, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Jorge%20Vargas%20Catering-Eventos&query_place_id=ChIJ_Q-xxVtBgZYRlFl-2s2ZfeQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645601612?text=Hola%20Jorge%20Vargas%20Catering-Eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 560-1612</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-11')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-12">
+        <td>
+            <strong>JUAN JESUS EVENTOS</strong>
+            <div class="subtitle-cell">Proveedor mayorista de alimentos y bebidas <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">J Alvarez, Gral. Arenales 400, 5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.facebook.com/juan-jesus-eventos" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=JUAN%20JESUS%20EVENTOS&query_place_id=ChIJCxwBzI5BgZYRjX4Uh-x7WL4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644710263?text=Hola%20JUAN%20JESUS%20EVENTOS%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 471-0263</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-12')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-13">
+        <td>
+            <strong>Noe & Sol Catering Para Eventos</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.5 <small>(26)</small></span></div>
+            <div class="address-cell">David Chávez, Miguel Atencio y, Villa Aberastain, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Villa Aberastain</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Noe%20%26%20Sol%20Catering%20Para%20Eventos&query_place_id=ChIJf6zjd0Q_gZYRWUtmKah0aXU" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645619061?text=Hola%20Noe%20%26%20Sol%20Catering%20Para%20Eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 561-9061</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-13')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-14">
+        <td>
+            <strong>Buenos Aires - Servicio de Lunch</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.2 <small>(38)</small></span></div>
+            <div class="address-cell">Buenaventura Luna 228 norte, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Buenos%20Aires%20-%20Servicio%20de%20Lunch&query_place_id=ChIJ7XX6IoZqgZYRGAVNxtctiOw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644210297?text=Hola%20Buenos%20Aires%20-%20Servicio%20de%20Lunch%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-0297</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-14')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-15">
+        <td>
+            <strong>Catering Los Grillos de Santos de Domingo Quintero</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4 <small>(15)</small></span></div>
+            <div class="address-cell">San Lorenzo Este 1015, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Catering%20Los%20Grillos%20de%20Santos%20de%20Domingo%20Quintero&query_place_id=ChIJ9ReCRXtqgZYRUjWdlX-fGZ0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644211242?text=Hola%20Catering%20Los%20Grillos%20de%20Santos%20de%20Domingo%20Quintero%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-1242</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-15')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-16">
+        <td>
+            <strong>Monti Evento</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.9 <small>(7)</small></span></div>
+            <div class="address-cell">Norte (B° Aramburu, C. Cipolletti N 933, J5400 Rivadavia, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Monti%20Evento&query_place_id=ChIJyyoGobRBgZYRikfb37L89kY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644576779?text=Hola%20Monti%20Evento%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 457-6779</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-16')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-17">
+        <td>
+            <strong>Comidas Ariel Catering Y Eventos</strong>
+            <div class="subtitle-cell">Restaurante <span class="rating">★ 4 <small>(30)</small></span></div>
+            <div class="address-cell">Caseros Nte. 703, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Comidas%20Ariel%20Catering%20Y%20Eventos&query_place_id=ChIJxeo84H1qgZYRGCfYLdDmwVc" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644272923?text=Hola%20Comidas%20Ariel%20Catering%20Y%20Eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 427-2923</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-17')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-18">
+        <td>
+            <strong>ALMA EVENTOS</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.7 <small>(3)</small></span></div>
+            <div class="address-cell">5411 Lucia del bosque 1470, J5411 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=ALMA%20EVENTOS&query_place_id=ChIJ7R8cH-hrgZYRPSZ_kUwzdPw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644105558?text=Hola%20ALMA%20EVENTOS%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 410-5558</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-18')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-19">
+        <td>
+            <strong>Finca El Oasis</strong>
+            <div class="subtitle-cell">Salón para eventos <span class="rating">★ 4.6 <small>(22)</small></span></div>
+            <div class="address-cell">Pampa del Chañar, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Pampa del Chañar</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Finca%20El%20Oasis&query_place_id=ChIJsfRrmJVDg5YRx1r_KlpQXwM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644183410?text=Hola%20Finca%20El%20Oasis%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 418-3410</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-19')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-20">
+        <td>
+            <strong>Finca El Algarrobal</strong>
+            <div class="subtitle-cell">Salón de bodas <span class="rating">★ 4.4 <small>(49)</small></span></div>
+            <div class="address-cell">Ruta 150 La Puntilla S/N, J5460, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Finca%20El%20Algarrobal&query_place_id=ChIJ4Uz3leJdg5YRNaeHASvn7wc" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644650674?text=Hola%20Finca%20El%20Algarrobal%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 465-0674</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-20')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-21">
+        <td>
+            <strong>BAIRES CATERING</strong>
+            <div class="subtitle-cell">Oficinas de empresa <span class="rating">★ 3.8 <small>(4)</small></span></div>
+            <div class="address-cell">Buenaventura Luna 228 norte, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=BAIRES%20CATERING&query_place_id=ChIJWeAlGw9BgZYRSRZD18lcV7c" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645102028?text=Hola%20BAIRES%20CATERING%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 9 264 510-2028</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-21')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-22">
+        <td>
+            <strong>Celi Servicio de Lunch</strong>
+            <div class="subtitle-cell">Servicio de catering <span class="rating">★ 4.5 <small>(15)</small></span></div>
+            <div class="address-cell">Catamarca 140 sur. Barrio Recidencial, J5425 Rawson, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Celi%20Servicio%20de%20Lunch&query_place_id=ChIJM3ZYJX8VgZYR46G6RJ_BQbY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645068858?text=Hola%20Celi%20Servicio%20de%20Lunch%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 506-8858</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-22')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-23">
+        <td>
+            <strong>Galana Eventos en San Juan</strong>
+            <div class="subtitle-cell">Salón para eventos <span class="rating">★ 4.5 <small>(544)</small></span></div>
+            <div class="address-cell">Balcarce 200, J5411 Santa Lucía, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.instagram.com/galanaeventos?igsh=MXMyaTEzbjc0NTd3cw==" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Galana%20Eventos%20en%20San%20Juan&query_place_id=ChIJV-ThXRhrgZYRDhLlSdOXpus" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644512041?text=Hola%20Galana%20Eventos%20en%20San%20Juan%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 451-2041</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-23')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-24">
+        <td>
+            <strong>CATERING VERITA</strong>
+            <div class="subtitle-cell">Catering móvil <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Teresa Icaña 172, J5460 San Jose de Jachal, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Jose de Jachal</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=CATERING%20VERITA&query_place_id=ChIJl0YdNwdng5YRL0FfGR2SOb4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5491156986372?text=Hola%20CATERING%20VERITA%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 11 5698-6372</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-24')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-25">
+        <td>
+            <strong>MOA Productora de Eventos</strong>
+            <div class="subtitle-cell">Organizador de eventos <span class="rating">★ 4.4 <small>(394)</small></span></div>
+            <div class="address-cell">Av. Argentina Nte. 126, J5400FJO J5400FJO, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">J5400FJO</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.instagram.com/moa_eventos?igsh=NWsxdGk1a25yaWFk&utm_source=qr" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=MOA%20Productora%20de%20Eventos&query_place_id=ChIJpVYnEY9qgZYRmZeaiKspSoE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644161374?text=Hola%20MOA%20Productora%20de%20Eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 416-1374</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-25')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-26">
+        <td>
+            <strong>La Rinconada</strong>
+            <div class="subtitle-cell">Restaurante de comida rápida <span class="rating">★ 5 <small>(5)</small></span></div>
+            <div class="address-cell">Laprida 480, J5460 San Jose de Jachal, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Jose de Jachal</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=La%20Rinconada&query_place_id=ChIJZ4c-HFxng5YRTaoAJqqqRrY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645297422?text=Hola%20La%20Rinconada%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 529-7422</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-26')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-27">
+        <td>
+            <strong>Comidas Mayte Servicio de Comidas para eventos</strong>
+            <div class="subtitle-cell">Comida a domicilio <span class="rating">★ 5 <small>(5)</small></span></div>
+            <div class="address-cell">Mza G casa 5, J5461 San Jose de Jachal, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Jose de Jachal</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Comidas%20Mayte%20Servicio%20de%20Comidas%20para%20eventos&query_place_id=ChIJd1uevMNDg5YRiqaWCWWaxfI" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646304393?text=Hola%20Comidas%20Mayte%20Servicio%20de%20Comidas%20para%20eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 630-4393</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-27')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-28">
+        <td>
+            <strong>VaBel salon de eventos</strong>
+            <div class="subtitle-cell">Lounge <span class="rating">★ 4.8 <small>(24)</small></span></div>
+            <div class="address-cell">Callejon el Abrojo, J5460 San Jose de Jachal, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Jose de Jachal</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=VaBel%20salon%20de%20eventos&query_place_id=ChIJfevA_8tng5YRMbXksVC4gjM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645047128?text=Hola%20VaBel%20salon%20de%20eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 504-7128</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-28')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-29">
+        <td>
+            <strong>Puerto Madero Eventos</strong>
+            <div class="subtitle-cell">Recinto para eventos <span class="rating">★ 4.7 <small>(141)</small></span></div>
+            <div class="address-cell">J5425 Rawson, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin pagina web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Puerto%20Madero%20Eventos&query_place_id=ChIJU8onxVwVgZYRkUw7fPQ8VLw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646626166?text=Hola%20Puerto%20Madero%20Eventos%21%20Soy%20Erik%20de%20Erik%20Website%20aca%20en%20San%20Juan.%20Vi%20sus%20buenas%20referencias%20en%20eventos%20pero%20note%20que%20no%20cuentan%20con%20un%20sitio%20web%20propio%20para%20mostrar%20sus%20opciones%20de%20menu%2C%20barras%20y%20cotizaciones%20directas%20a%20WhatsApp.%20Les%20puedo%20compartir%20una%20demo%20rapida%20que%20armamos%20para%20servicios%20gastronomicos%20y%20eventos%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 662-6166</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-29')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="copy-banner">
+            <h3>Mensaje sugerido precargado en WhatsApp (con presentacion personal):</h3>
+            <p><em>"Hola [Nombre Negocio]! Soy Erik de Erik Website aca en San Juan. Vi sus buenas referencias en eventos pero note que no cuentan con un sitio web propio para mostrar sus opciones de menu, barras y cotizaciones directas a WhatsApp. Les puedo compartir una demo rapida que armamos para servicios gastronomicos y eventos?"</em></p>
+        </div>
+    </div>
+</body>
+</html>

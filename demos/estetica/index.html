@@ -170,7 +170,7 @@
     </section>
 
     <!-- BADGES DE AUTORIDAD -->
-    <section class="py-6 bg-white border-y border-stone-200/80">
+    <section class="py-6 bg-white border-y border-stone-200/80 reveal-on-scroll">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div class="p-2">
@@ -193,8 +193,52 @@
       </div>
     </section>
 
+    <!-- SLIDER INTERACTIVO ANTES Y DESPUÉS (COMPONENTE WOW) -->
+    <section class="py-14 bg-gradient-to-b from-stone-50 via-rose-50/20 to-stone-50 border-t border-stone-200/80 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Resultados Reales</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900">Deslizá con el pulgar para ver el antes y después</h2>
+          <p class="text-xs sm:text-sm text-stone-500">Procedimiento médico sutil: Revitalización dérmica y perfilado labial con ácido hialurónico.</p>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-white p-3 rounded-3xl shadow-xl border border-stone-200 glow-rose">
+          <div data-before-after class="before-after-container aspect-[4/3] rounded-2xl relative">
+            <!-- Imagen Después (Fondo) -->
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80" 
+                 alt="Resultado después de tratamiento estético" 
+                 class="w-full h-full object-cover">
+            <span class="absolute bottom-3 right-3 bg-stone-950/70 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-lg z-10">Después (Glow Natural)</span>
+
+            <!-- Imagen Antes (Superpuesta con clip-path) -->
+            <div class="before-image absolute inset-0 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" 
+                   alt="Estado antes del procedimiento estético" 
+                   class="w-full h-full object-cover filter contrast-95 brightness-95">
+              <span class="absolute bottom-3 left-3 bg-stone-950/70 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-lg z-10">Antes</span>
+            </div>
+
+            <!-- Manija deslizante -->
+            <div class="slider-handle"></div>
+
+            <!-- Input táctil invisible -->
+            <input type="range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después">
+          </div>
+          
+          <div class="p-3 text-center">
+            <p class="text-[11px] text-stone-500 mb-2">Deslizá hacia los lados para comparar los resultados de la sesión.</p>
+            <button data-wa-service="Armonización Facial y Ácido Hialurónico" data-wa-msg="Hola Dra. Rossi! Vi el antes y después en su web y quisiera consultar por el tratamiento de {servicio} en San Juan."
+                    class="tap-bounce inline-flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-xs transition-colors cursor-pointer">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar por este tratamiento</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- TRATAMIENTOS CON FILTROS Y PRECIOS -->
-    <section id="tratamientos" class="py-16 sm:py-24 bg-stone-50">
+    <section id="tratamientos" class="py-16 sm:py-24 bg-stone-50 reveal-on-scroll">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-10">
           <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Carta de Tratamientos</span>
@@ -664,6 +708,19 @@
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
     </a>
+  <!-- BARRA DE ACCIÓN FIJA INFERIOR PARA CELULARES (MOBILE ACTION DOCK) -->
+  <aside class="mobile-action-dock block sm:hidden bg-stone-900/95 border-t border-stone-800 shadow-2xl">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex flex-col">
+        <span class="text-xs font-bold text-white leading-tight">Dra. Valentina Rossi</span>
+        <span class="text-[10px] text-rose-400 font-medium">Medicina Estética San Juan</span>
+      </div>
+      <button data-wa-msg="Hola Dra. Rossi! Me comunico desde su web para consultar disponibilidad de turnos en San Juan."
+              class="tap-bounce inline-flex items-center gap-2 bg-rose-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Agendar Turno</span>
+      </button>
+    </div>
   </aside>
 
   <script type="module" src="/demos/estetica/app.js"></script>

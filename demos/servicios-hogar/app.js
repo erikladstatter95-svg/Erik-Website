@@ -1,6 +1,7 @@
 import { initWhatsAppButtons, buildWhatsAppUrl } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
 import { initScrollTop } from '../../src/js/scroll-top.js';
+import { initEmergencySelector, initScrollReveal } from '../../src/js/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const TECH_PHONE = '5492645185359'; // San Juan
@@ -8,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppButtons(TECH_PHONE);
   initAccordion('[data-accordion]');
   initScrollTop('btn-scroll-top');
+  initEmergencySelector();
+  initScrollReveal();
 
   // Header scroll
   const header = document.getElementById('tech-header');

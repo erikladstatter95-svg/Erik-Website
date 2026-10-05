@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Psicólogos San Juan (Sin Sitio Web) - erikwebsite.com</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --accent: #38bdf8;
+            --green: #10b981;
+            --ig: #ec4899;
+            --maps: #f59e0b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+        h1 { font-size: 1.6rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+        p.subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+        .stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .stat-badge { background: #1f2937; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; border: 1px solid #374151; }
+        .stat-badge strong { color: var(--green); }
+        
+        .toolbar { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+        .search-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.55rem 1rem; color: #fff; font-size: 0.9rem; min-width: 280px; outline: none; }
+        .search-box:focus { border-color: var(--accent); }
+        .filter-btn { background: #1f2937; color: #9ca3af; border: 1px solid #374151; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.8rem; cursor: pointer; }
+        .filter-btn.active { background: #2563eb; color: white; border-color: #3b82f6; }
+        
+        .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+        th { background: #172033; padding: 0.9rem 1rem; font-weight: 600; color: #cbd5e1; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        td { padding: 0.9rem 1rem; border-bottom: 1px solid #1e293b; vertical-align: middle; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+        
+        .subtitle-cell { font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem; }
+        .address-cell { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; max-width: 320px; }
+        .phone-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; text-align: center; }
+        .rating { color: #fbbf24; font-size: 0.8rem; margin-left: 0.4rem; font-weight: 600; }
+        .rating small { color: #94a3b8; font-weight: 400; }
+
+        .badge-noweb { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .badge-ig { background: rgba(236, 72, 153, 0.15); color: #f472b6; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .badge-city { background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.8rem; }
+        
+        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: #059669; color: white; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: background 0.2s; white-space: nowrap; width: 100%; }
+        .btn-wa:hover { background: #10b981; }
+        .btn-wa .icon { width: 15px; height: 15px; }
+
+        .btn-gmaps { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 7px; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+        .btn-gmaps:hover { background: rgba(245, 158, 11, 0.25); border-color: #f59e0b; color: #fff; }
+        .btn-gmaps .icon { width: 14px; height: 14px; }
+        
+        .btn-social { display: inline-block; color: #f472b6; border: 1px solid #db2777; text-decoration: none; padding: 0.35rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 500; transition: all 0.2s; white-space: nowrap; }
+        .btn-social:hover { background: rgba(219, 39, 119, 0.15); }
+        
+        .text-muted { color: #64748b; font-size: 0.85rem; }
+        
+        .status-select { background: #1f2937; color: #fff; border: 1px solid #374151; padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.82rem; outline: none; cursor: pointer; }
+        .status-select:focus { border-color: var(--accent); }
+        .row-contacted { opacity: 0.65; background: rgba(16, 185, 129, 0.05); }
+        .row-interested { background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3b82f6; }
+        .row-closed { background: rgba(16, 185, 129, 0.12); border-left: 3px solid #10b981; }
+
+        .copy-banner { margin-top: 1.5rem; background: #172033; padding: 1.25rem; border-radius: 12px; border: 1px solid #1f2937; }
+        .copy-banner h3 { font-size: 0.95rem; color: #60a5fa; margin-bottom: 0.5rem; }
+        .copy-banner p { font-size: 0.85rem; color: #cbd5e1; line-height: 1.4; }
+        .copy-banner code { background: #0f172a; padding: 0.2rem 0.4rem; border-radius: 4px; color: #38bdf8; }
+    </style>
+    <script>
+        function updateStatus(select, rowId) {
+            const row = document.getElementById(rowId);
+            row.classList.remove('row-contacted', 'row-interested', 'row-closed');
+            if (select.value === 'contacted' || select.value === 'demo_sent') {
+                row.classList.add('row-contacted');
+            } else if (select.value === 'interested') {
+                row.classList.add('row-interested');
+            } else if (select.value === 'closed') {
+                row.classList.add('row-closed');
+            }
+            localStorage.setItem('lead_psico_' + rowId, select.value);
+        }
+
+        function filterTable() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(r => {
+                const text = r.innerText.toLowerCase();
+                r.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        window.onload = function() {
+            const selects = document.querySelectorAll('.status-select');
+            selects.forEach((s, idx) => {
+                const rowId = 'row-' + idx;
+                const saved = localStorage.getItem('lead_psico_' + rowId);
+                if (saved) {
+                    s.value = saved;
+                    updateStatus(s, rowId);
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Leads Calificados: Psicólogos en San Juan</h1>
+                <p class="subtitle">30 consultorios y profesionales sin página web propia listos para prospección por WhatsApp.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-badge">Total prospectos: <strong>30</strong></div>
+                <div class="stat-badge">100% Sin Sitio Web: <strong>30</strong></div>
+                <div class="stat-badge">Con WhatsApp: <strong>30</strong></div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <input type="text" id="search" class="search-box" placeholder="Buscar por nombre, zona o dirección..." onkeyup="filterTable()">
+            <div style="font-size: 0.85rem; color: #94a3b8;">
+                Demo sugerida: <a href="https://erikwebsite.com/demos/psicologia/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">erikwebsite.com/demos/psicologia/</a>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="min-width: 240px;">Profesional / Consultorio</th>
+                        <th>Zona</th>
+                        <th>Situación Web</th>
+                        <th>Red Social</th>
+                        <th>Ficha Maps</th>
+                        <th style="min-width: 150px;">Acción WhatsApp</th>
+                        <th>Estado de Gestión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr id="row-0">
+        <td>
+            <strong>Psicóloga Celeste Sanchez</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(15)</small></span></div>
+            <div class="address-cell">Patio San Ignacio, V. Nuche s/n, J5400 Rivadavia, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3loga%20Celeste%20Sanchez&query_place_id=ChIJSX7SJEdBgZYRxh0KaW2RFQo" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644425440?text=Hola%20Psic%C3%B3loga%20Celeste%20Sanchez%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 442-5440</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-0')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-1">
+        <td>
+            <strong>Lic. en Psicología Matías Zeballos</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(20)</small></span></div>
+            <div class="address-cell">Laprida 230, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.instagram.com/psicomatiaszeballos" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Lic.%20en%20Psicolog%C3%ADa%20Mat%C3%ADas%20Zeballos&query_place_id=ChIJ_VnO8uVBgZYROIi_3nkJdAo" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645306093?text=Hola%20Lic.%20en%20Psicolog%C3%ADa%20Mat%C3%ADas%20Zeballos%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 9 264 530-6093</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-1')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-2">
+        <td>
+            <strong>PSICOLOGIA SAN JUAN Lic. Vanina Valverde Ortiz</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(25)</small></span></div>
+            <div class="address-cell">Mendoza Sur 666 SUR 1° piso, dpto. E, J5402GUN San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.instagram.com/lic.vaninavalverdeortiz?igsh=MW1jb2hmazBnMGZxNg==" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=PSICOLOGIA%20SAN%20JUAN%20Lic.%20Vanina%20Valverde%20Ortiz&query_place_id=ChIJ2RL8C81rgZYR9G7OWG59Bm0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644466243?text=Hola%20PSICOLOGIA%20SAN%20JUAN%20Lic.%20Vanina%20Valverde%20Ortiz%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 446-6243</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-2')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-3">
+        <td>
+            <strong>Psicólogo Sebastián Arce</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4.8 <small>(27)</small></span></div>
+            <div class="address-cell">Av. Córdoba Este 290, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.facebook.com/proyectarsearg/" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3logo%20Sebasti%C3%A1n%20Arce&query_place_id=ChIJcevXnnlBgZYRJxd1FuEpMzY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645500183?text=Hola%20Psic%C3%B3logo%20Sebasti%C3%A1n%20Arce%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 550-0183</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-3')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-4">
+        <td>
+            <strong>Psicólogo Alberto A. Mentesana</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(105)</small></span></div>
+            <div class="address-cell">General Paz 3000, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.instagram.com/lic.albertomentesana.ok?igsh=ODgyZmVyb3NpeTFm" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3logo%20Alberto%20A.%20Mentesana&query_place_id=ChIJbScIX51BgZYRXVUvC7F_cRA" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644776613?text=Hola%20Psic%C3%B3logo%20Alberto%20A.%20Mentesana%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 477-6613</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-4')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-5">
+        <td>
+            <strong>Psicóloga Erika Varela (San Juan Argentina)</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(2)</small></span></div>
+            <div class="address-cell">Francisco N. Laprida Oeste 1720 oeste, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3loga%20Erika%20Varela%20(San%20Juan%20Argentina)&query_place_id=ChIJabY0wNxBgZYRboEP-CzIsAs" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644129466?text=Hola%20Psic%C3%B3loga%20Erika%20Varela%20%28San%20Juan%20Argentina%29%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 412-9466</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-5')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-6">
+        <td>
+            <strong>Psicología Activa</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(2)</small></span></div>
+            <div class="address-cell">Av. Libertador Gral. San Martín 3332 Oeste, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psicolog%C3%ADa%20Activa&query_place_id=ChIJSUrofxNBgZYRxfjrzdBxhUk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644391190?text=Hola%20Psicolog%C3%ADa%20Activa%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 439-1190</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-6')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-7">
+        <td>
+            <strong>Eleonora Serrichio Psicóloga.</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4.6 <small>(12)</small></span></div>
+            <div class="address-cell">Av. José Ignacio de la Roza Oeste 2100, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Eleonora%20Serrichio%20Psic%C3%B3loga.&query_place_id=ChIJy2-vbSlBgZYRppzVC9NjYgU" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644045522?text=Hola%20Eleonora%20Serrichio%20Psic%C3%B3loga.%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 9 264 404-5522</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-7')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-8">
+        <td>
+            <strong>SER - CONSULTORIOS -</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 3.8 <small>(4)</small></span></div>
+            <div class="address-cell">Av. Libertador Gral. San Martín 5095 Oeste, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=SER%20-%20CONSULTORIOS%20-&query_place_id=ChIJ2V--mhlBgZYR1KXCt0034PM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644330366?text=Hola%20SER%20-%20CONSULTORIOS%20-%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 433-0366</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-8')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-9">
+        <td>
+            <strong>Lic Maria Laura Sosa</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4.8 <small>(4)</small></span></div>
+            <div class="address-cell">Mendoza Sur 666 sur, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Lic%20Maria%20Laura%20Sosa&query_place_id=ChIJ2bKAhbZBgZYR66bIU4JNnmg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645081490?text=Hola%20Lic%20Maria%20Laura%20Sosa%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 508-1490</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-9')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-10">
+        <td>
+            <strong>Vigano Javier Roald Psicólogo</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(3)</small></span></div>
+            <div class="address-cell">Santiago del Estero Sur 574, J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Vigano%20Javier%20Roald%20Psic%C3%B3logo&query_place_id=ChIJr9AgsiVAgZYR9F46C6ldlEc" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644275767?text=Hola%20Vigano%20Javier%20Roald%20Psic%C3%B3logo%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 427-5767</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-10')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-11">
+        <td>
+            <strong>AYRES Consultorios</strong>
+            <div class="subtitle-cell">Oficina médica <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">5400, C. San Luis Oeste 89, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://instagram.com/ayres.consultorios?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=AYRES%20Consultorios&query_place_id=ChIJJyTrr7tBgZYRbGspJqbstFM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646258022?text=Hola%20AYRES%20Consultorios%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 625-8022</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-11')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-12">
+        <td>
+            <strong>Esp. Lic. Norberto Pons</strong>
+            <div class="subtitle-cell">Neuropsicólogo <span class="rating">★ 5 <small>(4)</small></span></div>
+            <div class="address-cell">General Paz 316 oeste, J5402DIM San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-ig">Solo Red Social</span></td>
+        <td><a href="https://www.facebook.com/neurocienciasanjuan/?ref=bookmarks" target="_blank" class="btn-social">Ver Perfil</a></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Esp.%20Lic.%20Norberto%20Pons&query_place_id=ChIJT-wt6YRqgZYR3afu8exbJ6M" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644683127?text=Hola%20Esp.%20Lic.%20Norberto%20Pons%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 468-3127</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-12')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-13">
+        <td>
+            <strong>Carola Fernandez Lic. en Psicología</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4 <small>(1)</small></span></div>
+            <div class="address-cell">9 de Julio 2232 oeste 5400, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Carola%20Fernandez%20Lic.%20en%20Psicolog%C3%ADa&query_place_id=ChIJ-bJ6i2BBgZYRhhbOFSndgvk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645488813?text=Hola%20Carola%20Fernandez%20Lic.%20en%20Psicolog%C3%ADa%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 548-8813</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-13')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-14">
+        <td>
+            <strong>Lic. María Silene González</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(28)</small></span></div>
+            <div class="address-cell">25 de Mayo 1134, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Lic.%20Mar%C3%ADa%20Silene%20Gonz%C3%A1lez&query_place_id=ChIJMQEDSXRrgZYRU6kPSfI1ZRM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645046045?text=Hola%20Lic.%20Mar%C3%ADa%20Silene%20Gonz%C3%A1lez%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 504-6045</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-14')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-15">
+        <td>
+            <strong>Lic. Agustina Delgado, Psicóloga</strong>
+            <div class="subtitle-cell">Psicoterapeuta <span class="rating">★ 5 <small>(4)</small></span></div>
+            <div class="address-cell">Gral Mariano Acha Sur 507, J5402EGK San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Lic.%20Agustina%20Delgado%2C%20Psic%C3%B3loga&query_place_id=ChIJRYb6JwBrgZYRgfHYZh4yx5w" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644361649?text=Hola%20Lic.%20Agustina%20Delgado%2C%20Psic%C3%B3loga%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 436-1649</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-15')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-16">
+        <td>
+            <strong>Cabeza Laura Marisa - Licenciada En Psicologia</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4 <small>(1)</small></span></div>
+            <div class="address-cell">Mendoza Nte. 40, J5400EFB San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Cabeza%20Laura%20Marisa%20-%20Licenciada%20En%20Psicologia&query_place_id=ChIJG51skylAgZYRBGRksoqnx_0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646601962?text=Hola%20Cabeza%20Laura%20Marisa%20-%20Licenciada%20En%20Psicologia%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 660-1962</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-16')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-17">
+        <td>
+            <strong>Psicologo San Juan Elizabeth Martinez</strong>
+            <div class="subtitle-cell">Psicólogo </div>
+            <div class="address-cell">5400, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psicologo%20San%20Juan%20Elizabeth%20Martinez&query_place_id=ChIJzfHBkyhBgZYR0407sYsukCY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492646721477?text=Hola%20Psicologo%20San%20Juan%20Elizabeth%20Martinez%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 672-1477</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-17')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-18">
+        <td>
+            <strong>Origen Espacio Terapéutico</strong>
+            <div class="subtitle-cell">Psicólogo </div>
+            <div class="address-cell">J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Origen%20Espacio%20Terap%C3%A9utico&query_place_id=ChIJeZdahaNBgZYRPsLqOhlkvsM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645486807?text=Hola%20Origen%20Espacio%20Terap%C3%A9utico%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 548-6807</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-18')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-19">
+        <td>
+            <strong>Consultorio Psicologia</strong>
+            <div class="subtitle-cell">Psicoterapeuta </div>
+            <div class="address-cell">Patio San Ignacio, V. Nuche s/n local 9, J5400 Rivadavia, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Consultorio%20Psicologia&query_place_id=ChIJPfbwCQBBgZYRHD73uH47aS0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644425440?text=Hola%20Consultorio%20Psicologia%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 442-5440</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-19')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-20">
+        <td>
+            <strong>Psicóloga Laboral Marcela Matellán</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(2)</small></span></div>
+            <div class="address-cell">Frente a flagrancia, Maipú Este 455 este primer piso, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3loga%20Laboral%20Marcela%20Matell%C3%A1n&query_place_id=ChIJcbePi_xBgZYRwu7hEGw7Riw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644564272?text=Hola%20Psic%C3%B3loga%20Laboral%20Marcela%20Matell%C3%A1n%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 456-4272</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-20')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-21">
+        <td>
+            <strong>Lic Maria Isabel Ortis</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4 <small>(1)</small></span></div>
+            <div class="address-cell">Pje. Gral. Acha, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Lic%20Maria%20Isabel%20Ortis&query_place_id=ChIJzetEHoNqgZYR9tGCkF2DeQ0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644443571?text=Hola%20Lic%20Maria%20Isabel%20Ortis%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 444-3571</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-21')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-22">
+        <td>
+            <strong>Psicologo Cañadas Matías</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 4 <small>(1)</small></span></div>
+            <div class="address-cell">C. Domingo Faustino Sarmiento 42 sur, J5400AMI J5400AMI, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">J5400AMI</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psicologo%20Ca%C3%B1adas%20Mat%C3%ADas&query_place_id=ChIJxTNr_exrgZYRC-8iejDh-8w" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644834187?text=Hola%20Psicologo%20Ca%C3%B1adas%20Mat%C3%ADas%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 483-4187</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-22')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-23">
+        <td>
+            <strong>Lic. Evelin Lopez</strong>
+            <div class="subtitle-cell">Psicólogo </div>
+            <div class="address-cell">San Luis Este 865, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Lic.%20Evelin%20Lopez&query_place_id=ChIJzXQsDWJrgZYRBpM91OrpmSY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644625571?text=Hola%20Lic.%20Evelin%20Lopez%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 462-5571</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-23')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-24">
+        <td>
+            <strong>Psicóloga Infantil, Lic. Diana Marcela Moreta</strong>
+            <div class="subtitle-cell">Servicio de salud mental </div>
+            <div class="address-cell">Caseros Nte. 164 sur, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3loga%20Infantil%2C%20Lic.%20Diana%20Marcela%20Moreta&query_place_id=ChIJwasVGS1rgZYRYzHVbnqKjxQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645279744?text=Hola%20Psic%C3%B3loga%20Infantil%2C%20Lic.%20Diana%20Marcela%20Moreta%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 527-9744</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-24')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-25">
+        <td>
+            <strong>Licenciado en psicología Pablo Sillero</strong>
+            <div class="subtitle-cell">Psicólogo <span class="rating">★ 5 <small>(2)</small></span></div>
+            <div class="address-cell">B. Mitre 131, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Licenciado%20en%20psicolog%C3%ADa%20Pablo%20Sillero&query_place_id=ChIJKe6PdaBrgZYRBDRyqt9hrD0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645098024?text=Hola%20Licenciado%20en%20psicolog%C3%ADa%20Pablo%20Sillero%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 509-8024</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-25')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-26">
+        <td>
+            <strong>CIS, Centro Interdisciplinario de Salud</strong>
+            <div class="subtitle-cell">Clínica ambulatoria <span class="rating">★ 3.9 <small>(9)</small></span></div>
+            <div class="address-cell">Caseros Sur 160, J5402 ERD, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">ERD</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=CIS%2C%20Centro%20Interdisciplinario%20de%20Salud&query_place_id=ChIJV7QnvIRqgZYRp0uYT_CZmf8" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644278375?text=Hola%20CIS%2C%20Centro%20Interdisciplinario%20de%20Salud%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 427-8375</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-26')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-27">
+        <td>
+            <strong>Psicólogo Facundo Lloveras | CAUSA. Abordaje en Adicciones</strong>
+            <div class="subtitle-cell">Servicio de salud mental <span class="rating">★ 5 <small>(9)</small></span></div>
+            <div class="address-cell">A, Av. José Ignacio de la Roza Este 430, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Psic%C3%B3logo%20Facundo%20Lloveras%20%7C%20CAUSA.%20Abordaje%20en%20Adicciones&query_place_id=ChIJFapk3uTpvQ8Rw3GZ9oyE6VY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644742364?text=Hola%20Psic%C3%B3logo%20Facundo%20Lloveras%20%7C%20CAUSA.%20Abordaje%20en%20Adicciones%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 474-2364</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-27')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-28">
+        <td>
+            <strong>ESPACIO DE ENCUENTRO SC - PSICOLOGIA</strong>
+            <div class="subtitle-cell">Asesor <span class="rating">★ 4 <small>(1)</small></span></div>
+            <div class="address-cell">Obreros Sanjuaninos 872, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=ESPACIO%20DE%20ENCUENTRO%20SC%20-%20PSICOLOGIA&query_place_id=ChIJcegCMPF1KpQRZcLV6pJrQt8" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492644119716?text=Hola%20ESPACIO%20DE%20ENCUENTRO%20SC%20-%20PSICOLOGIA%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 411-9716</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-28')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr id="row-29">
+        <td>
+            <strong>José Andrés Zuloaga Barreiro - Psicólogo Clínico - Analista Transaccional</strong>
+            <div class="subtitle-cell">Psicólogo </div>
+            <div class="address-cell">Gral Mariano Acha Sur 748, J5402EGP San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td><span class="text-muted">Ninguno</span></td>
+        <td><a href="https://www.google.com/maps/search/?api=1&query=Jos%C3%A9%20Andr%C3%A9s%20Zuloaga%20Barreiro%20-%20Psic%C3%B3logo%20Cl%C3%ADnico%20-%20Analista%20Transaccional&query_place_id=ChIJn_cSHX9rgZYR68y_SiepH6A" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ver Maps</a></td>
+        <td>
+            <a href="https://wa.me/5492645040662?text=Hola%20Jos%C3%A9%20Andr%C3%A9s%20Zuloaga%20Barreiro%20-%20Psic%C3%B3logo%20Cl%C3%ADnico%20-%20Analista%20Transaccional%21%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20consultorio%20de%20psicolog%C3%ADa.%20Vi%20tus%20buenas%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20los%20pacientes%20vean%20tus%20especialidades%2C%20modalidad%20%28online/presencial%29%20y%20soliciten%20turno%20directo%20a%20tu%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20para%20profesionales%20de%20salud%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 504-0662</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-29')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="copy-banner">
+            <h3>Mensaje sugerido cargado en el botón:</h3>
+            <p><em>"Hola [Nombre]! Te escribo desde San Juan por tu consultorio de psicología. Vi tus buenas referencias en Google pero noté que no contás con sitio web propio para que los pacientes vean tus especialidades, modalidad (online/presencial) y soliciten turno directo a tu WhatsApp. ¿Te puedo compartir una demo rápida que armamos para profesionales de salud?"</em></p>
+        </div>
+    </div>
+</body>
+</html>

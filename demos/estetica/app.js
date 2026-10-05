@@ -1,6 +1,7 @@
 import { initWhatsAppButtons } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
 import { initScrollTop } from '../../src/js/scroll-top.js';
+import { initBeforeAfterSliders, initScrollReveal } from '../../src/js/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Teléfono específico de la clínica estética
@@ -14,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inicializar botón volver arriba
   initScrollTop('btn-scroll-top');
+
+  // Inicializar slider interactivo antes/después y animaciones
+  initBeforeAfterSliders();
+  initScrollReveal();
 
   // Header scroll shadow
   const header = document.getElementById('clinic-header');

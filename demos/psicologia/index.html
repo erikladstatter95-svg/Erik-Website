@@ -101,9 +101,10 @@
     <section class="pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-emerald-50/40 via-stone-50 to-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-semibold mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
-          <span>Atención Presencial en San Juan Capital y Modalidad Online</span>
+        <!-- Widget de Pausa Consciente -->
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-stone-100/80 border border-stone-200/80 text-stone-600 text-xs mb-6 shadow-xs">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#4A5D4E] animate-ping"></span>
+          <span>Tomate una pausa. Estás en un espacio seguro y confidencial.</span>
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 leading-[1.2] mb-6">
@@ -117,13 +118,13 @@
         <!-- Botones Hero -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button data-wa-msg="Hola Lic. Morales! Quisiera coordinar una primera consulta psicológica."
-                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-glow-green hover:scale-102 transition-all cursor-pointer">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  class="tap-bounce w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#4A5D4E] hover:bg-[#3d4d40] text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg transition-all cursor-pointer">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
             <span>Consultar Disponibilidad por WhatsApp</span>
           </button>
 
-          <a href="#areas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-100 text-stone-800 font-semibold text-base px-6 py-4 rounded-2xl border border-stone-300 shadow-xs transition-colors">
-            <span>Ver Áreas de Trabajo</span>
+          <a href="#selector-motivos" class="tap-bounce w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-800 font-semibold text-base px-6 py-4 rounded-2xl border border-stone-300 shadow-xs transition-colors">
+            <span>¿Por qué estás pasando hoy?</span>
           </a>
         </div>
 
@@ -136,8 +137,60 @@
       </div>
     </section>
 
+    <!-- SELECTOR EMPÁTICO DE MOTIVO DE CONSULTA (COMPONENTE WOW) -->
+    <section id="selector-motivos" class="py-14 bg-[#FAF7F2] border-t border-stone-200 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div id="psico-selector-container" class="bg-white rounded-3xl p-6 sm:p-10 border border-stone-200/90 shadow-sm space-y-6">
+          <div class="text-center max-w-xl mx-auto space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#4A5D4E] bg-[#4A5D4E]/10 px-3 py-1 rounded-full">Guía de Atención</span>
+            <h2 class="text-xl sm:text-3xl font-serif font-bold text-stone-900">¿Qué situación estás transitando actualmente?</h2>
+            <p class="text-xs sm:text-sm text-stone-500">Seleccioná una temática para ver el enfoque terapéutico propuesto:</p>
+          </div>
+
+          <!-- Botones Táctiles -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <button type="button" data-psico-type="ansiedad" class="psico-btn active border-[#4A5D4E] bg-stone-50 text-[#2B3A2E] tap-bounce p-3.5 rounded-2xl border text-center transition-all cursor-pointer">
+              <span class="block text-base mb-1">🌿</span>
+              <span class="block text-xs font-bold leading-tight">Ansiedad y Pánico</span>
+            </button>
+            <button type="button" data-psico-type="autoestima" class="psico-btn tap-bounce p-3.5 rounded-2xl border border-stone-200 hover:border-[#4A5D4E] bg-white text-stone-700 text-center transition-all cursor-pointer">
+              <span class="block text-base mb-1">🌱</span>
+              <span class="block text-xs font-bold leading-tight">Autoestima y Límites</span>
+            </button>
+            <button type="button" data-psico-type="duelo" class="psico-btn tap-bounce p-3.5 rounded-2xl border border-stone-200 hover:border-[#4A5D4E] bg-white text-stone-700 text-center transition-all cursor-pointer">
+              <span class="block text-base mb-1">🍂</span>
+              <span class="block text-xs font-bold leading-tight">Duelo o Separación</span>
+            </button>
+            <button type="button" data-psico-type="burnout" class="psico-btn tap-bounce p-3.5 rounded-2xl border border-stone-200 hover:border-[#4A5D4E] bg-white text-stone-700 text-center transition-all cursor-pointer">
+              <span class="block text-base mb-1">⚖️</span>
+              <span class="block text-xs font-bold leading-tight">Estrés y Burnout</span>
+            </button>
+          </div>
+
+          <!-- Tarjeta de Resultado Dinámica -->
+          <div id="psico-result-card" class="bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-stone-200 space-y-3">
+            <div class="flex items-center gap-2 text-[#4A5D4E] font-bold text-sm sm:text-base font-serif">
+              <span class="w-2 h-2 rounded-full bg-[#C47A5A]"></span>
+              <h3 id="psico-result-title">Acompañamiento en Ansiedad y Crisis de Pánico</h3>
+            </div>
+            <p id="psico-result-text" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Herramientas prácticas cognitivo-conductuales para regular el sistema nervioso, recuperar la calma en tu día a día y cortar el ciclo de pensamientos rumiantes.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-stone-200/70">
+              <span class="text-xs text-stone-500">Sesiones presenciales en San Juan Capital y modalidad online</span>
+              <button id="psico-result-wa" data-wa-msg="Hola Lic. Florencia Morales! Le escribo desde su web para consultar por disponibilidad de horarios para abordar temas de ansiedad y estrés."
+                      class="tap-bounce w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#4A5D4E] hover:bg-[#3c4a3e] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span>Consultar por este motivo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MODALIDADES DE ATENCIÓN -->
-    <section id="modalidades" class="py-16 bg-white border-y border-stone-200">
+    <section id="modalidades" class="py-16 bg-white border-y border-stone-200 reveal-on-scroll">
       <div class="max-w-5xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Modalidades</span>
@@ -454,6 +507,19 @@
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
     </a>
+  <!-- BARRA DE ACCIÓN FIJA INFERIOR PARA CELULARES (MOBILE ACTION DOCK) -->
+  <aside class="mobile-action-dock block sm:hidden bg-[#FAF7F2]/95 border-t border-stone-200/90 shadow-2xl">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex flex-col">
+        <span class="text-xs font-bold text-stone-900 leading-tight">Lic. Florencia Morales</span>
+        <span class="text-[10px] text-[#4A5D4E] font-medium">Turnos y Consultas San Juan</span>
+      </div>
+      <button data-wa-msg="Hola Lic. Morales! Quisiera coordinar una primera consulta psicológica."
+              class="tap-bounce inline-flex items-center gap-2 bg-[#4A5D4E] text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Agendar Turno</span>
+      </button>
+    </div>
   </aside>
 
   <script type="module" src="/src/js/main.js"></script>

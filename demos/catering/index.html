@@ -145,8 +145,89 @@
       </div>
     </section>
 
+    <!-- CALCULADOR INTERACTIVO DE PRESUPUESTO PARA EVENTOS (COMPONENTE WOW) -->
+    <section id="cotizador" class="py-12 bg-zinc-950 border-t border-zinc-900 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div id="catering-calculator" class="bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-3xl p-6 sm:p-10 border border-amber-500/30 shadow-2xl glow-amber relative">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">Simulador en Vivo</span>
+              <h2 class="text-xl sm:text-2xl font-serif font-bold text-white mt-2">Calculá tu presupuesto aproximado para eventos</h2>
+            </div>
+            <span class="text-xs text-zinc-400">San Juan y alrededores</span>
+          </div>
+
+          <!-- Slider de Invitados -->
+          <div class="space-y-3 mb-8 bg-zinc-950/60 p-5 rounded-2xl border border-zinc-800">
+            <div class="flex items-center justify-between">
+              <label for="calc-guests" class="text-sm font-semibold text-zinc-300">Cantidad estimada de invitados:</label>
+              <span id="calc-guests-label" class="text-lg font-bold text-amber-400 font-mono">80 personas</span>
+            </div>
+            <input type="range" id="calc-guests" min="30" max="300" step="5" value="80" 
+                   class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500">
+            <div class="flex justify-between text-[11px] text-zinc-500 font-mono">
+              <span>30 invitados</span>
+              <span>150 invitados</span>
+              <span>300+ invitados</span>
+            </div>
+          </div>
+
+          <!-- Selector de Tipo de Servicio -->
+          <div class="space-y-3 mb-8">
+            <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400">Elegí la modalidad de tu evento:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <button type="button" 
+                      data-service-name="Solo Barra Libre Premium de Coctelería" 
+                      data-price="9500" 
+                      class="calc-service-btn tap-bounce p-4 rounded-2xl border border-zinc-800 bg-zinc-900 hover:border-amber-500/50 text-left transition-all cursor-pointer">
+                <p class="text-xs text-amber-400 font-bold uppercase">Modalidad 1</p>
+                <p class="text-sm font-bold text-white mt-0.5">Barra Móvil Premium</p>
+                <p class="text-[11px] text-zinc-400 mt-1">Tragos de autor, barmans y barra iluminada.</p>
+              </button>
+
+              <button type="button" 
+                      data-service-name="Catering Criollo y Asado a las Brasas" 
+                      data-price="16500" 
+                      class="calc-service-btn tap-bounce p-4 rounded-2xl border border-zinc-800 bg-zinc-900 hover:border-amber-500/50 text-left transition-all cursor-pointer">
+                <p class="text-xs text-amber-400 font-bold uppercase">Modalidad 2</p>
+                <p class="text-sm font-bold text-white mt-0.5">Fuegos & Asado Criollo</p>
+                <p class="text-[11px] text-zinc-400 mt-1">Pernil a la leña, empanadas y cortes al asador.</p>
+              </button>
+
+              <button type="button" 
+                      data-service-name="Servicio Completo (Catering y Barra Libre)" 
+                      data-price="24000" 
+                      class="calc-service-btn active border-amber-500 bg-amber-500/10 tap-bounce p-4 rounded-2xl border text-left transition-all cursor-pointer">
+                <p class="text-xs text-amber-400 font-bold uppercase">Modalidad 3 (Recomendada)</p>
+                <p class="text-sm font-bold text-white mt-0.5">Servicio Integral de Fiesta</p>
+                <p class="text-[11px] text-zinc-400 mt-1">Recepción, plato principal, postre y barra libre.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Total Estimado y Botón de WhatsApp -->
+          <div class="bg-zinc-950 p-5 rounded-2xl border border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p class="text-xs text-zinc-400">Inversión referencial estimada:</p>
+              <div class="flex items-baseline gap-2 mt-0.5">
+                <span id="calc-estimate-label" class="text-2xl sm:text-3xl font-bold font-mono text-emerald-400">$1.920.000</span>
+                <span class="text-xs text-zinc-500 font-sans">incluye personal y vajilla</span>
+              </div>
+            </div>
+
+            <button id="calc-wa-btn" 
+                    data-wa-msg="Hola Fuegos y Copas! Estuve cotizando en su web para un evento de 80 invitados (Servicio Completo (Catering y Barra Libre)). Me gustaría consultar disponibilidad de fecha y presupuesto formal."
+                    class="tap-bounce w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-950/40 transition-all cursor-pointer">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar Fecha por WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROPUESTAS GASTRONÓMICAS CON FOTOS -->
-    <section id="propuestas" class="py-20 bg-zinc-900/40 border-y border-zinc-800">
+    <section id="propuestas" class="py-20 bg-zinc-900/40 border-y border-zinc-800 reveal-on-scroll">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-2xl mx-auto mb-14">
           <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-zinc-900 border border-amber-500/30 px-3 py-1 rounded-full">Nuestras Especialidades</span>
@@ -386,6 +467,19 @@
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
     </a>
+  <!-- BARRA DE ACCIÓN FIJA INFERIOR PARA CELULARES (MOBILE ACTION DOCK) -->
+  <aside class="mobile-action-dock block sm:hidden bg-zinc-950/95 border-t border-zinc-800 shadow-2xl">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex flex-col">
+        <span class="text-xs font-bold text-white leading-tight">Fuegos y Copas</span>
+        <span class="text-[10px] text-amber-400">Catering y Barras San Juan</span>
+      </div>
+      <button data-wa-msg="Hola Fuegos y Copas! Quisiera cotizar el servicio de catering y barra para un evento en San Juan."
+              class="tap-bounce inline-flex items-center gap-2 bg-emerald-500 text-zinc-950 font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-950/40 cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Cotizar Fecha</span>
+      </button>
+    </div>
   </aside>
 
   <script type="module" src="/src/js/main.js"></script>

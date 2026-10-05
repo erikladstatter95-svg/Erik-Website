@@ -1,6 +1,7 @@
 import { initWhatsAppButtons } from './whatsapp.js';
 import { initAccordion } from './accordion.js';
 import { initScrollTop } from './scroll-top.js';
+import { initAllDynamicWidgets } from './animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Inicializar botones de WhatsApp
@@ -11,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inicializar botón volver arriba (mobile & desktop)
   initScrollTop('btn-scroll-top');
+
+  // Inicializar widgets dinámicos y animaciones de scroll
+  initAllDynamicWidgets();
 
   // Header scroll shadow effect
   const navbar = document.getElementById('main-nav');
@@ -26,3 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
