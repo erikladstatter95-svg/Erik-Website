@@ -1,30 +1,92 @@
-/**
- * Motor de Animaciones, Micro-interacciones y Widgets Interactivos para Móviles
- * Optimizado para rendimiento ultra liviano (< 6KB) con aceleración por GPU.
- */
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// 1. Scroll Reveal con IntersectionObserver Nativo
+gsap.registerPlugin(ScrollTrigger);
+
+/**
+ * Helper para verificar preferencia de movimiento reducido del usuario
+ */
+export const isReducedMotion = () => {
+  return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+};
+
+// 1. Scroll Reveal Potenciado por GSAP ScrollTrigger
 export function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal-on-scroll, .reveal-fade-left, .reveal-fade-right, .reveal-zoom');
   if (!elements.length) return;
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        obs.unobserve(entry.target);
+  if (isReducedMotion()) {
+    elements.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
+  elements.forEach((el) => {
+    // Definir desplazamiento inicial sutil según la clase
+    let fromVars = { opacity: 0, duration: 0.65, ease: 'power2.out' };
+    if (el.classList.contains('reveal-fade-left')) {
+      fromVars.x = -24;
+    } else if (el.classList.contains('reveal-fade-right')) {
+      fromVars.x = 24;
+    } else if (el.classList.contains('reveal-zoom')) {
+      fromVars.scale = 0.95;
+    } else {
+      fromVars.y = 22;
+    }
+
+    gsap.fromTo(el, fromVars, {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      scale: 1,
+      duration: 0.65,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 88%',
+        once: true,
+        onEnter: () => el.classList.add('revealed')
       }
     });
-  }, {
-    root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
   });
-
-  elements.forEach(el => observer.observe(el));
 }
 
-// 2. Antes y Después Táctil (Slider interactivo para Medicina Estética y Odontología)
+// 2. Entrada Suave del Hero y Encabezados
+export function initHeroEntrance() {
+  if (isReducedMotion()) return;
+
+  const heroItems = document.querySelectorAll('[data-hero-anim]');
+  if (heroItems.length) {
+    gsap.fromTo(heroItems, 
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: 'power2.out', delay: 0.05 }
+    );
+  }
+}
+
+// 3. Barra Flotante Móvil Suave (Mobile Action Dock)
+export function initMobileDock() {
+  const dock = document.querySelector('.mobile-action-dock');
+  if (!dock) return;
+
+  if (isReducedMotion()) {
+    dock.style.opacity = '1';
+    return;
+  }
+
+  // Revelar la barra móvil suavemente tras scroll
+  ScrollTrigger.create({
+    trigger: document.body,
+    start: '120px top',
+    onEnter: () => {
+      gsap.to(dock, { y: 0, opacity: 1, duration: 0.35, ease: 'power2.out' });
+    },
+    onLeaveBack: () => {
+      gsap.to(dock, { y: 60, opacity: 0, duration: 0.25, ease: 'power2.in' });
+    }
+  });
+}
+
+// 4. Antes y Después Táctil (Slider interactivo para Medicina Estética y Odontología)
 export function initBeforeAfterSliders() {
   const sliders = document.querySelectorAll('[data-before-after]');
   sliders.forEach(slider => {
@@ -50,7 +112,7 @@ export function initBeforeAfterSliders() {
   });
 }
 
-// 3. Calculador Dinámico de Eventos y Catering (Presupuesto interactivo en vivo)
+// 5. Calculador Dinámico de Eventos y Catering (Presupuesto interactivo en vivo)
 export function initEventCalculator() {
   const calc = document.getElementById('catering-calculator');
   if (!calc) return;
@@ -63,19 +125,25 @@ export function initEventCalculator() {
 
   let currentGuests = guestsSlider ? parseInt(guestsSlider.value, 10) : 80;
   let currentService = 'Servicio Completo (Catering y Barra Libre)';
-  let pricePerGuest = 18500; // Valor de referencia representativo
+  let pricePerGuest = 18500;
 
   const recalculate = () => {
-    if (guestsLabel) guestsLabel.textContent = `${currentGuests} personas`;
+    if (guestsLabel) {
+      guestsLabel.textContent = `${currentGuests} personas`;
+      guestsLabel.classList.add('tabular-nums');
+    }
     
-    // Estimación sugerida
     const estimatedTotal = (currentGuests * pricePerGuest).toLocaleString('es-AR');
     if (totalDisplay) {
       totalDisplay.textContent = `$${estimatedTotal}`;
+      totalDisplay.classList.add('tabular-nums');
+      if (!isReducedMotion()) {
+        gsap.fromTo(totalDisplay, { scale: 0.97 }, { scale: 1, duration: 0.15, ease: 'power1.out' });
+      }
     }
 
     if (waBtn) {
-      const msg = `Hola Fuego y Tragos! Estuve cotizando en su web para un evento de ${currentGuests} invitados (${currentService}). Me gustaria consultar disponibilidad de fecha y presupuesto formal.`;
+      const msg = `Hola Fuego y Tragos! Estuve cotizando en su web para un evento de ${currentGuests} invitados (${currentService}). Me gustaría consultar disponibilidad de fecha y presupuesto formal.`;
       waBtn.setAttribute('data-wa-msg', msg);
     }
   };
@@ -100,7 +168,7 @@ export function initEventCalculator() {
   recalculate();
 }
 
-// 4. Selector Empático de Motivo de Consulta (Psicología)
+// 6. Selector Empático de Motivo de Consulta (Psicología)
 export function initPsychologySelector() {
   const container = document.getElementById('psico-selector-container');
   if (!container) return;
@@ -147,13 +215,15 @@ export function initPsychologySelector() {
 
       if (card) {
         card.classList.remove('hidden');
-        card.classList.add('animate-fade-in');
+        if (!isReducedMotion()) {
+          gsap.fromTo(card, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.28, ease: 'power2.out' });
+        }
       }
     });
   });
 }
 
-// 5. Switch Interactivo de Precios Mensual vs Trimestral (Fitness)
+// 7. Switch Interactivo de Precios Mensual vs Trimestral (Fitness)
 export function initFitnessPricingToggle() {
   const toggle = document.getElementById('fitness-pricing-toggle');
   if (!toggle) return;
@@ -174,6 +244,13 @@ export function initFitnessPricingToggle() {
       const planName = card.getAttribute('data-plan-name') || 'Plan';
 
       if (amountLabel) {
+        amountLabel.classList.add('tabular-nums');
+        if (!isReducedMotion()) {
+          gsap.fromTo(amountLabel, 
+            { opacity: 0, y: -6 }, 
+            { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out' }
+          );
+        }
         amountLabel.textContent = isQuarterly ? quarterly : monthly;
       }
       if (periodLabel) {
@@ -187,7 +264,7 @@ export function initFitnessPricingToggle() {
   });
 }
 
-// 6. Asistente Rápido de Diagnóstico Legal (Abogados)
+// 8. Asistente Rápido de Diagnóstico Legal (Abogados)
 export function initLegalAssistant() {
   const container = document.getElementById('legal-assistant-container');
   if (!container) return;
@@ -204,7 +281,9 @@ export function initLegalAssistant() {
       details.forEach(d => {
         if (d.getAttribute('data-legal-case') === target) {
           d.classList.remove('hidden');
-          d.classList.add('animate-fade-in');
+          if (!isReducedMotion()) {
+            gsap.fromTo(d, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' });
+          }
         } else {
           d.classList.add('hidden');
         }
@@ -213,7 +292,7 @@ export function initLegalAssistant() {
   });
 }
 
-// 7. Radar de Urgencias 24hs (Urgencias Hogar)
+// 9. Radar de Urgencias 24hs (Urgencias Hogar)
 export function initEmergencySelector() {
   const selector = document.getElementById('emergency-selector');
   if (!selector) return;
@@ -228,16 +307,19 @@ export function initEmergencySelector() {
       const emergencyType = btn.getAttribute('data-emergency') || 'urgencia general';
       if (waBtn) {
         waBtn.setAttribute('data-wa-msg', `URGENCIA 24HS: Tengo un problema de ${emergencyType} en mi domicilio en San Juan. Necesito asistencia urgente.`);
-        waBtn.classList.add('animate-pulse');
-        setTimeout(() => waBtn.classList.remove('animate-pulse'), 1000);
+        if (!isReducedMotion()) {
+          gsap.fromTo(waBtn, { scale: 0.95 }, { scale: 1, duration: 0.2, ease: 'back.out(2)' });
+        }
       }
     });
   });
 }
 
-// Inicializador Maestro de Widgets Dinámicos
+// Inicializador Maestro de Widgets Dinámicos y Animaciones
 export function initAllDynamicWidgets() {
+  initHeroEntrance();
   initScrollReveal();
+  initMobileDock();
   initBeforeAfterSliders();
   initEventCalculator();
   initPsychologySelector();
@@ -245,3 +327,4 @@ export function initAllDynamicWidgets() {
   initLegalAssistant();
   initEmergencySelector();
 }
+

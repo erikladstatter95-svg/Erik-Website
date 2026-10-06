@@ -4,7 +4,7 @@ import { initScrollTop } from '../../src/js/scroll-top.js';
 import { initEmergencySelector, initScrollReveal, initHeroEntrance, initMobileDock } from '../../src/js/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const TECH_PHONE = '5492645185359'; // San Juan
+  const TECH_PHONE = '5492645185359';
 
   initWhatsAppButtons(TECH_PHONE);
   initAccordion('[data-accordion]');

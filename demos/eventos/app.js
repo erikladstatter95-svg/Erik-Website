@@ -1,6 +1,8 @@
 import { initWhatsAppButtons, buildWhatsAppUrl } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
 import { initScrollTop } from '../../src/js/scroll-top.js';
+import { initScrollReveal, initHeroEntrance, initMobileDock, isReducedMotion } from '../../src/js/animations.js';
+import { gsap } from 'gsap';
 
 document.addEventListener('DOMContentLoaded', () => {
   const EVENTOS_PHONE = '5492645185359';
@@ -8,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppButtons(EVENTOS_PHONE);
   initAccordion('[data-accordion]');
   initScrollTop('btn-scroll-top');
+  initHeroEntrance();
+  initScrollReveal();
+  initMobileDock();
 
   // Header scroll
   const header = document.getElementById('eventos-header');
@@ -38,14 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.remove('bg-stone-100', 'text-stone-700');
       btn.classList.add('bg-amber-600', 'text-white');
 
+      const matchingItems = [];
       items.forEach((item) => {
         const itemCat = item.getAttribute('data-catalog-category');
         if (category === 'all' || itemCat === category) {
           item.classList.remove('hidden');
+          matchingItems.push(item);
         } else {
           item.classList.add('hidden');
         }
       });
+
+      if (!isReducedMotion() && matchingItems.length) {
+        gsap.fromTo(matchingItems,
+          { opacity: 0, y: 12, scale: 0.98 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.32, stagger: 0.04, ease: 'power2.out' }
+        );
+      }
     });
   });
 
