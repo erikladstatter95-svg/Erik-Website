@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Estética y Odontología San Juan (Sin Sitio Web) - erikwebsite.com</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --accent: #38bdf8;
+            --green: #10b981;
+            --ig: #ec4899;
+            --maps: #f59e0b;
+            --odonto: #06b6d4;
+            --estetica: #ec4899;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; }
+        .container { max-width: 1350px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+        h1 { font-size: 1.6rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+        p.subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+        .stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .stat-badge { background: #1f2937; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; border: 1px solid #374151; }
+        .stat-badge strong { color: var(--green); }
+        .stat-badge.odonto strong { color: var(--odonto); }
+        .stat-badge.estetica strong { color: var(--estetica); }
+        
+        .toolbar { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+        .toolbar-left { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+        .search-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.55rem 1rem; color: #fff; font-size: 0.9rem; min-width: 280px; outline: none; }
+        .search-box:focus { border-color: var(--accent); }
+        
+        .filter-group { display: flex; gap: 0.4rem; background: #1f2937; padding: 0.25rem; border-radius: 8px; border: 1px solid #374151; }
+        .filter-btn { background: transparent; color: #9ca3af; border: none; padding: 0.35rem 0.85rem; border-radius: 6px; font-size: 0.82rem; cursor: pointer; font-weight: 500; transition: all 0.2s; }
+        .filter-btn.active { background: #2563eb; color: white; }
+        
+        .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+        th { background: #172033; padding: 0.9rem 1rem; font-weight: 600; color: #cbd5e1; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        td { padding: 0.9rem 1rem; border-bottom: 1px solid #1e293b; vertical-align: middle; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+        
+        .subtitle-cell { font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem; }
+        .address-cell { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; max-width: 340px; }
+        .phone-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; text-align: center; }
+        .rating { color: #fbbf24; font-size: 0.8rem; margin-left: 0.4rem; font-weight: 600; }
+        .rating small { color: #94a3b8; font-weight: 400; }
+
+        .badge-cat { display: inline-block; font-size: 0.72rem; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600; vertical-align: middle; margin-left: 0.3rem; }
+        .badge-cat-odonto { background: rgba(6, 182, 212, 0.15); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
+        .badge-cat-estetica { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }
+
+        .badge-noweb { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .badge-city { background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.8rem; }
+        
+        .demo-tag { display: inline-block; color: #38bdf8; text-decoration: none; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); white-space: nowrap; font-weight: 500; }
+        .demo-tag:hover { background: rgba(56, 189, 248, 0.2); }
+
+        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: #059669; color: white; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: background 0.2s; white-space: nowrap; width: 100%; }
+        .btn-wa:hover { background: #10b981; }
+        .btn-wa .icon { width: 15px; height: 15px; }
+
+        .btn-gmaps { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 7px; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+        .btn-gmaps:hover { background: rgba(245, 158, 11, 0.25); border-color: #f59e0b; color: #fff; }
+        .btn-gmaps .icon { width: 14px; height: 14px; }
+        
+        .status-select { background: #1f2937; color: #fff; border: 1px solid #374151; padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.82rem; outline: none; cursor: pointer; }
+        .status-select:focus { border-color: var(--accent); }
+        .row-contacted { opacity: 0.7; background: rgba(16, 185, 129, 0.05); }
+        .row-interested { background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3b82f6; }
+        .row-closed { background: rgba(16, 185, 129, 0.12); border-left: 3px solid #10b981; }
+        .row-discarded { opacity: 0.35; text-decoration: line-through; }
+
+        .copy-banner { margin-top: 1.5rem; background: #172033; padding: 1.5rem; border-radius: 12px; border: 1px solid #1f2937; }
+        .copy-banner h3 { font-size: 1.05rem; color: #60a5fa; margin-bottom: 0.75rem; }
+        .script-box { background: #0f172a; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 3px solid #38bdf8; }
+        .script-box.positive { border-left-color: #10b981; }
+        .script-box.negative { border-left-color: #94a3b8; }
+        .script-title { font-size: 0.85rem; font-weight: 700; color: #94a3b8; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .script-text { font-size: 0.9rem; color: #e2e8f0; line-height: 1.5; }
+    </style>
+    <script>
+        let currentFilter = 'all';
+
+        function updateStatus(select, rowId) {
+            const row = document.getElementById(rowId);
+            row.classList.remove('row-contacted', 'row-interested', 'row-closed', 'row-discarded');
+            if (select.value === 'contacted' || select.value === 'demo_sent') {
+                row.classList.add('row-contacted');
+            } else if (select.value === 'interested') {
+                row.classList.add('row-interested');
+            } else if (select.value === 'closed') {
+                row.classList.add('row-closed');
+            } else if (select.value === 'discarded') {
+                row.classList.add('row-discarded');
+            }
+            localStorage.setItem('lead_health_' + rowId, select.value);
+        }
+
+        function setCategoryFilter(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === category);
+            });
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(r => {
+                const text = r.innerText.toLowerCase();
+                const matchesSearch = text.includes(query);
+                const matchesCat = (currentFilter === 'all') || (r.dataset.category === currentFilter);
+                r.style.display = (matchesSearch && matchesCat) ? '' : 'none';
+            });
+        }
+
+        window.onload = function() {
+            const selects = document.querySelectorAll('.status-select');
+            selects.forEach((s, idx) => {
+                const rowId = 'row-' + idx;
+                const saved = localStorage.getItem('lead_health_' + rowId);
+                if (saved) {
+                    s.value = saved;
+                    updateStatus(s, rowId);
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Leads: Estética & Odontología en San Juan</h1>
+                <p class="subtitle">36 clínicas, centros y profesionales calificados sin página web propia para contactar por WhatsApp.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-badge">Total: <strong>36</strong></div>
+                <div class="stat-badge odonto">Odontología: <strong>0</strong></div>
+                <div class="stat-badge estetica">Estética: <strong>0</strong></div>
+                <div class="stat-badge">100% Sin Sitio Web: <strong>36</strong></div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <input type="text" id="search" class="search-box" placeholder="Buscar por nombre, rubro, zona o dirección..." onkeyup="applyFilters()">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all" onclick="setCategoryFilter('all')">Todos (36)</button>
+                    <button class="filter-btn" data-filter="odontologia" onclick="setCategoryFilter('odontologia')">Odontología (0)</button>
+                    <button class="filter-btn" data-filter="estetica" onclick="setCategoryFilter('estetica')">Estética (0)</button>
+                </div>
+            </div>
+            <div style="font-size: 0.85rem; color: #94a3b8; display: flex; gap: 0.75rem;">
+                <span>Odonto: <a href="https://erikwebsite.com/demos/odontologia/" target="_blank" style="color: #06b6d4; text-decoration: underline; font-weight: 600;">/demos/odontologia/</a></span>
+                <span>Estética: <a href="https://erikwebsite.com/demos/estetica/" target="_blank" style="color: #ec4899; text-decoration: underline; font-weight: 600;">/demos/estetica/</a></span>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="min-width: 250px;">Profesional / Centro</th>
+                        <th>Zona</th>
+                        <th>Situación Web</th>
+                        <th>Demo Sugerida</th>
+                        <th>Ficha Maps</th>
+                        <th style="min-width: 155px;">Acción WhatsApp</th>
+                        <th>Estado de Gestión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr id="row-0" data-category="undefined">
+        <td>
+            <strong>Estética Mcfray Depilación con hilos San Juan</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.7 <small>(242)</small></span></div>
+            <div class="address-cell">Mendoza Sur 63, J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Est%C3%A9tica%20Mcfray%20Depilaci%C3%B3n%20con%20hilos%20San%20Juan&amp;query_place_id=ChIJN3GNgp1qgZYRLYz4y4y8EvE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Est%C3%A9tica%20Mcfray%20Depilaci%C3%B3n%20con%20hilos%20San%20Juan!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-0')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-1" data-category="undefined">
+        <td>
+            <strong>Sarah Salón de Belleza</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.8 <small>(183)</small></span></div>
+            <div class="address-cell">Av. Libertador Gral. San Martin Este 346, J5400AQQ J5400AQQ, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sarah%20Sal%C3%B3n%20de%20Belleza&amp;query_place_id=ChIJ4YwAsYNqgZYRMBuSEv2gVWE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Sarah%20Sal%C3%B3n%20de%20Belleza!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-1')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-2" data-category="undefined">
+        <td>
+            <strong>Sattva Spa Integral</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Spa y gimnasio <span class="rating">★ 4.8 <small>(101)</small></span></div>
+            <div class="address-cell">San Rafael 1739 Oeste, J5400 este, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sattva%20Spa%20Integral&amp;query_place_id=ChIJKdJniidrgZYRaZeHrxrHebw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Sattva%20Spa%20Integral!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-2')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-3" data-category="undefined">
+        <td>
+            <strong>Instituto Odontológico Dr. Cayetano Torcivia</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 3 <small>(93)</small></span></div>
+            <div class="address-cell">J5402DEN Rivadavia 658-700, J5402DEN San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Instituto%20Odontol%C3%B3gico%20Dr.%20Cayetano%20Torcivia&amp;query_place_id=ChIJdd0R0YRqgZYRpA_dCD97hFE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Instituto%20Odontol%C3%B3gico%20Dr.%20Cayetano%20Torcivia!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-3')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-4" data-category="undefined">
+        <td>
+            <strong>Secretos De Belleza</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Peluquería <span class="rating">★ 4.8 <small>(67)</small></span></div>
+            <div class="address-cell">Av. Paula Albarracín de Sarmiento 1085(s, J5400AOJ San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Secretos%20De%20Belleza&amp;query_place_id=ChIJvVRooRJBgZYR-ObLxQ372Kk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Secretos%20De%20Belleza!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-4')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-5" data-category="undefined">
+        <td>
+            <strong>Mona Villegas Estética</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.8 <small>(64)</small></span></div>
+            <div class="address-cell">Av Libertador 682 este, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Mona%20Villegas%20Est%C3%A9tica&amp;query_place_id=ChIJW2FXBYxBgZYRe8MnNHXGtuI" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Mona%20Villegas%20Est%C3%A9tica!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-5')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-6" data-category="undefined">
+        <td>
+            <strong>FIGURINA SPA</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.9 <small>(60)</small></span></div>
+            <div class="address-cell">Av. Argentina Nte. 44, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=FIGURINA%20SPA&amp;query_place_id=ChIJccEDp49qgZYRdAoCdTnbgr4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20FIGURINA%20SPA!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-6')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-7" data-category="undefined">
+        <td>
+            <strong>Ortodoncia Andres Jose Nollen Especialista en Ortodoncia</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Ortodoncista <span class="rating">★ 4.5 <small>(42)</small></span></div>
+            <div class="address-cell">9 de Julio Oeste 310, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Ortodoncia%20Andres%20Jose%20Nollen%20Especialista%20en%20Ortodoncia&amp;query_place_id=ChIJyazQvCZAgZYRm3b7K0ET9Fc" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Ortodoncia%20Andres%20Jose%20Nollen%20Especialista%20en%20Ortodoncia!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-7')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-8" data-category="undefined">
+        <td>
+            <strong>Los Olivos CONSULTORIOS ODONTOLOGICOS</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Mecánico protésico dental <span class="rating">★ 2.9 <small>(40)</small></span></div>
+            <div class="address-cell">Hermogenes Ruiz 1100, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Los%20Olivos%20CONSULTORIOS%20ODONTOLOGICOS&amp;query_place_id=ChIJw4rDeU9AgZYRafWTFxMnyyY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Los%20Olivos%20CONSULTORIOS%20ODONTOLOGICOS!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-8')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-9" data-category="undefined">
+        <td>
+            <strong>Estética Integral Valeria Cioni</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.9 <small>(38)</small></span></div>
+            <div class="address-cell">Leandro N. Alem Oeste 536, J5425 Rawson, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Est%C3%A9tica%20Integral%20Valeria%20Cioni&amp;query_place_id=ChIJuQP_ubRBgZYRvzzhkHG6va4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Est%C3%A9tica%20Integral%20Valeria%20Cioni!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-9')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-10" data-category="undefined">
+        <td>
+            <strong>CIMA Estética Dental</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.4 <small>(26)</small></span></div>
+            <div class="address-cell">5400, Sta Fe Oeste 121, J5400, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=CIMA%20Est%C3%A9tica%20Dental&amp;query_place_id=ChIJ1zFbzSdAgZYRn_2Nsv9xWwA" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20CIMA%20Est%C3%A9tica%20Dental!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-10')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-11" data-category="undefined">
+        <td>
+            <strong>Bella Donna centro de estética integral</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Esteticista <span class="rating">★ 5 <small>(24)</small></span></div>
+            <div class="address-cell">Antes de Mendoza, Estado de Israel Oeste, J5400 Rawson, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Bella%20Donna%20centro%20de%20est%C3%A9tica%20integral&amp;query_place_id=ChIJl5io-m9BgZYRe5pmHoGSbQY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Bella%20Donna%20centro%20de%20est%C3%A9tica%20integral!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-11')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-12" data-category="undefined">
+        <td>
+            <strong>Wabi Estética San Juan</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 5 <small>(21)</small></span></div>
+            <div class="address-cell">Av. Paula Albarracín de Sarmiento 25, J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Wabi%20Est%C3%A9tica%20San%20Juan&amp;query_place_id=ChIJ8zAXGalBgZYRAjKHKEYOAsg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Wabi%20Est%C3%A9tica%20San%20Juan!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-12')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-13" data-category="undefined">
+        <td>
+            <strong>Centro Odontologico Del Valle</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.9 <small>(20)</small></span></div>
+            <div class="address-cell">Antonino Aberastain Sur 765, J5402EQP J5402EQP, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20Odontologico%20Del%20Valle&amp;query_place_id=ChIJQ3mp-pprgZYREmnV6mKfk60" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Centro%20Odontologico%20Del%20Valle!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-13')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-14" data-category="undefined">
+        <td>
+            <strong>Centro Odontologico De La Rosa</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Dentista <span class="rating">★ 4.1 <small>(19)</small></span></div>
+            <div class="address-cell">Avenida Leandro N. Alem Norte 754, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20Odontologico%20De%20La%20Rosa&amp;query_place_id=ChIJRZG65NJBgZYRDTRpPkmZCBQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Centro%20Odontologico%20De%20La%20Rosa!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-14')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-15" data-category="undefined">
+        <td>
+            <strong>Odontologos M.E.C.</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Dentista <span class="rating">★ 4.9 <small>(13)</small></span></div>
+            <div class="address-cell">B. Rivadavia Oeste 445, J5402 San Juan, Santa Fe, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Odontologos%20M.E.C.&amp;query_place_id=ChIJF5sXGS9AgZYRd5k5YMZf32w" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Odontologos%20M.E.C.!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-15')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-16" data-category="undefined">
+        <td>
+            <strong>Centro de Estetica Slender</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.9 <small>(13)</small></span></div>
+            <div class="address-cell">B. Mitre 376, J5402CXH San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20de%20Estetica%20Slender&amp;query_place_id=ChIJTQV3Ty9AgZYR3PNDcYo6amw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Centro%20de%20Estetica%20Slender!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-16')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-17" data-category="undefined">
+        <td>
+            <strong>CENTRO DE ESTETICA YAMILA - MP 22718 - AMBOS SEXOS</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 4.8 <small>(12)</small></span></div>
+            <div class="address-cell">Maipú Oeste 851, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=CENTRO%20DE%20ESTETICA%20YAMILA%20-%20MP%2022718%20-%20AMBOS%20SEXOS&amp;query_place_id=ChIJKTJyyWJqgZYRvF-AtchwvHo" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20CENTRO%20DE%20ESTETICA%20YAMILA%20-%20MP%2022718%20-%20AMBOS%20SEXOS!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-17')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-18" data-category="undefined">
+        <td>
+            <strong>Clínica Merlo</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.9 <small>(12)</small></span></div>
+            <div class="address-cell">Av Libertador San Martin 2983 este, J5411 Santa Lucía, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20Merlo&amp;query_place_id=ChIJecbIcoxrgZYRXcRXsmz-1kw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Cl%C3%ADnica%20Merlo!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-18')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-19" data-category="undefined">
+        <td>
+            <strong>Clinica Odontologica San Ignacio</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.7 <small>(12)</small></span></div>
+            <div class="address-cell">J. de D. Jofré 137, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Clinica%20Odontologica%20San%20Ignacio&amp;query_place_id=ChIJv-cbzJtqgZYRhlhojlMFGTA" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Clinica%20Odontologica%20San%20Ignacio!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-19')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-20" data-category="undefined">
+        <td>
+            <strong>Odontología Integral. Dra. Martinez.</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.3 <small>(11)</small></span></div>
+            <div class="address-cell">Jujuy Sur 172, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Odontolog%C3%ADa%20Integral.%20Dra.%20Martinez.&amp;query_place_id=ChIJ2xgTsZxqgZYRqu4GhDz5zbo" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Odontolog%C3%ADa%20Integral.%20Dra.%20Martinez.!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-20')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-21" data-category="undefined">
+        <td>
+            <strong>Campillay S Daniel Odontologo</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Dentista <span class="rating">★ 4.3 <small>(11)</small></span></div>
+            <div class="address-cell">Hermogenes Ruiz 1100 sur, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Campillay%20S%20Daniel%20Odontologo&amp;query_place_id=ChIJ4fYqAixAgZYRXdnV_l6Q4pw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Campillay%20S%20Daniel%20Odontologo!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-21')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-22" data-category="undefined">
+        <td>
+            <strong>Clinica Odontologica Pro Salud</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 3.5 <small>(10)</small></span></div>
+            <div class="address-cell">Av. Libertador Gral. San Martín 521, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Clinica%20Odontologica%20Pro%20Salud&amp;query_place_id=ChIJtaDMPwZAgZYR3I1q92YkuUQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Clinica%20Odontologica%20Pro%20Salud!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-22')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-23" data-category="undefined">
+        <td>
+            <strong>CLINICA ODONTOLOGICA ALVO</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Endodoncista <span class="rating">★ 3.9 <small>(9)</small></span></div>
+            <div class="address-cell">Av L N, Av. Leandro N. Alem Sur 338 4 A, 5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=CLINICA%20ODONTOLOGICA%20ALVO&amp;query_place_id=ChIJw4F8XC9AgZYRUC_ifSTuaJA" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20CLINICA%20ODONTOLOGICA%20ALVO!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-23')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-24" data-category="undefined">
+        <td>
+            <strong>Centro Odontológico San Juan</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.4 <small>(7)</small></span></div>
+            <div class="address-cell">Jujuy Sur 455, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20Odontol%C3%B3gico%20San%20Juan&amp;query_place_id=ChIJGz7Ei5xqgZYRZZPDSHfotXg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Centro%20Odontol%C3%B3gico%20San%20Juan!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-24')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-25" data-category="undefined">
+        <td>
+            <strong>Tu Imágen San Juan (Centro Integral de Estética)</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Centro de estética <span class="rating">★ 5 <small>(7)</small></span></div>
+            <div class="address-cell">Gral. San Martín 2386, J5410 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Tu%20Im%C3%A1gen%20San%20Juan%20(Centro%20Integral%20de%20Est%C3%A9tica)&amp;query_place_id=ChIJzy79hddBgZYRYE6aCLhC3po" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Tu%20Im%C3%A1gen%20San%20Juan%20(Centro%20Integral%20de%20Est%C3%A9tica)!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-25')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-26" data-category="undefined">
+        <td>
+            <strong>Instituto Odontológico</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 4.3 <small>(6)</small></span></div>
+            <div class="address-cell">B. Rivadavia Oeste 686, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Instituto%20Odontol%C3%B3gico&amp;query_place_id=ChIJ9a3rLJtqgZYR4Zed4JSgkN4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Instituto%20Odontol%C3%B3gico!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-26')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-27" data-category="undefined">
+        <td>
+            <strong>Dr. Miguel Angel Garcés- Dra. Lorena Sticca. Clínica Odontológica Corazón de Jesús.</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 5 <small>(4)</small></span></div>
+            <div class="address-cell">Av. Guillermo Rawson Sur 1373 sur, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Dr.%20Miguel%20Angel%20Garc%C3%A9s-%20Dra.%20Lorena%20Sticca.%20Cl%C3%ADnica%20Odontol%C3%B3gica%20Coraz%C3%B3n%20de%20Jes%C3%BAs.&amp;query_place_id=ChIJJctk6uZrgZYR4BLQG7N1qKo" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Dr.%20Miguel%20Angel%20Garc%C3%A9s-%20Dra.%20Lorena%20Sticca.%20Cl%C3%ADnica%20Odontol%C3%B3gica%20Coraz%C3%B3n%20de%20Jes%C3%BAs.!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-27')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-28" data-category="undefined">
+        <td>
+            <strong>Centro Odontologico Privado</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Médico <span class="rating">★ 4 <small>(4)</small></span></div>
+            <div class="address-cell">Francisco N. Laprida Este 388, J5402DIH San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20Odontologico%20Privado&amp;query_place_id=ChIJWf2KDoNqgZYRLIod33QMkLg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Centro%20Odontologico%20Privado!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-28')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-29" data-category="undefined">
+        <td>
+            <strong>Clínica odontológica Fraifer</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 5 <small>(4)</small></span></div>
+            <div class="address-cell">Brasil Oeste, J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20odontol%C3%B3gica%20Fraifer&amp;query_place_id=ChIJCSEIhOBBgZYRgRUo3orrCGk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Cl%C3%ADnica%20odontol%C3%B3gica%20Fraifer!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-29')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-30" data-category="undefined">
+        <td>
+            <strong>Lagom Odontología Integral</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 5 <small>(3)</small></span></div>
+            <div class="address-cell">Estados Unidos Sur 915, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Lagom%20Odontolog%C3%ADa%20Integral&amp;query_place_id=ChIJlTa7cgBrgZYRFuUXEse8T_0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Lagom%20Odontolog%C3%ADa%20Integral!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-30')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-31" data-category="undefined">
+        <td>
+            <strong>Centro Odontologico A &amp; V</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Dentista <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Domingo Faustino Sarmiento Sur 173, J5402ECC San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20Odontologico%20A%20%26%20V&amp;query_place_id=ChIJp-1z5ihAgZYRXqymi21tL8g" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Centro%20Odontologico%20A%20%26%20V!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-31')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-32" data-category="undefined">
+        <td>
+            <strong>CONSULTORIO ODONTOLOGICO DRA.MARIA DE LAS NIEVES MARTINEZ</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Dentista <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">San Martin 85 oeste, J5460 San Jose de Jachal, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=CONSULTORIO%20ODONTOLOGICO%20DRA.MARIA%20DE%20LAS%20NIEVES%20MARTINEZ&amp;query_place_id=ChIJKbHKdRFng5YR7xuRTzkcSrE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20CONSULTORIO%20ODONTOLOGICO%20DRA.MARIA%20DE%20LAS%20NIEVES%20MARTINEZ!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-32')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-33" data-category="undefined">
+        <td>
+            <strong>Urgencias Odontologicas</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 1 <small>(1)</small></span></div>
+            <div class="address-cell">Mendoza Nte. 1720, J5413 Chimbas, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Urgencias%20Odontologicas&amp;query_place_id=ChIJPaO2fwBBgZYRF4uLhlBKSSw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20Urgencias%20Odontologicas!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-33')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-34" data-category="undefined">
+        <td>
+            <strong>CEMI Odontología</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Clínica dental <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Mendoza Nte. 951, J5413 Chimbas, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=CEMI%20Odontolog%C3%ADa&amp;query_place_id=ChIJb-7JCwNBgZYRPDHYwXMO05s" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20CEMI%20Odontolog%C3%ADa!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-34')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-35" data-category="undefined">
+        <td>
+            <strong>San juan Estética Facial y corporal</strong> <span class="badge-cat badge-cat-estetica">✨ Estética</span>
+            <div class="subtitle-cell">Esteticista <span class="rating">★ 4.8 <small>(0)</small></span></div>
+            <div class="address-cell">Av.España 713 norte, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/estetica/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Estética ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=San%20juan%20Est%C3%A9tica%20Facial%20y%20corporal&amp;query_place_id=ChIJa8kKEGxBgZYRdgKhobkSdIY" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/undefined?text=Hola%20San%20juan%20Est%C3%A9tica%20Facial%20y%20corporal!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20centro%20de%20est%C3%A9tica.%20Vi%20tus%20excelentes%20valoraciones%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20tus%20clientas%20vean%20tus%20tratamientos%2C%20antes%2Fdespu%C3%A9s%20y%20reserven%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20interactiva%20que%20armamos%20para%20centros%20de%20est%C3%A9tica%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label"></div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-35')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="copy-banner">
+            <h3>Protocolo de Mensajes y Prospección Anti-Spam:</h3>
+            
+            <div class="script-box">
+                <div class="script-title">1. Mensaje Inicial (Cargado en cada botón de WhatsApp - Sin links para no ser invasivo)</div>
+                <div class="script-text">
+                    <strong>Para Odontología:</strong><br>
+                    <em>"Hola [Nombre]! Te escribo desde San Juan por tu consultorio odontológico. Vi las excelentes referencias que tenés en Google pero noté que no contás con sitio web propio para que los pacientes vean tus tratamientos, ubicación y pidan turno directo a tu WhatsApp. ¿Te puedo compartir una demo rápida que armamos pensada para clínicas y odontólogos?"</em>
+                    <br><br>
+                    <strong>Para Estética:</strong><br>
+                    <em>"Hola [Nombre]! Te escribo desde San Juan por tu centro de estética. Vi tus excelentes valoraciones en Google pero noté que no contás con sitio web propio para que tus clientas vean tus tratamientos, antes/después y reserven directo por WhatsApp. ¿Te puedo compartir una demo rápida interactiva que armamos para centros de estética?"</em>
+                </div>
+            </div>
+
+            <div class="script-box positive">
+                <div class="script-title">2. Respuesta cuando te dicen que SÍ (Enviar Link + Beneficio Concreto)</div>
+                <div class="script-text">
+                    <strong>Si es Odontología:</strong><br>
+                    <em>"¡Genial! Mirala acá desde el celular: <strong>https://erikwebsite.com/demos/odontologia/</strong><br>
+                    La pensamos especialmente para San Juan: carga al instante en el teléfono, muestra tu equipo/tratamientos claros, y el paciente toca un solo botón para pedir turno directo a tu WhatsApp con el mensaje ya listo. ¿Cómo la ves para tu consultorio?"</em>
+                    <br><br>
+                    <strong>Si es Estética:</strong><br>
+                    <em>"¡Buenísimo! Te paso el enlace para que la mires en el celu: <strong>https://erikwebsite.com/demos/estetica/</strong><br>
+                    Está armada para transmitir confianza premium: slider de antes y después de tratamientos, lista de servicios clara y botón flotante de turnos a tu WhatsApp. ¿Qué te parece el estilo para tu centro?"</em>
+                </div>
+            </div>
+
+            <div class="script-box negative">
+                <div class="script-title">3. Respuesta si dicen que NO / Si no responden</div>
+                <div class="script-text">
+                    <strong>Si dicen que no:</strong> <em>"¡Muchas gracias por la respuesta de todos modos! Que tengas una excelente semana y muchos éxitos con el consultorio/centro."</em> (Cero presión, quedás como un profesional educado).<br>
+                    <strong>Si ignoran / clavan visto:</strong> Pasamos de largo sin insistir.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
