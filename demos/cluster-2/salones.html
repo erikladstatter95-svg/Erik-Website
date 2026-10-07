@@ -22,8 +22,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finca Los Olivos | Salón de Eventos y Quinta para Fiestas en Pocito, San Juan</title>
-  <meta name="description" content="Salón de eventos campestre de primer nivel en Pocito, San Juan. Parque arbolado de 5.000 m², salón climatizado para 350 personas, piscina iluminada, suite privada y grupo electrógeno 80 KVA. Consultá fechas libres por WhatsApp.">
+  <title>Salón de Fiestas y Quinta en Pocito, San Juan | Finca Los Olivos</title>
+  <meta name="description" content="Alquiler de salón de eventos climatizado y parque arbolado para bodas y cumpleaños en San Juan. Piscina, grupo electrógeno propio, asadores y suite nupcial.">
   <link rel="canonical" href="https://erikwebsite.com/demos/salones/">
 
   
@@ -40,6 +40,68 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/src/styles/main.css">
+<!-- Schema.org EventVenue & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EventVenue",
+        "@id": "https://erikwebsite.com/demos/salones/#venue",
+        "name": "Finca Los Olivos - Salón de Eventos y Quinta",
+        "url": "https://erikwebsite.com/demos/salones/",
+        "telephone": "+5492645000000",
+        "priceRange": "$$",
+        "maximumAttendeeCapacity": 400,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle 11 y Ruta 40",
+          "addressLocality": "Pocito",
+          "addressRegion": "San Juan",
+          "addressCountry": "AR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://erikwebsite.com/demos/salones/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Puedo contratar el catering o DJ con mi propio proveedor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, tenés total libertad para traer tus propios proveedores de catering, barra y DJ. También disponemos de una lista de proveedores recomendados con beneficios exclusivos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué sucede si se corta el suministro eléctrico durante la fiesta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contamos con un grupo electrógeno trifásico propio de 80 KVA con sistema de transferencia automática que abastece la totalidad del salón, sonido, iluminación y aires acondicionados."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hasta qué horario se puede extender el evento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El alquiler base incluye 8 horas de evento (por ejemplo, de 21:00 a 05:00 hs) más el tiempo previo para que ambientadores y servicios organicen el salón."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo es el esquema de reserva y congelamiento de precio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La fecha se bloquea con una seña inicial del 30%. El saldo restante puede abonarse en cuotas mensuales hasta 15 días antes de la fiesta."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-[#faf8f5] text-stone-800 flex flex-col min-h-screen">
 
@@ -156,7 +218,7 @@
           <!-- Imagen destacada del predio -->
           <div class="lg:col-span-5 relative">
             <div class="relative mx-auto max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-stone-200 aspect-[4/5]">
-              <img src="/images/salones_parque_story.jpg" alt="Finca Los Olivos San Juan" class="w-full h-full object-cover">
+              <img src="/images/salones_parque_story.jpg" alt="Parque botánico arbolado con palmeras y senderos florales en Finca Los Olivos San Juan" class="w-full h-full object-cover">
               <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-md text-xs text-stone-700">
                 <span class="font-bold text-stone-900 block text-sm mb-0.5">Capacidad: Hasta 350 personas sentadas</span>
                 <span>Incluye parque, salón cerrado, suite privada y estacionamiento vigilado</span>
@@ -247,7 +309,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Foto 1 -->
           <div class="rounded-3xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/3] relative group border border-stone-200">
-            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Parque iluminado de noche en Finca Los Olivos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Vista panorámica nocturna del parque iluminado con guirnaldas para fiestas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent flex items-end p-5">
               <div>
                 <span class="text-white font-serif font-bold text-base block">Parque y Arboleda Nocturna</span>
@@ -258,7 +320,7 @@
 
           <!-- Foto 2 -->
           <div class="rounded-3xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/3] relative group border border-stone-200">
-            <img src="/images/salones_salon_vip.jpg" alt="Salón cerrado climatizado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="/images/salones_salon_vip.jpg" alt="Gran salón cerrado climatizado con capacidad hasta 400 invitados y pista de baile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent flex items-end p-5">
               <div>
                 <span class="text-white font-serif font-bold text-base block">Salón Principal Climatizado</span>
@@ -269,7 +331,7 @@
 
           <!-- Foto 3 -->
           <div class="rounded-3xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/3] relative group border border-stone-200">
-            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Piscina y deck para recepción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Piscina iluminada con livings y ambientación lounge para recepción de invitados" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent flex items-end p-5">
               <div>
                 <span class="text-white font-serif font-bold text-base block">Piscina y Deck de Recepción</span>
@@ -280,7 +342,7 @@
 
           <!-- Foto 4 -->
           <div class="rounded-3xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/3] relative group border border-stone-200">
-            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" alt="Pérgola para ceremonias civiles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" alt="Pérgola decorada con flores naturales y telas para ceremonias civiles y bodas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent flex items-end p-5">
               <div>
                 <span class="text-white font-serif font-bold text-base block">Pérgola de Ceremonias</span>
@@ -291,7 +353,7 @@
 
           <!-- Foto 5 -->
           <div class="rounded-3xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/3] relative group border border-stone-200">
-            <img src="/images/salones_suite.jpg" alt="Suite privada para homenajeados" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="/images/salones_suite.jpg" alt="Interior de suite de cortesía nupcial con sofá capitoné y espejo para los novios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent flex items-end p-5">
               <div>
                 <span class="text-white font-serif font-bold text-base block">Suite de Cortesía Privada</span>
@@ -302,7 +364,7 @@
 
           <!-- Foto 6 -->
           <div class="rounded-3xl overflow-hidden shadow-sm bg-stone-200 aspect-[4/3] relative group border border-stone-200">
-            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Pista de baile y fiesta nocturna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Pista de baile profesional con efectos de luces robóticas y sonido envolvente" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent flex items-end p-5">
               <div>
                 <span class="text-white font-serif font-bold text-base block">Pista de Baile y Fiesta</span>
