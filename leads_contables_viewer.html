@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Estudios Contables San Juan (Sin Sitio Web) - erikwebsite.com</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --accent: #38bdf8;
+            --green: #10b981;
+            --maps: #f59e0b;
+            --celular: #10b981;
+            --fijo: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; }
+        .container { max-width: 1350px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+        h1 { font-size: 1.6rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+        p.subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+        .stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .stat-badge { background: #1f2937; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; border: 1px solid #374151; }
+        .stat-badge strong { color: var(--green); }
+        .stat-badge.celular strong { color: #34d399; }
+        .stat-badge.fijo strong { color: #cbd5e1; }
+        
+        .toolbar { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+        .toolbar-left { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+        .search-box { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.55rem 1rem; color: #fff; font-size: 0.9rem; min-width: 280px; outline: none; }
+        .search-box:focus { border-color: var(--accent); }
+        
+        .filter-group { display: flex; gap: 0.4rem; background: #1f2937; padding: 0.25rem; border-radius: 8px; border: 1px solid #374151; }
+        .filter-btn { background: transparent; color: #9ca3af; border: none; padding: 0.35rem 0.85rem; border-radius: 6px; font-size: 0.82rem; cursor: pointer; font-weight: 500; transition: all 0.2s; }
+        .filter-btn.active { background: #2563eb; color: white; }
+        
+        .table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+        th { background: #172033; padding: 0.9rem 1rem; font-weight: 600; color: #cbd5e1; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        td { padding: 0.9rem 1rem; border-bottom: 1px solid #1e293b; vertical-align: middle; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+        
+        .subtitle-cell { font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem; }
+        .address-cell { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; max-width: 340px; }
+        .phone-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; text-align: center; font-weight: 500; }
+        .rating { color: #fbbf24; font-size: 0.8rem; margin-left: 0.4rem; font-weight: 600; }
+        .rating small { color: #94a3b8; font-weight: 400; }
+
+        .badge-cat { display: inline-block; font-size: 0.72rem; padding: 0.15rem 0.45rem; border-radius: 4px; font-weight: 600; vertical-align: middle; margin-left: 0.3rem; }
+        .badge-cat-celular { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-cat-fijo { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+
+        .badge-noweb { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .badge-city { background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.8rem; }
+        
+        .demo-tag { display: inline-block; color: #38bdf8; text-decoration: none; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); white-space: nowrap; font-weight: 500; }
+        .demo-tag:hover { background: rgba(56, 189, 248, 0.2); }
+
+        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: #059669; color: white; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: background 0.2s; white-space: nowrap; width: 100%; }
+        .btn-wa:hover { background: #10b981; }
+        .btn-wa .icon { width: 15px; height: 15px; }
+
+        .btn-gmaps { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 7px; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+        .btn-gmaps:hover { background: rgba(245, 158, 11, 0.25); border-color: #f59e0b; color: #fff; }
+        .btn-gmaps .icon { width: 14px; height: 14px; }
+        
+        .status-select { background: #1f2937; color: #fff; border: 1px solid #374151; padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.82rem; outline: none; cursor: pointer; }
+        .status-select:focus { border-color: var(--accent); }
+        .row-contacted { opacity: 0.7; background: rgba(16, 185, 129, 0.05); }
+        .row-interested { background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3b82f6; }
+        .row-closed { background: rgba(16, 185, 129, 0.12); border-left: 3px solid #10b981; }
+        .row-no_wa { opacity: 0.5; background: rgba(239, 68, 68, 0.05); }
+        .row-discarded { opacity: 0.35; text-decoration: line-through; }
+
+        .copy-banner { margin-top: 1.5rem; background: #172033; padding: 1.5rem; border-radius: 12px; border: 1px solid #1f2937; }
+        .copy-banner h3 { font-size: 1.05rem; color: #60a5fa; margin-bottom: 0.75rem; }
+        .script-box { background: #0f172a; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 3px solid #38bdf8; }
+        .script-box.positive { border-left-color: #10b981; }
+        .script-box.negative { border-left-color: #94a3b8; }
+        .script-title { font-size: 0.85rem; font-weight: 700; color: #94a3b8; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .script-text { font-size: 0.9rem; color: #e2e8f0; line-height: 1.5; }
+    </style>
+    <script>
+        let currentFilter = 'all';
+
+        function updateStatus(select, rowId) {
+            const row = document.getElementById(rowId);
+            row.classList.remove('row-contacted', 'row-interested', 'row-closed', 'row-no_wa', 'row-discarded');
+            if (select.value === 'contacted' || select.value === 'demo_sent') {
+                row.classList.add('row-contacted');
+            } else if (select.value === 'interested') {
+                row.classList.add('row-interested');
+            } else if (select.value === 'closed') {
+                row.classList.add('row-closed');
+            } else if (select.value === 'no_wa') {
+                row.classList.add('row-no_wa');
+            } else if (select.value === 'discarded') {
+                row.classList.add('row-discarded');
+            }
+            localStorage.setItem('lead_contable_' + rowId, select.value);
+        }
+
+        function setPhoneFilter(filterType) {
+            currentFilter = filterType;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === filterType);
+            });
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(r => {
+                const text = r.innerText.toLowerCase();
+                const matchesSearch = text.includes(query);
+                const matchesType = (currentFilter === 'all') || (r.dataset.phonetype === currentFilter);
+                r.style.display = (matchesSearch && matchesType) ? '' : 'none';
+            });
+        }
+
+        window.onload = function() {
+            const selects = document.querySelectorAll('.status-select');
+            selects.forEach((s, idx) => {
+                const rowId = 'row-' + idx;
+                const saved = localStorage.getItem('lead_contable_' + rowId);
+                if (saved) {
+                    s.value = saved;
+                    updateStatus(s, rowId);
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Leads: Estudios Contables y Contadores en San Juan</h1>
+                <p class="subtitle">45 estudios contables calificados sin página web propia para contactar por WhatsApp.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-badge">Total: <strong>45</strong></div>
+                <div class="stat-badge celular">📱 Celular Directo: <strong>26</strong></div>
+                <div class="stat-badge fijo">☎️ Línea Fija: <strong>19</strong></div>
+                <div class="stat-badge">100% Sin Sitio Web: <strong>45</strong></div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <input type="text" id="search" class="search-box" placeholder="Buscar por nombre, zona o calle..." onkeyup="applyFilters()">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all" onclick="setPhoneFilter('all')">Todos (45)</button>
+                    <button class="filter-btn" data-filter="celular" onclick="setPhoneFilter('celular')">Solo Celulares (26)</button>
+                    <button class="filter-btn" data-filter="fijo" onclick="setPhoneFilter('fijo')">Líneas Fijas (19)</button>
+                </div>
+            </div>
+            <div style="font-size: 0.85rem; color: #94a3b8;">
+                Demo sugerida: <a href="https://erikwebsite.com/demos/contable/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">/demos/contable/ ↗</a>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="min-width: 250px;">Estudio / Contador</th>
+                        <th>Zona</th>
+                        <th>Situación Web</th>
+                        <th>Demo Sugerida</th>
+                        <th>Ficha Maps</th>
+                        <th style="min-width: 155px;">Acción WhatsApp</th>
+                        <th>Estado de Gestión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr id="row-0" data-phonetype="fijo">
+        <td>
+            <strong>De Cara Sebastian Contador Publico Nacional</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=De%20Cara%20Sebastian%20Contador%20Publico%20Nacional&amp;query_place_id=ChIJN_KKiyhAgZYR31LohCzaXC0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644202005?text=Hola%20De%20Cara%20Sebastian%20Contador%20Publico%20Nacional!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 420-2005</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-0')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-1" data-phonetype="celular">
+        <td>
+            <strong>MAP Contador Público</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Salta Nte. 128 Norte, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=MAP%20Contador%20P%C3%BAblico&amp;query_place_id=ChIJPQ457y1AgZYRxbJ69doUdS0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644556062?text=Hola%20MAP%20Contador%20P%C3%BAblico!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 455-6062</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-1')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-2" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable SÁNCHEZ-CASTRO</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating">★ 5 <small>(3)</small></span></div>
+            <div class="address-cell">Gral. Acha 126 norte, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20S%C3%81NCHEZ-CASTRO&amp;query_place_id=ChIJaSfga3RqgZYR1S38kc1RKDs" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644037584?text=Hola%20Estudio%20Contable%20S%C3%81NCHEZ-CASTRO!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 403-7584</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-2')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-3" data-phonetype="celular">
+        <td>
+            <strong>Contadora en San Juan- Antonella Pantano Oro &amp; Asoc</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contador público <span class="rating">★ 5 <small>(31)</small></span></div>
+            <div class="address-cell">San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Contadora%20en%20San%20Juan-%20Antonella%20Pantano%20Oro%20%26%20Asoc&amp;query_place_id=ChIJVwtbT5GkhyMRliSgo1w4V0s" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492646606315?text=Hola%20Contadora%20en%20San%20Juan-%20Antonella%20Pantano%20Oro%20%26%20Asoc!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 660-6315</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-3')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-4" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable Contagestion</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">José Martí 1064, J5402 J5402GDL, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Contagestion&amp;query_place_id=ChIJ7UZUagBBgZYRh2-4bzNwmi4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644050230?text=Hola%20Estudio%20Contable%20Contagestion!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 405-0230</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-4')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-5" data-phonetype="celular">
+        <td>
+            <strong>Estudio contable Castro Baños, Ricardo</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Asesor fiscal <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">5400, Rivadavia, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20contable%20Castro%20Ba%C3%B1os%2C%20Ricardo&amp;query_place_id=ChIJP6zK4kJBgZYRl0u58JxXB00" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644050142?text=Hola%20Estudio%20contable%20Castro%20Ba%C3%B1os%2C%20Ricardo!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 405-0142</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-5')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-6" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable H&amp;H</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Sta Fe Oeste 700, J5402 ACN, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20H%26H&amp;query_place_id=ChIJIRnnxudBgZYR_etH54kDFGk" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645895511?text=Hola%20Estudio%20Contable%20H%26H!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 589-5511</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-6')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-7" data-phonetype="celular">
+        <td>
+            <strong>Expansión Contadores</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Pedro de Valdivia Oeste 1730, J5402CCJ San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Expansi%C3%B3n%20Contadores&amp;query_place_id=ChIJJ9kJkxdBgZYR2DCgQOzDXFM" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645853634?text=Hola%20Expansi%C3%B3n%20Contadores!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 585-3634</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-7')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-8" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable C.P.N. Lilia Cabello</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Servicio de registros contables <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">B. Rivadavia Oeste 626 Ofi 7, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20C.P.N.%20Lilia%20Cabello&amp;query_place_id=ChIJHRC_dB5rgZYRrfCY4LhhSK0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644736889?text=Hola%20Estudio%20Contable%20C.P.N.%20Lilia%20Cabello!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 473-6889</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-8')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-9" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable Matias Porres</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Santiago del Estero Sur 207, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Matias%20Porres&amp;query_place_id=ChIJVax1qGFrgZYR4sojx2J8KsE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492646758968?text=Hola%20Estudio%20Contable%20Matias%20Porres!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 675-8968</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-9')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-10" data-phonetype="fijo">
+        <td>
+            <strong>Astercord Estudio Contable</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Santiago del Estero 284 piso 1 depto 3, 5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Astercord%20Estudio%20Contable&amp;query_place_id=ChIJNaMQcy9AgZYRPeC6ezj-eAU" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644219945?text=Hola%20Astercord%20Estudio%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-9945</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-10')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-11" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable Mercedes Forns</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating">★ 5 <small>(16)</small></span></div>
+            <div class="address-cell">Gral. Mariano Acha Nte. 297, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Mercedes%20Forns&amp;query_place_id=ChIJH_NvwABBgZYRq2XLwOeRUR8" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644983596?text=Hola%20Estudio%20Contable%20Mercedes%20Forns!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 498-3596</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-11')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-12" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable Fernando Pedrozo y Asociados.</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Servicio de registros contables <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">5400, Av. Libertador Gral. San Martín 137, J5400ARB San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Fernando%20Pedrozo%20y%20Asociados.&amp;query_place_id=ChIJL0DtdClAgZYRP_DvyvLm9lQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645057633?text=Hola%20Estudio%20Contable%20Fernando%20Pedrozo%20y%20Asociados.!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 505-7633</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-12')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-13" data-phonetype="fijo">
+        <td>
+            <strong>Padin &amp; Asoc. Consultores - Estudio Contable</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Av. Córdoba Oeste 638 Dto. B, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Padin%20%26%20Asoc.%20Consultores%20-%20Estudio%20Contable&amp;query_place_id=ChIJPbpQEyVAgZYRFUP6lNuN-Vs" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644210463?text=Hola%20Padin%20%26%20Asoc.%20Consultores%20-%20Estudio%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-0463</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-13')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-14" data-phonetype="celular">
+        <td>
+            <strong>Romera y Asociados Estudio Contable</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Comercio <span class="rating">★ 4.2 <small>(24)</small></span></div>
+            <div class="address-cell">675 (oeste) CP 5400, 9 de Julio Este, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Romera%20y%20Asociados%20Estudio%20Contable&amp;query_place_id=ChIJR9SYwyRAgZYRAxm3cDKFmD8" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644557929?text=Hola%20Romera%20y%20Asociados%20Estudio%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 455-7929</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-14')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-15" data-phonetype="fijo">
+        <td>
+            <strong>Aguilar Ruben Contador Publico</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Entre Ríos Sur 213, J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Aguilar%20Ruben%20Contador%20Publico&amp;query_place_id=ChIJ6RNdXihAgZYRmJYovXfq26o" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644202463?text=Hola%20Aguilar%20Ruben%20Contador%20Publico!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 420-2463</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-15')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-16" data-phonetype="celular">
+        <td>
+            <strong>A&amp;T Estudio Contable (Audit &amp; Tax)</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Laprida 559 Este 1º Piso B, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=A%26T%20Estudio%20Contable%20(Audit%20%26%20Tax)&amp;query_place_id=ChIJG77USu5BgZYR4zwKBjadPw0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644002015?text=Hola%20A%26T%20Estudio%20Contable%20(Audit%20%26%20Tax)!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 400-2015</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-16')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-17" data-phonetype="fijo">
+        <td>
+            <strong>Alos Vizcaino Zunino &amp; Asoc</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Asociación u organización <span class="rating">★ 4.9 <small>(19)</small></span></div>
+            <div class="address-cell">Martín Güemes Sur 24, J5402ETB San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Alos%20Vizcaino%20Zunino%20%26%20Asoc&amp;query_place_id=ChIJHZAJy4VqgZYRZa-iw4wtB2A" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644210945?text=Hola%20Alos%20Vizcaino%20Zunino%20%26%20Asoc!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-0945</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-17')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-18" data-phonetype="fijo">
+        <td>
+            <strong>Avenda o &amp; Asociados Contadores Publicos</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Av. José Ignacio de la Roza Oeste 291, J5402DCC San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenda%20o%20%26%20Asociados%20Contadores%20Publicos&amp;query_place_id=ChIJ_3DNtyhAgZYRsuI29Z2Awdg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644223081?text=Hola%20Avenda%20o%20%26%20Asociados%20Contadores%20Publicos!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-3081</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-18')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-19" data-phonetype="celular">
+        <td>
+            <strong>Contadora Pública Anabela Patiño</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Patricias Sanjuaninas Sur 1149 sur, J5400 Trinidad, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Trinidad</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Contadora%20P%C3%BAblica%20Anabela%20Pati%C3%B1o&amp;query_place_id=ChIJL46MCodrgZYRSEDvIA-6R58" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645629544?text=Hola%20Contadora%20P%C3%BAblica%20Anabela%20Pati%C3%B1o!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 562-9544</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-19')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-20" data-phonetype="fijo">
+        <td>
+            <strong>Garcia Antonio - Contador Publico</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Jujuy Sur 142, J5402EMD San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Garcia%20Antonio%20-%20Contador%20Publico&amp;query_place_id=ChIJ6zJ7FINqgZYRdL6BGWK3L8A" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644220047?text=Hola%20Garcia%20Antonio%20-%20Contador%20Publico!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-0047</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-20')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-21" data-phonetype="fijo">
+        <td>
+            <strong>Marquez Hector Gabriel Contador Publico</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating">★ 1 <small>(1)</small></span></div>
+            <div class="address-cell">Jujuy Sur 40, J5402EMB San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Marquez%20Hector%20Gabriel%20Contador%20Publico&amp;query_place_id=ChIJ43c1oYNqgZYRC1sEClunjyI" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644211264?text=Hola%20Marquez%20Hector%20Gabriel%20Contador%20Publico!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-1264</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-21')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-22" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Contable &amp; Productor de Seguros</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating">★ 5 <small>(2)</small></span></div>
+            <div class="address-cell">Mendoza Sur 80, J5425 Villa Krause, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20%26%20Productor%20de%20Seguros&amp;query_place_id=ChIJqSRAY3JBgZYRAEeEABgmzKE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644287069?text=Hola%20Estudio%20Contable%20%26%20Productor%20de%20Seguros!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 428-7069</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-22')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-23" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable Massud</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">9 de Julio Oeste 420 oeste, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Massud&amp;query_place_id=ChIJKeerwcBBgZYRUAVWfVtRI-w" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644142642?text=Hola%20Estudio%20Contable%20Massud!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 414-2642</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-23')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-24" data-phonetype="celular">
+        <td>
+            <strong>Estudio contable MP</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Fray Mamerto Esquiú Oeste 207 Sur, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20contable%20MP&amp;query_place_id=ChIJPxEm3cNBgZYRbGxBx7dfBVQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492646617938?text=Hola%20Estudio%20contable%20MP!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 661-7938</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-24')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-25" data-phonetype="fijo">
+        <td>
+            <strong>Est. Contable Integral Daroni Julio y Enrique</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating">★ 4.5 <small>(2)</small></span></div>
+            <div class="address-cell">J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Est.%20Contable%20Integral%20Daroni%20Julio%20y%20Enrique&amp;query_place_id=ChIJbyDEbiZAgZYRVN_H_hjTurE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644216026?text=Hola%20Est.%20Contable%20Integral%20Daroni%20Julio%20y%20Enrique!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-6026</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-25')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-26" data-phonetype="celular">
+        <td>
+            <strong>Amin y Asociados Estudio Jurídico Contable</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating">★ 5 <small>(11)</small></span></div>
+            <div class="address-cell">Francisco N. Laprida Este 120, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Amin%20y%20Asociados%20Estudio%20Jur%C3%ADdico%20Contable&amp;query_place_id=ChIJDUyLzMxBgZYRFG00fqc8fMQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645832578?text=Hola%20Amin%20y%20Asociados%20Estudio%20Jur%C3%ADdico%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 583-2578</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-26')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-27" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable &amp; Juridico Carmen Puerto de Zungri</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Oficinas de empresa <span class="rating">★ 5 <small>(5)</small></span></div>
+            <div class="address-cell">Av. José Ignacio de la Roza Oeste 86, J5402DCN J5402DCN, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20%26%20Juridico%20Carmen%20Puerto%20de%20Zungri&amp;query_place_id=ChIJTTP329NBgZYRe_0ThVueVFg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644443386?text=Hola%20Estudio%20Contable%20%26%20Juridico%20Carmen%20Puerto%20de%20Zungri!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 444-3386</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-27')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-28" data-phonetype="celular">
+        <td>
+            <strong>Contador Guillermo Soria</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Sta Fe Oeste 408 Este Oficina 3, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Contador%20Guillermo%20Soria&amp;query_place_id=ChIJY4p5BXsVgZYRnrhGDGF9Ol4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644701821?text=Hola%20Contador%20Guillermo%20Soria!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 470-1821</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-28')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-29" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Juridico Contable Verdeguer - Sanchez</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Estudio Contable <span class="rating">★ 1 <small>(2)</small></span></div>
+            <div class="address-cell">B. Mitre 476, J5402CXJ San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Juridico%20Contable%20Verdeguer%20-%20Sanchez&amp;query_place_id=ChIJv6MLbi9AgZYR7oG3yLijhsQ" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644277330?text=Hola%20Estudio%20Juridico%20Contable%20Verdeguer%20-%20Sanchez!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 427-7330</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-29')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-30" data-phonetype="celular">
+        <td>
+            <strong>ESTUDIO CONTABLE GERBENO VILLA &amp; ASOC.</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Oficina de la Administración <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Domingo Faustino Sarmiento Sur 356, J5402 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=ESTUDIO%20CONTABLE%20GERBENO%20VILLA%20%26%20ASOC.&amp;query_place_id=ChIJ4UUOXoxBgZYR1DEUham9kew" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645012810?text=Hola%20ESTUDIO%20CONTABLE%20GERBENO%20VILLA%20%26%20ASOC.!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 501-2810</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-30')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-31" data-phonetype="celular">
+        <td>
+            <strong>Contador Público Nacional Lucas Milán</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Av. Aberastain 372 ( Entre Maurin, Furque y, J5427, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Contador%20P%C3%BAblico%20Nacional%20Lucas%20Mil%C3%A1n&amp;query_place_id=ChIJ27HmELo_gZYRI7PlGYPMpc0" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645400983?text=Hola%20Contador%20P%C3%BAblico%20Nacional%20Lucas%20Mil%C3%A1n!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 540-0983</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-31')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-32" data-phonetype="celular">
+        <td>
+            <strong>ESTUDIO CONTABLE MARISA MARTINEZ</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Paseo Capri, Av. Ignacio de la Roza, Rastreador Calivar Sur y Local 4, J5400 Rivadavia, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rivadavia</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=ESTUDIO%20CONTABLE%20MARISA%20MARTINEZ&amp;query_place_id=ChIJfX4HMJBBgZYRR8hYQiFRgGI" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645467500?text=Hola%20ESTUDIO%20CONTABLE%20MARISA%20MARTINEZ!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 546-7500</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-32')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-33" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Contable Chaves y Asociados</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating">★ 5 <small>(1)</small></span></div>
+            <div class="address-cell">Av. Córdoba Este 226, J5402 ADP, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Chaves%20y%20Asociados&amp;query_place_id=ChIJZ5cnXSdAgZYRIP2xftxDu7Q" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644200157?text=Hola%20Estudio%20Contable%20Chaves%20y%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 420-0157</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-33')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-34" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Los Glaciares 1155, J5411 Santa Lucía, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Santa Lucía</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable&amp;query_place_id=ChIJc31CrpprgZYRf4XICg_8cqs" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645457371?text=Hola%20Estudio%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 545-7371</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-34')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-35" data-phonetype="celular">
+        <td>
+            <strong>Estudio Jurídico Contable</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Mendoza Nte. 867 Norte, J5413 Chimbas, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Chimbas</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Jur%C3%ADdico%20Contable&amp;query_place_id=ChIJWVKAZBVBgZYRxaVwSxDidjg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644049093?text=Hola%20Estudio%20Jur%C3%ADdico%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 404-9093</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-35')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-36" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable Farrán &amp; Asociados</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Oficinas de empresa <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Jujuy Sur 40 Ofi 1, J5402 J5402EMA, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Farr%C3%A1n%20%26%20Asociados&amp;query_place_id=ChIJA8UaX35rgZYRI0an4vGJCGg" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492645033300?text=Hola%20Estudio%20Contable%20Farr%C3%A1n%20%26%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 503-3300</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-36')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-37" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Contable Morvillo</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">25 de Mayo Este 83, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Morvillo&amp;query_place_id=ChIJIe3V6YNqgZYRs_boBqj_GvE" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644223309?text=Hola%20Estudio%20Contable%20Morvillo!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-3309</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-37')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-38" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Juridico y Contable Ruiz Alvarez &amp; Asociados</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Asesor fiscal <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">J5402EZD, Estados Unidos Sur 120, J5402EZD San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Juridico%20y%20Contable%20Ruiz%20Alvarez%20%26%20Asociados&amp;query_place_id=ChIJa8Ze4o9qgZYR-Mel7ahJyes" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644228950?text=Hola%20Estudio%20Juridico%20y%20Contable%20Ruiz%20Alvarez%20%26%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-8950</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-38')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-39" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Toro &amp; Asociados</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Empresa de contabilidad <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Av. Guillermo Rawson Norte 618 1 “C, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">Rawson</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Toro%20%26%20Asociados&amp;query_place_id=ChIJraCrDR1rgZYRrrSeW5y520w" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644220813?text=Hola%20Estudio%20Toro%20%26%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-0813</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-39')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-40" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Contable Sendra Asociados</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Estudio Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Av. Rioja Sur 411, J5402EKE San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Sendra%20Asociados&amp;query_place_id=ChIJ9-4Z4ZxqgZYRxtj1_9sMT28" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644226009?text=Hola%20Estudio%20Contable%20Sendra%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-6009</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-40')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-41" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Juridico Contable Pallitto &amp; Asociados</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Asesor <span class="rating">★ 3.2 <small>(5)</small></span></div>
+            <div class="address-cell">Caseros Sur 422, J5402ERJ San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Juridico%20Contable%20Pallitto%20%26%20Asociados&amp;query_place_id=ChIJ-5tdcptqgZYR2w7G_yxD90U" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644201988?text=Hola%20Estudio%20Juridico%20Contable%20Pallitto%20%26%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 420-1988</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-41')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-42" data-phonetype="fijo">
+        <td>
+            <strong>Escribania - Estudio Juridico Contable</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Servicios legales <span class="rating">★ 4.8 <small>(44)</small></span></div>
+            <div class="address-cell">Jujuy Sur 328, J5402EMH San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Escribania%20-%20Estudio%20Juridico%20Contable&amp;query_place_id=ChIJl3Tjt5xqgZYRA3Dxkowwcy4" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644213891?text=Hola%20Escribania%20-%20Estudio%20Juridico%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 421-3891</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-42')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-43" data-phonetype="fijo">
+        <td>
+            <strong>Estudio Contable Ernesto R Gil &amp; Asociados</strong> <span class="badge-cat badge-cat-fijo" title="Línea fija comercial (funciona si tienen WhatsApp Business)">☎️ Fijo / Comercial</span>
+            <div class="subtitle-cell">Estudio Contable <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">Cereceto Este 891, J5400 San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable%20Ernesto%20R%20Gil%20%26%20Asociados&amp;query_place_id=ChIJf6kqHH1qgZYR5JUgSUwfoQI" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644221484?text=Hola%20Estudio%20Contable%20Ernesto%20R%20Gil%20%26%20Asociados!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 422-1484</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-43')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+    <tr id="row-44" data-phonetype="celular">
+        <td>
+            <strong>Estudio Contable</strong> <span class="badge-cat badge-cat-celular" title="Número móvil (WhatsApp directo garantizado)">📱 Celular</span>
+            <div class="subtitle-cell">Oficinas de empresa <span class="rating" style="color:#64748b;">★ N/A <small>(0)</small></span></div>
+            <div class="address-cell">RN20 1051, J5442 Villa Colón, San Juan, Argentina</div>
+        </td>
+        <td><span class="badge-city">San Juan</span></td>
+        <td><span class="badge-noweb">Sin página web</span></td>
+        <td>
+            <a href="https://erikwebsite.com/demos/contable/" target="_blank" class="demo-tag" title="Abrir demo correspondiente">Demo Contable ↗</a>
+        </td>
+        <td>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Estudio%20Contable&amp;query_place_id=ChIJH6-2ff0OgZYRQ51gGHtOjLw" target="_blank" class="btn-gmaps" title="Abrir ficha en Google Maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 
+                Ver Maps
+            </a>
+        </td>
+        <td>
+            <a href="https://wa.me/5492644963756?text=Hola%20Estudio%20Contable!%20Te%20escribo%20desde%20San%20Juan%20por%20tu%20estudio%20contable.%20Vi%20tus%20excelentes%20referencias%20en%20Google%20pero%20not%C3%A9%20que%20no%20cont%C3%A1s%20con%20sitio%20web%20propio%20para%20que%20empresas%20y%20particulares%20conozcan%20tus%20servicios%20(impositivo%2C%20laboral%2C%20asesor%C3%ADa)%2C%20generen%20confianza%20institucional%20y%20te%20consulten%20directo%20por%20WhatsApp.%20%C2%BFTe%20puedo%20compartir%20una%20demo%20r%C3%A1pida%20que%20armamos%20pensada%20para%20estudios%20contables%3F" target="_blank" class="btn-wa">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.2.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="phone-label">+54 264 496-3756</div>
+        </td>
+        <td>
+            <select onchange="updateStatus(this, 'row-44')" class="status-select">
+                <option value="pending">Sin contactar</option>
+                <option value="contacted">Mensaje enviado</option>
+                <option value="demo_sent">Demo compartida</option>
+                <option value="interested">Interesado / En charla</option>
+                <option value="closed">Cliente cerrado</option>
+                <option value="no_wa">Sin WhatsApp / No atiende</option>
+                <option value="discarded">Descartado</option>
+            </select>
+        </td>
+    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="copy-banner">
+            <h3>Protocolo de Mensajes y Prospección para Estudios Contables:</h3>
+            
+            <div class="script-box">
+                <div class="script-title">1. Mensaje Inicial (Cargado en el botón de WhatsApp - Sin enlaces para no parecer spam)</div>
+                <div class="script-text">
+                    <em>"Hola [Nombre]! Te escribo desde San Juan por tu estudio contable. Vi tus excelentes referencias en Google pero noté que no contás con sitio web propio para que empresas y particulares conozcan tus servicios (impositivo, laboral, asesoría), generen confianza institucional y te consulten directo por WhatsApp. ¿Te puedo compartir una demo rápida que armamos pensada para estudios contables?"</em>
+                </div>
+            </div>
+
+            <div class="script-box positive">
+                <div class="script-title">2. Respuesta cuando te dicen que SÍ (Enviar Link de la Demo)</div>
+                <div class="script-text">
+                    <em>"¡Genial! Mirala acá desde el celular: <strong>https://erikwebsite.com/demos/contable/</strong><br>
+                    La pensamos para transmitir seriedad corporativa: detalla las áreas de práctica (liquidación de sueldos, monotributo/AFIP, auditoría), muestra la ubicación clara del estudio y permite que un cliente potencial te consulte directo a tu WhatsApp con un toque. ¿Cómo la ves para tu estudio?"</em>
+                </div>
+            </div>
+
+            <div class="script-box negative">
+                <div class="script-title">3. Si no tienen WhatsApp (Línea fija que no abre chat) o dicen que no</div>
+                <div class="script-text">
+                    <strong>Si el número no tiene WhatsApp (fijo común):</strong> Marcalo en el desplegable como <code>Sin WhatsApp / No atiende</code> para depurar la lista.<br>
+                    <strong>Si responden que no:</strong> <em>"¡Muchas gracias por la respuesta de todos modos! Que tengan una excelente semana y muchos éxitos con el estudio."</em> (Amabilidad, cero insistencia).<br>
+                    <strong>Si clavan visto:</strong> Pasamos de largo sin insistir.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
