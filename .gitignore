@@ -2,5 +2,10 @@ node_modules
 dist
 .DS_Store
 *.local
-dataset*.json
-leads*.json
+
+# Leads, viewers & Scraped Data (Privado)
+dataset*
+leads*
+*_leads.*
+leads/
+graphify-out/

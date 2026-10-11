@@ -1,4 +1,4 @@
-﻿import { initWhatsAppButtons } from '../../src/js/whatsapp.js';
+import { initWhatsAppButtons } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
 import { initScrollTop } from '../../src/js/scroll-top.js';
 import { initScrollReveal, initHeroEntrance, initMobileDock, initPsychologySelector } from '../../src/js/animations.js';
