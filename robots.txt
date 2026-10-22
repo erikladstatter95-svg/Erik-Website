@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Excluir taxonomías o parámetros dinámicos si se usan
+Disallow: /tags/
+Disallow: /categorias/
+
+Sitemap: https://erikwebsite.com/sitemap.xml
