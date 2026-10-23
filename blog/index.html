@@ -141,13 +141,13 @@
           <!-- BUSCADOR CON PROTECCIÓN Y SANITIZACIÓN -->
           <div class="relative max-w-xl mx-auto mt-8">
             <div class="relative flex items-center">
-              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-neutral-400">
+                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
               </div>
               <input type="text" 
                      id="blog-search-input" 
                      placeholder="Buscar guías (ej: precios, turnos, abogados, Google Maps)..." 
-                     class="w-full pl-12 pr-10 py-3.5 bg-neutral-50 hover:bg-white focus:bg-white rounded-full border border-black/[0.08] text-sm text-neutral-900 placeholder-neutral-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-xs transition-all duration-200"
+                     class="w-full pl-14 sm:pl-16 pr-11 py-3.5 bg-neutral-50 hover:bg-white focus:bg-white rounded-full border border-black/[0.08] text-sm text-neutral-900 placeholder-neutral-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs transition-all duration-200"
                      autocomplete="off"
                      spellcheck="false">
               <button id="blog-search-clear" 
@@ -158,15 +158,25 @@
             </div>
           </div>
 
-          <!-- FILTROS POR CATEGORÍA INTERACTIVOS -->
-          <div class="flex items-center justify-center flex-wrap gap-2 mt-5" id="blog-category-filters">
-            <button data-cat="all" class="blog-cat-btn active px-4 py-1.5 rounded-full text-xs font-semibold bg-neutral-900 text-white shadow-2xs transition-all cursor-pointer">Todos</button>
-            <button data-cat="precios" class="blog-cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white text-neutral-600 border border-black/[0.06] hover:bg-neutral-100 transition-all cursor-pointer">Precios y Costos</button>
-            <button data-cat="maps" class="blog-cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white text-neutral-600 border border-black/[0.06] hover:bg-neutral-100 transition-all cursor-pointer">Google Maps y SEO Local</button>
-            <button data-cat="estrategia" class="blog-cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white text-neutral-600 border border-black/[0.06] hover:bg-neutral-100 transition-all cursor-pointer">Web vs Instagram</button>
-            <button data-cat="legal" class="blog-cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white text-neutral-600 border border-black/[0.06] hover:bg-neutral-100 transition-all cursor-pointer">Abogados</button>
-            <button data-cat="salud" class="blog-cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white text-neutral-600 border border-black/[0.06] hover:bg-neutral-100 transition-all cursor-pointer">Consultorios y Turnos</button>
-            <button data-cat="negocios" class="blog-cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white text-neutral-600 border border-black/[0.06] hover:bg-neutral-100 transition-all cursor-pointer">Decisión de Negocio</button>
+          <!-- SELECTOR DESPLEGABLE DE CATEGORÍAS (APPLE DROPDOWN) -->
+          <div class="flex items-center justify-center gap-3 mt-5 flex-wrap">
+            <label for="blog-cat-select" class="text-xs font-medium text-neutral-500 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+              <span>Categoría:</span>
+            </label>
+            <div class="relative inline-block">
+              <select id="blog-cat-select" class="appearance-none bg-white border border-black/[0.08] hover:border-black/[0.15] text-neutral-800 text-xs font-semibold py-2 pl-4 pr-9 rounded-full shadow-2xs focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all cursor-pointer">
+                <option value="all">Todas las categorías (6)</option>
+                <option value="precios">Precios y Presupuestos</option>
+                <option value="maps">Google Maps y Posicionamiento Local</option>
+                <option value="redes">Ventas y Redes Sociales</option>
+                <option value="servicios">Servicios Profesionales y Salud</option>
+                <option value="negocios">Comercios, Negocios y Eventos</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-neutral-400">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -202,7 +212,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full">
-                    Precios y Costos
+                    Precios y Presupuestos
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 6 min</span>
                 </div>
@@ -243,7 +253,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-sky-700 bg-sky-50 border border-sky-100 px-2.5 py-0.5 rounded-full">
-                    Google Maps y SEO Local
+                    Google Maps y Posicionamiento Local
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 5 min</span>
                 </div>
@@ -271,7 +281,7 @@
 
           <!-- ARTÍCULO 3: Página Web vs. Instagram -->
           <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-xs hover:shadow-lg hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-                   data-cat="estrategia"
+                   data-cat="redes"
                    data-title="Página Web vs Instagram cuál conviene para vender en Argentina conversión precios por privado"
                    data-desc="Por que depender exclusivamente de redes sociales te hace perder ventas y tiempo respondiendo precios por privado la combinación que funciona">
             <div>
@@ -284,7 +294,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-2.5 py-0.5 rounded-full">
-                    Estrategia Digital
+                    Ventas y Redes Sociales
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 5 min</span>
                 </div>
@@ -312,7 +322,7 @@
 
           <!-- ARTÍCULO 4: Páginas Web para Abogados en Argentina -->
           <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-xs hover:shadow-lg hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-                   data-cat="legal"
+                   data-cat="servicios"
                    data-title="Páginas Web para Abogados en Argentina estudio jurídico matrícula laboral familia penal"
                    data-desc="Qué elementos debe tener el sitio web de un estudio jurídico para generar confianza institucional y captar consultas por WhatsApp">
             <div>
@@ -325,7 +335,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-100 px-2.5 py-0.5 rounded-full">
-                    Sector Legal
+                    Servicios Profesionales
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 6 min</span>
                 </div>
@@ -353,7 +363,7 @@
 
           <!-- ARTÍCULO 5: Cómo automatizar turnos en tu consultorio médico u odontológico -->
           <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-xs hover:shadow-lg hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-                   data-cat="salud"
+                   data-cat="servicios"
                    data-title="Cómo automatizar turnos en tu consultorio médico u odontológico salud agenda reservas pacientes"
                    data-desc="Estrategias prácticas para consultorios particulares y clínicas cómo organizar consultas y agendamiento sin contratar recepcionista extra">
             <div>
@@ -366,7 +376,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-teal-800 bg-teal-50 border border-teal-100 px-2.5 py-0.5 rounded-full">
-                    Salud y Consultorios
+                    Servicios Profesionales y Salud
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 5 min</span>
                 </div>
@@ -407,7 +417,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-purple-800 bg-purple-50 border border-purple-100 px-2.5 py-0.5 rounded-full">
-                    Decisión de Negocio
+                    Comercios y Negocios
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 5 min</span>
                 </div>
@@ -488,7 +498,7 @@
         <a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a>
         <a href="/#demos" class="hover:text-emerald-400 transition-colors">Demos</a>
         <a href="/#precios" class="hover:text-emerald-400 transition-colors">Precios</a>
-        <a href="/blog/" class="text-emerald-400 font-medium">Blog y Guías</a>
+        <a href="/blog/" class="text-emerald-400 font-medium">Blog</a>
         <a href="/terminos" class="hover:text-emerald-400 transition-colors">Términos y Condiciones</a>
         <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Estuve%20leyendo%20tu%20blog%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-medium">Consultar por WhatsApp</a>
       </div>
@@ -503,7 +513,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('blog-search-input');
       const searchClear = document.getElementById('blog-search-clear');
-      const catButtons = document.querySelectorAll('.blog-cat-btn');
+      const catSelect = document.getElementById('blog-cat-select');
       const articles = document.querySelectorAll('.blog-card');
       const emptyState = document.getElementById('blog-empty-state');
       const counter = document.getElementById('articles-counter');
@@ -574,18 +584,10 @@
         });
       }
 
-      // Eventos de Categoría
-      catButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          catButtons.forEach(b => {
-            b.classList.remove('active', 'bg-neutral-900', 'text-white', 'shadow-2xs');
-            b.classList.add('bg-white', 'text-neutral-600', 'border', 'border-black/[0.06]');
-          });
-
-          btn.classList.add('active', 'bg-neutral-900', 'text-white', 'shadow-2xs');
-          btn.classList.remove('bg-white', 'text-neutral-600', 'border', 'border-black/[0.06]');
-
-          currentCategory = btn.getAttribute('data-cat') || 'all';
+      // Evento de Selector Desplegable de Categoría
+      if (catSelect) {
+        catSelect.addEventListener('change', () => {
+          currentCategory = catSelect.value || 'all';
 
           // Actualizar URL sin recargar para soportar links externos como /blog/?cat=precios
           const url = new URL(window.location);
@@ -598,23 +600,32 @@
 
           filterArticles();
         });
-      });
+      }
 
+      // Resetear filtros
       if (resetBtn) {
         resetBtn.addEventListener('click', () => {
           searchInput.value = '';
-          const allBtn = document.querySelector('.blog-cat-btn[data-cat="all"]');
-          if (allBtn) allBtn.click();
+          if (catSelect) {
+            catSelect.value = 'all';
+          }
+          currentCategory = 'all';
+          const url = new URL(window.location);
+          url.searchParams.delete('cat');
+          window.history.replaceState({}, '', url);
+          filterArticles();
         });
       }
 
       // Soporte para URL con parámetro inicial (ej: /blog/?cat=precios)
       const urlParams = new URLSearchParams(window.location.search);
       const initialCat = sanitizeInput(urlParams.get('cat'));
-      if (initialCat) {
-        const matchingBtn = document.querySelector(`.blog-cat-btn[data-cat="${initialCat}"]`);
-        if (matchingBtn) {
-          matchingBtn.click();
+      if (initialCat && catSelect) {
+        const optionExists = Array.from(catSelect.options).some(opt => opt.value === initialCat);
+        if (optionExists) {
+          catSelect.value = initialCat;
+          currentCategory = initialCat;
+          filterArticles();
         }
       }
     });
