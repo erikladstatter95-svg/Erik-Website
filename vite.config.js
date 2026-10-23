@@ -16,6 +16,13 @@ export default defineConfig({
         blog_abogados: resolve(__dirname, 'blog/paginas-web-para-abogados-argentina/index.html'),
         blog_turnos: resolve(__dirname, 'blog/como-automatizar-turnos-consultorio/index.html'),
         blog_que_negocios: resolve(__dirname, 'blog/que-negocios-necesitan-una-pagina-web/index.html'),
+        blog_psicologos: resolve(__dirname, 'blog/paginas-web-para-psicologos-argentina/index.html'),
+        blog_oficios: resolve(__dirname, 'blog/paginas-web-oficios-servicios-hogar/index.html'),
+        blog_contables: resolve(__dirname, 'blog/paginas-web-estudios-contables-argentina/index.html'),
+        blog_estetica: resolve(__dirname, 'blog/paginas-web-salones-belleza-estetica/index.html'),
+        blog_eventos: resolve(__dirname, 'blog/paginas-web-salones-eventos-catering/index.html'),
+        blog_fitness: resolve(__dirname, 'blog/paginas-web-personal-trainers-gimnasios/index.html'),
+        blog_por_que_web: resolve(__dirname, 'blog/por-que-tener-una-pagina-web/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
