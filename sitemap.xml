@@ -21,6 +21,34 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://erikwebsite.com/en/" />
   </url>
 
+  <!-- Landing Geo Local: San Juan -->
+  <url>
+    <loc>https://erikwebsite.com/san-juan/</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Guías Regionales Cuyo (SEO / GEO) -->
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-san-juan/</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-mendoza/</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-san-luis/</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
   <!-- Hub del Blog -->
   <url>
     <loc>https://erikwebsite.com/blog/</loc>
