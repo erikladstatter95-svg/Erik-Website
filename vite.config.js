@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         terminos: resolve(__dirname, 'terminos.html'),
+        terminos_clean: resolve(__dirname, 'terminos/index.html'),
         // Blog Hub y Artículos Cluster SEO/GEO
         blog: resolve(__dirname, 'blog/index.html'),
         blog_cuanto_cuesta: resolve(__dirname, 'blog/cuanto-cuesta-una-pagina-web-argentina/index.html'),
