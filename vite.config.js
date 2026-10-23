@@ -7,6 +7,14 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         terminos: resolve(__dirname, 'terminos.html'),
+        // Blog Hub y Artículos Cluster SEO/GEO
+        blog: resolve(__dirname, 'blog/index.html'),
+        blog_cuanto_cuesta: resolve(__dirname, 'blog/cuanto-cuesta-una-pagina-web-argentina/index.html'),
+        blog_google_maps: resolve(__dirname, 'blog/como-conseguir-clientes-google-maps/index.html'),
+        blog_web_vs_ig: resolve(__dirname, 'blog/pagina-web-vs-instagram/index.html'),
+        blog_abogados: resolve(__dirname, 'blog/paginas-web-para-abogados-argentina/index.html'),
+        blog_turnos: resolve(__dirname, 'blog/como-automatizar-turnos-consultorio/index.html'),
+        blog_que_negocios: resolve(__dirname, 'blog/que-negocios-necesitan-una-pagina-web/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
