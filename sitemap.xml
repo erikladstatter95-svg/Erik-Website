@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Página Principal -->
   <url>
     <loc>https://erikwebsite.com/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://erikwebsite.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://erikwebsite.com/en/" />
+  </url>
+
+  <!-- Versión en Inglés (Internacional) -->
+  <url>
+    <loc>https://erikwebsite.com/en/</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://erikwebsite.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://erikwebsite.com/en/" />
   </url>
 
   <!-- Hub del Blog -->

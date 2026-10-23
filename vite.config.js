@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        en_main: resolve(__dirname, 'en/index.html'),
         terminos: resolve(__dirname, 'terminos.html'),
         terminos_clean: resolve(__dirname, 'terminos/index.html'),
         // Blog Hub y Artículos Cluster SEO/GEO
