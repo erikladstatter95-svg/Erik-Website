@@ -28,6 +28,15 @@ export default defineConfig({
         blog_web_vs_ig: resolve(__dirname, 'blog/pagina-web-vs-instagram/index.html'),
         blog_google_maps: resolve(__dirname, 'blog/como-conseguir-clientes-google-maps/index.html'),
         blog_cuanto_cuesta: resolve(__dirname, 'blog/cuanto-cuesta-una-pagina-web-argentina/index.html'),
+        // 8 Nuevos Artículos Estratégicos y de Conversión
+        blog_landing_vs_web: resolve(__dirname, 'blog/landing-page-vs-pagina-web/index.html'),
+        blog_arquitectos: resolve(__dirname, 'blog/paginas-web-arquitectos-constructoras-inmobiliarias/index.html'),
+        blog_cabanas: resolve(__dirname, 'blog/paginas-web-cabanas-hoteles-turismo/index.html'),
+        blog_nutri_kine: resolve(__dirname, 'blog/paginas-web-nutricionistas-kinesiologos/index.html'),
+        blog_anuncios_landing: resolve(__dirname, 'blog/anuncios-no-venden-importancia-landing-page/index.html'),
+        blog_tiendanube_medida: resolve(__dirname, 'blog/tiendanube-linktree-vs-web-propia-a-medida/index.html'),
+        blog_wordpress_codigo: resolve(__dirname, 'blog/wordpress-vs-codigo-a-medida-velocidad/index.html'),
+        blog_mantenimiento: resolve(__dirname, 'blog/mantenimiento-web-argentina/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),

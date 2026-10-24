@@ -132,7 +132,55 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/por-que-tener-una-pagina-web/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/landing-page-vs-pagina-web/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/paginas-web-arquitectos-constructoras-inmobiliarias/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/paginas-web-cabanas-hoteles-turismo/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/paginas-web-nutricionistas-kinesiologos/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/anuncios-no-venden-importancia-landing-page/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/tiendanube-linktree-vs-web-propia-a-medida/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/wordpress-vs-codigo-a-medida-velocidad/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/mantenimiento-web-argentina/</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -140,73 +188,61 @@
   <!-- Demos en Vivo -->
   <url>
     <loc>https://erikwebsite.com/demos/urgencias-hogar/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erikwebsite.com/demos/abogados/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erikwebsite.com/demos/estetica/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erikwebsite.com/demos/odontologia/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erikwebsite.com/demos/psicologia/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erikwebsite.com/demos/salones/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erikwebsite.com/demos/fitness/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://erikwebsite.com/demos/taller/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://erikwebsite.com/demos/catering/</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://erikwebsite.com/demos/arquitectura/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://erikwebsite.com/demos/vajilla/</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://erikwebsite.com/demos/veterinaria/</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://erikwebsite.com/demos/restaurante/</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://erikwebsite.com/demos/inmobiliaria/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://erikwebsite.com/demos/contable/</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
