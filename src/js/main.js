@@ -1,6 +1,7 @@
 import { initWhatsAppButtons } from './whatsapp.js';
 import { initAccordion } from './accordion.js';
 import { initScrollTop } from './scroll-top.js';
+import { initCookieBanner } from './cookies.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Inicializar botones de WhatsApp (Prioridad máxima de negocio)
@@ -10,21 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Error al inicializar botones de WhatsApp:', err);
   }
 
-  // 2. Inicializar acordeón de FAQs
+  // 2. Inicializar banner de Cookies y Privacidad
+  try {
+    initCookieBanner();
+  } catch (err) {
+    console.warn('Error al inicializar cookie banner:', err);
+  }
+
+  // 3. Inicializar acordeón de FAQs
   try {
     initAccordion('[data-accordion]');
   } catch (err) {
     console.error('Error al inicializar acordeón FAQ:', err);
   }
 
-  // 3. Inicializar botón volver arriba (mobile & desktop)
+  // 4. Inicializar botón volver arriba (mobile & desktop)
   try {
     initScrollTop('btn-scroll-top');
   } catch (err) {
     console.error('Error al inicializar scroll-top:', err);
   }
 
-  // 4. Header scroll shadow effect con rAF pasivo (evita reflows forzados en móvil)
+  // 5. Header scroll shadow effect con rAF pasivo (evita reflows forzados en móvil)
   try {
     const navbar = document.getElementById('main-nav');
     if (navbar) {
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('Aviso: navbar scroll listener no asignado:', err);
   }
 
-  // 5. Carga diferida de widgets interactivos y GSAP (0ms de retraso de renderizado para LCP y FCP)
+  // 6. Carga diferida de widgets interactivos y GSAP (0ms de retraso de renderizado para LCP y FCP)
   const loadDynamicWidgets = () => {
     import('./animations.js').then((mod) => {
       if (mod && mod.initAllDynamicWidgets) {
