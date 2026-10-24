@@ -1,41 +1,44 @@
-# erikwebsite.com - Desarrollo de Sitios Web de Alta Conversión
+# erikwebsite.com - Sitios Web Profesionales de Alta Conversión
 
 > Especialista en sitios web ultrarrápidos para comercios, profesionales independientes y empresas de servicios en San Juan y toda Argentina. Diseñados para convertir visitantes de Google Maps y redes sociales en clientes reales por WhatsApp.
 
 ## Servicios Principales
-- **Sitio Web Pro Negocio Local**: Desarrollo completo, diseño mobile-first, optimización de velocidad (95+ Google PageSpeed), copywriting persuasivo y botón directo a WhatsApp.
-- **Inversión**: $150.000 ARS pago único de desarrollo + $20.000 ARS/mes de mantenimiento, hosting ultrarrápido, actualizaciones y soporte continuo.
+- [Sitio Web Pro Negocio Local](https://erikwebsite.com/): Desarrollo completo, diseño mobile-first, optimización de velocidad (95+ Google PageSpeed), copywriting persuasivo y botón directo a WhatsApp.
+- [Diseño Web en San Juan](https://erikwebsite.com/san-juan/): Desarrollo web local para comercios y profesionales en San Juan Capital, Rivadavia, Santa Lucía y Rawson.
+- Inversión: $150.000 ARS pago único de desarrollo + $20.000 ARS/mes de mantenimiento, hosting ultrarrápido, actualizaciones y soporte continuo.
 
 ## Modelos y Demos Interactivas
-- Salud, Belleza y Estética: https://erikwebsite.com/demos/estetica/
-- Clínica Odontológica: https://erikwebsite.com/demos/odontologia/
-- Psicología y Terapia: https://erikwebsite.com/demos/psicologia/
-- Alquiler de Vajilla y Mantelería para Eventos: https://erikwebsite.com/demos/vajilla/
-- Catering y Barras Móviles para Fiestas: https://erikwebsite.com/demos/catering/
-- Salón de Eventos y Quintas: https://erikwebsite.com/demos/salones/
-- Estudio Jurídico y Abogados: https://erikwebsite.com/demos/abogados/
-- Urgencias del Hogar (Electricidad y Plomería 24hs): https://erikwebsite.com/demos/urgencias-hogar/
-- Estudio Contable e Impositivo: https://erikwebsite.com/demos/contable/
-- Personal Trainer y Fitness: https://erikwebsite.com/demos/fitness/
+- [Salud, Belleza y Estética](https://erikwebsite.com/demos/estetica/): Tratamientos corporales y faciales con reserva previa.
+- [Clínica Odontológica](https://erikwebsite.com/demos/odontologia/): Asignación de turnos y catálogo de especialidades dentales.
+- [Psicología y Terapia](https://erikwebsite.com/demos/psicologia/): Consultas presenciales y virtuales con derivación confidencial.
+- [Alquiler de Vajilla para Eventos](https://erikwebsite.com/demos/vajilla/): Catálogo interactivo de mantelería y vajilla para fiestas.
+- [Catering y Barras Móviles](https://erikwebsite.com/demos/catering/): Menú de recepciones y cotizador de eventos.
+- [Salón de Eventos y Quintas](https://erikwebsite.com/demos/salones/): Galería de salones y disponibilidad de fechas.
+- [Estudio Jurídico y Abogados](https://erikwebsite.com/demos/abogados/): Derecho laboral, civil y comercial con consulta directa.
+- [Urgencias del Hogar 24hs](https://erikwebsite.com/demos/urgencias-hogar/): Electricidad, plomería y cerrajería con atención a domicilio.
+- [Estudio Contable e Impositivo](https://erikwebsite.com/demos/contable/): Monotributo, liquidación de sueldos y asesoría impositiva.
+- [Personal Trainer y Fitness](https://erikwebsite.com/demos/fitness/): Asesorías personalizadas y rutinas deportivas.
 
-## Guías y Recursos del Blog (SEO / GEO / AEO)
-- Hub del Blog: https://erikwebsite.com/blog/
-- ¿Cuánto cuesta una página web en Argentina?: https://erikwebsite.com/blog/cuanto-cuesta-una-pagina-web-argentina/
-- Cómo conseguir clientes en Google Maps sin pagar: https://erikwebsite.com/blog/como-conseguir-clientes-google-maps/
-- Página Web vs. Instagram: https://erikwebsite.com/blog/pagina-web-vs-instagram/
-- Páginas Web para Abogados en Argentina: https://erikwebsite.com/blog/paginas-web-para-abogados-argentina/
-- Cómo automatizar turnos en consultorios: https://erikwebsite.com/blog/como-automatizar-turnos-consultorio/
-- ¿Qué negocios necesitan una página web?: https://erikwebsite.com/blog/que-negocios-necesitan-una-pagina-web/
-- Páginas Web para Psicólogos en Argentina: https://erikwebsite.com/blog/paginas-web-para-psicologos-argentina/
-- Páginas Web para Electricistas, Plomeros y Oficios: https://erikwebsite.com/blog/paginas-web-oficios-servicios-hogar/
-- Páginas Web para Estudios Contables: https://erikwebsite.com/blog/paginas-web-estudios-contables-argentina/
-- Páginas Web para Salones de Belleza y Estética: https://erikwebsite.com/blog/paginas-web-salones-belleza-estetica/
-- Páginas Web para Salones de Eventos y Catering: https://erikwebsite.com/blog/paginas-web-salones-eventos-catering/
-- Páginas Web para Personal Trainers y Gimnasios: https://erikwebsite.com/blog/paginas-web-personal-trainers-gimnasios/
-- ¿Por qué Debería Tener una Página Web? Mitos Comunes: https://erikwebsite.com/blog/por-que-tener-una-pagina-web/
+## Guías y Recursos del Blog
+- [Blog de Diseño Web y Posicionamiento](https://erikwebsite.com/blog/): Guías prácticas para PyMEs y profesionales.
+- [Diseño Web en San Juan](https://erikwebsite.com/blog/diseno-web-san-juan/): Precios 2026, Google Maps y estrategia digital en Cuyo.
+- [Diseño Web en Mendoza](https://erikwebsite.com/blog/diseno-web-mendoza/): Claves, precios y posicionamiento para PyMEs mendocinas.
+- [Diseño Web en San Luis](https://erikwebsite.com/blog/diseno-web-san-luis/): Digitalización comercial en Capital y Villa Mercedes.
+- [¿Cuánto cuesta una página web en Argentina?](https://erikwebsite.com/blog/cuanto-cuesta-una-pagina-web-argentina/): Precios reales, gastos ocultos y comparativa de mercado.
+- [Cómo conseguir clientes en Google Maps sin pagar](https://erikwebsite.com/blog/como-conseguir-clientes-google-maps/): Estrategia de posicionamiento en el Local Pack.
+- [Página Web vs. Instagram](https://erikwebsite.com/blog/pagina-web-vs-instagram/): Por qué las redes sociales solas ya no alcanzan para vender.
+- [Páginas Web para Abogados en Argentina](https://erikwebsite.com/blog/paginas-web-para-abogados-argentina/): Presencia digital y captación de clientes legales.
+- [Cómo automatizar turnos en consultorios](https://erikwebsite.com/blog/como-automatizar-turnos-consultorio/): Agenda y reducción de ausencias en turnos médicos.
+- [¿Qué negocios necesitan una página web?](https://erikwebsite.com/blog/que-negocios-necesitan-una-pagina-web/): Sectores de alta conversión en Argentina.
+- [Páginas Web para Psicólogos](https://erikwebsite.com/blog/paginas-web-para-psicologos-argentina/): Ética profesional y captación de pacientes online.
+- [Páginas Web para Electricistas y Plomeros](https://erikwebsite.com/blog/paginas-web-oficios-servicios-hogar/): Posicionamiento en urgencias del hogar.
+- [Páginas Web para Estudios Contables](https://erikwebsite.com/blog/paginas-web-estudios-contables-argentina/): Clientes para balances y monotributo.
+- [Páginas Web para Salones de Estética](https://erikwebsite.com/blog/paginas-web-salones-belleza-estetica/): Belleza, spa y tratamientos.
+- [Páginas Web para Salones de Eventos](https://erikwebsite.com/blog/paginas-web-salones-eventos-catering/): Cotización de eventos y fiestas.
+- [Páginas Web para Personal Trainers](https://erikwebsite.com/blog/paginas-web-personal-trainers-gimnasios/): Venta de rutinas y asesorías fitness.
+- [¿Por qué Debería Tener una Página Web?](https://erikwebsite.com/blog/por-que-tener-una-pagina-web/): Mitos y realidades de digitalizar tu negocio.
 
 ## Contacto Directo
-- Web: https://erikwebsite.com/
-- WhatsApp: +54 9 264 518-5359 (https://wa.me/5492645185359)
-- Ubicación: San Juan, Argentina
-- Términos del Servicio: https://erikwebsite.com/terminos/
+- [Página Web Oficial](https://erikwebsite.com/)
+- [WhatsApp Directo](https://wa.me/5492645185359)
+- [Términos del Servicio](https://erikwebsite.com/terminos/)

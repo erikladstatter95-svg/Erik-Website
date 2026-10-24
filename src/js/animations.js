@@ -59,23 +59,15 @@ export function initScrollReveal() {
   }
 }
 
-// 2. Entrada Suave del Hero y Encabezados
+// 2. Entrada Suave del Hero: Conserva visibilidad 100% inmediata para FCP y LCP óptimos
 export function initHeroEntrance() {
-  try {
-    if (isReducedMotion()) return;
-
-    const heroItems = document.querySelectorAll('[data-hero-anim]');
-    if (!heroItems || heroItems.length === 0) return;
-
-    if (typeof gsap !== 'undefined' && gsap.fromTo) {
-      gsap.fromTo(heroItems, 
-        { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: 'power2.out', delay: 0.05 }
-      );
-    }
-  } catch (err) {
-    console.warn('Aviso: initHeroEntrance saltado sin bloqueo', err);
-  }
+  // Los elementos del hero se mantienen visibles de inmediato desde el primer frame para evitar retrasos de LCP en móvil.
+  const heroItems = document.querySelectorAll('[data-hero-anim]');
+  if (!heroItems || heroItems.length === 0) return;
+  heroItems.forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
 }
 
 // 3. Barra Flotante Móvil Suave (Mobile Action Dock)

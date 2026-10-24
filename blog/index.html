@@ -3,23 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <!-- Analytics no bloqueante (Google Tag Manager & Microsoft Clarity) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-KWD0WYVK4J');
-  </script>
 
-  <!-- Clarity tracking code -->
-  <script>
+    function loadThirdPartyAnalytics() {
+      if (window._analyticsLoaded) return;
+      window._analyticsLoaded = true;
+
+      // Google Tag Manager
+      var gtm = document.createElement('script');
+      gtm.async = true;
+      gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J';
+      document.head.appendChild(gtm);
+
+      // Microsoft Clarity
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "ytkayi2nwu");
+    }
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(loadThirdPartyAnalytics, { timeout: 2500 });
+    } else {
+      window.addEventListener('load', function() {
+        setTimeout(loadThirdPartyAnalytics, 1000);
+      });
+    }
+    ['touchstart', 'scroll', 'keydown'].forEach(function(evt) {
+      window.addEventListener(evt, loadThirdPartyAnalytics, { once: true, passive: true });
+    });
   </script>
 
   <title>Blog y Guías de Diseño Web y SEO Local | Erik Website</title>
@@ -38,10 +56,14 @@
   <!-- Favicon SVG -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23059669%22/><text x=%2216%22 y=%2222%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>E</text></svg>">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts preconnect y carga no bloqueante -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  </noscript>
 
   <link rel="stylesheet" href="/src/styles/main.css">
 

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
+  "name": "Erik Website",
+  "description": "Desarrollo de páginas web profesionales y ultrarrápidas de alta conversión para comercios, profesionales y PyMEs en Argentina.",
+  "url": "https://erikwebsite.com/",
+  "provider": {
+    "name": "Erik Ladstatter",
+    "url": "https://erikwebsite.com/"
+  },
+  "resources": [
+    {
+      "name": "Servicio de Diseño Web Pro",
+      "type": "service",
+      "url": "https://erikwebsite.com/",
+      "description": "Sitios web rápidos con botón directo a WhatsApp y optimización de Google Maps por $150.000 ARS."
+    },
+    {
+      "name": "Diseño Web en San Juan",
+      "type": "service",
+      "url": "https://erikwebsite.com/san-juan/",
+      "description": "Desarrollo local en San Juan Capital, Rivadavia, Santa Lucía y Rawson."
+    },
+    {
+      "name": "Blog y Guías de Presencia Digital",
+      "type": "documentation",
+      "url": "https://erikwebsite.com/blog/",
+      "description": "Artículos informativos sobre costos de páginas web en Argentina, Google Maps y conversión a WhatsApp."
+    }
+  ]
+}
