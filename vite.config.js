@@ -37,6 +37,12 @@ export default defineConfig({
         blog_tiendanube_medida: resolve(__dirname, 'blog/tiendanube-linktree-vs-web-propia-a-medida/index.html'),
         blog_wordpress_codigo: resolve(__dirname, 'blog/wordpress-vs-codigo-a-medida-velocidad/index.html'),
         blog_mantenimiento: resolve(__dirname, 'blog/mantenimiento-web-argentina/index.html'),
+        // 5 Nuevos Artículos Long-Tail AEO / GEO / SEO (Datos Google Ads Argentina)
+        blog_nic_argentina: resolve(__dirname, 'blog/como-registrar-dominio-com-ar-nic-argentina/index.html'),
+        blog_correo_gmail: resolve(__dirname, 'blog/como-crear-correo-corporativo-dominio-propio-gmail/index.html'),
+        blog_google_sites: resolve(__dirname, 'blog/crear-pagina-web-google-sites-sirve-para-negocio/index.html'),
+        blog_odontologos: resolve(__dirname, 'blog/paginas-web-marketing-odontologos-argentina/index.html'),
+        blog_catalogo_whatsapp: resolve(__dirname, 'blog/como-crear-catalogo-online-pedidos-whatsapp/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
