@@ -43,6 +43,13 @@ export default defineConfig({
         blog_google_sites: resolve(__dirname, 'blog/crear-pagina-web-google-sites-sirve-para-negocio/index.html'),
         blog_odontologos: resolve(__dirname, 'blog/paginas-web-marketing-odontologos-argentina/index.html'),
         blog_catalogo_whatsapp: resolve(__dirname, 'blog/como-crear-catalogo-online-pedidos-whatsapp/index.html'),
+        // 5 Nuevos Artículos Batch 2 AEO / GEO / SEO (Fan-Out Multi-IA)
+        blog_wix_argentina: resolve(__dirname, 'blog/crear-pagina-web-wix-conviene-argentina/index.html'),
+        blog_medicos: resolve(__dirname, 'blog/paginas-web-medicos-consultorios-argentina/index.html'),
+        blog_alquiler_vajilla: resolve(__dirname, 'blog/paginas-web-alquiler-vajilla-mobiliario-eventos/index.html'),
+        blog_catalogo_pdf_canva: resolve(__dirname, 'blog/catalogo-pdf-canva-vs-catalogo-web/index.html'),
+        blog_geo_cordoba: resolve(__dirname, 'blog/diseno-web-cordoba/index.html'),
+        blog_generador_wa: resolve(__dirname, 'blog/generador-link-qr-whatsapp-gratis/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
