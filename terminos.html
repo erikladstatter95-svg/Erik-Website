@@ -7,7 +7,8 @@
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://erikwebsite.com/terminos/">
   <meta http-equiv="refresh" content="0; url=/terminos/">
-  <script>window.location.replace("/terminos/");</script>  <!-- Meta Pixel Code -->
+  <script>window.location.replace("/terminos/");</script>
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,14 +20,35 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
+    fbq('track', 'Contact');
+    fbq('trackCustom', 'Whatsapp');
+
+    // Listener global para capturar todos los clics a WhatsApp en la web
+    document.addEventListener('click', function(e) {
+      var target = e.target.closest('a, button');
+      if (!target) return;
+      var href = target.getAttribute('href') || '';
+      var hasWa = target.hasAttribute('data-wa-msg');
+      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
+      var txt = (target.innerText || '').toLowerCase();
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
+          window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
+        }
+      }
+    }, true);
   </script>
   <!-- End Meta Pixel Code -->
 </head>
 <body style="font-family: sans-serif; text-align: center; padding: 40px; color: #555;">
   <!-- Meta Pixel noscript Fallback -->
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""
-  /></noscript>
-  <p>Redirigiendo a <a href="/terminos/" style="color: #059669; font-weight: bold;">Términos y Condiciones</a>...</p>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
+  </noscript>
+<p>Redirigiendo a <a href="/terminos/" style="color: #059669; font-weight: bold;">Términos y Condiciones</a>...</p>
 </body>
 </html>

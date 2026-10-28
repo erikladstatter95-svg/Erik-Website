@@ -73,7 +73,8 @@
   }
   </script>
   <!-- Script de Adaptación de Moneda / Idioma (USD / ARS) -->
-  <script type="module" src="/src/js/demo-i18n.js"></script>  <!-- Meta Pixel Code -->
+  <script type="module" src="/src/js/demo-i18n.js"></script>
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -85,16 +86,36 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
+    fbq('track', 'Contact');
+    fbq('trackCustom', 'Whatsapp');
+
+    // Listener global para capturar todos los clics a WhatsApp en la web
+    document.addEventListener('click', function(e) {
+      var target = e.target.closest('a, button');
+      if (!target) return;
+      var href = target.getAttribute('href') || '';
+      var hasWa = target.hasAttribute('data-wa-msg');
+      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
+      var txt = (target.innerText || '').toLowerCase();
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
+          window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
+        }
+      }
+    }, true);
   </script>
   <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-amber-50/30 text-stone-800 flex flex-col min-h-screen">
   <!-- Meta Pixel noscript Fallback -->
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""
-  /></noscript>
-
-  <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 2) -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
+  </noscript>
+<!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 2) -->
   <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
     <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
