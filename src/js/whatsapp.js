@@ -35,6 +35,14 @@ export function initWhatsAppButtons(defaultPhone = DEFAULT_PORTFOLIO_PHONE) {
         msg = msg.replace('{servicio}', service);
       }
       
+      // Evento de Conversión Meta Pixel (Contact)
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact', {
+          content_name: 'WhatsApp Click',
+          content_category: service || 'General Consultation'
+        });
+      }
+
       const url = buildWhatsAppUrl(phone, msg);
       window.open(url, '_blank', 'noopener,noreferrer');
     });
