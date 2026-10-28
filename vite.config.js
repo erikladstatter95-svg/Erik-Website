@@ -50,6 +50,12 @@ export default defineConfig({
         blog_catalogo_pdf_canva: resolve(__dirname, 'blog/catalogo-pdf-canva-vs-catalogo-web/index.html'),
         blog_geo_cordoba: resolve(__dirname, 'blog/diseno-web-cordoba/index.html'),
         blog_generador_wa: resolve(__dirname, 'blog/generador-link-qr-whatsapp-gratis/index.html'),
+        // 5 Nuevos Artículos Batch 3 Ultra-Specific Long-Tail AEO / GEO / SEO
+        blog_nic_delegar_renovar: resolve(__dirname, 'blog/como-delegar-dns-renovar-dominio-nic-argentina/index.html'),
+        blog_canva_landing: resolve(__dirname, 'blog/hacer-landing-page-canva-sirve-para-vender/index.html'),
+        blog_restaurantes_qr: resolve(__dirname, 'blog/paginas-web-restaurantes-carta-qr-pedidos-whatsapp/index.html'),
+        blog_geo_neuquen: resolve(__dirname, 'blog/diseno-web-neuquen/index.html'),
+        blog_rediseno_web: resolve(__dirname, 'blog/rediseno-paginas-web-actualizar-sitio-lento/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
