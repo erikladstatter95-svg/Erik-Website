@@ -132,7 +132,7 @@
     fbq('track', 'Contact');
     fbq('trackCustom', 'Whatsapp');
 
-    // Listener global para capturar todos los clics a WhatsApp en la web
+    // Listener global para capturar todos los clics a WhatsApp
     document.addEventListener('click', function(e) {
       var target = e.target.closest('a, button');
       if (!target) return;
@@ -158,6 +158,10 @@
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
+  <!-- Meta Pixel Event Code (Contact) -->
+  <script>
+    fbq('track', 'Contact');
+  </script>
 <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CATEGORÍA 3) -->
   <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
     <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
