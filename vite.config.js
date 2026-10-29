@@ -56,6 +56,13 @@ export default defineConfig({
         blog_restaurantes_qr: resolve(__dirname, 'blog/paginas-web-restaurantes-carta-qr-pedidos-whatsapp/index.html'),
         blog_geo_neuquen: resolve(__dirname, 'blog/diseno-web-neuquen/index.html'),
         blog_rediseno_web: resolve(__dirname, 'blog/rediseno-paginas-web-actualizar-sitio-lento/index.html'),
+        // 6 Nuevos Artículos Batch 4 (4 Provincias + 2 Long-Tail AEO / GEO / SEO)
+        blog_geo_rosario: resolve(__dirname, 'blog/diseno-web-rosario-santa-fe/index.html'),
+        blog_geo_tucuman: resolve(__dirname, 'blog/diseno-web-tucuman/index.html'),
+        blog_geo_salta_jujuy: resolve(__dirname, 'blog/diseno-web-salta-jujuy/index.html'),
+        blog_geo_mdp_laplata: resolve(__dirname, 'blog/diseno-web-mar-del-plata-la-plata-bahia-blanca/index.html'),
+        blog_hostinger: resolve(__dirname, 'blog/crear-pagina-web-hostinger-conviene-argentina/index.html'),
+        blog_com_vs_comar: resolve(__dirname, 'blog/dominio-com-vs-com-ar-cual-conviene-argentina/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
