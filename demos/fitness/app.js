@@ -2,6 +2,7 @@ import { initWhatsAppButtons } from '../../src/js/whatsapp.js';
 import { initAccordion } from '../../src/js/accordion.js';
 import { initScrollTop } from '../../src/js/scroll-top.js';
 import { initScrollReveal, initHeroEntrance, initMobileDock } from '../../src/js/animations.js';
+import { initFitnessCalc } from '../../src/js/fitness-calc.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const FITNESS_PHONE = '5492645185359';
@@ -12,15 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroEntrance();
   initScrollReveal();
   initMobileDock();
+  initFitnessCalc();
 
   // Header scroll blur & shadow
   const header = document.querySelector('header');
   if (header) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 20) {
-        header.classList.add('shadow-lg', 'bg-slate-900/98');
+        header.classList.add('shadow-xl', 'bg-neutral-950/95');
       } else {
-        header.classList.remove('shadow-lg', 'bg-slate-900/98');
+        header.classList.remove('shadow-xl', 'bg-neutral-950/95');
       }
     });
   }
@@ -39,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isQuarterly) {
           knob.classList.remove('translate-x-0');
           knob.classList.add('translate-x-7');
-          toggleBtn.classList.remove('bg-slate-800');
-          toggleBtn.classList.add('bg-emerald-600');
+          toggleBtn.classList.remove('bg-neutral-800');
+          toggleBtn.classList.add('bg-lime-500');
         } else {
           knob.classList.remove('translate-x-7');
           knob.classList.add('translate-x-0');
-          toggleBtn.classList.remove('bg-emerald-600');
-          toggleBtn.classList.add('bg-slate-800');
+          toggleBtn.classList.remove('bg-lime-500');
+          toggleBtn.classList.add('bg-neutral-800');
         }
       }
 

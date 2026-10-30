@@ -77,6 +77,7 @@ export default defineConfig({
         urgencias_hogar: resolve(__dirname, 'demos/urgencias-hogar/index.html'),
         contable: resolve(__dirname, 'demos/contable/index.html'),
         fitness: resolve(__dirname, 'demos/fitness/index.html'),
+        estudio_fitness: resolve(__dirname, 'demos/estudio-fitness/index.html'),
         // Retrocompatibilidad
         servicios_hogar_legacy: resolve(__dirname, 'demos/servicios-hogar/index.html'),
         eventos_legacy: resolve(__dirname, 'demos/eventos/index.html'),
