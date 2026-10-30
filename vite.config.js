@@ -66,6 +66,9 @@ export default defineConfig({
         // 2 Nuevos Artículos Batch 5 Ultra-Low Competition
         blog_geo_bariloche_comodoro: resolve(__dirname, 'blog/diseno-web-bariloche-comodoro-rivadavia-patagonia/index.html'),
         blog_alta_google_maps: resolve(__dirname, 'blog/como-poner-agregar-negocio-local-google-maps-gratis/index.html'),
+        // 2 Nuevos Artículos Batch 6 (Diagnóstico Maps + NEA Provincias)
+        blog_por_que_maps: resolve(__dirname, 'blog/por-que-mi-negocio-no-aparece-en-google-maps/index.html'),
+        blog_geo_misiones_corrientes: resolve(__dirname, 'blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
