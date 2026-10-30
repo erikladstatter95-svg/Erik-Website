@@ -1,49 +1,68 @@
 /**
  * pilates-booking.js
- * Selector de disciplina, turnos y reserva para el Estudio de Pilates & Movilidad
+ * Selector dinámico de día individual y horario para el Estudio de Pilates & Movilidad
  */
 export function initPilatesBooking() {
-  const disciplineButtons = document.querySelectorAll('[data-pilates-disc]');
-  const scheduleSlots = document.querySelectorAll('[data-slot-btn]');
-  const bookedModal = document.getElementById('pilates-modal');
+  const dayButtons = document.querySelectorAll('[data-day-btn]');
+  const scheduleContainers = document.querySelectorAll('[data-day-schedule]');
+  const slotButtons = document.querySelectorAll('[data-slot-btn]');
   const selectedInfo = document.getElementById('selected-schedule-info');
   const reserveBtn = document.getElementById('reserve-whatsapp-btn');
 
-  let currentDisc = 'Pilates Reformer (Camas)';
-  let currentDay = 'Lunes y Miércoles';
+  let currentDay = 'Lunes';
   let currentHour = '18:00 hs';
+  let currentClass = 'Pilates Reformer (Camas)';
 
-  disciplineButtons.forEach(btn => {
+  // Cambio de pestaña de día (Lunes, Martes, Miércoles, etc.)
+  dayButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      disciplineButtons.forEach(b => {
-        b.classList.remove('bg-emerald-800', 'text-white', 'border-emerald-600');
-        b.classList.add('bg-stone-100', 'text-stone-700', 'border-stone-200');
+      const targetDay = btn.getAttribute('data-day-btn');
+      currentDay = targetDay;
+
+      dayButtons.forEach(b => {
+        b.classList.remove('bg-[#14532d]', 'text-white', 'shadow-xs');
+        b.classList.add('bg-white', 'text-stone-700', 'border-stone-200');
       });
-      btn.classList.add('bg-emerald-800', 'text-white', 'border-emerald-600');
-      btn.classList.remove('bg-stone-100', 'text-stone-700', 'border-stone-200');
-      currentDisc = btn.getAttribute('data-pilates-disc');
-      updateSummary();
+      btn.classList.add('bg-[#14532d]', 'text-white', 'shadow-xs');
+      btn.classList.remove('bg-white', 'text-stone-700', 'border-stone-200');
+
+      scheduleContainers.forEach(container => {
+        if (container.getAttribute('data-day-schedule') === targetDay) {
+          container.classList.remove('hidden');
+        } else {
+          container.classList.add('hidden');
+        }
+      });
+
+      // Seleccionar el primer turno disponible de ese día
+      const firstSlot = document.querySelector(`[data-day-schedule="${targetDay}"] [data-slot-btn]`);
+      if (firstSlot) {
+        firstSlot.click();
+      } else {
+        updateSummary();
+      }
     });
   });
 
-  scheduleSlots.forEach(slot => {
+  // Selección de slot de horario
+  slotButtons.forEach(slot => {
     slot.addEventListener('click', () => {
-      scheduleSlots.forEach(s => {
-        s.classList.remove('ring-2', 'ring-emerald-600', 'bg-emerald-50');
+      slotButtons.forEach(s => {
+        s.classList.remove('ring-2', 'ring-[#14532d]', 'bg-emerald-50/80', 'border-[#14532d]');
       });
-      slot.classList.add('ring-2', 'ring-emerald-600', 'bg-emerald-50');
-      currentDay = slot.getAttribute('data-day') || currentDay;
+      slot.classList.add('ring-2', 'ring-[#14532d]', 'bg-emerald-50/80', 'border-[#14532d]');
       currentHour = slot.getAttribute('data-hour') || currentHour;
+      currentClass = slot.getAttribute('data-class') || currentClass;
       updateSummary();
     });
   });
 
   function updateSummary() {
     if (selectedInfo) {
-      selectedInfo.textContent = `${currentDisc} • ${currentDay} a las ${currentHour}`;
+      selectedInfo.textContent = `${currentDay} a las ${currentHour} • ${currentClass}`;
     }
     if (reserveBtn) {
-      const msg = `Hola! Quiero reservar una clase de prueba o consultar cupo en Lumina Pilates:%0A- Disciplina: ${encodeURIComponent(currentDisc)}%0A- Horario de preferencia: ${encodeURIComponent(currentDay)} a las ${encodeURIComponent(currentHour)}%0A%0A¿Tienen disponibilidad para esta semana?`;
+      const msg = `Hola! Estuve viendo la grilla de horarios en Lumina Pilates y quiero consultar si hay cupo disponible para el día ${encodeURIComponent(currentDay)} a las ${encodeURIComponent(currentHour)} (${encodeURIComponent(currentClass)}). ¿Cómo hacemos para coordinar la clase de prueba?`;
       reserveBtn.href = `https://wa.me/5492645185359?text=${msg}`;
     }
   }

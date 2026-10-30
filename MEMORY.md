@@ -90,3 +90,8 @@
 - [x] **2026-10-30:** Análisis de 5 nuevos CSVs de Google Ads y publicación del **Batch 5 de 2 artículos de competencia ultra-baja** (alcanzando **48 guías y herramientas** activas en `/blog/`):
   1. `/blog/diseno-web-bariloche-comodoro-rivadavia-patagonia/` (*Diseño Web en Bariloche, Comodoro Rivadavia y Patagonia Sur — Competencia 0/100 a 40/100*)
   2. `/blog/como-poner-agregar-negocio-local-google-maps-gratis/` (*Cómo hacer que mi negocio o local aparezca en Google Maps gratis — Competencia Baja 30/100 y +1.200 búsquedas/mes*)
+- [x] **2026-10-30:** Rediseño de la demo de Fitness para Personal Trainers (`/demos/fitness/`) y creación de nueva demo independiente para Estudios de Pilates (`/demos/estudio-fitness/`):
+  - **Personal Trainer (`/demos/fitness/`):** Calculadora interactiva reestructurada con matriz 3x3 (días: 2, 3, 5 por semana vs nivel: principiante, intermedio, avanzado), precios diferenciados y nota aclaratoria sobre evaluación física inicial.
+  - **Pilates Studio (`/demos/estudio-fitness/`):** Estilo calm boutique en beige cálido (`#f7f5f0`), blanco y verde bosque (`#14532d`), con selector de turnos día por día (Lunes a Sábado) y generación de mensaje dinámico para reserva en WhatsApp.
+  - **Navegación Cluster 3 & Home:** Actualizada la barra superior sticky con las 5 variaciones en todas las demos del cluster (`abogados`, `urgencias-hogar`, `contable`, `fitness`, `estudio-fitness` y retrocompatibilidad `cluster-3/`) y añadida la 5ta opción en la home (`index.html` y `en/index.html`) bajo la categoría "Autoridad, Urgencias y PyMEs" (5 Estilos).
+  - **Sitemap & Build:** Registrado `/demos/estudio-fitness/` y `/demos/contable/` en `sitemap.xml`, compilación de producción validada con Vite (`0 errores`).
