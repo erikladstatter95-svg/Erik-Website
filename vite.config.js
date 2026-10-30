@@ -63,6 +63,9 @@ export default defineConfig({
         blog_geo_mdp_laplata: resolve(__dirname, 'blog/diseno-web-mar-del-plata-la-plata-bahia-blanca/index.html'),
         blog_hostinger: resolve(__dirname, 'blog/crear-pagina-web-hostinger-conviene-argentina/index.html'),
         blog_com_vs_comar: resolve(__dirname, 'blog/dominio-com-vs-com-ar-cual-conviene-argentina/index.html'),
+        // 2 Nuevos Artículos Batch 5 Ultra-Low Competition
+        blog_geo_bariloche_comodoro: resolve(__dirname, 'blog/diseno-web-bariloche-comodoro-rivadavia-patagonia/index.html'),
+        blog_alta_google_maps: resolve(__dirname, 'blog/como-poner-agregar-negocio-local-google-maps-gratis/index.html'),
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
