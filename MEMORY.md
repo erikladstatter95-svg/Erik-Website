@@ -99,3 +99,19 @@
   1. `/blog/por-que-mi-negocio-no-aparece-en-google-maps/` (*Por Qué mi Negocio no Aparece en Google Maps y Cómo Solucionarlo — Diagnóstico de verificación, categorías y consistencia NAP*)
   2. `/blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia/` (*Diseño de Páginas Web en Misiones, Corrientes y Chaco: Precios 2026 — Cobertura integral del NEA: Posadas, Corrientes Capital y Resistencia*)
   - Integrados en `blog/index.html` con tarjetas destacadas, registrados en `vite.config.js` y `sitemap.xml`, build 100% limpio en Vite y notificados a Google Indexing API v3 con status 200 OK.
+- [x] **2026-10-30:** Desacoplamiento y reestructuración completa de artículos geográficos en URLs y entidades únicas para evitar señales confusas a Google:
+  - Se dividieron los 5 artículos que agrupaban múltiples localidades en **12 artículos individuales independientes** con sus propios slugs, esquemas `LocalBusiness`, imágenes editoriales auténticas con pastilla personalizada y contenido específico:
+    1. `/blog/diseno-web-rosario/` (Rosario & Gran Rosario)
+    2. `/blog/diseno-web-santa-fe/` (Santa Fe Capital)
+    3. `/blog/diseno-web-salta/` (Salta Capital & Valle de Lerma)
+    4. `/blog/diseno-web-jujuy/` (San Salvador de Jujuy & Quebrada)
+    5. `/blog/diseno-web-mar-del-plata/` (Mar del Plata & Costa Atlántica)
+    6. `/blog/diseno-web-la-plata/` (La Plata Capital)
+    7. `/blog/diseno-web-bahia-blanca/` (Bahía Blanca & Polo Industrial)
+    8. `/blog/diseno-web-bariloche/` (San Carlos de Bariloche & Río Negro)
+    9. `/blog/diseno-web-comodoro-rivadavia/` (Comodoro Rivadavia & Chubut)
+    10. `/blog/diseno-web-posadas-misiones/` (Posadas & Misiones)
+    11. `/blog/diseno-web-corrientes/` (Corrientes Capital)
+    12. `/blog/diseno-web-resistencia-chaco/` (Resistencia & Chaco)
+  - Los 5 slugs combinados originales se configuraron con redirección instantánea canonical y meta-refresh hacia su destino principal para prevenir errores 404.
+  - Sincronizados en `blog/index.html`, `vite.config.js`, `sitemap.xml`, compilación en producción limpia (`0 errores`) y notificados a Google Indexing API v3 (`200 OK`). Totalizando **57 guías y herramientas activas**.

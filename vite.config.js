@@ -66,6 +66,19 @@ export default defineConfig({
         // 2 Nuevos Artículos Batch 5 Ultra-Low Competition
         blog_geo_bariloche_comodoro: resolve(__dirname, 'blog/diseno-web-bariloche-comodoro-rivadavia-patagonia/index.html'),
         blog_alta_google_maps: resolve(__dirname, 'blog/como-poner-agregar-negocio-local-google-maps-gratis/index.html'),
+                // 12 Artículos GEO Individuales por Ciudad / Provincia
+        blog_geo_rosario_ind: resolve(__dirname, 'blog/diseno-web-rosario/index.html'),
+        blog_geo_santa_fe_ind: resolve(__dirname, 'blog/diseno-web-santa-fe/index.html'),
+        blog_geo_salta_ind: resolve(__dirname, 'blog/diseno-web-salta/index.html'),
+        blog_geo_jujuy_ind: resolve(__dirname, 'blog/diseno-web-jujuy/index.html'),
+        blog_geo_mar_del_plata_ind: resolve(__dirname, 'blog/diseno-web-mar-del-plata/index.html'),
+        blog_geo_la_plata_ind: resolve(__dirname, 'blog/diseno-web-la-plata/index.html'),
+        blog_geo_bahia_blanca_ind: resolve(__dirname, 'blog/diseno-web-bahia-blanca/index.html'),
+        blog_geo_bariloche_ind: resolve(__dirname, 'blog/diseno-web-bariloche/index.html'),
+        blog_geo_comodoro_rivadavia_ind: resolve(__dirname, 'blog/diseno-web-comodoro-rivadavia/index.html'),
+        blog_geo_posadas_misiones_ind: resolve(__dirname, 'blog/diseno-web-posadas-misiones/index.html'),
+        blog_geo_corrientes_ind: resolve(__dirname, 'blog/diseno-web-corrientes/index.html'),
+        blog_geo_resistencia_chaco_ind: resolve(__dirname, 'blog/diseno-web-resistencia-chaco/index.html'),
         // 2 Nuevos Artículos Batch 6 (Diagnóstico Maps + NEA Provincias)
         blog_por_que_maps: resolve(__dirname, 'blog/por-que-mi-negocio-no-aparece-en-google-maps/index.html'),
         blog_geo_misiones_corrientes: resolve(__dirname, 'blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia/index.html'),

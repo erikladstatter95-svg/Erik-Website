@@ -49,6 +49,80 @@
     <priority>0.90</priority>
   </url>
 
+    <!-- Artículos GEO Individuales por Ciudad / Provincia -->
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-rosario/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-santa-fe/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-salta/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-jujuy/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-mar-del-plata/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-la-plata/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-bahia-blanca/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-bariloche/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-comodoro-rivadavia/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-posadas-misiones/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-corrientes/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-resistencia-chaco/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Artículos Batch 6 -->
   <url>
     <loc>https://erikwebsite.com/blog/por-que-mi-negocio-no-aparece-en-google-maps/</loc>
@@ -56,12 +130,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://erikwebsite.com/blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
 
   <!-- Hub del Blog -->
   <url>
