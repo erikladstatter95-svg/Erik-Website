@@ -11,6 +11,8 @@ export default defineConfig({
         terminos_clean: resolve(__dirname, 'terminos/index.html'),
         // Landing Geo Local y Blog Hub
         geo_san_juan: resolve(__dirname, 'san-juan/index.html'),
+        auditoria_seo: resolve(__dirname, 'auditoria-seo/index.html'),
+        blog_auditoria_seo: resolve(__dirname, 'blog/auditoria-seo-optimizacion-mantenimiento-web-argentina/index.html'),
         blog: resolve(__dirname, 'blog/index.html'),
         blog_geo_san_juan: resolve(__dirname, 'blog/diseno-web-san-juan/index.html'),
         blog_geo_mendoza: resolve(__dirname, 'blog/diseno-web-mendoza/index.html'),
@@ -82,6 +84,25 @@ export default defineConfig({
         // 2 Nuevos Artículos Batch 6 (Diagnóstico Maps + NEA Provincias)
         blog_por_que_maps: resolve(__dirname, 'blog/por-que-mi-negocio-no-aparece-en-google-maps/index.html'),
         blog_geo_misiones_corrientes: resolve(__dirname, 'blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia/index.html'),
+        // 5 Nuevos Artículos Batch 7 AEO / GEO / SEO
+        blog_empretienda_tiendanube: resolve(__dirname, 'blog/empretienda-vs-tiendanube-cual-conviene-argentina/index.html'),
+        blog_inmobiliarias: resolve(__dirname, 'blog/paginas-web-para-inmobiliarias-argentina/index.html'),
+        blog_embudo_whatsapp: resolve(__dirname, 'blog/embudo-de-ventas-por-whatsapp-argentina/index.html'),
+        blog_por_que_nadie_compra_wa: resolve(__dirname, 'blog/por-que-nadie-me-compra-por-whatsapp/index.html'),
+        blog_web_gratis_vender: resolve(__dirname, 'blog/crear-pagina-web-gratis-para-vender-argentina/index.html'),
+        // 10 Nuevos Artículos Batch 8 (6 Relevantes BoFu + 4 Ciudades Individuales)
+        blog_shopify_precios: resolve(__dirname, 'blog/precios-shopify-argentina-conviene/index.html'),
+        blog_woo_vs_tiendanube: resolve(__dirname, 'blog/woocommerce-vs-tiendanube-cual-conviene-argentina/index.html'),
+        blog_godaddy_ar: resolve(__dirname, 'blog/crear-pagina-web-godaddy-conviene-argentina/index.html'),
+        blog_presupuesto_web: resolve(__dirname, 'blog/como-pedir-presupuesto-pagina-web-argentina/index.html'),
+        blog_veterinarias: resolve(__dirname, 'blog/paginas-web-veterinarias-pet-shops-argentina/index.html'),
+        blog_talleres: resolve(__dirname, 'blog/paginas-web-talleres-mecanicos-lubricentros-argentina/index.html'),
+        blog_geo_parana: resolve(__dirname, 'blog/diseno-web-parana/index.html'),
+        blog_geo_tandil: resolve(__dirname, 'blog/diseno-web-tandil/index.html'),
+        blog_geo_pilar: resolve(__dirname, 'blog/diseno-web-pilar/index.html'),
+        blog_geo_lomas: resolve(__dirname, 'blog/diseno-web-lomas-de-zamora/index.html'),
+
+
         // Demos Semánticas Principales
         estetica: resolve(__dirname, 'demos/estetica/index.html'),
         odontologia: resolve(__dirname, 'demos/odontologia/index.html'),
