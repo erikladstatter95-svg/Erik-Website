@@ -12,6 +12,7 @@ export default defineConfig({
         // Landing Geo Local y Blog Hub
         geo_san_juan: resolve(__dirname, 'san-juan/index.html'),
         auditoria_seo: resolve(__dirname, 'auditoria-seo/index.html'),
+        blog_que_es_funnel: resolve(__dirname, 'blog/que-es-un-funnel-de-ventas-para-que-sirve-argentina/index.html'),
         blog_auditoria_seo: resolve(__dirname, 'blog/auditoria-seo-optimizacion-mantenimiento-web-argentina/index.html'),
         blog: resolve(__dirname, 'blog/index.html'),
         blog_geo_san_juan: resolve(__dirname, 'blog/diseno-web-san-juan/index.html'),

@@ -85,8 +85,46 @@
         "image": "https://erikwebsite.com/images/guia_auditoria_seo_optimizacion_web.png",
         "priceRange": "A consultar según sitio web",
         "telephone": "+5492645185359",
-        "areaServed": "Argentina",
-        "description": "Servicio de auditoría SEO, posicionamiento en Google y Google Maps, optimización de velocidad móvil y mantenimiento para sitios web existentes de cualquier rubro."
+        "areaServed": {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        "provider": {
+          "@type": "Person",
+          "name": "Erik Ladstatter",
+          "url": "https://erikwebsite.com/"
+        },
+        "description": "Servicio de auditoría SEO, posicionamiento en Google y Google Maps, optimización de velocidad móvil y mantenimiento mensual con hosting y seguridad SSL para sitios web existentes de cualquier rubro.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Auditoría SEO, Optimización y Mantenimiento Web",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Auditoría SEO e Implementación en Código",
+                "description": "Análisis de posicionamiento en Google, estudio de competencia, optimización de encabezados H1/H2, metadatos, Schema.org y conexión con Google Maps."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Optimización de Velocidad Móvil y Conversión a WhatsApp",
+                "description": "Aceleración de tiempos de carga en teléfonos celulares, compresión de recursos, instalación de Píxel de Meta, Google Analytics 4 y botones de cierre por WhatsApp."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mantenimiento Mensual, Hosting, Seguridad SSL y Actualizaciones",
+                "description": "Soporte continuo para páginas web existentes: mantenimiento online, certificado HTTPS/SSL, copias de seguridad y actualización de precios, textos, fotos o promociones."
+              }
+            }
+          ]
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -200,8 +238,9 @@
         <a href="#problemas" class="hover:text-neutral-900 transition-colors">¿Por qué no vendés?</a>
         <a href="#que-incluye" class="hover:text-neutral-900 transition-colors">Qué Incluye</a>
         <a href="#comparativa" class="hover:text-neutral-900 transition-colors">Diferencias</a>
-        <a href="/san-juan/" class="hover:text-emerald-600 transition-colors">San Juan</a>
-        <a href="/blog/" class="hover:text-emerald-600 transition-colors">Blog</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-600 transition-colors font-semibold text-neutral-600">San Juan</a>
+        <a href="/blog/" class="hover:text-emerald-600 transition-colors font-semibold text-neutral-600">Blog</a>
       </nav>
 
       <div class="flex items-center gap-2.5 sm:gap-3.5">
@@ -433,20 +472,20 @@
             </div>
           </div>
 
-          <!-- Item 5 (Full Width Mantenimiento) -->
-          <div class="md:col-span-2 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-950/60 to-neutral-900 border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-neutral-950 flex items-center justify-center font-extrabold text-sm flex-shrink-0">
+          <!-- Item 5 (Full Width Mantenimiento - Ocupa las 2 columnas completas en escritorio) -->
+          <div class="col-span-1 md:col-span-2 w-full p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-r from-emerald-950/70 via-emerald-950/40 to-neutral-900 border border-emerald-500/35 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-10 shadow-xl">
+            <div class="flex items-start gap-4 sm:gap-5 flex-1">
+              <div class="w-11 h-11 rounded-2xl bg-emerald-500 text-neutral-950 flex items-center justify-center font-extrabold text-base flex-shrink-0 shadow-md">
                 +
               </div>
-              <div>
+              <div class="flex-1">
                 <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
                   ¿No tenés quién te mantenga la página?
                 </span>
-                <h3 class="font-display font-bold text-lg sm:text-xl text-white mb-1">
+                <h3 class="font-display font-bold text-lg sm:text-2xl text-white mb-2">
                   Mantenimiento Mensual, Hosting, Seguridad SSL y Actualizaciones
                 </h3>
-                <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-2xl">
+                <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-3xl">
                   Si el programador o agencia que te hizo la web desapareció o tarda semanas en cambiarte un precio, nosotros tomamos la posta: mantenemos tu sitio online, seguro con candado HTTPS, con copias de respaldo y actualizamos tus textos, fotos o promociones cuando lo necesites.
                 </p>
               </div>
@@ -454,7 +493,7 @@
             <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Tengo%20una%20página%20web%20y%20quiero%20consultar%20por%20mantenimiento%20y%20optimización%20SEO.%20Mi%20link%20es:%20"
                target="_blank"
                rel="noopener noreferrer"
-               class="whitespace-nowrap px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold text-xs sm:text-sm transition-all shadow-lg cursor-pointer flex-shrink-0">
+               class="w-full sm:w-auto text-center whitespace-nowrap px-7 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold text-xs sm:text-sm transition-all shadow-lg cursor-pointer flex-shrink-0">
               Pasar mi Link por WhatsApp
             </a>
           </div>
@@ -583,13 +622,15 @@
       <div class="flex items-center gap-4 text-neutral-400 flex-wrap justify-center">
         <a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a>
         <span class="text-neutral-600">•</span>
+        <a href="/auditoria-seo/" class="text-emerald-400 font-medium">Auditoría SEO</a>
+        <span class="text-neutral-600">•</span>
         <a href="/san-juan/" class="hover:text-emerald-400 transition-colors">San Juan</a>
         <span class="text-neutral-600">•</span>
-        <a href="/blog/" class="hover:text-emerald-400 transition-colors">Blog y Guías</a>
+        <a href="/blog/" class="hover:text-emerald-400 transition-colors">Blog</a>
         <span class="text-neutral-600">•</span>
-        <a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400 transition-colors text-emerald-400/90">Generador QR WhatsApp</a>
+        <a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400 transition-colors text-emerald-400/90">Generador Link y QR WhatsApp</a>
         <span class="text-neutral-600">•</span>
-        <a href="/terminos/" class="hover:text-emerald-400 transition-colors">Términos</a>
+        <a href="/terminos/" class="hover:text-emerald-400 transition-colors">Términos y Condiciones</a>
       </div>
     </div>
   </footer>

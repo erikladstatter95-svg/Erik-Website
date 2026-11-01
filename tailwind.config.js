@@ -2,6 +2,12 @@
 export default {
   content: [
     "./index.html",
+    "./en/**/*.html",
+    "./san-juan/**/*.html",
+    "./auditoria-seo/**/*.html",
+    "./blog/**/*.{html,js}",
+    "./terminos/**/*.html",
+    "./privacidad/**/*.html",
     "./demos/**/*.{html,js}",
     "./src/**/*.{html,js}",
   ],
