@@ -12,6 +12,12 @@ export default defineConfig({
         // Landing Geo Local y Blog Hub
         geo_san_juan: resolve(__dirname, 'san-juan/index.html'),
         auditoria_seo: resolve(__dirname, 'auditoria-seo/index.html'),
+        demo_funnel: resolve(__dirname, 'demos/funnel/index.html'),
+        blog_b10_hotmart_argentina_comision: resolve(__dirname, 'blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/index.html'),
+        blog_b10_stan_store_argentina_preci: resolve(__dirname, 'blog/stan-store-argentina-precios-alternativa-pesos/index.html'),
+        blog_b10_que_es_pixel_de_meta_para_: resolve(__dirname, 'blog/que-es-pixel-de-meta-para-que-sirve-instalar-web/index.html'),
+        blog_b10_paginas_web_constructoras_: resolve(__dirname, 'blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/index.html'),
+        blog_b10_cuanto_cuesta_auditoria_se: resolve(__dirname, 'blog/cuanto-cuesta-auditoria-seo-posicionamiento-web-google-argentina/index.html'),
         blog_b9_precios_comisiones_tiendanub: resolve(__dirname, 'blog/precios-comisiones-tiendanube-alternativas-argentina/index.html'),
         blog_b9_paginas_web_locales_ropa_ind: resolve(__dirname, 'blog/paginas-web-locales-ropa-indumentaria-mayoristas-argentina/index.html'),
         blog_b9_paginas_web_agencias_de_viaj: resolve(__dirname, 'blog/paginas-web-agencias-de-viajes-excursiones-turismo-argentina/index.html'),
