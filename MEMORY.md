@@ -32,6 +32,8 @@
 10. **Skill Obligatoria `aeo-geo-tactics` y Extracción de Queries Fan-Out (Opción 3):** Antes de redactar cualquier artículo o cluster del blog, se debe activar y consultar obligatoriamente la skill `aeo-geo-tactics` y ejecutar la extracción de *Query Fan-Out* (vía Antigravity / script de autocompletado) para identificar las sub-preguntas y variaciones conversacionales que los usuarios hacen en ChatGPT, Perplexity y Google, integrándolas en los subtítulos `<h2>` y en el bloque de Respuesta Directa.
 11. **Estrategia 'SEO Colonies' e Interlinking Continuo:** Toda guía debe incorporar enlaces contextuales cruzados hacia las herramientas y guías complementarias del blog (registro en NIC Argentina, correo corporativo en Gmail, Google Maps, generador de link/QR de WhatsApp, comparativas Canva/Wix) y canalizar autoridad hacia las Landing Pages comerciales y demos interactivas con textos ancla semánticos y enlaces de ancla (`#demos`, `#precios`).
 12. **Sincronización Doble de Imágenes (`images/` + `public/images/`):** Toda imagen nueva o actualizada del sitio o del blog debe guardarse siempre en ambos directorios (`images/` y `public/images/`) para que Vite empaquete y copie correctamente los recursos estáticos a `dist/images/` en producción.
+13. **Sitemap: el archivo que se publica es `public/sitemap.xml` (NO el de la raíz):** Vite copia `public/` a `dist/`; el `sitemap.xml` de la raíz se ignora en producción. Cada vez que se publiquen artículos hay que actualizar ambos (`Copy-Item sitemap.xml public\sitemap.xml -Force`). Este olvido dejó el sitemap en vivo congelado en 63 URLs (GSC mostraba `63 enviadas`) mientras el local tenía 121. Además, nunca listar URLs que no existan en disco ni las páginas stub de redirección (`diseno-web-salta-jujuy`, etc.) ni `/terminos/` (noindex).
+14. **Antes de proponer un artículo nuevo, comparar contra los H1/H2 de las guías existentes** (no solo contra los slugs) para evitar canibalización: ya existen guías de cabañas/hoteles, arquitectos/constructoras, mantenimiento (3), tiendas online (6), WordPress vs. código y funnels.
 
 ---
 
@@ -225,3 +227,28 @@
   5. **Filtros Dinámicos del Blog (`blog/index.html`) y FAQs Desplegables con Auto-Cierre:**
      - `<select id="blog-cat-select">` incluye las 8 categorías activas con sus conteos exactos (`99` guías totales) y un script automático que recalcula las cantidades y agrega nuevas categorías dinámicamente cada vez que se publican artículos.
      - Los 99 artículos del blog, `/auditoria-seo/` y `/san-juan/` usan acordeones `<details name="faq-accordion">` que cierran automáticamente la pregunta abierta anterior cuando el usuario abre una nueva.
+- [x] **2026-11-04 (Auditoría de Canónicas 100% Válidas + Refactor Guía Agencias de Viajes + Análisis de 4 Nuevos CSVs de Google Ads):**
+  1. **Auditoría Global de Etiquetas Canónicas (`rel="canonical"`):**
+     - Se auditaron las 130 páginas HTML públicas del proyecto (`check_canonicals.py`). Se detectaron y corrigieron 5 etiquetas en subdirectorios de demos (`/demos/cluster-1/`, `/demos/cluster-2/`, `/demos/cluster-3/`, `/demos/eventos/`, `/demos/servicios-hogar/`) garantizando que el 100% de las URLs canónicas terminen en barra `/` y apunten exactamente a su URL final en `https://erikwebsite.com` sin dilución de autoridad.
+  2. **Refactor Guía Agencias de Viajes (`/blog/paginas-web-agencias-de-viajes-excursiones-turismo-argentina/`):**
+     - Se actualizó el bloque de Respuesta Directa Sturm AEO/GEO clarificando que una web para agencia de viajes/turismo requiere una arquitectura multi-página con fichas de circuitos y cotización a medida superior a la landing base de $150.000 ARS.
+     - Se añadió sección dedicada H2 explicando por qué se cotiza a medida (fichas de paquetes, políticas de cancelación, legajo habilitante de turismo).
+     - Se vincularon demos reales existentes (`/demos/restaurante/`, `/demos/salones/`) y el proyecto real de referencia UAQ Tours (`uaqtours.com.ar`) en `/#trabajos`.
+     - Se incorporó FAQ con acordeón `<details name="faq-accordion">` detallando rangos de inversión para agencias de viajes.
+  3. **Análisis de los 4 Nuevos CSVs de Google Ads (Noviembre 2026):**
+     - Se extrajeron 4 oportunidades clave de alta intención y 0 canibalización: 1) Migración de WordPress lento/hackeado a código limpio/hosting rápido, 2) Páginas web para Hoteles, Cabañas y Reservas directas sin comisiones de Booking, 3) Páginas web para Arquitectos y Estudios de Arquitectura con portfolio visual, 4) Presupuesto y Costos reales de Mantenimiento Web en Argentina.
+- [x] **2026-11-04 (Batch 12 de 9 artículos + corrección del Sitemap en producción):**
+  1. **Publicación del Batch 12 (108 guías activas en `/blog/`, 126 URLs en el sitemap)**, usando los 2 bancos de ideas y diferenciando el ángulo de cada uno respecto de las guías previas para no canibalizar:
+     - `/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/`
+     - `/blog/sistema-reservas-whatsapp-hoteles-cabanas-sin-comisiones/` (enfoque operativo de reservas; la guía de cabañas ya cubre la matemática de comisiones)
+     - `/blog/portfolio-web-arquitectos-estudios-de-arquitectura/` (enfoque portfolio visual y peso de imágenes)
+     - `/blog/presupuesto-mantenimiento-web-que-incluye-como-comparar/` (checklist para comparar propuestas; los precios ya están en la guía de agencias)
+     - `/blog/codigo-qr-restaurante-carta-digital-que-no-caduque/`
+     - `/blog/funnel-inmobiliario-captar-compradores-departamentos-pozo/`
+     - `/blog/funnel-de-ventas-b2b-captar-leads-empresas-pymes/`
+     - `/blog/tienda-online-propia-cuando-conviene-argentina/` (criterio de decisión por tamaño de catálogo; deriva a las comparativas de Tiendanube)
+     - `/blog/mejorar-velocidad-wordpress-y-poner-sitio-en-mantenimiento/`
+     - FAQs con `<details name="faq-accordion">`; enlaces entrantes agregados en 14 guías existentes; 9 imágenes en `images/` y `public/images/`; scripts en `scratch/create_batch12_articles.py` y `scratch/register_batch12.py`.
+  2. **Causa raíz del sitemap estancado en 63 URLs en GSC:** `public/sitemap.xml` estaba desactualizado desde el Batch 5 y es el que Vite publica; el de la raíz se actualizaba pero no se desplegaba. Se sincronizó ambos. Se quitaron 4 URLs inexistentes (`/demos/taller/`, `/demos/arquitectura/`, `/demos/veterinaria/`, `/demos/inmobiliaria/`) que devolvían 404.
+  3. **Otros 404 corregidos:** se eliminó la referencia huérfana a `/images/apple-touch-icon.png` en 15 guías del blog.
+  4. **Ideas pendientes (banco reservado):** ninguna de los 2 bancos; quedan las keywords de funnels genéricos (`embudo de ventas`, `etapas del funnel`, 500/mes, comp. 18-27) como posible guía educativa futura, cuidando no canibalizar `que-es-un-funnel-de-ventas-para-que-sirve-argentina`.

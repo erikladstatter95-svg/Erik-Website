@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Migrar WordPress a Otro Hosting o a Código Limpio: Guía 2026 | Erik Website</title>
+  <meta name="description" content="Cómo migrar WordPress a otro hosting o pasar tu web a código limpio sin perder posicionamiento en Google: backup, DNS, redirecciones 301 y qué pasa con tu correo.">
+  <link rel="canonical" href="https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/">
+  <meta property="og:title" content="Migrar WordPress a Otro Hosting o a Código Limpio: Guía 2026">
+  <meta property="og:description" content="Cómo migrar WordPress a otro hosting o pasar tu web a código limpio sin perder posicionamiento en Google: backup, DNS, redirecciones 301 y qué pasa con tu correo.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_migrar_wordpress_otro_hosting_codigo_limpio.png">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Migrar WordPress a Otro Hosting o a Código Limpio: Guía 2026">
+  <meta name="twitter:description" content="Cómo migrar WordPress a otro hosting o pasar tu web a código limpio sin perder posicionamiento en Google: backup, DNS, redirecciones 301 y qué pasa con tu correo.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_migrar_wordpress_otro_hosting_codigo_limpio.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/#article",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://erikwebsite.com/#website",
+          "name": "Erik Website",
+          "url": "https://erikwebsite.com/"
+        },
+        "headline": "Migrar WordPress a Otro Hosting (o a Código Limpio) Sin Perder tu Posicionamiento en Google",
+        "description": "Cómo migrar WordPress a otro hosting o pasar tu web a código limpio sin perder posicionamiento en Google: backup, DNS, redirecciones 301 y qué pasa con tu correo.",
+        "inLanguage": "es-AR",
+        "mainEntityOfPage": "https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/",
+        "datePublished": "2026-11-04T01:00:00-03:00",
+        "dateModified": "2026-11-04T01:00:00-03:00",
+        "author": {
+          "@type": "Person",
+          "name": "Erik Ladstatter",
+          "url": "https://erikwebsite.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Erik Website",
+          "url": "https://erikwebsite.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+          }
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/guia_migrar_wordpress_otro_hosting_codigo_limpio.png",
+          "width": 1200,
+          "height": 675
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://erikwebsite.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://erikwebsite.com/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Migrar WordPress a otro hosting",
+            "item": "https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Migrar mi web a otro hosting me hace perder el posicionamiento en Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, si las URLs quedan iguales y el cambio de DNS se hace con cuidado. Lo que sí baja posiciones es migrar y cambiar los enlaces sin redirecciones 301, o dejar la web caída varias horas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa con mi correo corporativo cuando cambio de hosting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Si el correo está en el mismo hosting, hay que migrar también los buzones o apuntar los registros MX al proveedor que corresponda. Por eso conviene tener el correo en un servicio aparte, como Gmail o Outlook, y no depender del hosting de la web."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo conservar el dominio .com.ar al migrar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. El dominio vive en NIC Argentina y es independiente del hosting. Solo cambian los servidores de nombres o los registros DNS que apuntan a la web nueva."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <!-- Meta Pixel noscript Fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+  </noscript>
+
+  <!-- NAVBAR UNIFICADO -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg sm:text-xl text-slate-900 tracking-tight flex items-center">
+        <span>Erik <span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-slate-600 tracking-tight">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-700 transition-colors font-semibold text-emerald-600">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-700 transition-colors font-semibold text-slate-600">San Juan</a>
+        <a href="/blog/" class="text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5">Blog</a>
+      </nav>
+
+      <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Leí%20tu%20guía%20sobre%20migrar%20WordPress%20y%20quiero%20consultar%20por%20mi%20web."
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-10 sm:py-16">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- BREADCRUMBS -->
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-slate-900 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-slate-700 truncate">Migrar WordPress a otro hosting</span>
+      </nav>
+
+      <!-- ENCABEZADO -->
+      <header class="mb-8">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full mb-3">
+          Migración Web · Argentina 2026
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
+          Migrar WordPress a Otro Hosting (o a Código Limpio) Sin Perder tu Posicionamiento en Google
+        </h1>
+
+        <div class="flex items-center gap-3 text-xs text-slate-500 pb-6 border-b border-slate-200">
+          <span>Por <strong>Erik Ladstatter</strong></span>
+          <span>•</span>
+          <span>Actualizado: 4 de noviembre de 2026</span>
+          <span>•</span>
+          <span>Lectura: 7 minutos</span>
+        </div>
+      </header>
+
+      <!-- RESPUESTA DIRECTA (AEO / GEO BLOCK - REGLA STURM #4) -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200 mb-8 text-slate-800">
+        <p class="font-bold text-slate-900 text-base mb-2">
+          Respuesta directa: ¿cómo migro mi página de WordPress a otro hosting sin perder visitas?
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700">
+          <strong>Migrar WordPress a otro hosting</strong> se hace en cuatro movimientos: copia completa de archivos y base de datos, prueba de la web en el servidor nuevo antes de tocar el dominio, cambio de DNS con el TTL bajado de antemano y control de las URLs en Search Console. Si lo que te cansó es WordPress y no el hosting, la alternativa es pasar a <strong>código limpio</strong>: sin plugins, sin base de datos y sin panel que atacar. Una web de una sola sección, como las de nuestras demos, entra en <strong>$150.000 ARS</strong>; los sitios de varias páginas se cotizan aparte.
+        </p>
+      </div>
+
+      <!-- IMAGEN PRINCIPAL (CRITERIO VISUAL STURM) -->
+      <figure class="my-8 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/images/guia_migrar_wordpress_otro_hosting_codigo_limpio.png" 
+             alt="Dos monitores: a la izquierda un panel de WordPress con avisos rojos de actualización y a la derecha un sitio limpio que carga al instante" 
+             class="w-full h-auto object-cover" 
+             loading="eager" 
+             decoding="async"
+             width="1200" 
+             height="675">
+        <figcaption class="px-4 py-3 text-xs text-slate-500 bg-slate-50 border-t border-slate-200">
+          Migrar no es empezar de cero: se mueve el contenido, se conservan las URLs y se cambia el motor que lo sirve.
+        </figcaption>
+      </figure>
+
+      <!-- CONTENIDO DEL ARTÍCULO -->
+      <div class="prose prose-slate max-w-none space-y-6 text-slate-700 leading-relaxed text-base">
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          ¿Cuándo conviene migrar tu web y cuándo alcanza con arreglarla?
+        </h2>
+
+        <p>
+          Buscar <em>migrar web a otro hosting</em> suele ser la consecuencia de un problema concreto. Estas son las señales más comunes:
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Caídas o lentitud en horas pico:</strong> el servidor compartido se satura y tu web tarda más de 3 segundos en cargar en el celular.</li>
+          <li><strong>Avisos constantes de actualización:</strong> núcleo, tema y plugins que se rompen entre sí cada vez que actualizás.</li>
+          <li><strong>Malware o redirecciones raras:</strong> aparecen enlaces que vos no pusiste o Google marca el sitio como no seguro (mirá cómo <a href="/blog/como-saber-si-mi-pagina-web-esta-penalizada-google/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">saber si tu web está penalizada</a>).</li>
+          <li><strong>Hosting caro o sin soporte:</strong> pagás renovaciones en dólares y nadie responde cuando algo falla.</li>
+        </ul>
+
+        <p>
+          Si el problema es solo el servidor, cambiar de hosting alcanza. Si el problema es WordPress en sí (plugins, mantenimiento, velocidad), conviene evaluar el salto a código limpio. Lo comparamos en detalle en <a href="/blog/wordpress-vs-codigo-a-medida-velocidad/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">WordPress vs. código a medida</a>.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          ¿Cómo migrar WordPress a otro hosting paso a paso?
+        </h2>
+
+        <ol class="list-decimal pl-6 space-y-2">
+          <li><strong>Copia completa:</strong> descargá todos los archivos (carpeta <code>wp-content</code> incluida) y exportá la base de datos. Guardá una segunda copia fuera del servidor.</li>
+          <li><strong>Bajá el TTL del DNS</strong> a 300 segundos un día antes del cambio. Así la propagación es más rápida.</li>
+          <li><strong>Subí la copia al hosting nuevo</strong> e importá la base de datos. Editá el archivo <code>wp-config.php</code> con los datos nuevos.</li>
+          <li><strong>Probá antes de publicar:</strong> apuntá tu computadora al servidor nuevo con el archivo <code>hosts</code> y navegá la web completa, formularios incluidos.</li>
+          <li><strong>Cambiá el DNS</strong> desde NIC Argentina (paso a paso en <a href="/blog/como-delegar-dns-renovar-dominio-nic-argentina/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">cómo delegar tu dominio y cambiar DNS</a>).</li>
+          <li><strong>Verificá SSL, enlaces permanentes y formularios</strong> en el servidor nuevo.</li>
+          <li><strong>No canceles el hosting viejo</strong> hasta pasar 7 a 15 días sin errores.</li>
+        </ol>
+
+        <p>
+          El correo merece un aviso aparte: si tus casillas viven en el hosting viejo, cambiar los DNS sin migrarlas te deja sin mail. Una solución de fondo es <a href="/blog/como-crear-correo-corporativo-dominio-propio-gmail/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">usar correo corporativo en Gmail con tu dominio</a>.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          ¿Qué cambia si en lugar de mover WordPress lo paso a código limpio?
+        </h2>
+
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase"><tr><th class="px-4 py-3.5">Aspecto</th><th class="px-4 py-3.5">WordPress en hosting compartido</th><th class="px-4 py-3.5 text-emerald-400">Código limpio</th></tr></thead>
+            <tbody class="divide-y divide-slate-200">
+<tr><td class="px-4 py-3.5 font-bold text-slate-900">Mantenimiento</td><td class="px-4 py-3.5">Actualizar núcleo, tema y plugins con frecuencia</td><td class="px-4 py-3.5 font-semibold text-emerald-700">No hay plugins ni base de datos que actualizar</td></tr>
+<tr><td class="px-4 py-3.5 font-bold text-slate-900">Superficie de ataque</td><td class="px-4 py-3.5">Panel de administración y plugins expuestos</td><td class="px-4 py-3.5 font-semibold text-emerald-700">Páginas estáticas sin panel público</td></tr>
+<tr><td class="px-4 py-3.5 font-bold text-slate-900">Velocidad</td><td class="px-4 py-3.5">Depende del hosting, del tema y del caché</td><td class="px-4 py-3.5 font-semibold text-emerald-700">Archivos livianos, carga en menos de 1 segundo</td></tr>
+<tr><td class="px-4 py-3.5 font-bold text-slate-900">Cambios de contenido</td><td class="px-4 py-3.5">Los hacés vos desde el panel</td><td class="px-4 py-3.5 font-semibold text-emerald-700">Los hacemos nosotros (hasta 3 cambios puntuales por mes en el abono)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          La contracara es honesta: si publicás contenido todos los días y querés editar solo, WordPress sigue siendo cómodo. Si tu web cambia poco y lo que importa es que cargue rápido y no se rompa, el código limpio ahorra problemas.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          ¿Cómo conservar el posicionamiento al migrar?
+        </h2>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Mantené las mismas URLs.</strong> Si una cambia, creá una redirección 301 hacia la nueva.</li>
+          <li><strong>Enviá el sitemap de nuevo</strong> en Search Console y revisá el informe de cobertura durante las dos semanas siguientes.</li>
+          <li><strong>Conservá títulos, descripciones y encabezados</strong> de las páginas que hoy traen visitas.</li>
+          <li><strong>Revisá el rendimiento</strong> con una <a href="/auditoria-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">auditoría SEO</a> antes y después del cambio.</li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          ¿Cuánto cuesta pasar tu web a código limpio?
+        </h2>
+
+        <p>
+          Una web de una sola sección, tal como se ve en nuestras <a href="/#demos" class="text-emerald-700 font-semibold underline hover:text-emerald-800">demos</a> o con modificaciones mínimas, cuesta <strong>$150.000 ARS finales</strong> en pago único, con hasta 2 rondas de revisión del borrador. Si tu web actual tiene muchas páginas, secciones de catálogo o una tienda, se cotiza a medida. El mantenimiento posterior es opcional: $20.000 ARS por mes con hosting, renovación de dominio y soporte preventivo. Para entender cuándo conviene renovar en lugar de migrar, mirá <a href="/blog/rediseno-paginas-web-actualizar-sitio-lento/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">rediseño de páginas web viejas o lentas</a>.
+        </p>
+
+        <!-- CTA COMERCIAL -->
+        <div class="my-10 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">
+            Desarrollo Web Llave en Mano · Entrega en 3 a 5 Días
+          </span>
+          <h3 class="text-xl sm:text-2xl font-extrabold font-display mb-3">
+            ¿Tu WordPress se cae, va lento o te cobra de más el hosting?
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Revisamos tu web actual y te decimos si alcanza con cambiar de hosting o si conviene rehacerla en código limpio. Si es de una sola sección, queda lista en 3 a 5 días hábiles por $150.000 ARS, con 2 rondas de revisión antes de publicar.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3.5">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Leí%20tu%20guía%20sobre%20migrar%20WordPress%20y%20quiero%20consultar%20por%20mi%20web." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-lg">
+              <span>Consultar por WhatsApp</span>
+            </a>
+            <a href="/#demos" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/15 transition-all">
+              <span>Ver Demos y Precios ($150.000 ARS)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Migrar mi web a otro hosting me hace perder el posicionamiento en Google?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">No, si las URLs quedan iguales y el cambio de DNS se hace con cuidado. Lo que sí baja posiciones es migrar y cambiar los enlaces sin redirecciones 301, o dejar la web caída varias horas.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué pasa con mi correo corporativo cuando cambio de hosting?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Si el correo está en el mismo hosting, hay que migrar también los buzones o apuntar los registros MX al proveedor que corresponda. Por eso conviene tener el correo en un servicio aparte, como Gmail o Outlook, y no depender del hosting de la web.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo conservar el dominio .com.ar al migrar?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. El dominio vive en NIC Argentina y es independiente del hosting. Solo cambian los servidores de nombres o los registros DNS que apuntan a la web nueva.</p>
+          </details>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER UNIFICADO -->
+  <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-display font-bold text-white">Erik Website</span> · Desarrollo Web, Funnels y SEO en Argentina
+      </div>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-400 transition-colors text-emerald-400 font-medium">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-400 transition-colors">San Juan</a>
+        <a href="/blog/" class="hover:text-emerald-400 transition-colors">Blog</a>
+        <a href="/terminos/" class="hover:text-emerald-400 transition-colors">Términos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
