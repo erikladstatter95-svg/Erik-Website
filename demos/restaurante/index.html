@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <!-- Clarity tracking code for https://erikwebsite.com/ -->
+  <script>
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "ytkayi2nwu");
+  </script>
+
+  <!-- Hallmark Design System — Luxury Noir & Gold Editorial -->
+  <meta name="hallmark-preset" content="luxury-noir-gold">
+  <title>Demo Web Restaurante, Carta QR y Reserva de Mesas | Erik Website</title>
+  <meta name="description" content="Demo interactiva para restaurantes, bares de autor y bodegas: carta digital con filtros, reserva de mesa por sector y cotizador de eventos por WhatsApp sin comisiones.">
+  <link rel="canonical" href="https://erikwebsite.com/demos/restaurante/">
+
+  <!-- Open Graph / Redes Sociales & WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://erikwebsite.com/demos/restaurante/">
+  <meta property="og:title" content="Demo Web Restaurante, Carta QR y Reserva de Mesas | Erik Website">
+  <meta property="og:description" content="Mostrá tu menú interactivo, recibí reservas de mesa por sector y cotizá cenas grupales directo a tu WhatsApp sin pagar comisiones por cubierto.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_restaurantes_carta_qr.png">
+  <meta property="og:image:secure_url" content="https://erikwebsite.com/images/guia_restaurantes_carta_qr.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Demo Web para Restaurantes y Cava - Erik Website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://erikwebsite.com/demos/restaurante/">
+  <meta name="twitter:title" content="Demo Web Restaurante, Carta QR y Reserva de Mesas | Erik Website">
+  <meta name="twitter:description" content="Mostrá tu menú interactivo, recibí reservas de mesa por sector y cotizá cenas grupales directo a tu WhatsApp.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_restaurantes_carta_qr.png">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230A0A0C%22 stroke=%22%23D4AF37%22 stroke-width=%222%22/><path d=%22M11 7v8a3 3 0 006 0V7M14 7v18M21 7c0 5-2 7-2 10v8%22 stroke=%22%23D4AF37%22 stroke-width=%222%22 stroke-linecap=%22round%22 fill=%22none%22/></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Schema.org Restaurant & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Restaurant",
+        "@id": "https://erikwebsite.com/demos/restaurante/#restaurant",
+        "name": "ÁUREA · Fuegos & Cava",
+        "url": "https://erikwebsite.com/demos/restaurante/",
+        "telephone": "+5492645185359",
+        "servesCuisine": ["Cocina de Autor", "Carnes Maduradas a las Brasas", "Cava de Vinos"],
+        "priceRange": "$$$",
+        "acceptsReservations": "True",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Libertador Gral. San Martín 3420 Oeste",
+          "addressLocality": "San Juan",
+          "addressRegion": "San Juan",
+          "addressCountry": "AR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://erikwebsite.com/demos/restaurante/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Con cuánta anticipación conviene reservar mesa para viernes y sábados?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para los turnos de cena de viernes y sábado (20:30 hs y 22:45 hs) recomendamos reservar desde la web al menos con 24 a 48 hs de anticipación, especialmente si deseás mesa en la Cava Subterránea o frente a la Isla de Fuegos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuentan con opciones Sin TACC y menú vegetariano?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, nuestra carta digital identifica cada plato apto celíacos (Sin TACC) con utensilios de cocción dedicados y opciones vegetarianas de estación."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo funcionan las reservas para cumpleaños y grupos de más de 8 personas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En nuestro bloque de reservas podés activar la pestaña 'Mesas Largas y Festejos (8 a 40 personas)', elegir el menú de 3 pasos con bebida incluida, conocer el valor exacto por invitado y confirmar tu fecha por WhatsApp."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    fbq('track', 'PageView');
+    fbq('track', 'Contact');
+    fbq('trackCustom', 'Whatsapp');
+
+    document.addEventListener('click', function(e) {
+      var target = e.target.closest('a, button');
+      if (!target) return;
+      var href = target.getAttribute('href') || '';
+      var hasWa = target.hasAttribute('data-wa-msg');
+      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
+      var txt = (target.innerText || '').toLowerCase();
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
+          window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
+        }
+      }
+    }, true);
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+<body class="bg-[#0A0A0C] text-zinc-100 flex flex-col min-h-screen selection:bg-[#D4AF37] selection:text-zinc-950">
+  <!-- Meta Pixel noscript Fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
+  </noscript>
+  <script>
+    fbq('track', 'Contact');
+  </script>
+
+  <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 2) -->
+  <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+        <span class="font-bold text-slate-300">Categoría: Catálogos, Eventos y Gastronomía</span>
+        <span class="text-slate-500 hidden sm:inline">•</span>
+        <span class="text-slate-400 text-xs hidden sm:inline">4 Estilos de diseño:</span>
+      </div>
+
+      <!-- Selector de variaciones con Tabs -->
+      <div class="flex flex-wrap items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+        <a href="/demos/vajilla/" class="min-touch-target px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors">
+          1. Vajilla
+        </a>
+        <a href="/demos/catering/" class="min-touch-target px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors">
+          2. Catering y Barras
+        </a>
+        <a href="/demos/salones/" class="min-touch-target px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors">
+          3. Salones y Quintas
+        </a>
+        <a href="/demos/restaurante/" class="min-touch-target px-3 py-2 rounded-lg font-bold text-xs bg-[#D4AF37] text-zinc-950 shadow-xs">
+          4. Restaurante y Reservas
+        </a>
+      </div>
+
+      <!-- Controles de navegación -->
+      <div class="flex items-center gap-2">
+        <a href="/demos/salones/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </a>
+        <a href="/demos/vajilla/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Siguiente variación">
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+        <a href="/" class="tap-bounce min-touch-target inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-2 rounded-lg transition-colors">
+          <span>Salir al Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- TOP LUXURY BAR -->
+  <div class="bg-[#121216] border-b border-[#D4AF37]/20 text-amber-200/90 text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+    <span>Martes a Domingos • Almuerzos de Cava y Cenas al Fuego • <strong>Reservas sin cargo ni comisiones por WhatsApp</strong></span>
+  </div>
+
+  <!-- NAVBAR RESTAURANTE (Negro Obsidiana + Oro Champagne) -->
+  <header class="sticky top-10 z-40 bg-[#0A0A0C]/90 backdrop-blur-xl border-b border-[#D4AF37]/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between py-3">
+      <a href="#" class="flex flex-col">
+        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.12em] text-white flex items-center gap-2">
+          <span>ÁUREA</span>
+          <span class="text-[#D4AF37] text-sm font-normal tracking-widest">•</span>
+          <span class="text-xs sm:text-sm font-sans font-semibold tracking-[0.22em] text-[#D4AF37] uppercase">Fuegos & Cava</span>
+        </span>
+        <span class="text-[10px] text-zinc-400 tracking-[0.18em] uppercase">Cocina de Autor & Wine Bar • San Juan</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-widest font-semibold text-zinc-300">
+        <a href="#carta" class="hover:text-[#D4AF37] transition-colors">La Carta</a>
+        <a href="#sectores" class="hover:text-[#D4AF37] transition-colors">Experiencias</a>
+        <a href="#reservas" class="text-[#D4AF37] hover:text-amber-300 transition-colors">Reservar Mesa</a>
+        <a href="#festejos" class="hover:text-[#D4AF37] transition-colors">Grupos & Eventos</a>
+        <a href="#faq" class="hover:text-[#D4AF37] transition-colors">Preguntas</a>
+      </nav>
+
+      <a href="#reservas"
+         class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-extrabold text-xs uppercase tracking-wider px-5 py-3 rounded-xl shadow-[0_8px_25px_-6px_rgba(212,175,55,0.45)] transition-all cursor-pointer">
+        <span>Reservar Mesa</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO SECTION (Noir & Gold Fine Dining) -->
+    <section class="relative pt-12 pb-18 md:pt-20 md:pb-24 overflow-hidden border-b border-[#D4AF37]/15">
+      <!-- Radial gold ambient glow -->
+      <div class="absolute top-0 left-1/3 w-[520px] h-[360px] bg-[#D4AF37]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div data-hero-anim class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#15151B] border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-semibold tracking-wider uppercase">
+              <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+              Carnes Maduradas • Leña de Quebracho • +140 Etiquetas
+            </div>
+
+            <h1 data-hero-anim class="text-3xl sm:text-5xl lg:text-[56px] font-serif font-bold text-white leading-[1.1] tracking-tight">
+              El ritual del fuego y el vino, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-amber-500 italic font-normal">con tu mesa reservada en 30 segundos</span>
+            </h1>
+
+            <p data-hero-anim class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Explorá nuestra carta actualizada con precios, pre-seleccioná tus cortes o etiquetas de cava si querés llegar con el vino a temperatura justa, y <strong>confirmá tu mesa directo por WhatsApp</strong> sin intermediarios.
+            </p>
+
+            <div data-hero-anim class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#reservas"
+                 class="tap-bounce min-touch-target w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#D4AF37] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-extrabold text-sm uppercase tracking-wider px-8 py-4 rounded-xl shadow-[0_12px_30px_-8px_rgba(212,175,55,0.4)] transition-all">
+                <span>Reservar Mesa Ahora</span>
+                <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="#carta"
+                 class="tap-bounce min-touch-target w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#141419] hover:bg-[#1C1C24] text-[#F3E5AB] font-bold text-sm uppercase tracking-wider px-7 py-4 rounded-xl border border-[#D4AF37]/30 transition-colors">
+                <span>Ver Carta Digital & Precios</span>
+              </a>
+            </div>
+
+            <!-- Indicadores rápidos de valor -->
+            <div data-hero-anim class="pt-4 grid grid-cols-3 gap-4 border-t border-zinc-800/80 max-w-lg mx-auto lg:mx-0 text-left">
+              <div>
+                <span class="text-[#D4AF37] font-serif font-bold text-xl sm:text-2xl block">4 Sectores</span>
+                <span class="text-[11px] text-zinc-400">Cava, Fuegos, Salón y Terraza</span>
+              </div>
+              <div>
+                <span class="text-[#D4AF37] font-serif font-bold text-xl sm:text-2xl block">Sin TACC</span>
+                <span class="text-[11px] text-zinc-400">Cocina dedicada y menú vegano</span>
+              </div>
+              <div>
+                <span class="text-[#D4AF37] font-serif font-bold text-xl sm:text-2xl block">0% Espera</span>
+                <span class="text-[11px] text-zinc-400">Opción de pre-ordenar tu vino</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGEN HERO RESTAURANTE -->
+          <div data-hero-anim class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border border-[#D4AF37]/40 bg-zinc-900 aspect-[4/5]">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85" 
+                   alt="Corte de ojo de bife madurado a las brasas con copa de vino tinto Reserva en salón elegante" 
+                   class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/20 to-transparent"></div>
+              
+              <!-- Tarjeta flotante de estado de reservas hoy -->
+              <div class="absolute bottom-4 left-4 right-4 bg-[#111116]/95 backdrop-blur-md rounded-xl p-4 border border-[#D4AF37]/30 shadow-xl">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Disponibilidad Esta Noche</span>
+                  <span class="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Mesas Abiertas
+                  </span>
+                </div>
+                <p class="font-serif font-bold text-white text-sm">Turno 20:30 hs (Últimas 4 mesas) • Turno 22:30 hs</p>
+                <p class="text-[11px] text-zinc-400 mt-0.5">Estacionamiento privado vigilado sin cargo para reservas.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 1: CARTA DIGITAL INTERACTIVA CON PRE-SELECCIÓN A LA MESA (/NON-OBVIOUS #1) -->
+    <section id="carta" class="py-18 md:py-24 bg-[#0E0E12] border-b border-[#D4AF37]/15 reveal-on-scroll">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3.5 py-1 rounded-full">
+              Carta Digital Interactiva (Sin PDFs Lentos)
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-3 mb-2">
+              Nuestra Carta de Temporada
+            </h2>
+            <p class="text-zinc-400 text-sm max-w-2xl">
+              Podés consultar los platos desde tu celular o tocar <strong>"+ Sumar a mi Mesa"</strong> si querés dejar pre-seleccionados tus platos o pedir que descorchemos tu vino a temperatura exacta antes de que llegues.
+            </p>
+          </div>
+
+          <!-- Resumen rápido de pre-selección -->
+          <a href="#reservas" class="inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-[#16161D] border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all shrink-0">
+            <div class="w-2.5 h-2.5 rounded-full bg-[#D4AF37]"></div>
+            <div class="text-left">
+              <span class="text-[10px] uppercase tracking-wider text-zinc-400 block">Pre-selección para tu mesa</span>
+              <span id="menu-selection-badge" class="text-xs font-bold text-[#F3E5AB] font-mono">0 platos / vinos adjuntos</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- TABS DE CATEGORÍAS DE LA CARTA -->
+        <div class="flex flex-wrap items-center gap-2 mb-10">
+          <button type="button" data-menu-filter="todos" class="menu-tab px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#D4AF37] text-zinc-950 cursor-pointer transition-all">
+            Toda la Carta
+          </button>
+          <button type="button" data-menu-filter="entradas" class="menu-tab px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#16161D] hover:bg-zinc-800 text-zinc-300 border border-zinc-800 cursor-pointer transition-all">
+            Entradas & Brasas
+          </button>
+          <button type="button" data-menu-filter="principales" class="menu-tab px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#16161D] hover:bg-zinc-800 text-zinc-300 border border-zinc-800 cursor-pointer transition-all">
+            Cortes Madurados & Principales
+          </button>
+          <button type="button" data-menu-filter="pastas" class="menu-tab px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#16161D] hover:bg-zinc-800 text-zinc-300 border border-zinc-800 cursor-pointer transition-all">
+            Pastas & Risottos
+          </button>
+          <button type="button" data-menu-filter="cava" class="menu-tab px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#16161D] hover:bg-zinc-800 text-zinc-300 border border-zinc-800 cursor-pointer transition-all">
+            Cava & Autor
+          </button>
+          <button type="button" data-menu-filter="postres" class="menu-tab px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#16161D] hover:bg-zinc-800 text-zinc-300 border border-zinc-800 cursor-pointer transition-all">
+            Postres
+          </button>
+        </div>
+
+        <!-- GRILLA DE PLATOS -->
+        <div id="menu-grid" class="grid md:grid-cols-2 gap-5">
+          
+          <!-- PLATO 1 -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="entradas" data-dish-id="mollejas_hierro">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#D4AF37]">Entrada Estrella</span>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Sin TACC</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Mollejas de Corazón Doradas al Quebracho</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Laqueadas con miel de caña, limón asado, criolla de tomates reliquia y sal en escamas.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$14.500</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Sugerido para compartir</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="mollejas_hierro" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Mollejas">-</button>
+                <span data-dish-qty="mollejas_hierro" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="mollejas_hierro" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 2 -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="entradas" data-dish-id="burrata_higos">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">Vegetariano</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Burrata Artesanal, Higos Negros & Pistachos</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Sobre focaccia de masa madre tibia, reducción de aceto balsámico añejado y aceite de oliva virgen extra sanjuanino.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$13.800</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Marida con: Torrontés de Altura</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="burrata_higos" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Burrata">-</button>
+                <span data-dish-qty="burrata_higos" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="burrata_higos" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 3 -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="principales" data-dish-id="ojo_bife_dry">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#D4AF37] text-zinc-950">Maduración 45 Días</span>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Sin TACC</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Ojo de Bife con Hueso Dry-Aged (550g)</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Asado a fuego lento con sarmientos de vid, manteca de tuétano y hierbas, acompañado de milhojas de papa trufada.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$26.900</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Punto sugerido: Jugoso / A punto</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="ojo_bife_dry" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Ojo de Bife">-</button>
+                <span data-dish-qty="ojo_bife_dry" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="ojo_bife_dry" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 4 -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="principales" data-dish-id="costillar_braseado">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#D4AF37]">Para 2 Comensales</span>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Sin TACC</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Costillar del Centro Braseado 8 Horas al Malbec</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Se corta con cuchara en la mesa. Servido con cremoso de cabutia asada al rescoldo y cebollines glaseados.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$42.000</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Cupo limitado por noche (10 porciones)</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="costillar_braseado" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Costillar">-</button>
+                <span data-dish-qty="costillar_braseado" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="costillar_braseado" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 5 -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="pastas" data-dish-id="agnolotti_cordero">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#D4AF37]">Pasta Amasada en Casa</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Agnolotti del Plin de Cordero & Hongos de Pino</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Emulsión de su propio jugo de cocción, espuma de parmesano estacionado 18 meses y aceite de trufa negra.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$19.500</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Marida con: Syrah del Valle de Pedernal</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="agnolotti_cordero" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Agnolotti">-</button>
+                <span data-dish-qty="agnolotti_cordero" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="agnolotti_cordero" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 6 -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="pastas" data-dish-id="risotto_azafran">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Sin TACC</span>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">Opción Vegana</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Risotto Carnaroli al Azafrán & Langostinos Patagónicos</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Arroz Carnaroli mantecado con azafrán en hebras, langostinos grillados al fuego y gremolata cítrica.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$22.400</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Preparado al momento (18 min)</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="risotto_azafran" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Risotto">-</button>
+                <span data-dish-qty="risotto_azafran" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="risotto_azafran" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 7: CAVA -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="cava" data-dish-id="vino_pedernal">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#D4AF37] text-zinc-950">Cava Subterránea 16°C</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Gran Malbec de Altura · Valle de Pedernal (750ml)</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Crianza de 18 meses en roble francés. Si lo sumás a tu reserva, lo decantamos 30 minutos antes de tu llegada.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$24.000</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-[#D4AF37]">✓ Descorche a temperatura incluido</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="vino_pedernal" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Vino">-</button>
+                <span data-dish-qty="vino_pedernal" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="vino_pedernal" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Dejar en Mesa</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATO 8: POSTRE -->
+          <div class="menu-card p-5 rounded-2xl bg-[#14141A] border border-zinc-800/90 hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between gap-4" data-menu-cat="postres" data-dish-id="volcan_dulce">
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#D4AF37]">Clásico de la Casa</span>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white">Lingote Húmedo de Chocolate Belga 70% & Pistacho</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">Con corazón fundente de dulce de leche de cabra, praliné crocante y helado artesanal de crema americana.</p>
+              </div>
+              <span class="font-mono font-bold text-base text-[#F3E5AB] shrink-0 tabular-nums">$9.800</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-zinc-800/80">
+              <span class="text-[11px] text-zinc-400">Final de cena ideal</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-dish-step="volcan_dulce" data-step="-1" class="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold text-xs cursor-pointer" aria-label="Quitar Postre">-</button>
+                <span data-dish-qty="volcan_dulce" class="font-mono font-bold text-xs text-[#D4AF37] w-6 text-center tabular-nums">0</span>
+                <button type="button" data-dish-step="volcan_dulce" data-step="1" class="px-3 py-1.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37] text-[#F3E5AB] hover:text-zinc-950 border border-[#D4AF37]/40 font-bold text-xs cursor-pointer transition-colors">+ Sumar a mi Mesa</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: EXPERIENCIAS Y SECTORES DEL SALÓN -->
+    <section id="sectores" class="py-16 md:py-22 bg-[#0A0A0C] border-b border-[#D4AF37]/15 reveal-on-scroll">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">Elegí tu Atmósfera</span>
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mt-2 mb-3">
+            4 Espacios Diseñados para Cada Ocasión
+          </h2>
+          <p class="text-zinc-400 text-sm">
+            Al hacer tu reserva abajo, podés elegir sin costo adicional en qué sector preferís que preparemos tu mesa.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="p-6 rounded-2xl bg-[#121217] border border-zinc-800 hover:border-[#D4AF37]/40 transition-all">
+            <span class="text-xs font-mono font-bold text-[#D4AF37]">01 / INTIMIDAD</span>
+            <h3 class="font-serif font-bold text-lg text-white mt-2 mb-1.5">Salón Cava Principal</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Iluminación tenue a la vela, acústica cuidada para conversar sin levantar la voz y vista a las estibas de roble.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#121217] border border-zinc-800 hover:border-[#D4AF37]/40 transition-all">
+            <span class="text-xs font-mono font-bold text-[#D4AF37]">02 / ESPECTÁCULO</span>
+            <h3 class="font-serif font-bold text-lg text-white mt-2 mb-1.5">Barra & Mesas Frente al Fuego</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Viví de cerca el despacho de cocina abierta y el trabajo de nuestros fueguistas con quebracho y jarilla.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#121217] border border-zinc-800 hover:border-[#D4AF37]/40 transition-all">
+            <span class="text-xs font-mono font-bold text-[#D4AF37]">03 / AIRE LIBRE</span>
+            <h3 class="font-serif font-bold text-lg text-white mt-2 mb-1.5">Jardín & Pérgola Climatizada</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Bajo olivos centenarios con calefacción exterior en invierno y brisa fresca en las noches de verano.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#121217] border border-[#D4AF37]/40 transition-all">
+            <span class="text-xs font-mono font-bold text-[#D4AF37]">04 / PRIVACIDAD</span>
+            <h3 class="font-serif font-bold text-lg text-white mt-2 mb-1.5">Mesa Imperial de Cava (8 a 16 pers.)</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Salón privado subterráneo para reuniones de directorio, cumpleaños íntimos y catas guiadas con sommelier.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: SISTEMA DE RESERVA DE MESA + COTIZADOR DE FESTEJOS GRUPALES (/NON-OBVIOUS #2 & #3) -->
+    <section id="reservas" class="py-18 md:py-26 bg-gradient-to-b from-[#0E0E12] to-[#0A0A0C] border-b border-[#D4AF37]/20 reveal-on-scroll">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-4 py-1.5 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+            Confirmación Directa por WhatsApp
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-3 mb-3">
+            Reservá tu Mesa o Cotizá un Festejo
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base">
+            Elegí entre una reserva habitual (2 a 8 personas) o activá el <strong>Cotizador de Mesas Largas y Cumpleaños (8 a 40 personas)</strong> para conocer al instante el valor por invitado.
+          </p>
+
+          <!-- Selector de Modo (Mesa Habitual vs Festejo Grupal) -->
+          <div id="festejos" class="mt-7 inline-flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-[#16161E] border border-[#D4AF37]/30 gap-1.5">
+            <button type="button" data-booking-mode="mesa" class="booking-mode-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-[#D4AF37] text-zinc-950 shadow-md cursor-pointer transition-all">
+              🍷 1. Reservar Mesa (1 a 8 comensales)
+            </button>
+            <button type="button" data-booking-mode="grupo" class="booking-mode-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-zinc-300 hover:text-white cursor-pointer transition-all">
+              🥂 2. Cotizar Cumpleaños / Grupo (8 a 40 personas)
+            </button>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- COLUMNA IZQUIERDA: FORMULARIO INTERACTIVO -->
+          <div class="lg:col-span-7 bg-[#13131A] border border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-6">
+            
+            <!-- PANEL MODO A: MESA HABITUAL -->
+            <div id="panel-mode-mesa" class="space-y-6">
+              <div class="border-b border-zinc-800 pb-3 flex items-center justify-between">
+                <h3 class="font-serif font-bold text-xl text-white">Datos de tu Reserva de Mesa</h3>
+                <span class="text-xs text-[#D4AF37] font-semibold">Reserva sin cargo</span>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="res-name" class="block text-xs font-semibold text-zinc-300 mb-1.5">A nombre de quién:</label>
+                  <input id="res-name" type="text" placeholder="Ej: Martín Gómez" class="w-full rounded-xl bg-[#0A0A0C] border border-zinc-700 px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-hidden focus:border-[#D4AF37]">
+                </div>
+                <div>
+                  <label for="res-guests" class="block text-xs font-semibold text-zinc-300 mb-1.5">Cantidad de comensales:</label>
+                  <select id="res-guests" class="w-full rounded-xl bg-[#0A0A0C] border border-zinc-700 px-3.5 py-2.5 text-xs text-white focus:outline-hidden focus:border-[#D4AF37]">
+                    <option value="2 personas (Pareja / Cita)" selected>2 personas (Pareja / Cita)</option>
+                    <option value="3 personas">3 personas</option>
+                    <option value="4 personas">4 personas</option>
+                    <option value="5 personas">5 personas</option>
+                    <option value="6 personas">6 personas</option>
+                    <option value="7 a 8 personas">7 a 8 personas</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="res-day" class="block text-xs font-semibold text-zinc-300 mb-1.5">Día elegido:</label>
+                  <select id="res-day" class="w-full rounded-xl bg-[#0A0A0C] border border-zinc-700 px-3.5 py-2.5 text-xs text-white focus:outline-hidden focus:border-[#D4AF37]">
+                    <option value="Hoy (Esta noche)">Hoy (Esta noche)</option>
+                    <option value="Mañana">Mañana</option>
+                    <option value="Este Viernes" selected>Este Viernes</option>
+                    <option value="Este Sábado">Este Sábado</option>
+                    <option value="Este Domingo (Almuerzo)">Este Domingo (Almuerzo)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="res-shift" class="block text-xs font-semibold text-zinc-300 mb-1.5">Turno y Horario:</label>
+                  <select id="res-shift" class="w-full rounded-xl bg-[#0A0A0C] border border-zinc-700 px-3.5 py-2.5 text-xs text-white focus:outline-hidden focus:border-[#D4AF37]">
+                    <option value="Cena 1º Turno (20:30 hs)" selected>Cena 1º Turno (20:30 hs)</option>
+                    <option value="Cena 2º Turno (22:30 hs)">Cena 2º Turno (22:30 hs)</option>
+                    <option value="Almuerzo Ejecutivo / Cava (13:00 hs)">Almuerzo de Cava (13:00 hs)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Sector preferido -->
+              <div>
+                <label for="res-sector" class="block text-xs font-semibold text-zinc-300 mb-1.5">Sector preferido del restaurante:</label>
+                <select id="res-sector" class="w-full rounded-xl bg-[#0A0A0C] border border-zinc-700 px-3.5 py-2.5 text-xs text-white focus:outline-hidden focus:border-[#D4AF37]">
+                  <option value="Salón Cava Principal (Interior íntimo a la vela)">Salón Cava Principal (Interior íntimo a la vela)</option>
+                  <option value="Mesa Frente a los Fuegos (Vista a la cocina abierta)">Mesa Frente a los Fuegos (Vista a la cocina abierta)</option>
+                  <option value="Jardín & Pérgola Climatizada (Aire libre)">Jardín & Pérgola Climatizada (Aire libre)</option>
+                  <option value="Cava Subterránea Privada">Cava Subterránea Privada</option>
+                </select>
+              </div>
+
+              <!-- /NON-OBVIOUS #2: CONCIERGE DE EXPERIENCIA (UPSELLS DE 1 CLIC ANTES DE LLEGAR) -->
+              <div class="pt-4 border-t border-zinc-800 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">✨ Concierge de Mesa (Opcional · Esperándote al llegar)</span>
+                </div>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#0A0A0C] border border-zinc-800 hover:border-[#D4AF37]/50 cursor-pointer transition-colors">
+                  <input type="checkbox" id="upsell-champagne" data-upsell-price="7500" data-upsell-label="2 Copas de Espumante Extra Brut de bienvenida en mesa" class="mt-0.5 accent-[#D4AF37] w-4 h-4">
+                  <div class="text-xs">
+                    <span class="font-bold text-white block">Recibir la mesa con 2 Copas de Espumante Extra Brut (+$7.500)</span>
+                    <span class="text-zinc-400">Servidas a 6°C apenas se sientan, sin esperar la carta.</span>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#0A0A0C] border border-zinc-800 hover:border-[#D4AF37]/50 cursor-pointer transition-colors">
+                  <input type="checkbox" id="upsell-bday" data-upsell-price="9500" data-upsell-label="Atención de Cumpleaños / Aniversario (Postre con vela y lámina dorada)" class="mt-0.5 accent-[#D4AF37] w-4 h-4">
+                  <div class="text-xs">
+                    <span class="font-bold text-white block">Sorpresa de Cumpleaños o Aniversario en Mesa (+$9.500)</span>
+                    <span class="text-zinc-400">Lingote de chocolate belga con vela, caligrafía en plato y brindis.</span>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-[#0A0A0C] border border-zinc-800 hover:border-[#D4AF37]/50 cursor-pointer transition-colors">
+                  <input type="checkbox" id="upsell-sommelier" data-upsell-price="0" data-upsell-label="Asesoramiento de Sommelier en Cava al llegar (Sin cargo)" class="mt-0.5 accent-[#D4AF37] w-4 h-4">
+                  <div class="text-xs">
+                    <span class="font-bold text-white block">Recorrido de 5 minutos por la Cava con Sommelier (Sin cargo)</span>
+                    <span class="text-zinc-400">Elegí tu botella directamente en nuestra estiba subterránea antes de cenar.</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- PANEL MODO B (/NON-OBVIOUS #3): COTIZADOR DE FESTEJOS Y MESAS LARGAS (8 A 40 PERSONAS) -->
+            <div id="panel-mode-grupo" class="hidden space-y-6">
+              <div class="border-b border-zinc-800 pb-3 flex items-center justify-between">
+                <div>
+                  <h3 class="font-serif font-bold text-xl text-white">Cotizador de Cumpleaños y Mesas Largas</h3>
+                  <p class="text-xs text-zinc-400">Olvidate de dividir cuentas complejas: menú de 3 pasos con bebida incluida.</p>
+                </div>
+                <span class="text-xs text-[#D4AF37] font-mono font-bold">8 a 40 pers.</span>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-zinc-300 mb-2">1. Elegí la Propuesta de Menú Grupal:</label>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <label class="p-4 rounded-xl bg-[#0A0A0C] border-2 border-[#D4AF37] cursor-pointer flex flex-col justify-between gap-2" id="group-pack-1-label">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">Menú Fuegos</span>
+                      <input type="radio" name="group-menu" value="fuegos" data-menu-price="28500" data-menu-title="Menú 3 Pasos Fuegos & Malbec ($28.500/pers)" checked class="accent-[#D4AF37]">
+                    </div>
+                    <p class="font-serif font-bold text-base text-white">Brasas & Malbec (3 Pasos)</p>
+                    <p class="text-[11px] text-zinc-400">Entrada de mollejas/empanadas al horno de barro + Ojo de bife o Pasta + Postre + 1 botella de vino cada 2 personas.</p>
+                    <span class="font-mono font-bold text-sm text-[#F3E5AB] pt-1">$28.500 / persona</span>
+                  </label>
+
+                  <label class="p-4 rounded-xl bg-[#0A0A0C] border border-zinc-800 cursor-pointer flex flex-col justify-between gap-2" id="group-pack-2-label">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Menú Cava VIP</span>
+                      <input type="radio" name="group-menu" value="cava" data-menu-price="36000" data-menu-title="Menú Degustación Cava Privada ($36.000/pers)" class="accent-[#D4AF37]">
+                    </div>
+                    <p class="font-serif font-bold text-base text-white">Experiencia Cava Reserva</p>
+                    <p class="text-[11px] text-zinc-400">Recepción con espumante + Burrata & Jamón Crudo + Corte Dry-Aged o Salmón + Lingote Belga + Vino Gran Reserva libre.</p>
+                    <span class="font-mono font-bold text-sm text-[#F3E5AB] pt-1">$36.000 / persona</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="group-guests" class="block text-xs font-semibold text-zinc-300 mb-1.5">2. Cantidad de invitados (8 a 40):</label>
+                  <div class="flex items-center gap-2">
+                    <button type="button" id="group-minus" class="px-3.5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs cursor-pointer">-2</button>
+                    <input id="group-guests" type="number" min="8" max="40" value="14" class="w-full text-center font-mono font-bold text-sm bg-[#0A0A0C] border border-zinc-700 rounded-xl py-2.5 text-[#F3E5AB]">
+                    <button type="button" id="group-plus" class="px-3.5 py-2.5 rounded-xl bg-[#D4AF37] text-zinc-950 font-bold text-xs cursor-pointer">+2</button>
+                  </div>
+                </div>
+                <div>
+                  <label for="group-date" class="block text-xs font-semibold text-zinc-300 mb-1.5">3. Fecha y motivo del festejo:</label>
+                  <input id="group-date" type="text" placeholder="Ej: Sábado 15 - Cumpleaños / Cena Empresa" class="w-full rounded-xl bg-[#0A0A0C] border border-zinc-700 px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-hidden focus:border-[#D4AF37]">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- COLUMNA DERECHA: RESUMEN EN TIEMPO REAL Y ENVÍO A WHATSAPP -->
+          <div class="lg:col-span-5 bg-gradient-to-b from-[#16161F] to-[#0D0D12] border-2 border-[#D4AF37]/60 rounded-2xl p-6 sm:p-7 shadow-2xl sticky top-28">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-4">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37] block">Pase Directo</span>
+                <h3 class="font-serif font-bold text-xl text-white">Resumen de tu Reserva</h3>
+              </div>
+              <span id="booking-mode-pill" class="px-3 py-1 rounded-full bg-[#D4AF37]/20 text-[#F3E5AB] font-bold text-xs">
+                Mesa Habitual
+              </span>
+            </div>
+
+            <!-- Platos / Vinos pre-seleccionados de la carta -->
+            <div class="mb-4">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-semibold text-zinc-300">Platos o Vinos pre-seleccionados de la Carta:</span>
+                <button type="button" id="btn-clear-dishes" class="text-[11px] text-zinc-400 hover:text-red-400 underline cursor-pointer hidden">Limpiar</button>
+              </div>
+              <div id="booking-dishes-list" class="space-y-1.5 text-xs text-zinc-400">
+                <!-- Populated by app.js -->
+              </div>
+            </div>
+
+            <!-- Total Estimado (si hay pre-orden, upsells o modo grupo) -->
+            <div class="p-4 rounded-xl bg-[#0A0A0C] border border-zinc-800 mb-5">
+              <div class="flex items-baseline justify-between">
+                <span id="booking-total-label" class="text-xs font-semibold text-zinc-400">Total pre-seleccionado / Adicionales:</span>
+                <span id="booking-total-amount" class="text-2xl font-mono font-bold text-[#D4AF37] tabular-nums">$0 ARS</span>
+              </div>
+              <p id="booking-total-note" class="text-[11px] text-zinc-400 mt-1">
+                La reserva de mesa no tiene costo. Solo abonás tu consumo en el salón.
+              </p>
+            </div>
+
+            <!-- Vista previa del mensaje de WhatsApp -->
+            <div class="mb-5">
+              <span class="text-[11px] font-semibold text-zinc-400 block mb-1.5">Mensaje listo que enviaremos al Restaurante:</span>
+              <pre id="booking-wa-preview" class="p-3.5 rounded-xl bg-[#0A0A0C] border border-zinc-800 text-[11px] text-zinc-300 font-mono whitespace-pre-wrap leading-relaxed max-h-44 overflow-y-auto"></pre>
+            </div>
+
+            <button type="button" id="btn-send-booking"
+                    class="tap-bounce min-touch-target w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#D4AF37] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2.5 cursor-pointer transition-all">
+              <svg aria-hidden="true" class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Confirmar Reserva por WhatsApp</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="faq" class="py-16 bg-[#0A0A0C] border-b border-zinc-800 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">Atención al Comensal</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-2">Preguntas Frecuentes</h2>
+        </div>
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-[#121217] border border-zinc-800">
+            <h3 class="text-sm font-bold text-white mb-1">¿Con cuánta anticipación mantienen la mesa reservada?</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Guardamos tu mesa con una tolerancia de 20 minutos sobre el horario elegido. Si tenés una demora en el tránsito, basta con responder el mismo hilo de WhatsApp de tu reserva y te esperamos sin inconvenientes.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#121217] border border-zinc-800">
+            <h3 class="text-sm font-bold text-white mb-1">¿Tienen estacionamiento privado y opciones Sin TACC?</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Sí, contamos con estacionamiento interno monitoreado con acceso directo al salón y platos elaborados con equipamiento exclusivo libre de gluten.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#121217] border border-zinc-800">
+            <h3 class="text-sm font-bold text-white mb-1">¿Se puede pedir descorche en el salón?</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Por supuesto. Si traés una etiqueta especial para celebrar, nuestro servicio de sommelier realiza el descorche y cristalería Riedel por un valor fijo de servicio de copa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER RESTAURANTE -->
+  <footer class="bg-[#070709] text-zinc-400 py-8 text-xs border-t border-zinc-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-serif font-bold text-[#F3E5AB] text-sm">ÁUREA · Fuegos & Cava • San Juan, Argentina</p>
+        <p class="text-zinc-500">Av. Libertador Gral. San Martín 3420 Oeste • Martes a Domingos</p>
+      </div>
+      <div class="text-zinc-400 text-xs flex flex-wrap items-center justify-center sm:justify-end gap-2">
+        <span>Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-[#D4AF37] font-bold hover:underline">erikwebsite.com</a></span>
+        <span>•</span>
+        <a href="/terminos" class="text-zinc-400 hover:text-zinc-200 underline">Términos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SECCIÓN PROMOCIONAL Y PRECIOS ERIK WEBSITE -->
+  <section id="erikwebsite-cta" class="py-16 sm:py-20 bg-slate-900 text-white border-t-4 border-emerald-500 relative overflow-hidden">
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-4 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Demo interactiva desarrollada por Erik Website</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight leading-tight mb-3">
+          ¿Querés una web con Carta QR y Reservas por WhatsApp para tu Restaurante o Bar?
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Olvidate de los PDFs pesados que tardan en abrir y de pagar comisiones mensuales por cubierto a plataformas de reservas. <strong>Tu propia Carta Digital + Sistema de Reserva de Mesas y Festejos en código ultrarrápido lista en 3 a 5 días hábiles.</strong>
+        </p>
+      </div>
+
+      <div class="bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl border-2 border-emerald-500 relative">
+        <div class="absolute -top-3.5 right-6 bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs">
+          0% Comisiones por Reserva o Pedido
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-5 border-b md:border-b-0 md:border-r border-slate-200 pb-6 md:pb-0 md:pr-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">Inversión Clara</span>
+            
+            <div class="mt-4">
+              <span class="text-xs text-slate-500 block font-medium">Setup Inicial (Diseño, Carta QR y Reservas):</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 tabular-nums">$150.000</span>
+                <span class="text-xs font-semibold text-slate-500">ARS</span>
+              </div>
+              <span class="text-[11px] text-emerald-700 font-semibold block mt-0.5">50% al iniciar y 50% contra entrega final</span>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-slate-100">
+              <span class="text-xs text-slate-500 block font-medium">Mantenimiento + Hosting + Cambios de Precios:</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-2xl font-extrabold font-display text-emerald-600 tabular-nums">$20.000</span>
+                <span class="text-xs font-semibold text-slate-500">ARS/mes</span>
+              </div>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Opcional a partir del 2º mes (1º mes gratis)</span>
+            </div>
+          </div>
+
+          <div class="md:col-span-7 space-y-2.5">
+            <h4 class="text-xs uppercase font-bold tracking-wider text-slate-400 mb-2">Tu sistema gastronómico incluye:</h4>
+            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <span><strong>Carta Digital Interactiva con QR:</strong> Abre en 0,4 segundos en el celular del comensal.</span>
+            </div>
+            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <span><strong>Reserva de Mesas por Turno y Sector:</strong> Llega todo ordenado al WhatsApp del encargado.</span>
+            </div>
+            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <span><strong>Cotizador de Cumpleaños y Grupos:</strong> Cierra mesas largas sin perder horas chateando.</span>
+            </div>
+            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <span><strong>Optimización en Google Maps:</strong> Aparecé primero cuando buscan dónde cenar en tu ciudad.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a href="https://wa.me/5492645185359?text=Hola%20Erik%21%20Vi%20la%20demo%20de%20Restaurante%20en%20negro%20y%20dorado%20y%20quiero%20consultar%20para%20hacer%20una%20web%20con%20reservas%20y%20carta%20digital%20para%20mi%20local."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-7 py-4 rounded-xl shadow-md transition-all">
+            <span>Consultar por WhatsApp</span>
+          </a>
+          <a href="/" class="text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1">
+            <span>Ver más servicios en erikwebsite.com</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER OFICIAL ERIK WEBSITE -->
+  <footer class="bg-slate-950 text-slate-400 py-6 text-xs text-center border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-extrabold text-white text-sm">Erik <span class="text-emerald-400">Website</span></span>
+        <span>•</span>
+        <span>San Juan, Argentina</span>
+      </div>
+      <div>
+        <span>© 2026 erikwebsite.com • Desarrollo web para comercios y profesionales</span>
+        <span class="mx-2">•</span>
+        <a href="/terminos" class="text-slate-400 hover:text-white underline">Términos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btn-scroll-top"
+          class="fixed bottom-5 left-5 z-50 w-12 h-12 bg-zinc-900/90 hover:bg-zinc-800 text-[#D4AF37] rounded-full flex items-center justify-center shadow-lg border border-[#D4AF37]/40 opacity-0 pointer-events-none translate-y-3 transition-all duration-300 cursor-pointer"
+          aria-label="Volver arriba">
+    <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- MOBILE ACTION DOCK -->
+  <aside class="mobile-action-dock block sm:hidden bg-[#0A0A0C]/95 border-t border-[#D4AF37]/30 shadow-2xl">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex flex-col">
+        <span class="text-xs font-serif font-bold text-white leading-tight">ÁUREA · Fuegos & Cava</span>
+        <span class="text-[10px] text-[#D4AF37] font-medium">Carta Digital & Reserva Directa</span>
+      </div>
+      <a href="#reservas"
+         class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-[#D4AF37] text-zinc-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg">
+        <span>Reservar Mesa</span>
+      </a>
+    </div>
+  </aside>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

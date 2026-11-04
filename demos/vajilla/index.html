@@ -166,13 +166,13 @@
     <div class="max-w-6xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-        <span class="font-bold text-slate-300">Categoría: Catálogos y Eventos</span>
+        <span class="font-bold text-slate-300">Categoría: Catálogos, Eventos y Gastronomía</span>
         <span class="text-slate-500 hidden sm:inline">•</span>
-        <span class="text-slate-400 text-xs hidden sm:inline">3 Estilos de diseño:</span>
+        <span class="text-slate-400 text-xs hidden sm:inline">4 Estilos de diseño:</span>
       </div>
 
       <!-- Selector de variaciones con Tabs (Touch target >= 44px) -->
-      <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+      <div class="flex flex-wrap items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
         <a href="/demos/vajilla/" class="min-touch-target px-3 py-2 rounded-lg font-bold text-xs bg-amber-600 text-white shadow-xs">
           1. Vajilla
         </a>
@@ -182,15 +182,18 @@
         <a href="/demos/salones/" class="min-touch-target px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors">
           3. Salones y Quintas
         </a>
+        <a href="/demos/restaurante/" class="min-touch-target px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors">
+          4. Restaurante y Reservas
+        </a>
       </div>
 
       <!-- Controles de navegación (Touch target >= 44px) -->
       <div class="flex items-center gap-2">
-        <a href="/demos/salones/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        <a href="/demos/restaurante/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </a>
         <a href="/demos/catering/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Siguiente variación">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </a>
         <a href="/" class="tap-bounce min-touch-target inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-2 rounded-lg transition-colors">
           <span>Salir al Portfolio</span>
@@ -201,7 +204,7 @@
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="bg-stone-900 text-amber-200 text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
-    <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg aria-hidden="true" class="w-3.5 h-3.5 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
     <span>Entregas y retiros programados en Gran San Juan • <strong>Lavado e higienizado profesional incluido</strong> en todas las piezas</span>
   </div>
 
@@ -215,16 +218,16 @@
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-stone-600">
         <a href="#catalogo" class="hover:text-amber-700 transition-colors">Catálogo</a>
+        <a href="#cotizador" class="text-amber-700 font-bold hover:text-amber-800 transition-colors">Cotizador en Vivo</a>
         <a href="#combos" class="hover:text-amber-700 transition-colors">Packs Cerrados</a>
-        <a href="#pasos" class="hover:text-amber-700 transition-colors">Cómo Funciona</a>
         <a href="#faq" class="hover:text-amber-700 transition-colors">Preguntas</a>
       </nav>
 
-      <button data-wa-msg="Hola Vajilla y Estilo! Quisiera pedir un presupuesto personalizado para una fiesta en San Juan."
-              class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-800 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        <span>Cotizar Mi Evento</span>
-      </button>
+      <a href="#cotizador"
+         class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-800 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        <span>Armar mi Cotización</span>
+      </a>
     </div>
   </header>
 
@@ -245,17 +248,17 @@
             </h1>
 
             <p data-hero-anim class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Vajilla moderna de porcelana, copas de cristal labrado, manteles de lino y cubertería de acero pulido. Te entregamos todo sanitizado y embalado; lo usás en tu evento y <strong>lo devolvés sin lavar</strong>.
+              Elegí las cantidades exactas de copas, platos, cubiertos y manteles en nuestro <strong>cotizador interactivo en tiempo real</strong>. Ves el precio al instante y mandás tu pedido armado directo a nuestro WhatsApp.
             </p>
 
             <div data-hero-anim class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="#catalogo"
+              <a href="#cotizador"
                  class="tap-bounce min-touch-target w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-700 hover:bg-amber-800 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg transition-all">
-                <span>Ver Catálogo con Fotos</span>
+                <span>Armar Presupuesto a Medida</span>
               </a>
-              <a href="#combos"
+              <a href="#catalogo"
                  class="tap-bounce min-touch-target w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-amber-50 text-stone-800 font-bold text-base px-6 py-4 rounded-2xl border border-stone-300 shadow-xs transition-colors">
-                <span>Ver Packs Cerrados</span>
+                <span>Ver Catálogo con Fotos</span>
               </a>
             </div>
           </div>
@@ -267,8 +270,8 @@
                    alt="Banquete de gala con vajilla de porcelana, copas de cristal y cubiertos finos para bodas en San Juan" 
                    class="w-full h-full object-cover">
               <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-md text-xs text-stone-700 border border-stone-200/60">
-                <p class="font-bold text-stone-900 text-sm mb-0.5">Pack Boda y Fiesta Premium</p>
-                <p>Mesas completas con cristalería Bohemia y mantelería de lino.</p>
+                <p class="font-bold text-stone-900 text-sm mb-0.5">Cotizador Online Instantáneo</p>
+                <p>Seleccioná tus piezas y recibí el resumen listo en tu WhatsApp.</p>
               </div>
             </div>
           </div>
@@ -277,17 +280,17 @@
       </div>
     </section>
 
-    <!-- CATÁLOGO INTERACTIVO CON FILTROS POR PRODUCTO -->
+    <!-- CATÁLOGO INTERACTIVO CON CONTADORES EN VIVO -->
     <section id="catalogo" class="py-16 md:py-24 bg-white border-t border-stone-200 reveal-on-scroll">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         
         <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/60 px-3 py-1 rounded-full">Inventario Completo</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/60 px-3 py-1 rounded-full">Inventario con Precios Claros</span>
           <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900 mt-3 mb-3">
-            Explorá Nuestro Catálogo por Rubro
+            Elegí tus Artículos y Cantidades
           </h2>
           <p class="text-stone-600 text-sm">
-            Filtrá por categoría para ver fotos reales de cada artículo y sus valores sugeridos de alquiler.
+            Sumá las unidades que necesitás directamente desde cada tarjeta (ej: <strong>10 copas, 20 juegos de cubiertos, 2 manteles</strong>) y tu presupuesto se calcula solo abajo en tiempo real.
           </p>
         </div>
 
@@ -314,7 +317,7 @@
         <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           
           <!-- PRODUCTO 1: COPAS VINO -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="cristaleria">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="cristaleria" data-item-id="copas_vino">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_copa_flauta.jpg" 
                    alt="Copa de vino de cristal Bohemia de alta transparencia para mesas de eventos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -324,17 +327,26 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Copa de Vino y Agua Cristal</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Cristal labrado importado estilo vintage de 450 ml. Brillo absoluto y sonoridad única.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Cristal labrado importado estilo vintage de 450 ml. Brillo absoluto y sonoridad única.</p>
               </div>
-              <button data-wa-service="Copa de Vino y Agua Cristal" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Cantidad a cotizar:</span>
+                  <span data-card-subtotal="copas_vino" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="copas_vino" data-step="-10" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 10 copas de vino">-10</button>
+                  <button type="button" data-step-id="copas_vino" data-step="-1" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 copa de vino">-1</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="copas_vino" aria-label="Cantidad Copa de Vino y Agua Cristal" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="copas_vino" data-step="1" class="px-2.5 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 copa de vino">+1</button>
+                  <button type="button" data-step-id="copas_vino" data-step="10" class="px-2.5 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 10 copas de vino">+10</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 2: COPAS CHAMPAGNE -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="cristaleria">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="cristaleria" data-item-id="copas_champagne">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" 
                    alt="Copa flauta de cristal para brindis y champagne en fiestas y casamientos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -344,17 +356,26 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Copa Flauta Champagne</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Diseño esbelto ideal para brindis y recepción. Vidrio templado de máxima elegancia.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Diseño esbelto ideal para brindis y recepción. Vidrio templado de máxima elegancia.</p>
               </div>
-              <button data-wa-service="Copa Flauta Champagne" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Cantidad a cotizar:</span>
+                  <span data-card-subtotal="copas_champagne" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="copas_champagne" data-step="-10" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 10 copas champagne">-10</button>
+                  <button type="button" data-step-id="copas_champagne" data-step="-1" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 copa champagne">-1</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="copas_champagne" aria-label="Cantidad Copa Flauta Champagne" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="copas_champagne" data-step="1" class="px-2.5 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 copa champagne">+1</button>
+                  <button type="button" data-step-id="copas_champagne" data-step="10" class="px-2.5 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 10 copas champagne">+10</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 3: PLATOS PLAYOS -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="vajilla">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="vajilla" data-item-id="platos_playos">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_platos.jpg" 
                    alt="Platos playos de porcelana blanca con ribete dorado para servicio de banquete" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -364,17 +385,26 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Plato Playo Porcelana y Oro</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Porcelana de alta resistencia con detalle perimetral dorado. Diámetro 27 cm.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Porcelana de alta resistencia con detalle perimetral dorado. Diámetro 27 cm.</p>
               </div>
-              <button data-wa-service="Plato Playo Porcelana con Borde Oro" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Cantidad a cotizar:</span>
+                  <span data-card-subtotal="platos_playos" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="platos_playos" data-step="-10" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 10 platos">-10</button>
+                  <button type="button" data-step-id="platos_playos" data-step="-1" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 plato">-1</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="platos_playos" aria-label="Cantidad Plato Playo Porcelana y Oro" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="platos_playos" data-step="1" class="px-2.5 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 plato">+1</button>
+                  <button type="button" data-step-id="platos_playos" data-step="10" class="px-2.5 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 10 platos">+10</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 4: CUBIERTOS ACERO -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="vajilla">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="vajilla" data-item-id="cubiertos_acero">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_cubiertos.jpg" 
                    alt="Juego de cubiertos de acero inoxidable con pulido espejo para eventos de gala" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -384,17 +414,26 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Set Cubiertos Premium (3 piezas)</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Tenedor principal, cuchillo de asado con filo sierra y cuchara sopera en acero espejo.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Tenedor principal, cuchillo de asado con filo sierra y cuchara sopera en acero espejo.</p>
               </div>
-              <button data-wa-service="Set Cubiertos Premium (3 piezas)" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Juegos a cotizar:</span>
+                  <span data-card-subtotal="cubiertos_acero" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="cubiertos_acero" data-step="-10" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 10 sets de cubiertos">-10</button>
+                  <button type="button" data-step-id="cubiertos_acero" data-step="-1" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 set de cubiertos">-1</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="cubiertos_acero" aria-label="Cantidad Set Cubiertos Premium" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="cubiertos_acero" data-step="1" class="px-2.5 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 set de cubiertos">+1</button>
+                  <button type="button" data-step-id="cubiertos_acero" data-step="10" class="px-2.5 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 10 sets de cubiertos">+10</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 5: MANTELES LINO -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="manteleria">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="manteleria" data-item-id="manteles_lino">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_mantel.jpg" 
                    alt="Mantel redondo de lino blanco con caída hasta el suelo para mesas de 10 personas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -404,17 +443,26 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Mantel Redondo Lino Crudo / Blanco</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Caída perfecta al piso para mesas de 8 a 10 personas (diámetro 3 metros). Planchado industrial.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Caída perfecta al piso para mesas de 8 a 10 personas (diámetro 3 metros). Planchado industrial.</p>
               </div>
-              <button data-wa-service="Mantel Redondo Lino Crudo" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Cantidad a cotizar:</span>
+                  <span data-card-subtotal="manteles_lino" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="manteles_lino" data-step="-5" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 5 manteles">-5</button>
+                  <button type="button" data-step-id="manteles_lino" data-step="-1" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 mantel">-1</button>
+                  <input type="number" min="0" max="200" value="0" data-qty-input="manteles_lino" aria-label="Cantidad Mantel Redondo Lino" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="manteles_lino" data-step="1" class="px-2.5 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 mantel">+1</button>
+                  <button type="button" data-step-id="manteles_lino" data-step="5" class="px-2.5 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 5 manteles">+5</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 6: SERVILLETAS -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="manteleria">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="manteleria" data-item-id="servilletas_tela">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_servilletas.jpg" 
                    alt="Servilletas de tela de algodón dobladas y planchadas para eventos formales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -424,17 +472,26 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Servilletas de Tela 45x45 cm</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Algodón pesado color blanco, arena o gris perla. Entrega almidonada y doblada lista para colocar.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Algodón pesado color blanco, arena o gris perla. Entrega almidonada y doblada lista para colocar.</p>
               </div>
-              <button data-wa-service="Servilletas de Tela 45x45" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Cantidad a cotizar:</span>
+                  <span data-card-subtotal="servilletas_tela" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="servilletas_tela" data-step="-10" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 10 servilletas">-10</button>
+                  <button type="button" data-step-id="servilletas_tela" data-step="-1" class="px-2.5 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 servilleta">-1</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="servilletas_tela" aria-label="Cantidad Servilletas de Tela" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="servilletas_tela" data-step="1" class="px-2.5 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 servilleta">+1</button>
+                  <button type="button" data-step-id="servilletas_tela" data-step="10" class="px-2.5 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 10 servilletas">+10</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 7: JUEGO DE LIVING -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="mobiliario">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="mobiliario" data-item-id="living_nordico">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_living.jpg" 
                    alt="Juego de living nórdico lounge con sillones blancos y mesa ratona para recepciones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -444,17 +501,24 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Juego de Living Nórdico (10 personas)</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Incluye 2 sillones dobles, 4 banquetas puff y mesa ratona de madera rústica.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Incluye 2 sillones dobles, 4 banquetas puff y mesa ratona de madera rústica.</p>
               </div>
-              <button data-wa-service="Juego de Living Nórdico (10 pers)" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Sets a cotizar:</span>
+                  <span data-card-subtotal="living_nordico" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="living_nordico" data-step="-1" class="px-3 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 juego de living">-1</button>
+                  <input type="number" min="0" max="50" value="0" data-qty-input="living_nordico" aria-label="Cantidad Juego de Living Nórdico" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="living_nordico" data-step="1" class="px-3 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 juego de living">+1 Set</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- PRODUCTO 8: GUIRNALDAS DE LUCES -->
-          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="mobiliario">
+          <div class="product-card bg-stone-50 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between group transition-all reveal-on-scroll" data-category="mobiliario" data-item-id="guirnaldas_luces">
             <div class="relative overflow-hidden aspect-[4/3] h-52 w-full bg-stone-200">
               <img src="/images/vajilla_guirnaldas.jpg" 
                    alt="Guirnaldas de luces cálidas tipo kermesse y focos vintage para ambientación nocturna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -464,17 +528,246 @@
             <div class="p-5 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Guirnaldas Kermesse Luces Cálidas</h3>
-                <p class="text-xs text-stone-600 leading-relaxed mb-3">Tramos de 20 metros con focos LED cálidos vintage tipo gota. Aptas intemperie.</p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4">Tramos de 20 metros con focos LED cálidos vintage tipo gota. Aptas intemperie.</p>
               </div>
-              <button data-wa-service="Guirnaldas de Luces Kermesse (20m)" data-wa-msg="Hola Vajilla y Estilo! Quisiera consultar disponibilidad y cotizar {servicio} para mi evento."
-                      class="tap-bounce min-touch-target w-full py-2.5 rounded-xl bg-stone-900 hover:bg-amber-700 text-white font-bold text-xs transition-colors cursor-pointer">
-                Consultar por WhatsApp
-              </button>
+              <div class="pt-3 border-t border-stone-200/80 space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold text-stone-500">Tramos a cotizar:</span>
+                  <span data-card-subtotal="guirnaldas_luces" class="text-xs font-extrabold text-amber-800 tabular-nums">$0</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="guirnaldas_luces" data-step="-1" class="px-3 py-2 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-bold text-xs cursor-pointer transition-colors" aria-label="Restar 1 tramo de guirnalda">-1</button>
+                  <input type="number" min="0" max="50" value="0" data-qty-input="guirnaldas_luces" aria-label="Cantidad Guirnaldas Kermesse" class="w-full text-center font-bold text-sm bg-white border border-stone-300 rounded-lg py-1.5 tabular-nums text-stone-900 focus:outline-hidden focus:ring-2 focus:ring-amber-600">
+                  <button type="button" data-step-id="guirnaldas_luces" data-step="1" class="px-3 py-2 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs cursor-pointer transition-colors" aria-label="Sumar 1 tramo de guirnalda">+1 Tramo</button>
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
 
+      </div>
+    </section>
+
+    <!-- BLOQUE COTIZADOR INTERACTIVO EN TIEMPO REAL A WHATSAPP -->
+    <section id="cotizador" class="py-16 md:py-24 bg-stone-950 text-stone-100 border-t border-stone-800 reveal-on-scroll">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1.5 rounded-full">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              Presupuesto Instantáneo a Medida
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mt-3 mb-2">
+              Armá tu Pedido y Mandalo Listo a WhatsApp
+            </h2>
+            <p class="text-stone-400 text-sm max-w-2xl">
+              Ajustá las cantidades de cada pieza o probá uno de los ejemplos rápidos. El sistema arma automáticamente tu lista de alquiler con precios unitarios y total estimado lista para enviar.
+            </p>
+          </div>
+
+          <!-- Atajos Rápidos de Prueba -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-preset="ejemplo_pedido" class="px-3.5 py-2 rounded-xl bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/40 text-amber-300 text-xs font-bold cursor-pointer transition-all">
+              ⚡ Cargar Ejemplo (10 copas + 20 cubiertos + 2 manteles)
+            </button>
+            <button type="button" data-preset="cumple_50" class="px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-200 text-xs font-semibold cursor-pointer transition-all">
+              🥂 Ejemplo Fiesta 50 pers.
+            </button>
+            <button type="button" data-preset="clear" class="px-3 py-2 rounded-xl bg-stone-900 hover:bg-red-950/50 border border-stone-800 hover:border-red-800/50 text-stone-400 hover:text-red-300 text-xs font-medium cursor-pointer transition-all">
+              Vaciar
+            </button>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Columna Izquierda: Tabla Rápida de Cantidades + Logística -->
+          <div class="lg:col-span-7 bg-stone-900/90 border border-stone-800 rounded-2xl p-5 sm:p-7 space-y-6">
+            <div class="flex items-center justify-between border-b border-stone-800 pb-3">
+              <h3 class="font-serif font-bold text-lg text-white">1. Ajustá tus cantidades</h3>
+              <span class="text-xs text-stone-400">Valores por evento (lavado incluido)</span>
+            </div>
+
+            <div id="builder-rows" class="divide-y divide-stone-800/80 text-sm">
+              <!-- Fila 1 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Copa de Vino y Agua Cristal</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$350 / unidad</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="copas_vino" data-step="-10" class="px-2 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-10</button>
+                  <button type="button" data-step-id="copas_vino" data-step="-1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="copas_vino" aria-label="Cantidad Copa de Vino en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="copas_vino" data-step="1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold cursor-pointer">+</button>
+                  <button type="button" data-step-id="copas_vino" data-step="10" class="px-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+10</button>
+                </div>
+              </div>
+
+              <!-- Fila 2 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Copa Flauta Champagne</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$380 / unidad</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="copas_champagne" data-step="-10" class="px-2 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-10</button>
+                  <button type="button" data-step-id="copas_champagne" data-step="-1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="copas_champagne" aria-label="Cantidad Copa Champagne en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="copas_champagne" data-step="1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold cursor-pointer">+</button>
+                  <button type="button" data-step-id="copas_champagne" data-step="10" class="px-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+10</button>
+                </div>
+              </div>
+
+              <!-- Fila 3 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Plato Playo Porcelana y Oro</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$450 / unidad</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="platos_playos" data-step="-10" class="px-2 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-10</button>
+                  <button type="button" data-step-id="platos_playos" data-step="-1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="platos_playos" aria-label="Cantidad Plato Playo en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="platos_playos" data-step="1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold cursor-pointer">+</button>
+                  <button type="button" data-step-id="platos_playos" data-step="10" class="px-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+10</button>
+                </div>
+              </div>
+
+              <!-- Fila 4 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Set Cubiertos Premium (3 piezas)</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$420 / juego</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="cubiertos_acero" data-step="-10" class="px-2 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-10</button>
+                  <button type="button" data-step-id="cubiertos_acero" data-step="-1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="cubiertos_acero" aria-label="Cantidad Set Cubiertos en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="cubiertos_acero" data-step="1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold cursor-pointer">+</button>
+                  <button type="button" data-step-id="cubiertos_acero" data-step="10" class="px-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+10</button>
+                </div>
+              </div>
+
+              <!-- Fila 5 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Mantel Redondo Lino Crudo / Blanco (3m)</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$3.200 / unidad</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="manteles_lino" data-step="-5" class="px-2 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-5</button>
+                  <button type="button" data-step-id="manteles_lino" data-step="-1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="200" value="0" data-qty-input="manteles_lino" aria-label="Cantidad Mantel Redondo en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="manteles_lino" data-step="1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold cursor-pointer">+</button>
+                  <button type="button" data-step-id="manteles_lino" data-step="5" class="px-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+5</button>
+                </div>
+              </div>
+
+              <!-- Fila 6 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Servilletas de Tela 45x45 cm</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$280 / unidad</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="servilletas_tela" data-step="-10" class="px-2 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-10</button>
+                  <button type="button" data-step-id="servilletas_tela" data-step="-1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="1000" value="0" data-qty-input="servilletas_tela" aria-label="Cantidad Servilletas en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="servilletas_tela" data-step="1" class="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold cursor-pointer">+</button>
+                  <button type="button" data-step-id="servilletas_tela" data-step="10" class="px-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+10</button>
+                </div>
+              </div>
+
+              <!-- Fila 7 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Juego de Living Nórdico (10 personas)</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$18.500 / set</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="living_nordico" data-step="-1" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="50" value="0" data-qty-input="living_nordico" aria-label="Cantidad Living Nórdico en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="living_nordico" data-step="1" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+1</button>
+                </div>
+              </div>
+
+              <!-- Fila 8 -->
+              <div class="py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-stone-100 truncate">Guirnaldas Kermesse Luces Cálidas (20m)</p>
+                  <p class="text-xs text-amber-400 font-semibold tabular-nums">$8.500 / tramo</p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" data-step-id="guirnaldas_luces" data-step="-1" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-bold cursor-pointer">-</button>
+                  <input type="number" min="0" max="50" value="0" data-qty-input="guirnaldas_luces" aria-label="Cantidad Guirnaldas en cotizador" class="w-16 text-center font-bold text-sm bg-stone-950 border border-stone-700 rounded-lg py-1 text-white tabular-nums">
+                  <button type="button" data-step-id="guirnaldas_luces" data-step="1" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold cursor-pointer">+1</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Datos opcionales del evento -->
+            <div class="pt-4 border-t border-stone-800 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="quote-date" class="block text-xs font-semibold text-stone-300 mb-1.5">Fecha aproximada del evento:</label>
+                <input id="quote-date" type="text" placeholder="Ej: Sábado 22 de Noviembre" class="w-full rounded-xl bg-stone-950 border border-stone-700 px-3.5 py-2.5 text-xs text-white placeholder-stone-500 focus:outline-hidden focus:ring-2 focus:ring-amber-500">
+              </div>
+              <div>
+                <label for="quote-zone" class="block text-xs font-semibold text-stone-300 mb-1.5">Modalidad de entrega:</label>
+                <select id="quote-zone" class="w-full rounded-xl bg-stone-950 border border-stone-700 px-3.5 py-2.5 text-xs text-white focus:outline-hidden focus:ring-2 focus:ring-amber-500">
+                  <option value="Retiro y devolución por depósito (Santa Lucía)">Retiro por depósito (Sin cargo de envío)</option>
+                  <option value="Envío a domicilio / salón en San Juan Capital">Envío a San Juan Capital</option>
+                  <option value="Envío a salón / quinta en Rivadavia o Zonda">Envío a Rivadavia / Zonda</option>
+                  <option value="Envío a salón / quinta en Santa Lucía">Envío a Santa Lucía</option>
+                  <option value="Envío a salón / quinta en Rawson o Pocito">Envío a Rawson / Pocito</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Ticket en Tiempo Real + Botón WhatsApp -->
+          <div class="lg:col-span-5 bg-gradient-to-b from-stone-900 to-stone-950 border-2 border-amber-500/50 rounded-2xl p-6 sm:p-7 shadow-2xl sticky top-28">
+            <div class="flex items-center justify-between border-b border-stone-800 pb-4 mb-4">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-400 block">2. Resumen en Vivo</span>
+                <h3 class="font-serif font-bold text-xl text-white">Tu Lista de Alquiler</h3>
+              </div>
+              <span id="quote-badge-count" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold text-xs tabular-nums">
+                0 piezas
+              </span>
+            </div>
+
+            <!-- Lista dinámica de ítems seleccionados -->
+            <div id="quote-items-list" class="space-y-2.5 max-h-64 overflow-y-auto pr-1 text-xs text-stone-300 mb-5">
+              <!-- Populated by app.js -->
+            </div>
+
+            <!-- Total Estimado -->
+            <div class="p-4 rounded-xl bg-stone-950 border border-stone-800 mb-5">
+              <div class="flex items-baseline justify-between">
+                <span class="text-xs font-semibold text-stone-400">Total Estimado Alquiler:</span>
+                <span id="quote-total-price" class="text-2xl sm:text-3xl font-serif font-bold text-amber-400 tabular-nums">$0 ARS</span>
+              </div>
+              <p class="text-[11px] text-stone-400 mt-1">
+                ✓ Incluye lavado e higienizado industrial al devolver.
+              </p>
+            </div>
+
+            <!-- Vista previa del mensaje de WhatsApp -->
+            <div class="mb-5">
+              <span class="text-[11px] font-semibold text-stone-400 block mb-1.5">Mensaje que se enviará a WhatsApp:</span>
+              <pre id="quote-wa-preview" class="p-3 rounded-xl bg-stone-950/90 border border-stone-800 text-[11px] text-stone-300 font-mono whitespace-pre-wrap leading-relaxed max-h-40 overflow-y-auto"></pre>
+            </div>
+
+            <button type="button" id="btn-send-custom-quote"
+                    class="tap-bounce min-touch-target w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2.5 cursor-pointer transition-all">
+              <svg aria-hidden="true" class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Enviar Lista y Precio por WhatsApp</span>
+            </button>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -777,14 +1070,13 @@
   <aside class="mobile-action-dock block sm:hidden bg-stone-900/95 border-t border-stone-800 shadow-2xl">
     <div class="flex items-center justify-between gap-3">
       <div class="flex flex-col">
-        <span class="text-xs font-bold text-white leading-tight">Cristal y Bohemia</span>
-        <span class="text-[10px] text-amber-400 font-medium">Vajilla y Menaje San Juan</span>
+        <span class="text-xs font-bold text-white leading-tight">Vajilla y Estilo</span>
+        <span id="mobile-dock-total" class="text-[10px] text-amber-400 font-semibold tabular-nums">Tu lista: $18.300 (32 ítem/s)</span>
       </div>
-      <button data-wa-msg="Hola Vajilla y Estilo! Quisiera pedir un presupuesto personalizado para una fiesta en San Juan."
-              class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-amber-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg cursor-pointer">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        <span>Cotizar Vajilla</span>
-      </button>
+      <a href="#cotizador"
+         class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-amber-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg cursor-pointer">
+        <span>Ver mi Lista</span>
+      </a>
     </div>
   </aside>
 
