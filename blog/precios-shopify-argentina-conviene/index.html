@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -342,14 +341,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto sale el plan más barato de Shopify en Argentina?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">El plan Basic cuesta $19 USD por mes si pagás el año entero por adelantado, o $25 a $39 USD si pagás mes a mes, valores a los que debés aplicar la cotización del dólar tarjeta en tu banco.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Shopify cobra comisión si el cliente me paga por transferencia?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Sí. Mientras la orden quede registrada dentro del checkout de Shopify usando un método externo a Shopify Payments, la plataforma aplica el cargo por transacción en tu factura mensual en dólares.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto sale el plan más barato de Shopify en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              El plan Basic cuesta $19 USD por mes si pagás el año entero por adelantado, o $25 a $39 USD si pagás mes a mes, valores a los que debés aplicar la cotización del dólar tarjeta en tu banco.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Shopify cobra comisión si el cliente me paga por transferencia?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Sí. Mientras la orden quede registrada dentro del checkout de Shopify usando un método externo a Shopify Payments, la plataforma aplica el cargo por transacción en tu factura mensual en dólares.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-2">¿Qué alternativa existe en Argentina sin pagar mensualidades en dólares?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">En Erik Website desarrollamos Landing Pages comerciales por $150.000 ARS finales (pago único) y catálogos interactivos con carrito directo a WhatsApp, sin comisiones por venta.</p>
@@ -403,5 +412,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

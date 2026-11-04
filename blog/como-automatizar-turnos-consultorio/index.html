@@ -16,8 +16,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
   <!-- Tailwind CSS & Fonts -->
@@ -153,8 +152,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
     // Listener global para capturar todos los clics a WhatsApp
     document.addEventListener('click', function(e) {
@@ -162,9 +159,7 @@
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -179,13 +174,7 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
 <!-- NAVBAR -->
   <header id="main-nav" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3.5">
@@ -368,7 +357,7 @@
         </h2>
         
         <div class="space-y-3 pt-1">
-          <details class="group bg-neutral-50 rounded-2xl border border-black/[0.06] overflow-hidden transition-all duration-200">
+          <details name="faq-accordion" class="group bg-neutral-50 rounded-2xl border border-black/[0.06] overflow-hidden transition-all duration-200">
             <summary class="p-5 flex items-center justify-between cursor-pointer font-semibold text-neutral-900 list-none select-none">
               <span class="text-base">¿Cómo reducir los pacientes que faltan sin aviso (no-show)?</span>
               <svg class="w-4 h-4 text-neutral-500 transition-transform duration-200 group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -378,7 +367,7 @@
             </div>
           </details>
 
-          <details class="group bg-neutral-50 rounded-2xl border border-black/[0.06] overflow-hidden transition-all duration-200">
+          <details name="faq-accordion" class="group bg-neutral-50 rounded-2xl border border-black/[0.06] overflow-hidden transition-all duration-200">
             <summary class="p-5 flex items-center justify-between cursor-pointer font-semibold text-neutral-900 list-none select-none">
               <span class="text-base">¿Es seguro compartir información de salud por WhatsApp?</span>
               <svg class="w-4 h-4 text-neutral-500 transition-transform duration-200 group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>

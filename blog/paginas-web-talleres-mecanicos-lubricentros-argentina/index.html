@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -307,14 +306,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Para qué rubros del automotor sirve esta página web?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Se adapta a talleres de mecánica integral, inyección electrónica, lubricentros, cajas automáticas, chapa y pintura, alineación y balanceo, gomerías, polarizados, estética vehicular (detailing) y casas de repuestos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto cuesta el diseño web para un taller mecánico?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">El precio es de $150.000 ARS finales (pago único), sin abonos mensuales obligatorios. Incluye dominio .com.ar, hosting rápido, certificado SSL y conexión con Google Maps.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Para qué rubros del automotor sirve esta página web?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Se adapta a talleres de mecánica integral, inyección electrónica, lubricentros, cajas automáticas, chapa y pintura, alineación y balanceo, gomerías, polarizados, estética vehicular (detailing) y casas de repuestos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta el diseño web para un taller mecánico?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              El precio es de $150.000 ARS finales (pago único), sin abonos mensuales obligatorios. Incluye dominio .com.ar, hosting rápido, certificado SSL y conexión con Google Maps.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-2">¿Puedo mostrar fotos reales de mi taller y mis herramientas?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">Por supuesto. Incorporamos fotos de tus elevadores, scanner de diagnóstico, sala de espera y trabajos realizados para transmitir máxima seriedad a los dueños de vehículos.</p>
@@ -368,5 +377,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

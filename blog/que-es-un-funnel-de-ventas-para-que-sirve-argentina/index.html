@@ -372,18 +372,24 @@
           Preguntas frecuentes sobre Páginas Modo Funnel
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué necesito pasarte para que armes mi funnel?</h3>
-            <p class="text-sm text-slate-600">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué necesito pasarte para que armes mi funnel?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
               Solo tenés que contarnos por audios de WhatsApp qué archivo digital, curso o servicio vendés, cuál es su precio y pasarnos la portada o fotos que tengas. Nosotros armamos toda la estructura persuasiva (títulos, beneficios, preguntas frecuentes y cierre) por vos.
             </p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo me pagan mis clientes dentro del funnel?</h3>
-            <p class="text-sm text-slate-600">
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo me pagan mis clientes dentro del funnel?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
               Podemos configurarlo de dos formas según prefieras: con un botón que lleve al comprador directo a tu WhatsApp con un mensaje listo para pedirte el alias/link y recibir el archivo, o integrando botones directos de pago de Mercado Pago junto con tu botón de soporte por WhatsApp.
             </p>
-          </div>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo tener un funnel si ya tengo otra página web?</h3>
             <p class="text-sm text-slate-600">
@@ -411,5 +417,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

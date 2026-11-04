@@ -309,14 +309,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Se puede configurar un monto mínimo de compra para ventas mayoristas?</h3>
-            <p class="text-sm text-slate-600">Sí. Si tenés un mayorista de ropa (en Flores, Avellaneda, Once o cualquier provincia), configuramos el catálogo para indicar curva de talles, precios por bulto o prenda y un mínimo de compra antes de enviar el pedido al WhatsApp de tus vendedores.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué hago si antes usaba Sumerlabs o un catálogo en PDF de Canva?</h3>
-            <p class="text-sm text-slate-600">Muchos comercios de indumentaria quedaron sin plataforma tras los cambios en Sumerlabs o siguen enviando archivos PDF pesados. Te migramos a tu propia página web con dominio propio (.com o .com.ar) donde actualizás precios en segundos y tus clientes ven las prendas al instante sin descargar nada.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede configurar un monto mínimo de compra para ventas mayoristas?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Si tenés un mayorista de ropa (en Flores, Avellaneda, Once o cualquier provincia), configuramos el catálogo para indicar curva de talles, precios por bulto o prenda y un mínimo de compra antes de enviar el pedido al WhatsApp de tus vendedores.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué hago si antes usaba Sumerlabs o un catálogo en PDF de Canva?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Muchos comercios de indumentaria quedaron sin plataforma tras los cambios en Sumerlabs o siguen enviando archivos PDF pesados. Te migramos a tu propia página web con dominio propio (.com o .com.ar) donde actualizás precios en segundos y tus clientes ven las prendas al instante sin descargar nada.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Tienen ejemplos reales de catálogos e-commerce hechos a medida por ustedes?</h3>
             <p class="text-sm text-slate-600">Sí. En la sección 'Mis Trabajos' de nuestra página principal podés ver el desarrollo de e-commerce a medida que realizamos para 3DMON Shop (3dmon.shop), diseñado con catálogo visual interactivo, carga instantánea en celulares y enfoque directo en conversión.</p>
@@ -342,5 +352,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

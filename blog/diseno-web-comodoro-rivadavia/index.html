@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Proveedores del Sector Petrolero y Minero</h4>
+            <h3 class="font-bold text-white text-base mb-1">Proveedores del Sector Petrolero y Minero</h3>
             <p class="text-xs text-neutral-400">Servicios de mantenimiento, transporte de personal, viandas y seguridad operativa.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Empresas de Logística y Grúas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Empresas de Logística y Grúas</h3>
             <p class="text-xs text-neutral-400">Fletes pesados, depósitos fiscales y auxilio mecánico en rutas patagónicas.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Profesionales y Consultorios en Rada Tilly</h4>
+            <h3 class="font-bold text-white text-base mb-1">Profesionales y Consultorios en Rada Tilly</h3>
             <p class="text-xs text-neutral-400">Médicos especialistas, odontología y estudios legales con citas por WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios Mayoristas y Ferreterías Industriales</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios Mayoristas y Ferreterías Industriales</h3>
             <p class="text-xs text-neutral-400">Catálogos de insumos y herramientas pesadas con atención comercial rápida.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Comodoro Rivadavia
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿La competencia SEO en Comodoro Rivadavia es realmente baja?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Sí. La mayoría de los competidores locales tienen páginas web desactualizadas hechas en WordPress hace 5 años o solo una página de Facebook, lo que permite posicionar en las primeras posiciones muy rápido.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede pagar con Mercado Pago o transferencia?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Sí, aceptamos transferencias bancarias directas y Mercado Pago en pesos argentinos.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿La competencia SEO en Comodoro Rivadavia es realmente baja?</h4>
-            <p class="text-sm text-neutral-400">Sí. La mayoría de los competidores locales tienen páginas web desactualizadas hechas en WordPress hace 5 años o solo una página de Facebook, lo que permite posicionar en las primeras posiciones muy rápido.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Se puede pagar con Mercado Pago o transferencia?</h4>
-            <p class="text-sm text-neutral-400">Sí, aceptamos transferencias bancarias directas y Mercado Pago en pesos argentinos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Tiene costos mensuales ocultos?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Tiene costos mensuales ocultos?</h3>
             <p class="text-sm text-neutral-400">Cero costos ocultos. El primer mes de mantenimiento es gratis y luego es optativo por $20.000 ARS/mes.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

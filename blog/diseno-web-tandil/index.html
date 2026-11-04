@@ -291,19 +291,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Complejos de Cabañas, Hoteles y Gastronomía</h4>
+            <h3 class="font-bold text-white text-base mb-1">Complejos de Cabañas, Hoteles y Gastronomía</h3>
             <p class="text-xs text-neutral-400">Sitios orientados a <a href="/blog/paginas-web-cabanas-hoteles-turismo/" class="text-emerald-400 hover:underline">reservas directas por WhatsApp</a> con galería de fotos liviana, ubicación en el mapa y carta digital QR.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Productores Regionales y Catálogos Mayoristas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Productores Regionales y Catálogos Mayoristas</h3>
             <p class="text-xs text-neutral-400">Fábricas de chacinados, quesos, cuchillería y regionales que venden a distribuidores de todo el país mediante un <a href="/blog/como-crear-catalogo-online-pedidos-whatsapp/" class="text-emerald-400 hover:underline">catálogo online con pedidos a WhatsApp</a>.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Inmobiliarias, Arquitectos y Constructoras</h4>
+            <h3 class="font-bold text-white text-base mb-1">Inmobiliarias, Arquitectos y Constructoras</h3>
             <p class="text-xs text-neutral-400">Desarrollos urbanos y loteos en Tandil que necesitan <a href="/blog/paginas-web-para-inmobiliarias-argentina/" class="text-emerald-400 hover:underline">mostrar propiedades y planos</a> sin depender únicamente de portales pagos.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Consultorios, Clínicas y Servicios del Hogar</h4>
+            <h3 class="font-bold text-white text-base mb-1">Consultorios, Clínicas y Servicios del Hogar</h3>
             <p class="text-xs text-neutral-400">Médicos, odontólogos, talleres mecánicos y técnicos que captan consultas urgentes desde el buscador de Google.</p>
           </div>
         </div>
@@ -346,16 +346,26 @@
           Preguntas frecuentes sobre diseño web en Tandil
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Sirve una Landing Page para un complejo de cabañas en Tandil?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Es la herramienta más rentable: el turista busca alojamiento en Google, ve las fotos reales de tus cabañas y servicios (pileta climatizada, desayuno, ubicación) y te escribe directo al WhatsApp sin comisiones de intermediarios.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto demora estar online en Tandil?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Entre 3 y 5 días hábiles desde que nos compartís las fotos y los datos principales de tu actividad.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Sirve una Landing Page para un complejo de cabañas en Tandil?</h4>
-            <p class="text-sm text-neutral-400">Es la herramienta más rentable: el turista busca alojamiento en Google, ve las fotos reales de tus cabañas y servicios (pileta climatizada, desayuno, ubicación) y te escribe directo al WhatsApp sin comisiones de intermediarios.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cuánto demora estar online en Tandil?</h4>
-            <p class="text-sm text-neutral-400">Entre 3 y 5 días hábiles desde que nos compartís las fotos y los datos principales de tu actividad.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Hay que pagar una mensualidad obligatoria para mantener la web?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Hay que pagar una mensualidad obligatoria para mantener la web?</h3>
             <p class="text-sm text-neutral-400">No. El pago de $150.000 ARS es único por el desarrollo. El mantenimiento mensual ($20.000 ARS) es totalmente opcional a partir del segundo mes.</p>
           </div>
         </div>
@@ -378,5 +388,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

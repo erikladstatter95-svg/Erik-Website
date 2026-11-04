@@ -22,8 +22,7 @@
   <meta name="twitter:image" content="https://erikwebsite.com/images/guia_empretienda_vs_tiendanube_argentina.png">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Hallmark Stamp -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -156,8 +155,6 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
 
   <!-- NAVBAR BLOG -->
@@ -369,16 +366,26 @@
           Preguntas frecuentes sobre tiendas online en Argentina
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuál es más barata entre Empretienda y Tiendanube?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Empretienda suele ser más económica en su abono base mensual y no cobra comisiones porcentuales directas por venta. Tiendanube ofrece un plan inicial básico, pero sus opciones profesionales implican mayores costos fijos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto se paga de comisión por venta en pasarelas?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Las pasarelas tradicionales como Mercado Pago retienen entre un 4% y un 8% + IVA por cobro con tarjeta o dinero en cuenta. Un catálogo propio con derivación a WhatsApp te permite incentivar transferencias bancarias directas con 0% de comisiones.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <h4 class="font-bold text-slate-900 text-base mb-2">¿Cuál es más barata entre Empretienda y Tiendanube?</h4>
-            <p class="text-sm text-slate-600">Empretienda suele ser más económica en su abono base mensual y no cobra comisiones porcentuales directas por venta. Tiendanube ofrece un plan inicial básico, pero sus opciones profesionales implican mayores costos fijos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <h4 class="font-bold text-slate-900 text-base mb-2">¿Cuánto se paga de comisión por venta en pasarelas?</h4>
-            <p class="text-sm text-slate-600">Las pasarelas tradicionales como Mercado Pago retienen entre un 4% y un 8% + IVA por cobro con tarjeta o dinero en cuenta. Un catálogo propio con derivación a WhatsApp te permite incentivar transferencias bancarias directas con 0% de comisiones.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <h4 class="font-bold text-slate-900 text-base mb-2">¿Cuánto cuesta hacer un catálogo web a medida con Erik Website?</h4>
+            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto cuesta hacer un catálogo web a medida con Erik Website?</h3>
             <p class="text-sm text-slate-600">Desarrollamos tu catálogo web interactivo en código limpio por <strong>$150.000 ARS finales (pago único, entregado en 3 a 5 días hábiles)</strong>, con dominio .com.ar, hosting de alta velocidad y carrito configurado directo a tu número de WhatsApp.</p>
           </div>
         </div>
@@ -419,5 +426,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Contables y Jurídicos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Contables y Jurídicos</h3>
             <p class="text-xs text-neutral-400">Asesoría impositiva y legal para empresas del Gran Resistencia y el interior chaqueño.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios Mayoristas y Distribuidores</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios Mayoristas y Distribuidores</h3>
             <p class="text-xs text-neutral-400">Venta de repuestos, ferretería y alimentos con catálogo directo a WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Salud y Odontología</h4>
+            <h3 class="font-bold text-white text-base mb-1">Salud y Odontología</h3>
             <p class="text-xs text-neutral-400">Consultorios médicos con derivación ordenada de pacientes hacia la recepción.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Oficios y Servicios Técnicos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Oficios y Servicios Técnicos</h3>
             <p class="text-xs text-neutral-400">Climatización, electricidad y reparaciones con presencia destacada en Google Maps.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Resistencia y Chaco
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo se realiza el desarrollo a distancia desde Chaco?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Es muy simple: nos enviás fotos de tus trabajos y tres audios contándonos qué hacés. Con eso redactamos los textos comerciales y estructuramos la web.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué es fundamental Google Maps en Resistencia?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Porque cuando alguien busca un servicio en Resistencia, Google muestra primero el mapa local. Si tu ficha está vinculada a una web rápida, aparecés en los primeros puestos.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se realiza el desarrollo a distancia desde Chaco?</h4>
-            <p class="text-sm text-neutral-400">Es muy simple: nos enviás fotos de tus trabajos y tres audios contándonos qué hacés. Con eso redactamos los textos comerciales y estructuramos la web.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Por qué es fundamental Google Maps en Resistencia?</h4>
-            <p class="text-sm text-neutral-400">Porque cuando alguien busca un servicio en Resistencia, Google muestra primero el mapa local. Si tu ficha está vinculada a una web rápida, aparecés en los primeros puestos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Hay costos mensuales obligatorios?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Hay costos mensuales obligatorios?</h3>
             <p class="text-sm text-neutral-400">No. El servicio es de pago único cerrado. El mantenimiento es 100% opcional por $20.000 ARS/mes.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -51,7 +51,7 @@
   <meta property="article:author" content="Erik Ladstatter">
 
   <!-- Favicon SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23059669%22/><text x=%2216%22 y=%2222%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>E</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts no bloqueante -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -186,8 +186,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
     // Listener global para capturar todos los clics a WhatsApp
     document.addEventListener('click', function(e) {
@@ -195,9 +193,7 @@
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -212,13 +208,7 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
 <!-- NAVBAR -->
   <header id="main-nav" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3.5">
@@ -389,7 +379,7 @@
             </div>
 
             <!-- BONUS: CÓDIGO HTML DE BOTÓN FLOTANTE -->
-            <details class="group bg-slate-50 rounded-2xl border border-slate-200 p-4">
+            <details name="faq-accordion" class="group bg-slate-50 rounded-2xl border border-slate-200 p-4">
               <summary class="text-xs font-bold uppercase tracking-wider text-slate-700 cursor-pointer list-none flex items-center justify-between">
                 <span>💻 Bonus: Obtener código HTML de botón flotante para tu web</span>
                 <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
@@ -643,7 +633,7 @@
             Preguntas frecuentes sobre links y códigos QR de WhatsApp
           </h2>
           <div class="space-y-3">
-            <details class="group bg-white rounded-xl border border-slate-200 p-4">
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
               <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
                 <span>¿Funciona igual para WhatsApp común y para WhatsApp Business?</span>
                 <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
@@ -652,7 +642,7 @@
                 Sí, exactamente igual. El enlace oficial <code>wa.me</code> detecta automáticamente tu cuenta sin importar si usás la aplicación estándar de WhatsApp o WhatsApp Business.
               </p>
             </details>
-            <details class="group bg-white rounded-xl border border-slate-200 p-4">
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
               <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
                 <span>¿Qué pasa si cambio el texto del mensaje más adelante?</span>
                 <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>

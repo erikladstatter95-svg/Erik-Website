@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Términos y Condiciones del Servicio | Erik Website</title>
-  <meta name="description" content="Términos, condiciones comerciales y alcance del servicio de diseño web y mantenimiento profesional en Erik Website.">
+  <meta name="description" content="Términos, condiciones comerciales y alcance del servicio de diseño web, páginas modo funnel, auditoría SEO y mantenimiento profesional en Erik Website.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://erikwebsite.com/terminos/">
 
@@ -12,12 +12,12 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://erikwebsite.com/terminos/">
   <meta property="og:title" content="Términos y Condiciones del Servicio | Erik Website">
-  <meta property="og:description" content="Términos, condiciones comerciales y alcance del servicio de diseño web y mantenimiento profesional en Erik Website.">
-  <meta property="og:image" content="https://erikwebsite.com/images/og_main.jpg">
-  <meta property="og:image:secure_url" content="https://erikwebsite.com/images/og_main.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:description" content="Términos, condiciones comerciales y alcance del servicio de diseño web, páginas modo funnel, auditoría SEO y mantenimiento profesional en Erik Website.">
+  <meta property="og:image" content="https://erikwebsite.com/images/logo_erikwebsite_ig.png">
+  <meta property="og:image:secure_url" content="https://erikwebsite.com/images/logo_erikwebsite_ig.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1080">
   <meta property="og:image:alt" content="Términos y Condiciones - Erik Website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Erik Website">
@@ -26,8 +26,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://erikwebsite.com/terminos/">
   <meta name="twitter:title" content="Términos y Condiciones del Servicio | Erik Website">
-  <meta name="twitter:description" content="Términos, condiciones comerciales y alcance del servicio de diseño web y mantenimiento profesional en Erik Website.">
-  <meta name="twitter:image" content="https://erikwebsite.com/images/og_main.jpg">
+  <meta name="twitter:description" content="Términos, condiciones comerciales y alcance del servicio de diseño web, páginas modo funnel, auditoría SEO y mantenimiento profesional en Erik Website.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/logo_erikwebsite_ig.png">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
@@ -49,7 +49,7 @@
   </script>
 
   <!-- Favicon SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23059669%22/><text x=%2216%22 y=%2222%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>E</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,18 +69,14 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
-    // Listener global para capturar todos los clics a WhatsApp
+    // Listener global para capturar únicamente clics reales a WhatsApp
     document.addEventListener('click', function(e) {
       var target = e.target.closest('a, button');
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -95,14 +91,9 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
-<!-- HEADER NAVEGACIÓN -->
+
+  <!-- HEADER NAVEGACIÓN -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors">
@@ -125,7 +116,7 @@
           Términos y Condiciones del Servicio
         </h1>
         <p class="text-slate-600 text-sm sm:text-base max-w-2xl">
-          Última actualización: Marzo 2026. Al contratar los servicios de diseño web y mantenimiento con Erik Website (erikwebsite.com), usted acepta los siguientes términos de prestación, alcances y modalidades de pago.
+          Última actualización: Abril 2026. Al contratar los servicios de diseño web, páginas modo funnel, auditoría SEO o mantenimiento con Erik Website (erikwebsite.com), usted acepta los siguientes términos de prestación, alcances y modalidades de pago.
         </p>
       </div>
 
@@ -136,16 +127,19 @@
         <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-xs">
           <h2 class="text-lg sm:text-xl font-bold font-display text-slate-900 mb-3 flex items-center gap-2">
             <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">1</span>
-            Alcance del Servicio y Metodología Llave en Mano
+            Alcance del Servicio, Estructura Demo y Revisiones
           </h2>
           <p class="mb-3">
-            El servicio de <strong>Erik Website</strong> incluye el diseño, maquetación, redacción de textos comerciales (copywriting), optimización para teléfonos celulares y publicación de una página web profesional basada en nuestras plantillas de alta conversión optimizadas con tecnología moderna y ligera.
+            El plan base de <strong>Erik Website ($150.000 ARS)</strong> incluye el diseño, maquetación, redacción de textos comerciales (copywriting), optimización para teléfonos celulares y publicación de una página web profesional de <strong>una sola sección (formato One-Page)</strong> basada en la estructura de nuestras demos en vivo o con modificaciones mínimas de textos, fotografías e identidad visual.
           </p>
           <p class="mb-3">
-            <strong>Tiempo de entrega:</strong> El plazo estándar de entrega es de <strong>3 a 5 días hábiles</strong>, contados a partir de la recepción de la información básica requerida al cliente (audios explicativos de la actividad, fotos del local o trabajos y precios/servicios a publicar).
+            <strong>Proyectos con múltiples secciones o a medida:</strong> En caso de requerir páginas web con más de una sección o múltiples páginas internas separadas, catálogos extensos de productos, tiendas e-commerce o funcionalidades personalizadas fuera de lo exhibido en las demos, el desarrollo se cotizará por separado de acuerdo con la complejidad técnica del proyecto.
+          </p>
+          <p class="mb-3">
+            <strong>Tiempo de entrega:</strong> El plazo estándar de entrega del plan base es de <strong>3 a 5 días hábiles</strong>, contados a partir de la recepción de la información básica requerida al cliente (audios explicativos de la actividad, fotos del local o trabajos y precios/servicios a publicar) y del pago del 50% de anticipo. El 50% restante se abona contra entrega final una vez revisado el borrador.
           </p>
           <p>
-            <strong>Revisiones:</strong> Se contemplan hasta <strong>2 rondas de revisiones o ajustes</strong> antes de la publicación final para asegurar la plena conformidad del cliente con el contenido y la estética.
+            <strong>Revisiones:</strong> Se contemplan hasta <strong>2 rondas de revisiones o ajustes</strong> sobre el borrador antes de la publicación final para asegurar la plena conformidad del cliente con el contenido y la estética. Ajustes adicionales posteriores se gestionan dentro del abono de mantenimiento mensual o por cotización puntual.
           </p>
         </section>
 
@@ -238,10 +232,16 @@
         <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-xs">
           <h2 class="text-lg sm:text-xl font-bold font-display text-slate-900 mb-3 flex items-center gap-2">
             <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">7</span>
-            Mantenimiento de Sitios Web Externos
+            Auditoría SEO, Páginas Modo Funnel y Sitios Web Externos
           </h2>
+          <p class="mb-3">
+            <strong>Auditoría SEO y Optimización de Sitios Existentes:</strong> Para clientes que ya posean una página web desarrollada por terceros y contraten el servicio de Auditoría SEO, aceleración de velocidad, rescate técnico o mantenimiento mensual, se realizará una revisión preliminar sin cargo del enlace para diagnosticar el estado del sitio y presupuestar las mejoras a medida.
+          </p>
+          <p class="mb-3">
+            Cuando las implementaciones se realicen sobre servidores, plugins o plataformas de terceros (como WordPress, WooCommerce, Tiendanube o constructores visuales), el alcance se limitará a las optimizaciones acordadas por escrito, no siendo Erik Website responsable por caídas o incompatibilidades originadas en servidores externos o licencias de terceros.
+          </p>
           <p>
-            Para clientes que ya posean una página web previa desarrollada por terceros y deseen delegar su mantenimiento, optimización y actualización en erikwebsite.com, se realizará un diagnóstico técnico previo sin costo para evaluar compatibilidad y fijar la tarifa mensual correspondiente.
+            <strong>Páginas Modo Funnel (Embudos de Venta):</strong> Los desarrollos de páginas enfocadas en la venta directa de infoproductos, cursos, archivos digitales o servicios específicos se cotizan según los componentes requeridos (calculadora de <em>Order Bump</em>, integración de pagos o descargas y configuración de eventos publicitarios).
           </p>
         </section>
 
@@ -249,10 +249,10 @@
         <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-xs">
           <h2 class="text-lg sm:text-xl font-bold font-display text-slate-900 mb-3 flex items-center gap-2">
             <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">8</span>
-            Política de Cookies y Tecnologías de Analítica Web
+            Política de Cookies, Analítica Web y Píxel Publicitario
           </h2>
           <p class="mb-3">
-            En <strong>erikwebsite.com</strong> utilizamos cookies técnicas y analíticas de terceros para garantizar el correcto funcionamiento del sitio, medir la velocidad de carga y comprender cómo navegan los usuarios para mejorar la experiencia de uso.
+            En <strong>erikwebsite.com</strong> utilizamos cookies técnicas, analíticas y de medición publicitaria para garantizar el correcto funcionamiento del sitio, medir la velocidad de carga y evaluar el rendimiento de nuestras comunicaciones comerciales.
           </p>
           <div class="space-y-3 text-sm text-slate-600 mb-4">
             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
@@ -261,7 +261,11 @@
             </div>
             <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
               <strong class="text-slate-900 font-semibold block mb-1">2. Cookies Analíticas (Google Analytics 4 & Microsoft Clarity):</strong>
-              Nos permiten medir de forma 100% anonimizada métricas como páginas visitadas, tiempos de permanencia, mapas de calor agregados (heatmaps) y porcentaje de rebote. Estas cookies no recopilan contraseñas, documentos ni datos de identidad.
+              Nos permiten medir de forma anonimizada métricas como páginas visitadas, tiempos de permanencia, mapas de calor agregados (heatmaps) y porcentaje de rebote. Estas cookies no recopilan contraseñas, documentos ni datos sensibles.
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+              <strong class="text-slate-900 font-semibold block mb-1">3. Medición de Conversiones (Meta Pixel):</strong>
+              Utilizamos el Píxel de Meta (Facebook/Instagram) para medir eventos de navegación (<code>PageView</code>) y clics efectivos hacia botones de contacto por WhatsApp (<code>Contact</code>), con el fin de optimizar la relevancia de nuestras campañas publicitarias.
             </div>
           </div>
           <p class="mb-3">
@@ -282,6 +286,23 @@
             <li><strong>No comercialización:</strong> Erik Website no vende, no alquila, no cede ni comparte bases de datos ni información de visitantes o clientes con ninguna empresa publicitaria o entidad tercera.</li>
             <li><strong>Comunicaciones por WhatsApp:</strong> Las consultas, presupuestos o proyectos iniciados a través del enlace de WhatsApp constituyen un canal de mensajería privada directa entre el interesado y Erik Ladstatter, regido por los estándares de encriptación de extremo a extremo de Meta/WhatsApp.</li>
             <li><strong>Derechos de Acceso y Supresión:</strong> El titular de los datos personales tiene la facultad de ejercer el derecho de acceso, actualización o supresión de los datos que voluntariamente hubiera proporcionado para la contratación de un servicio, comunicándose directamente por los canales oficiales del sitio.</li>
+          </ul>
+        </section>
+
+        <!-- Cláusula 10 -->
+        <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-xs">
+          <h2 class="text-lg sm:text-xl font-bold font-display text-slate-900 mb-3 flex items-center gap-2">
+            <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">10</span>
+            Condiciones para Clientes Internacionales (Exterior / USD)
+          </h2>
+          <p class="mb-3">
+            Para contrataciones realizadas desde fuera de la República Argentina (disponibles en <a href="/en/" class="text-emerald-700 font-semibold hover:underline">erikwebsite.com/en/</a>), rigen las mismas garantías operativas, plazos de entrega (3 a 5 días hábiles) y hasta 2 rondas de revisiones bajo el siguiente esquema tarifario internacional:
+          </p>
+          <ul class="list-disc list-inside space-y-1.5 ml-2 text-slate-600">
+            <li><strong>Setup Inicial (One-Page estructura Demo):</strong> $199 USD (50% de anticipo y 50% contra entrega final).</li>
+            <li><strong>Mantenimiento Mensual y Cloud Hosting:</strong> Primer mes 100% bonificado; a partir del segundo mes, $20 USD/mes (incluye hasta 3 actualizaciones mensuales).</li>
+            <li><strong>Compra definitiva del código fuente (Buyout):</strong> Equivalente a 10 mensualidades ($200 USD).</li>
+            <li><strong>Medios de pago internacionales aceptados:</strong> PayPal, Wise, transferencia bancaria internacional (SWIFT / ACH) y USDT.</li>
           </ul>
         </section>
 
@@ -306,10 +327,10 @@
       </div>
       <div class="flex flex-wrap items-center gap-5 text-xs text-neutral-400">
         <a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a>
-        <a href="/#demos" class="hover:text-emerald-400 transition-colors">Demos</a>
-        <a href="/#precios" class="hover:text-emerald-400 transition-colors">Precios</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-400 transition-colors font-medium text-emerald-400">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-400 transition-colors">San Juan</a>
         <a href="/blog/" class="hover:text-emerald-400 transition-colors">Blog</a>
-        <a href="/terminos" class="text-emerald-400 font-medium">Términos y Condiciones</a>
+        <a href="/terminos/" class="text-emerald-400 font-medium">Términos y Condiciones</a>
         <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Tengo%20una%20consulta%20sobre%20los%20t%C3%A9rminos%20del%20servicio." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-medium">Consultar por WhatsApp</a>
       </div>
     </div>

@@ -16,8 +16,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
   <!-- Tailwind CSS & Fonts -->
@@ -153,8 +152,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
     // Listener global para capturar todos los clics a WhatsApp
     document.addEventListener('click', function(e) {
@@ -162,9 +159,7 @@
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -179,13 +174,7 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
 <!-- NAVBAR -->
   <header id="main-nav" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3.5">
@@ -277,15 +266,15 @@
             <span class="text-[11px] font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-0.5 rounded-full">
               Ecosistema Mendocino
             </span>
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">
+            <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">
               Las Zonas Comerciales de Gran Mendoza y Alrededores
-            </h3>
+            </h2>
           </div>
 
           <div class="grid sm:grid-cols-2 gap-4 text-neutral-900">
             <div class="p-4 rounded-2xl bg-white">
               <span class="text-xs font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded-full">CIUDAD DE MENDOZA & 5TA SECCIÓN</span>
-              <h4 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Centro, Av. San Martín y Belgrano</h4>
+              <h3 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Centro, Av. San Martín y Belgrano</h3>
               <p class="text-xs text-neutral-600 font-light leading-relaxed">
                 Clínicas odontológicas, consultorios médicos, psicólogos, escribanías y estudios jurídicos que requieren posicionarse en Google Maps.
               </p>
@@ -293,7 +282,7 @@
 
             <div class="p-4 rounded-2xl bg-white">
               <span class="text-xs font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded-full">GODOY CRUZ & GUAYMALLÉN</span>
-              <h4 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Corredores Comerciales y Servicios</h4>
+              <h3 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Corredores Comerciales y Servicios</h3>
               <p class="text-xs text-neutral-600 font-light leading-relaxed">
                 Talleres de reparación, urgencias del hogar 24hs, distribuidoras y comercios minoristas con alta demanda de WhatsApp instantáneo.
               </p>
@@ -301,7 +290,7 @@
 
             <div class="p-4 rounded-2xl bg-white">
               <span class="text-xs font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded-full">MAIPÚ & LUJÁN DE CUYO</span>
-              <h4 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Rutas del Vino, Bodegas y Eventos</h4>
+              <h3 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Rutas del Vino, Bodegas y Eventos</h3>
               <p class="text-xs text-neutral-600 font-light leading-relaxed">
                 Salones de recepciones, catering, bodegas boutique y turismo receptivo que necesitan galerías visuales ultrarrápidas y reservas por WhatsApp.
               </p>
@@ -309,7 +298,7 @@
 
             <div class="p-4 rounded-2xl bg-white">
               <span class="text-xs font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded-full">SAN RAFAEL & VALLE DE UCO</span>
-              <h4 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Polos Regionales y Turismo</h4>
+              <h3 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Polos Regionales y Turismo</h3>
               <p class="text-xs text-neutral-600 font-light leading-relaxed">
                 Negocios locales y prestadores turísticos que buscan captar a viajeros que buscan servicios sobre la marcha desde Google Maps.
               </p>
@@ -403,7 +392,7 @@
           Preguntas Frecuentes sobre Páginas Web en Mendoza
         </h3>
         <div class="space-y-4">
-          <details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
+          <details name="faq-accordion" class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
             <summary class="font-semibold text-slate-800 cursor-pointer list-none flex items-center justify-between text-sm">
               <span>¿Cómo trabajamos si mi negocio está en Mendoza y vos en San Juan?</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
@@ -413,7 +402,7 @@
             </p>
           </details>
 
-          <details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
+          <details name="faq-accordion" class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
             <summary class="font-semibold text-slate-800 cursor-pointer list-none flex items-center justify-between text-sm">
               <span>¿Qué medios de pago aceptás desde Mendoza?</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
@@ -423,7 +412,7 @@
             </p>
           </details>
 
-          <details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
+          <details name="faq-accordion" class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
             <summary class="font-semibold text-slate-800 cursor-pointer list-none flex items-center justify-between text-sm">
               <span>¿Incluye la configuración de mi perfil de Google Maps en Mendoza?</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>

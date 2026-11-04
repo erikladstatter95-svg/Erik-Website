@@ -210,3 +210,18 @@
      - `/blog/paginas-web-alquiler-maquinaria-grupos-electrogenos-banos-quimicos/` (*Páginas Web para Alquiler de Maquinaria Vial, Grupos Electrógenos y Baños Químicos*)
      - `/blog/paginas-web-ortopedias-alquiler-camas-internacion-domiciliaria/` (*Páginas Web para Ortopedias, Alquiler de Camas Ortopédicas e Internación Domiciliaria — `internacion domiciliaria pami` 5.000/mes Comp 19/100*)
      - `/blog/paginas-web-salones-eventos-quintas-catering-argentina/` (*Páginas Web para Salones de Eventos, Quintas, Catering y Restaurantes — `alquiler de vajilla` 5.000/mes Comp 24/100, `precio de alquiler de vajilla para 50 personas` 500/mes*)
+- [x] **Auditoría Integral de Coherencia, Píxel, Favicons, Términos, Categorías y Acordeones FAQ (2026-11-04):**
+  1. **Unificación de Rondas de Revisión y Alcance de `$150.000 ARS`:**
+     - Se eliminaron todas las menciones a *"revisiones ilimitadas"* y a la garantía de 30 días de consultas en `index.html` y demos, unificando en todo el sitio **hasta 2 rondas de revisiones del borrador antes de publicar**.
+     - Se aclaró en `index.html`, `en/index.html`, `san-juan/index.html` y `terminos/index.html` que el precio de `$150.000 ARS` (`$199 USD` internacional) corresponde al diseño de una página web completa de una sola sección tal como se ve en las demos (o con modificaciones mínimas), mientras que las páginas web con múltiples secciones o desarrollos a medida se cotizan por separado.
+  2. **Corrección Crítica del Píxel de Meta en 136 páginas:**
+     - Se eliminaron los disparos automáticos de `fbq('track', 'Contact')` y `fbq('trackCustom', 'Whatsapp')` al cargar la página (`<head>`, `<noscript>` y `<body>`), dejando únicamente `PageView` en carga y el disparo de `Contact` exclusivamente cuando el usuario hace clic real en un botón o enlace de WhatsApp (`wa.me`, `whatsapp.com` o `[data-wa-msg]`).
+  3. **Favicon Físico `/favicon.svg` y `og:image` Unificado:**
+     - Se creó `/favicon.svg` (en raíz y `public/favicon.svg`) y se estandarizó `<link rel="icon" type="image/svg+xml" href="/favicon.svg">` en las 136 páginas públicas. Se unificó `logo_erikwebsite_ig.png` como `og:image` en las páginas principales.
+  4. **Actualización de `/san-juan/index.html`, `/en/index.html` y `/terminos/index.html`:**
+     - `/san-juan/` ahora muestra las 13 demos completas (incluyendo Restaurante y Funnel).
+     - `/en/` tiene el 100% de textos visibles, botones, FAQs, mensajes de WhatsApp y Schema JSON-LD en inglés con tarifas en USD.
+     - `/terminos/` fue actualizado a Abril 2026 incorporando el alcance de 1 sección tipo demo, Auditoría SEO, Páginas Modo Funnel, Píxel de Meta y la Cláusula 10 para Clientes Internacionales (USD).
+  5. **Filtros Dinámicos del Blog (`blog/index.html`) y FAQs Desplegables con Auto-Cierre:**
+     - `<select id="blog-cat-select">` incluye las 8 categorías activas con sus conteos exactos (`99` guías totales) y un script automático que recalcula las cantidades y agrega nuevas categorías dinámicamente cada vez que se publican artículos.
+     - Los 99 artículos del blog, `/auditoria-seo/` y `/san-juan/` usan acordeones `<details name="faq-accordion">` que cierran automáticamente la pregunta abierta anterior cuando el usuario abre una nueva.

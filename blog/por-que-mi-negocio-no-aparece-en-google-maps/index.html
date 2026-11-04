@@ -301,19 +301,19 @@
         </p>
         <div class="space-y-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">1. Alineá la consistencia NAP (Nombre, Dirección y Teléfono)</h4>
+            <h3 class="font-bold text-white text-base mb-1">1. Alineá la consistencia NAP (Nombre, Dirección y Teléfono)</h3>
             <p class="text-sm text-neutral-400">
               Asegurate de que el nombre comercial coincida exactamente con la cartelería real de tu local y con tu documentación de ARCA/AFIP. Si en tu vidriera dice "Taller Mecánico Suárez", no pongas "Suárez Reparación Frenos San Juan Barato". Google detecta discrepancias entre Maps, Street View y directorios online y penaliza la visibilidad.
             </p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">2. Enlazá un sitio web con marcado Schema LocalBusiness</h4>
+            <h3 class="font-bold text-white text-base mb-1">2. Enlazá un sitio web con marcado Schema LocalBusiness</h3>
             <p class="text-sm text-neutral-400">
               En el campo "Sitio web" de tu ficha de Google Maps, colocá tu dirección web oficial (por ejemplo, <em>https://tudominio.com.ar</em>). En el código de esa página incluimos datos estructurados que confirman las coordenadas GPS, horario de atención y rubro, acelerando la indexación y subiendo tu posición en el mapa.
             </p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">3. Conseguí 5 reseñas iniciales con comentarios descriptivos</h4>
+            <h3 class="font-bold text-white text-base mb-1">3. Conseguí 5 reseñas iniciales con comentarios descriptivos</h3>
             <p class="text-sm text-neutral-400">
               Pedile a tus primeros clientes habituales que dejen una opinión detallada mencionando el servicio recibido (por ejemplo: *"Excelente atención en el cambio de aceite y filtros en Rawson"*). Las palabras que los usuarios escriben en las reseñas sirven como palabras clave de búsqueda dentro de Google Maps.
             </p>
@@ -346,20 +346,26 @@
           Preguntas frecuentes sobre problemas en Google Maps
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cuánto tarda Google en mostrar un negocio nuevo en el mapa?</h4>
-            <p class="text-sm text-neutral-400">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto tarda Google en mostrar un negocio nuevo en el mapa?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
               Una vez completada y aprobada la verificación, la ficha suele aparecer en búsquedas directas en 24 a 72 horas. Sin embargo, para figurar en búsquedas por rubro general o en los primeros 3 puestos del mapa local ("Local Pack"), suele requerir entre 2 y 4 semanas de actividad, reseñas iniciales y validación de su sitio web oficial.
             </p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Puedo tener ficha en Google Maps si trabajo a domicilio y no tengo local a la calle?</h4>
-            <p class="text-sm text-neutral-400">
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo tener ficha en Google Maps si trabajo a domicilio y no tengo local a la calle?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
               Sí. Podés registrarte como "Empresa de servicios a domicilio" (plomeros, electricistas, personal trainers, catering). En este formato, Google oculta tu dirección particular y muestra un radio de cobertura en tu ciudad o departamento (por ejemplo, "Gran San Juan" o "Mendoza Capital").
             </p>
-          </div>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Qué hago si cambié de local y mi negocio desapareció de Google Maps?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Qué hago si cambié de local y mi negocio desapareció de Google Maps?</h3>
             <p class="text-sm text-neutral-400">
               Al modificar la dirección postal en una ficha existente, Google suele activar un nuevo proceso de verificación para constatar que efectivamente te mudaste al nuevo inmueble. Es fundamental no crear una ficha duplicada de cero, sino actualizar la dirección en la ficha original y preparar fotos de la nueva fachada para evitar perder las reseñas acumuladas.
             </p>
@@ -384,5 +390,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

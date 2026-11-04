@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Hotelería, Balnearios y Alquileres Temporarios</h4>
+            <h3 class="font-bold text-white text-base mb-1">Hotelería, Balnearios y Alquileres Temporarios</h3>
             <p class="text-xs text-neutral-400">Reservas directas de temporada sin intermediarios para departamentos y complejos en Playa Grande, Varese y Punta Mogotes.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Gastronomía y Cervecerías Artesanales</h4>
+            <h3 class="font-bold text-white text-base mb-1">Gastronomía y Cervecerías Artesanales</h3>
             <p class="text-xs text-neutral-400">Cartas digitales QR de alta velocidad y pedidos directos a WhatsApp para bares en Güemes y Alem.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Empresas del Parque Industrial</h4>
+            <h3 class="font-bold text-white text-base mb-1">Empresas del Parque Industrial</h3>
             <p class="text-xs text-neutral-400">Presencia corporativa seria para fabricantes de alimentos, plásticos y logística pesquera.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Salud, Odontología y Estética</h4>
+            <h3 class="font-bold text-white text-base mb-1">Salud, Odontología y Estética</h3>
             <p class="text-xs text-neutral-400">Clínicas privadas y consultorios con agendas organizadas hacia WhatsApp.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Mar del Plata
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo ayuda una web a captar turistas en Mar del Plata?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              La mayoría busca 'hotel en Mar del Plata' o 'dónde comer en Güemes' en Google Maps. Una web con mapa optimizado captura a esos clientes listos para comprar.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué incluye el valor de $150.000 ARS?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Incluye diseño a medida, redacción comercial, conexión a WhatsApp, dominio oficial, hosting de alta velocidad y auditoría de Google Maps.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo ayuda una web a captar turistas en Mar del Plata?</h4>
-            <p class="text-sm text-neutral-400">La mayoría busca 'hotel en Mar del Plata' o 'dónde comer en Güemes' en Google Maps. Una web con mapa optimizado captura a esos clientes listos para comprar.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Qué incluye el valor de $150.000 ARS?</h4>
-            <p class="text-sm text-neutral-400">Incluye diseño a medida, redacción comercial, conexión a WhatsApp, dominio oficial, hosting de alta velocidad y auditoría de Google Maps.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Tengo que pagar mantenimiento mensual?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Tengo que pagar mantenimiento mensual?</h3>
             <p class="text-sm text-neutral-400">No es obligatorio. El primer mes es gratis y luego es optativo por $20.000 ARS/mes.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

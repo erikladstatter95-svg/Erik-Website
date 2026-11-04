@@ -308,14 +308,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué conviene contratar un desarrollo en código limpio frente a una agencia tradicional en Quilmes?</h3>
-            <p class="text-sm text-slate-600">Las agencias de marketing tradicionales en Zona Sur suelen presupuestar entre $400.000 y $800.000 ARS por sitios en WordPress que demoran más de un mes. Con nuestro sistema llave en mano pagás $150.000 ARS una sola vez y tenés tu web funcionando en menos de una semana.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo ayuda la página web a aparecer primero en Google Maps en Quilmes y Bernal?</h3>
-            <p class="text-sm text-slate-600">Google prioriza en su mapa a los negocios que vinculan una página web rápida con datos locales consistentes (dirección en Quilmes/Bernal, teléfono, horarios y palabras clave del rubro), permitiéndote superar a competidores que solo tienen Instagram.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué conviene contratar un desarrollo en código limpio frente a una agencia tradicional en Quilmes?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Las agencias de marketing tradicionales en Zona Sur suelen presupuestar entre $400.000 y $800.000 ARS por sitios en WordPress que demoran más de un mes. Con nuestro sistema llave en mano pagás $150.000 ARS una sola vez y tenés tu web funcionando en menos de una semana.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo ayuda la página web a aparecer primero en Google Maps en Quilmes y Bernal?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Google prioriza en su mapa a los negocios que vinculan una página web rápida con datos locales consistentes (dirección en Quilmes/Bernal, teléfono, horarios y palabras clave del rubro), permitiéndote superar a competidores que solo tienen Instagram.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Y si ya tengo una página web en Quilmes pero no aparece en Google?</h3>
             <p class="text-sm text-slate-600">Si ya contás con un sitio web pero está desactualizado o no te genera contactos, podés solicitar nuestro servicio de Auditoría SEO, optimización de velocidad y mantenimiento web pasándonos tu link por WhatsApp.</p>
@@ -341,5 +351,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

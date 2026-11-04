@@ -51,7 +51,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='55' fill='%2310b981'>EW</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -321,14 +321,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto cuesta hacer la página web para una empresa constructora o estudio de arquitectura?</h3>
-            <p class="text-sm text-slate-600">En Erik Website desarrollamos tu Landing Page corporativa o Funnel de proyecto inmobiliario por $150.000 ARS finales (pago único), lista en 3 a 5 días hábiles. Si requerís un portal multi-desarrollo complejo con múltiples edificios y planos interactivos, lo cotizamos a medida.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Se pueden subir renders 3D, planos en PDF y videos recorridos de obra?</h3>
-            <p class="text-sm text-slate-600">Sí. Optimizamos todos los renders y fotografías de obra en formato WebP de alta definición para que luzcan impecables en celulares y pantallas grandes sin demorar la carga, e incluimos botones para descargar el brochure técnico en PDF.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta hacer la página web para una empresa constructora o estudio de arquitectura?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              En Erik Website desarrollamos tu Landing Page corporativa o Funnel de proyecto inmobiliario por $150.000 ARS finales (pago único), lista en 3 a 5 días hábiles. Si requerís un portal multi-desarrollo complejo con múltiples edificios y planos interactivos, lo cotizamos a medida.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se pueden subir renders 3D, planos en PDF y videos recorridos de obra?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Optimizamos todos los renders y fotografías de obra en formato WebP de alta definición para que luzcan impecables en celulares y pantallas grandes sin demorar la carga, e incluimos botones para descargar el brochure técnico en PDF.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué pasa si nuestra constructora ya tiene una página web vieja que quedó desactualizada?</h3>
             <p class="text-sm text-slate-600">Si ya tenés un dominio con antigüedad pero la web quedó lenta, no se adapta al celular o tiene obras de hace 5 años, podés contratar nuestro servicio de Auditoría SEO y Rediseño Web para modernizarla sin perder tu historial en Google.</p>
@@ -354,5 +364,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Logística, Transporte y Puerto</h4>
+            <h3 class="font-bold text-white text-base mb-1">Logística, Transporte y Puerto</h3>
             <p class="text-xs text-neutral-400">Empresas de fletes, grúas y servicios portuarios en Ingeniero White y el polo industrial.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Talleres y Reparaciones Especializadas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Talleres y Reparaciones Especializadas</h3>
             <p class="text-xs text-neutral-400">Mecánica pesada, tornerías y electricidad industrial con presencia destacada en mapas.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Contables y de Comercio Exterior</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Contables y de Comercio Exterior</h3>
             <p class="text-xs text-neutral-400">Asesoría aduanera, impositiva y corporativa para empresas de la región.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios de Repuestos e Insumos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios de Repuestos e Insumos</h3>
             <p class="text-xs text-neutral-400">Catálogos de productos para talleres y público general con botón a WhatsApp.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Bahía Blanca
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Una Landing Page sirve para una empresa industrial de Bahía Blanca?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Sí, es el formato más efectivo para captar presupuestos B2B porque va directo a los servicios, certificaciones, fotos de trabajos y botón de WhatsApp de compras.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Quién redacta los textos?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Nosotros nos encargamos de la redacción comercial en base a lo que nos cuentes en audios de WhatsApp.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Una Landing Page sirve para una empresa industrial de Bahía Blanca?</h4>
-            <p class="text-sm text-neutral-400">Sí, es el formato más efectivo para captar presupuestos B2B porque va directo a los servicios, certificaciones, fotos de trabajos y botón de WhatsApp de compras.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Quién redacta los textos?</h4>
-            <p class="text-sm text-neutral-400">Nosotros nos encargamos de la redacción comercial en base a lo que nos cuentes en audios de WhatsApp.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cuánto demora?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Cuánto demora?</h3>
             <p class="text-sm text-neutral-400">De 3 a 5 días hábiles contados desde que recibimos la información básica.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

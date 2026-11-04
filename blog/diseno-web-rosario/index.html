@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Empresas Industriales y Metalúrgicas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Empresas Industriales y Metalúrgicas</h3>
             <p class="text-xs text-neutral-400">Catálogos técnicos de piezas, maquinarias y contacto directo para <a href="/blog/como-crear-correo-corporativo-dominio-propio-gmail/" class="text-emerald-400 font-semibold hover:underline">correo corporativo</a> y cotizaciones B2B en el Gran Rosario.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Profesionales y Estudios Jurídicos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Profesionales y Estudios Jurídicos</h3>
             <p class="text-xs text-neutral-400"><a href="/demos/abogados/" class="text-emerald-400 font-semibold hover:underline">Abogados</a>, <a href="/demos/contable/" class="text-emerald-400 font-semibold hover:underline">estudios contables</a> y consultorías en el centro de Rosario y Pichincha que buscan transmitir solidez.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Salud y Clínicas Médicas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Salud y Clínicas Médicas</h3>
             <p class="text-xs text-neutral-400">Consultorios odontológicos y centros estéticos con derivación rápida de turnos hacia la secretaria por WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios y Distribuidoras</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios y Distribuidoras</h3>
             <p class="text-xs text-neutral-400"><a href="/blog/como-crear-catalogo-online-pedidos-whatsapp/" class="text-emerald-400 font-semibold hover:underline">Catálogos online con pedidos a WhatsApp</a> ágiles y con precios actualizados con precios actualizados.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Rosario
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto demora el desarrollo de una web en Rosario?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Entregamos tu Landing Page lista en 3 a 5 días hábiles con dominio oficial .com.ar y hosting de alta velocidad configurado.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué no conviene usar WordPress para un negocio en Rosario?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              WordPress utiliza decenas de plugins pesados que demoran de 4 a 6 segundos en abrir en celulares, perdiendo más del 50% de los clientes antes de que vean tu teléfono.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cuánto demora el desarrollo de una web en Rosario?</h4>
-            <p class="text-sm text-neutral-400">Entregamos tu Landing Page lista en 3 a 5 días hábiles con dominio oficial .com.ar y hosting de alta velocidad configurado.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Por qué no conviene usar WordPress para un negocio en Rosario?</h4>
-            <p class="text-sm text-neutral-400">WordPress utiliza decenas de plugins pesados que demoran de 4 a 6 segundos en abrir en celulares, perdiendo más del 50% de los clientes antes de que vean tu teléfono.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Tengo que pagar mantenimiento mensual obligatorio?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Tengo que pagar mantenimiento mensual obligatorio?</h3>
             <p class="text-sm text-neutral-400">No. Nuestro servicio es pago único cerrado de $150.000 ARS. El primer mes de soporte es 100% gratuito y luego el mantenimiento es totalmente opcional ($20.000 ARS/mes).</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

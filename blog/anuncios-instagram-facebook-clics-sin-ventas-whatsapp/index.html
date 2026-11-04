@@ -328,14 +328,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Conviene usar el botón 'Promocionar publicación' en Instagram?</h3>
-            <p class="text-sm text-slate-600">El botón azul 'Promocionar' sirve para ganar seguidores o me gusta, pero para vender productos o servicios es la forma más cara de pautar. Desde el Administrador de Anuncios de Meta podés enviar tráfico a un Funnel de Conversión propio y optimizar por eventos reales del Píxel de Meta.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué conviene mandar los anuncios a una demo o servicio específico en vez de a la página de inicio?</h3>
-            <p class="text-sm text-slate-600">Cuando un usuario hace clic en un anuncio específico (por ejemplo, alquiler de vajilla, un curso digital o un servicio de mantenimiento web) y aterriza en una homepage genérica con 10 menús distintos, se distrae y abandona. Enviar cada anuncio a su propia página de destino (o demo específica) multiplica por 3 la tasa de conversión.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Conviene usar el botón 'Promocionar publicación' en Instagram?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              El botón azul 'Promocionar' sirve para ganar seguidores o me gusta, pero para vender productos o servicios es la forma más cara de pautar. Desde el Administrador de Anuncios de Meta podés enviar tráfico a un Funnel de Conversión propio y optimizar por eventos reales del Píxel de Meta.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué conviene mandar los anuncios a una demo o servicio específico en vez de a la página de inicio?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Cuando un usuario hace clic en un anuncio específico (por ejemplo, alquiler de vajilla, un curso digital o un servicio de mantenimiento web) y aterriza en una homepage genérica con 10 menús distintos, se distrae y abandona. Enviar cada anuncio a su propia página de destino (o demo específica) multiplica por 3 la tasa de conversión.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto cuesta una página modo Funnel para mis anuncios de Instagram?</h3>
             <p class="text-sm text-slate-600">En Erik Website desarrollamos tu página modo Funnel o Landing Page de conversión con Píxel de Meta, carga en menos de 1 segundo y cotizador a WhatsApp por un pago único de $150.000 ARS finales, sin comisiones ni abonos obligatorios.</p>
@@ -361,5 +371,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

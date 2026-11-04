@@ -323,14 +323,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué es el Certificado SSL y por qué mi web dice 'No es seguro'?</h3>
-            <p class="text-sm text-slate-600">El Certificado SSL (Secure Sockets Layer) es el protocolo que activa el candado HTTPS y encripta la conexión entre tu web y el celular del visitante. Cuando vence o no está instalado, Chrome y Safari muestran una pantalla roja de advertencia que espanta al 90% de los clientes.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Se puede tener Certificado SSL gratis sin pagar renovaciones en dólares?</h3>
-            <p class="text-sm text-slate-600">Sí. Muchos hostings tradicionales (como GoDaddy o servidores compartidos viejos) cobran el certificado SSL aparte en dólares cada año. En las arquitecturas modernas que implementamos en Erik Website, el Certificado SSL automático con renovación perpetua ya viene incluido sin costo extra.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué es el Certificado SSL y por qué mi web dice 'No es seguro'?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              El Certificado SSL (Secure Sockets Layer) es el protocolo que activa el candado HTTPS y encripta la conexión entre tu web y el celular del visitante. Cuando vence o no está instalado, Chrome y Safari muestran una pantalla roja de advertencia que espanta al 90% de los clientes.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede tener Certificado SSL gratis sin pagar renovaciones en dólares?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Muchos hostings tradicionales (como GoDaddy o servidores compartidos viejos) cobran el certificado SSL aparte en dólares cada año. En las arquitecturas modernas que implementamos en Erik Website, el Certificado SSL automático con renovación perpetua ya viene incluido sin costo extra.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo compruebo en 10 segundos si Google tiene indexada mi página?</h3>
             <p class="text-sm text-slate-600">Entrá al buscador de Google y escribí exactamente site:tudominio.com.ar (sin espacios). Si no aparece ningún resultado o solo aparece la portada sin tus servicios, Google no está indexando correctamente tu sitio.</p>
@@ -356,5 +366,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

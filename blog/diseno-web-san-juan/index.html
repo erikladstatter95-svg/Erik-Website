@@ -16,8 +16,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
   <!-- Tailwind CSS & Fonts -->
@@ -153,8 +152,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
     // Listener global para capturar todos los clics a WhatsApp
     document.addEventListener('click', function(e) {
@@ -162,9 +159,7 @@
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -179,13 +174,7 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
 <!-- NAVBAR -->
   <header id="main-nav" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3.5">
@@ -277,15 +266,15 @@
             <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
               Cobertura Estratégica en Cuyo
             </span>
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">
+            <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">
               Las 4 Zonas Comerciales Clave de San Juan
-            </h3>
+            </h2>
           </div>
 
           <div class="grid sm:grid-cols-2 gap-4 text-neutral-900">
             <div class="p-4 rounded-2xl bg-white">
               <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full">CAPITAL</span>
-              <h4 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Centro, Rioja y Av. Libertador</h4>
+              <h3 class="font-bold text-sm text-neutral-900 mt-2 mb-1">Centro, Rioja y Av. Libertador</h3>
               <p class="text-xs text-neutral-600 font-light leading-relaxed">
                 Máxima densidad de clínicas médicas, consultorios odontológicos, escribanías y estudios jurídicos. Búsquedas de alta intención con poder adquisitivo.
               </p>
@@ -440,7 +429,7 @@
           Preguntas Frecuentes sobre Páginas Web en San Juan
         </h3>
         <div class="space-y-4">
-          <details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
+          <details name="faq-accordion" class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
             <summary class="font-semibold text-slate-800 cursor-pointer list-none flex items-center justify-between text-sm">
               <span>¿Cuánto sale una página web profesional en San Juan en 2026?</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
@@ -450,7 +439,7 @@
             </p>
           </details>
 
-          <details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
+          <details name="faq-accordion" class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
             <summary class="font-semibold text-slate-800 cursor-pointer list-none flex items-center justify-between text-sm">
               <span>¿Por qué no conviene usar una plantilla pesada de WordPress en San Juan?</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
@@ -460,7 +449,7 @@
             </p>
           </details>
 
-          <details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
+          <details name="faq-accordion" class="group bg-white rounded-xl p-5 border border-slate-200 shadow-2xs">
             <summary class="font-semibold text-slate-800 cursor-pointer list-none flex items-center justify-between text-sm">
               <span>¿Incluye la optimización de mi ficha de Google Maps en San Juan?</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>

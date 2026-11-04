@@ -1,6 +1,7 @@
 /**
  * Acordeón accesible y fluido para FAQs
- * Con soporte para micro-interacciones suaves y prefers-reduced-motion
+ * Con soporte para micro-interacciones suaves, prefers-reduced-motion
+ * y cierre automático del elemento previo al abrir uno nuevo (tanto en [data-accordion] como en <details>).
  */
 export function initAccordion(selector = '[data-accordion]') {
   const containers = document.querySelectorAll(selector);
@@ -40,7 +41,7 @@ export function initAccordion(selector = '[data-accordion]') {
       trigger.addEventListener('click', () => {
         const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
 
-        // Cerrar otros elementos si no queremos múltiples abiertos
+        // Cerrar otros elementos para mantener solo 1 abierto a la vez
         container.querySelectorAll('[data-accordion-trigger]').forEach((t) => {
           if (t !== trigger) {
             t.setAttribute('aria-expanded', 'false');
@@ -80,5 +81,20 @@ export function initAccordion(selector = '[data-accordion]') {
       });
     });
   });
-}
 
+  // Soporte universal para elementos nativos <details> (cierra los demás al abrir uno nuevo)
+  const allDetails = document.querySelectorAll('details');
+  if (allDetails.length > 1) {
+    allDetails.forEach((targetDetail) => {
+      targetDetail.addEventListener('toggle', () => {
+        if (targetDetail.open) {
+          allDetails.forEach((detail) => {
+            if (detail !== targetDetail && detail.open) {
+              detail.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+  }
+}

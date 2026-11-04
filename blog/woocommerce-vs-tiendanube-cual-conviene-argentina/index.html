@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -333,14 +332,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Qué es más barato a largo plazo: WooCommerce o Tiendanube?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Para catálogos chicos, Tiendanube parece barato al inicio pero suma abonos y comisiones todos los meses; WooCommerce ahorra comisiones pero exige pagar hosting potente y soporte técnico. Un desarrollo en código limpio de pago único resulta mucho más económico al cabo del primer año.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Por qué mi tienda en WooCommerce carga tan lento en celulares?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Porque cada función (filtros, WhatsApp, envíos, constructor visual) carga decenas de archivos JavaScript y consultas a la base de datos antes de mostrar el primer producto.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué es más barato a largo plazo: WooCommerce o Tiendanube?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Para catálogos chicos, Tiendanube parece barato al inicio pero suma abonos y comisiones todos los meses; WooCommerce ahorra comisiones pero exige pagar hosting potente y soporte técnico. Un desarrollo en código limpio de pago único resulta mucho más económico al cabo del primer año.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué mi tienda en WooCommerce carga tan lento en celulares?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Porque cada función (filtros, WhatsApp, envíos, constructor visual) carga decenas de archivos JavaScript y consultas a la base de datos antes de mostrar el primer producto.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-2">¿Puedo vender con carrito de compras directo a WhatsApp sin pagar comisiones?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">Sí. Desarrollamos catálogos interactivos donde el cliente suma productos al carrito y te envía el pedido detallado a tu WhatsApp con el total calculado, sin intermediarios ni comisiones.</p>
@@ -394,5 +403,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

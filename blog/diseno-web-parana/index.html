@@ -291,19 +291,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Empresas del Parque Industrial y Agroindustria</h4>
+            <h3 class="font-bold text-white text-base mb-1">Empresas del Parque Industrial y Agroindustria</h3>
             <p class="text-xs text-neutral-400">Metalúrgicas, distribuidoras, fábricas de alimentos, logística y proveedores B2B que necesitan presentar su catálogo con seriedad y recibir pedidos por WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Consultorios Médicos, Odontólogos y Salud</h4>
+            <h3 class="font-bold text-white text-base mb-1">Consultorios Médicos, Odontólogos y Salud</h3>
             <p class="text-xs text-neutral-400">Profesionales y centros privados que buscan <a href="/blog/como-automatizar-turnos-consultorio/" class="text-emerald-400 hover:underline">ordenar la reserva de turnos por WhatsApp</a> sin saturar la secretaría.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Cabañas, Hoteles y Servicios Turísticos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Cabañas, Hoteles y Servicios Turísticos</h3>
             <p class="text-xs text-neutral-400">Alojamientos y complejos frente al río que buscan recibir reservas directas sin pagar entre 15% y 20% de comisión en portales intermediarios.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Jurídicos, Contables e Inmobiliarias</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Jurídicos, Contables e Inmobiliarias</h3>
             <p class="text-xs text-neutral-400">Profesionales matriculados en Paraná que requieren <a href="/blog/como-crear-correo-corporativo-dominio-propio-gmail/" class="text-emerald-400 hover:underline">correo corporativo propio</a> y presencia institucional sólida.</p>
           </div>
         </div>
@@ -346,16 +346,26 @@
           Preguntas frecuentes sobre diseño web en Paraná
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta hacer una página web en Paraná en 2026?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Una Landing Page profesional en código limpio tiene un precio único de $150.000 ARS finales. Los catálogos multi-producto con carrito a WhatsApp se cotizan a medida según el volumen de artículos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo coordinamos el desarrollo desde Paraná?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Trabajamos 100% online de forma ágil por WhatsApp o videollamada. Nos enviás la información en audios de WhatsApp y nosotros redactamos todos los textos comerciales.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cuánto cuesta hacer una página web en Paraná en 2026?</h4>
-            <p class="text-sm text-neutral-400">Una Landing Page profesional en código limpio tiene un precio único de $150.000 ARS finales. Los catálogos multi-producto con carrito a WhatsApp se cotizan a medida según el volumen de artículos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo coordinamos el desarrollo desde Paraná?</h4>
-            <p class="text-sm text-neutral-400">Trabajamos 100% online de forma ágil por WhatsApp o videollamada. Nos enviás la información en audios de WhatsApp y nosotros redactamos todos los textos comerciales.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Incluye el alta y optimización en Google Maps en Paraná?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Incluye el alta y optimización en Google Maps en Paraná?</h3>
             <p class="text-sm text-neutral-400">Sí. Vinculamos la web con tu ficha local de Google Maps mediante datos estructurados Schema LocalBusiness para mejorar tu visibilidad en búsquedas de cercanía.</p>
           </div>
         </div>
@@ -378,5 +388,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

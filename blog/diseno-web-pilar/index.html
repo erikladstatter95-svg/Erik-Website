@@ -291,19 +291,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Industrias y Proveedores del Parque Industrial Pilar</h4>
+            <h3 class="font-bold text-white text-base mb-1">Industrias y Proveedores del Parque Industrial Pilar</h3>
             <p class="text-xs text-neutral-400">Empresas de logística, mantenimiento industrial, seguridad, insumos y servicios B2B con <a href="/blog/como-crear-correo-corporativo-dominio-propio-gmail/" class="text-emerald-400 hover:underline">correo corporativo @tuempresa.com.ar</a> y botón de cotización rápida.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Centros Médicos, Odontología y Estética</h4>
+            <h3 class="font-bold text-white text-base mb-1">Centros Médicos, Odontología y Estética</h3>
             <p class="text-xs text-neutral-400">Consultorios privados en el polo médico de Panamericana que captan pacientes mediante campañas con <a href="/blog/anuncios-no-venden-importancia-landing-page/" class="text-emerald-400 hover:underline">Landing Pages de alta conversión</a>.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Servicios para Barrios Cerrados y Countries</h4>
+            <h3 class="font-bold text-white text-base mb-1">Servicios para Barrios Cerrados y Countries</h3>
             <p class="text-xs text-neutral-400">Empresas de piscinas, parquización, arquitectura, aberturas, climatización y <a href="/blog/paginas-web-oficios-servicios-hogar/" class="text-emerald-400 hover:underline">mantenimiento integral del hogar</a>.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Salones de Eventos, Catering y Gastronomía</h4>
+            <h3 class="font-bold text-white text-base mb-1">Salones de Eventos, Catering y Gastronomía</h3>
             <p class="text-xs text-neutral-400">Quintas, salones corporativos y servicios de eventos en Pilar que buscan posicionarse en Google y recibir consultas precalificadas.</p>
           </div>
         </div>
@@ -346,16 +346,26 @@
           Preguntas frecuentes sobre diseño web en Pilar
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué el código a medida funciona mejor para anunciar en Pilar y Zona Norte?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Porque en campañas de Meta Ads y Google Ads el público navega desde el celular y abandona cualquier sitio que demore más de 2 segundos. Nuestro código carga en 0,8 segundos y registra cada contacto en el Píxel de Meta.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Pueden configurar correos con el dominio de nuestra empresa en Pilar?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Sí. Dejamos configurado tu dominio oficial en NIC Argentina y tus casillas corporativas vinculadas con Gmail para que respondas presupuestos con imagen empresarial.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Por qué el código a medida funciona mejor para anunciar en Pilar y Zona Norte?</h4>
-            <p class="text-sm text-neutral-400">Porque en campañas de Meta Ads y Google Ads el público navega desde el celular y abandona cualquier sitio que demore más de 2 segundos. Nuestro código carga en 0,8 segundos y registra cada contacto en el Píxel de Meta.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Pueden configurar correos con el dominio de nuestra empresa en Pilar?</h4>
-            <p class="text-sm text-neutral-400">Sí. Dejamos configurado tu dominio oficial en NIC Argentina y tus casillas corporativas vinculadas con Gmail para que respondas presupuestos con imagen empresarial.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se realiza el pago del servicio?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Cómo se realiza el pago del servicio?</h3>
             <p class="text-sm text-neutral-400">Se abona 50% al comenzar el proyecto y el 50% restante al entregarte la web terminada y publicada en tu dominio.</p>
           </div>
         </div>
@@ -378,5 +388,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

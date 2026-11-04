@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Hoteles, Cabañas y Turismo Aventura</h4>
+            <h3 class="font-bold text-white text-base mb-1">Hoteles, Cabañas y Turismo Aventura</h3>
             <p class="text-xs text-neutral-400">Reservas directas sin intermediarios (Booking o Airbnb) para excursiones y alojamiento en el Valle de Lerma y Cafayate.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Proveedores Mineros y Logística</h4>
+            <h3 class="font-bold text-white text-base mb-1">Proveedores Mineros y Logística</h3>
             <p class="text-xs text-neutral-400">Empresas de transporte, viandas, seguridad y servicios industriales que licitan en la Puna salteña.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Profesionales y Salud</h4>
+            <h3 class="font-bold text-white text-base mb-1">Profesionales y Salud</h3>
             <p class="text-xs text-neutral-400">Médicos, psicólogos y kinesiólogos que centralizan consultas y derivan turnos por WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios y Productos Regionales</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios y Productos Regionales</h3>
             <p class="text-xs text-neutral-400">Catálogos digitales para bodegas, artesanías y productos gourmet salteños.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Salta
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Una web me ayuda a evitar las comisiones de Booking en Salta?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Totalmente. Al tener tu propia web enlazada a Google Maps, los turistas ven tus tarifas oficiales y te reservan directo por WhatsApp sin descontarte el 18% al 25% de comisiones.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué necesito enviar para que armen mi web en Salta?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Solo fotos de tu local o establecimiento y un par de audios de WhatsApp contándonos tus servicios. Nosotros redactamos los textos comerciales.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Una web me ayuda a evitar las comisiones de Booking en Salta?</h4>
-            <p class="text-sm text-neutral-400">Totalmente. Al tener tu propia web enlazada a Google Maps, los turistas ven tus tarifas oficiales y te reservan directo por WhatsApp sin descontarte el 18% al 25% de comisiones.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Qué necesito enviar para que armen mi web en Salta?</h4>
-            <p class="text-sm text-neutral-400">Solo fotos de tu local o establecimiento y un par de audios de WhatsApp contándonos tus servicios. Nosotros redactamos los textos comerciales.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Tiene costo de mantenimiento?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Tiene costo de mantenimiento?</h3>
             <p class="text-sm text-neutral-400">El primer mes está 100% bonificado. Luego es opcional por $20.000 ARS/mes.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

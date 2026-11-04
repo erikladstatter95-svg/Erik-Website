@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -321,14 +320,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Se puede registrar un dominio .com.ar en GoDaddy?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">No de forma directa al precio oficial. Los dominios .com.ar y .ar se registran oficialmente en NIC Argentina a través de Trámites a Distancia (TAD) en pesos argentinos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Por qué GoDaddy es tan barato el primer año y tan caro al renovar?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Es su modelo de captación: subsidian el primer período para que vincules tu tarjeta y construyas tu sitio adentro, aplicando luego la tarifa plena en dólares sobre el hosting, el dominio y el certificado SSL.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede registrar un dominio .com.ar en GoDaddy?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              No de forma directa al precio oficial. Los dominios .com.ar y .ar se registran oficialmente en NIC Argentina a través de Trámites a Distancia (TAD) en pesos argentinos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué GoDaddy es tan barato el primer año y tan caro al renovar?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Es su modelo de captación: subsidian el primer período para que vincules tu tarjeta y construyas tu sitio adentro, aplicando luego la tarifa plena en dólares sobre el hosting, el dominio y el certificado SSL.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-2">¿Puedo migrar mi web si ya la tengo en GoDaddy?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">Sí. En Erik Website rediseñamos tu sitio en código limpio ultrarrápido por $150.000 ARS finales y apuntamos tu dominio actual para que dejes de pagar renovaciones infladas.</p>
@@ -382,5 +391,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

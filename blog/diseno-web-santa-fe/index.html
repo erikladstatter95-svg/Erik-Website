@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Sector Agropecuario y Servicios Rurales</h4>
+            <h3 class="font-bold text-white text-base mb-1">Sector Agropecuario y Servicios Rurales</h3>
             <p class="text-xs text-neutral-400">Empresas de maquinaria, acopio y asesoramiento agronómico en la región central santafesina.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Contables e Impositivos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Contables e Impositivos</h3>
             <p class="text-xs text-neutral-400">Asesoramiento a pymes comerciales y monotributistas con presencia sobria y confiable.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Gastronomía y Eventos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Gastronomía y Eventos</h3>
             <p class="text-xs text-neutral-400">Salones de fiestas, quintas en Sauce Viejo y catering con galerías de fotos de alta definición.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Servicios Técnicos y Hogar</h4>
+            <h3 class="font-bold text-white text-base mb-1">Servicios Técnicos y Hogar</h3>
             <p class="text-xs text-neutral-400">Plomeros, electricistas y climatización que necesitan captar urgencias desde Google Maps.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Santa Fe Capital
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo se coordina el trabajo desde Santa Fe Capital?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Coordinamos 100% por WhatsApp. Nos enviás fotos de tus trabajos y tres audios explicándonos tu negocio, y nosotros redactamos y programamos todo.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿La página incluye la ficha de Google Maps en Santa Fe?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Sí, auditamos y vinculamos tu perfil oficial de Google Maps con marcado Schema LocalBusiness para que aparezcas primero en búsquedas locales.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se coordina el trabajo desde Santa Fe Capital?</h4>
-            <p class="text-sm text-neutral-400">Coordinamos 100% por WhatsApp. Nos enviás fotos de tus trabajos y tres audios explicándonos tu negocio, y nosotros redactamos y programamos todo.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿La página incluye la ficha de Google Maps en Santa Fe?</h4>
-            <p class="text-sm text-neutral-400">Sí, auditamos y vinculamos tu perfil oficial de Google Maps con marcado Schema LocalBusiness para que aparezcas primero en búsquedas locales.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se abona?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Cómo se abona?</h3>
             <p class="text-sm text-neutral-400">50% al iniciar el proyecto y el 50% restante una vez que la web está publicada, probada en tu celular y aprobada.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

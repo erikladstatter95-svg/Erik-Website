@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -318,14 +317,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-            <div class="p-5 rounded-2xl bg-white border border-slate-200">
-              <h3 class="font-bold text-slate-900 text-base mb-2">¿Para qué sirve hacer una auditoría SEO si ya tengo página web?</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Sirve para detectar por qué Google no muestra tu página cuando alguien busca tu servicio o producto, por qué carga lento en celulares y por qué las visitas se van sin escribirte por WhatsApp.</p>
-            </div>
-            <div class="p-5 rounded-2xl bg-white border border-slate-200">
-              <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto cuesta una auditoría SEO y optimización web en Argentina?</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">El precio es a consultar según el tamaño y estado técnico de tu sitio actual. Revisamos el enlace de tu web por WhatsApp sin cargo inicial y te armamos una propuesta a medida donde nosotros mismos aplicamos las correcciones.</p>
-            </div>
+            <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Para qué sirve hacer una auditoría SEO si ya tengo página web?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Sirve para detectar por qué Google no muestra tu página cuando alguien busca tu servicio o producto, por qué carga lento en celulares y por qué las visitas se van sin escribirte por WhatsApp.
+            </p>
+          </details>
+            <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta una auditoría SEO y optimización web en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              El precio es a consultar según el tamaño y estado técnico de tu sitio actual. Revisamos el enlace de tu web por WhatsApp sin cargo inicial y te armamos una propuesta a medida donde nosotros mismos aplicamos las correcciones.
+            </p>
+          </details>
             <div class="p-5 rounded-2xl bg-white border border-slate-200">
               <h3 class="font-bold text-slate-900 text-base mb-2">¿Pueden mantener y actualizar una web hecha por otro programador?</h3>
               <p class="text-sm text-slate-600 leading-relaxed">Sí. Tomamos el mantenimiento técnico, hosting, seguridad SSL y actualización mensual de precios, textos y fotos de sitios web existentes de cualquier rubro.</p>
@@ -380,5 +389,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

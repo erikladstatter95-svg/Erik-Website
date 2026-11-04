@@ -49,12 +49,12 @@
   <meta property="og:url" content="https://erikwebsite.com/blog/">
   <meta property="og:title" content="Blog y Guías de Diseño Web y SEO Local | Erik Website">
   <meta property="og:description" content="Guías prácticas con información real sobre precios de páginas web en Argentina, posicionamiento en Google Maps, ventas por WhatsApp y presencia digital.">
-  <meta property="og:image" content="https://erikwebsite.com/images/og_main.jpg">
+  <meta property="og:image" content="https://erikwebsite.com/images/logo_erikwebsite_ig.png">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Erik Website">
 
   <!-- Favicon SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23059669%22/><text x=%2216%22 y=%2222%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>E</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts preconnect y carga no bloqueante -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,18 +118,14 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
-    // Listener global para capturar todos los clics a WhatsApp
+    // Listener global para capturar únicamente clics reales a WhatsApp
     document.addEventListener('click', function(e) {
       var target = e.target.closest('a, button');
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -144,13 +140,7 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
 <!-- TOP BANNER -->
   <div class="bg-neutral-900 text-neutral-300 text-xs py-2 px-4 text-center font-medium border-b border-white/[0.08] flex items-center justify-center gap-2">
     <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -230,12 +220,15 @@
             </label>
             <div class="relative inline-block">
               <select id="blog-cat-select" class="appearance-none bg-white border border-black/[0.08] hover:border-black/[0.15] text-neutral-800 text-xs font-semibold py-2 pl-4 pr-9 rounded-full shadow-2xs focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all cursor-pointer">
-                <option value="all">Todas las categorías (73)</option>
-                <option value="precios">Precios y Presupuestos</option>
-                <option value="maps">Google Maps y Posicionamiento Local</option>
-                <option value="redes">Ventas y Redes Sociales</option>
-                <option value="servicios">Servicios Profesionales y Salud</option>
-                <option value="negocios">Comercios, Negocios y Eventos</option>
+                <option value="all">Todas las categorías (99)</option>
+                <option value="precios">Precios y Presupuestos (26)</option>
+                <option value="maps">Google Maps y Posicionamiento Local (26)</option>
+                <option value="servicios">Servicios Profesionales y Salud (12)</option>
+                <option value="negocios">Comercios, Negocios y Eventos (12)</option>
+                <option value="rubros">Rubros Específicos e Industria (10)</option>
+                <option value="redes">Ventas, Ads y Redes Sociales (9)</option>
+                <option value="ventas">Embudos (Funnels) y Conversión (3)</option>
+                <option value="dominios">Dominios, Correo y Seguridad Técnica (1)</option>
               </select>
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-neutral-400">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -4412,6 +4405,38 @@
       const ITEMS_PER_PAGE = 12;
       let currentPage = 1;
       let currentCategory = 'all';
+
+      // Sincronizar automáticamente contadores y categorías del desplegable con las tarjetas reales
+      if (catSelect && articles.length > 0) {
+        const catLabels = {
+          precios: 'Precios y Presupuestos',
+          maps: 'Google Maps y Posicionamiento Local',
+          servicios: 'Servicios Profesionales y Salud',
+          negocios: 'Comercios, Negocios y Eventos',
+          rubros: 'Rubros Específicos e Industria',
+          redes: 'Ventas, Ads y Redes Sociales',
+          ventas: 'Embudos (Funnels) y Conversión',
+          dominios: 'Dominios, Correo y Seguridad Técnica'
+        };
+        const counts = {};
+        articles.forEach(card => {
+          const c = card.getAttribute('data-cat') || 'otros';
+          counts[c] = (counts[c] || 0) + 1;
+        });
+        const allOpt = catSelect.querySelector('option[value="all"]');
+        if (allOpt) allOpt.textContent = `Todas las categorías (${articles.length})`;
+
+        Object.keys(counts).forEach(catKey => {
+          let opt = catSelect.querySelector(`option[value="${catKey}"]`);
+          const baseLabel = catLabels[catKey] || (catKey.charAt(0).toUpperCase() + catKey.slice(1));
+          if (!opt) {
+            opt = document.createElement('option');
+            opt.value = catKey;
+            catSelect.appendChild(opt);
+          }
+          opt.textContent = `${baseLabel} (${counts[catKey]})`;
+        });
+      }
 
       // Sanitizador seguro contra inyecciones XSS / HTML / caracteres maliciosos
       function sanitizeInput(str) {

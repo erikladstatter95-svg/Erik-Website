@@ -284,7 +284,7 @@
           Cuando un jefe de compras pide tres presupuestos para un abono anual de planta, descarta de inmediato a los proveedores que no tienen sitio web ni <a href="/blog/como-crear-correo-corporativo-dominio-propio-gmail/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">correo corporativo con dominio propio</a>.
         </p>
         <p>
-          Podés ver cómo estructuramos las páginas de respuesta rápida y servicios técnicos en nuestra <a href="/demos/urgencias-hogar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Demo de Servicios y Urgencias</a> y en nuestra <a href="/demos/contable/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Demo de Estudios Profesionales B2B</a>, o leer nuestra guía sobre <a href="/blog/oficios-servicios-hogar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">páginas web para servicios técnicos y mantenimiento</a>.
+          Podés ver cómo estructuramos las páginas de respuesta rápida y servicios técnicos en nuestra <a href="/demos/urgencias-hogar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Demo de Servicios y Urgencias</a> y en nuestra <a href="/demos/contable/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Demo de Estudios Profesionales B2B</a>, o leer nuestra guía sobre <a href="/blog/paginas-web-oficios-servicios-hogar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">páginas web para servicios técnicos y mantenimiento</a>.
         </p>
         
 
@@ -318,14 +318,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué buscan las empresas cuando contratan control de plagas o higiene y seguridad en Google?</h3>
-            <p class="text-sm text-slate-600">Buscan tres garantías inmediatas: 1) que emitas certificado oficial válido ante el municipio, ANMAT o SENASA, 2) que entregues factura A/B y seguros de personal al día para ingresar a planta, y 3) respuesta rápida por WhatsApp para cotizar por metros cuadrados.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué volumen de búsqueda tienen estos rubros en Argentina?</h3>
-            <p class="text-sm text-slate-600">En Google Argentina 'control de plagas' y 'fumigaciones' superan las 5.000 búsquedas mensuales cada una (con un aumento del +900% en 'control fumigaciones' y competencia baja 10/100), mientras que 'higiene y seguridad' y 'consultora higiene y seguridad' suman miles de consultas B2B todos los meses.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué buscan las empresas cuando contratan control de plagas o higiene y seguridad en Google?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Buscan tres garantías inmediatas: 1) que emitas certificado oficial válido ante el municipio, ANMAT o SENASA, 2) que entregues factura A/B y seguros de personal al día para ingresar a planta, y 3) respuesta rápida por WhatsApp para cotizar por metros cuadrados.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué volumen de búsqueda tienen estos rubros en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              En Google Argentina 'control de plagas' y 'fumigaciones' superan las 5.000 búsquedas mensuales cada una (con un aumento del +900% en 'control fumigaciones' y competencia baja 10/100), mientras que 'higiene y seguridad' y 'consultora higiene y seguridad' suman miles de consultas B2B todos los meses.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo mostrar en la web tanto urgencias domiciliarias como abonos para empresas?</h3>
             <p class="text-sm text-slate-600">Sí. Estructuramos la página en dos accesos claros: un botón de atención rápida para viviendas particulares (desinsectación, desratización, murciélagos) y una sección corporativa para abonos mensuales de empresas, consorcios y estudios de higiene y seguridad.</p>
@@ -351,5 +361,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

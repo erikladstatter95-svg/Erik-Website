@@ -69,8 +69,8 @@
   <meta name="twitter:title" content="Diseño Web Profesional de Alto Impacto | Erik Website">
   <meta name="twitter:description" content="Diseño de páginas web listas para usar que multiplican tus consultas por WhatsApp. Entrega en 3 a 5 días y soporte total.">
   <meta name="twitter:image" content="https://erikwebsite.com/images/logo_erikwebsite_ig.png">
-<!-- Favicon SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23059669%22/><text x=%2216%22 y=%2222%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>E</text></svg>">
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts preconnect y carga no bloqueante -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -217,18 +217,14 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
-    // Listener global para capturar todos los clics a WhatsApp
+    // Listener global para capturar únicamente clics reales a WhatsApp
     document.addEventListener('click', function(e) {
       var target = e.target.closest('a, button');
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -243,13 +239,7 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
-  <!-- Meta Pixel Event Code (Contact) -->
-  <script>
-    fbq('track', 'Contact');
-  </script>
 <!-- TOP BANNER DE DISPONIBILIDAD (Apple Minimalist Bar con Escasez Operativa) -->
   <div class="bg-[#1d1d1f] text-neutral-300 text-[11px] py-1.5 px-4 text-center font-normal tracking-tight border-b border-white/[0.08] flex items-center justify-center gap-2">
     <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -997,9 +987,9 @@
               <svg aria-hidden="true" class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
             <div>
-              <h3 class="font-bold text-sm text-emerald-400 mb-1 tracking-tight">Garantía "En Marcha o Sin Cargo"</h3>
+              <h3 class="font-bold text-sm text-emerald-400 mb-1 tracking-tight">Hasta 2 Rondas de Revisiones</h3>
               <p class="text-xs text-neutral-300 font-normal leading-relaxed">
-                Revisiones ilimitadas del borrador hasta que te encante. Y si en tus primeros 30 días no recibís consultas por WhatsApp, te bonificamos un 2º mes gratis y re-auditamos tu ficha.
+                Incluimos hasta 2 rondas de revisiones o ajustes sobre el borrador antes de la publicación final para que textos, fotos y diseño queden a tu medida.
               </p>
             </div>
           </div>
@@ -1167,12 +1157,12 @@
             </div>
           </div>
 
-          <!-- Micro-Caja de Garantía Destacada -->
+          <!-- Micro-Caja de Alcance y Revisiones -->
           <div class="mb-8 p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 flex items-start gap-3 text-xs text-emerald-200">
             <svg aria-hidden="true" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             <div>
-              <strong class="text-white font-semibold block mb-0.5">Garantía "En Marcha o Sin Cargo":</strong>
-              <span>Revisiones ilimitadas del borrador hasta que te encante. Y si en los primeros 30 días no recibís consultas, te bonificamos un segundo mes gratis y re-auditamos tu ficha. Cero riesgo para vos.</span>
+              <strong class="text-white font-semibold block mb-0.5">Alcance Transparente y Hasta 2 Revisiones Incluidas:</strong>
+              <span>El valor de $150.000 ARS corresponde al diseño de una página web completa de una sola sección tal como se ve en nuestras demos (o con modificaciones mínimas de textos, fotos y colores) e incluye hasta 2 rondas de revisiones antes de publicar.</span>
             </div>
           </div>
 
@@ -1191,26 +1181,26 @@
 
         </div>
 
-        <!-- TARJETA DESTACADA: PAQUETES ESPECIALIZADOS HIGH-TICKET (Motores Interactivos / Cotizadores) -->
+        <!-- TARJETA DESTACADA: WEBS MULTI-SECCIÓN, TIENDAS Y DESARROLLOS A MEDIDA -->
         <div class="mt-8 max-w-2xl mx-auto p-6 sm:p-7 rounded-3xl bg-neutral-900 text-white border border-white/[0.08] shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 relative overflow-hidden">
           <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-emerald-500/10 blur-2xl pointer-events-none"></div>
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 ring-1 ring-emerald-500/30">
-              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
             </div>
             <div>
               <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-1.5">
-                Para Abogados, Clínicas, Estéticas y Salones
+                Proyectos con Más Secciones o Funciones Especiales
               </div>
-              <h3 class="font-bold text-white text-base tracking-tight mb-1">¿Necesitás un Motor Interactivo o Cotizador en Vivo?</h3>
+              <h3 class="font-bold text-white text-base tracking-tight mb-1">¿Buscás una Página Web con Más de una Sección o a Medida?</h3>
               <p class="text-xs text-neutral-400 leading-relaxed font-normal max-w-lg">
-                Sumá a tu web una <strong>calculadora legal de indemnización</strong>, <strong>cotizador de eventos en tiempo real</strong> o <strong>selector guiado de turnos</strong> que filtra curiosos y genera el mensaje de WhatsApp pre-armado con todos los datos del cliente.
+                El plan de <strong>$150.000 ARS</strong> aplica a sitios de una sola página tal como se ven en las demos (o con modificaciones mínimas). Si necesitás una web con <strong>múltiples páginas o secciones internas</strong>, catálogos extensos de productos o desarrollos a medida, lo cotizamos aparte según el alcance de tu proyecto.
               </p>
             </div>
           </div>
-          <button data-wa-msg="Hola Erik! Me interesa consultar por el Paquete Especializado con Motor Interactivo / Cotizador para mi negocio. ¿Cómo funciona?"
+          <button data-wa-msg="Hola Erik! Quiero consultar presupuesto para una página web con varias secciones o funciones a medida para mi negocio."
                   class="whitespace-nowrap px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold text-xs sm:text-sm transition-all shadow-xs active:scale-[0.98] cursor-pointer flex-shrink-0">
-            Consultar Cotizador
+            Cotizar a Medida
           </button>
         </div>
 

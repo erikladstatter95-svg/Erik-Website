@@ -314,14 +314,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué diferencia hay entre usar IMAP y POP3 al configurar mi correo empresarial en Outlook?</h3>
-            <p class="text-sm text-slate-600">Siempre te recomendamos elegir IMAP. Con IMAP tus correos se sincronizan en tiempo real entre tu computadora, tu teléfono Android o iPhone y el webmail; si leés o respondés un mensaje desde el celular, ya figura como respondido en la oficina.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo crear una firma de correo corporativo profesional que no se rompa?</h3>
-            <p class="text-sm text-slate-600">En lugar de pegar una sola imagen grande (que muchos filtros de spam bloquean), una buena firma de correo corporativo combina texto limpio (Nombre, Cargo, Empresa, Teléfono) con tu logo liviano y un enlace directo a tu página web y a tu WhatsApp.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué diferencia hay entre usar IMAP y POP3 al configurar mi correo empresarial en Outlook?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Siempre te recomendamos elegir IMAP. Con IMAP tus correos se sincronizan en tiempo real entre tu computadora, tu teléfono Android o iPhone y el webmail; si leés o respondés un mensaje desde el celular, ya figura como respondido en la oficina.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo crear una firma de correo corporativo profesional que no se rompa?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              En lugar de pegar una sola imagen grande (que muchos filtros de spam bloquean), una buena firma de correo corporativo combina texto limpio (Nombre, Cargo, Empresa, Teléfono) con tu logo liviano y un enlace directo a tu página web y a tu WhatsApp.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Se puede usar el mismo correo corporativo en Gmail o en Outlook sin pagar licencias por empleado?</h3>
             <p class="text-sm text-slate-600">Sí. Una vez que delegamos tu dominio en Cloudflare y configuramos el enrutamiento y envío autenticado, podés abrir y responder tus correos @tuempresa.com.ar desde la aplicación de Outlook en Windows/Mac o desde Gmail sin pagar abonos mensuales en dólares por cada casilla.</p>
@@ -347,5 +357,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

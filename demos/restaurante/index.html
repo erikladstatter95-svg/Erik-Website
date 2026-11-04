@@ -32,8 +32,8 @@
   <meta property="og:url" content="https://erikwebsite.com/demos/restaurante/">
   <meta property="og:title" content="Demo Web Restaurante, Carta QR y Reserva de Mesas | Erik Website">
   <meta property="og:description" content="Mostrá tu menú interactivo, recibí reservas de mesa por sector y cotizá cenas grupales directo a tu WhatsApp sin pagar comisiones por cubierto.">
-  <meta property="og:image" content="https://erikwebsite.com/images/guia_restaurantes_carta_qr.png">
-  <meta property="og:image:secure_url" content="https://erikwebsite.com/images/guia_restaurantes_carta_qr.png">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_web_restaurantes_carta_qr_whatsapp.png">
+  <meta property="og:image:secure_url" content="https://erikwebsite.com/images/guia_web_restaurantes_carta_qr_whatsapp.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="675">
@@ -46,9 +46,9 @@
   <meta name="twitter:url" content="https://erikwebsite.com/demos/restaurante/">
   <meta name="twitter:title" content="Demo Web Restaurante, Carta QR y Reserva de Mesas | Erik Website">
   <meta name="twitter:description" content="Mostrá tu menú interactivo, recibí reservas de mesa por sector y cotizá cenas grupales directo a tu WhatsApp.">
-  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_restaurantes_carta_qr.png">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_web_restaurantes_carta_qr_whatsapp.png">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230A0A0C%22 stroke=%22%23D4AF37%22 stroke-width=%222%22/><path d=%22M11 7v8a3 3 0 006 0V7M14 7v18M21 7c0 5-2 7-2 10v8%22 stroke=%22%23D4AF37%22 stroke-width=%222%22 stroke-linecap=%22round%22 fill=%22none%22/></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,17 +124,13 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1143177121539028');
     fbq('track', 'PageView');
-    fbq('track', 'Contact');
-    fbq('trackCustom', 'Whatsapp');
 
     document.addEventListener('click', function(e) {
       var target = e.target.closest('a, button');
       if (!target) return;
       var href = target.getAttribute('href') || '';
       var hasWa = target.hasAttribute('data-wa-msg');
-      var aria = (target.getAttribute('aria-label') || '').toLowerCase();
-      var txt = (target.innerText || '').toLowerCase();
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1 || aria.indexOf('whatsapp') !== -1 || txt.indexOf('whatsapp') !== -1) {
+      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
           window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
@@ -149,8 +145,6 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
   <script>
     fbq('track', 'Contact');
@@ -898,7 +892,7 @@
           </div>
 
           <div class="md:col-span-7 space-y-2.5">
-            <h4 class="text-xs uppercase font-bold tracking-wider text-slate-400 mb-2">Tu sistema gastronómico incluye:</h4>
+            <h3 class="text-xs uppercase font-bold tracking-wider text-slate-400 mb-2">Tu sistema gastronómico incluye:</h3>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
               <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
               <span><strong>Carta Digital Interactiva con QR:</strong> Abre en 0,4 segundos en el celular del comensal.</span>

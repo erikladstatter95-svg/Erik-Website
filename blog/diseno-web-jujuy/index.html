@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Hospedajes y Guías en la Quebrada</h4>
+            <h3 class="font-bold text-white text-base mb-1">Hospedajes y Guías en la Quebrada</h3>
             <p class="text-xs text-neutral-400">Cabañas, posadas y excursiones en Tilcara, Purmamarca y Humahuaca con galería fotográfica ágil.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Proveedores Industriales y Litio</h4>
+            <h3 class="font-bold text-white text-base mb-1">Proveedores Industriales y Litio</h3>
             <p class="text-xs text-neutral-400">Servicios técnicos, metalmecánica y logística para empresas de la Puna jujeña.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Profesionales en San Salvador</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Profesionales en San Salvador</h3>
             <p class="text-xs text-neutral-400">Abogados, escribanos y contadores con presencia sobria en el centro jujeño.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios Locales</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios Locales</h3>
             <p class="text-xs text-neutral-400">Locales de indumentaria, ferreterías y repuestos que desean mostrar su catálogo en Google Maps.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Jujuy
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué es importante que la web sea liviana en Jujuy?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Porque en rutas y localidades de la Quebrada la señal móvil fluctúa. Una web en código puro abre en menos de 1 segundo, mientras que un WordPress genérico suele quedar en blanco.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿En cuánto tiempo se entrega?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Entre 3 y 5 días hábiles contados a partir de recibir tus fotos y datos básicos.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Por qué es importante que la web sea liviana en Jujuy?</h4>
-            <p class="text-sm text-neutral-400">Porque en rutas y localidades de la Quebrada la señal móvil fluctúa. Una web en código puro abre en menos de 1 segundo, mientras que un WordPress genérico suele quedar en blanco.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿En cuánto tiempo se entrega?</h4>
-            <p class="text-sm text-neutral-400">Entre 3 y 5 días hábiles contados a partir de recibir tus fotos y datos básicos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Se puede pagar con transferencia?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Se puede pagar con transferencia?</h3>
             <p class="text-sm text-neutral-400">Sí, aceptamos transferencias bancarias y Mercado Pago en pesos argentinos (50% anticipo, 50% al entregar).</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

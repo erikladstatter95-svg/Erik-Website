@@ -289,7 +289,7 @@
           En las empresas de internación domiciliaria hay un segundo fenómeno muy marcado en nuestro CSV de Google Ads: <em>"profesionales internacion domiciliaria"</em> tiene competencia casi nula (4/100). Sin embargo, cuando los enfermeros o kinesiólogos escriben al mismo WhatsApp comercial donde atienden a los pacientes, se satura la línea. En tu página web creamos un acceso exclusivo para <strong>"Sumate a nuestro staff profesional"</strong> separado del botón de <strong>"Atención a Pacientes y Alquileres"</strong>.
         </p>
         <p>
-          Podés ver nuestras demos del sector salud en <a href="/demos/clinica/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Demo Clínica y Consultorios</a>, revisar cómo funciona nuestro <a href="/demos/vajilla/#cotizador" class="text-emerald-700 font-semibold underline hover:text-emerald-800">sistema de cotización de alquileres por ítems</a> y leer la guía de <a href="/blog/paginas-web-medicos-consultorios-argentina/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">páginas web para médicos y centros de salud</a>.
+          Podés ver nuestras demos del sector salud en <a href="/demos/odontologia/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Demo Clínica y Consultorios</a>, revisar cómo funciona nuestro <a href="/demos/vajilla/#cotizador" class="text-emerald-700 font-semibold underline hover:text-emerald-800">sistema de cotización de alquileres por ítems</a> y leer la guía de <a href="/blog/paginas-web-medicos-consultorios-argentina/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">páginas web para médicos y centros de salud</a>.
         </p>
         
 
@@ -323,14 +323,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué volumen de búsqueda tiene la internación domiciliaria y ortopedia en Argentina?</h3>
-            <p class="text-sm text-slate-600">En Google Argentina 'internación domiciliaria' y 'internación domiciliaria PAMI' superan las 5.000 búsquedas mensuales cada una (con competencia baja 19/100), mientras que miles de familias buscan diariamente alquiler de camas ortopédicas, muletas, botas walker y estudios baropodométricos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo conviene separar en la web el alquiler de equipos de la venta por obra social?</h3>
-            <p class="text-sm text-slate-600">Lo más efectivo es dividir la página en 3 bloques claros: 1) Alquiler Mensual con entrega en el día (camas, sillas, andadores, grúas de traslado) con cotizador rápido, 2) Venta particular y estudios de plantillas, y 3) Presupuestos formales para Obras Sociales, Prepagas y ART.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué volumen de búsqueda tiene la internación domiciliaria y ortopedia en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              En Google Argentina 'internación domiciliaria' y 'internación domiciliaria PAMI' superan las 5.000 búsquedas mensuales cada una (con competencia baja 19/100), mientras que miles de familias buscan diariamente alquiler de camas ortopédicas, muletas, botas walker y estudios baropodométricos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo conviene separar en la web el alquiler de equipos de la venta por obra social?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Lo más efectivo es dividir la página en 3 bloques claros: 1) Alquiler Mensual con entrega en el día (camas, sillas, andadores, grúas de traslado) con cotizador rápido, 2) Venta particular y estudios de plantillas, y 3) Presupuestos formales para Obras Sociales, Prepagas y ART.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Se puede integrar un cotizador de alquiler mensual para camas y accesorios?</h3>
             <p class="text-sm text-slate-600">Sí. El familiar puede marcar en la web 'Cama ortopédica manual o eléctrica + Colchón antiescaras + Trapecio' y enviarte el mensaje a WhatsApp con el barrio de entrega para que le confirmes el valor mensual y el flete en el acto.</p>
@@ -356,5 +366,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

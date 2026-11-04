@@ -326,14 +326,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué mi correo en Ferozo Webmail, Roundcube o cPanel rebota o llena el disco?</h3>
-            <p class="text-sm text-slate-600">Los webmails básicos de hosting compartido (como Roundcube en Ferozo/DonWeb o cPanel) comparten la dirección IP con cientos de otros sitios y tienen cuotas de espacio muy chicas. Cuando alguien te manda adjuntos pesados se llena la casilla, o tus correos caen en Spam por mala reputación de la IP compartida.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo usar mi correo @miempresa.com.ar adentro de Gmail o Outlook sin pagar Google Workspace?</h3>
-            <p class="text-sm text-slate-600">Sí. Podés vincular tu casilla corporativa dentro de la interfaz de Gmail (en PC y celular) o de Microsoft Outlook para enviar y recibir con tu propio dominio sin pagar los $7 a $14 USD mensuales por usuario de Google Workspace.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué mi correo en Ferozo Webmail, Roundcube o cPanel rebota o llena el disco?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Los webmails básicos de hosting compartido (como Roundcube en Ferozo/DonWeb o cPanel) comparten la dirección IP con cientos de otros sitios y tienen cuotas de espacio muy chicas. Cuando alguien te manda adjuntos pesados se llena la casilla, o tus correos caen en Spam por mala reputación de la IP compartida.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo usar mi correo @miempresa.com.ar adentro de Gmail o Outlook sin pagar Google Workspace?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Podés vincular tu casilla corporativa dentro de la interfaz de Gmail (en PC y celular) o de Microsoft Outlook para enviar y recibir con tu propio dominio sin pagar los $7 a $14 USD mensuales por usuario de Google Workspace.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué diferencia de precio hay entre mantener una Landing Page y mantener una tienda online grande?</h3>
             <p class="text-sm text-slate-600">Mantener una Landing Page o web de servicios donde se actualizan precios puntuales o promociones cuesta $20.000 ARS/mes en Erik Website. En cambio, administrar una tienda tipo e-commerce donde hay que subir, recortar fotos y actualizar cientos de productos todas las semanas requiere un abono operativo a medida según el volumen.</p>
@@ -359,5 +369,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

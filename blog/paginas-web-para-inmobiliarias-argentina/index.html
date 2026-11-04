@@ -22,8 +22,7 @@
   <meta name="twitter:image" content="https://erikwebsite.com/images/guia_paginas_web_inmobiliarias_argentina.png">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Hallmark Stamp -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -156,8 +155,6 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
 
   <!-- NAVBAR BLOG -->
@@ -296,16 +293,26 @@
           Preguntas frecuentes sobre sitios web para inmobiliarias
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Es difícil actualizar las propiedades disponibles?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              No. Diseñamos la arquitectura de catálogo para que agregar, modificar precios o marcar una propiedad como "Reservada" o "Vendida" sea un proceso simple y rápido sin requerir conocimientos técnicos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Incluye integración con Google Maps para ubicar oficinas y loteos?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Vinculamos tu ficha oficial de Google Business Profile y agregamos mapas interactivos para que los clientes puedan llegar a tu oficina o ver las zonas de tus propiedades con un solo clic.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <h4 class="font-bold text-slate-900 text-base mb-2">¿Es difícil actualizar las propiedades disponibles?</h4>
-            <p class="text-sm text-slate-600">No. Diseñamos la arquitectura de catálogo para que agregar, modificar precios o marcar una propiedad como "Reservada" o "Vendida" sea un proceso simple y rápido sin requerir conocimientos técnicos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <h4 class="font-bold text-slate-900 text-base mb-2">¿Incluye integración con Google Maps para ubicar oficinas y loteos?</h4>
-            <p class="text-sm text-slate-600">Sí. Vinculamos tu ficha oficial de Google Business Profile y agregamos mapas interactivos para que los clientes puedan llegar a tu oficina o ver las zonas de tus propiedades con un solo clic.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <h4 class="font-bold text-slate-900 text-base mb-2">¿Cuánto demora el desarrollo de la web inmobiliaria?</h4>
+            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto demora el desarrollo de la web inmobiliaria?</h3>
             <p class="text-sm text-slate-600">Entregamos tu sitio web inmobiliario completamente terminado y listo para recibir consultas en <strong>3 a 5 días hábiles</strong> por un arancel cerrado de $150.000 ARS finales.</p>
           </div>
         </div>
@@ -346,5 +353,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

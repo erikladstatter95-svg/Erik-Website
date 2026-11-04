@@ -51,7 +51,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='55' fill='%2310b981'>EW</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -336,14 +336,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto cobra de comisión Hotmart en Argentina en 2026?</h3>
-            <p class="text-sm text-slate-600">Hotmart aplica una tasa general del 9,9% sobre el valor del producto más un cargo fijo de 0,50 USD por cada transacción aprobada (o tarifas superiores en micropagos), además de los costos bancarios al retirar los fondos hacia tu cuenta.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo entrego mi ebook, plantilla o curso si uso mi propio Funnel en lugar de Hotmart?</h3>
-            <p class="text-sm text-slate-600">Es muy simple y 100% gratuito: alojás tus archivos PDF, planillas de Excel/Notion o videos privados en Google Drive, YouTube Oculto o Vimeo, y apenas el comprador te envía el comprobante por WhatsApp o completa el pago en Mercado Pago, le enviás el link de acceso instantáneo.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cobra de comisión Hotmart en Argentina en 2026?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Hotmart aplica una tasa general del 9,9% sobre el valor del producto más un cargo fijo de 0,50 USD por cada transacción aprobada (o tarifas superiores en micropagos), además de los costos bancarios al retirar los fondos hacia tu cuenta.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo entrego mi ebook, plantilla o curso si uso mi propio Funnel en lugar de Hotmart?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Es muy simple y 100% gratuito: alojás tus archivos PDF, planillas de Excel/Notion o videos privados en Google Drive, YouTube Oculto o Vimeo, y apenas el comprador te envía el comprobante por WhatsApp o completa el pago en Mercado Pago, le enviás el link de acceso instantáneo.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo usar mi propia Página Modo Funnel y aún así ofrecer pago internacional?</h3>
             <p class="text-sm text-slate-600">Sí. En tu Funnel propio diseñado por Erik Website ($150.000 ARS pago único) podemos colocar como opción principal Transferencia / Mercado Pago en pesos para Argentina, y un botón secundario para compradores del exterior.</p>
@@ -369,5 +379,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -294,14 +294,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué es tan fácil posicionar primero en Google en Formosa hoy?</h3>
-            <p class="text-sm text-slate-600">Porque más del 85% de los negocios formoseños solo usan Facebook o estados de WhatsApp. Al publicar una página web rápida con dominio propio (.com.ar) y conectarla a tu ficha de Google Maps en Formosa Capital o Clorinda, Google te ubica por encima de la competencia casi sin resistencia.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo trabajamos a distancia si mi negocio está en Formosa?</h3>
-            <p class="text-sm text-slate-600">Trabajamos 100% por WhatsApp de forma simple y directa: nos enviás 3 audios contándonos qué ofrecés, tus fotos y tus datos de contacto. En 3 a 5 días hábiles te mostramos tu web funcionando para que la apruebes.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué es tan fácil posicionar primero en Google en Formosa hoy?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Porque más del 85% de los negocios formoseños solo usan Facebook o estados de WhatsApp. Al publicar una página web rápida con dominio propio (.com.ar) y conectarla a tu ficha de Google Maps en Formosa Capital o Clorinda, Google te ubica por encima de la competencia casi sin resistencia.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo trabajamos a distancia si mi negocio está en Formosa?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Trabajamos 100% por WhatsApp de forma simple y directa: nos enviás 3 audios contándonos qué ofrecés, tus fotos y tus datos de contacto. En 3 a 5 días hábiles te mostramos tu web funcionando para que la apruebes.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué rubros en Formosa sacan más provecho de un catálogo o página web?</h3>
             <p class="text-sm text-slate-600">Comercios mayoristas y distribuidoras en Formosa Capital y Clorinda, consultorios médicos y odontológicos, estudios jurídicos, inmobiliarias, hoteles, concesionarias, corralones y servicios técnicos.</p>
@@ -327,5 +337,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

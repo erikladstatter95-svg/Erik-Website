@@ -299,14 +299,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Las fotos de alta calidad hacen que la página web cargue lento?</h3>
-            <p class="text-sm text-slate-600">No cuando está bien programada. En Erik Website utilizamos compresión inteligente sin pérdida visual (WebP/AVIF) y carga diferida (lazy loading), logrando que tus galerías se vean impecables en pantallas Retina y abran en menos de 1 segundo en cualquier celular.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo separar mi portfolio por tipo de sesión o servicio?</h3>
-            <p class="text-sm text-slate-600">Sí. Dividimos tu galería en pestañas limpias (por ejemplo: Bodas y Eventos, Fotografía de Producto e Indumentaria, Books Personales, Real Estate / Drones o Videos Corporativos) para que cada cliente vea de inmediato lo que busca.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Las fotos de alta calidad hacen que la página web cargue lento?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              No cuando está bien programada. En Erik Website utilizamos compresión inteligente sin pérdida visual (WebP/AVIF) y carga diferida (lazy loading), logrando que tus galerías se vean impecables en pantallas Retina y abran en menos de 1 segundo en cualquier celular.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo separar mi portfolio por tipo de sesión o servicio?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Dividimos tu galería en pestañas limpias (por ejemplo: Bodas y Eventos, Fotografía de Producto e Indumentaria, Books Personales, Real Estate / Drones o Videos Corporativos) para que cada cliente vea de inmediato lo que busca.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo vender presets, cursos de edición o guías digitales desde mi misma web?</h3>
             <p class="text-sm text-slate-600">Totalmente. Además de captar clientes para sesiones y coberturas, podemos integrar una sección o página modo funnel para que vendas tus packs de presets de Lightroom, LUTs de video o talleres grabados.</p>
@@ -332,5 +342,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Turismo, Pesca Deportiva y Cabañas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Turismo, Pesca Deportiva y Cabañas</h3>
             <p class="text-xs text-neutral-400">Paso de la Patria, Esquina y Esteros del Iberá con reservas directas sin pagar comisiones a terceros.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Jurídicos y Profesionales</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Jurídicos y Profesionales</h3>
             <p class="text-xs text-neutral-400">Abogados y escribanos en el centro de Corrientes Capital que requieren autoridad institucional.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Salud y Centros Estéticos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Salud y Centros Estéticos</h3>
             <p class="text-xs text-neutral-400">Clínicas dentales y estéticas con filtro de consultas ágil por WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios y Emprendimientos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios y Emprendimientos</h3>
             <p class="text-xs text-neutral-400">Venta de indumentaria, repuestos y servicios del hogar con presencia en el mapa local.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Corrientes Capital
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué ventajas tiene el código a medida frente a Wix en Corrientes?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Wix cobra suscripciones en dólares con 60% de impuestos y demora en abrir en celulares. El código a medida es pago único en pesos y carga instantáneamente.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo recibo las consultas?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              La página cuenta con botones destacados que abren una conversación de WhatsApp en el celular de tu negocio con un mensaje precargado.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Qué ventajas tiene el código a medida frente a Wix en Corrientes?</h4>
-            <p class="text-sm text-neutral-400">Wix cobra suscripciones en dólares con 60% de impuestos y demora en abrir en celulares. El código a medida es pago único en pesos y carga instantáneamente.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo recibo las consultas?</h4>
-            <p class="text-sm text-neutral-400">La página cuenta con botones destacados que abren una conversación de WhatsApp en el celular de tu negocio con un mensaje precargado.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cuál es la forma de pago?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Cuál es la forma de pago?</h3>
             <p class="text-sm text-neutral-400">50% de seña para comenzar y el 50% restante contra entrega y verificación en tu celular.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

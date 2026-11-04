@@ -325,14 +325,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Si tengo la marca registrada en el INPI puedo recuperar un dominio .com.ar que registró otro?</h3>
-            <p class="text-sm text-slate-600">Sí, NIC Argentina tiene un trámite de 'Disputa de Dominio' donde el titular de una marca registrada en el INPI tiene prioridad legal, pero el proceso administrativo demora meses, requiere presentar escritos formales y mientras tanto tu negocio no puede usar su propia web.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué me conviene hacer primero al lanzar un negocio: el INPI o NIC Argentina?</h3>
-            <p class="text-sm text-slate-600">Lo ideal es iniciar ambos el mismo día. Como el registro en NIC Argentina es inmediato (se aprueba en minutos desde Trámites a Distancia con Clave Fiscal) y cuesta una fracción mínima frente a un estudio de marcas, asegurar el dominio .com.ar el primer día evita que cualquier tercero lo registre al ver tu marca publicada en el Boletín de Marcas del INPI.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Si tengo la marca registrada en el INPI puedo recuperar un dominio .com.ar que registró otro?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí, NIC Argentina tiene un trámite de 'Disputa de Dominio' donde el titular de una marca registrada en el INPI tiene prioridad legal, pero el proceso administrativo demora meses, requiere presentar escritos formales y mientras tanto tu negocio no puede usar su propia web.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué me conviene hacer primero al lanzar un negocio: el INPI o NIC Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Lo ideal es iniciar ambos el mismo día. Como el registro en NIC Argentina es inmediato (se aprueba en minutos desde Trámites a Distancia con Clave Fiscal) y cuesta una fracción mínima frente a un estudio de marcas, asegurar el dominio .com.ar el primer día evita que cualquier tercero lo registre al ver tu marca publicada en el Boletín de Marcas del INPI.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué pasa si alguien busca mi marca en el buscador del INPI?</h3>
             <p class="text-sm text-slate-600">Todas las solicitudes de marcas en Argentina son públicas. Existen bots y especuladores que monitorean las nuevas solicitudes publicadas en el INPI para salir a registrar el dominio .com.ar o .com antes que el dueño original y luego intentar revenderlo.</p>
@@ -358,5 +368,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

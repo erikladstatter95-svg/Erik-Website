@@ -288,14 +288,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Tengo que cargar los precios de los 10.000 artículos de mi ferretería o corralón?</h3>
-            <p class="text-sm text-slate-600">No hace falta, y en Argentina muchas veces no conviene por los cambios de listas de proveedores. La estrategia que mejor funciona es mostrar tus líneas de productos, marcas oficiales que comercializás y un cotizador rápido por rubro para que el cliente te envíe su lista de materiales o medidas directo al WhatsApp del mostrador.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Sirve para empresas de techos, galpones, tinglados, aberturas de aluminio o construcción en seco?</h3>
-            <p class="text-sm text-slate-600">Sí, es donde mayor retorno tiene. Un solo presupuesto cerrado de aberturas de PVC/aluminio, perfiles Steel Framing o estructura metálica recupera diez veces el valor de toda la página web.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Tengo que cargar los precios de los 10.000 artículos de mi ferretería o corralón?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              No hace falta, y en Argentina muchas veces no conviene por los cambios de listas de proveedores. La estrategia que mejor funciona es mostrar tus líneas de productos, marcas oficiales que comercializás y un cotizador rápido por rubro para que el cliente te envíe su lista de materiales o medidas directo al WhatsApp del mostrador.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Sirve para empresas de techos, galpones, tinglados, aberturas de aluminio o construcción en seco?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí, es donde mayor retorno tiene. Un solo presupuesto cerrado de aberturas de PVC/aluminio, perfiles Steel Framing o estructura metálica recupera diez veces el valor de toda la página web.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Incluye el posicionamiento en Google Maps para mi depósito o local?</h3>
             <p class="text-sm text-slate-600">Sí. Optimizamos tu ficha de Google Business Profile conectada a la web para que cuando alguien busque 'corralón cerca de mí', 'ferretería industrial' o 'fábrica de aberturas en [tu zona]', salgas entre los primeros resultados.</p>
@@ -321,5 +331,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

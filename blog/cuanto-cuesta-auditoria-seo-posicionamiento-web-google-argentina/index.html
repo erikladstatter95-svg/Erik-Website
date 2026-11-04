@@ -51,7 +51,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='55' fill='%2310b981'>EW</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -337,14 +337,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto cuesta una auditoría SEO en Argentina?</h3>
-            <p class="text-sm text-slate-600">El diagnóstico inicial donde revisamos tu link y te marcamos los problemas principales de posicionamiento y velocidad es 100% gratuito por WhatsApp. Luego, la implementación técnica de las mejoras se cotiza a medida según si tenés una página simple, un sitio en WordPress o una tienda con muchos productos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto tiempo tarda en subir posiciones una página web en Google?</h3>
-            <p class="text-sm text-slate-600">Los cambios técnicos (velocidad de carga, certificado SSL, botones de WhatsApp y corrección de títulos H1) impactan de inmediato en la conversión de quienes ya entran a tu web. El ascenso en los resultados orgánicos de Google suele reflejarse progresivamente entre las 3 y 8 semanas posteriores a la indexación en Search Console.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta una auditoría SEO en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              El diagnóstico inicial donde revisamos tu link y te marcamos los problemas principales de posicionamiento y velocidad es 100% gratuito por WhatsApp. Luego, la implementación técnica de las mejoras se cotiza a medida según si tenés una página simple, un sitio en WordPress o una tienda con muchos productos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto tiempo tarda en subir posiciones una página web en Google?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Los cambios técnicos (velocidad de carga, certificado SSL, botones de WhatsApp y corrección de títulos H1) impactan de inmediato en la conversión de quienes ya entran a tu web. El ascenso en los resultados orgánicos de Google suele reflejarse progresivamente entre las 3 y 8 semanas posteriores a la indexación en Search Console.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿También hacen mantenimiento de páginas en WordPress o sitios que quedaron sin soporte?</h3>
             <p class="text-sm text-slate-600">Sí. Si la agencia o programador que armó tu web desapareció o tu sitio quedó bloqueado en modo mantenimiento, sin candado seguro HTTPS o con precios viejos, nos hacemos cargo de actualizarlo, limpiarlo o migrarlo a código ultrarrápido.</p>
@@ -370,5 +380,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

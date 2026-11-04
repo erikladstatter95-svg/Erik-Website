@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -322,14 +321,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cómo se abona el presupuesto de $150.000 ARS en Erik Website?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Trabajamos con una modalidad clara y segura: 50% ($75.000 ARS) al iniciar el desarrollo y el 50% restante ($75.000 ARS) recién cuando ves tu página web terminada, probada y lista para publicar.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Qué pasa si no quiero pagar mantenimiento todos los meses?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">La web sigue online y funcionando sin problemas. El primer mes de soporte está bonificado y luego podés elegir el plan opcional de $20.000 ARS/mes o pedir actualizaciones puntuales solo cuando las necesites.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo se abona el presupuesto de $150.000 ARS en Erik Website?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Trabajamos con una modalidad clara y segura: 50% ($75.000 ARS) al iniciar el desarrollo y el 50% restante ($75.000 ARS) recién cuando ves tu página web terminada, probada y lista para publicar.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué pasa si no quiero pagar mantenimiento todos los meses?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              La web sigue online y funcionando sin problemas. El primer mes de soporte está bonificado y luego podés elegir el plan opcional de $20.000 ARS/mes o pedir actualizaciones puntuales solo cuando las necesites.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto cuesta un catálogo con carrito de pedidos a WhatsApp?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">Las Landing Pages comerciales tienen un valor fijo de $150.000 ARS finales. Los catálogos multi-producto con carrito a WhatsApp o calculadoras a medida se presupuestan según la cantidad de rubros y funciones requeridas.</p>
@@ -383,5 +392,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

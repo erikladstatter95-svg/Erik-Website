@@ -289,14 +289,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué las agencias de viajes y guías de excursiones necesitan una web propia además de Instagram?</h3>
-            <p class="text-sm text-slate-600">Porque cuando un turista planifica su viaje a San Juan, Bariloche, Salta, Mendoza o la Patagonia, busca en Google 'excursiones en [destino]' o 'agencia de viajes habilitada'. Además, al transferir una seña de viaje, el pasajero necesita ver un sitio web oficial con dominio propio (.com.ar) y número de legajo para confiar.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Se pueden cargar paquetes con itinerario día por día y botón de consulta a WhatsApp?</h3>
-            <p class="text-sm text-slate-600">Sí. Cada excursión o paquete muestra qué incluye (traslado, guía, comidas, entradas), duración, recomendaciones y un botón que abre tu WhatsApp con el nombre exacto de la excursión elegida para que cierres la reserva al instante.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué las agencias de viajes y guías de excursiones necesitan una web propia además de Instagram?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Porque cuando un turista planifica su viaje a San Juan, Bariloche, Salta, Mendoza o la Patagonia, busca en Google 'excursiones en [destino]' o 'agencia de viajes habilitada'. Además, al transferir una seña de viaje, el pasajero necesita ver un sitio web oficial con dominio propio (.com.ar) y número de legajo para confiar.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se pueden cargar paquetes con itinerario día por día y botón de consulta a WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Cada excursión o paquete muestra qué incluye (traslado, guía, comidas, entradas), duración, recomendaciones y un botón que abre tu WhatsApp con el nombre exacto de la excursión elegida para que cierres la reserva al instante.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Tienen experiencia real armando páginas de turismo en Argentina?</h3>
             <p class="text-sm text-slate-600">Sí. Desarrollamos el sitio oficial de UAQ Tours (uaqtours.com.ar), que podés visitar desde la sección 'Mis Trabajos' en nuestra página de inicio, además de guías específicas para complejos de cabañas y hoteles.</p>
@@ -322,5 +332,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

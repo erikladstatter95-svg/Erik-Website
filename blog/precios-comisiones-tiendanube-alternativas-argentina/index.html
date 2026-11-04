@@ -326,14 +326,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo evitar pagar comisión por venta en Tiendanube?</h3>
-            <p class="text-sm text-slate-600">Dentro de Tiendanube solo bonifican el costo por transacción si usás exclusivamente su pasarela Pago Nube (que igualmente cobra su propia tasa de procesamiento financiero según el plazo de acreditación). Si querés 0% de comisión total y cerrar por transferencia o efectivo en WhatsApp, la alternativa más rentable es tener tu propio catálogo web en código a medida.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto te descuenta Mercado Pago sumado a Tiendanube?</h3>
-            <p class="text-sm text-slate-600">Si cobrás con Mercado Pago dentro de un plan pago de Tiendanube, sumás la comisión de acreditación de Mercado Pago (entre 4,5% y 6,39% + IVA según el plazo) más el porcentaje por transacción de la plataforma e ingresos brutos/SIRTAC, lo que puede absorber entre el 8% y el 12% de tu facturación bruta.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo evitar pagar comisión por venta en Tiendanube?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Dentro de Tiendanube solo bonifican el costo por transacción si usás exclusivamente su pasarela Pago Nube (que igualmente cobra su propia tasa de procesamiento financiero según el plazo de acreditación). Si querés 0% de comisión total y cerrar por transferencia o efectivo en WhatsApp, la alternativa más rentable es tener tu propio catálogo web en código a medida.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto te descuenta Mercado Pago sumado a Tiendanube?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Si cobrás con Mercado Pago dentro de un plan pago de Tiendanube, sumás la comisión de acreditación de Mercado Pago (entre 4,5% y 6,39% + IVA según el plazo) más el porcentaje por transacción de la plataforma e ingresos brutos/SIRTAC, lo que puede absorber entre el 8% y el 12% de tu facturación bruta.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué alternativas a Tiendanube existen en Argentina en 2026?</h3>
             <p class="text-sm text-slate-600">Las tres alternativas principales son Empretienda (para tiendas simples con abono mensual bajo), WooCommerce (autoadministrado en WordPress) o un desarrollo propio en Erik Website: desde una Landing Page / Cotizador interactivo a WhatsApp ($150.000 ARS pago único, como nuestra demo de Vajilla) hasta un Catálogo o Tienda multi-producto a medida (cotizado según tu volumen de productos, como 3DMON Shop o Wink Studio) con 0% de comisión por venta.</p>
@@ -359,5 +369,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

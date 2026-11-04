@@ -323,14 +323,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué creció tanto la búsqueda de paneles solares en Google Argentina?</h3>
-            <p class="text-sm text-slate-600">Con la quita de subsidios en las tarifas eléctricas y la vigencia de las leyes de Generación Distribuida provinciales, las búsquedas de 'paneles solares' superan las 50.000 consultas mensuales en Argentina (+900% interanual), incluyendo búsquedas específicas como 'paneles solares en San Juan', Córdoba, Mendoza y Buenos Aires.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo filtrar en la web a los curiosos que solo preguntan 'cuánto sale un panel'?</h3>
-            <p class="text-sm text-slate-600">Nadie compra un panel suelto: el cliente necesita dimensionar un kit según su factura de luz o si necesita respaldo ante cortes (baterías de litio/gel). Al poner un formulario interactivo que pregunta el consumo bimestral en kWh, el tipo de propiedad y la localidad antes de abrir WhatsApp, recibís una consulta lista para cotizar.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué creció tanto la búsqueda de paneles solares en Google Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Con la quita de subsidios en las tarifas eléctricas y la vigencia de las leyes de Generación Distribuida provinciales, las búsquedas de 'paneles solares' superan las 50.000 consultas mensuales en Argentina (+900% interanual), incluyendo búsquedas específicas como 'paneles solares en San Juan', Córdoba, Mendoza y Buenos Aires.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo filtrar en la web a los curiosos que solo preguntan 'cuánto sale un panel'?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Nadie compra un panel suelto: el cliente necesita dimensionar un kit según su factura de luz o si necesita respaldo ante cortes (baterías de litio/gel). Al poner un formulario interactivo que pregunta el consumo bimestral en kWh, el tipo de propiedad y la localidad antes de abrir WhatsApp, recibís una consulta lista para cotizar.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto tarda en estar online la web de mi empresa de energía renovable?</h3>
             <p class="text-sm text-slate-600">Entregamos el sitio completo en 3 a 5 días hábiles, conectado a tu dominio .com.ar o .com, con Certificado SSL y optimizado para aparecer en Google y Google Maps.</p>
@@ -356,5 +366,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

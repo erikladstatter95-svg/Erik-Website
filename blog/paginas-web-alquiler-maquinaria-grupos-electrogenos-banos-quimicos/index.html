@@ -318,14 +318,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué datos debe pedir el cotizador web para agilizar el alquiler de un equipo?</h3>
-            <p class="text-sm text-slate-600">Para no perder tiempo al teléfono, el formulario interactivo le pide al cliente 4 datos antes de abrir WhatsApp: 1) Equipo requerido (ej: Grupo Electrógeno 100 kVA o Autoelevador 2.5 Tn), 2) Plazo de alquiler (jornada, semana o mes), 3) Si requiere operario y logística de traslado, y 4) Ubicación de la obra o evento.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Sirve el mismo modelo de cotizador que usan en la demo de alquiler de vajilla?</h3>
-            <p class="text-sm text-slate-600">Exactamente. El mismo motor de cotización donde el cliente elige cantidades de equipos (por ejemplo: 6 baños químicos + 1 obrador oficina de 6 metros + 1 grupo electrógeno) se adapta a tu flota industrial para que recibas el pedido detallado en tu WhatsApp.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué datos debe pedir el cotizador web para agilizar el alquiler de un equipo?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Para no perder tiempo al teléfono, el formulario interactivo le pide al cliente 4 datos antes de abrir WhatsApp: 1) Equipo requerido (ej: Grupo Electrógeno 100 kVA o Autoelevador 2.5 Tn), 2) Plazo de alquiler (jornada, semana o mes), 3) Si requiere operario y logística de traslado, y 4) Ubicación de la obra o evento.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Sirve el mismo modelo de cotizador que usan en la demo de alquiler de vajilla?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Exactamente. El mismo motor de cotización donde el cliente elige cantidades de equipos (por ejemplo: 6 baños químicos + 1 obrador oficina de 6 metros + 1 grupo electrógeno) se adapta a tu flota industrial para que recibas el pedido detallado en tu WhatsApp.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Cómo posiciona una empresa de alquiler de maquinaria en provincias mineras o petroleras?</h3>
             <p class="text-sm text-slate-600">Optimizar cada página de tu flota con SEO técnico local te permite aparecer cuando contratistas de todo el país buscan proveedores en polos como Neuquén (Vaca Muerta), San Juan, Salta, Jujuy, Bahía Blanca, Rosario o el Gran Buenos Aires.</p>
@@ -351,5 +361,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

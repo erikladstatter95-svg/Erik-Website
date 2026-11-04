@@ -22,8 +22,7 @@
   <meta name="twitter:image" content="https://erikwebsite.com/images/guia_por_que_nadie_me_compra_whatsapp.png">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Hallmark Stamp -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -156,8 +155,6 @@
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1143177121539028&ev=Contact&noscript=1" alt="" />
   </noscript>
 
   <!-- NAVBAR BLOG -->
@@ -356,8 +353,43 @@
           Para aprender a conectar los tres eslabones de forma armónica, revisá nuestra guía completa sobre <a href="/blog/embudo-de-ventas-por-whatsapp-argentina/" class="text-emerald-700 font-semibold hover:underline">cómo armar un embudo de ventas por WhatsApp en Argentina</a>. Si además vendés múltiples productos físicos, considerá reemplazar los mensajes desordenados por un <a href="/blog/como-crear-catalogo-online-pedidos-whatsapp/" class="text-emerald-700 font-semibold hover:underline">catálogo online con pedidos a WhatsApp</a> donde la gente arma su carrito y te envía la orden con el total calculado.
         </p>
         <p>
-          Y si sentís que tu perfil en redes sociales no te representa, compará las limitaciones de los agregadores de enlaces leyendo <a href="/blog/tiendanube-linktree-vs-web-propia/" class="text-emerald-700 font-semibold hover:underline">Tiendanube y Linktree vs. web propia</a>.
+          Y si sentís que tu perfil en redes sociales no te representa, compará las limitaciones de los agregadores de enlaces leyendo <a href="/blog/tiendanube-linktree-vs-web-propia-a-medida/" class="text-emerald-700 font-semibold hover:underline">Tiendanube y Linktree vs. web propia</a>.
         </p>
+
+        
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          5. Preguntas frecuentes sobre ventas y cierres por WhatsApp
+        </h2>
+        <div class="space-y-4 my-6">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué la gente pide precio por WhatsApp y después te deja en visto?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Porque llegan fríos sin entender tu propuesta de valor, sin ver fotos de trabajos anteriores ni testimonios reales. Cuando sólo reciben una cifra sin contexto, comparan tu precio con la opción más barata del mercado y desaparecen.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Es mala idea mandar un catálogo en PDF por WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Sí. Los archivos PDF pesan varios megabytes, consumen datos móviles del cliente, no se adaptan a la pantalla chica y quedan desactualizados en cuanto cambiás un precio. Una Landing Page o catálogo web carga al instante y permite pedir con un clic.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo ayuda una Landing Page a que la gente compre por WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Funciona como un filtro previo: explica qué incluye tu servicio, muestra precios de referencia y resuelve dudas comunes. Quien toca el botón de WhatsApp ya decidió comprar y solo entra a coordinar el pago o la entrega.
+            </p>
+          </details>
+        </div>
 
         <!-- CTA FINAL -->
         <div class="my-10 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl relative overflow-hidden">
@@ -405,5 +437,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

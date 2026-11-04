@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Estudios Jurídicos y Escribanías</h4>
+            <h3 class="font-bold text-white text-base mb-1">Estudios Jurídicos y Escribanías</h3>
             <p class="text-xs text-neutral-400">Especialistas en laboral, civil, penal y sucesiones en el eje de Tribunales platenses.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Consultorios Médicos y Odontológicos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Consultorios Médicos y Odontológicos</h3>
             <p class="text-xs text-neutral-400">Filtro de obras sociales y asignación ágil de turnos sin saturar la línea fija.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios Minoristas y Boutiques</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios Minoristas y Boutiques</h3>
             <p class="text-xs text-neutral-400">Catálogos visuales en calle 8, 12 y City Bell con fotos reales de productos.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Empresas de Servicios Técnicos</h4>
+            <h3 class="font-bold text-white text-base mb-1">Empresas de Servicios Técnicos</h3>
             <p class="text-xs text-neutral-400">Instalaciones de gas, electricidad y cerrajería con botón de auxilio rápido en Google Maps.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en La Plata
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué elegir código a medida en lugar de plantillas en La Plata?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Porque el código puro abre en menos de 1 segundo en celulares, posiciona mejor en Google Maps y no sufre caídas por actualizaciones de plugins.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo se contrata?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Escribinos por WhatsApp, charlamos 5 minutos sobre tu negocio y arrancamos con el 50% de seña.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Por qué elegir código a medida en lugar de plantillas en La Plata?</h4>
-            <p class="text-sm text-neutral-400">Porque el código puro abre en menos de 1 segundo en celulares, posiciona mejor en Google Maps y no sufre caídas por actualizaciones de plugins.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se contrata?</h4>
-            <p class="text-sm text-neutral-400">Escribinos por WhatsApp, charlamos 5 minutos sobre tu negocio y arrancamos con el 50% de seña.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Entregan factura?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Entregan factura?</h3>
             <p class="text-sm text-neutral-400">Sí, emitimos comprobante fiscal en pesos argentinos por todos los servicios prestados.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

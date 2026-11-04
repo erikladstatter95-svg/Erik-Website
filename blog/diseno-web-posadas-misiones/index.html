@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Cabañas, Lodges de Selva y Turismo</h4>
+            <h3 class="font-bold text-white text-base mb-1">Cabañas, Lodges de Selva y Turismo</h3>
             <p class="text-xs text-neutral-400">Reservas directas en Iguazú, San Ignacio y El Soberbio con fotos de calidad y chat a WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Consultorios Médicos y Profesionales en Posadas</h4>
+            <h3 class="font-bold text-white text-base mb-1">Consultorios Médicos y Profesionales en Posadas</h3>
             <p class="text-xs text-neutral-400">Especialistas de la salud y estudios contables con turnos ordenados hacia la secretaria.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Comercios Minoristas y Distribuidores</h4>
+            <h3 class="font-bold text-white text-base mb-1">Comercios Minoristas y Distribuidores</h3>
             <p class="text-xs text-neutral-400">Catálogos con fotos y precios para venta mayorista y minorista hacia toda la provincia.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Servicios del Hogar y Construcción</h4>
+            <h3 class="font-bold text-white text-base mb-1">Servicios del Hogar y Construcción</h3>
             <p class="text-xs text-neutral-400">Electricistas, técnicos de refrigeración y corralones con presencia en Google Maps.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Posadas y Misiones
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo se coordina el proyecto desde Posadas o Iguazú?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Coordinamos 100% online por WhatsApp. Con 3 audios y tus fotos de trabajo dejamos la web maquetada y lista para revisar.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Una web ayuda a captar turistas en Misiones?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Muchísimo. Los viajeros buscan alojamiento y excursiones en Google Maps en sus celulares; una web clara con botón a WhatsApp concreta la venta al instante.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se coordina el proyecto desde Posadas o Iguazú?</h4>
-            <p class="text-sm text-neutral-400">Coordinamos 100% online por WhatsApp. Con 3 audios y tus fotos de trabajo dejamos la web maquetada y lista para revisar.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Una web ayuda a captar turistas en Misiones?</h4>
-            <p class="text-sm text-neutral-400">Muchísimo. Los viajeros buscan alojamiento y excursiones en Google Maps en sus celulares; una web clara con botón a WhatsApp concreta la venta al instante.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Tengo que pagar mantenimiento mensual?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Tengo que pagar mantenimiento mensual?</h3>
             <p class="text-sm text-neutral-400">No es obligatorio. El primer mes es gratis y el soporte posterior es voluntario por $20.000 ARS/mes.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

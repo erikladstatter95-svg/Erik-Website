@@ -51,7 +51,7 @@
   <meta property="og:locale" content="es_AR">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='55' fill='%2310b981'>EW</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -330,14 +330,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto cuesta el Píxel de Meta en Argentina?</h3>
-            <p class="text-sm text-slate-600">Crear el Píxel de Meta dentro de tu cuenta comercial de Meta Business Suite es 100% gratuito. Lo único que necesitás para poder instalarlo y medir conversiones es contar con una página web o funnel con dominio propio.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Se puede poner el Píxel de Meta en una página hecha en Canva?</h3>
-            <p class="text-sm text-slate-600">No. Como explicamos en nuestro análisis sobre hacer una landing page en Canva, el constructor web de Canva bloquea la inserción de scripts personalizados de seguimiento como el Píxel de Meta y la API de Conversiones.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta el Píxel de Meta en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Crear el Píxel de Meta dentro de tu cuenta comercial de Meta Business Suite es 100% gratuito. Lo único que necesitás para poder instalarlo y medir conversiones es contar con una página web o funnel con dominio propio.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede poner el Píxel de Meta en una página hecha en Canva?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              No. Como explicamos en nuestro análisis sobre hacer una landing page en Canva, el constructor web de Canva bloquea la inserción de scripts personalizados de seguimiento como el Píxel de Meta y la API de Conversiones.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué pasa si ya tengo una página web en WordPress o Tiendanube pero el Píxel mide mal?</h3>
             <p class="text-sm text-slate-600">Es un error muy frecuente cuando hay plugins desactualizados o botones de WhatsApp que no disparan el evento Contact. Con nuestro servicio de Auditoría y Optimización Web revisamos y corregimos la medición de tu sitio actual.</p>
@@ -363,5 +373,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

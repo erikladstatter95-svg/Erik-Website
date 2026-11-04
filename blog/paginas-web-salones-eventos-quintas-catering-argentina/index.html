@@ -322,14 +322,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo ver demos reales de cómo quedaría la web de mi salón, catering, vajilla o restaurante?</h3>
-            <p class="text-sm text-slate-600">Sí. En Erik Website desarrollamos 4 demos completas en vivo para el sector: 1) Salones y Quintas (/demos/salones/), 2) Catering y Barras Móviles (/demos/catering/), 3) Alquiler de Vajilla con Cotizador en tiempo real (/demos/vajilla/) y 4) Restaurante de Alta Gama con Reserva de Mesa y Grupos (/demos/restaurante/).</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Conviene poner precios de referencia o un cotizador por cantidad de invitados en la web?</h3>
-            <p class="text-sm text-slate-600">En nuestro análisis de Google Ads en Argentina, búsquedas ultra específicas como 'precio de alquiler de vajilla para 50 personas' tienen 500 búsquedas mensuales con competencia baja (31/100). Incluir una calculadora estimativa por cantidad de invitados filtra a quienes tienen el presupuesto acorde y te ahorra decenas de mensajes improductivos.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo ver demos reales de cómo quedaría la web de mi salón, catering, vajilla o restaurante?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. En Erik Website desarrollamos 4 demos completas en vivo para el sector: 1) Salones y Quintas (/demos/salones/), 2) Catering y Barras Móviles (/demos/catering/), 3) Alquiler de Vajilla con Cotizador en tiempo real (/demos/vajilla/) y 4) Restaurante de Alta Gama con Reserva de Mesa y Grupos (/demos/restaurante/).
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Conviene poner precios de referencia o un cotizador por cantidad de invitados en la web?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              En nuestro análisis de Google Ads en Argentina, búsquedas ultra específicas como 'precio de alquiler de vajilla para 50 personas' tienen 500 búsquedas mensuales con competencia baja (31/100). Incluir una calculadora estimativa por cantidad de invitados filtra a quienes tienen el presupuesto acorde y te ahorra decenas de mensajes improductivos.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Se puede cobrar la seña de la fecha o reserva directo por WhatsApp?</h3>
             <p class="text-sm text-slate-600">Totalmente. Todo el flujo está pensado para que el cliente arme su pre-reserva en la web y te llegue el resumen a WhatsApp, donde coordinás la visita presencial al salón o enviás tu Alias/CBU para congelar la fecha con 0% de comisión.</p>
@@ -355,5 +365,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

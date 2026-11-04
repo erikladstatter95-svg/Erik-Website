@@ -285,14 +285,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Sirve para hoteles, cabañas y complejos termales en Termas de Río Hondo?</h3>
-            <p class="text-sm text-slate-600">Sí, es uno de los sectores donde más dinero ahorra una web propia. Al recibir reservas directas por WhatsApp desde Google y Google Maps, evitás perder entre el 15% y el 25% de comisión que cobran Booking o Despegar en cada estadía.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué otros negocios en Santiago Capital y La Banda contratan este servicio?</h3>
-            <p class="text-sm text-slate-600">Clínicas y médicos especialistas, estudios jurídicos y contables, inmobiliarias, corralones, concesionarias, empresas agroindustriales y comercios gastronómicos que buscan profesionalizar su presencia digital.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Sirve para hoteles, cabañas y complejos termales en Termas de Río Hondo?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí, es uno de los sectores donde más dinero ahorra una web propia. Al recibir reservas directas por WhatsApp desde Google y Google Maps, evitás perder entre el 15% y el 25% de comisión que cobran Booking o Despegar en cada estadía.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué otros negocios en Santiago Capital y La Banda contratan este servicio?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Clínicas y médicos especialistas, estudios jurídicos y contables, inmobiliarias, corralones, concesionarias, empresas agroindustriales y comercios gastronómicos que buscan profesionalizar su presencia digital.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué incluye el mantenimiento opcional de $20.000 ARS mensuales?</h3>
             <p class="text-sm text-slate-600">El primer mes está bonificado. A partir del segundo mes, el mantenimiento opcional cubre el servidor de alta velocidad, el certificado de seguridad SSL, la renovación anual de tu dominio y hasta 3 actualizaciones mensuales de precios, fotos o promociones de temporada.</p>
@@ -318,5 +328,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

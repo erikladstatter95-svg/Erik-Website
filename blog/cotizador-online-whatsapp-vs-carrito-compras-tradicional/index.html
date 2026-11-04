@@ -324,14 +324,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Puedo ver un ejemplo real de cómo funciona el cotizador online por WhatsApp?</h3>
-            <p class="text-sm text-slate-600">Sí, en nuestra demo interactiva erikwebsite.com/demos/vajilla/ podés probar el cotizador en tiempo real: sumá o restá de a 1 o 10 unidades en cada ítem y mirá cómo se arma automáticamente el mensaje de WhatsApp con el desglose y el precio total.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Por qué los carritos de compra tradicionales fallan en rubros mayoristas o de alquiler?</h3>
-            <p class="text-sm text-slate-600">Porque en un alquiler para eventos, una compra mayorista con curva de talles o un pedido de obra, el cliente necesita confirmar disponibilidad para una fecha, coordinar flete o pagar por transferencia bancaria sin el recargo del 8% al 12% de las pasarelas online.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo ver un ejemplo real de cómo funciona el cotizador online por WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí, en nuestra demo interactiva erikwebsite.com/demos/vajilla/ podés probar el cotizador en tiempo real: sumá o restá de a 1 o 10 unidades en cada ítem y mirá cómo se arma automáticamente el mensaje de WhatsApp con el desglose y el precio total.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué los carritos de compra tradicionales fallan en rubros mayoristas o de alquiler?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Porque en un alquiler para eventos, una compra mayorista con curva de talles o un pedido de obra, el cliente necesita confirmar disponibilidad para una fecha, coordinar flete o pagar por transferencia bancaria sin el recargo del 8% al 12% de las pasarelas online.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Cuánto sale hacer una página web con cotizador de ítems a WhatsApp?</h3>
             <p class="text-sm text-slate-600">Un sitio web con cotizador interactivo de ítems o combos predefinidos (como el modelo de alquiler de vajilla o catering) tiene un valor de $150.000 ARS finales de pago único. Si necesitás una tienda autoadministrable gigante con miles de productos variables, se cotiza a medida según el alcance.</p>
@@ -357,5 +367,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

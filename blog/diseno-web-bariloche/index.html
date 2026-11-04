@@ -280,19 +280,19 @@
         </p>
         <div class="grid sm:grid-cols-2 gap-4 mt-4">
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Cabañas, Hosterías y Alquiler Temporario</h4>
+            <h3 class="font-bold text-white text-base mb-1">Cabañas, Hosterías y Alquiler Temporario</h3>
             <p class="text-xs text-neutral-400">Galerías de fotos de alta calidad, tarifas de temporada y botón para reservar directo por WhatsApp.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Excursiones y Turismo Aventura</h4>
+            <h3 class="font-bold text-white text-base mb-1">Excursiones y Turismo Aventura</h3>
             <p class="text-xs text-neutral-400">Tours al Cerro Tronador, rafting, navegación en el Nahuel Huapi y alquiler de equipos de ski.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Chocolaterías y Gastronomía Regional</h4>
+            <h3 class="font-bold text-white text-base mb-1">Chocolaterías y Gastronomía Regional</h3>
             <p class="text-xs text-neutral-400">Cartas digitales de restaurantes de cordero patagónico, cervecerías y ahumados en el centro y Circuito Chico.</p>
           </div>
           <div class="p-4 rounded-xl bg-neutral-900 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-1">Servicios Profesionales y Construcción</h4>
+            <h3 class="font-bold text-white text-base mb-1">Servicios Profesionales y Construcción</h3>
             <p class="text-xs text-neutral-400">Arquitectos de montaña, inmobiliarias patagónicas y constructores en madera.</p>
           </div>
         </div>
@@ -335,16 +335,26 @@
           Preguntas frecuentes sobre diseño web en Bariloche
         </h2>
         <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo logro que los turistas reserven en mi web en lugar de Booking?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Los turistas suelen comparar en Booking y luego buscan el nombre exacto de la cabaña en Google para ver si hay mejor precio. Si tu web tiene fotos impecables y un botón directo a WhatsApp, cierran con vos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-neutral-900/50 border border-white/5 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué pasa con la baja señal móvil en zonas alejadas de Bariloche?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-neutral-400 mt-3">
+              Nuestras páginas están programadas en código ultraliviano, abriendo al instante incluso con señal débil en los kilómetros o en Circuito Chico.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo logro que los turistas reserven en mi web en lugar de Booking?</h4>
-            <p class="text-sm text-neutral-400">Los turistas suelen comparar en Booking y luego buscan el nombre exacto de la cabaña en Google para ver si hay mejor precio. Si tu web tiene fotos impecables y un botón directo a WhatsApp, cierran con vos.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Qué pasa con la baja señal móvil en zonas alejadas de Bariloche?</h4>
-            <p class="text-sm text-neutral-400">Nuestras páginas están programadas en código ultraliviano, abriendo al instante incluso con señal débil en los kilómetros o en Circuito Chico.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-neutral-900/50 border border-white/5">
-            <h4 class="font-bold text-white text-base mb-2">¿Cómo se abona?</h4>
+            <h3 class="font-bold text-white text-base mb-2">¿Cómo se abona?</h3>
             <p class="text-sm text-neutral-400">50% al iniciar y 50% al entregarte la web funcionando.</p>
           </div>
         </div>
@@ -367,5 +377,19 @@
       <p class="text-[11px] text-neutral-600">© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

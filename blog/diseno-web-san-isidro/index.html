@@ -285,14 +285,24 @@
           Preguntas frecuentes
         </h2>
         <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Qué rubros tienen mayor demanda de páginas web en San Isidro y Martínez?</h3>
-            <p class="text-sm text-slate-600">En el corredor de Avenida del Libertador, Panamericana, Las Lomas y La Horqueta, los rubros que más consultas captan con una web propia son clínicas odontológicas y estéticas, estudios jurídicos y contables, inmobiliarias, arquitectos, estudios de pilates/fitness y servicios premium para el hogar.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-1">¿Trabajan también con empresas industriales en Boulogne, Villa Adelina y Beccar?</h3>
-            <p class="text-sm text-slate-600">Sí. Desarrollamos sitios corporativos y catálogos técnicos para distribuidoras, laboratorios, talleres especializados y proveedores industriales sobre el eje Panamericana y Márquez.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué rubros tienen mayor demanda de páginas web en San Isidro y Martínez?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              En el corredor de Avenida del Libertador, Panamericana, Las Lomas y La Horqueta, los rubros que más consultas captan con una web propia son clínicas odontológicas y estéticas, estudios jurídicos y contables, inmobiliarias, arquitectos, estudios de pilates/fitness y servicios premium para el hogar.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Trabajan también con empresas industriales en Boulogne, Villa Adelina y Beccar?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">
+              Sí. Desarrollamos sitios corporativos y catálogos técnicos para distribuidoras, laboratorios, talleres especializados y proveedores industriales sobre el eje Panamericana y Márquez.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-1">¿Pueden mejorar o auditar una página web que ya tenemos hecha en Zona Norte?</h3>
             <p class="text-sm text-slate-600">Sí. Si tu empresa en San Isidro ya tiene una página web pero quedó lenta, vieja o no aparece en Google, podés consultar nuestro servicio de Auditoría SEO y optimización técnica en /auditoria-seo/.</p>
@@ -318,5 +328,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

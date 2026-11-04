@@ -23,7 +23,6 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/src/styles/main.css">
@@ -294,14 +293,24 @@
             Preguntas frecuentes
           </h2>
           <div class="space-y-4">
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cuánto cuesta una página web para una veterinaria en Argentina?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Nuestra Landing Page profesional para veterinarias y pet shops cuesta $150.000 ARS finales (pago único), incluyendo diseño a medida, dominio .com.ar, hosting rápido y optimización para Google Maps.</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-white border border-slate-200">
-            <h3 class="font-bold text-slate-900 text-base mb-2">¿Se puede agregar un catálogo de alimentos balanceados con pedidos a WhatsApp?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Sí. Podemos integrar una sección de productos destacados o un catálogo interactivo con carrito para que tus clientes habituales pidan la bolsa de alimento y pipetas directo a tu WhatsApp.</p>
-          </div>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta una página web para una veterinaria en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Nuestra Landing Page profesional para veterinarias y pet shops cuesta $150.000 ARS finales (pago único), incluyendo diseño a medida, dominio .com.ar, hosting rápido y optimización para Google Maps.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede agregar un catálogo de alimentos balanceados con pedidos a WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 leading-relaxed mt-3">
+              Sí. Podemos integrar una sección de productos destacados o un catálogo interactivo con carrito para que tus clientes habituales pidan la bolsa de alimento y pipetas directo a tu WhatsApp.
+            </p>
+          </details>
           <div class="p-5 rounded-2xl bg-white border border-slate-200">
             <h3 class="font-bold text-slate-900 text-base mb-2">¿En cuánto tiempo queda online la web de la clínica?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">Entregamos el sitio completo y funcionando en 3 a 5 días hábiles desde que nos pasás los datos básicos y fotos de tu veterinaria.</p>
@@ -355,5 +364,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var detailsList = document.querySelectorAll('details');
+      detailsList.forEach(function(targetDetail) {
+        targetDetail.addEventListener('toggle', function() {
+          if (targetDetail.open) {
+            detailsList.forEach(function(d) {
+              if (d !== targetDetail && d.open) d.removeAttribute('open');
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
