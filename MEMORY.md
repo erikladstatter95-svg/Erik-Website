@@ -260,3 +260,25 @@
      - Se optimizaron las 47 imágenes reportadas en `images/` y `public/images/` mediante cuantización RGB (256 colores, MEDIANCUT) para PNGs y calidad 82 para JPEGs (`vajilla_living.jpg`).
      - Peso total reducido de **56.54 MB a 19.39 MB (ahorro de 37.14 MB / 65.7% de reducción)**.
      - Ninguna imagen supera ahora los 650 KB (todas muy por debajo del umbral de 1 MB de Ahrefs), conservando dimensiones originales de 1200x675, extensión `.png` e integridad de metadatos OpenGraph y Schema.org.
+- [x] **2026-11-06 (Batch 13: Cobertura Nacional 100% de Argentina + 9 Joyas Comerciales de Google Ads):**
+  - **15 artículos nuevos publicados** (totalizando **123 guías activas** en `/blog/index.html` y **141 URLs canónicas** en `sitemap.xml` y `public/sitemap.xml`):
+    - **6 Provincias (Cierre 100% Federal - 24/24 Jurisdicciones de Argentina):**
+      1. `/blog/diseno-web-caba-buenos-aires/` (*CABA: Palermo, Microcentro, Belgrano, código limpio vs. agencias porteñas*)
+      2. `/blog/diseno-web-catamarca/` (*Catamarca: San Fernando del Valle, litio, Puna, proveedores mineros*)
+      3. `/blog/diseno-web-la-rioja/` (*La Rioja: Chilecito, agroindustria olivo/vid, turismo Talampaya*)
+      4. `/blog/diseno-web-santa-cruz/` (*Santa Cruz: El Calafate, Río Gallegos, glaciares, minería sin comisiones Booking*)
+      5. `/blog/diseno-web-tierra-del-fuego/` (*Tierra del Fuego: Ushuaia, Río Grande, turismo antártico, manufactura*)
+      6. `/blog/diseno-web-la-pampa/` (*La Pampa: Santa Rosa, General Pico, cabañas ganaderas, maquinaria agrícola*)
+    - **9 Joyas Comerciales BoFu de Google Ads (Descartada la de mayoristas por requerir panel/mantenimiento diario):**
+      7. `/blog/paginas-web-seguridad-privada-alarmas-monitoreo/` (*Seguridad privada, habilitaciones ministeriales, alarmas y monitoreo 24/7*)
+      8. `/blog/paginas-web-productores-asesores-seguros-brokers/` (*Productores asesores de seguros (PAS), cotizador rápido de autos, hogar y ART a WhatsApp*)
+      9. `/blog/paginas-web-concesionarias-autos-usados-agencias-motos/` (*Concesionarias de autos usados y motos, sin comisiones de MercadoLibre, permutas y financiación*)
+      10. `/blog/paginas-web-empresas-limpieza-finales-obra-tapizados/` (*Limpieza corporativa, abonos para oficinas y clínicas, personal con ART, finales de obra*)
+      11. `/blog/paginas-web-imprentas-graficas-carteleria-merchandising/` (*Imprentas gráficas, cotizador por tiradas, cartelería de seguridad e higiene y merchandising*)
+      12. `/blog/paginas-web-salones-fiestas-infantiles-peloteros-inflables/` (*Salones infantiles, peloteros, turnos de 3 horas, combos y reservas a WhatsApp*)
+      13. `/blog/whatsapp-business-vs-pagina-web-ventas-argentina/` (*WhatsApp Business vs. página web: por qué el catálogo de WhatsApp no alcanza y cómo combinarlos*)
+      14. `/blog/paginas-web-academias-institutos-cursos-oficios/` (*Academias y cursos de oficios con salida laboral, cobro en pesos sin 10% en USD a Hotmart*)
+      15. `/blog/landing-page-para-google-ads-conversion-argentina/` (*Landing page para Google Ads: Quality Score, carga sub-1 segundo y cómo no quemar clics*)
+  - **Imágenes Editoriales Sturm (15/15):** 16:9 (`1200x675`), badge semántico superior izquierdo y sello inferior derecho `erikwebsite.com`, optimizadas con cuantización a 256 colores (< 480 KB todas, previniendo advertencias de Ahrefs), sincronizadas en `images/` y `public/images/`.
+  - **Interlinking "SEO Colonies":** Inyectados enlaces entrantes contextuales en más de 12 guías existentes.
+  - **Build & Indexing:** Compilación en producción con Vite validada en 7.66s (`0 errores, 0 warnings`). 15 URLs notificadas exitosamente a la Google Web Search Indexing API v3 (`200 OK`).
