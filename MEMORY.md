@@ -252,3 +252,11 @@
   2. **Causa raíz del sitemap estancado en 63 URLs en GSC:** `public/sitemap.xml` estaba desactualizado desde el Batch 5 y es el que Vite publica; el de la raíz se actualizaba pero no se desplegaba. Se sincronizó ambos. Se quitaron 4 URLs inexistentes (`/demos/taller/`, `/demos/arquitectura/`, `/demos/veterinaria/`, `/demos/inmobiliaria/`) que devolvían 404.
   3. **Otros 404 corregidos:** se eliminó la referencia huérfana a `/images/apple-touch-icon.png` en 15 guías del blog.
   4. **Ideas pendientes (banco reservado):** ninguna de los 2 bancos; quedan las keywords de funnels genéricos (`embudo de ventas`, `etapas del funnel`, 500/mes, comp. 18-27) como posible guía educativa futura, cuidando no canibalizar `que-es-un-funnel-de-ventas-para-que-sirve-argentina`.
+- [x] **2026-11-05 (Auditoría Ahrefs: Corrección Cloudflare Email Protection + Optimización Masiva de Imágenes > 1MB):**
+  1. **Solución a `/cdn-cgi/l/email-protection`:**
+     - Ahrefs detectaba enlaces internos a `/cdn-cgi/l/email-protection` debido a la función "Email Address Obfuscation" de Cloudflare, que intercepta direcciones de correo en el HTML y las reescribe dinámicamente.
+     - Se envolvieron todas las direcciones de email educativas en `<!--email_off-->...<!--/email_off-->` en los 3 artículos reportados (`blog/configurar-correo-corporativo-outlook-firma-profesional/`, `blog/registrar-marca-inpi-vs-dominio-com-ar-nic-argentina/`, `blog/como-crear-correo-corporativo-dominio-propio-gmail/`), desactivando la ofuscación de Cloudflare en esos bloques sin alterar el diseño ni romper enlaces.
+  2. **Compresión y Optimización de 47 Imágenes Pesadas (> 1MB):**
+     - Se optimizaron las 47 imágenes reportadas en `images/` y `public/images/` mediante cuantización RGB (256 colores, MEDIANCUT) para PNGs y calidad 82 para JPEGs (`vajilla_living.jpg`).
+     - Peso total reducido de **56.54 MB a 19.39 MB (ahorro de 37.14 MB / 65.7% de reducción)**.
+     - Ninguna imagen supera ahora los 650 KB (todas muy por debajo del umbral de 1 MB de Ahrefs), conservando dimensiones originales de 1200x675, extensión `.png` e integridad de metadatos OpenGraph y Schema.org.
