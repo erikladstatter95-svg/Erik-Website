@@ -282,3 +282,18 @@
   - **Imágenes Editoriales Sturm (15/15):** 16:9 (`1200x675`), badge semántico superior izquierdo y sello inferior derecho `erikwebsite.com`, optimizadas con cuantización a 256 colores (< 480 KB todas, previniendo advertencias de Ahrefs), sincronizadas en `images/` y `public/images/`.
   - **Interlinking "SEO Colonies":** Inyectados enlaces entrantes contextuales en más de 12 guías existentes.
   - **Build & Indexing:** Compilación en producción con Vite validada en 7.66s (`0 errores, 0 warnings`). 15 URLs notificadas exitosamente a la Google Web Search Indexing API v3 (`200 OK`).
+- [x] **2026-11-07 (Instalación Global de SerpBear, Auditor SEO Comercial + Mejora de Extensión Chrome, Bing IndexNow & Corrección de Canibalización):**
+  1. **Skill Global `serpbear` e Instalación Local (`C:\Users\erikl\.gemini\tools\serpbear\`):**
+     - Se clonó `https://github.com/towfiqi/serpbear.git` en `C:\Users\erikl\.gemini\tools\serpbear` y se creó la skill global en `C:\Users\erikl\.gemini\config\skills\serpbear\SKILL.md`.
+     - Se desarrolló `serpbear_cli.py`, conectando la base SQLite de SerpBear (`data/database.sqlite`) y los archivos `data/SC_<domain>.json` directamente a la API oficial de Google Search Console (`~/.config/claude-seo/service_account.json`) y a los CSV de Google Ads, sincronizando **225 keywords de `erikwebsite.com`** y **31 keywords de `winkstudioar.com`** (100% gratuito, sin requerir proxies pagos).
+  2. **Resolución de Canibalización detectada por SerpBear (`comprar dominio .ar` / `.com.ar`):**
+     - SerpBear detectó que 9 variantes de `comprar dominio .ar` (~250 impresiones) se dividían entre `/blog/como-registrar-dominio-com-ar-nic-argentina/` y `/blog/dominio-com-vs-com-ar-cual-conviene-argentina/`.
+     - Se diferenció la intención en ambas guías: `como-registrar-dominio-com-ar-nic-argentina` absorbió explícitamente la intención transaccional ("Cómo Comprar y Registrar un Dominio .com.ar y .ar") y `dominio-com-vs-com-ar-cual-conviene-argentina` se enfocó en "Cuál Elegir" con enlace directo hacia el tutorial paso a paso de NIC Argentina.
+  3. **Auditor SEO Comercial y Espía de Competencia (`auditor_seo_comercial.py`) + Upgrade de Extensión Chrome:**
+     - Se actualizó la extensión de Chrome de Erik en `C:\Users\erikl\OneDrive\Desktop\mi-extension-seo` (`popup.html` y `popup.js`) agregando:
+       - **Radiografía Tecnológica y Píxeles:** Detección automática de WordPress, Elementor, WooCommerce, Tiendanube, Wix, Shopify o Código a Medida, más Meta Pixel, GA4 y GTM.
+       - **Botón "📋 Copiar Diagnóstico para WhatsApp":** Genera automáticamente un mensaje comercial personalizado con el puntaje (`X/100`), tecnologías detectadas y los 3 problemas críticos para enviar por WhatsApp a prospectos.
+     - Se creó `C:\Users\erikl\.gemini\tools\serpbear\auditor_seo_comercial.py` (copiado también en `scratch/auditor_seo_comercial.py`) para auditar cualquier URL o comparar `cliente vs. competidor` desde consola con tabla comparativa y pitch de WhatsApp.
+  4. **Bing Webmaster Tools API & IndexNow:**
+     - Se generó y desplegó la llave oficial de verificación IndexNow (`e7a9c4b2f8d143e6a0b5c8d9e2f1a3b4.txt`) en la raíz y `public/`.
+     - Se creó `C:\Users\erikl\.gemini\tools\serpbear\bing_indexnow_and_api.py` (y `scratch/bing_indexnow_and_api.py`) para enviar las 141 URLs del sitemap a IndexNow en lote y conectar la API Key de Bing Webmaster Tools (`~/.config/claude-seo/bing_api.json`).
