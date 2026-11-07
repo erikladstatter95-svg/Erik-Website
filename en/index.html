@@ -1281,19 +1281,30 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2 font-display font-medium text-neutral-300">
-        <span>erikwebsite.com</span>
-        <span class="text-neutral-600">•</span>
-        <span class="font-normal text-neutral-400">San Juan, Argentina</span>
+  <!-- GLOBAL FOOTER (2 LEVELS - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Level 1: Brand & Key Links -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/en/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            High-converting custom mobile-first websites.
+          </p>
+        </div>
+        <nav aria-label="Footer navigation" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog & Guides (ES)</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Terms & Conditions</a>
+          <a href="https://wa.me/5492645185359?text=Hi%20Erik!%20I'm%20interested%20in%20a%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Contact via WhatsApp</a>
+        </nav>
       </div>
-      <div class="flex items-center gap-4 text-neutral-400">
-        <span>© 2026 erikwebsite.com. All rights reserved.</span>
-        <span class="text-neutral-600">•</span>
-        <a href="/blog/" class="hover:text-emerald-400 transition-colors">Blog & Guides (ES)</a>
-        <span class="text-neutral-600">•</span>
-        <a href="/terminos" class="hover:text-emerald-400 transition-colors">Terms & Conditions</a>
+
+      <!-- Level 2: Legal & Notes -->
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. All rights reserved.</p>
+        <p>San Juan, Argentina • Worldwide clients.</p>
       </div>
     </div>
   </footer>

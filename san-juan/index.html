@@ -712,25 +712,32 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-t border-black/[0.06] py-12 text-neutral-600 text-xs">
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-white border-t border-black/[0.06] py-10 text-neutral-600 text-xs overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-black/[0.06]">
-        <div>
-          <span class="font-display font-bold text-sm text-neutral-900">Erik Website · San Juan, Argentina</span>
-          <p class="text-neutral-400 mt-1">Diseño y desarrollo web moderno para profesionales y comercios en San Juan y Cuyo.</p>
+      <!-- Nivel 1: Identidad y Navegación Principal -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-bold text-sm text-neutral-900 hover:text-emerald-700 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-500 text-xs">
+            Diseño y desarrollo web moderno en San Juan y Cuyo.
+          </p>
         </div>
-        <div class="flex flex-wrap items-center gap-5">
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs text-neutral-600">
           <a href="/" class="hover:text-emerald-600 transition-colors">Inicio</a>
           <a href="/auditoria-seo/" class="hover:text-emerald-600 transition-colors font-semibold text-emerald-700">Auditoría SEO</a>
           <a href="/san-juan/" class="text-emerald-700 font-bold">San Juan</a>
           <a href="/blog/" class="hover:text-emerald-600 transition-colors">Blog</a>
-          <a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-600 transition-colors">Generador Link y QR WhatsApp</a>
-          <a href="/terminos/" class="hover:text-emerald-600 transition-colors">Términos y Condiciones</a>
-        </div>
+          <a href="/terminos" class="hover:text-emerald-600 transition-colors">Términos y Condiciones</a>
+        </nav>
       </div>
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-neutral-400 gap-4">
-        <span>© 2026 Erik Ladstatter. Todos los derechos reservados. San Juan, Argentina.</span>
-        <span>Sitios web optimizados para Google Maps y conversión a WhatsApp.</span>
+
+      <!-- Nivel 2: Cierre Legal y Micro-créditos -->
+      <div class="mt-8 pt-6 border-t border-black/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-400">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Sitios optimizados para Google Maps y conversión a WhatsApp.</p>
       </div>
     </div>
   </footer>

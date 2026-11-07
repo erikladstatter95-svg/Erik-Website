@@ -34,6 +34,7 @@
 12. **Sincronización Doble de Imágenes (`images/` + `public/images/`):** Toda imagen nueva o actualizada del sitio o del blog debe guardarse siempre en ambos directorios (`images/` y `public/images/`) para que Vite empaquete y copie correctamente los recursos estáticos a `dist/images/` en producción.
 13. **Sitemap: el archivo que se publica es `public/sitemap.xml` (NO el de la raíz):** Vite copia `public/` a `dist/`; el `sitemap.xml` de la raíz se ignora en producción. Cada vez que se publiquen artículos hay que actualizar ambos (`Copy-Item sitemap.xml public\sitemap.xml -Force`). Este olvido dejó el sitemap en vivo congelado en 63 URLs (GSC mostraba `63 enviadas`) mientras el local tenía 121. Además, nunca listar URLs que no existan en disco ni las páginas stub de redirección (`diseno-web-salta-jujuy`, etc.) ni `/terminos/` (noindex).
 14. **Antes de proponer un artículo nuevo, comparar contra los H1/H2 de las guías existentes** (no solo contra los slugs) para evitar canibalización: ya existen guías de cabañas/hoteles, arquitectos/constructoras, mantenimiento (3), tiendas online (6), WordPress vs. código y funnels.
+15. **Git Push Obligatorio con Cada Cambio en la Web:** Con cada actualización, cambio o arreglo en el sitio, realizar siempre el commit y `git push` a GitHub (`origin/main`) para que el deploy se ejecute automáticamente y los cambios se vean reflejados en vivo en la web.
 
 ---
 
@@ -297,3 +298,11 @@
   4. **Bing Webmaster Tools API & IndexNow:**
      - Se generó y desplegó la llave oficial de verificación IndexNow (`e7a9c4b2f8d143e6a0b5c8d9e2f1a3b4.txt`) en la raíz y `public/`.
      - Se creó `C:\Users\erikl\.gemini\tools\serpbear\bing_indexnow_and_api.py` (y `scratch/bing_indexnow_and_api.py`) para enviar las 141 URLs del sitemap a IndexNow en lote y conectar la API Key de Bing Webmaster Tools (`~/.config/claude-seo/bing_api.json`).
+- [x] **2026-11-07 (Rediseño y Corrección Crítica del Footer Global: 2 Niveles Mobile-First y Eliminación de Desborde Horizontal):**
+  - **Diagnóstico del problema:** En modo celular, el footer en `index.html` y `en/index.html` tenía una fila `flex` sin `flex-wrap` con 10 elementos que forzaba un ancho de ~970px en pantallas móviles de 360-390px, provocando un desborde horizontal masivo (la web se movía hacia los costados). Además, acumulaba demasiados enlaces secundarios y viñetas `•` sueltas que fragmentaban la lectura.
+  - **Solución implementada (Arquitectura de 2 Niveles Mobile-First):**
+    - **Nivel 1 (Superior):** Identidad de marca clara (`erikwebsite.com` + tagline `Páginas web a medida y alta conversión en celulares.`) a la izquierda / arriba en mobile, junto con una navegación esencial limpia de 4-5 enlaces prioritarios (`Auditoría SEO`, `San Juan`, `Blog`, `Términos y Condiciones`, e `Inicio` en páginas secundarias) usando `flex-wrap`, `gap-x-6 gap-y-2.5` y touch-targets cómodos sin viñetas rígidas. Se eliminaron enlaces de relleno como el generador de QR del footer primario.
+    - **Nivel 2 (Inferior / Barra Legal):** Separador sutil `border-t border-white/[0.08]` con copyright a la izquierda y nota de optimización a la derecha (`© 2026 erikwebsite.com. Todos los derechos reservados.` / `San Juan, Argentina • Diseñado y optimizado para celulares.`).
+    - **Garantía Anti-Desborde:** Incorporado `overflow-hidden` en el tag `<footer>` en todas las páginas.
+  - **Estandarización Total (153 archivos):** Aplicado en `index.html`, `en/index.html`, `auditoria-seo/index.html`, `san-juan/index.html`, `blog/index.html`, `terminos/index.html`, los 123 artículos de `blog/*/index.html` y las 24 páginas de `demos/**/*.html`.
+  - **Compilación Vite:** `npm run build` ejecutado y validado en 11.41s (`0 errores, 0 warnings`). Cero desbordes detectados (`check_all_footers.py` = 0).

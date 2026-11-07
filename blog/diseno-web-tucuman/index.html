@@ -406,23 +406,33 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <p class="font-display font-medium text-neutral-300 text-sm">erikwebsite.com</p>
-        <p class="text-xs text-neutral-500 mt-1">Diseño web profesional y posicionamiento local para negocios y profesionales en Argentina.</p>
+    <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Nivel 1: Identidad y Navegación Principal -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
       </div>
-      <div class="flex flex-wrap items-center gap-5 text-xs text-neutral-400">
-        <a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a>
-        <a href="/san-juan/" class="hover:text-emerald-400 transition-colors">San Juan</a>
-        <a href="/blog/" class="hover:text-emerald-400 transition-colors">Blog</a>
-        <a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400 transition-colors">Generador Link y QR WhatsApp</a>
-        <a href="/terminos" class="hover:text-emerald-400 transition-colors">Términos y Condiciones</a>
-        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Estuve%20leyendo%20tu%20blog%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-medium">Consultar por WhatsApp</a>
+
+      <!-- Nivel 2: Cierre Legal y Micro-créditos -->
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
       </div>
-    </div>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-6 pt-6 border-t border-white/[0.05] text-center text-neutral-500 text-[11px]">
-      © 2026 erikwebsite.com. Todos los derechos reservados. San Juan, Argentina.
     </div>
   </footer>
 
