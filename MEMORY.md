@@ -306,3 +306,22 @@
     - **Garantía Anti-Desborde:** Incorporado `overflow-hidden` en el tag `<footer>` en todas las páginas.
   - **Estandarización Total (153 archivos):** Aplicado en `index.html`, `en/index.html`, `auditoria-seo/index.html`, `san-juan/index.html`, `blog/index.html`, `terminos/index.html`, los 123 artículos de `blog/*/index.html` y las 24 páginas de `demos/**/*.html`.
   - **Compilación Vite:** `npm run build` ejecutado y validado en 11.41s (`0 errores, 0 warnings`). Cero desbordes detectados (`check_all_footers.py` = 0).
+- [x] **2026-11-07 (Batch 14: 12 Artículos Nuevos — 3 Joyas CSV + 3 `/non-obvious` + 6 Polos Económicos Urbanos/Zonales):**
+  - **12 artículos nuevos publicados** (totalizando **135 guías activas** en `/blog/index.html` y **153 URLs canónicas** en `sitemap.xml` y `public/sitemap.xml`):
+    - **3 Recomendados de los CSV de Google Ads (0% canibalización):**
+      1. `/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/` (*Ferozo Webmail y Roundcube vs. Gmail/Outlook: salir del correo lento y sin espacio de DonWeb/cPanel*)
+      2. `/blog/cuanto-cuesta-publicidad-instagram-argentina-mercadopago/` (*Precios de publicidad en Instagram en Argentina 2026, pago en pesos con Mercado Pago y conversión con landing page*)
+      3. `/blog/diseno-paginas-web-corporativas-empresariales-pymes-argentina/` (*Diseño de páginas web corporativas e institucionales para empresas y PyMEs B2B en Argentina*)
+    - **3 Artículos con la Skill `/non-obvious` (Ordenados de menor a mayor probabilidad + Filtro Hormozi):**
+      4. `/blog/paginas-web-camiones-atmosfericos-desagotes-destapaciones-24hs/` (*Rareza <1%: Camiones atmosféricos, desagotes industriales y destapaciones con hidrojet 24 hs*)
+      5. `/blog/paginas-web-consultoras-higiene-seguridad-puesta-tierra-carga-fuego/` (*Rareza ~2.5%: Consultoras de Higiene y Seguridad, medición de Puesta a Tierra SRT 900/15 y Carga de Fuego*)
+      6. `/blog/paginas-web-fabricas-aberturas-aluminio-pvc-dvh-steel-framing/` (*Rareza ~6%: Fábricas de aberturas de aluminio/PVC DVH y constructoras en Steel Framing con pre-cotizador de obra*)
+    - **6 Polos Urbanos y Corredores Económicos de Alto PBI (No-Capitales):**
+      7. `/blog/diseno-web-zona-norte-tigre-nordelta-vicente-lopez/` (*Zona Norte GBA: Tigre, Nordelta, Vicente López y Olivos*)
+      8. `/blog/diseno-web-zona-oeste-moron-ituzaingo-castelar-ramos-mejia/` (*Zona Oeste GBA: Morón, Ituzaingó, Castelar y Ramos Mejía*)
+      9. `/blog/diseno-web-rio-cuarto-villa-maria/` (*Interior Productivo de Córdoba: Río Cuarto y Villa María*)
+      10. `/blog/diseno-web-san-rafael-mendoza/` (*Sur de Mendoza: San Rafael, Valle Grande, cabañas, bodegas y comercios*)
+      11. `/blog/diseno-web-puerto-madryn-trelew/` (*Costa y Valle de Chubut: Puerto Madryn, Trelew y Rawson*)
+      12. `/blog/diseno-web-rafaela-venado-tuerto/` (*Interior Industrial y Agro de Santa Fe: Rafaela y Venado Tuerto*)
+  - **Imágenes Editoriales Sturm (12/12):** `1200x675`, badge semántico superior izquierdo y sello `erikwebsite.com` inferior derecho, cuantizadas a 256 colores (`317 KB` a `454 KB`, 100% libres de alertas Ahrefs), sincronizadas en `images/` y `public/images/`.
+  - **Footer Global 2 Niveles & Interlinking:** Todas las 12 guías nacen con el footer global de 2 niveles mobile-first (`overflow-hidden`) y 12 bloques de interlinking "SEO Colonies" inyectados en guías relacionadas.
