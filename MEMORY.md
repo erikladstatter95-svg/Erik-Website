@@ -35,6 +35,9 @@
 13. **Sitemap: el archivo que se publica es `public/sitemap.xml` (NO el de la raíz):** Vite copia `public/` a `dist/`; el `sitemap.xml` de la raíz se ignora en producción. Cada vez que se publiquen artículos hay que actualizar ambos (`Copy-Item sitemap.xml public\sitemap.xml -Force`). Este olvido dejó el sitemap en vivo congelado en 63 URLs (GSC mostraba `63 enviadas`) mientras el local tenía 121. Además, nunca listar URLs que no existan en disco ni las páginas stub de redirección (`diseno-web-salta-jujuy`, etc.) ni `/terminos/` (noindex).
 14. **Antes de proponer un artículo nuevo, comparar contra los H1/H2 de las guías existentes** (no solo contra los slugs) para evitar canibalización: ya existen guías de cabañas/hoteles, arquitectos/constructoras, mantenimiento (3), tiendas online (6), WordPress vs. código y funnels.
 15. **Git Push Obligatorio con Cada Cambio en la Web:** Con cada actualización, cambio o arreglo en el sitio, realizar siempre el commit y `git push` a GitHub (`origin/main`) para que el deploy se ejecute automáticamente y los cambios se vean reflejados en vivo en la web.
+16. **Regla de Oro Geográfica (1 Provincia Exclusiva + 1 Ciudad Única o 1 Zona Metropolitana Reconocible por Artículo/Slug):**
+    - **Nivel Provincia:** Cada una de las 24 jurisdicciones argentinas debe tener su propia página exclusiva nivel provincia (ej: `/blog/diseno-web-rio-negro/`, `/blog/diseno-web-chubut/`, `/blog/diseno-web-entre-rios/`, `/blog/diseno-web-mendoza/`, `/blog/diseno-web-cordoba/`, `/blog/diseno-web-santa-fe/`).
+    - **Nivel Ciudad o Zona:** Cada artículo de ciudad debe cubrir **1 sola ciudad específica** aclarando explícitamente a qué provincia pertenece y enlazando a la guía provincial (ej: `/blog/diseno-web-san-rafael-mendoza/`, `/blog/diseno-web-bariloche/`, `/blog/diseno-web-rio-cuarto/`, `/blog/diseno-web-villa-maria/`, `/blog/diseno-web-puerto-madryn/`, `/blog/diseno-web-trelew/`, `/blog/diseno-web-rafaela/`, `/blog/diseno-web-venado-tuerto/`) o **1 zona metropolitana reconocible por la gente común** con un slug limpio sin concatenar localidades (ej: `/blog/diseno-web-zona-norte/` o `/blog/diseno-web-zona-oeste/`), donde el vecino o comerciante sepa que al buscar una localidad de esa zona la va a encontrar cubierta adentro. Prohibido concatenar múltiples ciudades en un mismo slug (`rio-cuarto-villa-maria`, `puerto-madryn-trelew`, etc.).
 
 ---
 
@@ -306,8 +309,8 @@
     - **Garantía Anti-Desborde:** Incorporado `overflow-hidden` en el tag `<footer>` en todas las páginas.
   - **Estandarización Total (153 archivos):** Aplicado en `index.html`, `en/index.html`, `auditoria-seo/index.html`, `san-juan/index.html`, `blog/index.html`, `terminos/index.html`, los 123 artículos de `blog/*/index.html` y las 24 páginas de `demos/**/*.html`.
   - **Compilación Vite:** `npm run build` ejecutado y validado en 11.41s (`0 errores, 0 warnings`). Cero desbordes detectados (`check_all_footers.py` = 0).
-- [x] **2026-11-07 (Batch 14: 12 Artículos Nuevos — 3 Joyas CSV + 3 `/non-obvious` + 6 Polos Económicos Urbanos/Zonales):**
-  - **12 artículos nuevos publicados** (totalizando **135 guías activas** en `/blog/index.html` y **153 URLs canónicas** en `sitemap.xml` y `public/sitemap.xml`):
+- [x] **2026-11-08 (Batch 14 + Reestructuración Geográfica Limpia 1 Ciudad / 1 Zona / 24 Provincias Exclusivas + Optimización SerpBear de Quilmes #11.0):**
+  - **18 artículos nuevos publicados en total** (alcanzando **141 guías activas** en `/blog/index.html` y **159 URLs canónicas** en `sitemap.xml` y `public/sitemap.xml`):
     - **3 Recomendados de los CSV de Google Ads (0% canibalización):**
       1. `/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/` (*Ferozo Webmail y Roundcube vs. Gmail/Outlook: salir del correo lento y sin espacio de DonWeb/cPanel*)
       2. `/blog/cuanto-cuesta-publicidad-instagram-argentina-mercadopago/` (*Precios de publicidad en Instagram en Argentina 2026, pago en pesos con Mercado Pago y conversión con landing page*)
@@ -316,12 +319,23 @@
       4. `/blog/paginas-web-camiones-atmosfericos-desagotes-destapaciones-24hs/` (*Rareza <1%: Camiones atmosféricos, desagotes industriales y destapaciones con hidrojet 24 hs*)
       5. `/blog/paginas-web-consultoras-higiene-seguridad-puesta-tierra-carga-fuego/` (*Rareza ~2.5%: Consultoras de Higiene y Seguridad, medición de Puesta a Tierra SRT 900/15 y Carga de Fuego*)
       6. `/blog/paginas-web-fabricas-aberturas-aluminio-pvc-dvh-steel-framing/` (*Rareza ~6%: Fábricas de aberturas de aluminio/PVC DVH y constructoras en Steel Framing con pre-cotizador de obra*)
-    - **6 Polos Urbanos y Corredores Económicos de Alto PBI (No-Capitales):**
-      7. `/blog/diseno-web-zona-norte-tigre-nordelta-vicente-lopez/` (*Zona Norte GBA: Tigre, Nordelta, Vicente López y Olivos*)
-      8. `/blog/diseno-web-zona-oeste-moron-ituzaingo-castelar-ramos-mejia/` (*Zona Oeste GBA: Morón, Ituzaingó, Castelar y Ramos Mejía*)
-      9. `/blog/diseno-web-rio-cuarto-villa-maria/` (*Interior Productivo de Córdoba: Río Cuarto y Villa María*)
-      10. `/blog/diseno-web-san-rafael-mendoza/` (*Sur de Mendoza: San Rafael, Valle Grande, cabañas, bodegas y comercios*)
-      11. `/blog/diseno-web-puerto-madryn-trelew/` (*Costa y Valle de Chubut: Puerto Madryn, Trelew y Rawson*)
-      12. `/blog/diseno-web-rafaela-venado-tuerto/` (*Interior Industrial y Agro de Santa Fe: Rafaela y Venado Tuerto*)
-  - **Imágenes Editoriales Sturm (12/12):** `1200x675`, badge semántico superior izquierdo y sello `erikwebsite.com` inferior derecho, cuantizadas a 256 colores (`317 KB` a `454 KB`, 100% libres de alertas Ahrefs), sincronizadas en `images/` y `public/images/`.
-  - **Footer Global 2 Niveles & Interlinking:** Todas las 12 guías nacen con el footer global de 2 niveles mobile-first (`overflow-hidden`) y 12 bloques de interlinking "SEO Colonies" inyectados en guías relacionadas.
+    - **3 Nuevas Páginas Exclusivas Nivel Provincia (separadas de sus ciudades principales):**
+      7. `/blog/diseno-web-rio-negro/` (*Provincia de Río Negro: Alto Valle, Cipolletti, General Roca, Viedma y Las Grutas — separada de `/blog/diseno-web-bariloche/`*)
+      8. `/blog/diseno-web-chubut/` (*Provincia del Chubut: Esquel, Trevelin, Rawson, Comodoro, Puerto Madryn y Trelew — separada de sus 3 ciudades*)
+      9. `/blog/diseno-web-entre-rios/` (*Provincia de Entre Ríos: Concordia, Gualeguaychú, Concepción del Uruguay, Colón y Federación — separada de `/blog/diseno-web-parana/`*)
+    - **2 Zonas Metropolitanas Reconocibles con Slug Limpio y 7 Ciudades Individuales:**
+      10. `/blog/diseno-web-zona-norte/` (*Zona Norte GBA: Tigre, Nordelta, Vicente López, Olivos, San Fernando y Escobar*)
+      11. `/blog/diseno-web-zona-oeste/` (*Zona Oeste GBA: Morón, Ituzaingó, Castelar, Ramos Mejía, Haedo y Hurlingham*)
+      12. `/blog/diseno-web-san-rafael-mendoza/` (*San Rafael · Sur de la Provincia de Mendoza*)
+      13. `/blog/diseno-web-rio-cuarto/` (*Río Cuarto · Sur de la Provincia de Córdoba*)
+      14. `/blog/diseno-web-villa-maria/` (*Villa María · Centro de la Provincia de Córdoba*)
+      15. `/blog/diseno-web-puerto-madryn/` (*Puerto Madryn · Costa de la Provincia del Chubut*)
+      16. `/blog/diseno-web-trelew/` (*Trelew · Valle Inferior de la Provincia del Chubut*)
+      17. `/blog/diseno-web-rafaela/` (*Rafaela · Centro-Oeste de la Provincia de Santa Fe*)
+      18. `/blog/diseno-web-venado-tuerto/` (*Venado Tuerto · Sur de la Provincia de Santa Fe*)
+    - **Redirecciones Limpias:** Los 5 slugs multi-ciudad previos (`diseno-web-zona-norte-tigre-nordelta-vicente-lopez`, `diseno-web-zona-oeste-moron-ituzaingo-castelar-ramos-mejia`, `diseno-web-rio-cuarto-villa-maria`, `diseno-web-puerto-madryn-trelew`, `diseno-web-rafaela-venado-tuerto`) quedaron con redirección instantánea `<meta http-equiv="refresh">` + `window.location.replace` y excluidos de `sitemap.xml`.
+  - **Optimización On-Page + Interlinking de `/blog/diseno-web-quilmes/` (Posición #11.0 en SerpBear/GSC -> Push a Top 5):**
+    - Ampliado el contenido de ~480 a +1.050 palabras con micro-zonas de Quilmes (Quilmes Centro, Las Lomitas de Quilmes, Peatonal Rivadavia, Bernal, Don Bosco, Ezpeleta, San Francisco Solano, Parque Industrial Tecnológico de Quilmes y Av. Calchaquí), H2 exactos (`Diseño web en Quilmes vs. estudio creativo o agencia tradicional`), corrección del 3er y 4to acordeón `<details name="faq-accordion">` y refuerzo de enlaces entrantes desde `lomas-de-zamora`, `la-plata` y `caba-buenos-aires`.
+  - **Bing Webmaster API (`SubmitUrlBatch` / `SubmitFeed`) + Bugfix Extensión Chrome + Panel Visual SerpBear (`localhost:4321`):**
+    - Solucionado el bug de `title.includes('')` en `C:\Users\erikl\OneDrive\Desktop\mi-extension-seo\popup.js` que reportaba falso positivo de charset roto en todas las webs.
+    - Creado el panel visual local de SerpBear en `http://localhost:4321` (`Abrir_Panel_SerpBear.bat`).

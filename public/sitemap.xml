@@ -901,38 +901,74 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://erikwebsite.com/blog/diseno-web-zona-norte-tigre-nordelta-vicente-lopez/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://erikwebsite.com/blog/diseno-web-zona-oeste-moron-ituzaingo-castelar-ramos-mejia/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://erikwebsite.com/blog/diseno-web-rio-cuarto-villa-maria/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://erikwebsite.com/blog/diseno-web-san-rafael-mendoza/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://erikwebsite.com/blog/diseno-web-puerto-madryn-trelew/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://erikwebsite.com/blog/diseno-web-zona-norte/</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://erikwebsite.com/blog/diseno-web-rafaela-venado-tuerto/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <loc>https://erikwebsite.com/blog/diseno-web-zona-oeste/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-rio-cuarto/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-villa-maria/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-puerto-madryn/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-trelew/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-rafaela/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-venado-tuerto/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-rio-negro/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-chubut/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-entre-rios/</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
