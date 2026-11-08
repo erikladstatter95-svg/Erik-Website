@@ -353,3 +353,26 @@
     4. `/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/` (*SEO para Inteligencia Artificial (AEO y GEO) en Argentina: Cómo Aparecer en ChatGPT, Perplexity y Google AI Overviews*)
     5. `/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/` (*Auditoría de Velocidad Web y Core Web Vitals (LCP e INP): Por Qué una Web Lenta Frena tu SEO y tus Ventas*)
     6. `/blog/diseno-web-zona-sur/` (*Diseño de Páginas Web en Zona Sur GBA: Avellaneda, Lanús, Lomas de Zamora, Banfield, Quilmes, Bernal y Adrogué — Competencia Baja 0 a 17/100 en CSV*)
+- [x] **2026-11-08 (Batch 16: 6 Artículos de Autoridad SEO de los 4 Nuevos CSVs + Eventos de Conversión en GA4 + Sistema Semanal Dominical `PLAN_SEMANAL_SEO.md` + Skill + Automation):**
+  1. **Arquitectura de Eventos de Negocio en Google Analytics 4 (`G-KWD0WYVK4J` — `src/js/whatsapp.js` + `src/js/main.js` en las 171 páginas):**
+     - Implementado listener delegado global que registra automáticamente en GA4:
+       - `generate_lead` (Evento oficial de conversión de GA4 con `service_intent`: `auditoria_seo` | `funnel` | `diseno_web`, `lead_source`, `cta_text`, `value`, `currency`).
+       - `whatsapp_click` (Evento detallado de clic a cualquier botón `[data-wa-msg]` o enlace `wa.me`).
+       - `view_demo` (Registro de cuál de las 13 Demos Interactivas abre el usuario y desde qué página).
+       - `use_interactive_calculator` (Uso de las calculadoras de indemnización laboral, cotizador de vajilla, catering, funnel o generador QR).
+       - `faq_expand` (Apertura de preguntas frecuentes `<details>` con el texto de la pregunta).
+       - `article_read_75` (Lectura humana profunda superior al 75% del artículo tras +8s en página).
+     - Inyectado `<script type="module" src="/src/js/main.js"></script>` en las 103 guías del blog que no lo tenían, garantizando cobertura del 100% del sitio.
+  2. **Publicación del Batch 16 de 6 Artículos de Autoridad SEO (0% Canibalización, 0 Emojis, alcanzando 153 guías activas en `/blog/` y 171 URLs canónicas en `sitemap.xml` / `public/sitemap.xml`):**
+     - `/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` (*Por Qué Mi Página Web No Aparece en Google y Cómo Indexarla Rápido en Search Console — Comp 0 a 29/100*)
+     - `/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/` (*SEO para Tiendanube y Tiendas Online en Argentina: Cómo Posicionar tus Productos en Google — Comp 22 a 29/100*)
+     - `/blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/` (*Posicionamiento SEO en WordPress y Wix: Para Qué Sirve Yoast SEO y Por Qué No Alcanza — Comp 0 a 36/100*)
+     - `/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/` (*SEO para Inmobiliarias y Desarrolladoras en Argentina: Cómo Posicionar Propiedades en Google — Comp 0 a 8/100*)
+     - `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/` (*Cómo Instalar Google Analytics 4 (GA4) y Medir Clics a WhatsApp y Ventas de Redes en tu Web — Comp 21 a 43/100*)
+     - `/blog/seo-para-abogados-estudios-juridicos-argentina-google/` (*SEO para Abogados y Estudios Jurídicos en Argentina: Cómo Captar Consultas en Google — Comp 29/100 + enlace a `/demos/abogados/`*)
+  3. **Archivo `/llms.txt` y `public/llms.txt`:**
+     - Desplegado el catálogo estructurado para agentes e IAs generativas (ChatGPT, Perplexity, Claude, Gemini) con los 2 servicios principales, las 13 demos interactivas y las guías pilares de SEO y Diseño Web.
+  4. **Sistema Operativo Semanal (`PLAN_SEMANAL_SEO.md` + Skill `seo-weekly-command` + Automation `Domingo SEO & GA4 Command (WebErik)`):**
+     - Creado [`PLAN_SEMANAL_SEO.md`](file:///c:/Users/erikl/Downloads/WebErik/PLAN_SEMANAL_SEO.md) con la cadencia Lunes/Miércoles/Viernes (Diseño Web), Martes/Jueves/Sábado (SEO) y Domingo (Auditoría y Plan de Ataque), inicializado con la bitácora de la Semana 1 (8/11/2026) y el Plan Lunes 9/11 a Sábado 14/11.
+     - Creados los scripts `scratch/sunday_seo_command.py` y `scratch/check_cannibalization.py`.
+     - Instalada la Skill global `seo-weekly-command` (`C:\Users\erikl\.gemini\config\skills\seo-weekly-command\SKILL.md`) y la Automation programada `Domingo SEO & GA4 Command (WebErik)` (`C:\Users\erikl\.gemini\config\sidecars\domingo-seo-command\sidecar.json`).

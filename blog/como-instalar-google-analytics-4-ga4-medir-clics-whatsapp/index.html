@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Instalar Google Analytics 4 (GA4) y Medir WhatsApp</title>
+  <meta name="description" content="Guía práctica para instalar Google Analytics 4 (GA4) en tu página web en Argentina y medir eventos reales de conversión: clics a WhatsApp, demos y redes.">
+  <link rel="canonical" href="https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/">
+  <meta property="og:title" content="Cómo Instalar Google Analytics 4 (GA4) y Medir WhatsApp | Erik Website">
+  <meta property="og:description" content="Guía práctica para instalar Google Analytics 4 (GA4) en tu página web en Argentina y medir eventos reales de conversión: clics a WhatsApp, demos y redes.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_instalar_google_analytics_4_ga4_whatsapp.png">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cómo Instalar Google Analytics 4 (GA4) y Medir WhatsApp | Erik Website">
+  <meta name="twitter:description" content="Guía práctica para instalar Google Analytics 4 (GA4) en tu página web en Argentina y medir eventos reales de conversión: clics a WhatsApp, demos y redes.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_instalar_google_analytics_4_ga4_whatsapp.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/#article",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://erikwebsite.com/#website",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/"
+      },
+      "headline": "Cómo Instalar Google Analytics 4 (GA4) y Medir Clics a WhatsApp y Ventas de Redes en tu Web",
+      "description": "Guía práctica para instalar Google Analytics 4 (GA4) en tu página web en Argentina y medir eventos reales de conversión: clics a WhatsApp, demos y redes.",
+      "inLanguage": "es-AR",
+      "mainEntityOfPage": "https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/",
+      "datePublished": "2026-11-08T14:00:00-03:00",
+      "dateModified": "2026-11-08T14:00:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://erikwebsite.com/images/guia_instalar_google_analytics_4_ga4_whatsapp.png",
+        "width": 1200,
+        "height": 675
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo Instalar Google Analytics 4 (GA4) y Medir WhatsApp",
+          "item": "https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Google Analytics 4 es gratis en Argentina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, la plataforma estándar de Google Analytics 4 es 100% gratuita y sin límite práctico para PyMEs, profesionales y tiendas online. Solo necesitás una cuenta de Google para crear la propiedad y vincularla con tu dominio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué mis clics en anuncios de Instagram no coinciden con las visitas en GA4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suele ocurrir por dos motivos: primero, si tu página tarda más de 4 segundos en abrir dentro del navegador interno de Instagram, el usuario cierra antes de que cargue el script de GA4; segundo, si el Píxel o el código de GA4 se disparan mal al inicio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo marco el clic a WhatsApp como Evento Clave (Conversión) en GA4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una vez que nuestra configuración empieza a enviar el evento 'generate_lead' o 'whatsapp_click' al hacer clic en tus botones de WhatsApp, entrás en GA4 a Administrar > Eventos y activás la llave 'Marcar como evento clave' junto a ese nombre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ustedes entregan las páginas web y auditorías SEO con GA4 ya configurado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Tanto en nuestros desarrollos web desde $150.000 ARS como en nuestro servicio de Auditoría y Optimización SEO para sitios existentes, dejamos instalado y verificado Google Analytics 4, Google Search Console y el Píxel de Meta midiendo clics reales a WhatsApp."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-[#FBFBFD] text-[#1D1D1F] font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" /></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#FBFBFD]/85 backdrop-blur-xl border-b border-black/[0.06]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-bold text-lg tracking-tight text-neutral-900 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        Erik Website
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-5 text-xs sm:text-sm font-medium text-neutral-600">
+        <a href="/" class="hover:text-neutral-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 hover:text-emerald-800 font-semibold transition-colors">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-neutral-900 transition-colors">San Juan</a>
+        <a href="/blog/" class="text-neutral-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20gu%C3%ADa%20de%20SEO%20y%20quiero%20consultar%20para%20optimizar%20mi%20p%C3%A1gina%20web."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Cómo Instalar Google Analytics 4 (GA4) y Medir WhatsApp</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            Analítica Web y Conversión
+          </span>
+          <span class="text-xs text-slate-400">Actualizado Noviembre 2026 · 8 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Cómo Instalar Google Analytics 4 (GA4) y Medir Clics a WhatsApp y Ventas de Redes en tu Web
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            Saber <strong>cómo instalar Google Analytics 4</strong> (o <strong>instalar GA4</strong>) correctamente en una página web argentina exige dar un paso más allá de pegar el código básico: por defecto, GA4 cuenta cuánta gente entra a tu sitio, pero <strong>no registra como conversión cuando alguien toca tu botón de WhatsApp</strong> para pedirte presupuesto. Si no configurás el evento oficial <code>generate_lead</code> en cada enlace a <code>wa.me</code>, vas a ver visitas en tus gráficos sin saber jamás si tus clientes vinieron desde un artículo de Google, desde tu perfil de Instagram o desde una campaña publicitaria.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_instalar_google_analytics_4_ga4_whatsapp.png"
+               alt="Panel de Google Analytics 4 midiendo eventos generate_lead y clics al botón de WhatsApp en una página web en Argentina"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+        
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Cómo instalar GA4 sin frenar la velocidad de carga en celulares
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Cuando una agencia realiza una <strong>auditoría de marketing digital</strong> sobre un sitio lento, suele encontrar tres o cuatro scripts de seguimiento cargando al mismo tiempo en el encabezado y bloqueando el renderizado inicial en teléfonos móviles.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Para <strong>instalar Google Analytics 4</strong> cuidando tus métricas de <a href="/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/" class="text-emerald-700 font-semibold hover:underline">Core Web Vitals (LCP e INP)</a>, inicializamos la cola <code>window.dataLayer</code> de manera liviana y diferimos la descarga del script externo <code>gtag.js</code> mediante <code>requestIdleCallback</code> o ante la primera interacción del usuario. De esa forma, la página abre en menos de un segundo y no perdés ni un solo dato de atribución.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Qué eventos personalizados debés medir en GA4 para tener control total de tu negocio
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          En <a href="/" class="text-emerald-700 font-semibold hover:underline">Erik Website</a> aplicamos en nuestra propia plataforma y en las webs de nuestros clientes una arquitectura de 5 eventos clave en GA4 que transforman la analítica en decisiones comerciales reales:
+        </p>
+        <ul class="space-y-3 text-slate-600 mb-6 list-disc pl-5">
+          <li><strong>Evento Oficial <code>generate_lead</code> + <code>whatsapp_click</code>:</strong> Cada vez que un visitante hace clic real en cualquier botón de WhatsApp, enviamos a GA4 la URL exacta donde estaba parado (<code>page_path</code>), el texto del botón que tocó (<code>cta_text</code>) y la intención del servicio (por ejemplo, diseño web, embudo o auditoría SEO), junto con el disparo de <code>Contact</code> en el <a href="/blog/que-es-pixel-de-meta-para-que-sirve-instalar-web/" class="text-emerald-700 font-semibold hover:underline">Píxel de Meta</a>.</li>
+          <li><strong>Apertura de Demos o Catálogo (<code>view_demo</code>):</strong> Registra qué modelo o rubro miró el usuario antes de escribirte y desde qué guía del blog llegó.</li>
+          <li><strong>Uso de Calculadoras y Cotizadores (<code>use_interactive_calculator</code>):</strong> Detecta cuántos visitantes interactuaron con herramientas en vivo, como nuestro <a href="/blog/generador-link-qr-whatsapp-gratis/" class="text-emerald-700 font-semibold hover:underline">generador de link y QR de WhatsApp</a> o los cotizadores de las demos.</li>
+          <li><strong>Expansión de Preguntas Frecuentes (<code>faq_expand</code>):</strong> Te revela cuál de tus preguntas frecuentes abren más tus potenciales clientes antes de tomar la decisión de compra.</li>
+          <li><strong>Lectura Profunda al 75% (<code>article_read_75</code>):</strong> Mide qué páginas retienen la atención humana durante más de 8 segundos y superan el 75% del recorrido vertical.</li>
+        </ul>
+
+        <div class="my-8 p-5 sm:p-8 rounded-3xl bg-neutral-900 text-white border border-white/[0.08] shadow-sm">
+          <div class="mb-5 pb-4 border-b border-white/[0.08]">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+              Arquitectura de Medición 2026
+            </span>
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
+              GA4 Básico por Defecto vs. GA4 con Ingeniería de Eventos a WhatsApp
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-white/10 text-neutral-400 uppercase text-[11px]">
+                  <th class="py-3 pr-3">Pregunta de Negocio</th>
+                  <th class="py-3 px-3">GA4 recién instalado (por defecto)</th>
+                  <th class="py-3 pl-3 text-emerald-400">GA4 configurado por Erik Website</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10 text-neutral-200">
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">¿Cuánta gente tocó el botón de WhatsApp?</td>
+                  <td class="py-3 px-3 text-amber-300">No lo distingue como conversión</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-bold">Mide cada clic con evento generate_lead</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">¿Qué artículo o anuncio trajo la consulta?</td>
+                  <td class="py-3 px-3 text-neutral-400">Solo muestra visitas generales</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-bold">Informa la URL exacta y el botón presionado</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">¿Cuántas visitas vienen de ChatGPT / IA?</td>
+                  <td class="py-3 px-3 text-neutral-400">Mezcladas en tráfico de referencia</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-bold">Segmentadas por motor de IA y orgánico</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">¿Frena la carga del celular?</td>
+                  <td class="py-3 px-3 text-amber-300">Sí, si se pega bloqueante en el head</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-bold">Carga diferida no bloqueante (0 ms de freno)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Cómo cruzar GA4 con Google Search Console e Instagram para decidir dónde invertir
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Cuando vinculás tu propiedad de GA4 con Google Search Console dentro del panel de administración, pasás de adivinar a tener una radiografía exacta: podés ver qué palabras clave trajeron visitas desde el buscador, qué porcentaje provino de tus historias de Instagram y qué páginas convirtieron mejor en WhatsApp. Si hoy tenés visitas o clics pagos pero tu teléfono no suena, revisá también nuestro diagnóstico sobre <a href="/blog/anuncios-instagram-facebook-clics-sin-ventas-whatsapp/" class="text-emerald-700 font-semibold hover:underline">por qué tus anuncios de Instagram tienen clics pero no generan ventas</a>.
+        </p>
+        
+
+        <!-- CTA COMERCIAL AUDITORÍA SEO Y DESARROLLO -->
+        <div class="my-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-emerald-950 via-neutral-900 to-neutral-950 text-white border border-emerald-500/30 shadow-xl">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-2">
+            Diagnóstico Técnico sin Cargo · San Juan y Toda Argentina
+          </span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
+            ¿Querés que pasemos tu web por nuestro escáner SEO o armemos tu página desde cero?
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
+            Pasame el link de tu sitio actual por WhatsApp para recibir un diagnóstico técnico honesto de velocidad, indexación y palabras clave en Google, o consultá por una Landing Page nueva en código limpio por <strong>$150.000 ARS finales</strong> lista en 3 a 5 días hábiles.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3.5">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20art%C3%ADculo%20sobre%20como-instalar-google-analytics-4-ga4-medir-clics-whatsapp%20y%20quiero%20hacerte%20una%20consulta%20para%20mi%20web."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold text-sm transition-all shadow-lg">
+              Escribirme por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-12 mb-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-3 my-6">
+          <details name="faq-accordion" open class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Google Analytics 4 es gratis en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Sí, la plataforma estándar de Google Analytics 4 es 100% gratuita y sin límite práctico para PyMEs, profesionales y tiendas online. Solo necesitás una cuenta de Google para crear la propiedad y vincularla con tu dominio.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué mis clics en anuncios de Instagram no coinciden con las visitas en GA4?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Suele ocurrir por dos motivos: primero, si tu página tarda más de 4 segundos en abrir dentro del navegador interno de Instagram, el usuario cierra antes de que cargue el script de GA4; segundo, si el Píxel o el código de GA4 se disparan mal al inicio.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo marco el clic a WhatsApp como Evento Clave (Conversión) en GA4?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Una vez que nuestra configuración empieza a enviar el evento 'generate_lead' o 'whatsapp_click' al hacer clic en tus botones de WhatsApp, entrás en GA4 a Administrar > Eventos y activás la llave 'Marcar como evento clave' junto a ese nombre.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Ustedes entregan las páginas web y auditorías SEO con GA4 ya configurado?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Sí. Tanto en nuestros desarrollos web desde $150.000 ARS como en nuestro servicio de Auditoría y Optimización SEO para sitios existentes, dejamos instalado y verificado Google Analytics 4, Google Search Console y el Píxel de Meta midiendo clics reales a WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

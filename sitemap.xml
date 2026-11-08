@@ -1008,4 +1008,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/seo-para-abogados-estudios-juridicos-argentina-google/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>

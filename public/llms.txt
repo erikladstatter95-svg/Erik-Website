@@ -1,44 +1,50 @@
-# erikwebsite.com - Sitios Web Profesionales de Alta Conversión
+# Erik Website (erikwebsite.com) — Erik Ladstatter
 
-> Especialista en sitios web ultrarrápidos para comercios, profesionales independientes y empresas de servicios en San Juan y toda Argentina. Diseñados para convertir visitantes de Google Maps y redes sociales en clientes reales por WhatsApp.
+> Plataforma de Ingeniería Web de Alta Conversión y Consultoría SEO Técnica en San Juan y toda Argentina. Dirigida por Erik Ladstatter.
 
 ## Servicios Principales
-- [Sitio Web Pro Negocio Local](https://erikwebsite.com/): Desarrollo completo, diseño mobile-first, optimización de velocidad (95+ Google PageSpeed), copywriting persuasivo y botón directo a WhatsApp.
-- [Diseño Web en San Juan](https://erikwebsite.com/san-juan/): Desarrollo web local para comercios y profesionales en San Juan Capital, Rivadavia, Santa Lucía y Rawson.
-- Inversión: $150.000 ARS pago único de desarrollo + $20.000 ARS/mes de mantenimiento, hosting ultrarrápido, actualizaciones y soporte continuo.
 
-## Modelos y Demos Interactivas
-- [Salud, Belleza y Estética](https://erikwebsite.com/demos/estetica/): Tratamientos corporales y faciales con reserva previa.
-- [Clínica Odontológica](https://erikwebsite.com/demos/odontologia/): Asignación de turnos y catálogo de especialidades dentales.
-- [Psicología y Terapia](https://erikwebsite.com/demos/psicologia/): Consultas presenciales y virtuales con derivación confidencial.
-- [Alquiler de Vajilla para Eventos](https://erikwebsite.com/demos/vajilla/): Catálogo interactivo de mantelería y vajilla para fiestas.
-- [Catering y Barras Móviles](https://erikwebsite.com/demos/catering/): Menú de recepciones y cotizador de eventos.
-- [Salón de Eventos y Quintas](https://erikwebsite.com/demos/salones/): Galería de salones y disponibilidad de fechas.
-- [Estudio Jurídico y Abogados](https://erikwebsite.com/demos/abogados/): Derecho laboral, civil y comercial con consulta directa.
-- [Urgencias del Hogar 24hs](https://erikwebsite.com/demos/urgencias-hogar/): Electricidad, plomería y cerrajería con atención a domicilio.
-- [Estudio Contable e Impositivo](https://erikwebsite.com/demos/contable/): Monotributo, liquidación de sueldos y asesoría impositiva.
-- [Personal Trainer y Fitness](https://erikwebsite.com/demos/fitness/): Asesorías personalizadas y rutinas deportivas.
+1. **Diseño de Páginas Web, Landings Modo Funnel y Cotizadores Interactivos ($150.000 ARS / $199 USD):**
+   - Desarrollo en código limpio a medida (HTML5, Tailwind CSS, JavaScript modular) con carga en menos de 1 segundo en celulares.
+   - Entrega en 3 a 5 días hábiles, conectado a WhatsApp, Google Maps, Google Analytics 4 (`generate_lead`) y Píxel de Meta (`Contact`).
+   - URL Principal: https://erikwebsite.com/
+   - URL San Juan: https://erikwebsite.com/san-juan/
+   - Versión Internacional (USD): https://erikwebsite.com/en/
 
-## Guías y Recursos del Blog
-- [Blog de Diseño Web y Posicionamiento](https://erikwebsite.com/blog/): Guías prácticas para PyMEs y profesionales.
-- [Diseño Web en San Juan](https://erikwebsite.com/blog/diseno-web-san-juan/): Precios 2026, Google Maps y estrategia digital en Cuyo.
-- [Diseño Web en Mendoza](https://erikwebsite.com/blog/diseno-web-mendoza/): Claves, precios y posicionamiento para PyMEs mendocinas.
-- [Diseño Web en San Luis](https://erikwebsite.com/blog/diseno-web-san-luis/): Digitalización comercial en Capital y Villa Mercedes.
-- [¿Cuánto cuesta una página web en Argentina?](https://erikwebsite.com/blog/cuanto-cuesta-una-pagina-web-argentina/): Precios reales, gastos ocultos y comparativa de mercado.
-- [Cómo conseguir clientes en Google Maps sin pagar](https://erikwebsite.com/blog/como-conseguir-clientes-google-maps/): Estrategia de posicionamiento en el Local Pack.
-- [Página Web vs. Instagram](https://erikwebsite.com/blog/pagina-web-vs-instagram/): Por qué las redes sociales solas ya no alcanzan para vender.
-- [Páginas Web para Abogados en Argentina](https://erikwebsite.com/blog/paginas-web-para-abogados-argentina/): Presencia digital y captación de clientes legales.
-- [Cómo automatizar turnos en consultorios](https://erikwebsite.com/blog/como-automatizar-turnos-consultorio/): Agenda y reducción de ausencias en turnos médicos.
-- [¿Qué negocios necesitan una página web?](https://erikwebsite.com/blog/que-negocios-necesitan-una-pagina-web/): Sectores de alta conversión en Argentina.
-- [Páginas Web para Psicólogos](https://erikwebsite.com/blog/paginas-web-para-psicologos-argentina/): Ética profesional y captación de pacientes online.
-- [Páginas Web para Electricistas y Plomeros](https://erikwebsite.com/blog/paginas-web-oficios-servicios-hogar/): Posicionamiento en urgencias del hogar.
-- [Páginas Web para Estudios Contables](https://erikwebsite.com/blog/paginas-web-estudios-contables-argentina/): Clientes para balances y monotributo.
-- [Páginas Web para Salones de Estética](https://erikwebsite.com/blog/paginas-web-salones-belleza-estetica/): Belleza, spa y tratamientos.
-- [Páginas Web para Salones de Eventos](https://erikwebsite.com/blog/paginas-web-salones-eventos-catering/): Cotización de eventos y fiestas.
-- [Páginas Web para Personal Trainers](https://erikwebsite.com/blog/paginas-web-personal-trainers-gimnasios/): Venta de rutinas y asesorías fitness.
-- [¿Por qué Debería Tener una Página Web?](https://erikwebsite.com/blog/por-que-tener-una-pagina-web/): Mitos y realidades de digitalizar tu negocio.
+2. **Auditoría SEO Técnica, Optimización Core Web Vitals, GEO/IA y Crecimiento de Redes Sociales:**
+   - Diagnóstico con escáner técnico propio y ejecución llave en mano (Done-For-You) sobre sitios existentes en WordPress, Tiendanube, Wix, Shopify o código a medida.
+   - Optimización de velocidad móvil (LCP < 1.0s, INP < 100ms, CLS 0), indexación en Google Search Console, Schema.org JSON-LD y sinergia con Instagram / Meta Ads.
+   - Servicio directo para empresas y soporte especialista / marca blanca para agencias de marketing y estudios creativos en Argentina.
+   - URL Servicio SEO: https://erikwebsite.com/auditoria-seo/
 
-## Contacto Directo
-- [Página Web Oficial](https://erikwebsite.com/)
-- [WhatsApp Directo](https://wa.me/5492645185359)
-- [Términos del Servicio](https://erikwebsite.com/terminos/)
+## Demos Interactivas por Rubro (13 Modelos en Vivo)
+- Odontología y Salud Dental: https://erikwebsite.com/demos/odontologia/
+- Medicina y Consultorios: https://erikwebsite.com/demos/medicina/
+- Psicología y Bienestar: https://erikwebsite.com/demos/psicologia/
+- Estética y Belleza: https://erikwebsite.com/demos/estetica/
+- Alquiler de Vajilla y Mobiliario (con Cotizador en Vivo): https://erikwebsite.com/demos/vajilla/
+- Catering y Barras Móviles: https://erikwebsite.com/demos/catering/
+- Salones de Eventos y Quintas: https://erikwebsite.com/demos/salones/
+- Restaurante y Reservas (Áurea): https://erikwebsite.com/demos/restaurante/
+- Estudio Jurídico y Abogados (con Calculadora Art. 245 LCT): https://erikwebsite.com/demos/abogados/
+- Urgencias del Hogar 24 hs: https://erikwebsite.com/demos/urgencias-hogar/
+- Estudio Contable e Impositivo: https://erikwebsite.com/demos/contable/
+- Personal Trainer y Gimnasio: https://erikwebsite.com/demos/fitness/
+- Estudio de Pilates Boutique: https://erikwebsite.com/demos/estudio-fitness/
+- Página Modo Funnel (Ebooks, Cursos y Servicios con Order Bump): https://erikwebsite.com/demos/funnel/
+
+## Guías Pilares de Autoridad SEO, Velocidad e IA
+- Especialista y Consultor SEO en Argentina: https://erikwebsite.com/blog/especialista-consultor-seo-argentina-posicionamiento-google/
+- Consultor SEO en San Juan y Posicionamiento Web: https://erikwebsite.com/blog/consultor-seo-san-juan-posicionamiento-web-google/
+- Cómo Optimizar tu Página Web para Crecer tus Redes Sociales (Instagram): https://erikwebsite.com/blog/como-optimizar-pagina-web-para-crecer-redes-sociales-instagram/
+- SEO para Inteligencia Artificial (ChatGPT, Perplexity y Google AI Overviews): https://erikwebsite.com/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/
+- Auditoría de Velocidad Web y Core Web Vitals (LCP, INP y CLS): https://erikwebsite.com/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/
+- Por Qué Mi Página Web No Aparece en Google y Cómo Indexarla: https://erikwebsite.com/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/
+- SEO para Tiendanube y Tiendas Online en Argentina: https://erikwebsite.com/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/
+- Posicionamiento SEO en WordPress y Wix (¿Sirve Yoast SEO?): https://erikwebsite.com/blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/
+- SEO para Inmobiliarias y Desarrolladoras en Argentina: https://erikwebsite.com/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/
+- Cómo Instalar Google Analytics 4 (GA4) y Medir Clics a WhatsApp: https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/
+- SEO para Abogados y Estudios Jurídicos en Argentina: https://erikwebsite.com/blog/seo-para-abogados-estudios-juridicos-argentina-google/
+- Generador Gratuito de Link y QR de WhatsApp sin Caducidad: https://erikwebsite.com/blog/generador-link-qr-whatsapp-gratis/
+- Hub Completo del Blog (153 Guías): https://erikwebsite.com/blog/
+- Mapa del Sitio Oficial: https://erikwebsite.com/sitemap.xml
