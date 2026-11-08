@@ -316,31 +316,25 @@
             Paso a paso: Correo corporativo gratis en Gmail (Cloudflare + App Password)
           </h3>
           <ol class="space-y-3 text-sm text-slate-700">
-            <li>
-              <strong>Paso 1 (Recibir correos con Cloudflare Email Routing):</strong> Entrá a tu panel de Cloudflare, seleccioná tu dominio y abrí la pestaña <em>Email → Email Routing</em>. Creá tu dirección personalizada (por ejemplo, <code><!--email_off-->contacto@tunegocio.com<!--/email_off--></code>) y elegí que reenvíe todos los mensajes hacia tu cuenta de Gmail habitual. Cloudflare agregará automáticamente los registros <code>MX</code> y <code>SPF</code> necesarios.
+            <li><strong>Paso 1 (Recibir correos con Cloudflare Email Routing):</strong> Entrá a tu panel de Cloudflare, seleccioná tu dominio y abrí la pestaña <em>Email → Email Routing</em>. Creá tu dirección personalizada (por ejemplo, <code><!--email_off-->contacto@tunegocio.com<!--/email_off--></code>) y elegí que reenvíe todos los mensajes hacia tu cuenta de Gmail habitual. Cloudflare agregará automáticamente los registros <code>MX</code> y <code>SPF</code> necesarios.
             </li>
-            <li>
-              <strong>Paso 2 (Crear una Contraseña de Aplicación en Google):</strong> Entrá a la seguridad de tu cuenta de Google (<code>myaccount.google.com/security</code>), asegurate de tener activa la <em>Verificación en 2 pasos</em> y buscá <strong>"Contraseñas de aplicaciones" (App Passwords)</strong>. Generá una clave nueva con el nombre "Correo Corporativo" y copiá el código de <strong>16 letras</strong> que te muestra Google.
+            <li><strong>Paso 2 (Crear una Contraseña de Aplicación en Google):</strong> Entrá a la seguridad de tu cuenta de Google (<code>myaccount.google.com/security</code>), asegurate de tener activa la <em>Verificación en 2 pasos</em> y buscá <strong>"Contraseñas de aplicaciones" (App Passwords)</strong>. Generá una clave nueva con el nombre "Correo Corporativo" y copiá el código de <strong>16 letras</strong> que te muestra Google.
             </li>
-            <li>
-              <strong>Paso 3 (Agregar "Enviar mensaje como" en Gmail):</strong> En tu Gmail de computadora, entrá a <em>Configuración → Ver todos los ajustes → Cuentas e importación → Añadir otra dirección de correo electrónico</em>. Escribí tu nombre comercial y tu correo <code>@tunegocio.com</code> (destildando "Tratar como un alias").
+            <li><strong>Paso 3 (Agregar "Enviar mensaje como" en Gmail):</strong> En tu Gmail de computadora, entrá a <em>Configuración → Ver todos los ajustes → Cuentas e importación → Añadir otra dirección de correo electrónico</em>. Escribí tu nombre comercial y tu correo <code>@tunegocio.com</code> (destildando "Tratar como un alias").
             </li>
-            <li>
-              <strong>Paso 4 (Conectar el SMTP oficial de Gmail):</strong> En la ventana de servidor saliente colocá:
+            <li><strong>Paso 4 (Conectar el SMTP oficial de Gmail):</strong> En la ventana de servidor saliente colocá:
               <ul class="mt-2 ml-4 space-y-1 text-xs sm:text-sm bg-slate-50 p-3 rounded-xl border border-slate-200 font-mono">
                 <li>• Servidor SMTP: <strong>smtp.gmail.com</strong> (Puerto: <strong>587</strong> - TLS)</li>
                 <li>• Nombre de usuario: <strong>tu dirección @gmail.com completa</strong></li>
                 <li>• Contraseña: <strong>las 16 letras de la Contraseña de Aplicación</strong> (sin espacios)</li>
               </ul>
             </li>
-            <li>
-              <strong>Paso 5 (Actualizar el registro SPF en Cloudflare):</strong> Para que Gmail autorice el envío limpio, entrá a los DNS de Cloudflare, editá el registro <code>TXT</code> de SPF y agregá <code>include:_spf.google.com</code> para que quede así: <code>v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all</code>.
+            <li><strong>Paso 5 (Actualizar el registro SPF en Cloudflare):</strong> Para que Gmail autorice el envío limpio, entrá a los DNS de Cloudflare, editá el registro <code>TXT</code> de SPF y agregá <code>include:_spf.google.com</code> para que quede así: <code>v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all</code>.
             </li>
           </ol>
         </div>
 
-        <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-900">
-          <strong>Consejo técnico importante:</strong> Evitá usar servidores SMTP de plataformas de email marketing masivo (como Brevo o Mailgun) para tu correo personal diario en Gmail, ya que suelen reescribir los enlaces de tu firma con dominios de rastreo que generan alertas de certificado SSL en los navegadores de tus clientes. Usar <code>smtp.gmail.com</code> mantiene tus links limpios y directos.
+        <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-900"><strong>Consejo técnico importante:</strong> Evitá usar servidores SMTP de plataformas de email marketing masivo (como Brevo o Mailgun) para tu correo personal diario en Gmail, ya que suelen reescribir los enlaces de tu firma con dominios de rastreo que generan alertas de certificado SSL en los navegadores de tus clientes. Usar <code>smtp.gmail.com</code> mantiene tus links limpios y directos.
         </div>
 
         <!-- TABLA COMPARATIVA -->
@@ -436,7 +430,7 @@
         </div>
 
       </div>
-          <div class="mt-8"><p class="mt-4 p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 text-sm text-slate-700">💡 <strong>¿Venís de DonWeb o cPanel?</strong> Mirá nuestra comparativa sobre <a href="/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Ferozo Webmail y Roundcube vs. Gmail y Outlook corporativo</a> para salir del correo lento y sin espacio.</p></div>
+          <div class="mt-8"><p class="mt-4 p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 text-sm text-slate-700"><strong>¿Venís de DonWeb o cPanel?</strong> Mirá nuestra comparativa sobre <a href="/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Ferozo Webmail y Roundcube vs. Gmail y Outlook corporativo</a> para salir del correo lento y sin espacio.</p></div>
     </article>
   </main>
 

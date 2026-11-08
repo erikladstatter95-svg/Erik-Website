@@ -213,21 +213,21 @@
           </div>
 
           <!-- PÍLDORAS DE ACCESO RÁPIDO (SEPARACIÓN DISEÑO WEB VS ESPECIALISTA SEO) -->
-          <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
-            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='all';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-neutral-900 text-white hover:bg-neutral-800 transition-all cursor-pointer">
+          <div id="blog-quick-pills" class="flex flex-wrap items-center justify-center gap-2 mt-4">
+            <button type="button" data-cat-pill="all" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-emerald-600 text-white border-emerald-600 shadow-xs">
               Todas las Guías
             </button>
-            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='seo';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-all cursor-pointer">
-              ⚡ Especialista SEO, Velocidad e IA
+            <button type="button" data-cat-pill="seo" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-white text-neutral-700 border-black/[0.08] hover:border-emerald-500/40 hover:text-emerald-700">
+              Especialista SEO, Velocidad e IA
             </button>
-            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='redes';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-neutral-700 border border-black/[0.08] hover:bg-neutral-50 transition-all cursor-pointer">
-              📈 Redes Sociales y Meta Ads
+            <button type="button" data-cat-pill="redes" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-white text-neutral-700 border-black/[0.08] hover:border-emerald-500/40 hover:text-emerald-700">
+              Redes Sociales y Meta Ads
             </button>
-            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='maps';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-neutral-700 border border-black/[0.08] hover:bg-neutral-50 transition-all cursor-pointer">
-              📍 Google Maps, Provincias y Zonas
+            <button type="button" data-cat-pill="maps" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-white text-neutral-700 border-black/[0.08] hover:border-emerald-500/40 hover:text-emerald-700">
+              Google Maps, Provincias y Zonas
             </button>
-            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='precios';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-neutral-700 border border-black/[0.08] hover:bg-neutral-50 transition-all cursor-pointer">
-              💻 Diseño Web y Precios
+            <button type="button" data-cat-pill="precios" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-white text-neutral-700 border-black/[0.08] hover:border-emerald-500/40 hover:text-emerald-700">
+              Diseño Web y Precios
             </button>
           </div>
 
@@ -288,7 +288,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                    ⚡ Herramienta Gratis
+                     Herramienta Gratis
                   </span>
                   <span class="text-xs text-neutral-400">Uso + Guía: 5 min</span>
                 </div>
@@ -329,7 +329,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="text-xs font-semibold text-emerald-800 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                    🚀 Funnels & Infoproductos
+                     Funnels & Infoproductos
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 7 min</span>
                 </div>
@@ -3363,7 +3363,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <span class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                    🚀 Para Webs Existentes
+                     Para Webs Existentes
                   </span>
                   <span class="text-xs text-neutral-400">Lectura: 6 min</span>
                 </div>
@@ -6506,7 +6506,37 @@
         });
       }
 
+      const catPills = Array.from(document.querySelectorAll('[data-cat-pill]'));
+
+      function updateCategoryPills(activeCat) {
+        catPills.forEach(pill => {
+          const pillCat = pill.getAttribute('data-cat-pill');
+          if (pillCat === activeCat) {
+            pill.className = 'cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-emerald-600 text-white border-emerald-600 shadow-xs scale-[1.02]';
+            pill.setAttribute('aria-pressed', 'true');
+          } else {
+            pill.className = 'cat-pill px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-150 cursor-pointer bg-white text-neutral-700 border-black/[0.08] hover:border-emerald-500/40 hover:text-emerald-700';
+            pill.setAttribute('aria-pressed', 'false');
+          }
+        });
+      }
+
+      catPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          const targetCat = pill.getAttribute('data-cat-pill') || 'all';
+          if (catSelect) {
+            catSelect.value = targetCat;
+            catSelect.dispatchEvent(new Event('change'));
+          } else {
+            currentCategory = targetCat;
+            updateCategoryPills(currentCategory);
+            filterArticles(true);
+          }
+        });
+      });
+
       function filterArticles(resetPage = true) {
+        updateCategoryPills(currentCategory);
         if (resetPage) {
           currentPage = 1;
         }
