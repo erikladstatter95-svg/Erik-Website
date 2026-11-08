@@ -212,6 +212,25 @@
             </div>
           </div>
 
+          <!-- PÍLDORAS DE ACCESO RÁPIDO (SEPARACIÓN DISEÑO WEB VS ESPECIALISTA SEO) -->
+          <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='all';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-neutral-900 text-white hover:bg-neutral-800 transition-all cursor-pointer">
+              Todas las Guías
+            </button>
+            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='seo';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-all cursor-pointer">
+              ⚡ Especialista SEO, Velocidad e IA
+            </button>
+            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='redes';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-neutral-700 border border-black/[0.08] hover:bg-neutral-50 transition-all cursor-pointer">
+              📈 Redes Sociales y Meta Ads
+            </button>
+            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='maps';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-neutral-700 border border-black/[0.08] hover:bg-neutral-50 transition-all cursor-pointer">
+              📍 Google Maps, Provincias y Zonas
+            </button>
+            <button type="button" onclick="const s=document.getElementById('blog-cat-select');s.value='precios';s.dispatchEvent(new Event('change'));" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-neutral-700 border border-black/[0.08] hover:bg-neutral-50 transition-all cursor-pointer">
+              💻 Diseño Web y Precios
+            </button>
+          </div>
+
           <!-- SELECTOR DESPLEGABLE DE CATEGORÍAS (APPLE DROPDOWN) -->
           <div class="flex items-center justify-center gap-3 mt-5 flex-wrap">
             <label for="blog-cat-select" class="text-xs font-medium text-neutral-500 flex items-center gap-1.5">
@@ -220,7 +239,8 @@
             </label>
             <div class="relative inline-block">
               <select id="blog-cat-select" class="appearance-none bg-white border border-black/[0.08] hover:border-black/[0.15] text-neutral-800 text-xs font-semibold py-2 pl-4 pr-9 rounded-full shadow-2xs focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all cursor-pointer">
-                <option value="all">Todas las categorías (141)</option>
+                <option value="all">Todas las categorías (147)</option>
+                <option value="seo">Auditoría SEO, Velocidad e IA (10)</option>
                 <option value="precios">Precios y Presupuestos (27)</option>
                 <option value="maps">Google Maps y Posicionamiento Local (26)</option>
                 <option value="servicios">Servicios Profesionales y Salud (12)</option>
@@ -248,14 +268,14 @@
           <h2 class="font-display font-bold text-xl sm:text-2xl text-neutral-900">
             Artículos y Guías Destacadas
           </h2>
-          <span id="articles-counter" class="text-xs text-neutral-500 font-medium">Mostrando 141 guías</span>
+          <span id="articles-counter" class="text-xs text-neutral-500 font-medium">Mostrando 147 guías</span>
         </div>
 
         <!-- GRID DE ARTÍCULOS -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
           <!-- HERRAMIENTA DESTACADA: Generador de Link y QR de WhatsApp Gratis -->
           <article class="blog-card bg-white rounded-3xl border-2 border-emerald-500/30 shadow-xs hover:shadow-lg hover:border-emerald-500/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-                   data-cat="redes"
+                   data-cat="seo"
                    data-title="Generador de link y QR de WhatsApp gratis sin caducidad crear link de whatsapp con mensaje personalizado instagram wa.me"
                    data-desc="Herramienta gratuita online para crear tu link de WhatsApp con mensaje predeterminado y descargar tu código QR en alta calidad sin vencimiento">
             <div>
@@ -335,7 +355,253 @@
             </div>
           </article>
 
-                                                                      <!-- ARTÍCULO BATCH 14: ferozo-webmail-roundcube-vs-gmail-outlook-corporativo -->
+                                                                                <!-- ARTÍCULO BATCH 15: consultor-seo-san-juan-posicionamiento-web-google -->
+          <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                   data-cat="seo"
+                   data-title="Consultor SEO en San Juan: Posicionamiento Web en Google, Auditoría Técnica y Crecimiento para Redes San Juan · Posicionamiento SEO y Redes"
+                   data-desc="Especialista y consultor SEO en San Juan. Auditoría SEO técnica, posicionamiento en Google Maps y optimización web para multiplicar las ventas de tus redes.">
+            <div>
+              <a href="/blog/consultor-seo-san-juan-posicionamiento-web-google/" class="block overflow-hidden bg-neutral-100 border-b border-black/[0.04]">
+                <img src="/images/guia_consultor_seo_san_juan.png" 
+                     alt="Oficina de consultoría SEO en San Juan Argentina con gráficos de Google Search Console en alza y posicionamiento #1 en Google Maps" 
+                     class="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                     loading="lazy" width="1200" height="675">
+              </a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                    Auditoría SEO, Velocidad e IA
+                  </span>
+                  <span class="text-xs text-neutral-400">Lectura: 8 min</span>
+                </div>
+
+                <h3 class="font-display font-bold text-xl text-neutral-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
+                  <a href="/blog/consultor-seo-san-juan-posicionamiento-web-google/">
+                    Consultor SEO en San Juan: Posicionamiento Web en Google, Auditoría Técnica y Crecimiento para Redes
+                  </a>
+                </h3>
+
+                <p class="text-neutral-600 text-sm leading-relaxed font-light mb-4">
+                  Especialista y consultor SEO en San Juan. Auditoría SEO técnica, posicionamiento en Google Maps y optimización web para multiplicar las ventas de tus redes.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+              <span class="text-xs text-neutral-500">Por Erik Ladstatter</span>
+              <a href="/blog/consultor-seo-san-juan-posicionamiento-web-google/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Leer guía</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTÍCULO BATCH 15: especialista-consultor-seo-argentina-posicionamiento-google -->
+          <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                   data-cat="seo"
+                   data-title="Especialista y Consultor SEO en Argentina: Cómo Subir al Primer Lugar de Google con Ingeniería Real SEO Técnico en Argentina · Posicionamiento y Conversión"
+                   data-desc="Especialista y consultor SEO en Argentina. Ingeniería SEO técnica, Core Web Vitals, posicionamiento en Google e IA y optimización de conversión para empresas.">
+            <div>
+              <a href="/blog/especialista-consultor-seo-argentina-posicionamiento-google/" class="block overflow-hidden bg-neutral-100 border-b border-black/[0.04]">
+                <img src="/images/guia_especialista_seo_argentina.png" 
+                     alt="Estación de trabajo de un especialista y consultor SEO en Argentina mostrando curvas de tráfico orgánico en ascenso y código limpio optimizado" 
+                     class="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                     loading="lazy" width="1200" height="675">
+              </a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                    Auditoría SEO, Velocidad e IA
+                  </span>
+                  <span class="text-xs text-neutral-400">Lectura: 9 min</span>
+                </div>
+
+                <h3 class="font-display font-bold text-xl text-neutral-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
+                  <a href="/blog/especialista-consultor-seo-argentina-posicionamiento-google/">
+                    Especialista y Consultor SEO en Argentina: Cómo Subir al Primer Lugar de Google con Ingeniería Real
+                  </a>
+                </h3>
+
+                <p class="text-neutral-600 text-sm leading-relaxed font-light mb-4">
+                  Especialista y consultor SEO en Argentina. Ingeniería SEO técnica, Core Web Vitals, posicionamiento en Google e IA y optimización de conversión para empresas.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+              <span class="text-xs text-neutral-500">Por Erik Ladstatter</span>
+              <a href="/blog/especialista-consultor-seo-argentina-posicionamiento-google/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Leer guía</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTÍCULO BATCH 15: como-optimizar-pagina-web-para-crecer-redes-sociales-instagram -->
+          <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                   data-cat="seo"
+                   data-title="Cómo Optimizar tu Página Web para Hacer Crecer tus Redes Sociales y Duplicar tus Ventas de Instagram SEO + Redes Sociales · Conversión y Píxel"
+                   data-desc="Descubrí cómo la optimización SEO y la velocidad de tu página web hacen crecer tus redes sociales, mejoran el algoritmo de Instagram y duplican tus ventas.">
+            <div>
+              <a href="/blog/como-optimizar-pagina-web-para-crecer-redes-sociales-instagram/" class="block overflow-hidden bg-neutral-100 border-b border-black/[0.04]">
+                <img src="/images/guia_optimizar_web_crecer_redes_instagram.png" 
+                     alt="Smartphone mostrando perfil de Instagram Reels junto a laptop con página web ultrarrápida, gráfico de Píxel de Meta y consultas en WhatsApp" 
+                     class="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                     loading="lazy" width="1200" height="675">
+              </a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                    Auditoría SEO, Velocidad e IA
+                  </span>
+                  <span class="text-xs text-neutral-400">Lectura: 8 min</span>
+                </div>
+
+                <h3 class="font-display font-bold text-xl text-neutral-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
+                  <a href="/blog/como-optimizar-pagina-web-para-crecer-redes-sociales-instagram/">
+                    Cómo Optimizar tu Página Web para Hacer Crecer tus Redes Sociales y Duplicar tus Ventas de Instagram
+                  </a>
+                </h3>
+
+                <p class="text-neutral-600 text-sm leading-relaxed font-light mb-4">
+                  Descubrí cómo la optimización SEO y la velocidad de tu página web hacen crecer tus redes sociales, mejoran el algoritmo de Instagram y duplican tus ventas.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+              <span class="text-xs text-neutral-500">Por Erik Ladstatter</span>
+              <a href="/blog/como-optimizar-pagina-web-para-crecer-redes-sociales-instagram/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Leer guía</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTÍCULO BATCH 15: seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google -->
+          <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                   data-cat="seo"
+                   data-title="SEO para Inteligencia Artificial (AEO y GEO) en Argentina: Cómo Aparecer en ChatGPT, Perplexity y Google AI Overviews SEO Avanzado · AEO, GEO e Inteligencia Artificial"
+                   data-desc="Guía técnica de SEO para Inteligencia Artificial (AEO y GEO) en Argentina: cómo lograr que ChatGPT, Perplexity, Gemini y Google AI Overviews recomienden tu web.">
+            <div>
+              <a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/" class="block overflow-hidden bg-neutral-100 border-b border-black/[0.04]">
+                <img src="/images/guia_seo_inteligencia_artificial_chatgpt_geo.png" 
+                     alt="Laptop ejecutiva mostrando un motor de respuestas de inteligencia artificial citando y recomendando una página web empresarial en Argentina" 
+                     class="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                     loading="lazy" width="1200" height="675">
+              </a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                    Auditoría SEO, Velocidad e IA
+                  </span>
+                  <span class="text-xs text-neutral-400">Lectura: 9 min</span>
+                </div>
+
+                <h3 class="font-display font-bold text-xl text-neutral-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
+                  <a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/">
+                    SEO para Inteligencia Artificial (AEO y GEO) en Argentina: Cómo Aparecer en ChatGPT, Perplexity y Google AI Overviews
+                  </a>
+                </h3>
+
+                <p class="text-neutral-600 text-sm leading-relaxed font-light mb-4">
+                  Guía técnica de SEO para Inteligencia Artificial (AEO y GEO) en Argentina: cómo lograr que ChatGPT, Perplexity, Gemini y Google AI Overviews recomienden tu web.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+              <span class="text-xs text-neutral-500">Por Erik Ladstatter</span>
+              <a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Leer guía</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTÍCULO BATCH 15: auditoria-velocidad-web-core-web-vitals-lcp-inp-google -->
+          <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                   data-cat="seo"
+                   data-title="Auditoría de Velocidad Web y Core Web Vitals (LCP e INP): Por Qué una Web Lenta Frena tu SEO y tus Ventas Rendimiento Web · Core Web Vitals (LCP / INP / CLS)"
+                   data-desc="Cómo optimizar la velocidad de carga de tu página web en Argentina y aprobar Core Web Vitals (LCP, INP y CLS) en Google para subir posiciones y vender más.">
+            <div>
+              <a href="/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/" class="block overflow-hidden bg-neutral-100 border-b border-black/[0.04]">
+                <img src="/images/guia_auditoria_velocidad_core_web_vitals.png" 
+                     alt="Monitor de ingeniería web mostrando un puntaje verde 99/100 en Core Web Vitals y cascada de carga inferior a 1 segundo junto a un celular" 
+                     class="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                     loading="lazy" width="1200" height="675">
+              </a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                    Auditoría SEO, Velocidad e IA
+                  </span>
+                  <span class="text-xs text-neutral-400">Lectura: 8 min</span>
+                </div>
+
+                <h3 class="font-display font-bold text-xl text-neutral-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
+                  <a href="/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/">
+                    Auditoría de Velocidad Web y Core Web Vitals (LCP e INP): Por Qué una Web Lenta Frena tu SEO y tus Ventas
+                  </a>
+                </h3>
+
+                <p class="text-neutral-600 text-sm leading-relaxed font-light mb-4">
+                  Cómo optimizar la velocidad de carga de tu página web en Argentina y aprobar Core Web Vitals (LCP, INP y CLS) en Google para subir posiciones y vender más.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+              <span class="text-xs text-neutral-500">Por Erik Ladstatter</span>
+              <a href="/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Leer guía</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTÍCULO BATCH 15: diseno-web-zona-sur -->
+          <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                   data-cat="maps"
+                   data-title="Diseño de Páginas Web en Zona Sur: Desarrollo Web Rápido y Google Maps para Comercios, Empresas y Profesionales Zona Sur GBA · Provincia de Buenos Aires"
+                   data-desc="Diseño de páginas web en Zona Sur GBA (Avellaneda, Lanús, Lomas de Zamora, Banfield, Quilmes, Bernal y Adrogué): código limpio sub-1s por $150.000 ARS.">
+            <div>
+              <a href="/blog/diseno-web-zona-sur/" class="block overflow-hidden bg-neutral-100 border-b border-black/[0.04]">
+                <img src="/images/guia_diseno_web_zona_sur.png" 
+                     alt="Estudio moderno en Zona Sur del Gran Buenos Aires con vista urbana y laptop mostrando diseño de páginas web y posicionamiento en Google Maps" 
+                     class="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                     loading="lazy" width="1200" height="675">
+              </a>
+              <div class="p-6">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                    Google Maps y Posicionamiento Local
+                  </span>
+                  <span class="text-xs text-neutral-400">Lectura: 8 min</span>
+                </div>
+
+                <h3 class="font-display font-bold text-xl text-neutral-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">
+                  <a href="/blog/diseno-web-zona-sur/">
+                    Diseño de Páginas Web en Zona Sur: Desarrollo Web Rápido y Google Maps para Comercios, Empresas y Profesionales
+                  </a>
+                </h3>
+
+                <p class="text-neutral-600 text-sm leading-relaxed font-light mb-4">
+                  Diseño de páginas web en Zona Sur GBA (Avellaneda, Lanús, Lomas de Zamora, Banfield, Quilmes, Bernal y Adrogué): código limpio sub-1s por $150.000 ARS.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-black/[0.04] flex items-center justify-between">
+              <span class="text-xs text-neutral-500">Por Erik Ladstatter</span>
+              <a href="/blog/diseno-web-zona-sur/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <span>Leer guía</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ARTÍCULO BATCH 14: ferozo-webmail-roundcube-vs-gmail-outlook-corporativo -->
           <article class="blog-card bg-white rounded-3xl border border-black/[0.06] shadow-2xs hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
                    data-cat="dominios"
                    data-title="Ferozo Webmail y Roundcube vs. Gmail / Outlook Corporativo: Cómo Salir del Correo Lento y sin Espacio Correo Corporativo · Ferozo & Roundcube"
@@ -6140,6 +6406,7 @@
       // Sincronizar automáticamente contadores y categorías del desplegable con las tarjetas reales
       if (catSelect && articles.length > 0) {
         const catLabels = {
+          seo: 'Auditoría SEO, Velocidad e IA',
           precios: 'Precios y Presupuestos',
           maps: 'Google Maps y Posicionamiento Local',
           servicios: 'Servicios Profesionales y Salud',

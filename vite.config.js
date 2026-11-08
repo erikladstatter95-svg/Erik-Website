@@ -12,6 +12,12 @@ export default defineConfig({
         // Landing Geo Local y Blog Hub
         geo_san_juan: resolve(__dirname, 'san-juan/index.html'),
         auditoria_seo: resolve(__dirname, 'auditoria-seo/index.html'),
+        blog_b15_consultor_seo_san_juan_posic: resolve(__dirname, 'blog/consultor-seo-san-juan-posicionamiento-web-google/index.html'),
+        blog_b15_especialista_consultor_seo_a: resolve(__dirname, 'blog/especialista-consultor-seo-argentina-posicionamiento-google/index.html'),
+        blog_b15_como_optimizar_pagina_web_pa: resolve(__dirname, 'blog/como-optimizar-pagina-web-para-crecer-redes-sociales-instagram/index.html'),
+        blog_b15_seo_para_inteligencia_artifi: resolve(__dirname, 'blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/index.html'),
+        blog_b15_auditoria_velocidad_web_core: resolve(__dirname, 'blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/index.html'),
+        blog_b15_diseno_web_zona_sur: resolve(__dirname, 'blog/diseno-web-zona-sur/index.html'),
         blog_geo_diseno_web_zona_norte: resolve(__dirname, 'blog/diseno-web-zona-norte/index.html'),
         blog_geo_diseno_web_zona_oeste: resolve(__dirname, 'blog/diseno-web-zona-oeste/index.html'),
         blog_geo_diseno_web_rio_cuarto: resolve(__dirname, 'blog/diseno-web-rio-cuarto/index.html'),

@@ -339,3 +339,16 @@
   - **Bing Webmaster API (`SubmitUrlBatch` / `SubmitFeed`) + Bugfix Extensión Chrome + Panel Visual SerpBear (`localhost:4321`):**
     - Solucionado el bug de `title.includes('')` en `C:\Users\erikl\OneDrive\Desktop\mi-extension-seo\popup.js` que reportaba falso positivo de charset roto en todas las webs.
     - Creado el panel visual local de SerpBear en `http://localhost:4321` (`Abrir_Panel_SerpBear.bat`).
+- [x] **2026-11-08 (Batch 15: Posicionamiento como Especialista SEO en San Juan y Argentina + Sinergia SEO/Redes + Guía Zona Sur GBA):**
+  - **Actualización de [`/auditoria-seo/index.html`](file:///c:/Users/erikl/Downloads/WebErik/auditoria-seo/index.html) y [`/san-juan/index.html`](file:///c:/Users/erikl/Downloads/WebErik/san-juan/index.html):**
+    - En `/auditoria-seo/`: incorporadas la sección **`#redes`** (*"Cómo nuestra optimización SEO hace crecer tus Redes Sociales y duplica tus ventas"* — velocidad sub-1s para enlaces en bio/Reels, Píxel de Meta con evento `Contact` limpio y autoridad cruzada `Schema.org sameAs`) y la sección B2B **`#agencias`** (*"Especialista SEO Técnico para Empresas y Agencias de Marketing en Argentina"*, exhibiendo puntajes verificables `95/100` en `winkstudioar.com` y `92/100` en `erikwebsite.com`).
+    - En `/san-juan/`: presentada la doble propuesta comercial en San Juan (*Servicio #1: Diseño Web Nuevo por $150.000 ARS* y *Servicio #2: Consultor SEO, Posicionamiento en Google y Potenciador de Redes Sociales en San Juan* en `#seo-san-juan`).
+  - **Separación Visual y Categoría Especialista SEO en [`/blog/index.html`](file:///c:/Users/erikl/Downloads/WebErik/blog/index.html):**
+    - Añadida la categoría `seo` (`Auditoría SEO, Velocidad e IA`) y una barra de píldoras de acceso rápido arriba del listado (`Todas las Guías`, `⚡ Especialista SEO, Velocidad e IA`, `📈 Redes Sociales y Meta Ads`, `📍 Google Maps, Provincias y Zonas`, `💻 Diseño Web y Precios`) permitiendo filtrar los artículos técnicos de SEO en 1 clic (`/blog/?cat=seo`) sin dividir la autoridad del dominio.
+  - **6 Artículos Nuevos Publicados (5 de Autoridad Técnica SEO + 1 Zona Metropolitana Reconocible, alcanzando 147 guías activas en `/blog/` y 165 URLs canónicas en `sitemap.xml` y `public/sitemap.xml`):**
+    1. `/blog/consultor-seo-san-juan-posicionamiento-web-google/` (*Consultor SEO en San Juan: Posicionamiento Web en Google, Auditoría Técnica y Crecimiento para Redes*)
+    2. `/blog/especialista-consultor-seo-argentina-posicionamiento-google/` (*Especialista y Consultor SEO en Argentina: Cómo Subir al Primer Lugar de Google con Ingeniería Real*)
+    3. `/blog/como-optimizar-pagina-web-para-crecer-redes-sociales-instagram/` (*Cómo Optimizar tu Página Web para Hacer Crecer tus Redes Sociales y Duplicar tus Ventas de Instagram*)
+    4. `/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/` (*SEO para Inteligencia Artificial (AEO y GEO) en Argentina: Cómo Aparecer en ChatGPT, Perplexity y Google AI Overviews*)
+    5. `/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/` (*Auditoría de Velocidad Web y Core Web Vitals (LCP e INP): Por Qué una Web Lenta Frena tu SEO y tus Ventas*)
+    6. `/blog/diseno-web-zona-sur/` (*Diseño de Páginas Web en Zona Sur GBA: Avellaneda, Lanús, Lomas de Zamora, Banfield, Quilmes, Bernal y Adrogué — Competencia Baja 0 a 17/100 en CSV*)
