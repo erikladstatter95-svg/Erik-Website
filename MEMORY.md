@@ -394,3 +394,12 @@
   - **Artículo Nuevo Lunes (`/blog/paginas-web-distribuidoras-mayoristas/` — Regla #18 Slug de 4 palabras, 0% Canibalización, 0 Emojis):**
     - Publicada la guía *Páginas Web para Distribuidoras y Mayoristas en Argentina: Catálogo Ágil y Pedidos por WhatsApp* con imagen editorial propia (`guia_paginas_web_distribuidoras_mayoristas.png`), enlazada desde `/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` y `/blog/paginas-web-locales-ropa-indumentaria-mayoristas-argentina/`.
     - Alcanzadas **154 guías activas** en `/blog/index.html` y **172 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
+- [x] **2026-11-09 (Resolución de URLs "Página alternativa con canónica adecuada" en GSC + Redirecciones Limpias + 404.html):**
+  - **Diagnóstico de Raíz:** Explicado por qué GSC mostraba 7 URLs no existentes (`/demos/taller/`, `/demos/veterinaria/`, `/demos/inmobiliaria/`, `/demos/arquitectura/`, `/images/`, `/blog/wordpress-vs-codigo-a-medida/`, `/blog/tiendanube-linktree-vs-web-propia/`). El servidor web (Cloudflare/Vercel) al no encontrar archivo estático ni `404.html` devolvía la home `index.html` con HTTP 200 OK y `<link rel="canonical" href="https://erikwebsite.com/">`. Googlebot interpretaba correctamente que esas URLs declaraban como canónica a la home y las excluía como alternativas válidas.
+  - **Corrección de Enlaces Internos:**
+    - Corregido `blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/index.html` (apuntaba a `/blog/wordpress-vs-codigo-a-medida/` en vez de `...-velocidad/`).
+    - Corregidos `diseno-web-quilmes` y `seo-para-inteligencia-artificial` (apuntaban a `...-cual-conviene/` en vez de `...-velocidad/`).
+    - Corregidos `diseno-web-quilmes` y `diseno-web-zona-sur` (apuntaban a `/blog/diseno-web-buenos-aires-gba/` en vez de `/blog/diseno-web-caba-buenos-aires/`). Auditados todos los enlaces internos del sitio con 0 enlaces rotos restantes.
+  - **Redirecciones Dedicadas y 404:**
+    - Creados archivos de redirección con `<meta name="robots" content="noindex, follow">` y canónica a sus destinos reales para los 6 slugs históricos.
+    - Creado `public/404.html` y `404.html` para evitar el fallback silencioso de 200 OK con canónica a la home.
