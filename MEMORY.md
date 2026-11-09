@@ -383,3 +383,14 @@
   - GA4: `56` usuarios activos, 70,8% de engagement rate en Organic Search (el canal de mayor calidad de lectura).
   - Control de Canibalización (`check_cannibalization.py`): Se detectó un 71% de solapamiento en la propuesta preliminar de limpieza de oficinas sobre `/blog/paginas-web-empresas-limpieza-finales-obra-tapizados/`. Aplicando la regla de oro "Actualizar antes que Duplicar", se convirtió en Cirugía de Boost sobre la URL existente y se aprobó para el viernes un nuevo nicho B2B con 0% de canibalización: *Páginas Web para Empresas de Logística, Transporte de Carga y Fletes*.
   - Actualizado [`PLAN_SEMANAL_SEO.md`](file:///c:/Users/erikl/Downloads/WebErik/PLAN_SEMANAL_SEO.md) con la bitácora histórica profunda y la hoja de ruta de Lunes a Sábado (Lunes/Miércoles/Viernes Diseño Web, Martes/Jueves/Sábado SEO).
+- [x] **2026-11-09 (Ejecución del Lunes 9/11 del Plan Semanal — 2 Cirugías Striking Distance + 1 Artículo Nuevo B2B con Slug Corto):**
+  - **Cirugía + Boost 1 (`/blog/paginas-web-para-inmobiliarias-argentina/` — Pos 8.7 en GSC para `'pagina web inmobiliarias'`):**
+    - Acortado el `<title>` de 81 a 57 caracteres (`Páginas Web para Inmobiliarias en Argentina: Precios 2026`) para evitar truncamiento en SERP.
+    - Incorporada la Sección 3 (*Diseño de página web para inmobiliarias vs. Portales y Plantillas lentas*) con tabla comparativa y enlaces bidireccionales hacia `/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/` y `/auditoria-seo/`.
+    - Corregidos enlaces internos hacia `/blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/` y `/demos/funnel/`, y estandarizadas las 4 FAQs con `<details name="faq-accordion">` (trackeado en GA4 con `faq_expand`).
+  - **Cirugía + Boost 2 (`/blog/crear-pagina-web-godaddy-conviene-argentina/` — Pos 16.5 en GSC para `'godaddy argentina'`):**
+    - Acortado el `<title>` de 87 a 56 caracteres (`GoDaddy Argentina 2026: Precios en Dólares y si Conviene`) encabezando con la keyword exacta.
+    - Incorporada la Sección 4 (*Cómo migrar de GoDaddy sin perder tu dominio ni tus correos*) y 4 FAQs con `<details name="faq-accordion">`.
+  - **Artículo Nuevo Lunes (`/blog/paginas-web-distribuidoras-mayoristas/` — Regla #18 Slug de 4 palabras, 0% Canibalización, 0 Emojis):**
+    - Publicada la guía *Páginas Web para Distribuidoras y Mayoristas en Argentina: Catálogo Ágil y Pedidos por WhatsApp* con imagen editorial propia (`guia_paginas_web_distribuidoras_mayoristas.png`), enlazada desde `/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` y `/blog/paginas-web-locales-ropa-indumentaria-mayoristas-argentina/`.
+    - Alcanzadas **154 guías activas** en `/blog/index.html` y **172 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.

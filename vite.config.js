@@ -215,6 +215,7 @@ export default defineConfig({
         blog_seo_para_inmobiliarias_desarrolladoras_argentina_google: resolve(__dirname, 'blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/index.html'),
         blog_como_instalar_google_analytics_4_ga4_medir_clics_whatsapp: resolve(__dirname, 'blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/index.html'),
         blog_seo_para_abogados_estudios_juridicos_argentina_google: resolve(__dirname, 'blog/seo-para-abogados-estudios-juridicos-argentina-google/index.html'),
+        blog_paginas_web_distribuidoras_mayoristas: resolve(__dirname, 'blog/paginas-web-distribuidoras-mayoristas/index.html'),
       },
     },
   },

@@ -89,13 +89,13 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
 
 > **Directriz de la Semana:** Cada día combina **1 Cirugía / Boost de optimización** sobre páginas con impresiones en GSC + **1 Guía Nueva 0% canibalizada con slug corto de 3 a 5 palabras** (Regla #18), alternando Lunes/Miércoles/Viernes (Diseño Web) y Martes/Jueves/Sábado (SEO).
 
-### Lunes 9/11 — Eje Diseño Web y Conversión
-1. **Cirugía + Boost Striking Distance (Pos 8.7 y Pos 16.5):**
-   - Dar Boost a `/blog/paginas-web-para-inmobiliarias-argentina/` (hoy en posición `8.7` para `pagina web inmobiliarias`) inyectando las variaciones de GSC y enlazando bidireccionalmente con la guía de SEO Inmobiliario.
-   - Optimizar `/blog/crear-pagina-web-godaddy-conviene-argentina/` (posición `16.5` para `godaddy argentina`).
-2. **Artículo Nuevo Diseño Web (Slug corto de 4 palabras · 0% Canibalización):**
+### [x] Lunes 9/11 — Eje Diseño Web y Conversión (Completado)
+1. **[x] Cirugía + Boost Striking Distance (Pos 8.7 y Pos 16.5):**
+   - **Boost 1 (`/blog/paginas-web-para-inmobiliarias-argentina/` — Pos `8.7` en GSC):** `<title>` acortado de 81 a 57 caracteres (`Páginas Web para Inmobiliarias en Argentina: Precios 2026`), añadida la Sección 3 (*Diseño de página web para inmobiliarias vs. Portales y Plantillas lentas*) con tabla comparativa, corregidos los enlaces internos hacia `/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/` y `/demos/funnel/`, y sumadas las FAQs 3 y 4 con `<details name="faq-accordion">`.
+   - **Boost 2 (`/blog/crear-pagina-web-godaddy-conviene-argentina/` — Pos `16.5` en GSC):** `<title>` optimizado a 56 caracteres (`GoDaddy Argentina 2026: Precios en Dólares y si Conviene`), añadida la Sección 4 (*Cómo migrar de GoDaddy sin perder tu dominio ni tus correos*) y FAQs 3 y 4 con `<details name="faq-accordion">`.
+2. **[x] Artículo Nuevo Diseño Web (Slug corto de 4 palabras · 0% Canibalización):**
    - **Slug:** `/blog/paginas-web-distribuidoras-mayoristas/`
-   - **Título:** *Páginas Web para Distribuidoras y Mayoristas en Argentina: Pedidos por WhatsApp*
+   - **Título:** *Páginas Web para Distribuidoras y Mayoristas en Argentina: Catálogo Ágil y Pedidos por WhatsApp* (154 guías activas en `/blog/` y 172 URLs en `sitemap.xml`).
 
 ### Martes 10/11 — Eje Especialista SEO, Velocidad e IA
 1. **Cirugía + Boost de Autoridad Técnica (Pos 8.0–14.7 en GSC):**
