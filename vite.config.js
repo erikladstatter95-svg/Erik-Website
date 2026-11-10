@@ -222,6 +222,7 @@ export default defineConfig({
         redirect_demo_arquitectura: resolve(__dirname, 'demos/arquitectura/index.html'),
         redirect_demo_taller: resolve(__dirname, 'demos/taller/index.html'),
         redirect_demo_veterinaria: resolve(__dirname, 'demos/veterinaria/index.html'),
+        blog_errores_google_search_console_seo: resolve(__dirname, 'blog/errores-google-search-console-seo/index.html'),
       },
     },
   },

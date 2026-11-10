@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Errores de Google Search Console: Guía SEO para Corregirlos</title>
+  <meta name="description" content="Cómo diagnosticar y corregir los errores de Google Search Console: Página alternativa con etiqueta canónica, Descubierta o Rastreada sin indexar, Soft 404 y redirecciones.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/errores-google-search-console-seo/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Errores de Google Search Console: Guía SEO para Corregirlos">
+  <meta property="og:description" content="Cómo diagnosticar y corregir los errores de Google Search Console: Página alternativa con etiqueta canónica, Descubierta o Rastreada sin indexar, Soft 404 y redirecciones.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/errores-google-search-console-seo/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_errores_google_search_console_seo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Errores de Google Search Console: Guía SEO para Corregirlos">
+  <meta name="twitter:description" content="Cómo diagnosticar y corregir los errores de Google Search Console: Página alternativa con etiqueta canónica, Descubierta o Rastreada sin indexar, Soft 404 y redirecciones.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_errores_google_search_console_seo.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/errores-google-search-console-seo/#article",
+      "headline": "Errores de Google Search Console en Argentina: Cómo Solucionarlos y Subir Posiciones",
+      "description": "Cómo diagnosticar y corregir los errores de Google Search Console: Página alternativa con etiqueta canónica, Descubierta o Rastreada sin indexar, Soft 404 y redirecciones.",
+      "image": "https://erikwebsite.com/images/guia_errores_google_search_console_seo.png",
+      "datePublished": "2026-11-10T15:40:00-03:00",
+      "dateModified": "2026-11-10T15:40:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+        }
+      },
+      "mainEntityOfPage": "https://erikwebsite.com/blog/errores-google-search-console-seo/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/errores-google-search-console-seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Errores de Google Search Console: Guía SEO para Corregirlos",
+          "item": "https://erikwebsite.com/blog/errores-google-search-console-seo/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/errores-google-search-console-seo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué significa 'Página alternativa con etiqueta canónica adecuada' en Google Search Console?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Significa que Google encontró una URL duplicada o secundaria que declara mediante la etiqueta rel='canonical' que la página principal es otra. No es una penalización: si la URL es una variante legítima no tenés que tocar nada; si aparece en URLs que no existen, pasa porque a tu servidor le falta un archivo 404.html y está devolviendo la portada con código 200 OK."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre 'Descubierta: actualmente sin indexar' y 'Rastreada: actualmente sin indexar'?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En 'Descubierta: actualmente sin indexar', Google conoce el enlace por tu sitemap pero ni siquiera entró a leer la página porque el servidor es lento o falta presupuesto de rastreo. En 'Rastreada: actualmente sin indexar', Googlebot sí entró y leyó el código HTML, pero decidió no sumarla al buscador porque el contenido es muy corto, parecido a otra página o carece de enlaces internos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es un error '404 suave (Soft 404)' y cómo perjudica al SEO de mi web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un Soft 404 ocurre cuando una página vacía, sin stock o eliminada devuelve un código de respuesta HTTP 200 OK (como si existiera) en lugar de un código 404 real o una redirección 301. Esto desperdicia el rastreo de Google en páginas sin valor comercial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda el botón 'Validar corrección' de Google Search Console en aprobar los cambios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El proceso automático de validación de Search Console demora entre 7 y 14 días corridos. Para acelerar la revisión en páginas estratégicas de servicios, podés usar la herramienta de Inspección de URLs manual o enviar la notificación directa mediante la API de Indexación."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20sobre%20errores%20de%20Google%20Search%20Console%20y%20quiero%20hacerte%20una%20consulta%20de%20SEO."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Errores de Google Search Console: Guía SEO para Corregirlos</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            Auditoría SEO e Indexación
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 10 de noviembre de 2026 · 9 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Errores de Google Search Console en Argentina: Cómo Solucionarlos y Subir Posiciones
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            Los <strong>errores de Google Search Console</strong> en la pestaña <em>Páginas</em> (antes llamada <em>Cobertura de Índice</em>) se dividen en dos grupos muy distintos: las <strong>exclusiones informativas normales</strong> (como <em>"Página alternativa con etiqueta canónica adecuada"</em> o <em>"Excluida por la etiqueta noindex"</em> en páginas de redirección) y los <strong>bloqueos técnicos reales</strong> que impiden que tus servicios salgan en Google (como <em>"Rastreada: actualmente sin indexar"</em>, <em>"Soft 404"</em> o un servidor mal configurado que devuelve la portada con código <code>200 OK</code> ante rutas inexistentes). En esta guía técnica de <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:underline">Auditoría SEO en Argentina</a> te mostramos cómo diagnosticar y resolver cada uno.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_errores_google_search_console_seo.png"
+               alt="Especialista SEO en Argentina analizando métricas de rendimiento y corrigiendo errores de indexación en Google Search Console"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Qué significan los estados de exclusión en Search Console (y cuáles no son un error)
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Cuando abrís el informe de <em>Indexación &gt; Páginas</em> en Google Search Console, es habitual ver decenas de URLs dentro de la columna gris de <strong>"No indexadas"</strong>. El primer error de muchos dueños de negocios es presionar el botón <em>"Validar corrección"</em> en todas las filas sin revisar qué está pasando realmente en el código.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Antes de tocar nada, analizá estos tres estados que suelen generar confusión:
+        </p>
+        <ul class="space-y-3 text-slate-600 mb-6 list-disc pl-5">
+          <li><strong>Página alternativa con etiqueta canónica adecuada:</strong> Significa que Googlebot entró a una URL, leyó su etiqueta <code>&lt;link rel="canonical"&gt;</code> y vio que apunta hacia otra página principal. Si se trata de parámetros de campañas (como <code>?fbclid=...</code>) o versiones antiguas redirigidas, el aviso es 100% correcto. Ahora bien: si en esa lista aparecen <strong>URLs que no existen en tu web</strong> (por ejemplo, carpetas como <code>/images/</code> o borradores eliminados), significa que tu servidor (muy común en despliegues estáticos sin archivo <code>404.html</code>) está respondiendo con la página de inicio en estado <code>200 OK</code> y entregándole el <code>canonical</code> de tu portada. La solución definitiva es agregar un archivo <code>404.html</code> con <code>noindex</code> y redirecciones limpias para las URLs históricas.</li>
+          <li><strong>Excluida por la etiqueta "noindex":</strong> Si aparece en páginas legales internas, paneles de administración o páginas puente de redirección, está funcionando tal como debe. Solo es un problema grave si aparece en tu página de inicio o en tus páginas comerciales de servicios (algo que resolvemos paso a paso en nuestra guía sobre <a href="/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/" class="text-emerald-700 font-semibold hover:underline">por qué mi página web no aparece en Google y cómo indexarla</a>).</li>
+          <li><strong>Página con redirección:</strong> Es el comportamiento normal cuando cambiás un slug largo por uno corto y dejás una redirección hacia la URL nueva. Google excluye el enlace viejo y transfiere la autoridad al destino final.</li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Cómo solucionar "Descubierta: actualmente sin indexar" y "Rastreada: actualmente sin indexar"
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Estos dos avisos son el verdadero cuello de botella del posicionamiento web en Argentina. Aunque suenan parecidos, ocurren en etapas diferentes del proceso de Googlebot:
+        </p>
+        <ul class="space-y-3 text-slate-600 mb-6 list-disc pl-5">
+          <li><strong>Descubierta: actualmente sin indexar:</strong> Google leyó la URL en tu <code>sitemap.xml</code>, pero pospuso la visita sin siquiera descargar el HTML. Ocurre cuando el servidor tarda mucho en responder (TTFB alto en hostings compartidos saturados) o cuando la web carga megas de JavaScript innecesario. Revisá nuestro análisis técnico de <a href="/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/" class="text-emerald-700 font-semibold hover:underline">Auditoría de Velocidad Web y Core Web Vitals (LCP e INP)</a> para liberar presupuesto de rastreo.</li>
+          <li><strong>Rastreada: actualmente sin indexar:</strong> Acá el robot de Google sí entró, descargó la página y leyó tus textos, pero decidió dejarla afuera del índice. Las tres causas principales son: páginas huérfanas a las que ningún otro artículo enlaza, textos superficiales que repiten lo mismo que otra URL de tu propio dominio (canibalización), o títulos <code>&lt;title&gt;</code> y <code>&lt;h1&gt;</code> que no responden una intención de búsqueda clara.</li>
+        </ul>
+
+        <!-- TABLA COMPARATIVA OSCURA -->
+        <div class="my-8 p-5 sm:p-8 rounded-3xl bg-neutral-900 text-white border border-white/[0.08] shadow-sm">
+          <div class="mb-5 pb-4 border-b border-white/[0.08]">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+              Diccionario Técnico Search Console 2026
+            </span>
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
+              Los 6 Avisos Más Comunes en Search Console: Diagnóstico y Cirugía SEO
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-white/10 text-neutral-400 uppercase text-[11px]">
+                  <th class="py-3 pr-3">Estado en Search Console</th>
+                  <th class="py-3 px-3">Qué está pasando en tu servidor</th>
+                  <th class="py-3 pl-3 text-emerald-400">Cómo lo solucionamos</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10 text-neutral-200">
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Página alternativa con etiqueta canónica adecuada</td>
+                  <td class="py-3 px-3 text-neutral-300">La URL apunta su canonical a otra página (o una ruta inexistente devuelve la home con 200 OK).</td>
+                  <td class="py-3 pl-3 text-emerald-400">Auditar enlaces internos, crear <code>404.html</code> real y redirigir slugs antiguos a su par exacto.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Descubierta: actualmente sin indexar</td>
+                  <td class="py-3 px-3 text-neutral-300">Google conoce la URL pero no la rastrea por lentitud o baja prioridad del dominio.</td>
+                  <td class="py-3 pl-3 text-emerald-400">Bajar peso de scripts, enlazar desde páginas con tráfico y notificar por Indexing API v3.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Rastreada: actualmente sin indexar</td>
+                  <td class="py-3 px-3 text-neutral-300">Google leyó la página pero detectó contenido pobre, sin enlaces internos o repetido.</td>
+                  <td class="py-3 pl-3 text-emerald-400">Sumar bloque de Respuesta Directa, tabla comparativa, Schema JSON-LD y enlaces entrantes.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">404 suave (Soft 404)</td>
+                  <td class="py-3 px-3 text-neutral-300">Una página vacía o sin resultados devuelve código 200 OK engañando al rastreador.</td>
+                  <td class="py-3 pl-3 text-emerald-400">Configurar código HTTP 404 real para páginas borradas o fusionar el contenido en una guía activa.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Duplicada sin versión canónica</td>
+                  <td class="py-3 px-3 text-neutral-300">El sitio responde igual con <code>http</code>, <code>https</code>, <code>www</code> y sin <code>www</code> sin declarar canonical.</td>
+                  <td class="py-3 pl-3 text-emerald-400">Forzar redirección 301 única a HTTPS y agregar etiqueta canonical autorreferencial en cada HTML.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Error de servidor (5xx) / DNS</td>
+                  <td class="py-3 px-3 text-neutral-300">El hosting se cayó cuando pasó Googlebot o los registros DNS en NIC.ar están mal delegados.</td>
+                  <td class="py-3 pl-3 text-emerald-400">Revisar delegación en <a href="/blog/como-delegar-dns-renovar-dominio-nic-argentina/" class="text-emerald-400 underline">NIC Argentina</a> y pasar a infraestructura con CDN global.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Errores críticos que sí hunden tus posiciones: Soft 404, cadenas de redirección y enlaces rotos
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Como <a href="/blog/especialista-consultor-seo-argentina-posicionamiento-google/" class="text-emerald-700 font-semibold hover:underline">especialista y consultor SEO en Argentina</a>, hay tres fallas técnicas que corregimos en la primera semana de trabajo porque drenan la autoridad de todo el dominio:
+        </p>
+        <ol class="space-y-3 text-slate-600 mb-6 list-decimal pl-5">
+          <li><strong>Interlinking hacia URLs que no existen:</strong> Si dentro de un artículo ponés un enlace interno hacia una ruta con un error de tipeo o un slug incompleto, obligás a Googlebot a gastar tiempo siguiendo caminos sin salida. Todo sitio profesional debe auditar sus enlaces internos antes de cada actualización.</li>
+          <li><strong>Bucles o cadenas largas de redirección:</strong> Ocurre cuando una URL vieja redirige a una segunda, esa segunda a una tercera y recién ahí llega a la página final (o cuando chocan las reglas de <code>www</code> entre el panel del hosting y Cloudflare). Cada salto intermedio pierde velocidad en celulares.</li>
+          <li><strong>Sitemaps desactualizados:</strong> Tu archivo <code>sitemap.xml</code> jamás debe incluir páginas redirigidas, páginas con <code>noindex</code> ni borradores eliminados. Debe contener únicamente el listado limpio de URLs canónicas activas que devuelven código <code>200 OK</code>.</li>
+        </ol>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          4. Cómo combinar Search Console con Google Analytics 4 para medir ventas reales
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Limpiar los errores de Google Search Console logra que tus páginas suban del puesto 15 al Top 5 en semanas. Pero para saber qué artículo te está trayendo consultas comerciales reales al teléfono, necesitás cruzar los clics orgánicos de Search Console con los eventos de conversión en tu analítica web.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          En nuestra guía práctica sobre <a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="text-emerald-700 font-semibold hover:underline">cómo instalar Google Analytics 4 (GA4) y medir clics a WhatsApp</a> explicamos cómo registrar el evento oficial <code>generate_lead</code> cada vez que un usuario lee una guía posicionada y toca el botón de contacto.
+        </p>
+
+        <!-- CTA COMERCIAL -->
+        <div class="my-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-emerald-950 via-neutral-900 to-neutral-950 text-white border border-emerald-500/30 shadow-xl">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-2">
+            Ingeniería SEO y Diagnóstico Técnico · San Juan y Toda Argentina
+          </span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
+            ¿Tenés páginas sin indexar o errores en Google Search Console que frenan tu web?
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
+            Escribime por WhatsApp con el dominio de tu empresa. Auditamos tu Search Console, corregimos errores de indexación, etiquetas canónicas, velocidad móvil y estructura SEO, o desarrollamos tu sitio nuevo en código limpio desde <strong>$150.000 ARS finales</strong>.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3.5">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20sobre%20errores%20de%20Google%20Search%20Console%20y%20quiero%20auditar%20mi%20p%C3%A1gina%20web."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold text-sm transition-all shadow-lg">
+              Consultar Auditoría por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/15 transition-all">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-12 mb-4">
+          Preguntas frecuentes sobre errores en Google Search Console
+        </h2>
+        <div class="space-y-3 my-6">
+          <details name="faq-accordion" open class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué significa 'Página alternativa con etiqueta canónica adecuada' en Google Search Console?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Significa que Google encontró una URL duplicada o secundaria que declara mediante la etiqueta rel='canonical' que la página principal es otra. No es una penalización: si la URL es una variante legítima no tenés que tocar nada; si aparece en URLs que no existen, pasa porque a tu servidor le falta un archivo 404.html y está devolviendo la portada con código 200 OK.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuál es la diferencia entre 'Descubierta: actualmente sin indexar' y 'Rastreada: actualmente sin indexar'?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              En 'Descubierta: actualmente sin indexar', Google conoce el enlace por tu sitemap pero ni siquiera entró a leer la página porque el servidor es lento o falta presupuesto de rastreo. En 'Rastreada: actualmente sin indexar', Googlebot sí entró y leyó el código HTML, pero decidió no sumarla al buscador porque el contenido es muy corto, parecido a otra página o carece de enlaces internos.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué es un error '404 suave (Soft 404)' y cómo perjudica al SEO de mi web?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Un Soft 404 ocurre cuando una página vacía, sin stock o eliminada devuelve un código de respuesta HTTP 200 OK (como si existiera) en lugar de un código 404 real o una redirección 301. Esto desperdicia el rastreo de Google en páginas sin valor comercial.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto tarda el botón 'Validar corrección' de Google Search Console en aprobar los cambios?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              El proceso automático de validación de Search Console demora entre 7 y 14 días corridos. Para acelerar la revisión en páginas estratégicas de servicios, podés usar la herramienta de Inspección de URLs manual o enviar la notificación directa mediante la API de Indexación.
+            </p>
+          </details>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

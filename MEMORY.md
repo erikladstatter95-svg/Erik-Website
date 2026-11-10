@@ -407,3 +407,11 @@
   - **Redirecciones Dedicadas y 404:**
     - Creados archivos de redirección con `<meta name="robots" content="noindex, follow">` y canónica a sus destinos reales para los 6 slugs históricos.
     - Creado `public/404.html` y `404.html` para evitar el fallback silencioso de 200 OK con canónica a la home.
+- [x] **2026-11-10 (Ejecución del Martes 10/11 del Plan Semanal — Cirugía Striking Distance Outlook #8.0–14.7 + Guía Nueva Errores Google Search Console):**
+  - **Cirugía + Boost (`/blog/configurar-correo-corporativo-outlook-firma-profesional/` — Pos 8.0–14.7 en GSC):**
+    - Acortado el `<title>` de 85 a 58 caracteres (`Correo Corporativo en Outlook: Cómo Configurarlo y Firma`) encabezando con la consulta exacta de GSC.
+    - Inyectadas las consultas de la Radiografía Quirúrgica de GSC: `'como abrir un correo empresarial en outlook'` (H2 #1), `'crear correo corporativo outlook gratis'` (nueva Sección 3 con tabla comparativa frente a licencias de Microsoft 365 en dólares) y `'como configurar un correo corporativo en outlook'` (Respuesta Directa).
+    - Estandarizadas las 4 FAQs con `<details name="faq-accordion">` y `FAQPage` JSON-LD.
+  - **Artículo Nuevo Martes (`/blog/errores-google-search-console-seo/` — Regla #18 Slug de 5 palabras, Regla #17 0 Emojis, Regla #19 0 Enlaces Fantasma):**
+    - Publicada la guía técnica *Errores de Google Search Console en Argentina: Cómo Solucionarlos y Subir Posiciones* con imagen editorial propia (`guia_errores_google_search_console_seo.png`), diccionario comparativo de los 6 estados de Search Console (*Página alternativa con etiqueta canónica adecuada*, *Descubierta/Rastreada sin indexar*, *Soft 404*, *Duplicada sin canónica* y *5xx*) y enlazado bidireccional con `/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/`.
+    - Alcanzadas **155 guías activas** en `/blog/index.html` (`13` en la categoría Especialista SEO) y **173 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.

@@ -97,12 +97,12 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
    - **Slug:** `/blog/paginas-web-distribuidoras-mayoristas/`
    - **Título:** *Páginas Web para Distribuidoras y Mayoristas en Argentina: Catálogo Ágil y Pedidos por WhatsApp* (154 guías activas en `/blog/` y 172 URLs en `sitemap.xml`).
 
-### Martes 10/11 — Eje Especialista SEO, Velocidad e IA
-1. **Cirugía + Boost de Autoridad Técnica (Pos 8.0–14.7 en GSC):**
-   - Potenciar `/blog/configurar-correo-corporativo-outlook-firma-profesional/` inyectando como H2/FAQ las consultas exactas detectadas hoy en la Radiografía de GSC: `'como abrir un correo empresarial en outlook'` (Pos 9.0), `'crear correo corporativo outlook gratis'` (Pos 8.0) y `'como configurar un correo corporativo en outlook'` (Pos 17.0).
-2. **Artículo Nuevo Autoridad SEO (Slug corto de 5 palabras · 0% Canibalización):**
+### [x] Martes 10/11 — Eje Especialista SEO, Velocidad e IA (Completado)
+1. **[x] Cirugía + Boost de Autoridad Técnica (Pos 8.0–14.7 en GSC):**
+   - **Boost (`/blog/configurar-correo-corporativo-outlook-firma-profesional/` — Pos `8.0–14.7` en GSC):** `<title>` optimizado de 85 a 58 caracteres (`Correo Corporativo en Outlook: Cómo Configurarlo y Firma`), inyectadas las consultas exactas de la Radiografía de GSC (`'como abrir un correo empresarial en outlook'` en H2 #1, `'crear correo corporativo outlook gratis'` en la nueva Sección 3 con tabla comparativa frente a Microsoft 365 en dólares, y `'como configurar un correo corporativo en outlook'` en el bloque de Respuesta Directa), más 4 FAQs con `<details name="faq-accordion">` y Schema `FAQPage`.
+2. **[x] Artículo Nuevo Autoridad SEO (Slug corto de 5 palabras · 0% Canibalización · 0 Enlaces Fantasma):**
    - **Slug:** `/blog/errores-google-search-console-seo/`
-   - **Título:** *Errores de Google Search Console en Argentina: Cómo Solucionarlos y Subir Posiciones*
+   - **Título:** *Errores de Google Search Console en Argentina: Cómo Solucionarlos y Subir Posiciones* (155 guías activas en `/blog/`, 13 en categoría SEO y 173 URLs en `sitemap.xml`).
 
 ### Miércoles 11/11 — Eje Diseño Web y Localidades (Regla #16)
 1. **Cirugía Geográfica de Alta Impresión (Usando datos de GSC sin pedir CSV):**
