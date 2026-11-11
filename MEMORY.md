@@ -426,3 +426,14 @@
     - Imagen editorial propia creada y cuantizada: `images/guia_diseno_web_villa_carlos_paz.png` y `public/images/guia_diseno_web_villa_carlos_paz.png` (`360 KB`).
     - Enlazada desde `/blog/diseno-web-cordoba/` y `/blog/diseno-web-villa-maria/`. Auditado el 100% de enlaces internos del proyecto (`0` rotos).
     - Alcanzadas **156 guías activas** en `/blog/index.html` (`40` en categoría Google Maps) y **174 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
+- [x] **2026-11-11 (Kickoff del Sprint de Autoridad SEO — Publicación de 6 Guías Técnicas de Alto Nivel con Cero Canibalización):**
+  - Publicado el primer batch de 6 artículos técnicos para inundar de autoridad temática a `erikwebsite.com` en Argentina y canalizar tráfico a `/auditoria-seo/`:
+    1. `/blog/schema-markup-datos-estructurados-seo/` (Schema JSON-LD `LocalBusiness`, `FAQPage`, `Product`, rich snippets y AEO/GEO).
+    2. `/blog/canibalizacion-palabras-clave-seo/` (Diagnóstico en Search Console, técnica de *Keyword Absorbing* y redirección 301).
+    3. `/blog/link-building-menciones-prensa-argentina/` (Digital PR, notas en medios provinciales/nacionales y Brand Mentions para LLMs).
+    4. `/blog/robots-txt-sitemap-xml-seo/` (Directivas User-agent, crawl budget, sitemaps limpios y prevención de bloqueos CSS/JS).
+    5. `/blog/etiqueta-canonica-redireccion-301-seo/` (Resolución de "Página alternativa con canónica adecuada", cadenas 301 y prevención de duplicados).
+    6. `/blog/enlazado-interno-silos-seo/` (Topic Clusters, distribución de PageRank, anchor text contextual y eliminación de páginas huérfanas).
+  - Todas las 6 imágenes editoriales auténticas generadas, cuantizadas a 256 colores (`< 440 KB`) y dual-sincronizadas en `images/` y `public/images/`.
+  - Cero emojis decorativos (Regla #17), slugs limpios de 4 a 5 palabras (Regla #18), cero enlaces rotos (Regla #19 — auditado con `scratch/audit_all_internal_links.py`).
+  - Total actualizado: **162 guías activas** en `/blog/index.html` (19 en la categoría Especialista SEO) y **180 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`. Compilación 100% limpia en Vite (`28.94s`). Notificadas con status 200 OK a Google Indexing API v3, 202 Accepted en IndexNow y SubmitFeed en Bing.

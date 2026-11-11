@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canibalización de Palabras Clave: Cómo Curarla en Google</title>
+  <meta name="description" content="Guía práctica para detectar y solucionar la canibalización de palabras clave en Google Search Console: técnica de Keyword Absorbing, redirecciones y arquitectura SEO.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Canibalización de Palabras Clave: Cómo Curarla en Google">
+  <meta property="og:description" content="Guía práctica para detectar y solucionar la canibalización de palabras clave en Google Search Console: técnica de Keyword Absorbing, redirecciones y arquitectura SEO.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_canibalizacion_palabras_clave_seo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Canibalización de Palabras Clave: Cómo Curarla en Google">
+  <meta name="twitter:description" content="Guía práctica para detectar y solucionar la canibalización de palabras clave en Google Search Console: técnica de Keyword Absorbing, redirecciones y arquitectura SEO.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_canibalizacion_palabras_clave_seo.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/#article",
+      "headline": "Canibalización de Palabras Clave en SEO: Cómo Detectarla y Solucionarla en Google",
+      "description": "Guía práctica para detectar y solucionar la canibalización de palabras clave en Google Search Console: técnica de Keyword Absorbing, redirecciones y arquitectura SEO.",
+      "image": "https://erikwebsite.com/images/guia_canibalizacion_palabras_clave_seo.png",
+      "datePublished": "2026-11-11T20:30:00-03:00",
+      "dateModified": "2026-11-11T20:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+        }
+      },
+      "mainEntityOfPage": "https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Canibalización de Palabras Clave: Cómo Curarla en Google",
+          "item": "https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/canibalizacion-palabras-clave-seo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es exactamente la canibalización de palabras clave en SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La canibalización de palabras clave ocurre cuando dos o más páginas de un mismo sitio web intentan posicionar para la misma intención de búsqueda en Google. En lugar de sumar fuerzas, compiten entre sí, dividiendo la autoridad del dominio y provocando que ambas queden estancadas entre las posiciones 11 y 30 en lugar de ingresar al top 3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se detecta la canibalización usando Google Search Console?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se detecta filtrando por una consulta clave en el informe de Rendimiento de Search Console y abriendo la pestaña 'Páginas'. Si aparecen dos URLs distintas con clics e impresiones repartidas y posiciones fluctuantes (un día una en puesto 9 y al día siguiente la otra en puesto 18), hay canibalización activa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es la técnica de Keyword Absorbing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consiste en tomar el mejor contenido, ejemplos y preguntas de la página más débil, inyectarlos como una nueva sección o encabezado H2 dentro de la página más fuerte con mayor antigüedad, y luego aplicar una redirección 301 o consolidar la canónica para concentrar toda la autoridad en una sola URL ganadora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tener dos páginas parecidas ayuda a 'dominar' los resultados de Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Salvo marcas multinacionales gigantescas, el algoritmo de diversidad de dominio de Google prioriza mostrar una sola página por sitio para cada consulta. Dividir tu contenido en páginas gemelas solo debilita tus enlaces y confunde al motor de búsqueda."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20sobre%20canibalizaci%C3%B3n%20SEO%20y%20quiero%20hacerte%20una%20consulta."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Canibalización de Palabras Clave: Cómo Curarla en Google</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            Estrategia SEO On-Page
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 11 de noviembre de 2026 · 8 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Canibalización de Palabras Clave en SEO: Cómo Detectarla y Solucionarla en Google
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            La <strong>canibalización de palabras clave</strong> ocurre cuando dos o más páginas de tu sitio web compiten por la misma intención de búsqueda en Google, provocando que ninguna logre entrar a la primera página. Para solucionarla de raíz, se aplica la técnica de <strong>Keyword Absorbing</strong>: identificar en Google Search Console cuál de las URLs tiene mayor tracción histórica, absorber el contenido valioso de la página secundaria en forma de nuevos subtítulos y aplicar una redirección 301 definitiva para transferir el 100% del PageRank interno a una sola página ganadora.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_canibalizacion_palabras_clave_seo.png"
+               alt="Consultor SEO analizando gráficos de canibalización de palabras clave y rendimiento en Google Search Console"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Por qué publicar más páginas a veces te hace perder visitas en Google
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Un error muy común en empresas y redactores de contenidos es creer que cuanto más artículos publiquen sobre un tema, más tráfico van a conseguir. Por ejemplo, publicar un artículo titulado <em>"Precios de páginas web en Argentina"</em> y a la semana siguiente otro titulado <em>"Cuánto cuesta una página web en Argentina"</em>.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Para Googlebot, ambas búsquedas tienen exactamente la misma intención comercial. Cuando el rastreador encuentra dos páginas idénticas en tu dominio, no sabe cuál mostrar. El resultado habitual es que los clics se dividen, los enlaces externos apuntan a destinos diferentes y ambas URLs terminan deambulando entre la posición 12 y la 28. En nuestras revisiones de <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:underline">auditoría SEO en Argentina</a>, corregir la canibalización suele ser la forma más rápida de duplicar el tráfico orgánico sin escribir contenido desde cero.
+        </p>
+
+        <!-- TABLA COMPARATIVA OSCURA -->
+        <div class="my-8 p-5 sm:p-8 rounded-3xl bg-neutral-900 text-white border border-white/[0.08] shadow-sm">
+          <div class="mb-5 pb-4 border-b border-white/[0.08]">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+              Matriz de Decisión SEO 2026
+            </span>
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
+              Cómo Tratar URLs en Conflicto según su Tracción en Search Console
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-white/10 text-neutral-400 uppercase text-[11px]">
+                  <th class="py-3 pr-3">Escenario Detectado</th>
+                  <th class="py-3 px-3">Causa Algorítmica</th>
+                  <th class="py-3 pl-3 text-emerald-400">Tratamiento Recomendado</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-neutral-300">
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Misma intención, dos URLs activas</td>
+                  <td class="py-3 px-3 text-neutral-300">Google rota las URLs día por medio y ninguna sube.</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Keyword Absorbing: fusionar contenido y aplicar 301 a la URL líder.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Conflicto entre Landing Page y Blog</td>
+                  <td class="py-3 px-3 text-neutral-300">El blog tiene mejores textos informativos que la página de ventas.</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Reenfocar el blog a intención informativa y enlazar con ancla exacta a la landing.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Intenciones parecidas pero no idénticas</td>
+                  <td class="py-3 px-3 text-neutral-300">Los títulos comparten demasiadas palabras clave.</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Diferenciar H1 y title para apuntar a audiencias y etapas del funnel distintas.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Página antigua sin valor comercial</td>
+                  <td class="py-3 px-3 text-neutral-300">Roba clics a los servicios actuales con datos viejos.</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Redirección 301 directa a la guía o página comercial moderna.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Paso a paso para diagnosticar canibalización en Search Console
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Para verificar si tenés páginas canibalizadas en tu negocio, seguí este procedimiento de tres minutos:
+        </p>
+        <ol class="space-y-3 text-slate-600 mb-6 list-decimal pl-5">
+          <li>Entrá a Google Search Console y hacé clic en <strong>Rendimiento &gt; Resultados de búsqueda</strong>.</li>
+          <li>En el filtro superior, agregá una regla por <strong>Consulta</strong> con tu palabra clave principal (por ejemplo, <em>"diseño web"</em> o <em>"consultor seo"</em>).</li>
+          <li>Hacé clic en la pestaña <strong>PÁGINAS</strong> ubicada debajo del gráfico.</li>
+          <li>Si ves dos o más URLs con impresiones significativas para esa misma consulta exacta, compará sus posiciones promedio. Si ves que ambas se disputan impresiones, estás sufriendo canibalización.</li>
+        </ol>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Este problema suele estar vinculado a estados de indexación confusos. Te recomendamos consultar también nuestra guía sobre <a href="/blog/errores-google-search-console-seo/" class="text-emerald-700 font-semibold hover:underline">errores comunes de Google Search Console</a> para asegurar que tus páginas no tengan además problemas de rastreo o etiquetas canónicas erróneas.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. La regla de oro: Actualizar antes que duplicar
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          La mejor estrategia para evitar este dolor de cabeza a futuro es implementar una política de <strong>"Cirugía de Boost"</strong>: antes de sentarte a escribir un nuevo artículo, revisá el inventario completo de tu sitio. Si ya tenés una página que toca el tema tangencialmente, no crees una URL nueva; actualizá la existente, sumale una sección explicativa con preguntas frecuentes, actualizá el marcado estructurado y relanzala con fecha fresca.
+        </p>
+
+        <!-- PREGUNTAS FRECUENTES INTERACTIVAS -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          Preguntas frecuentes sobre Canibalización de Palabras Clave
+        </h2>
+
+        <div class="space-y-4 my-6">
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Qué es exactamente la canibalización de palabras clave en SEO?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              La canibalización de palabras clave ocurre cuando dos o más páginas de un mismo sitio web intentan posicionar para la misma intención de búsqueda en Google. En lugar de sumar fuerzas, compiten entre sí, dividiendo la autoridad del dominio y provocando que ambas queden estancadas entre las posiciones 11 y 30 en lugar de ingresar al top 3.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Cómo se detecta la canibalización usando Google Search Console?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Se detecta filtrando por una consulta clave en el informe de Rendimiento de Search Console y abriendo la pestaña 'Páginas'. Si aparecen dos URLs distintas con clics e impresiones repartidas y posiciones fluctuantes (un día una en puesto 9 y al día siguiente la otra en puesto 18), hay canibalización activa.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Qué es la técnica de Keyword Absorbing?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Consiste en tomar el mejor contenido, ejemplos y preguntas de la página más débil, inyectarlos como una nueva sección o encabezado H2 dentro de la página más fuerte con mayor antigüedad, y luego aplicar una redirección 301 o consolidar la canónica para concentrar toda la autoridad en una sola URL ganadora.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Tener dos páginas parecidas ayuda a 'dominar' los resultados de Google?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              No. Salvo marcas multinacionales gigantescas, el algoritmo de diversidad de dominio de Google prioriza mostrar una sola página por sitio para cada consulta. Dividir tu contenido en páginas gemelas solo debilita tus enlaces y confunde al motor de búsqueda.
+            </p>
+          </details>
+        </div>
+
+        <!-- CTA COMERCIAL -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-950 text-white border border-emerald-800 shadow-xl text-center">
+          <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">Especialista SEO en Argentina</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display mt-2 mb-3">
+            ¿Tus páginas compiten entre sí y no lográs entrar al Top 3?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Auditamos tus consultas en Search Console, detectamos canibalizaciones ocultas y aplicamos consolidación estratégica para desbloquear el crecimiento orgánico de tu negocio.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20art%C3%ADculo%20sobre%20canibalizaci%C3%B3n%20SEO%20y%20quiero%20hacerte%20una%20consulta."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg text-center">
+              Consultar por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <span class="font-display font-bold text-white text-base">Erik Website</span>
+        <p class="mt-2 text-slate-400">Desarrollo web de alta conversión y posicionamiento SEO estratégico en Argentina.</p>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Servicios SEO</span>
+        <ul class="space-y-1.5">
+          <li><a href="/auditoria-seo/" class="hover:text-emerald-400">Auditoría SEO Profesional</a></li>
+          <li><a href="/san-juan/" class="hover:text-emerald-400">Diseño Web en San Juan</a></li>
+          <li><a href="/blog/schema-markup-datos-estructurados-seo/" class="hover:text-emerald-400">Schema Markup JSON-LD</a></li>
+          <li><a href="/blog/errores-google-search-console-seo/" class="hover:text-emerald-400">Errores de Search Console</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Herramientas Gratuitas</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400">Generador QR WhatsApp</a></li>
+          <li><a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="hover:text-emerald-400">Instalar GA4 y Píxel</a></li>
+          <li><a href="/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/" class="hover:text-emerald-400">Cómo Indexar en Google</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Contacto Directo</span>
+        <p class="text-slate-400 mb-2">San Juan, Argentina · Atención a todo el país</p>
+        <a href="https://wa.me/5492645185359" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Escribirme por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-slate-800 text-center text-slate-500">
+      <p>© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

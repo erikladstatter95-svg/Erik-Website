@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robots.txt y Sitemap XML en SEO: Guía Práctica 2026</title>
+  <meta name="description" content="Guía completa de robots.txt y sitemap XML en SEO: directivas de rastreo de Googlebot, optimización de crawl budget y cómo evitar bloqueos accidentales de indexación.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Robots.txt y Sitemap XML en SEO: Guía Práctica 2026">
+  <meta property="og:description" content="Guía completa de robots.txt y sitemap XML en SEO: directivas de rastreo de Googlebot, optimización de crawl budget y cómo evitar bloqueos accidentales de indexación.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_robots_txt_sitemap_xml_seo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robots.txt y Sitemap XML en SEO: Guía Práctica 2026">
+  <meta name="twitter:description" content="Guía completa de robots.txt y sitemap XML en SEO: directivas de rastreo de Googlebot, optimización de crawl budget y cómo evitar bloqueos accidentales de indexación.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_robots_txt_sitemap_xml_seo.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/#article",
+      "headline": "Robots.txt y Sitemap XML en SEO: Cómo Guiar el Rastreo de Google Sin Errores",
+      "description": "Guía completa de robots.txt y sitemap XML en SEO: directivas de rastreo de Googlebot, optimización de crawl budget y cómo evitar bloqueos accidentales de indexación.",
+      "image": "https://erikwebsite.com/images/guia_robots_txt_sitemap_xml_seo.png",
+      "datePublished": "2026-11-11T20:30:00-03:00",
+      "dateModified": "2026-11-11T20:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+        }
+      },
+      "mainEntityOfPage": "https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Robots.txt y Sitemap XML en SEO: Guía Práctica 2026",
+          "item": "https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/robots-txt-sitemap-xml-seo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre robots.txt y el sitemap XML?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El archivo robots.txt es un protocolo de exclusión que le dice a los rastreadores qué partes de tu servidor NO deben visitar (o dónde está el mapa del sitio). El sitemap XML, en cambio, es un mapa positivo que lista todas las URLs canónicas que SÍ querés que Google descubra, rastree e indexe con fecha de última modificación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Bloquear una URL en robots.txt impide que aparezca en Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No necesariamente. Si bloqueás una página con 'Disallow:' pero otros sitios o páginas internas la enlazan, Google puede indexar la URL mostrando el mensaje 'No hay información disponible sobre esta página'. Para evitar que aparezca en el buscador, la página debe ser rastreable y contener la etiqueta meta robots 'noindex'."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si bloqueo accidentalmente archivos CSS o JavaScript en robots.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Googlebot no podrá renderizar la página visualmente, pensará que el diseño está roto o no es apto para móviles, y degradará los rankings. Nunca se deben bloquear carpetas de estilos o scripts públicos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde debe ubicarse el sitemap XML en el servidor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Debe estar en la raíz pública del dominio (https://tudominio.com.ar/sitemap.xml) y debe declararse como última línea dentro del archivo robots.txt ('Sitemap: https://tudominio.com.ar/sitemap.xml') además de enviarse en Google Search Console."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20sobre%20robots.txt%20y%20sitemap%20y%20quiero%20hacerte%20una%20consulta."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Robots.txt y Sitemap XML en SEO: Guía Práctica 2026</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            SEO Técnico y Rastreo
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 11 de noviembre de 2026 · 8 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Robots.txt y Sitemap XML en SEO: Cómo Guiar el Rastreo de Google Sin Errores
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            <strong>Robots.txt y Sitemap XML</strong> son los dos pilares fundamentales del rastreo técnico de Google. Mientras que el <code>robots.txt</code> actúa como el manual de instrucciones que le prohíbe el paso a zonas privadas o administrativas para ahorrar presupuesto de rastreo (crawl budget), el <code>sitemap.xml</code> funciona como la autopista que entrega a Googlebot el listado exacto de tus URLs públicas limpias con su fecha de actualización, acelerando el descubrimiento de nuevos servicios e impidiendo que queden huérfanas en el buscador.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_robots_txt_sitemap_xml_seo.png"
+               alt="Ingeniero de software configurando archivo robots.txt y sitemap XML en servidor para optimizar rastreo e indexación SEO"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. La anatomía de un archivo robots.txt seguro y eficiente
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          El archivo <code>robots.txt</code> debe residir en la raíz estricta de tu dominio (<code>https://erikwebsite.com/robots.txt</code>). Cada vez que Googlebot o los rastreadores de IA (GPTBot, PerplexityBot) visitan tu web, lo primero que hacen antes de mirar cualquier página es consultar este archivo.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Un error garrafal en plataformas WordPress o configuraciones mal copiadas es escribir <code>Disallow: /</code> (lo que le prohíbe el acceso total a Google y desindexa todo el sitio en pocos días) o bloquear directorios como <code>/wp-content/uploads/</code> o <code>/src/</code> que contienen los estilos CSS y fuentes esenciales para renderizar la página. Si Googlebot no puede leer el CSS, asumirá que la web no es adaptable a celulares y castigará tus posiciones móviles. En nuestras <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:underline">auditorías técnicas de SEO en Argentina</a>, revisar el robots.txt es siempre el primer paso obligatorio.
+        </p>
+
+        <!-- TABLA COMPARATIVA OSCURA -->
+        <div class="my-8 p-5 sm:p-8 rounded-3xl bg-neutral-900 text-white border border-white/[0.08] shadow-sm">
+          <div class="mb-5 pb-4 border-b border-white/[0.08]">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+              Sintaxis Técnica 2026
+            </span>
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
+              Directivas Clave de Robots.txt: Qué Hace Cada Instrucción
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-white/10 text-neutral-400 uppercase text-[11px]">
+                  <th class="py-3 pr-3">Directiva</th>
+                  <th class="py-3 px-3">Ejemplo Práctico</th>
+                  <th class="py-3 pl-3 text-emerald-400">Impacto en el Rastreo</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-neutral-300">
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">User-agent: *</td>
+                  <td class="py-3 px-3 font-mono text-xs text-neutral-300">User-agent: *</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Aplica las reglas a todos los motores de búsqueda legítimos.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Disallow: /admin/</td>
+                  <td class="py-3 px-3 font-mono text-xs text-neutral-300">Disallow: /panel-admin/</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Impide que Google gaste tiempo en zonas privadas o de login.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Allow: /</td>
+                  <td class="py-3 px-3 font-mono text-xs text-neutral-300">Allow: /</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Habilita explícitamente el rastreo del contenido público general.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-3 font-semibold text-white">Sitemap: URL</td>
+                  <td class="py-3 px-3 font-mono text-xs text-neutral-300">Sitemap: https://.../sitemap.xml</td>
+                  <td class="py-3 pl-3 text-emerald-400 font-medium">Informa la ubicación exacta del sitemap para descubrimiento automático.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. El Sitemap XML: sólo URLs canónicas y con respuesta 200 OK
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          El mapa del sitio no es un basurero donde poner cualquier enlace que exista en tu servidor. Para que Google confíe en tu sitemap y lo procese rápidamente, debe cumplir tres reglas de oro:
+        </p>
+        <ul class="space-y-3 text-slate-600 mb-6 list-disc pl-5">
+          <li><strong>Cero URLs con redirección o error 404:</strong> Cada URL listada debe devolver código HTTP <code>200 OK</code> directo. Si incluís URLs redirigidas (301) o rotas, Search Console marcará advertencias y ralentizará la frecuencia de lectura.</li>
+          <li><strong>Cero URLs con etiqueta noindex:</strong> Las páginas legales, borradores o paneles privados que llevan <code>noindex</code> nunca deben estar dentro del sitemap.</li>
+          <li><strong>Etiqueta &lt;lastmod&gt; verídica:</strong> Colocar la fecha real en la que el contenido fue actualizado (por ejemplo, <code>2026-11-11</code>) para que Googlebot sepa de inmediato qué artículos cambiaron sin tener que descargar toda la web otra vez.</li>
+        </ul>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si tu Search Console muestra avisos de sitemap congelado o URLs excluidas, revisá nuestra guía sobre <a href="/blog/errores-google-search-console-seo/" class="text-emerald-700 font-semibold hover:underline">errores de Google Search Console y cómo corregirlos</a> para sanear el índice.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Cuidado con los despliegues en servidores modernos (Vite, Cloudflare, Vercel)
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          En sitios desarrollados con empaquetadores como Vite o alojados en redes perimetrales, es muy frecuente que el archivo <code>sitemap.xml</code> se guarde en la raíz del proyecto pero la carpeta que realmente se sube a producción sea <code>dist/</code> o <code>public/</code>.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Cuando esto sucede, el sitemap en vivo queda congelado en versiones viejas mientras el desarrollador cree que está publicando contenido nuevo. Verificá siempre que tu build copie automáticamente el archivo a la carpeta pública antes del deploy para evitar retrasos de semanas en la indexación de tus servicios.
+        </p>
+
+        <!-- PREGUNTAS FRECUENTES INTERACTIVAS -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          Preguntas frecuentes sobre Robots.txt y Sitemap XML
+        </h2>
+
+        <div class="space-y-4 my-6">
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Cuál es la diferencia entre robots.txt y el sitemap XML?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              El archivo robots.txt es un protocolo de exclusión que le dice a los rastreadores qué partes de tu servidor NO deben visitar (o dónde está el mapa del sitio). El sitemap XML, en cambio, es un mapa positivo que lista todas las URLs canónicas que SÍ querés que Google descubra, rastree e indexe con fecha de última modificación.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Bloquear una URL en robots.txt impide que aparezca en Google?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              No necesariamente. Si bloqueás una página con 'Disallow:' pero otros sitios o páginas internas la enlazan, Google puede indexar la URL mostrando el mensaje 'No hay información disponible sobre esta página'. Para evitar que aparezca en el buscador, la página debe ser rastreable y contener la etiqueta meta robots 'noindex'.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Qué pasa si bloqueo accidentalmente archivos CSS o JavaScript en robots.txt?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Googlebot no podrá renderizar la página visualmente, pensará que el diseño está roto o no es apto para móviles, y degradará los rankings. Nunca se deben bloquear carpetas de estilos o scripts públicos.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group border border-slate-200 rounded-2xl bg-white p-5 transition-all">
+            <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center text-sm sm:text-base">
+              <span>¿Dónde debe ubicarse el sitemap XML en el servidor?</span>
+              <span class="text-emerald-600 text-lg group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Debe estar en la raíz pública del dominio (https://tudominio.com.ar/sitemap.xml) y debe declararse como última línea dentro del archivo robots.txt ('Sitemap: https://tudominio.com.ar/sitemap.xml') además de enviarse en Google Search Console.
+            </p>
+          </details>
+        </div>
+
+        <!-- CTA COMERCIAL -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-950 text-white border border-emerald-800 shadow-xl text-center">
+          <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">Especialista SEO en Argentina</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display mt-2 mb-3">
+            ¿Tenés dudas sobre el rastreo o indexación de tu página web?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Auditamos tus archivos de rastreo, corregimos bloqueos involuntarios y optimizamos el presupuesto de rastreo para que Google descubra cada cambio en minutos.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20art%C3%ADculo%20sobre%20robots.txt%20y%20quiero%20hacerte%20una%20consulta."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg text-center">
+              Consultar por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <span class="font-display font-bold text-white text-base">Erik Website</span>
+        <p class="mt-2 text-slate-400">Desarrollo web de alta conversión y posicionamiento SEO estratégico en Argentina.</p>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Servicios SEO</span>
+        <ul class="space-y-1.5">
+          <li><a href="/auditoria-seo/" class="hover:text-emerald-400">Auditoría SEO Profesional</a></li>
+          <li><a href="/san-juan/" class="hover:text-emerald-400">Diseño Web en San Juan</a></li>
+          <li><a href="/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/" class="hover:text-emerald-400">Cómo Indexar en Google</a></li>
+          <li><a href="/blog/canibalizacion-palabras-clave-seo/" class="hover:text-emerald-400">Canibalización SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Herramientas Gratuitas</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400">Generador QR WhatsApp</a></li>
+          <li><a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="hover:text-emerald-400">Instalar GA4 y Píxel</a></li>
+          <li><a href="/blog/schema-markup-datos-estructurados-seo/" class="hover:text-emerald-400">Schema Markup JSON-LD</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Contacto Directo</span>
+        <p class="text-slate-400 mb-2">San Juan, Argentina · Atención a todo el país</p>
+        <a href="https://wa.me/5492645185359" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Escribirme por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-slate-800 text-center text-slate-500">
+      <p>© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

@@ -113,6 +113,35 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
    - **Título:** *Diseño Web en Villa Carlos Paz: Turismo, Hoteles y Comercios* (156 guías activas en `/blog/`, 40 en categoría Google Maps y 174 URLs en `sitemap.xml`).
    - **Enfoque de Negocio:** Valle de Punilla, reservas directas a WhatsApp sin pagar 15% a 22% a Booking/Airbnb, gastronomía en Costanera y San Martín, teatros y comercios locales. Imagen editorial propia (`guia_diseno_web_villa_carlos_paz.png`). Enlaces entrantes desde `/blog/diseno-web-cordoba/` y `/blog/diseno-web-villa-maria/`.
 
+### [x] Miércoles 11/11 (Noche) — Kickoff del Sprint de Autoridad SEO (Batch 1: 6 Guías Técnicas Publicadas)
+> **Sprint de Alta Velocidad (6 Guías Diarias hasta el Sábado):** Para acelerar el posicionamiento del sitio web y ganar autoridad temática masiva (Topical Authority) en Google y LLMs en Argentina, se publican 6 artículos diarios de especialidad técnica y estratégica canalizando autoridad hacia `/auditoria-seo/`.
+
+1. **[x] Guía 1 (SEO Técnico / Datos Estructurados):**
+   - **Slug:** `/blog/schema-markup-datos-estructurados-seo/` (5 palabras)
+   - **Título:** *Schema Markup y Datos Estructurados: Guía Práctica 2026*
+   - **Imagen:** `guia_schema_markup_datos_estructurados_seo.png` (438 KB). JSON-LD `LocalBusiness`, `FAQPage`, `Product`, rich snippets y citación en IA.
+2. **[x] Guía 2 (SEO On-Page / Prevención de Canibalización):**
+   - **Slug:** `/blog/canibalizacion-palabras-clave-seo/` (4 palabras)
+   - **Título:** *Canibalización de Palabras Clave: Cómo Curarla en Google*
+   - **Imagen:** `guia_canibalizacion_palabras_clave_seo.png` (355 KB). Detección en Search Console, técnica de *Keyword Absorbing* y redirección para consolidar rankings.
+3. **[x] Guía 3 (SEO Off-Page / Autoridad y Prensa):**
+   - **Slug:** `/blog/link-building-menciones-prensa-argentina/` (5 palabras)
+   - **Título:** *Link Building y Menciones de Prensa en Argentina: Guía SEO*
+   - **Imagen:** `guia_link_building_menciones_prensa_argentina.png` (439 KB). Digital PR, notas en medios provinciales/nacionales, directorios colegiados y Brand Mentions para GEO.
+4. **[x] Guía 4 (SEO Técnico / Rastreo e Indexación):**
+   - **Slug:** `/blog/robots-txt-sitemap-xml-seo/` (5 palabras)
+   - **Título:** *Robots.txt y Sitemap XML en SEO: Guía Práctica 2026*
+   - **Imagen:** `guia_robots_txt_sitemap_xml_seo.png` (406 KB). Directivas de User-agent, crawl budget, sitemap en producción y prevención de desindexación.
+5. **[x] Guía 5 (SEO Técnico / Canónicas y Redirecciones):**
+   - **Slug:** `/blog/etiqueta-canonica-redireccion-301-seo/` (5 palabras)
+   - **Título:** *Etiqueta Canónica y Redirección 301 en SEO: Guía 2026*
+   - **Imagen:** `guia_etiqueta_canonica_redireccion_301_seo.png` (385 KB). Resolución de "Página alternativa con canónica adecuada", cadenas 301 y prevención de duplicados.
+6. **[x] Guía 6 (SEO On-Page / Arquitectura y Silos):**
+   - **Slug:** `/blog/enlazado-interno-silos-seo/` (4 palabras)
+   - **Título:** *Enlazado Interno y Silos en SEO: Cómo Guiar a Google 2026*
+   - **Imagen:** `guia_enlazado_interno_silos_seo.png` (407 KB). Topic Clusters, distribución de PageRank, anchor text contextual y eliminación de páginas huérfanas.
+- **Inventario Total Actualizado:** **162 guías activas** en `/blog/index.html` (19 en categoría Especialista SEO) y **180 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`. Notificadas con status `200 OK` en Google Indexing API v3, `202 Accepted` en IndexNow y `SubmitFeed OK` en Bing.
+
 ### Jueves 12/11 — Eje Especialista SEO por Rubro
 1. **Cirugía SEO E-Commerce (Pos 8.0 en GSC):**
    - Dar Boost a `/blog/precios-comisiones-tiendanube-alternativas-argentina/` reforzando la consulta en Striking Distance `'tiendanube cobra comision por venta'`.
