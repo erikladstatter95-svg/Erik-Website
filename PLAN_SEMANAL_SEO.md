@@ -104,12 +104,14 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
    - **Slug:** `/blog/errores-google-search-console-seo/`
    - **Título:** *Errores de Google Search Console en Argentina: Cómo Solucionarlos y Subir Posiciones* (155 guías activas en `/blog/`, 13 en categoría SEO y 173 URLs en `sitemap.xml`).
 
-### Miércoles 11/11 — Eje Diseño Web y Localidades (Regla #16)
-1. **Cirugía Geográfica de Alta Impresión (Usando datos de GSC sin pedir CSV):**
-   - Dar Boost a `/blog/diseno-web-mendoza/` (`55` impresiones para `'diseño web mendoza'` y `'diseño web en mendoza'`) y `/blog/diseno-web-san-luis/` (`25` impresiones para `'diseño web san luis'`).
-2. **Artículo Nuevo Ciudad Específica (Slug corto de 5 palabras · Regla #16):**
+### [x] Miércoles 11/11 — Eje Diseño Web y Localidades (Regla #16) (Completado)
+1. **[x] Cirugía Geográfica de Alta Impresión (Usando datos de GSC sin pedir CSV):**
+   - **Boost 1 (`/blog/diseno-web-mendoza/` — `55` impresiones en GSC para `'diseño web mendoza'` y `'diseño web en mendoza'`):** `<title>` acortado de 78 a 50 caracteres (`Diseño Web en Mendoza: Precios y Google Maps 2026`), `dateModified` actualizado al 11/11/2026, inyectado Google Tag GA4 en `<head>`, sumada la 4ta FAQ interactiva (`¿Cuánto tarda el desarrollo de una página web en Mendoza y qué necesito enviar?`) con `<details name="faq-accordion">` y `FAQPage` Schema, y reforzado el interlinking con San Rafael, San Luis y Auditoría SEO.
+   - **Boost 2 (`/blog/diseno-web-san-luis/` — `25` impresiones en GSC para `'diseño web san luis'`):** `<title>` acortado de 77 a 52 caracteres (`Diseño Web en San Luis: Precios y Google Maps 2026`), `dateModified` actualizado al 11/11/2026, inyectado Google Tag GA4 en `<head>`, sumada la 4ta FAQ interactiva (`¿Cuánto demora hacer una página web en San Luis y qué incluye el mantenimiento?`) con `<details name="faq-accordion">` y `FAQPage` Schema.
+2. **[x] Artículo Nuevo Ciudad Específica (Slug corto de 5 palabras · Regla #16 · 0% Canibalización · 0 Enlaces Fantasma):**
    - **Slug:** `/blog/diseno-web-villa-carlos-paz/`
-   - **Título:** *Diseño de Páginas Web en Villa Carlos Paz (Córdoba): Turismo, Hoteles y Comercios*
+   - **Título:** *Diseño Web en Villa Carlos Paz: Turismo, Hoteles y Comercios* (156 guías activas en `/blog/`, 40 en categoría Google Maps y 174 URLs en `sitemap.xml`).
+   - **Enfoque de Negocio:** Valle de Punilla, reservas directas a WhatsApp sin pagar 15% a 22% a Booking/Airbnb, gastronomía en Costanera y San Martín, teatros y comercios locales. Imagen editorial propia (`guia_diseno_web_villa_carlos_paz.png`). Enlaces entrantes desde `/blog/diseno-web-cordoba/` y `/blog/diseno-web-villa-maria/`.
 
 ### Jueves 12/11 — Eje Especialista SEO por Rubro
 1. **Cirugía SEO E-Commerce (Pos 8.0 en GSC):**
