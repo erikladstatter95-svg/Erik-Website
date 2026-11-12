@@ -437,3 +437,18 @@
   - Todas las 6 imágenes editoriales auténticas generadas, cuantizadas a 256 colores (`< 440 KB`) y dual-sincronizadas en `images/` y `public/images/`.
   - Cero emojis decorativos (Regla #17), slugs limpios de 4 a 5 palabras (Regla #18), cero enlaces rotos (Regla #19 — auditado con `scratch/audit_all_internal_links.py`).
   - Total actualizado: **162 guías activas** en `/blog/index.html` (19 en la categoría Especialista SEO) y **180 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`. Compilación 100% limpia en Vite (`28.94s`). Notificadas con status 200 OK a Google Indexing API v3, 202 Accepted en IndexNow y SubmitFeed en Bing.
+- [x] **2026-11-12 (Ejecución del Jueves 12/11: 2 Boosts Striking Distance + Sprint Día 2 con 6 Nuevas Guías de Autoridad SEO):**
+  - **Boost 1 (SEO E-Commerce Striking Distance Pos 4.7–8.0 en GSC):**
+    - En `/blog/precios-comisiones-tiendanube-alternativas-argentina/`: Título acortado de 65 a 60 caracteres (`¿Tiendanube Cobra Comisión por Venta? Precios Argentina 2026`) captando la query exacta `'tiendanube cobra comision por venta'`. Inyectada la query en H2, meta description, agregada la 4ta FAQ interactiva con `<details name="faq-accordion">` y evento GA4 `faq_expand`, y actualizado `dateModified` y `FAQPage` JSON-LD.
+  - **Boost 2 (Diseño Web Bariloche Pos 11.3 en GSC):**
+    - En `/blog/diseno-web-bariloche/`: Título acortado de 64 a 55 caracteres (`Diseño Web en Bariloche: Sitios Profesionales y Precios`) captando la query con impresiones `'desarrollo de sitios web profesionales bariloche'`. Inyectado Google Tag GA4 faltante en `<head>`, modernizadas las FAQs con `<details name="faq-accordion">` con texto legible sobre fondo oscuro (`text-white`) y añadida 4ta FAQ con `FAQPage` JSON-LD.
+  - **Sprint Día 2 — 6 Guías Nuevas de Autoridad SEO (Regla #17 0 emojis, Regla #18 slugs de 3 a 5 palabras, Regla #19 0 enlaces rotos):**
+    1. `/blog/seo-medicos-clinicas-argentina/` (SEO local en Google Maps y reputación para clínicas, centros médicos y consultorios en Argentina).
+    2. `/blog/seo-local-google-maps-argentina/` (Factores del algoritmo local de Google, optimización del Perfil de Negocio, citaciones NAP y reseñas).
+    3. `/blog/consultor-seo-vs-agencia-argentina/` (Comparativa de honorarios mensuales, atención directa vs. pasantías, tiempos y ROI para pymes).
+    4. `/blog/seo-on-page-checklist-optimizacion/` (Checklist de Title, H1-H3, slugs limpios, interlinking semántico, Core Web Vitals y Schema JSON-LD).
+    5. `/blog/keyword-research-palabras-clave-argentina/` (Intenciones de búsqueda locales, modismos de compra, Google Search Console y Search Intent).
+    6. `/blog/optimizar-imagenes-seo-peso-webp/` (Conversión a WebP, compresión &lt; 150 KB, dimensiones explícitas para evitar CLS y atributo alt descriptivo).
+  - Todas las 6 imágenes editoriales auténticas generadas, cuantizadas a 256 colores (`< 490 KB`) y dual-sincronizadas en `images/` y `public/images/`.
+  - Alcanzadas **168 guías activas** en `/blog/index.html` (25 en la categoría Especialista SEO) y **186 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
+  - Verificados 0 enlaces rotos con `audit_all_internal_links.py`, compilación 100% limpia en Vite (`19.68s`), y notificado con status 200 OK a Google Indexing API v3, GSC Sitemap, 202 Accepted en IndexNow y 200 OK en Bing Webmaster API.

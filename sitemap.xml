@@ -1098,4 +1098,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/seo-medicos-clinicas-argentina/</loc>
+    <lastmod>2026-11-12T10:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/seo-local-google-maps-argentina/</loc>
+    <lastmod>2026-11-12T10:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/consultor-seo-vs-agencia-argentina/</loc>
+    <lastmod>2026-11-12T10:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/seo-on-page-checklist-optimizacion/</loc>
+    <lastmod>2026-11-12T10:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/keyword-research-palabras-clave-argentina/</loc>
+    <lastmod>2026-11-12T10:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/optimizar-imagenes-seo-peso-webp/</loc>
+    <lastmod>2026-11-12T10:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

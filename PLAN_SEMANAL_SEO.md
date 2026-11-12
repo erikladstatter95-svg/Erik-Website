@@ -142,12 +142,21 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
    - **Imagen:** `guia_enlazado_interno_silos_seo.png` (407 KB). Topic Clusters, distribución de PageRank, anchor text contextual y eliminación de páginas huérfanas.
 - **Inventario Total Actualizado:** **162 guías activas** en `/blog/index.html` (19 en categoría Especialista SEO) y **180 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`. Notificadas con status `200 OK` en Google Indexing API v3, `202 Accepted` en IndexNow y `SubmitFeed OK` en Bing.
 
-### Jueves 12/11 — Eje Especialista SEO por Rubro
-1. **Cirugía SEO E-Commerce (Pos 8.0 en GSC):**
-   - Dar Boost a `/blog/precios-comisiones-tiendanube-alternativas-argentina/` reforzando la consulta en Striking Distance `'tiendanube cobra comision por venta'`.
-2. **Artículo Nuevo SEO Vertical Salud (Slug corto de 4 palabras · 0% Canibalización):**
-   - **Slug:** `/blog/seo-medicos-odontologos-argentina/`
-   - **Título:** *SEO para Médicos, Clínicas y Odontólogos en Argentina: Cómo Captar Pacientes en Google*
+### Jueves 12/11 — Eje Especialista SEO por Rubro & Sprint Día 2 (COMPLETADO)
+1. **Cirugía SEO E-Commerce (Pos 4.7–8.0 en GSC para 'tiendanube cobra comision por venta' - COMPLETADO):**
+   - Boost aplicado a `/blog/precios-comisiones-tiendanube-alternativas-argentina/` con título acortado a 60 caracteres, inyección de la consulta exacta en H2 y meta description, 4ta FAQ interactiva y schema actualizado.
+2. **Cirugía Diseño Web Bariloche (Pos 11.3 en GSC para 'desarrollo de sitios web profesionales bariloche' - COMPLETADO):**
+   - Boost aplicado a `/blog/diseno-web-bariloche/` con título acortado a 55 caracteres, inyección de Google Tag GA4 faltante, 4ta FAQ interactiva y ajuste de contraste en acordeones.
+3. **Sprint de Autoridad SEO Día 2 — 6 Nuevos Artículos Técnicos Publicados (COMPLETADO):**
+   - `/blog/seo-medicos-clinicas-argentina/`
+   - `/blog/seo-local-google-maps-argentina/`
+   - `/blog/consultor-seo-vs-agencia-argentina/`
+   - `/blog/seo-on-page-checklist-optimizacion/`
+   - `/blog/keyword-research-palabras-clave-argentina/`
+   - `/blog/optimizar-imagenes-seo-peso-webp/`
+   - 6 fotos editoriales auténticas cuantizadas a 256 colores (&lt; 490 KB), dual-sync en `images/` y `public/images/`.
+   - Contadores actualizados: 168 guías activas (25 en SEO) y 186 URLs canónicas en ambos sitemaps.
+   - Notificadas las 10 URLs a Google Indexing API v3 (200 OK), GSC Sitemap, IndexNow (202 Accepted) y Bing Webmaster (200 OK).
 
 ### Viernes 13/11 — Eje Diseño Web, Demos y Embudos
 1. **Cirugía de Conversión + Boost por Solapamiento (71%):**
