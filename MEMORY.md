@@ -452,3 +452,16 @@
   - Todas las 6 imágenes editoriales auténticas generadas, cuantizadas a 256 colores (`< 490 KB`) y dual-sincronizadas en `images/` y `public/images/`.
   - Alcanzadas **168 guías activas** en `/blog/index.html` (25 en la categoría Especialista SEO) y **186 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
   - Verificados 0 enlaces rotos con `audit_all_internal_links.py`, compilación 100% limpia en Vite (`19.68s`), y notificado con status 200 OK a Google Indexing API v3, GSC Sitemap, 202 Accepted en IndexNow y 200 OK en Bing Webmaster API.
+- [x] **2026-11-12 (Optimización Integral de Modo Mobile en Demos y Home):**
+  - **Resolución de Colisión de Botones Flotantes y Mobile Action Dock:**
+    - Se resolvió la superposición en mobile donde #btn-scroll-top (abajo a la izquierda) y el botón flotante de WhatsApp de Erik (abajo a la derecha) tapaban el dock fijo inferior (.mobile-action-dock).
+    - Se configuraron los botones flotantes para elevarse armónicamente por encima del dock en mobile (ottom-20 sm:bottom-5), con tamaños más compactos y táctiles (w-10 h-10 / w-11 h-11) para no tapar los títulos ni los botones de acción de cada demo.
+    - Se agregó regla global en src/styles/main.css (ody:has(.mobile-action-dock)) garantizando despeje inferior (calc(4.75rem + env(safe-area-inset-bottom))) y padding de seguridad en el pie de página (ooter pb-24 sm:pb-8).
+  - **Demo de Pilates (demos/estudio-fitness/index.html):**
+    - Se incorporó la barra inferior fija (mobile-action-dock) adaptada a la temática de Lumina Pilates con llamado a la acción ('Consultar Cupos'), más el botón de volver arriba y el botón flotante de WhatsApp.
+  - **Demo de Fitness (demos/fitness/index.html) y Restaurante (demos/restaurante/index.html):**
+    - Se sumó el botón flotante de WhatsApp integrado por encima del dock con dimensiones compactas para mobile.
+  - **Barra Superior de Selector de Demos en Mobile:**
+    - Se estandarizó el contenedor de pestañas en todas las demos con overflow-x-auto w-full sm:w-auto no-scrollbar py-1 y whitespace-nowrap shrink-0, evitando que las pestañas se apilen en 3 o 4 líneas verticales y asegurando un desplazamiento horizontal limpio con el pulgar.
+  - **Página Principal (index.html y en/index.html):**
+    - Se calibraron los botones flotantes en mobile (w-12 h-12 sm:w-14 sm:h-14) para máxima estética y ergonomía táctil sin recargar la pantalla.

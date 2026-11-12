@@ -252,6 +252,53 @@
     -webkit-backdrop-filter: blur(16px);
   }
 
+  /* Ajuste de botones flotantes (Volver Arriba y WhatsApp) para no tapar la barra inferior en mobile */
+  @media (max-width: 639.98px) {
+    /* En páginas con mobile-action-dock, elevar y compactar los botones para que floten por encima del dock */
+    body:has(.mobile-action-dock) #btn-scroll-top,
+    .has-mobile-dock #btn-scroll-top {
+      bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+      left: 0.85rem !important;
+      width: 2.6rem !important;
+      height: 2.6rem !important;
+      z-index: 50 !important;
+    }
+    body:has(.mobile-action-dock) #btn-scroll-top svg,
+    .has-mobile-dock #btn-scroll-top svg {
+      width: 1.15rem !important;
+      height: 1.15rem !important;
+    }
+
+    body:has(.mobile-action-dock) .demo-wa-float,
+    body:has(.mobile-action-dock) aside.fixed.right-5,
+    .has-mobile-dock .demo-wa-float,
+    .has-mobile-dock aside.fixed.right-5 {
+      bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+      right: 0.85rem !important;
+      z-index: 50 !important;
+    }
+    body:has(.mobile-action-dock) .demo-wa-float a,
+    body:has(.mobile-action-dock) aside.fixed.right-5 a,
+    .has-mobile-dock .demo-wa-float a,
+    .has-mobile-dock aside.fixed.right-5 a {
+      width: 2.85rem !important;
+      height: 2.85rem !important;
+    }
+    body:has(.mobile-action-dock) .demo-wa-float a svg,
+    body:has(.mobile-action-dock) aside.fixed.right-5 a svg,
+    .has-mobile-dock .demo-wa-float a svg,
+    .has-mobile-dock aside.fixed.right-5 a svg {
+      width: 1.4rem !important;
+      height: 1.4rem !important;
+    }
+
+    /* Espacio inferior de seguridad en pie de página para que el contenido no quede oculto tras el dock */
+    body:has(.mobile-action-dock) footer,
+    .has-mobile-dock footer {
+      padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
+  }
+
   /* Animación Fade In Rápida */
   .animate-fade-in {
     animation: fadeIn 0.25s ease-out forwards;
