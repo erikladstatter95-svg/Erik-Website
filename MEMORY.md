@@ -465,3 +465,19 @@
     - Se estandarizó el contenedor de pestañas en todas las demos con overflow-x-auto w-full sm:w-auto no-scrollbar py-1 y whitespace-nowrap shrink-0, evitando que las pestañas se apilen en 3 o 4 líneas verticales y asegurando un desplazamiento horizontal limpio con el pulgar.
   - **Página Principal (index.html y en/index.html):**
     - Se calibraron los botones flotantes en mobile (w-12 h-12 sm:w-14 sm:h-14) para máxima estética y ergonomía táctil sin recargar la pantalla.
+- [x] **2026-11-13 (Ejecución del Viernes 13/11: 2 Boosts Cirugías + Sprint Día 3 con 6 Nuevas Guías de Autoridad SEO y Diseño Web B2B):**
+  - **Boost 1 (Dominio .ar y .com.ar con 395 impresiones en GSC):**
+    - En `/blog/como-registrar-dominio-com-ar-nic-argentina/`: Título acortado a 53 caracteres (`Comprar Dominio .ar y .com.ar en NIC Argentina 2026`) absorbiendo las queries `'comprar dominio .ar'` y `'registro de dominios .ar'`. Inyectadas en H2, meta description, agregada la 4ta FAQ interactiva con `<details name="faq-accordion">` y evento GA4 `faq_expand`, y actualizado `dateModified` y Schema `FAQPage`.
+  - **Boost 2 (Empresas de Limpieza con 71% de solapamiento de intención):**
+    - En `/blog/paginas-web-empresas-limpieza-finales-obra-tapizados/`: Título acortado a 55 caracteres (`Páginas Web para Empresas de Limpieza en Argentina 2026`) absorbiendo en H2 y FAQs el cluster de *Abonos Corporativos de Limpieza para Oficinas y Consorcios: Cómo Captar Clientes B2B*, con `dateModified` actualizado.
+  - **Sprint Día 3 — 6 Artículos Nuevos (Regla #17 0 emojis, Regla #18 slugs de 3 a 5 palabras, Regla #19 0 enlaces rotos):**
+    1. `/blog/paginas-web-logistica-transporte/` (Webs para logística, distribución, transporte de carga pesada, cotizador online y tracking de envíos B2B).
+    2. `/blog/presupuesto-diseno-web-argentina/` (Qué debe incluir un presupuesto profesional: alcance, Core Web Vitals, hosting, dominio y analítica GA4).
+    3. `/blog/seo-internacional-etiqueta-hreflang-argentina/` (Guía de rel="alternate" hreflang="es-AR", subdirectorios vs ccTLD y prevención de duplicados regionales).
+    4. `/blog/crawl-budget-optimizacion-rastreo-google/` (Optimización del presupuesto de rastreo de Googlebot, tiempo de respuesta de servidor y sitemaps limpios).
+    5. `/blog/migracion-web-seo-redirecciones-301/` (Migración web SEO sin pérdida de tráfico, mapeo 301 individual, auditoría pre y post lanzamiento en GSC).
+    6. `/blog/seguridad-web-certificados-ssl-https/` (Certificados SSL/TLS, protocolo HTTPS, HSTS, prevención de cartel 'No seguro' y factor de ranking en Google).
+  - Todas las 6 imágenes editoriales generadas, cuantizadas a 256 colores (`< 490 KB`, entre 376 KB y 447 KB) y dual-sincronizadas en `images/` y `public/images/`.
+  - Total actualizado: **174 guías activas** en `/blog/index.html` y **192 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
+  - Verificados 0 enlaces rotos con `audit_all_internal_links.py`, compilación 100% limpia en Vite (`8.05s`, `0 errores`), y notificado con status 200 OK a Google Indexing API v3 (9 URLs), GSC Sitemap, 202 Accepted en IndexNow y 200 OK en Bing Webmaster API.
+
