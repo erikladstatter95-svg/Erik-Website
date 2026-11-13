@@ -49,6 +49,9 @@
 
 ## 🗄️ Decisiones de Arquitectura
 - **Estrategia SEO + AEO + GEO:** Cada artículo del blog incorpora un bloque superior de **Respuesta Directa** (40–60 palabras para citación en Google AI Overviews, ChatGPT Search, Perplexity y Grok), encabezados `<h2>` formulados como preguntas reales de usuarios/IA (*Query Fan-Out*), tablas comparativas HTML y marcado estructurado `Schema.org` (`BlogPosting`, `BreadcrumbList`, `FAQPage`).
+- **Protocolo Operativo Semanal Híbrido (Argon High ➔ Flash 3.8 High):**
+  - **Domingo (Argon con High Reasoning):** Auditoría semanal (GSC, Bing, GA4, SerpBear) y resolución de los **Pasos 1 y 2 para toda la semana** (Lunes a Sábado): detección de canibalización, asignación de Boosts/H2 y diseño de **Outlines maestros cerrados** (Título ≤ 60 caracteres, slug 3 a 5 palabras, H1, Direct Answer Sturm, H2s y lista de FAQs sin techo rígido: mínimo 4, hasta 6 u 8 FAQs según complejidad temática para capturar People Also Ask y query fan-out de IAs).
+  - **Lunes a Sábado (Flash 3.8 con High Reasoning):** Ejecución ágil de los **Pasos 3 y 4** de cada día: redacción editorial apegada al outline maestro, imágenes PIL cuantizadas (`< 490 KB`), cero enlaces rotos (Regla #19), compilación limpia en Vite y notificaciones automáticas (Google Indexing API v3, sitemaps, Bing e IndexNow). Protege el consumo de créditos de Argon concentrándolo en una única sesión estratégica dominical.
 - **Script Local de Fan-Out (`scratch/free_alsoasked_ai_fanout.py`):** Herramienta propia gratuita en Python para recolectar preguntas de autocompletado y *People Also Ask* en Google Argentina (`gl=ar`, `hl=es-419`) sin depender de suscripciones pagas como AlsoAsked.
 
 ---

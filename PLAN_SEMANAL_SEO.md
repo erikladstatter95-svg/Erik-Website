@@ -183,6 +183,16 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
 ---
 
 ## 5. Próximo Comando Dominical Programado (Domingo 15 de Noviembre de 2026)
-- Ejecutar `python scratch/sunday_seo_command.py` (GSC + Bing Webmaster Tools + GA4 + SerpBear).
-- Evaluar la primera semana de conversiones con los 6 nuevos eventos de GA4 (`generate_lead`, `whatsapp_click`, `view_demo`, `faq_expand`, `article_read_75`).
-- Definir el Plan de Ataque de la Semana 2 (16/11 al 21/11).
+- **Ejecución de Auditoría Integral:** Correr `python scratch/sunday_seo_command.py` para consolidar datos de Google Search Console, Bing Webmaster Tools, GA4 (eventos de conversión a WhatsApp y lead) y SerpBear.
+- **Protocolo Híbrido de Alta Eficiencia (Argon High en Domingo ➔ Flash 3.8 High en Semana):**
+  1. **Domingo en Argon (High Reasoning) — Pasos 1 y 2 para Toda la Semana:**
+     - **Paso 1 (Estrategia y Anti-Canibalización):** Análisis semántico profundo de intenciones para decidir qué términos son *Boosts/Cirugías* (H2/FAQ en post existente) y cuáles son *Artículos Nuevos* (Topic Clusters).
+     - **Paso 2 (Outlines Maestros de Lunes a Sábado):** Dejar estructurados de antemano todos los outlines de la semana:
+       - Título comercial exacto (≤ 60 caracteres).
+       - Slug limpio (estrictamente de 3 a 5 palabras).
+       - Encabezado H1 y Direct Answer de Sturm (con keyword en primeras 5–10 palabras).
+       - Estructura de subtítulos H2 con sub-intenciones secundarias.
+       - **Lista de FAQs sin techo rígido:** Mínimo 4 preguntas, ampliándose a 6 u 8 FAQs en temas complejos para capturar People Also Ask (PAA) y el query fan-out de motores generativos (AEO/GEO).
+  2. **De Lunes a Sábado en Flash 3.8 (High Reasoning) — Pasos 3 y 4 de Ejecución Diaria:**
+     - **Paso 3 (Redacción Editorial):** Redactar el cuerpo del artículo con estricto apego al outline de Argon, con tono humano, fluido y sin emojis decorativos (Regla #17).
+     - **Paso 4 (Producción y Despliegue):** Generación y compresión de imágenes con PIL (`< 490 KB`), interlinking verificado a archivos reales (Regla #19, 0 enlaces rotos), compilación en producción (`npm run build`) y notificaciones oficiales a Google Indexing API v3, sitemaps, Bing e IndexNow.
