@@ -172,11 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSendWa = document.getElementById('btn-send-whatsapp-calc');
 
   let selectedType = 'Remodelación Integral';
-  let selectedSurface = '60 a 140 m² (Estándar 3/4 amb)';
+  let selectedSurface = '60 a 140 m² (Estándar 3/4 amb o PH)';
 
   const updateWhatsAppMessage = () => {
-    const loc = locationSelect ? locationSelect.value : 'CABA';
-    const scope = scopeSelect ? scopeSelect.value : 'Llave en mano';
+    const loc = locationSelect ? locationSelect.value : 'Palermo / Recoleta / Barrio Norte (CABA)';
+    const scope = scopeSelect ? scopeSelect.value : 'Proyecto + Dirección + Mano de Obra (Llave en mano)';
 
     const text = `Hola Estudio Vértice! Quiero consultar por un proyecto de: *${selectedType}* en *${loc}*, superficie estimada *${selectedSurface}*. Modalidad: *${scope}*. ¿Podemos coordinar un relevamiento técnico inicial?`;
 
