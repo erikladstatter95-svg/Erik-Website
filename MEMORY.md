@@ -483,4 +483,19 @@
   - Todas las 6 imágenes editoriales generadas, cuantizadas a 256 colores (`< 490 KB`, entre 376 KB y 447 KB) y dual-sincronizadas en `images/` y `public/images/`.
   - Total actualizado: **174 guías activas** en `/blog/index.html` y **192 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
   - Verificados 0 enlaces rotos con `audit_all_internal_links.py`, compilación 100% limpia en Vite (`8.05s`, `0 errores`), y notificado con status 200 OK a Google Indexing API v3 (9 URLs), GSC Sitemap, 202 Accepted en IndexNow y 200 OK en Bing Webmaster API.
+- [x] **2026-11-14 (Ejecución del Sábado 14/11: Protocolo Híbrido Argon High + Flash 3.8 High · 2 Boosts + Cierre del Sprint con 6 Nuevos Artículos):**
+  - **Fase Estratégica (Argon High):** Auditoría de canibalización (0% solapamiento), selección de 2 Boosts con altas impresiones en GSC y redacción de 6 Outlines maestros cerrados.
+  - **Fase de Redacción y Despliegue (Flash 3.8 High):**
+    - **Boost 1 (`/blog/dominio-com-vs-com-ar-cual-conviene-argentina/` — 239 impr en GSC):** `<title>` acortado a 54 chars (`Dominio .com vs .com.ar y .ar: ¿Cuál Conviene en 2026?`), añadido H2 #4 sobre diferencias entre `.com.ar`, `.ar` y `.com`, expandido a 6 FAQs interactivas con GA4 tracking y Schema `FAQPage`.
+    - **Boost 2 (`/blog/como-crear-correo-corporativo-dominio-propio-gmail/` — 201 impr en GSC):** `<title>` acortado a 56 chars (`Correo con Dominio Propio en Gmail: Cómo Crearlo en 2026`), añadido H2 #4 con checklist de SPF, DKIM y DMARC anti-spam, expandido a 6 FAQs interactivas con GA4 tracking y Schema `FAQPage`.
+    - **Sprint Día 4 — 6 Artículos Nuevos (5 palabras exactas, 6 FAQs interactivas cada uno, 0 emojis, 0 enlaces rotos):**
+      1. `/blog/conseguir-resenas-google-maps-seo/` (Estrategias de reseñas locales, link directo, QR físico en locales y ranking en Local Pack).
+      2. `/blog/seo-vs-google-ads-argentina/` (Comparativa comercial, ROI, tiempos, costos por clic, impuestos y estrategia híbrida).
+      3. `/blog/seo-b2b-empresas-industriales-argentina/` (SEO industrial para jefes de compras, especificaciones técnicas, normas y catálogos HTML).
+      4. `/blog/actualizar-contenido-antiguo-seo-google/` (Detección de Content Decay en Search Console, refresh de contenido y señales de freshness).
+      5. `/blog/eeat-google-autoridad-confianza-seo/` (Marco E-E-A-T, directrices YMYL, autoría real verificada y Schema de entidad para LLMs).
+      6. `/blog/mejorar-ctr-organico-titulos-google/` (Optimización de CTR, títulos magnéticos de 50 a 60 caracteres y prevención de truncamiento).
+    - Todas las 6 imágenes editoriales generadas, cuantizadas a 256 colores (`< 490 KB`, peso real 364–439 KB) y dual-sincronizadas en `images/` y `public/images/`.
+    - **Inventario Actualizado:** **180 guías activas** en `/blog/index.html` (41 en Google Maps y 33 en Auditoría SEO) y **198 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
+    - Auditoría de enlaces 100% limpia (0 enlaces rotos), `npm run build` en 8.57s con 0 errores y notificaciones exitosas a Google Indexing API v3 (`200 OK`), GSC Sitemap, IndexNow (`202 Accepted`) y Bing Webmaster API (`200 OK`).
 
