@@ -508,4 +508,9 @@
     - **Cotizador de Obra Interactivo:** Selector de tipo de obra, m², ubicación en CABA/GBA y modalidad llave en mano con previsualización dinámica del mensaje para WhatsApp.
     - **FAQ Acordeón y Footer Global:** Acordeones `<details name="faq-accordion">` y footer de 2 niveles mobile-first.
   - **Build & Registro:** Actualizado `vite.config.js` (`demo_arquitectura`), incorporado a `sitemap.xml` y `public/sitemap.xml` (**199 URLs canónicas**), compilación en Vite validada en 5.63s (`0 errores`) y commit + git push a GitHub.
+  - **Integración en Cluster 1 & Estandarización de Navegación Entre Demos:**
+    - `index.html` y `en/index.html`: Categoría 1 actualizada a "Turnos, Salud y Estudios" con 4 estilos, incorporando el enlace a `/demos/arquitectura/` ("Estudio de Arquitectura: Obras, antes/después y cotizador") y botón "Ver Diseños (Explorar 4 Estilos)".
+    - `san-juan/index.html`: Incorporada la tarjeta de Arquitectura & Construcción al grid de `#demos`.
+    - Estandarizada la barra superior sticky `<aside>` en las 4 variaciones del Cluster 1 (`demos/estetica/index.html`, `demos/odontologia/index.html`, `demos/psicologia/index.html`, `demos/arquitectura/index.html` y templates legacy `demos/cluster-1/*.html`): indicador activo correspondiente, 4 tabs responsivos (`>= 44px` touch targets) y navegación cíclica anterior/siguiente.
+    - Build en Vite 100% verificado (`10.07s`, 0 errores), 0 enlaces rotos (`scratch/audit_all_internal_links.py`) y sincronización git push a producción.
 
