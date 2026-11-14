@@ -37,8 +37,15 @@ En el **85% de los casos NO hace falta que descargues ningún CSV nuevo** para o
 4. **Extractor Automático de *Query Fan-Out* (`free_alsoasked_ai_fanout.py`):** Consulta en vivo el autocompletado de Google Argentina para sumar las preguntas reales que hace la gente.
 - **¿Cuándo SÍ te pido un CSV nuevo el domingo?** Únicamente cuando queramos abrir un rubro o servicio 100% nuevo que no esté en nuestros CSVs guardados.
 
-### C. Regla de Slugs Cortos y Limpios (Regla #18)
-Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palabras clave máximo** (por ejemplo: `/blog/paginas-web-distribuidoras-mayoristas/` o `/blog/errores-google-search-console-seo/`), evitando URLs largas de 7 u 8 palabras.
+### C. Regla del Slug Alineado a la Main Keyword (Regla #18 & Fórmula Sturm)
+El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clave Principal (Main Keyword)** del artículo, sin forzar un conteo artificial ni rígido de palabras:
+- **La Main Keyword manda:** Si la frase clave tiene 3, 4, 5 o 6 palabras (por ejemplo: `/blog/conseguir-resenas-google-maps-seo/`, `/blog/seo-vs-google-ads-argentina/` o `/blog/paginas-web-logistica-transporte/`), el slug debe reflejar esa consulta de búsqueda exacta sin añadir palabras de relleno ni recortar términos que alteren la intención de búsqueda.
+- **Prohibido:** Slugs kilométricos de 8 a 12 palabras con frases redundantes o preposiciones innecesarias que diluyan la relevancia algorítmica.
+- **Alineación Total de 4 Puntos (Fórmula Sturm):** La misma Main Keyword exacta debe estar presente en:
+  1. La etiqueta `<title>` (50 a 60 caracteres, ubicada al frente).
+  2. El slug de la URL.
+  3. El encabezado `<h1>`.
+  4. La `meta description` y las **primeras 5 a 10 palabras** del primer párrafo / bloque de Respuesta Directa.
 
 ---
 
@@ -216,8 +223,8 @@ Todo artículo nuevo debe tener un **slug corto, limpio y directo de 3 a 5 palab
      - **Paso 1 (Estrategia y Anti-Canibalización):** Análisis semántico profundo de intenciones para decidir qué términos son *Boosts/Cirugías* (H2/FAQ en post existente) y cuáles son *Artículos Nuevos* (Topic Clusters).
      - **Paso 2 (Outlines Maestros de Lunes a Sábado):** Dejar estructurados de antemano todos los outlines de la semana:
        - Título comercial exacto (≤ 60 caracteres).
-       - Slug limpio (estrictamente de 3 a 5 palabras).
-       - Encabezado H1 y Direct Answer de Sturm (con keyword en primeras 5–10 palabras).
+       - Slug limpio y natural alineado a la Main Keyword exacta (sin forzar conteos artificiales, evitando relleno).
+       - Encabezado H1, Meta Description y Direct Answer de Sturm con la Main Keyword al frente (primeras 5–10 palabras).
        - Estructura de subtítulos H2 con sub-intenciones secundarias.
        - **Lista de FAQs sin techo rígido:** Mínimo 4 preguntas, ampliándose a 6 u 8 FAQs en temas complejos para capturar People Also Ask (PAA) y el query fan-out de motores generativos (AEO/GEO).
   2. **De Lunes a Sábado en Flash 3.8 (High Reasoning) — Pasos 3 y 4 de Ejecución Diaria:**
