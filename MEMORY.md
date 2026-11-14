@@ -508,10 +508,17 @@
     - **Cotizador de Obra Interactivo:** Selector de tipo de obra, m², ubicación en CABA/GBA y modalidad llave en mano con previsualización dinámica del mensaje para WhatsApp.
     - **FAQ Acordeón y Footer Global:** Acordeones `<details name="faq-accordion">` y footer de 2 niveles mobile-first.
   - **Build & Registro:** Actualizado `vite.config.js` (`demo_arquitectura`), incorporado a `sitemap.xml` y `public/sitemap.xml` (**199 URLs canónicas**), compilación en Vite validada en 5.63s (`0 errores`) y commit + git push a GitHub.
-  - **Rediseño Estético y Adaptación a CABA (`/demos/arquitectura/`):**
-    - **Fotografías Reales Coherentes para Antes y Después:** Generadas e integradas dos imágenes fotorrealistas con idéntica perspectiva y geometría de una cocina de departamento en Palermo, CABA: original envejecida de los años 80/90s (melamina gastada, azulejos antiguos, cocina a gas blanca, ventana con rejas) vs cocina contemporánea de revista (muebles antracita y roble natural, mesada y alzada continua de cuarzo Calacatta con cascada lateral, anafe de inducción, iluminación LED arquitectónica y ventana de aluminio negro). Optimizadas en WebP (128 KB y 62 KB) y dual-sincronizadas en `public/images/` e `images/`.
-    - **Estética Inspirada en Aconif:** Paleta orgánica deep dark `#0C0F0D`, tipografía `Montserrat` y `Space Grotesk`, banner de 4 garantías contractuales (presupuesto cerrado, matrícula CPAU/DGFYCO, cuadrillas con ART y acopio mayorista contra inflación).
-    - **Enfoque 100% CABA y Zona Norte:** Cobertura barrial específica (Palermo, Recoleta, Belgrano, Colegiales), foco en reciclaje de PHs, departamentos patrimoniales, normativa de ruidos/consorcios y gestión de Ley 257.
-    - **Cotizador de Obra Renovado:** Opciones de tipo de intervención, rangos de superficie, comunas de CABA / Zona Norte y generación dinámica de mensaje a WhatsApp.
-    - **Verificaciones:** Compilación en Vite limpia en 14.23s (`0 errores`), 0 enlaces rotos y commit + push a GitHub.
+  - **Rediseño Radical de Arquitectura Estilo Aconif.com (`/demos/arquitectura/`):**
+    - **Inspiración y Estructura 1:1 con Aconif:** Superando la versión preliminar que se asemejaba a la anterior, se implementó una reconstrucción total basada en la anatomía real de Aconif.com:
+      1. **Tipografía Global Montserrat (300 a 900):** Estética editorial limpia de estudio de arquitectura de alta gama.
+      2. **Paleta y Gradientes Aconif:** Fondo dark ink `--bg-dark: #0c120d`, acento lima `--a-lime: #7cda24`, verde salvia `--a-sage: #abcb67` y gradiente de texto `.ac-keyword` (`linear-gradient(135deg, #7cda24 0%, #abcb67 55%, #fff 120%)`).
+      3. **Hero Cinemático a Pantalla Completa:** Background full-bleed con efecto sutil Ken Burns (`scale(1.05)`), gradiente oscuro superior/inferior, kicker pulsante con indicador verde (`Buenos Aires · Desde 2014 · Matrícula CPAU & DGFYCO`), titular monumental de dos líneas, botón píldora blanco de alto contraste con pastilla negra y flecha lima (`ac-btn-hero`), y tarjeta flotante de obra (`.ac-vcard`) en la esquina inferior derecha.
+      4. **Sección Statement con Métricas Monumentales (`.ac-statement`):** *"La confianza no se comunica. Se construye."* con 4 números gigantes (`12` años en CABA, `100%` presupuesto cerrado por contrato, `52` consorcios Ley 257 y `< 48h` visita de relevamiento in situ).
+      5. **Sección "Dónde Intervenimos" (`.ac-donde`):** Organización en filas horizontales numeradas con hover/active (`01 Palermo / Colegiales`, `02 Recoleta / Barrio Norte`, `03 Belgrano / Núñez`, `04 Consorcios CABA`) detallando tipologías y volumen de obras ejecutadas.
+      6. **Slider Antes / Después Integrado:** Cocina clásica porteña de los 80s vs cocina contemporánea con isla y cuarzo Calacatta, operado por slider táctil/mouse con etiquetas Aconif-styled.
+      7. **Obras / Portfolio (`.ac-casas`):** Grid de 8 proyectos con filtros dinámicos, chips de categoría, metros cuadrados, ubicación y modal con memoria técnica.
+      8. **Servicios & Consorcios (`.ac-servicios`):** 3 bloques numerados de especialidad y sección dedicada a Administradores de Consorcios con certificación DGFYCO.
+      9. **Cotizador Interactivo & FAQ:** Acordeones y cotizador adaptados con la paleta dark ink y acentos lima.
+    - **Validaciones:** Compilación en Vite limpia en 6.60s (`dist/demos/arquitectura/index.html 91.22 kB`), 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis decorativos (Regla #17), imágenes WebP dual-sincronizadas (Regla #12) y push obligatorio a GitHub (Regla #15).
+
 
