@@ -498,4 +498,14 @@
     - Todas las 6 imágenes editoriales generadas, cuantizadas a 256 colores (`< 490 KB`, peso real 364–439 KB) y dual-sincronizadas en `images/` y `public/images/`.
     - **Inventario Actualizado:** **180 guías activas** en `/blog/index.html` (41 en Google Maps y 33 en Auditoría SEO) y **198 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
     - Auditoría de enlaces 100% limpia (0 enlaces rotos), `npm run build` en 8.57s con 0 errores y notificaciones exitosas a Google Indexing API v3 (`200 OK`), GSC Sitemap, IndexNow (`202 Accepted`) y Bing Webmaster API (`200 OK`).
+- [x] **2026-11-14 (Nueva Demo Integral para Estudios de Arquitectura, Reformas & Consorcios `/demos/arquitectura/`):**
+  - **Motivación y Caso Comercial:** Respuesta calificada al prospecto de CABA (`aireyluzarquitectura.com`, +54 9 11 3642-0064) requiriendo experiencia demostrable, portfolio estético, velocidad móvil superior frente a su WordPress obsoleto con Visual Composer en GoDaddy y captación en remodelaciones + consorcios (Ley 257).
+  - **Desarrollo Integral de la Demo (`/demos/arquitectura/index.html` y `demos/arquitectura/app.js`):**
+    - **Identidad:** *"VÉRTICE · Arquitectura & Gestión de Obras"* (CABA y GBA, Matrícula CPAU / CAPBA).
+    - **Portfolio Filtrable (8 Casos de Estudio):** Filtros instantáneos en JS (`Todos`, `Residencial`, `Remodelaciones`, `Consorcios & Ley 257`, `Comercial & Oficinas`), cada uno con badges técnicos (Ubicación, Superficie, Plazo) y Modal interactivo de Ficha Técnica con memoria descriptiva y CTA directo a WhatsApp.
+    - **Slider Interactivo Antes / Después (Before & After):** Componente táctil y con mouse que permite deslizar y comparar la demolición inicial vs departamento remodelado terminado en Palermo.
+    - **Segmentación de 3 Unidades de Negocio:** 1) Residencial & Reformas Integrales, 2) Consorcios, Edificios & Ley 257 (informes, fachadas, balcones y obras de gas con matriculado), 3) Locales Comerciales & Oficinas (habilitaciones express AGC).
+    - **Cotizador de Obra Interactivo:** Selector de tipo de obra, m², ubicación en CABA/GBA y modalidad llave en mano con previsualización dinámica del mensaje para WhatsApp.
+    - **FAQ Acordeón y Footer Global:** Acordeones `<details name="faq-accordion">` y footer de 2 niveles mobile-first.
+  - **Build & Registro:** Actualizado `vite.config.js` (`demo_arquitectura`), incorporado a `sitemap.xml` y `public/sitemap.xml` (**199 URLs canónicas**), compilación en Vite validada en 5.63s (`0 errores`) y commit + git push a GitHub.
 

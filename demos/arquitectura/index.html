@@ -1,14 +1,1197 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <title>Redirigiendo...</title>
-  <link rel="canonical" href="https://erikwebsite.com/blog/portfolio-web-arquitectos-estudios-de-arquitectura/">
-  <meta http-equiv="refresh" content="0; url=/blog/portfolio-web-arquitectos-estudios-de-arquitectura/">
-  <meta name="robots" content="noindex, follow">
-  <script>window.location.replace("/blog/portfolio-web-arquitectos-estudios-de-arquitectura/");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KWD0WYVK4J');
+  </script>
+
+  <!-- Clarity tracking code for https://erikwebsite.com/ -->
+  <script>
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "ytkayi2nwu");
+  </script>
+
+  <title>Demo Estudio de Arquitectura, Reformas & Consorcios | VÉRTICE</title>
+  <meta name="description" content="Demo interactiva para estudios de arquitectura, constructoras y reformas integrales en CABA y GBA: portfolio filtrable, comparador interactivo antes/después, especialización en consorcios Ley 257 y cotizador de anteproyectos a WhatsApp.">
+  <link rel="canonical" href="https://erikwebsite.com/demos/arquitectura/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://erikwebsite.com/demos/arquitectura/">
+  <meta property="og:title" content="Demo Estudio de Arquitectura & Obras | VÉRTICE">
+  <meta property="og:description" content="Portfolio filtrable de obras, comparador interactivo antes/después, consorcios Ley 257 y cotizador a WhatsApp para estudios de arquitectura y constructoras.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_portfolio_web_arquitectos_estudios.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fuentes tipográficas Google Fonts: Plus Jakarta Sans + Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../src/styles/main.css">
+
+  <style>
+    /* Tipografía técnica arquitectónica */
+    .font-arch { font-family: 'Space Grotesk', -apple-system, sans-serif; }
+    
+    /* Comparador Antes y Después */
+    .ba-slider {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ba-after-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      width: 50%;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      left: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 0 16px rgba(0,0,0,0.6);
+      cursor: ew-resize;
+      z-index: 20;
+    }
+    .ba-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: #18181B;
+      border: 2px solid #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Modal Ficha de Obra */
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      transform: scale(0.96) translateY(12px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-backdrop.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+  </style>
 </head>
-<body>
-  <p>Redirigiendo a <a href="/blog/portfolio-web-arquitectos-estudios-de-arquitectura/">https://erikwebsite.com/blog/portfolio-web-arquitectos-estudios-de-arquitectura/</a>...</p>
+
+<body class="bg-[#0C0C0E] text-neutral-300 font-sans antialiased selection:bg-amber-500/30 selection:text-white pb-24 sm:pb-0">
+
+  <!-- ========================================================================= -->
+  <!-- BARRA DEMO DE AUTORIDAD (STICKY TOP) -->
+  <!-- ========================================================================= -->
+  <aside class="sticky top-0 z-50 bg-[#141418]/95 backdrop-blur-md border-b border-white/[0.08] text-xs text-neutral-400 py-2.5 px-4 transition-all">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <a href="/" class="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors font-medium">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span>Volver a erikwebsite.com</span>
+        </a>
+        <span class="text-neutral-600 hidden sm:inline">•</span>
+        <span class="bg-amber-500/10 text-amber-300 border border-amber-500/20 px-2 py-0.5 rounded font-mono text-[11px] hidden sm:inline-block">
+          DEMO ACTIVA: ESTUDIO DE ARQUITECTURA & OBRAS
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-neutral-400 hidden md:inline">¿Querés una web como esta para tu estudio?</span>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20la%20demo%20de%20Arquitectura%20y%20quiero%20cotizar%20una%20web%20para%20mi%20estudio"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold px-3 py-1 rounded-full transition-all text-xs">
+          <span>Pedir Presupuesto Web</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- NAVEGACIÓN PRINCIPAL DEL ESTUDIO -->
+  <!-- ========================================================================= -->
+  <header class="relative z-40 bg-[#0C0C0E]/90 backdrop-blur-xl border-b border-white/[0.06]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Marca / Logotipo Arquitectónico -->
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 border border-white/20 bg-neutral-900 flex items-center justify-center font-arch font-bold text-white text-lg tracking-wider group-hover:border-amber-400 transition-colors">
+          V
+        </div>
+        <div class="flex flex-col">
+          <span class="font-arch font-bold text-white text-lg tracking-tight leading-none group-hover:text-amber-300 transition-colors">
+            VÉRTICE
+          </span>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-neutral-400 mt-1">
+            Arquitectura & Obras · CABA
+          </span>
+        </div>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs tracking-wider uppercase font-arch text-neutral-400">
+        <a href="#obras" class="hover:text-white transition-colors">Obras</a>
+        <a href="#antes-despues" class="hover:text-white transition-colors">Antes / Después</a>
+        <a href="#servicios" class="hover:text-white transition-colors">Especialidades</a>
+        <a href="#consorcios" class="hover:text-white transition-colors">Consorcios & Ley 257</a>
+        <a href="#metodo" class="hover:text-white transition-colors">Método</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+
+      <!-- CTA Principal Header -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#cotizador"
+           class="inline-flex items-center gap-2 bg-white hover:bg-neutral-200 text-neutral-950 text-xs font-arch font-bold uppercase tracking-wider px-4 py-2.5 rounded transition-all">
+          <span>Calcular Obra</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION: IMPACTO EDITORIAL & METROLOGÍA -->
+  <!-- ========================================================================= -->
+  <section id="inicio" class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden border-b border-white/[0.06]">
+    <!-- Fondo sutil de grilla técnica de arquitectura -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Columna de texto -->
+        <div class="lg:col-span-7 space-y-6 text-center sm:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-mono text-neutral-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Estudio Matriculado CPAU / CAPBA · CABA y Corredor Norte</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-arch font-bold text-white tracking-tight leading-[1.08]">
+            Arquitectura de precisión, <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-amber-200">reformas integrales</span> y gestión de obras.
+          </h1>
+
+          <p class="text-base sm:text-lg text-neutral-400 max-w-2xl leading-relaxed">
+            Diseñamos y ejecutamos proyectos residenciales, locales comerciales y obras de consorcio bajo estricto cómputo métrico y presupuesto cerrado. Sin sobrecostos imprevistos ni plazos que se dilatan.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center sm:justify-start">
+            <a href="#cotizador"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-arch font-bold uppercase tracking-wider text-xs px-6 py-4 rounded transition-all shadow-lg shadow-amber-500/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>Calcular Presupuesto de Obra</span>
+            </a>
+            <a href="#obras"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/50 text-white font-arch font-medium text-xs uppercase tracking-wider px-6 py-4 rounded transition-colors bg-white/[0.02]">
+              <span>Ver Obras Recientes (8)</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+          </div>
+
+          <!-- Métricas de Confianza -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/[0.08]">
+            <div class="text-left">
+              <span class="block font-arch font-bold text-2xl sm:text-3xl text-white">+14.500</span>
+              <span class="text-[11px] text-neutral-400 uppercase font-mono tracking-wider">m² Proyectados</span>
+            </div>
+            <div class="text-left">
+              <span class="block font-arch font-bold text-2xl sm:text-3xl text-amber-400">100%</span>
+              <span class="text-[11px] text-neutral-400 uppercase font-mono tracking-wider">Presupuesto Cerrado</span>
+            </div>
+            <div class="text-left">
+              <span class="block font-arch font-bold text-2xl sm:text-3xl text-white">+48</span>
+              <span class="text-[11px] text-neutral-400 uppercase font-mono tracking-wider">Consorcios Ley 257</span>
+            </div>
+            <div class="text-left">
+              <span class="block font-arch font-bold text-2xl sm:text-3xl text-white">&lt; 48 hs</span>
+              <span class="text-[11px] text-neutral-400 uppercase font-mono tracking-wider">Visita a Inmueble</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Visual: Foto Destacada Editorial -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-neutral-900 group">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                 alt="Obra Residencial Belgrano R - Estudio Vértice"
+                 class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700"
+                 loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0E] via-transparent to-transparent"></div>
+            
+            <!-- Pastilla descriptiva sobre imagen -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 block">Obra Destacada 2025</span>
+              <h2 class="text-sm font-arch font-bold text-white mt-0.5">Casa Belgrano R · 280 m²</h2>
+              <p class="text-xs text-neutral-400 mt-1">Estructura en hormigón visto, carpinterías DVH y dirección técnica llave en mano.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 1: PORTFOLIO FILTRABLE DE OBRAS CON FICHAS TÉCNICAS -->
+  <!-- ========================================================================= -->
+  <section id="obras" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0E0E12]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Encabezado de Sección -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Portfolio de Trabajos</span>
+          <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+            Obras ejecutadas y casos de estudio.
+          </h2>
+          <p class="text-neutral-400 text-sm mt-2 max-w-xl">
+            Cada obra documentada con su ficha técnica, plazos reales y memoria descriptiva de intervención.
+          </p>
+        </div>
+
+        <!-- Filtros Rápidos -->
+        <div class="flex flex-wrap items-center gap-2" id="portfolio-filter-container">
+          <button type="button" data-filter="todos"
+                  class="portfolio-tab active px-3.5 py-1.5 rounded text-xs font-arch uppercase tracking-wider font-bold transition-all bg-white text-neutral-950">
+            Todos (8)
+          </button>
+          <button type="button" data-filter="residencial"
+                  class="portfolio-tab px-3.5 py-1.5 rounded text-xs font-arch uppercase tracking-wider transition-all bg-neutral-900 text-neutral-400 hover:text-white border border-white/10">
+            Residencial
+          </button>
+          <button type="button" data-filter="remodelacion"
+                  class="portfolio-tab px-3.5 py-1.5 rounded text-xs font-arch uppercase tracking-wider transition-all bg-neutral-900 text-neutral-400 hover:text-white border border-white/10">
+            Remodelaciones
+          </button>
+          <button type="button" data-filter="consorcios"
+                  class="portfolio-tab px-3.5 py-1.5 rounded text-xs font-arch uppercase tracking-wider transition-all bg-neutral-900 text-neutral-400 hover:text-white border border-white/10">
+            Consorcios & Ley 257
+          </button>
+          <button type="button" data-filter="comercial"
+                  class="portfolio-tab px-3.5 py-1.5 rounded text-xs font-arch uppercase tracking-wider transition-all bg-neutral-900 text-neutral-400 hover:text-white border border-white/10">
+            Comercial & Oficinas
+          </button>
+        </div>
+      </div>
+
+      <!-- Grilla de Tarjetas de Obras -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="portfolio-grid">
+
+        <!-- Obra 1: Residencial -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="residencial"
+                 data-title="Casa Belgrano R"
+                 data-location="Belgrano R, CABA"
+                 data-surface="280 m²"
+                 data-time="8 meses"
+                 data-type="Obra Nueva Residencial"
+                 data-desc="Diseño y construcción integral unifamiliar. Hormigón visto texturado, carpinterías de piso a techo con doble vidriado hermético y climatización geotérmica."
+                 data-image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+                 alt="Casa Belgrano R"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Residencial
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Belgrano R, CABA</span>
+                <span>280 m²</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Casa Belgrano R
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Hormigón visto, madera de incienso y dirección técnica de obra cerrada.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 2: Remodelación -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="remodelacion"
+                 data-title="Piso Histórico Recoleta"
+                 data-location="Recoleta, CABA"
+                 data-surface="160 m²"
+                 data-time="90 días"
+                 data-type="Remodelación Integral"
+                 data-desc="Restauración de molduras de 1940 combinadas con interiorismo minimalista en cocina integrada con isla de Dekton, supresión de dependencias para generar master suite y renovación de cañerías hidrobronz a termofusión."
+                 data-image="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+                 alt="Piso Histórico Recoleta"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Remodelación
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Recoleta, CABA</span>
+                <span>160 m²</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Piso Histórico Recoleta
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Restauración patrimonial, cocina en isla y renovación de instalaciones completas.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 3: Consorcios & Ley 257 -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="consorcios"
+                 data-title="Rehabilitación Fachada & Ley 257"
+                 data-location="Barrio Norte, CABA"
+                 data-surface="12 Pisos (Consorcio)"
+                 data-time="45 días"
+                 data-type="Obra Edilicia & Certificación"
+                 data-desc="Inspección ocular y cateos técnicos sobre frentes y balcones. Reparación de armaduras expuestas, sellado elástico de grietas en medianeras y emisión del Certificado de Conservación Ley 257 con firma profesional ante la DGFYCO."
+                 data-image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+                 alt="Rehabilitación Fachada Ley 257"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Consorcios Ley 257
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Barrio Norte, CABA</span>
+                <span>12 Pisos</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Edificio Av. Santa Fe
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Informe Ley 257 aprobado, restauración de balcones e impermeabilización.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 4: Comercial & Oficinas -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="comercial"
+                 data-title="Showroom & Oficinas Corporativas"
+                 data-location="Palermo Soho, CABA"
+                 data-surface="210 m²"
+                 data-time="40 días"
+                 data-type="Arquitectura Comercial"
+                 data-desc="Adecuación integral para sede de empresa de software. Planta abierta con divisorios acústicos en hierro y vidrio, iluminación inteligente DALI y trámite de habilitación comercial ante la AGC."
+                 data-image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+                 alt="Showroom Palermo Soho"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Comercial
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Palermo Soho, CABA</span>
+                <span>210 m²</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Oficinas Soho Hub
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Habilitación express AGC, plantas libres e interiorismo industrial contemporáneo.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 5: Residencial Unifamiliar -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="residencial"
+                 data-title="Vivienda Unifamiliar San Isidro"
+                 data-location="San Isidro, GBA Norte"
+                 data-surface="340 m²"
+                 data-time="10 meses"
+                 data-type="Obra Nueva Residencial"
+                 data-desc="Casa moderna con doble altura en estar principal, galería con parrilla embutida en chapa de hierro y piscina sinfín. Aislación térmica superior con muros dobles con cámara de aire."
+                 data-image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80"
+                 alt="Vivienda San Isidro"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Residencial
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>San Isidro, GBA</span>
+                <span>340 m²</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Casa Las Lomas
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Doble altura, galería con quincho integrado y eficiencia energética.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 6: Remodelación Penthouse -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="remodelacion"
+                 data-title="Penthouse & Terraza Colegiales"
+                 data-location="Colegiales, CABA"
+                 data-surface="115 m² + 70 m² Terraza"
+                 data-time="75 días"
+                 data-type="Remodelación & Ampliación"
+                 data-desc="Incorporación de terraza en desuso mediante estructura liviana de hierro y pérgola bioclimática. Revestimientos en microcemento gris, baño en suite con mampara corrediza y nueva caldera dual."
+                 data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+                 alt="Penthouse Colegiales"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Remodelación
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Colegiales, CABA</span>
+                <span>185 m² Totales</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Penthouse Conde
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Terraza con quincho moderno, microcemento y baño en suite.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 7: Consorcios Gas & Sala de Máquinas -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="consorcios"
+                 data-title="Reconexión de Gas & Sala de Máquinas"
+                 data-location="Almagro, CABA"
+                 data-surface="24 Unidades Funcionales"
+                 data-time="22 días"
+                 data-type="Obra de Infraestructura Consorcio"
+                 data-desc="Gestión integral de corte de gas preventivo por Metrogas. Reemplazo de montante principal en caño epoxi de 2'', colocación de llaves esféricas de corte por departamento, prueba de hermeticidad y rehabilitación del servicio en tiempo récord."
+                 data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                 alt="Reconexión de Gas Consorcio"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Consorcios Ley 257
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Almagro, CABA</span>
+                <span>24 Deptos</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Consorcio Medrano
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Reconexión de gas aprobada en Metrogas y sala de calderas a nuevo.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Obra 8: Comercial Café / Gastronómico -->
+        <article class="project-card flex flex-col bg-neutral-900/60 rounded border border-white/[0.08] overflow-hidden group hover:border-amber-400/50 transition-all duration-300"
+                 data-category="comercial"
+                 data-title="Café de Especialidad & Deli"
+                 data-location="Núñez, CABA"
+                 data-surface="90 m²"
+                 data-time="28 días"
+                 data-type="Local Comercial Gastronómico"
+                 data-desc="Transformación de antiguo depósito en cafetería de especialidad. Barra en terrazo pulido, instalación sanitaria según código de habilitaciones y tramitación de aviso de obra y habilitación comercial ante AGC."
+                 data-image="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-800">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+                 alt="Café de Especialidad Núñez"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <span class="absolute top-3 left-3 bg-neutral-900/90 text-[10px] uppercase font-mono px-2 py-0.5 rounded text-amber-300 border border-white/10">
+              Comercial
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+                <span>Núñez, CABA</span>
+                <span>90 m²</span>
+              </div>
+              <h3 class="font-arch font-bold text-white text-base group-hover:text-amber-300 transition-colors">
+                Café Tostado Studio
+              </h3>
+              <p class="text-xs text-neutral-400 mt-2 line-clamp-2">
+                Habilitación gastronómica express y diseño interior comercial llave en mano.
+              </p>
+            </div>
+            <button type="button" class="btn-open-modal mt-4 w-full py-2 px-3 border border-white/15 hover:border-amber-400 text-xs font-arch text-neutral-300 hover:text-white rounded transition-colors flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Técnica</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 2: COMPARADOR INTERACTIVO "ANTES Y DESPUÉS" (SLIDER) -->
+  <!-- ========================================================================= -->
+  <section id="antes-despues" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0C0C0E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Transformación Tangible</span>
+        <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+          Deslizá para ver el Antes y Después.
+        </h2>
+        <p class="text-neutral-400 text-sm mt-3">
+          Caso real: Piso de 115 m² en Palermo. Demolición de muros ciegos, cambio total de cañerías y unificación de cocina en isla en 60 días corridos.
+        </p>
+      </div>
+
+      <!-- Componente Slider Antes y Después -->
+      <div class="max-w-4xl mx-auto">
+        <div class="ba-slider relative rounded-lg border border-white/20 shadow-2xl aspect-[16/10] overflow-hidden" id="before-after-slider">
+          
+          <!-- Capa 1: DESPUÉS (Fondo completo) -->
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85"
+               alt="Resultado terminado después de remodelación"
+               class="absolute inset-0 w-full h-full object-cover">
+          <span class="absolute bottom-5 right-5 z-10 bg-neutral-900/90 text-white font-arch font-bold text-xs uppercase px-3 py-1 rounded border border-white/20 backdrop-blur-md">
+            Después (Obra Terminada)
+          </span>
+
+          <!-- Capa 2: ANTES (Cortada por el ancho del slider) -->
+          <div class="ba-after-layer" id="ba-layer">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=85"
+                 alt="Espacio en demolición antes de remodelación"
+                 class="absolute top-0 left-0 max-w-none h-full object-cover"
+                 id="ba-before-img">
+            <span class="absolute bottom-5 left-5 z-10 bg-neutral-900/90 text-amber-400 font-arch font-bold text-xs uppercase px-3 py-1 rounded border border-white/20 backdrop-blur-md">
+              Antes (Demolición Inicial)
+            </span>
+          </div>
+
+          <!-- Tirador / Divisor Draggable -->
+          <div class="ba-handle" id="ba-handle">
+            <div class="ba-handle-btn">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-3 3 3 3m8-6l3 3-3 3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instrucción de uso -->
+        <p class="text-center text-xs font-mono text-neutral-400 mt-4 flex items-center justify-center gap-2">
+          <span>Arrastrá el control blanco central hacia la izquierda o derecha</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 3: LAS 3 UNIDADES DE NEGOCIO (SEGMENTACIÓN POR CLIENTE) -->
+  <!-- ========================================================================= -->
+  <section id="servicios" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0E0E12]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Especialización de Estudio</span>
+        <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+          Tres divisiones técnicas con equipos dedicados.
+        </h2>
+        <p class="text-neutral-400 text-sm mt-3">
+          No improvisamos. Cada tipología de proyecto cuenta con sus propios arquitectos calculistas, jefes de obra matriculados y gremios especializados.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Tarjeta 1: Residencial & Reformas -->
+        <div class="p-8 rounded bg-neutral-900/70 border border-white/[0.08] flex flex-col justify-between hover:border-amber-400/40 transition-colors">
+          <div>
+            <div class="w-12 h-12 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center text-amber-400 mb-6 font-arch font-bold text-xl">
+              01
+            </div>
+            <h3 class="text-xl font-arch font-bold text-white">
+              Residencial & Reformas Integrales
+            </h3>
+            <p class="text-xs text-neutral-400 mt-2">
+              Para propietarios que buscan renovar su vivienda o construir desde cero sin el estrés de lidiar con albañiles ni sobrecostos.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-xs text-neutral-300">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Anteproyecto y maqueta 3D fotorrealista.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Cómputo métrico y presupuesto cerrado con lista de materiales.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Dirección y mano de obra llave en mano.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Garantía de 12 meses posentrega.</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#cotizador" class="mt-8 inline-flex items-center gap-2 text-xs font-arch font-bold uppercase tracking-wider text-amber-300 hover:text-white transition-colors">
+            <span>Cotizar Reforma Residencial →</span>
+          </a>
+        </div>
+
+        <!-- Tarjeta 2: Consorcios & Ley 257 (Foco Aire y Luz) -->
+        <div class="p-8 rounded bg-neutral-900/90 border-2 border-amber-500/30 flex flex-col justify-between relative shadow-xl shadow-amber-500/5">
+          <span class="absolute -top-3 right-6 bg-amber-500 text-neutral-950 text-[10px] uppercase font-arch font-extrabold px-2.5 py-0.5 rounded shadow">
+            División Edificios
+          </span>
+          <div>
+            <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded flex items-center justify-center text-amber-400 mb-6 font-arch font-bold text-xl">
+              02
+            </div>
+            <h3 class="text-xl font-arch font-bold text-white">
+              Consorcios, Edificios & Ley 257
+            </h3>
+            <p class="text-xs text-neutral-400 mt-2">
+              Para administradores de consorcios que necesitan resolver trámites obligatorios, obras de fachada y urgencias reglamentarias en CABA.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-xs text-neutral-300">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span><strong>Informe y Certificado Ley 257</strong> ante el GCBA / DGFYCO.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Reparación de frentes, balcones y pintura de medianeras.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span><strong>Corte y Reconexión de Gas</strong> con gasistas matriculados.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Atención a reuniones de consorcio y presupuestos comparativos.</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#consorcios" class="mt-8 inline-flex items-center gap-2 text-xs font-arch font-bold uppercase tracking-wider text-amber-300 hover:text-white transition-colors">
+            <span>Ver Servicios a Consorcios →</span>
+          </a>
+        </div>
+
+        <!-- Tarjeta 3: Locales Comerciales & Oficinas -->
+        <div class="p-8 rounded bg-neutral-900/70 border border-white/[0.08] flex flex-col justify-between hover:border-amber-400/40 transition-colors">
+          <div>
+            <div class="w-12 h-12 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center text-amber-400 mb-6 font-arch font-bold text-xl">
+              03
+            </div>
+            <h3 class="text-xl font-arch font-bold text-white">
+              Locales Comerciales & Oficinas
+            </h3>
+            <p class="text-xs text-neutral-400 mt-2">
+              Para franquicias, empresas y comercios donde cada día de retraso en la apertura significa pérdida directa de facturación.
+            </p>
+            <ul class="mt-6 space-y-2.5 text-xs text-neutral-300">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Avisos de obra y habilitación comercial en AGC.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Reformas en plazos ultracortos (trabajos diurnos y nocturnos).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Instalación eléctrica trifásica y planos de bomberos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5">✓</span>
+                <span>Coordinación de identidad de marca e interiorismo comercial.</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#cotizador" class="mt-8 inline-flex items-center gap-2 text-xs font-arch font-bold uppercase tracking-wider text-amber-300 hover:text-white transition-colors">
+            <span>Cotizar Local u Oficina →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 4: BLOQUE ESPECIAL CONSORCIOS & LEY 257 (FOCO CLAVE) -->
+  <!-- ========================================================================= -->
+  <section id="consorcios" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0C0C0E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-neutral-900 to-[#121216] border border-white/15 rounded-xl p-8 lg:p-12">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400">Atención a Administradores de Consorcio</span>
+            <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+              Cumplí con la Ley 257 y resolvé obras de gas sin multas ni demoras.
+            </h2>
+            <p class="text-sm text-neutral-300 leading-relaxed">
+              La Ley 257 de CABA exige a los edificios certificar periódicamente la conservación de sus fachadas, balcones y medianeras. Emitimos el certificado formal con firma profesional matriculada ante el GCBA y ejecutamos las obras de adecuación con cuadrillas aseguradas con ART obligatoria.
+            </p>
+            <div class="grid sm:grid-cols-3 gap-4 pt-2">
+              <div class="p-3 bg-black/40 border border-white/10 rounded">
+                <span class="block text-white font-arch font-bold text-sm">Inspección In Situ</span>
+                <span class="text-xs text-neutral-400">Relevamiento con informe fotográfico y cateos en 72 hs.</span>
+              </div>
+              <div class="p-3 bg-black/40 border border-white/10 rounded">
+                <span class="block text-white font-arch font-bold text-sm">Firma CPAU</span>
+                <span class="text-xs text-neutral-400">Certificación oficial registrada ante DGFYCO sin intermediarios.</span>
+              </div>
+              <div class="p-3 bg-black/40 border border-white/10 rounded">
+                <span class="block text-white font-arch font-bold text-sm">Obras con Financiación</span>
+                <span class="text-xs text-neutral-400">Planes de cuotas para consorcios con pagos contra certificación.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col gap-3 justify-center">
+            <a href="https://wa.me/5492645185359?text=Hola!%20Represento%20a%20un%20consorcio%20en%20CABA%20y%20necesitamos%20un%20presupuesto%20por%20Ley%20257%20/%20Obras%20edilicias"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-arch font-bold uppercase tracking-wider text-xs px-6 py-4 rounded transition-all shadow-lg text-center">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Pedir Informe para Consorcio</span>
+            </a>
+            <span class="text-center text-[11px] text-neutral-400">Respuesta técnica por WhatsApp en menos de 2 horas.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 5: MÉTODO DE TRABAJO (CERO DESVÍOS NI SORPRESAS) -->
+  <!-- ========================================================================= -->
+  <section id="metodo" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0E0E12]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Proceso Transparente</span>
+        <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+          Cómo trabajamos: 4 etapas sin imprevistos.
+        </h2>
+        <p class="text-neutral-400 text-sm mt-3">
+          El 80% de los problemas en obra surgen por falta de cómputo previo. Nuestro sistema contractual elimina las dudas antes de clavar el primer clavo.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Paso 1 -->
+        <div class="p-6 rounded bg-neutral-900/50 border border-white/[0.08] relative">
+          <span class="text-4xl font-arch font-extrabold text-white/10 block mb-3">01</span>
+          <h3 class="font-arch font-bold text-white text-base">Relevamiento & Programa</h3>
+          <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Visita técnica al inmueble, toma de medidas láser y diagnóstico estructural. Entendemos tus necesidades y presupuesto límite.
+          </p>
+          <span class="inline-block mt-4 text-[11px] font-mono text-amber-400">Plazo: 48 a 72 hs</span>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="p-6 rounded bg-neutral-900/50 border border-white/[0.08] relative">
+          <span class="text-4xl font-arch font-extrabold text-white/10 block mb-3">02</span>
+          <h3 class="font-arch font-bold text-white text-base">Anteproyecto & Cómputo</h3>
+          <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Planos técnicos, maqueta 3D y planilla de cómputo y presupuesto cerrado por ítem. Sabés exactamente cuánto cuesta cada material y mano de obra.
+          </p>
+          <span class="inline-block mt-4 text-[11px] font-mono text-amber-400">Plazo: 7 a 14 días</span>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="p-6 rounded bg-neutral-900/50 border border-white/[0.08] relative">
+          <span class="text-4xl font-arch font-extrabold text-white/10 block mb-3">03</span>
+          <h3 class="font-arch font-bold text-white text-base">Contrato & Ejecución</h3>
+          <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Firma de contrato de locación de obra con cronograma de entregas. Pagos contra avance físico certificado semanalmente por el director de obra.
+          </p>
+          <span class="inline-block mt-4 text-[11px] font-mono text-amber-400">Cronograma garantizado</span>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="p-6 rounded bg-neutral-900/50 border border-white/[0.08] relative">
+          <span class="text-4xl font-arch font-extrabold text-white/10 block mb-3">04</span>
+          <h3 class="font-arch font-bold text-white text-base">Entrega Llave en Mano</h3>
+          <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Limpieza final profunda de obra, entrega de manual del usuario del inmueble, planos conforme a obra y activación de 12 meses de garantía.
+          </p>
+          <span class="inline-block mt-4 text-[11px] font-mono text-amber-400">12 meses de garantía</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 6: COTIZADOR / ESTIMADOR INTERACTIVO POR WHATSAPP -->
+  <!-- ========================================================================= -->
+  <section id="cotizador" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0C0C0E]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Herramienta Interactiva</span>
+        <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+          Cotizá tu proyecto en 1 minuto.
+        </h2>
+        <p class="text-neutral-400 text-sm mt-2">
+          Seleccioná los parámetros de tu obra y enviá la ficha técnica prearmada directo a nuestro WhatsApp para coordinar visita.
+        </p>
+      </div>
+
+      <div class="bg-neutral-900/80 border border-white/15 rounded-xl p-6 sm:p-10 shadow-2xl">
+        <!-- Paso 1: Tipo de Proyecto -->
+        <div class="mb-8">
+          <label class="block text-xs uppercase font-mono tracking-wider text-neutral-400 mb-3">
+            1. Tipo de intervención
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="calc-type-group">
+            <button type="button" data-type="Remodelación Integral"
+                    class="calc-type-btn active p-3 rounded text-left border border-amber-400 bg-amber-500/10 text-white transition-all text-xs font-arch font-bold">
+              Remodelación Integral
+            </button>
+            <button type="button" data-type="Obra Nueva"
+                    class="calc-type-btn p-3 rounded text-left border border-white/10 bg-neutral-950 text-neutral-400 hover:text-white transition-all text-xs font-arch font-bold">
+              Obra Nueva / Casa
+            </button>
+            <button type="button" data-type="Consorcio / Ley 257"
+                    class="calc-type-btn p-3 rounded text-left border border-white/10 bg-neutral-950 text-neutral-400 hover:text-white transition-all text-xs font-arch font-bold">
+              Consorcio / Ley 257
+            </button>
+            <button type="button" data-type="Local u Oficina"
+                    class="calc-type-btn p-3 rounded text-left border border-white/10 bg-neutral-950 text-neutral-400 hover:text-white transition-all text-xs font-arch font-bold">
+              Local u Oficina
+            </button>
+          </div>
+        </div>
+
+        <!-- Paso 2: Rango de Metros Cuadrados -->
+        <div class="mb-8">
+          <label class="block text-xs uppercase font-mono tracking-wider text-neutral-400 mb-3">
+            2. Superficie aproximada a intervenir
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="calc-surface-group">
+            <button type="button" data-surface="Hasta 60 m² (Piso chico / Local)"
+                    class="calc-surface-btn p-3 rounded text-center border border-white/10 bg-neutral-950 text-neutral-400 hover:text-white transition-all text-xs font-mono">
+              &lt; 60 m²
+            </button>
+            <button type="button" data-surface="60 a 140 m² (Estándar 3/4 amb)"
+                    class="calc-surface-btn active p-3 rounded text-center border border-amber-400 bg-amber-500/10 text-white transition-all text-xs font-mono font-bold">
+              60 a 140 m²
+            </button>
+            <button type="button" data-surface="140 a 300 m² (Piso grande / Casa)"
+                    class="calc-surface-btn p-3 rounded text-center border border-white/10 bg-neutral-950 text-neutral-400 hover:text-white transition-all text-xs font-mono">
+              140 a 300 m²
+            </button>
+            <button type="button" data-surface="+300 m² / Edificio entero"
+                    class="calc-surface-btn p-3 rounded text-center border border-white/10 bg-neutral-950 text-neutral-400 hover:text-white transition-all text-xs font-mono">
+              + 300 m²
+            </button>
+          </div>
+        </div>
+
+        <!-- Paso 3: Ubicación Geográfica -->
+        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+          <div>
+            <label class="block text-xs uppercase font-mono tracking-wider text-neutral-400 mb-2">
+              3. Ubicación del Inmueble
+            </label>
+            <select id="calc-location" class="w-full bg-neutral-950 border border-white/15 rounded p-3 text-xs text-white focus:outline-none focus:border-amber-400">
+              <option value="CABA (Comunas 1 a 15)">CABA (Belgrano, Palermo, Recoleta, etc.)</option>
+              <option value="Zona Norte GBA (Vicente López, San Isidro, Tigre)">Zona Norte GBA (Vicente López, San Isidro, etc.)</option>
+              <option value="Zona Oeste GBA">Zona Oeste GBA</option>
+              <option value="Zona Sur GBA">Zona Sur GBA</option>
+              <option value="Otra localidad">Otra localidad</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase font-mono tracking-wider text-neutral-400 mb-2">
+              4. Modalidad de trabajo
+            </label>
+            <select id="calc-scope" class="w-full bg-neutral-950 border border-white/15 rounded p-3 text-xs text-white focus:outline-none focus:border-amber-400">
+              <option value="Proyecto + Dirección + Mano de Obra (Llave en mano)">Proyecto + Dirección + Mano de Obra (Llave en mano)</option>
+              <option value="Solo Proyecto y Planos Ejecutivos">Solo Proyecto y Planos Ejecutivos</option>
+              <option value="Informe Técnico / Ley 257 / Trámite">Informe Técnico / Ley 257 / Trámite municipal</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Vista Previa del Mensaje para WhatsApp -->
+        <div class="p-4 bg-black/60 border border-white/10 rounded-lg mb-6">
+          <span class="text-[10px] uppercase font-mono tracking-widest text-neutral-400 block mb-1.5">
+            Vista previa del mensaje a enviar por WhatsApp:
+          </span>
+          <p id="whatsapp-message-preview" class="text-xs font-mono text-emerald-300 leading-relaxed break-words">
+            Hola Estudio Vértice! Quiero consultar por un proyecto de: Remodelación Integral en CABA (Comunas 1 a 15), sup aprox 60 a 140 m² (Estándar 3/4 amb). Modalidad: Proyecto + Dirección + Mano de Obra (Llave en mano). ¿Podemos coordinar un relevamiento técnico?
+          </p>
+        </div>
+
+        <!-- Botón de Envío -->
+        <a id="btn-send-whatsapp-calc"
+           href="https://wa.me/5492645185359?text="
+           target="_blank" rel="noopener noreferrer"
+           class="w-full inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-arch font-bold uppercase tracking-wider text-xs px-6 py-4 rounded transition-all shadow-lg shadow-emerald-500/20 text-center">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Enviar Consulta Técnica a WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 7: PREGUNTAS FRECUENTES (FAQ ACORDEÓN) -->
+  <!-- ========================================================================= -->
+  <section id="faq" class="py-20 lg:py-28 border-b border-white/[0.06] bg-[#0E0E12]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">Dudas Habituales</span>
+        <h2 class="text-2xl sm:text-4xl font-arch font-bold text-white">
+          Preguntas frecuentes sobre obras y contratos.
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <details name="faq-accordion" class="group bg-neutral-900/60 border border-white/10 rounded-lg p-5 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-arch font-semibold text-sm sm:text-base list-none">
+            <span>¿Cómo garantizan que el presupuesto no se dispare a mitad de obra?</span>
+            <span class="ml-4 flex-shrink-0 text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            Antes de arrancar elaboramos un cómputo métrico pormenorizado ítem por ítem. Los honorarios profesionales y la mano de obra se cierran por contrato. Para los materiales, brindamos lista detallada para acopio inicial congelando valores o gestionamos compras mayoristas directas con cuenta corriente del comitente.
+          </div>
+        </details>
+
+        <details name="faq-accordion" class="group bg-neutral-900/60 border border-white/10 rounded-lg p-5 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-arch font-semibold text-sm sm:text-base list-none">
+            <span>¿Cuánto tarda una remodelación integral estándar de departamento?</span>
+            <span class="ml-4 flex-shrink-0 text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            Un departamento de 3 a 4 ambientes (70 a 110 m²) con renovación total de cocina, baños, pisos e instalaciones eléctricas y sanitarias suele demandar entre 60 y 90 días corridos de ejecución. Los plazos quedan estipulados por cronograma contractual.
+          </div>
+        </details>
+
+        <details name="faq-accordion" class="group bg-neutral-900/60 border border-white/10 rounded-lg p-5 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-arch font-semibold text-sm sm:text-base list-none">
+            <span>¿Hacen informes de Ley 257 para consorcios en CABA?</span>
+            <span class="ml-4 flex-shrink-0 text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            Sí. Contamos con arquitectos e ingenieros matriculados en CPAU habilitados ante la Dirección General de Fiscalización y Control de Obras (DGFYCO) del GCBA. Realizamos la inspección ocular técnica, el informe fotográfico de balcones y cornisas y emitimos el Certificado de Conservación. Si se requieren obras, presupuestamos para asamblea de propietarios.
+          </div>
+        </details>
+
+        <details name="faq-accordion" class="group bg-neutral-900/60 border border-white/10 rounded-lg p-5 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-arch font-semibold text-sm sm:text-base list-none">
+            <span>¿El personal de obra cuenta con seguros y ART al día?</span>
+            <span class="ml-4 flex-shrink-0 text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            El 100% de los operarios, albañiles, sanitaristas y electricistas ingresan a la propiedad o edificio con certificado de cobertura de ART con cláusula de no repetición a favor del consorcio o propietario, deslindando toda responsabilidad civil al comitente.
+          </div>
+        </details>
+
+        <details name="faq-accordion" class="group bg-neutral-900/60 border border-white/10 rounded-lg p-5 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer text-white font-arch font-semibold text-sm sm:text-base list-none">
+            <span>¿Cómo es la forma de pago de las obras?</span>
+            <span class="ml-4 flex-shrink-0 text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            Habitualmente se abona un anticipo inicial (30% al 40%) al firmar el contrato para movilización de obra y acopio, y el saldo restante se divide en certificaciones semanales o quincenales contra avance físico real visado por el cliente.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL INTERACTIVO: FICHA TÉCNICA DE PROYECTO -->
+  <!-- ========================================================================= -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="modal-content bg-neutral-900 border border-white/20 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 text-neutral-300 shadow-2xl relative">
+      <button type="button" id="btn-close-modal" class="absolute top-5 right-5 text-neutral-400 hover:text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="space-y-4">
+        <span id="modal-category" class="inline-block bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] uppercase font-mono px-2.5 py-0.5 rounded"></span>
+        <h3 id="modal-title" class="text-2xl font-arch font-bold text-white"></h3>
+        
+        <div class="grid grid-cols-3 gap-3 py-3 border-y border-white/10 text-xs font-mono">
+          <div>
+            <span class="text-neutral-500 block text-[10px]">UBICACIÓN</span>
+            <span id="modal-location" class="text-white font-semibold"></span>
+          </div>
+          <div>
+            <span class="text-neutral-500 block text-[10px]">SUPERFICIE</span>
+            <span id="modal-surface" class="text-white font-semibold"></span>
+          </div>
+          <div>
+            <span class="text-neutral-500 block text-[10px]">PLAZO</span>
+            <span id="modal-time" class="text-white font-semibold"></span>
+          </div>
+        </div>
+
+        <div class="rounded-lg overflow-hidden aspect-[16/9] bg-neutral-950">
+          <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase font-mono text-neutral-400 tracking-wider mb-1">Memoria de Intervención</h4>
+          <p id="modal-desc" class="text-sm text-neutral-300 leading-relaxed"></p>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span class="text-xs text-neutral-400">¿Tenés una obra con requerimientos similares?</span>
+          <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-arch font-bold text-xs uppercase px-4 py-2.5 rounded transition-all">
+            <span>Consultar por esta Obra</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <!-- ========================================================================= -->
+  <footer class="bg-[#0C0C0E] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Nivel 1: Identidad y Navegación Principal -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <span class="font-arch font-bold text-white text-base">
+            VÉRTICE · ARQUITECTURA & OBRAS
+          </span>
+          <p class="text-neutral-400 text-xs">
+            Estudio de arquitectura, reformas integrales y consorcios en CABA y GBA.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="#obras" class="text-neutral-300 hover:text-white transition-colors">Obras</a>
+          <a href="#antes-despues" class="text-neutral-300 hover:text-white transition-colors">Antes/Después</a>
+          <a href="#servicios" class="text-neutral-300 hover:text-white transition-colors">Consorcios Ley 257</a>
+          <a href="#cotizador" class="text-amber-400 hover:text-amber-300 font-medium transition-colors">Cotizar Obra</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <!-- Nivel 2: Cierre Legal y Micro-créditos -->
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 Estudio Vértice · Demo desarrollada por erikwebsite.com</p>
+        <p>CABA y GBA, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MOBILE ACTION DOCK (STICKY FOOTER EN CELULAR) -->
+  <!-- ========================================================================= -->
+  <aside class="fixed bottom-0 left-0 right-0 z-40 bg-[#121216]/95 backdrop-blur-lg border-t border-white/10 p-3 flex sm:hidden items-center justify-between gap-3 shadow-2xl">
+    <div class="flex flex-col">
+      <span class="font-arch font-bold text-white text-xs">Estudio Vértice</span>
+      <span class="text-[10px] text-amber-400 font-mono">Presupuesto en 48 hs</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="#cotizador"
+         class="bg-white hover:bg-neutral-200 text-neutral-950 font-arch font-bold text-xs px-3.5 py-2 rounded">
+        <span>Cotizar</span>
+      </a>
+      <a href="https://wa.me/5492645185359?text=Hola!%20Quiero%20hacer%20una%20consulta%20técnica%20de%20arquitectura%20u%20obra"
+         target="_blank" rel="noopener noreferrer"
+         class="bg-emerald-500 hover:bg-emerald-400 text-neutral-950 p-2 rounded flex items-center justify-center"
+         aria-label="WhatsApp">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Script modular de la demo -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

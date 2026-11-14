@@ -219,7 +219,7 @@ export default defineConfig({
         redirect_wordpress_codigo: resolve(__dirname, 'blog/wordpress-vs-codigo-a-medida/index.html'),
         redirect_tiendanube_linktree: resolve(__dirname, 'blog/tiendanube-linktree-vs-web-propia/index.html'),
         redirect_demo_inmobiliaria: resolve(__dirname, 'demos/inmobiliaria/index.html'),
-        redirect_demo_arquitectura: resolve(__dirname, 'demos/arquitectura/index.html'),
+        demo_arquitectura: resolve(__dirname, 'demos/arquitectura/index.html'),
         redirect_demo_taller: resolve(__dirname, 'demos/taller/index.html'),
         redirect_demo_veterinaria: resolve(__dirname, 'demos/veterinaria/index.html'),
         blog_errores_google_search_console_seo: resolve(__dirname, 'blog/errores-google-search-console-seo/index.html'),
