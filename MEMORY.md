@@ -531,6 +531,7 @@
       7. *FAQ:* Off-White `#f9f9f7` con tarjetas blancas.
     - **Scroll Reveal Fluido a 60 FPS (GPU-Accelerated):** Implementado con transiciones CSS nativas (`cubic-bezier(0.2, 0.7, 0.2, 1)`, traslación de 28px o escala sutil a 0.96) y un `IntersectionObserver` ligero que ejecuta `unobserve()` al instante en cada elemento visible, garantizando carga instantánea (100/100 en Core Web Vitals) y cero impacto en velocidad móvil.
     - **Solución al Colapso de Letras en el Slider Antes/Después:** El badge de "Antes" colapsaba en columna vertical de una sola palabra al arrastrar el manejador a la izquierda porque el contenedor recortado `#ba-layer` forzaba el salto de línea. Se solucionó incorporando `whitespace-nowrap w-max max-w-none select-none pointer-events-none` y control programático de opacidad en `app.js` (`opacity: 0` suave cuando el tirador pasa por debajo del 22% en "Antes" o por encima del 78% en "Después").
-    - **Verificaciones:** Compilación exitosa en Vite (7.70s), 0 enlaces rotos, 0 emojis y commit + git push a GitHub.
+    - **Integración de Footer Comercial y Precios Erik Website (`#erikwebsite-cta`):** Se incorporó la sección promocional oficial de erikwebsite.com ($150.000 ARS setup, $20.000 ARS/mes, 1º mes gratis, 3 a 5 días de entrega y WhatsApp sin teléfono en el botón según Regla #2), seguida por el footer oficial (`Erik Website • San Juan, Argentina`) y el botón flotante `#btn-scroll-top`.
+    - **Verificaciones:** Compilación exitosa en Vite (5.76s), 0 enlaces rotos, 0 emojis y commit + git push a GitHub.
 
 
