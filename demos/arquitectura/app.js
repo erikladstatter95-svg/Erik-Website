@@ -1,6 +1,6 @@
 import { initWhatsAppButtons } from '../../src/js/whatsapp.js';
 import { initScrollTop } from '../../src/js/scroll-top.js';
-import { initScrollReveal, initHeroEntrance, initMobileDock } from '../../src/js/animations.js';
+import { initHeroEntrance, initMobileDock } from '../../src/js/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const WHATSAPP_PHONE = '5492645185359';
@@ -8,11 +8,34 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppButtons(WHATSAPP_PHONE);
   initScrollTop('btn-scroll-top');
   initHeroEntrance();
-  initScrollReveal();
   initMobileDock();
 
   // =========================================================================
-  // 1. FILTRADO INTERACTIVO DE OBRAS / PORTFOLIO
+  // 1. SCROLL REVEAL FLUIDO (ESTILO ACONIF - 60 FPS GPU ACCELERATED)
+  // =========================================================================
+  document.documentElement.classList.add('js');
+
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // =========================================================================
+  // 2. FILTRADO INTERACTIVO DE OBRAS / PORTFOLIO (SOPORTA TEMA CLARO)
   // =========================================================================
   const filterTabs = document.querySelectorAll('.portfolio-tab');
   const projectCards = document.querySelectorAll('.project-card');
@@ -20,13 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (filterTabs.length > 0 && projectCards.length > 0) {
     filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Estilos activos
         filterTabs.forEach(t => {
-          t.classList.remove('bg-white', 'text-neutral-950', 'font-bold');
-          t.classList.add('bg-neutral-900', 'text-neutral-400', 'border', 'border-white/10');
+          t.classList.remove('bg-[#0c120d]', 'text-white', 'font-bold', 'shadow-md');
+          t.classList.add('bg-neutral-100', 'text-neutral-600', 'border', 'border-neutral-200/80');
         });
-        tab.classList.remove('bg-neutral-900', 'text-neutral-400', 'border', 'border-white/10');
-        tab.classList.add('bg-white', 'text-neutral-950', 'font-bold');
+        tab.classList.remove('bg-neutral-100', 'text-neutral-600', 'border', 'border-neutral-200/80');
+        tab.classList.add('bg-[#0c120d]', 'text-white', 'font-bold', 'shadow-md');
 
         const filter = tab.getAttribute('data-filter');
 
@@ -45,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. MODAL INTERACTIVO DE FICHA TÉCNICA DE PROYECTO
+  // 3. MODAL INTERACTIVO DE FICHA TÉCNICA DE PROYECTO
   // =========================================================================
   const modal = document.getElementById('project-modal');
   const btnCloseModal = document.getElementById('btn-close-modal');
@@ -106,12 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 3. COMPARADOR INTERACTIVO "ANTES Y DESPUÉS" (SLIDER)
+  // 4. COMPARADOR INTERACTIVO "ANTES Y DESPUÉS" (SLIDER SIN COLAPSO DE TEXTO)
   // =========================================================================
   const baSlider = document.getElementById('before-after-slider');
   const baLayer = document.getElementById('ba-layer');
   const baHandle = document.getElementById('ba-handle');
   const baBeforeImg = document.getElementById('ba-before-img');
+  const baBadgeAntes = document.getElementById('ba-badge-antes');
+  const baBadgeDespues = document.getElementById('ba-badge-despues');
 
   if (baSlider && baLayer && baHandle && baBeforeImg) {
     let isDragging = false;
@@ -128,6 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Mantener ancho constante de la imagen de antes
       baBeforeImg.style.width = `${rect.width}px`;
+
+      // Control de opacidad suave de las etiquetas para evitar recortes y colapso de texto
+      if (baBadgeAntes) {
+        baBadgeAntes.style.opacity = percentage < 22 ? '0' : '1';
+      }
+      if (baBadgeDespues) {
+        baBadgeDespues.style.opacity = percentage > 78 ? '0' : '1';
+      }
     };
 
     // Ajustar imagen inicial
@@ -162,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. COTIZADOR INTERACTIVO DE PROYECTO A WHATSAPP
+  // 5. COTIZADOR INTERACTIVO DE PROYECTO A WHATSAPP
   // =========================================================================
   const typeBtns = document.querySelectorAll('.calc-type-btn');
   const surfaceBtns = document.querySelectorAll('.calc-surface-btn');
@@ -192,11 +224,11 @@ document.addEventListener('DOMContentLoaded', () => {
     typeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         typeBtns.forEach(b => {
-          b.classList.remove('border-amber-400', 'bg-amber-500/10', 'text-white');
-          b.classList.add('border-white/10', 'bg-neutral-950', 'text-neutral-400');
+          b.classList.remove('border-[#7cda24]', 'bg-[#7cda24]/10', 'text-white');
+          b.classList.add('border-white/10', 'bg-[#0c120d]', 'text-neutral-400');
         });
-        btn.classList.remove('border-white/10', 'bg-neutral-950', 'text-neutral-400');
-        btn.classList.add('border-amber-400', 'bg-amber-500/10', 'text-white');
+        btn.classList.remove('border-white/10', 'bg-[#0c120d]', 'text-neutral-400');
+        btn.classList.add('border-[#7cda24]', 'bg-[#7cda24]/10', 'text-white');
         selectedType = btn.getAttribute('data-type') || 'Remodelación Integral';
         updateWhatsAppMessage();
       });
@@ -207,11 +239,11 @@ document.addEventListener('DOMContentLoaded', () => {
     surfaceBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         surfaceBtns.forEach(b => {
-          b.classList.remove('border-amber-400', 'bg-amber-500/10', 'text-white', 'font-bold');
-          b.classList.add('border-white/10', 'bg-neutral-950', 'text-neutral-400');
+          b.classList.remove('border-[#7cda24]', 'bg-[#7cda24]/10', 'text-white', 'font-bold');
+          b.classList.add('border-white/10', 'bg-[#0c120d]', 'text-neutral-400');
         });
-        btn.classList.remove('border-white/10', 'bg-neutral-950', 'text-neutral-400');
-        btn.classList.add('border-amber-400', 'bg-amber-500/10', 'text-white', 'font-bold');
+        btn.classList.remove('border-white/10', 'bg-[#0c120d]', 'text-neutral-400');
+        btn.classList.add('border-[#7cda24]', 'bg-[#7cda24]/10', 'text-white', 'font-bold');
         selectedSurface = btn.getAttribute('data-surface') || '60 a 140 m²';
         updateWhatsAppMessage();
       });

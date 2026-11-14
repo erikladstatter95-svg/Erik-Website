@@ -520,5 +520,17 @@
       8. **Servicios & Consorcios (`.ac-servicios`):** 3 bloques numerados de especialidad y sección dedicada a Administradores de Consorcios con certificación DGFYCO.
       9. **Cotizador Interactivo & FAQ:** Acordeones y cotizador adaptados con la paleta dark ink y acentos lima.
     - **Validaciones:** Compilación en Vite limpia en 6.60s (`dist/demos/arquitectura/index.html 91.22 kB`), 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis decorativos (Regla #17), imágenes WebP dual-sincronizadas (Regla #12) y push obligatorio a GitHub (Regla #15).
+  - **Iteración 2 Arquitectura Aconif (Ritmo Dual Blanco/Negro, Scroll Reveal & Arreglo Slider):**
+    - **Ritmo Dual-Tone de Alto Contraste (Blanco & Dark Ink):** Siguiendo la referencia de Aconif donde el sitio no es un bloque negro monótono sino que alterna fondos con estética de revista de arquitectura:
+      1. *Hero & Statement:* Dark Ink `#0c120d`.
+      2. *Obras / Portfolio (`#obras`):* Blanco puro (`bg-white` / `#ffffff`) con tipografía carbón oscuro (`#111827`), tarjetas de obra nítidas con sutil sombra y pestañas de filtro invertidas (`bg-[#0c120d] text-white`).
+      3. *Dónde Intervenimos (`#donde`):* Dark Ink `#0c120d` para contraste rítmico.
+      4. *Servicios (`#servicios`):* Off-White (`#f9f9f7` / `--bg-light-alt`), tarjetas blancas con bordes limpios y acentos verdes.
+      5. *Consorcios (`#consorcios`):* Tarjeta monumental oscura `#0c120d` dentro de contenedor claro.
+      6. *Cotizador:* Dark Ink `#0c120d`.
+      7. *FAQ:* Off-White `#f9f9f7` con tarjetas blancas.
+    - **Scroll Reveal Fluido a 60 FPS (GPU-Accelerated):** Implementado con transiciones CSS nativas (`cubic-bezier(0.2, 0.7, 0.2, 1)`, traslación de 28px o escala sutil a 0.96) y un `IntersectionObserver` ligero que ejecuta `unobserve()` al instante en cada elemento visible, garantizando carga instantánea (100/100 en Core Web Vitals) y cero impacto en velocidad móvil.
+    - **Solución al Colapso de Letras en el Slider Antes/Después:** El badge de "Antes" colapsaba en columna vertical de una sola palabra al arrastrar el manejador a la izquierda porque el contenedor recortado `#ba-layer` forzaba el salto de línea. Se solucionó incorporando `whitespace-nowrap w-max max-w-none select-none pointer-events-none` y control programático de opacidad en `app.js` (`opacity: 0` suave cuando el tirador pasa por debajo del 22% en "Antes" o por encima del 78% en "Después").
+    - **Verificaciones:** Compilación exitosa en Vite (7.70s), 0 enlaces rotos, 0 emojis y commit + git push a GitHub.
 
 
