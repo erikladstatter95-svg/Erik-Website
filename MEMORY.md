@@ -539,13 +539,13 @@
     - **Bing Webmaster Tools (API + IndexNow):** Las páginas indexadas (`InIndex`) subieron de `6` a **`10` (+66,7%)**, las páginas rastreadas en 7 días saltaron de `13` a **`42` (+223,1%)** y `0` errores de rastreo.
     - **Google Analytics 4 (Primera semana completa de eventos personalizados en vivo):** `4` conversiones `generate_lead` / `whatsapp_click` (`3` usuarios), `18` lecturas profundas `article_read_75` (`7` usuarios), `9` aperturas `faq_expand` (`2` usuarios) y **90,9% de Engagement Rate** en el canal `Organic Search` (`10/11` sesiones).
   - **Ejecución de Pasos 1 y 2 Completos en Argon High para Toda la Semana 2 (Lunes 16/11 al Sábado 21/11) en `PLAN_SEMANAL_SEO.md`:**
-    - Definidos los **8 Boosts Quirúrgicos** (con radiografía exacta de queries en GSC) y los **6 Outlines Maestros 0% Canibalizados** (`<title>` <= 60 chars, slug natural según Regla #18, `<h1>`, `meta description`, Direct Answer Sturm en primeras 5–10 palabras, estructura `<h2>`, interlinking real verificado y 6 FAQs interactivas por guía) listos para ejecutar de lunes a sábado con **Flash 3.8 (High)**:
+    - Respetando la **Regla de Maduración (14+ días)**, no se tocan los artículos recientes del Sprint SEO; todos los Boosts de la semana apuntan a guías maduras de **Diseño Web, NIC.ar, Comparativas BoFu, Ciudades y Arquitectura**, tejiendo además la nueva **Demo de Arquitectura (`/demos/arquitectura/`)**:
       1. **Lunes 16/11:** Boost `/blog/como-crear-catalogo-online-pedidos-whatsapp/` (Pos 11.6, 200 impr) + Nuevo `/blog/paginas-web-mueblerias-fabricas-muebles/`
-      2. **Martes 17/11:** Doble Boost (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` + `/blog/especialista-consultor-seo-argentina-posicionamiento-google/`) + Nuevo `/blog/google-tag-manager-vs-ga4/`
-      3. **Miércoles 18/11:** Boost `/blog/diseno-web-zona-sur/` (Pos 9.0–19.5 en 5 queries comerciales) + Nuevo `/blog/diseno-web-lujan/` (Regla #16)
-      4. **Jueves 19/11:** Boost `/blog/crear-pagina-web-google-sites-sirve-para-negocio/` (Pos 7.0) + Nuevo `/blog/seo-hoteles-cabanas-turismo-argentina/`
-      5. **Viernes 20/11:** Doble Boost (`/blog/generador-link-qr-whatsapp-gratis/` + `/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/`) + Nuevo `/blog/calculadora-presupuestos-interactiva-paginas-web/`
-      6. **Sábado 21/11:** Boost `/blog/como-poner-agregar-negocio-local-google-maps-gratis/` (Pos 10.0) + Nuevo `/blog/estadisticas-google-business-profile-maps/`
+      2. **Martes 17/11:** Doble Boost Diseño Web Maduro (`/blog/como-delegar-dns-renovar-dominio-nic-argentina/` Pos 6.9, 78 impr + integración de `/demos/arquitectura/` en `/blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/` y `/blog/portfolio-web-arquitectos-estudios-de-arquitectura/`) + Nuevo SEO `/blog/google-tag-manager-vs-ga4-seo/`
+      3. **Miércoles 18/11:** Boost `/blog/diseno-web-zona-sur/` (Pos 9.0–19.5 en 5 queries comerciales + enlace a `/demos/arquitectura/`) + Nuevo `/blog/diseno-web-lujan/` (Regla #16)
+      4. **Jueves 19/11:** Doble Boost Comparativas Diseño Web Maduras (`/blog/precios-shopify-argentina-conviene/` 34 impr + `/blog/hacer-landing-page-canva-sirve-para-vender/` Pos 6.0, 22 impr) + Nuevo SEO `/blog/seo-hoteles-cabanas-turismo-argentina/`
+      5. **Viernes 20/11:** Doble Boost Herramientas & Cotizador (`/blog/generador-link-qr-whatsapp-gratis/` 50 impr + `/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` Pos 10.0 integrando el Cotizador de Obra de `/demos/arquitectura/`) + Nuevo Diseño Web `/blog/paginas-web-administracion-consorcios-countries/` (conectado a la sección *Consorcios & Ley 257* de `/demos/arquitectura/`)
+      6. **Sábado 21/11:** Doble Boost Ciudades Maduras (`/blog/diseno-web-rosario/` 35 impr + `/blog/diseno-web-santa-fe/` 32 impr, integrando `/demos/arquitectura/`) + Nuevo SEO Local `/blog/estadisticas-google-business-profile-maps/`
 
 
 

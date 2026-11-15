@@ -310,24 +310,26 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Martes 17/11 — Eje Especialista SEO, Velocidad e IA (Indexación + Consultor SEO + Google Tag Manager vs GA4)
+### [ ] Martes 17/11 — Eje Especialista SEO, Velocidad e IA (Boost Diseño Web Maduro + Demo Arquitectura + Nuevo Artículo SEO: GTM vs GA4)
 
-#### A. Paso 1 — Doble Cirugía / Boost sobre Páginas de SEO en GSC
-1. **Boost 1 (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` — Ganó su 1er clic orgánico + 26 impr):**
-   - **Consultas reales en GSC:** `'mi web no aparece en google'` (6 imp), `'como hacer que google encuentre mi pagina'` (Pos 51.3, 3 imp), `'google no indexa mi página'` (Pos 59.3, 3 imp), `'mi web no sale en google'` (3 imp).
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Inyectar en el bloque de Respuesta Directa y en un nuevo `<h2>` #5: `5. Por qué Google no indexa mi página ("Descubierta: actualmente sin indexar") y cómo hacer que Google encuentre mi web` respondiendo exactamente las 4 variaciones de GSC.
-     - Ampliar de 4 a **6 FAQs interactivas** (`¿Por qué mi web no sale en Google aunque ya la subí al hosting?` y `¿Cómo hacer que Google encuentre mi página nueva en menos de 48 horas?`) + actualizar Schema `FAQPage` y `dateModified`.
-2. **Boost 2 (`/blog/especialista-consultor-seo-argentina-posicionamiento-google/` — Pos 19.0–20.0 en GSC):**
-   - **Consultas reales en GSC:** `'consultor geo argentina'` (Pos 19.0), `'consultor seo b2b'` (Pos 19.0), `'consultor seo argentina'` (Pos 20.0), `'experto seo'` (Pos 40.0).
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Ajustar `<title>` a **55 caracteres**: `Consultor SEO en Argentina: Especialista Google y GEO`
-     - Agregar un nuevo `<h2>`: `Consultor GEO y SEO B2B en Argentina: Cómo Posicionar en Google y ChatGPT` absorbiendo exactamente las consultas en posición 19.0.
-     - Ampliar de 3 a **6 FAQs interactivas** con evento GA4 `faq_expand` y actualizar Schema `FAQPage` + `dateModified`.
+> **Regla de Maduración (14+ días):** Como los artículos de la categoría SEO fueron publicados hace pocos días en el Sprint, no se tocan hasta que cumplan su ventana de maduración en Search Console. En su lugar, ejecutamos el Boost sobre páginas maduras de **Diseño Web / NIC.ar** e integramos la nueva **Demo de Arquitectura (`/demos/arquitectura/`)** en el cluster de Arquitectos y Constructoras.
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
+#### A. Paso 1 — Doble Cirugía / Boost en Diseño Web Maduro + Integración de `/demos/arquitectura/`
+1. **Boost 1 (`/blog/como-delegar-dns-renovar-dominio-nic-argentina/` — `78` impr y Posición `6.9` en GSC, 18 días de antigüedad):**
+   - **Diagnóstico GSC:** Posiciona en **Puesto `6.9`** con `78` impresiones reales, pero su `<title>` actual mide **96 caracteres** (se corta en Google) y solo tiene **2 FAQs**.
+   - **Cirugía exacta a ejecutar en Paso 3:**
+     - Acortar `<title>` de 96 a **56 caracteres**: `Cómo Delegar Dominio en NIC Argentina y Renovar .com.ar`
+     - Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand` y actualización de Schema `FAQPage` + `dateModified: 2026-11-17T09:30:00-03:00`) cubriendo estado *"No Delegado"*, cambio de DNS a Cloudflare/hosting y tiempos de propagación.
+2. **Boost 2 (`/blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/` y `/blog/portfolio-web-arquitectos-estudios-de-arquitectura/` — Integración de `/demos/arquitectura/`):**
+   - **Diagnóstico:** Ambas guías maduras tienen `<title>` largos (102 y 74 caracteres), solo 2 FAQs y **aún no enlazan a la nueva Demo Interactiva `/demos/arquitectura/`** (*VÉRTICE · Arquitectura & Gestión de Obras*).
+   - **Cirugía exacta a ejecutar en Paso 3:**
+     - Acortar `<title>` de Constructoras/Arquitectura de 102 a **57 caracteres**: `Páginas Web para Constructoras y Estudios de Arquitectura`
+     - Agregar en ambas guías un bloque destacado de **Prueba en Vivo hacia `/demos/arquitectura/`** (destacando el Portfolio filtrable por tipología, el Slider Interactivo Antes/Después para remodelaciones, la sección de Consorcios & Ley 257 y el Cotizador de Obra por m² conectado a WhatsApp).
+     - Ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO (0% Canibalización Verificada)
 - **Main Keyword:** `Google Tag Manager vs GA4 directo`
-- **Slug (Regla #18 — 5 palabras exactas):** `/blog/google-tag-manager-vs-ga4/`
+- **Slug (Regla #18 — 6 palabras naturales):** `/blog/google-tag-manager-vs-ga4-seo/`
 - **`<title>` (56 caracteres):** `Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?`
 - **`<h1>`:** `Google Tag Manager vs. GA4 Directo (gtag.js): Qué Conviene Más para tu Velocidad Web y el SEO`
 - **`meta description` (156 caracteres):** `Google Tag Manager vs GA4 directo en código: comparativa real de peso en JavaScript, impacto en Core Web Vitals (INP/LCP) y cuándo conviene usar cada uno.`
@@ -344,14 +346,15 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
   - `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/`
   - `/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/`
   - `/blog/errores-google-search-console-seo/`
+  - `/demos/arquitectura/` (como ejemplo de web en código limpio con carga instantánea 60 FPS y eventos medidos sin peso extra)
   - `/auditoria-seo/`
 - **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
   1. `¿Google Tag Manager reemplaza a Google Analytics 4 o trabajan juntos?`
   2. `¿Por qué Google Tag Manager puede bajar la puntuación de PageSpeed Insights en celulares?`
-  3. `¿Se pueden medir clics al botón de WhatsApp y lecturas del blog sin usar Google Tag Manager?`
+  3. `¿Se pueden medir clics al botón de WhatsApp y cotizadores interactivos sin usar Google Tag Manager?`
   4. `¿Si tengo Meta Pixel y Google Analytics 4 necesito obligatoriamente Google Tag Manager?`
   5. `¿Qué pasa si instalo el código de GA4 directo en el HTML y además lo cargo dentro de GTM?`
-  6. `¿Cuándo conviene implementar Server-Side Tagging en Google Tag Manager en Argentina?`
+  6. `¿Cómo excluir mi propia IP o mis visitas de prueba en Google Analytics 4 para no alterar las métricas?`
 
 ---
 
@@ -368,7 +371,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
   - `'diseño web landing page google ads zona sur'` (`Pos 21.0`, 2 imp)
 - **Cirugía exacta a ejecutar en Paso 3:**
   1. Optimizar `<title>` a **56 caracteres**: `Diseño Web, Hosting y SEO en Zona Sur GBA: Precios 2026`
-  2. Actualizar `<h2>` #2 a: `Diseño web, Landing Page, Hosting y Posicionamiento SEO en Zona Sur: Todo Resuelto en un Solo Lugar` e incluir las frases exactas `'diseño web landing page y hosting zona sur'` y `'diseño web para Google Ads en Zona Sur'`.
+  2. Actualizar `<h2>` #2 a: `Diseño web, Landing Page, Hosting y Posicionamiento SEO en Zona Sur: Todo Resuelto en un Solo Lugar` e incluir las frases exactas `'diseño web landing page y hosting zona sur'`, `'diseño web para Google Ads en Zona Sur'` y enlace a la nueva demo `/demos/arquitectura/` para estudios y constructoras del corredor Canning / Lomitas / Quilmes.
   3. Ampliar de 3 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-18T09:30:00-03:00`):
      - FAQ 4: `¿El servicio de diseño web en Zona Sur incluye el hosting rápido y el certificado SSL?`
      - FAQ 5: `¿Hacen Landing Pages optimizadas para campañas de Google Ads y Meta Ads en Zona Sur?`
@@ -376,7 +379,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (Regla #16: 1 Sola Ciudad · 0% Canibalización)
 - **Main Keyword:** `Diseño web en Luján`
-- **Slug (Regla #18 — 3 palabras exactas):** `/blog/diseno-web-lujan/`
+- **Slug (Regla #18 — 4 palabras naturales):** `/blog/diseno-web-lujan/`
 - **`<title>` (55 caracteres):** `Diseño Web en Luján: Páginas para Empresas y Comercios`
 - **`<h1>`:** `Diseño de Páginas Web en Luján (Buenos Aires): Desarrollo Rápido y Google Maps para Empresas, Turismo y Profesionales`
 - **`meta description` (155 caracteres):** `Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.`
@@ -385,43 +388,44 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 - **Categoría en `blog/index.html`:** `maps` (*SEO Local & Google Maps*)
 - **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_diseno_web_lujan.png` — Vista editorial luminosa de estudio profesional/comercio moderno en Luján con referencia arquitectónica sutil del centro histórico/corredor productivo del Oeste bonaerense y laptop mostrando sitio web corporativo con mapa local y botón de WhatsApp; pastilla `"DISEÑO WEB LUJÁN"` y sello `erikwebsite.com`.
 - **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. Por qué las empresas, cabañas y comercios de Luján tienen una oportunidad única en Google hoy</h2>` (Polo industrial Ruta 6 / Acceso Oeste, turismo religioso y rural en Carlos Keen / Cortínez / Open Door, y servicios profesionales en el centro de Luján).
+  - `<h2>1. Por qué las empresas, cabañas y comercios de Luján tienen una oportunidad única en Google hoy</h2>` (Polo industrial Ruta 6 / Acceso Oeste, desarrollos urbanísticos y estudios de arquitectura en clubes de campo, turismo en Carlos Keen / Cortínez / Open Door, y servicios profesionales en el centro de Luján).
   - `<h2>2. Qué incluye nuestra propuesta de diseño web en Luján por $150.000 ARS finales</h2>` (Tabla comparativa: Agencia tradicional / WordPress lento vs. Desarrollo en Código Limpio en 3 a 5 días hábiles).
   - `<h2>3. Posicionamiento en Google Maps para negocios de Luján, Jáuregui, Pueblo Nuevo y Carlos Keen</h2>`
   - `<h2>4. Cómo convertir las búsquedas de turistas y empresas del corredor Oeste en consultas de WhatsApp</h2>`
 - **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
   - `/blog/diseno-web-zona-oeste/`
   - `/blog/diseno-web-pilar/`
+  - `/demos/arquitectura/` (para desarrolladoras, arquitectos y constructoras de barrios privados en Luján / Open Door)
   - `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`
-  - `/blog/paginas-web-cabanas-hoteles-turismo/`
   - `/auditoria-seo/` (además de añadir enlace entrante desde `/blog/diseno-web-zona-oeste/` hacia `/blog/diseno-web-lujan/`).
 - **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
   1. `¿Cuánto cuesta hacer una página web profesional en Luján en 2026?`
   2. `¿Cuánto demora la entrega de la página web y qué material tengo que enviar?`
   3. `¿Sirve para restaurantes de campo en Carlos Keen, quintas y hoteles en Luján?`
-  4. `¿Cómo hacen para que mi empresa del corredor Ruta 6 o Acceso Oeste aparezca en Google?`
+  4. `¿Cómo hacen para que mi empresa o estudio de arquitectura del corredor Ruta 6 / Acceso Oeste aparezca en Google?`
   5. `¿El pago de $150.000 ARS es único o estoy obligado a pagar una mensualidad?`
   6. `¿Me ayudan a registrar el dominio .com.ar en NIC Argentina y configurar el correo corporativo?`
 
 ---
 
-### [ ] Jueves 19/11 — Eje Especialista SEO por Rubro / CMS (Boost Google Sites Pos 7.0 + SEO para Hoteles y Cabañas)
+### [ ] Jueves 19/11 — Eje Especialista SEO por Rubro / CMS (Boost Diseño Web Comparativas Maduras: Shopify + Canva + Nuevo Artículo SEO: Hoteles y Cabañas)
 
-#### A. Paso 1 — Cirugía / Boost en Posición 7.0 de GSC
-- **URL a Optimizar:** `/blog/crear-pagina-web-google-sites-sirve-para-negocio/`
-- **Diagnóstico GSC:** Ya posiciona en **Puesto `7.0`** en la primera página de Google Argentina para `'crear tu propia pagina web gratis google'` y `'creador paginas web google'`, además de sumar impresiones en `'google sites para que sirve'`, `'google sites es gratis'` y `'crear una pagina web google'`. Sin embargo, su `<title>` actual tiene **84 caracteres** y solo cuenta con **2 FAQs**.
-- **Cirugía exacta a ejecutar en Paso 3:**
-  1. Acortar `<title>` de 84 a **57 caracteres**: `Crear Página Web Gratis en Google Sites: ¿Sirve en 2026?`
-  2. Añadir un nuevo `<h2>` #4: `4. Creador de Páginas Web de Google (Google Sites): Qué es Gratis y Qué Limitaciones Tiene en SEO` incorporando exactamente `'crear tu propia pagina web gratis google'` y `'google sites para que sirve'`.
-  3. Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-19T09:30:00-03:00`):
-     - FAQ 3: `¿Google Sites es 100% gratis o tiene costos ocultos al conectar un dominio .com.ar?`
-     - FAQ 4: `¿Para qué sirve Google Sites realmente y cuándo te queda chico para vender?`
-     - FAQ 5: `¿Por qué una página hecha en el creador gratis de Google casi no posiciona en búsquedas competitivas?`
-     - FAQ 6: `¿Puedo migrar mi dominio .com.ar desde Google Sites a una Landing Page profesional en código limpio?`
+#### A. Paso 1 — Doble Cirugía / Boost en Comparativas de Diseño Web Maduras (>15 días en GSC)
+1. **Boost 1 (`/blog/precios-shopify-argentina-conviene/` — `34` impresiones en GSC, Pos `22.4`, 15 días de antigüedad):**
+   - **Diagnóstico GSC:** Acumula `34` impresiones al borde de entrar al Top 20, pero su `<title>` actual tiene **85 caracteres** y solo cuenta con **2 FAQs**.
+   - **Cirugía exacta a ejecutar en Paso 3:**
+     - Acortar `<title>` de 85 a **55 caracteres**: `Precios de Shopify en Argentina 2026: ¿Conviene o No?`
+     - Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-19T09:30:00-03:00`) sobre dólar tarjeta, comisiones por pasarela local y alternativa en código propio.
+2. **Boost 2 (`/blog/hacer-landing-page-canva-sirve-para-vender/` — `22` impresiones en GSC, Posición `6.0`, 18 días de antigüedad):**
+   - **Diagnóstico GSC:** Ya está en **Puesto `6.0`** en la primera página de Google, pero tiene un `<title>` de **87 caracteres** y solo **2 FAQs**.
+   - **Cirugía exacta a ejecutar en Paso 3:**
+     - Acortar `<title>` de 87 a **56 caracteres**: `Hacer una Página Web en Canva: ¿Sirve para Vender 2026?`
+     - Sumar enlace comparativo hacia nuestras demos reales (incluyendo `/demos/arquitectura/` y `/demos/estetica/`) para mostrar la diferencia visual entre un enlace de Canva y una web profesional.
+     - Ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO (0% Canibalización Verificada)
 - **Main Keyword:** `SEO para hoteles y cabañas en Argentina`
-- **Slug (Regla #18 — 5 palabras exactas):** `/blog/seo-hoteles-cabanas-turismo-argentina/`
+- **Slug (Regla #18 — 6 palabras naturales):** `/blog/seo-hoteles-cabanas-turismo-argentina/`
 - **`<title>` (56 caracteres):** `SEO para Hoteles y Cabañas en Argentina: Más Reservas`
 - **`<h1>`:** `SEO para Hoteles, Cabañas y Alojamientos en Argentina: Cómo Conseguir Reservas Directas en Google sin Comisiones`
 - **`meta description` (156 caracteres):** `SEO para hoteles y cabañas en Argentina. Posicioná tu alojamiento en Google y Google Maps para recibir reservas directas por WhatsApp sin pagar 18% a OTAs.`
@@ -450,68 +454,69 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Viernes 20/11 — Eje Diseño Web, Demos y Embudos (Boost QR WhatsApp + Boost Hotmart + Calculadora de Presupuestos Interactiva)
+### [ ] Viernes 20/11 — Eje Diseño Web, Demos y Embudos (Boost QR WhatsApp + Boost Cotizador Online con Demo Arquitectura + Nuevo Artículo: Administración de Consorcios y Countries)
 
-#### A. Paso 1 — Doble Cirugía / Boost en Páginas de Herramientas y Embudos con Clic Orgánico
-1. **Boost 1 (`/blog/generador-link-qr-whatsapp-gratis/` — `1` clic, `50` impr (+194%), Pos `16.1`):**
+#### A. Paso 1 — Doble Cirugía / Boost en Herramientas, Embudos y Cotizador Interactivo
+1. **Boost 1 (`/blog/generador-link-qr-whatsapp-gratis/` — `1` clic, `50` impr (+194%), Pos `16.1`, 20 días de antigüedad):**
    - **Consultas reales en GSC:** `'generar codigo qr para whatsapp'` (Pos 17.0, 11 imp), `'generador de qr whatsapp'` (Pos 16.0, 5 imp), `'codigo qr para whatsapp'` (Pos 28.0).
    - **Cirugía exacta a ejecutar en Paso 3:**
      - Acortar `<title>` de 72 a **56 caracteres**: `Generador de QR y Link de WhatsApp Gratis (Sin Vencer)`
-     - Ajustar `<h2>` #1 a: `1.Cómo Generar un Código QR para WhatsApp Gratis y Sin Caducidad` inyectando las frases exactas de GSC (`generar codigo qr para whatsapp` y `generador de qr whatsapp`).
+     - Ajustar `<h2>` #1 a: `1. Cómo Generar un Código QR para WhatsApp Gratis y Sin Caducidad` inyectando las frases exactas de GSC (`generar codigo qr para whatsapp` y `generador de qr whatsapp`).
      - Ampliar de 3 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified`).
-2. **Boost 2 (`/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/` — `1` clic, `22` impr (+83%), Pos `7.0`):**
-   - **Diagnóstico GSC:** Posiciona en **Puesto `7.0`** con 1 clic orgánico, pero su `<title>` tiene **100 caracteres** y solo cuenta con **2 FAQs**.
+2. **Boost 2 (`/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` — Posición `10.0` en GSC + Integración Demo Arquitectura):**
+   - **Diagnóstico GSC:** Ya existe y posiciona en **Puesto `10.0`**, pero tiene un `<title>` de **78 caracteres**, solo **2 FAQs** y todavía no muestra el nuevo **Cotizador de Obra por m² de `/demos/arquitectura/`**.
    - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 100 a **57 caracteres**: `Hotmart en Argentina 2026: Comisiones, Impuestos y Funnel`
-     - Ampliar de 2 a **6 FAQs interactivas** sobre cobros en pesos vs dólares, retenciones en Argentina y venta directa por Landing Modo Funnel (`/demos/funnel/`), actualizando Schema `FAQPage` y `dateModified`.
+     - Acortar `<title>` de 78 a **56 caracteres**: `Cotizador Online y Calculadora de Presupuestos WhatsApp` (absorbiendo también la intención `'calculadora de presupuestos interactiva para páginas web'` sin canibalizar).
+     - Agregar en la sección de Demos en Vivo la tarjeta y enlace directo al **Cotizador de Obra de `/demos/arquitectura/`** (junto a `/demos/abogados/`, `/demos/fitness/`, `/demos/eventos/` y `/demos/urgencias-hogar/`).
+     - Ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
-- **Main Keyword:** `Calculadora de presupuestos interactiva para páginas web`
-- **Slug (Regla #18 — 5 palabras exactas):** `/blog/calculadora-presupuestos-interactiva-paginas-web/`
-- **`<title>` (56 caracteres):** `Calculadora de Presupuestos en tu Web: Cómo Vender Más`
-- **`<h1>`:** `Calculadora de Presupuestos Interactiva para Páginas Web: Cómo Filtrar Curiosos y Cerrar Más Ventas por WhatsApp`
-- **`meta description` (156 caracteres):** `Calculadora de presupuestos interactiva para páginas web en Argentina. Filtrá curiosos, cotizá al instante y recibí pedidos listos para cerrar en WhatsApp.`
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo Conectado a `/demos/arquitectura/` (0% Canibalización Verificada)
+- **Main Keyword:** `Páginas web para administración de consorcios y countries`
+- **Slug (Regla #18 — 6 palabras naturales):** `/blog/paginas-web-administracion-consorcios-countries/`
+- **`<title>` (56 caracteres):** `Páginas Web para Administración de Consorcios y Barrios`
+- **`<h1>`:** `Páginas Web para Administración de Consorcios y Barrios Privados en Argentina: Cómo Captar Edificios y Mostrar Solvencia`
+- **`meta description` (155 caracteres):** `Páginas web para administración de consorcios, edificios y barrios privados en Argentina. Captá nuevos consejos de propietarios por Google y WhatsApp.`
 - **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
-  > **Integrar una calculadora de presupuestos interactiva para páginas web** transforma a los visitantes indecisos en consultas listas para comprar: el usuario elige qué necesita en 3 clics, ve una estimación transparente o arma su resumen a medida y te envía el pedido completo directo a tu WhatsApp.
+  > **Las páginas web para administración de consorcios y countries** permiten a administradores matriculados (RPA en CABA, GBA e interior del país) demostrar transparencia en liquidación de expensas, mantenimiento edilicio (Ley 257) y auditorías contables para captar nuevos edificios y barrios cerrados desde Google.
 - **Categoría en `blog/index.html`:** `diseno` (*Diseño Web & Conversión*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_calculadora_presupuestos_interactiva_paginas_web.png` — Primer plano realista de cliente/empresario en escritorio moderno usando una calculadora interactiva en pantalla móvil y desktop (sliders y selectores de opciones en interfaz oscura elegante que envían el resumen prearmado a WhatsApp); pastilla `"COTIZADORES & CONVERSIÓN"` y sello `erikwebsite.com`.
+- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_paginas_web_administracion_consorcios_countries.png` — Administrador de consorcios profesional frente a edificio residencial moderno en Buenos Aires revisando en su tablet la página web institucional del estudio con formulario de cotización por cantidad de unidades funcionales; pastilla `"CONSORCIOS & COUNTRIES"` y sello `erikwebsite.com`.
 - **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. El fin del formulario frío: por qué la gente odia dejar su email y esperar 48 horas por una cotización</h2>`
-  - `<h2>2. Cómo funciona una calculadora o cotizador interactivo conectado a WhatsApp (Ejemplos Reales en Vivo)</h2>` (Casos reales de nuestras demos: Calculadora de Indemnización Laboral en `/demos/abogados/`, Matriz 3x3 de Planes en `/demos/fitness/`, Cotizador de Eventos en `/demos/eventos/` y Selector de Urgencias en `/demos/urgencias-hogar/`).
-  - `<h2>3. Comparativa de Conversión: Botón de WhatsApp Suelto vs. Formulario Tradicional vs. Cotizador Interactivo</h2>` (Tabla comparativa HTML de tasa de respuesta, calidad del lead y ahorro de tiempo).
-  - `<h2>4. Qué rubros de servicios y comercios en Argentina multiplican sus cierres con un cotizador web</h2>`
+  - `<h2>1. Cómo eligen nuevo administrador los Consejos de Propietarios cuando están cansados de la gestión anterior</h2>`
+  - `<h2>2. Qué debe mostrar la página web de una Administración de Consorcios y Barrios Cerrados para generar confianza inmediata</h2>` (Matrícula RPA, sistemas de liquidación claros, proveedores matriculados de obra/fachadas Ley 257 —enlazando a `/demos/arquitectura/`— y canal de emergencias).
+  - `<h2>3. Comparativa: Depender solo del boca en boca vs. Captar Edificios y Countries con una Landing Page con Pre-Cotizador</h2>` (Tabla comparativa HTML filtrando por cantidad de departamentos/lotes, amenities y localidad).
+  - `<h2>4. Posicionamiento en Google Maps para Administradores de Consorcios por barrio o zona</h2>`
 - **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
-  - `/demos/abogados/`
-  - `/demos/fitness/`
-  - `/demos/eventos/`
-  - `/demos/urgencias-hogar/`
-  - `/blog/por-que-nadie-me-compra-por-whatsapp/`
-  - `/blog/embudo-de-ventas-por-whatsapp-argentina/`
+  - `/demos/arquitectura/` (conectando directamente con el bloque *Consorcios, Edificios & Ley 257*)
+  - `/demos/contable/`
+  - `/blog/paginas-web-empresas-limpieza-finales-obra-tapizados/`
+  - `/blog/paginas-web-seguridad-privada-alarmas-monitoreo/`
+  - `/blog/paginas-web-estudios-contables-argentina/`
 - **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
-  1. `¿Tengo que mostrar precios exactos en la calculadora o puedo armar un pre-cotizador sin mostrar valores finales?`
-  2. `¿Cómo llega el mensaje a mi WhatsApp cuando el cliente termina de usar la calculadora en la web?`
-  3. `¿Una calculadora interactiva en JavaScript hace que la página web cargue más lento?`
-  4. `¿Cómo puedo modificar los precios o las opciones de la calculadora cuando hay inflación en Argentina?`
-  5. `¿Se puede medir en Google Analytics 4 y Meta Pixel cuánta gente usa el cotizador interactivo?`
-  6. `¿Cuánto cuesta agregar una calculadora o selector interactivo a medida en mi Landing Page?`
+  1. `¿Cuánto cuesta una página web profesional para una administración de consorcios en Argentina?`
+  2. `¿Cómo filtrar en la web a los miembros del Consejo de Propietarios que buscan cambiar de administrador?`
+  3. `¿Qué datos conviene pedir en el cotizador antes de pasar a WhatsApp (cantidad de unidades funcionales, seguridad, amenities)?`
+  4. `¿Puedo enlazar en mi página web el acceso al sistema de liquidación de expensas que ya uso?`
+  5. `¿Cómo ayuda tener una web propia a conseguir consorcios en barrios específicos de CABA, Zona Norte, Zona Sur o ciudades del interior?`
+  6. `¿Cuánto demora el armado de la página web y qué información necesito enviar?`
 
 ---
 
-### [ ] Sábado 21/11 — Eje Especialista SEO Local, Maps y Analítica (Boost Alta en Google Maps Pos 10.0 + Estadísticas de Google Business Profile)
+### [ ] Sábado 21/11 — Eje Especialista SEO Local, Maps y Analítica (Boost Diseño Web Ciudades Maduras: Rosario y Santa Fe + Nuevo Artículo SEO: Estadísticas de Google Business Profile)
 
-#### A. Paso 1 — Cirugía / Boost en Posición 10.0 de GSC
-- **URL a Optimizar:** `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`
-- **Diagnóstico GSC:** Posiciona en **Puesto `10.0`** para `'como poner la ubicación de un negocio en google maps'` y suma impresiones crecientes en `'aparecer en google maps'` (8 imp), `'agregar mi negocio a google maps'` (3 imp) y `'añadir negocio a google maps'` (3 imp). Sin embargo, su `<title>` actual tiene **98 caracteres** y solo cuenta con **2 FAQs**.
-- **Cirugía exacta a ejecutar en Paso 3:**
-  1. Acortar `<title>` de 98 a **56 caracteres**: `Cómo Poner un Negocio en Google Maps Gratis (Guía 2026)`
-  2. Ajustar `<h2>` #1 a: `1. Cómo poner la ubicación de un negocio en Google Maps gratis (Paso a paso)` inyectando la consulta exacta en posición 10.0.
-  3. Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-21T09:30:00-03:00`):
-     - FAQ 3: `¿Cómo poner la ubicación de un negocio en Google Maps desde el celular?`
-     - FAQ 4: `¿Puedo agregar mi negocio a Google Maps si trabajo a domicilio o no atiendo al público en mi dirección?`
-     - FAQ 5: `¿Por qué Google rechaza el video de verificación de mi local y cómo aprobarlo rápido?`
-     - FAQ 6: `¿Cuánto tarda en aparecer mi negocio en Google Maps después de verificar la ficha?`
+#### A. Paso 1 — Doble Cirugía / Boost en Páginas de Diseño Web Maduras (>16 días en GSC)
+1. **Boost 1 (`/blog/diseno-web-rosario/` — `35` impresiones en GSC, 16 días de antigüedad, solo 2 FAQs):**
+   - **Diagnóstico GSC:** Es la segunda ciudad con más impresiones del país después de Mendoza (`35` impr), pero su `<title>` tiene 61 caracteres y solo cuenta con **2 FAQs**.
+   - **Cirugía exacta a ejecutar en Paso 3:**
+     - Acortar `<title>` a **54 caracteres**: `Diseño Web en Rosario: Páginas y Google Maps (2026)`
+     - Incorporar enlace contextual a la nueva demo `/demos/arquitectura/` para estudios de arquitectura, constructoras y desarrolladoras de Rosario (Puerto Norte, Centro, Fisherton y Funes).
+     - Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-21T09:30:00-03:00`).
+2. **Boost 2 (`/blog/diseno-web-santa-fe/` — `32` impresiones en GSC, 16 días de antigüedad, `<title>` 70 chars y 2 FAQs):**
+   - **Diagnóstico GSC:** Acumula `32` impresiones, con `<title>` de 70 caracteres y solo **2 FAQs**.
+   - **Cirugía exacta a ejecutar en Paso 3:**
+     - Acortar `<title>` de 70 a **55 caracteres**: `Diseño Web en Santa Fe Capital: Precios y Maps 2026`
+     - Incorporar enlace contextual a `/demos/arquitectura/` y ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO Local / Maps (0% Canibalización Verificada)
 - **Main Keyword:** `Estadísticas de Google Business Profile`
 - **Slug (Regla #18 — 5 palabras exactas):** `/blog/estadisticas-google-business-profile-maps/`
 - **`<title>` (57 caracteres):** `Estadísticas de Google Business Profile: Medir Google Maps`
