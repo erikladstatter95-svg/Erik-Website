@@ -546,6 +546,9 @@
       4. **Jueves 19/11:** Doble Boost Comparativas Diseño Web Maduras (`/blog/precios-shopify-argentina-conviene/` 34 impr + `/blog/hacer-landing-page-canva-sirve-para-vender/` Pos 6.0, 22 impr) + Nuevo SEO `/blog/seo-hoteles-cabanas-turismo-argentina/`
       5. **Viernes 20/11:** Doble Boost Herramientas & Cotizador (`/blog/generador-link-qr-whatsapp-gratis/` 50 impr + `/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` Pos 10.0 integrando el Cotizador de Obra de `/demos/arquitectura/`) + Nuevo Diseño Web `/blog/paginas-web-administracion-consorcios-countries/` (conectado a la sección *Consorcios & Ley 257* de `/demos/arquitectura/`)
       6. **Sábado 21/11:** Doble Boost Ciudades Maduras (`/blog/diseno-web-rosario/` 35 impr + `/blog/diseno-web-santa-fe/` 32 impr, integrando `/demos/arquitectura/`) + Nuevo SEO Local `/blog/estadisticas-google-business-profile-maps/`
+  - **Implementación Global de Filtro de Tráfico Interno para GA4, Clarity y Meta Pixel (`id="ew-internal-filter"` en las 214 páginas activas):**
+    - Desactiva automáticamente GA4 (`window['ga-disable-G-KWD0WYVK4J'] = true` y bloqueo de `gtag.js`), Microsoft Clarity y Meta Pixel (`PageView` y `Contact`) en `localhost`/`127.0.0.1` y en cualquier navegador donde se abra una sola vez `https://erikwebsite.com/?soy_erik=1` (guardando `localStorage.setItem('ew_ignore_analytics', '1')` con banner visual de confirmación; reversible con `?soy_erik=0`).
+    - Se inyectó además la etiqueta GA4 (`G-KWD0WYVK4J`) en las 26 guías iniciales del blog que no la tenían y se reparó el `<title>` escapado en `<head>` de los 6 artículos del sábado 14/11.
 
 
 

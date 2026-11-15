@@ -49,6 +49,7 @@ function detectServiceIntent(textOrHref = '') {
  */
 export function trackGA4Event(eventName, params = {}) {
   try {
+    if (window._ewIgnoreAnalytics || window['ga-disable-G-KWD0WYVK4J']) return;
     if (typeof window.loadThirdPartyAnalytics === 'function') {
       window.loadThirdPartyAnalytics();
     }
@@ -67,6 +68,7 @@ export function trackGA4Event(eventName, params = {}) {
  */
 export function trackWhatsAppConversion(element, customMsg = '') {
   try {
+    if (window._ewIgnoreAnalytics || window['ga-disable-G-KWD0WYVK4J']) return;
     const rawText = (
       element?.getAttribute('aria-label') ||
       element?.textContent ||
@@ -163,7 +165,7 @@ export function initWhatsAppButtons(defaultPhone = DEFAULT_PORTFOLIO_PHONE) {
 
       // C. Interacción con Calculadoras / Cotizadores en Demos o Generador QR
       const calcTrigger = target.closest(
-        '#catering-calculator button, #psico-selector-container button, #fitness-pricing-toggle, #legal-assistant-container button, #emergency-selector button, #wa-copy-url, #wa-download-qr, #wa-download-card, [data-qty-btn], [data-bump-toggle], [data-calc-action]'
+        '#catering-calculator button, #psico-selector-container button, #fitness-pricing-toggle, #legal-assistant-container button, #emergency-selector button, #arch-quote-form button, #btn-arch-wa, #wa-copy-url, #wa-download-qr, #wa-download-card, [data-qty-btn], [data-bump-toggle], [data-calc-action]'
       );
       if (calcTrigger && !window._calcTrackedOnPage) {
         window._calcTrackedOnPage = true;
