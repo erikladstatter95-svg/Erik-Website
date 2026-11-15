@@ -541,7 +541,7 @@
   - **Ejecución de Pasos 1 y 2 Completos en Argon High para Toda la Semana 2 (Lunes 16/11 al Sábado 21/11) en `PLAN_SEMANAL_SEO.md`:**
     - Definidos los **8 Boosts Quirúrgicos** (con radiografía exacta de queries en GSC) y los **6 Outlines Maestros 0% Canibalizados** (`<title>` <= 60 chars, slug natural según Regla #18, `<h1>`, `meta description`, Direct Answer Sturm en primeras 5–10 palabras, estructura `<h2>`, interlinking real verificado y 6 FAQs interactivas por guía) listos para ejecutar de lunes a sábado con **Flash 3.8 (High)**:
       1. **Lunes 16/11:** Boost `/blog/como-crear-catalogo-online-pedidos-whatsapp/` (Pos 11.6, 200 impr) + Nuevo `/blog/paginas-web-mueblerias-fabricas-muebles/`
-      2. **Martes 17/11:** Doble Boost (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` + `/blog/especialista-consultor-seo-argentina-posicionamiento-google/`) + Nuevo `/blog/google-tag-manager-vs-ga4-seo/`
+      2. **Martes 17/11:** Doble Boost (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` + `/blog/especialista-consultor-seo-argentina-posicionamiento-google/`) + Nuevo `/blog/google-tag-manager-vs-ga4/`
       3. **Miércoles 18/11:** Boost `/blog/diseno-web-zona-sur/` (Pos 9.0–19.5 en 5 queries comerciales) + Nuevo `/blog/diseno-web-lujan/` (Regla #16)
       4. **Jueves 19/11:** Boost `/blog/crear-pagina-web-google-sites-sirve-para-negocio/` (Pos 7.0) + Nuevo `/blog/seo-hoteles-cabanas-turismo-argentina/`
       5. **Viernes 20/11:** Doble Boost (`/blog/generador-link-qr-whatsapp-gratis/` + `/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/`) + Nuevo `/blog/calculadora-presupuestos-interactiva-paginas-web/`

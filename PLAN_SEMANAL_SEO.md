@@ -98,7 +98,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 | Indicador Clave (KPI) | Semana 1 (8/11/2026) | Semana 2 (15/11/2026) | Variación Semanal |
 | :--- | :--- | :--- | :--- |
-| **URLs Canónicas en `sitemap.xml` / `public/sitemap.xml`** | `171` URLs | **`198` URLs** | **+27 URLs (+15,8%)** |
+| **URLs Canónicas en `sitemap.xml` / `public/sitemap.xml`** | `171` URLs | **`199` URLs** | **+28 URLs (+16,4%)** |
 | **Guías Activas en `/blog/index.html`** | `153` guías (`12` SEO) | **`180` guías (`33` SEO / `41` Maps)** | **+27 guías (+17,6%)** |
 | **Impresiones Totales en Google Search Console (28d)** | `1.434` impr | **`3.310` impr** | **+1.876 impr (+130,8%)** |
 | **Clics Orgánicos en Google Search Console (28d)** | `6` clics | **`7` clics** | **+1 clic (+16,7%)** |
@@ -281,7 +281,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
 - **Main Keyword:** `Páginas web para mueblerías y fábricas de muebles`
-- **Slug (Regla #18 — 6 palabras naturales):** `/blog/paginas-web-mueblerias-fabricas-muebles/`
+- **Slug (Regla #18 — 5 palabras exactas):** `/blog/paginas-web-mueblerias-fabricas-muebles/`
 - **`<title>` (57 caracteres):** `Páginas Web para Mueblerías y Fábricas de Muebles 2026`
 - **`<h1>`:** `Páginas Web para Mueblerías y Fábricas de Muebles a Medida en Argentina: Catálogo y Cotizador por WhatsApp`
 - **`meta description` (154 caracteres):** `Páginas web para mueblerías y fábricas de muebles a medida en Argentina. Mostrá tu catálogo de sillones, cocinas y placares y cotizá directo en WhatsApp.`
@@ -327,7 +327,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
 - **Main Keyword:** `Google Tag Manager vs GA4 directo`
-- **Slug (Regla #18 — 6 palabras naturales):** `/blog/google-tag-manager-vs-ga4-seo/`
+- **Slug (Regla #18 — 5 palabras exactas):** `/blog/google-tag-manager-vs-ga4/`
 - **`<title>` (56 caracteres):** `Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?`
 - **`<h1>`:** `Google Tag Manager vs. GA4 Directo (gtag.js): Qué Conviene Más para tu Velocidad Web y el SEO`
 - **`meta description` (156 caracteres):** `Google Tag Manager vs GA4 directo en código: comparativa real de peso en JavaScript, impacto en Core Web Vitals (INP/LCP) y cuándo conviene usar cada uno.`
@@ -376,7 +376,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (Regla #16: 1 Sola Ciudad · 0% Canibalización)
 - **Main Keyword:** `Diseño web en Luján`
-- **Slug (Regla #18 — 4 palabras naturales):** `/blog/diseno-web-lujan/`
+- **Slug (Regla #18 — 3 palabras exactas):** `/blog/diseno-web-lujan/`
 - **`<title>` (55 caracteres):** `Diseño Web en Luján: Páginas para Empresas y Comercios`
 - **`<h1>`:** `Diseño de Páginas Web en Luján (Buenos Aires): Desarrollo Rápido y Google Maps para Empresas, Turismo y Profesionales`
 - **`meta description` (155 caracteres):** `Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.`
@@ -421,7 +421,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
 - **Main Keyword:** `SEO para hoteles y cabañas en Argentina`
-- **Slug (Regla #18 — 6 palabras naturales):** `/blog/seo-hoteles-cabanas-turismo-argentina/`
+- **Slug (Regla #18 — 5 palabras exactas):** `/blog/seo-hoteles-cabanas-turismo-argentina/`
 - **`<title>` (56 caracteres):** `SEO para Hoteles y Cabañas en Argentina: Más Reservas`
 - **`<h1>`:** `SEO para Hoteles, Cabañas y Alojamientos en Argentina: Cómo Conseguir Reservas Directas en Google sin Comisiones`
 - **`meta description` (156 caracteres):** `SEO para hoteles y cabañas en Argentina. Posicioná tu alojamiento en Google y Google Maps para recibir reservas directas por WhatsApp sin pagar 18% a OTAs.`
@@ -467,7 +467,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
 - **Main Keyword:** `Calculadora de presupuestos interactiva para páginas web`
-- **Slug (Regla #18 — 5 palabras naturales):** `/blog/calculadora-presupuestos-interactiva-paginas-web/`
+- **Slug (Regla #18 — 5 palabras exactas):** `/blog/calculadora-presupuestos-interactiva-paginas-web/`
 - **`<title>` (56 caracteres):** `Calculadora de Presupuestos en tu Web: Cómo Vender Más`
 - **`<h1>`:** `Calculadora de Presupuestos Interactiva para Páginas Web: Cómo Filtrar Curiosos y Cerrar Más Ventas por WhatsApp`
 - **`meta description` (156 caracteres):** `Calculadora de presupuestos interactiva para páginas web en Argentina. Filtrá curiosos, cotizá al instante y recibí pedidos listos para cerrar en WhatsApp.`
@@ -513,7 +513,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
 - **Main Keyword:** `Estadísticas de Google Business Profile`
-- **Slug (Regla #18 — 5 palabras naturales):** `/blog/estadisticas-google-business-profile-maps/`
+- **Slug (Regla #18 — 5 palabras exactas):** `/blog/estadisticas-google-business-profile-maps/`
 - **`<title>` (57 caracteres):** `Estadísticas de Google Business Profile: Medir Google Maps`
 - **`<h1>`:** `Estadísticas de Google Business Profile: Cómo Medir Llamadas, Clics a tu Web y Rutas en Google Maps`
 - **`meta description` (156 caracteres):** `Estadísticas de Google Business Profile (ex Google Mi Negocio): cómo leer el panel de rendimiento en Google Maps, medir clics a tu web y sumar etiquetas UTM.`
