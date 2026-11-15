@@ -533,5 +533,19 @@
     - **Solución al Colapso de Letras en el Slider Antes/Después:** El badge de "Antes" colapsaba en columna vertical de una sola palabra al arrastrar el manejador a la izquierda porque el contenedor recortado `#ba-layer` forzaba el salto de línea. Se solucionó incorporando `whitespace-nowrap w-max max-w-none select-none pointer-events-none` y control programático de opacidad en `app.js` (`opacity: 0` suave cuando el tirador pasa por debajo del 22% en "Antes" o por encima del 78% en "Después").
     - **Integración de Footer Comercial y Precios Erik Website (`#erikwebsite-cta`):** Se incorporó la sección promocional oficial de erikwebsite.com ($150.000 ARS setup, $20.000 ARS/mes, 1º mes gratis, 3 a 5 días de entrega y WhatsApp sin teléfono en el botón según Regla #2), seguida por el footer oficial (`Erik Website • San Juan, Argentina`) y el botón flotante `#btn-scroll-top`.
     - **Verificaciones:** Compilación exitosa en Vite (5.76s), 0 enlaces rotos, 0 emojis y commit + git push a GitHub.
+- [x] **2026-11-15 (Comando Estratégico Dominical #2 — Auditoría Semana 2 + Pasos 1 y 2 en Argon High para Lunes 16/11 a Sábado 21/11):**
+  - **Crecimiento Semanal Auditado (`sunday_seo_command.py` — Semana 2 vs. Semana 1):**
+    - **Google Search Console (28d):** Las impresiones saltaron de `1.434` a **`3.310` (+130,8% en 7 días)**; los clics orgánicos subieron de `6` a **`7`** (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` consiguió su primer clic orgánico); las consultas en *Striking Distance* (Pos 4.0 a 20.0) crecieron de `23` a **`37` (+60,9%)**, y `/blog/como-crear-catalogo-online-pedidos-whatsapp/` entró al Top 10 del sitio con **`200` impresiones en Posición `11.6`**.
+    - **Bing Webmaster Tools (API + IndexNow):** Las páginas indexadas (`InIndex`) subieron de `6` a **`10` (+66,7%)**, las páginas rastreadas en 7 días saltaron de `13` a **`42` (+223,1%)** y `0` errores de rastreo.
+    - **Google Analytics 4 (Primera semana completa de eventos personalizados en vivo):** `4` conversiones `generate_lead` / `whatsapp_click` (`3` usuarios), `18` lecturas profundas `article_read_75` (`7` usuarios), `9` aperturas `faq_expand` (`2` usuarios) y **90,9% de Engagement Rate** en el canal `Organic Search` (`10/11` sesiones).
+  - **Ejecución de Pasos 1 y 2 Completos en Argon High para Toda la Semana 2 (Lunes 16/11 al Sábado 21/11) en `PLAN_SEMANAL_SEO.md`:**
+    - Definidos los **8 Boosts Quirúrgicos** (con radiografía exacta de queries en GSC) y los **6 Outlines Maestros 0% Canibalizados** (`<title>` <= 60 chars, slug natural según Regla #18, `<h1>`, `meta description`, Direct Answer Sturm en primeras 5–10 palabras, estructura `<h2>`, interlinking real verificado y 6 FAQs interactivas por guía) listos para ejecutar de lunes a sábado con **Flash 3.8 (High)**:
+      1. **Lunes 16/11:** Boost `/blog/como-crear-catalogo-online-pedidos-whatsapp/` (Pos 11.6, 200 impr) + Nuevo `/blog/paginas-web-mueblerias-fabricas-muebles/`
+      2. **Martes 17/11:** Doble Boost (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` + `/blog/especialista-consultor-seo-argentina-posicionamiento-google/`) + Nuevo `/blog/google-tag-manager-vs-ga4-seo/`
+      3. **Miércoles 18/11:** Boost `/blog/diseno-web-zona-sur/` (Pos 9.0–19.5 en 5 queries comerciales) + Nuevo `/blog/diseno-web-lujan/` (Regla #16)
+      4. **Jueves 19/11:** Boost `/blog/crear-pagina-web-google-sites-sirve-para-negocio/` (Pos 7.0) + Nuevo `/blog/seo-hoteles-cabanas-turismo-argentina/`
+      5. **Viernes 20/11:** Doble Boost (`/blog/generador-link-qr-whatsapp-gratis/` + `/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/`) + Nuevo `/blog/calculadora-presupuestos-interactiva-paginas-web/`
+      6. **Sábado 21/11:** Boost `/blog/como-poner-agregar-negocio-local-google-maps-gratis/` (Pos 10.0) + Nuevo `/blog/estadisticas-google-business-profile-maps/`
+
 
 
