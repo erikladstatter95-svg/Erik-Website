@@ -44,6 +44,14 @@
     - Queda estrictamente prohibido colocar enlaces (`href="/..."` o `href="https://erikwebsite.com/..."`) hacia artículos, páginas de servicios, demos o herramientas que no existan físicamente en el repositorio.
     - Se puede hablar y proponer la creación de una nueva página o demo si el negocio o artículo lo amerita, o mencionar la solución en el texto ("podemos desarrollar una demo o cotizador interactivo a medida"), pero **NUNCA inventar un slug o enlace hacia una página que no hay**.
     - En cada publicación o edición se debe verificar la existencia física del archivo `.html` de destino y ejecutar `scratch/audit_all_internal_links.py` para asegurar 0 enlaces rotos.
+20. **Protocolo de Propuestas Privadas y Bocetos a Clientes (`/propuestas/<nombre-cliente>/`):**
+    - **Estructura de URL:** Todas las propuestas comerciales personalizadas y wireframes/bocetos previos para prospectos se alojan estrictamente bajo la ruta `/propuestas/<nombre-cliente>/` (ej: `/propuestas/inmobiliaria-raul/`, `/propuestas/estudio-arquitectura/`).
+    - **Privacidad Estricta (`noindex, nofollow`):** Las páginas de propuestas deben incluir siempre `<meta name="robots" content="noindex, nofollow">` y quedar excluidas de `sitemap.xml` para no diluir el SEO del dominio con páginas efímeras o privadas de clientes.
+    - **Estrategia Visual Anti-Robo / Alto Cierre:**
+      - Mostrar la dirección estética, colores corporativos, tipografía y distribución estructural personalizada para el cliente.
+      - Mantener los textos comerciales concisos o con placeholders estructurales claros (sin regalar el copywriting completo antes del anticipo).
+      - Incluir la barra superior de propuesta exclusiva (`Propuesta para [Cliente] · Validez 7 días`), la tarjeta de alcance llave en mano ($150.000 ARS setup, 5 días hábiles, 50% anticipo y 50% contra entrega) y el botón directo para aprobar la propuesta y congelar el cupo semanal vía WhatsApp.
+    - **Registro Técnico:** Añadir cada propuesta a `vite.config.js` (`propuestas_<cliente>`) para garantizar su compilación limpia y empaquetado estático.
 
 ---
 
@@ -584,6 +592,11 @@
     - Build exitoso en Vite (`npm run build`) en 10.91s con 0 errores.
     - Notificaciones enviadas: Google Indexing API v3 (`200 OK` en ambas URLs), GSC sitemap enviado con éxito, IndexNow API (`202 Accepted`), Bing Webmaster API (`200 OK`).
   - **Filtro de Tráfico GA4:** Capa 1 (`id="ew-internal-filter"` client-side con `?soy_erik=1` y `localhost`) activa en las 214 páginas bloqueando de inmediato los eventos de GA4 y Meta Pixel de la navegación de Erik. Reportado diagnóstico de Capa 2 (Google Analytics Admin API deshabilitada en el proyecto de GCP `483493239372`, mientras que Google Analytics Data API para reportes opera normalmente).
+- [x] **2026-11-16 (Arquitectura y Plantilla de Propuestas Privadas `/propuestas/<cliente>/` — Regla #20):**
+  - Creación del directorio y plantilla base `propuestas/template/index.html` con `<meta name="robots" content="noindex, nofollow">` y filtro `id="ew-internal-filter"`.
+  - Diseñado con barra superior de propuesta exclusiva (`Propuesta y Boceto Exclusivo para [Cliente] · Validez 7 días`), banner de advertencia de borrador preliminar, hero y servicios del cliente, tarjeta de alcance llave en mano ($150.000 ARS setup, 5 días de entrega, 50/50 pago) y botón de aprobación directa a WhatsApp.
+  - Vinculado en `vite.config.js` (`propuestas_template`), compilado en Vite en 9.75s con 0 errores y 0 enlaces rotos (`audit_all_internal_links.py`).
+
 
 
 

@@ -249,6 +249,8 @@ export default defineConfig({
         blog_eeat_google_autoridad_confianza_seo: resolve(__dirname, 'blog/eeat-google-autoridad-confianza-seo/index.html'),
         blog_mejorar_ctr_organico_titulos_google: resolve(__dirname, 'blog/mejorar-ctr-organico-titulos-google/index.html'),
         blog_paginas_web_mueblerias_fabricas_muebles: resolve(__dirname, 'blog/paginas-web-mueblerias-fabricas-muebles/index.html'),
+        // Propuestas privadas a clientes (noindex)
+        propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
       },
     },
   },
