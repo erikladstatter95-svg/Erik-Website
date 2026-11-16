@@ -27,8 +27,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Seguridad Rural y Monitoreo para Campos en Chacabuco | SEGU24 (Boceto)</title>
-  <meta name="description" content="Boceto de página de servicio a medida: Sistemas de alarmas solares y cámaras para campos y zonas rurales en Chacabuco por SEGU24.">
+  <title>Seguridad Rural y Monitoreo para Campos en Chacabuco | SEGU24</title>
+  <meta name="description" content="Sistemas de alarmas solares autónomas, cámaras de largo alcance y monitoreo 24 horas para cascos de estancia, galpones y silobolsas en Chacabuco y la región.">
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,189 +40,321 @@
   <style>
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #0b0f19;
-      color: #f1f5f9;
+      background-color: #ffffff;
+      color: #0f172a;
     }
     .font-display {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
   </style>
 </head>
-<body class="bg-[#0b0f19] text-slate-100 antialiased selection:bg-[#fdc60e] selection:text-slate-950 flex flex-col min-h-screen">
+<body class="bg-white text-slate-900 antialiased selection:bg-[#fdc60e] selection:text-slate-950 flex flex-col min-h-screen">
 
-  <!-- BARRA SUPERIOR DE PROPUESTA PRIVADA -->
-  <aside aria-label="Aviso de propuesta privada" class="bg-[#060911] text-slate-200 text-[11px] sm:text-xs py-2 px-4 font-medium tracking-tight border-b border-white/[0.08] sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-2">
+  <!-- ========================================== -->
+  <!-- BARRA PRIVADA DE NAVEGACIÓN Y AVISO PROYECTO -->
+  <!-- ========================================== -->
+  <aside aria-label="Aviso de propuesta privada" class="bg-slate-900 text-slate-200 text-[11px] sm:text-xs py-2 px-4 font-medium tracking-tight border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-2">
       <div class="flex items-center gap-2">
         <span class="inline-block w-2 h-2 rounded-full bg-[#fdc60e] animate-pulse"></span>
         <span>Ejemplo de Página de Servicio Específico para: <strong class="text-white font-semibold">SEGU24</strong></span>
       </div>
-      <div class="flex items-center gap-3 text-[11px] text-slate-400">
-        <a href="/propuestas/segu24/" class="text-[#fdc60e] hover:underline font-semibold flex items-center gap-1">
+      <div class="flex items-center gap-3 text-[11px] text-slate-300">
+        <a href="/propuestas/segu24/" class="text-[#fdc60e] hover:underline font-bold flex items-center gap-1">
           <span>← Volver a la Portada SEGU24</span>
+        </a>
+        <span class="text-slate-600">|</span>
+        <a href="/propuestas/segu24/#propuesta-comercial-erik" class="text-slate-300 hover:text-white">
+          Ver Paquetes de Desarrollo
         </a>
       </div>
     </div>
   </aside>
 
-  <!-- NAVEGACIÓN SEGU24 -->
-  <header class="bg-[#0b0f19]/95 backdrop-blur-xl border-b border-white/[0.08] sticky top-[37px] sm:top-[33px] z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
-      
-      <!-- Logo Oficial SEGU24 -->
-      <a href="/propuestas/segu24/" class="flex items-center gap-3 group" title="SEGU24 - Inicio">
-        <div class="bg-white px-3 py-1.5 rounded-xl shadow-md border border-white/30 flex items-center justify-center transition-transform group-hover:scale-[1.02]">
-          <img src="/propuestas/segu24/assets/logo-segu24.png" alt="SEGU24 Seguridad Electrónica & Central de Monitoreo" class="h-7 sm:h-8 w-auto object-contain" width="160" height="40">
+  <!-- ========================================== -->
+  <!-- TOP CONTACT BAR SEGU24 -->
+  <!-- ========================================== -->
+  <div class="bg-slate-100 border-b border-slate-200 py-1.5 px-4 text-xs text-slate-600 hidden md:block">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <span>División Agro: <strong>Chacabuco, Rawson, O'Higgins y Región</strong></span>
         </div>
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Respuesta y Coordinación con Patrulla Rural</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 font-semibold text-slate-700">
+        <a href="tel:08109999629" class="hover:text-slate-900 flex items-center gap-1">
+          <span>0810-999-9629</span>
+        </a>
+        <span>Guardia Activa 24hs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- HEADER SEGU24 -->
+  <!-- ========================================== -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-[33px] sm:top-[33px] z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <a href="/propuestas/segu24/" class="flex items-center gap-3 group" title="SEGU24 - Inicio">
+        <img src="/propuestas/segu24/assets/logo-segu24.png" alt="SEGU24 Seguridad Electrónica & Central de Monitoreo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]" width="180" height="45">
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
-        <a href="/propuestas/segu24/" class="hover:text-white transition-colors">← Volver al Inicio</a>
-        <span class="text-[#fdc60e] font-bold flex items-center gap-1.5">
-          <span>Seguridad Rural (Página Activa)</span>
-          <span class="text-[9px] uppercase tracking-wider bg-[#fdc60e]/20 text-[#fdc60e] px-1.5 py-0.5 rounded-full border border-[#fdc60e]/30">Demo</span>
-        </span>
-        <a href="/propuestas/segu24/#propuesta-comercial" class="text-slate-300 hover:text-white transition-colors">Ver Paquetes y Precios</a>
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-bold text-slate-700 tracking-tight">
+        <a href="/propuestas/segu24/" class="hover:text-slate-950 transition-colors">← Portada Inicio</a>
+        <a href="/propuestas/segu24/#hogar" class="hover:text-slate-950 transition-colors">Hogar</a>
+        <a href="/propuestas/segu24/#comercios" class="hover:text-slate-950 transition-colors">Comercios</a>
+        <span class="text-slate-950 font-extrabold border-b-2 border-[#fdc60e] pb-1">Seguridad Rural (Página Activa)</span>
+        <a href="#tecnologia" class="hover:text-slate-950 transition-colors">Tecnología Solar</a>
+        <a href="#faq-campo" class="hover:text-slate-950 transition-colors">Preguntas Frecuentes</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="tel:08109999629" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-3 py-2 rounded-full bg-white/[0.05] text-slate-200 border border-white/[0.1]">
-          <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#fdc60e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        <a href="tel:08109999629" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold px-3.5 py-2 rounded-xl bg-slate-100 text-slate-800 border border-slate-200">
           <span>0810-999-9629</span>
         </a>
-        <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Quiero%20consultar%20por%20seguridad%20y%20c%C3%A1maras%20para%20un%20campo%20en%20la%20zona%20de%20Chacabuco."
+        <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Quiero%20solicitar%20un%20relevamiento%20para%20un%20campo%20en%20la%20zona%20de%20Chacabuco."
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-md active:scale-[0.98] transition-all">
-          <span>WhatsApp Agro</span>
+           class="inline-flex items-center gap-2 bg-[#fdc60e] hover:bg-[#eab308] text-slate-950 text-xs font-extrabold px-4 sm:px-5 py-2.5 rounded-xl shadow-xs active:scale-[0.98] transition-all">
+          <span>Cotizar para Campo</span>
         </a>
       </div>
     </div>
   </header>
 
   <main class="flex-grow">
-    <!-- HERO DEL SERVICIO RURAL (PÁGINA DEDICADA PARA EL AGRO) -->
-    <section class="py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-[#141b2d] via-[#0b0f19] to-[#0b0f19] border-b border-white/[0.08]">
-      
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(253,198,14,0.12),rgba(255,255,255,0))] pointer-events-none"></div>
-
-      <div class="max-w-4xl mx-auto text-center relative z-10">
+    
+    <!-- ========================================== -->
+    <!-- HERO DE SEGURIDAD RURAL (OPTIMIZADO PARA SEO LOCAL) -->
+    <!-- ========================================== -->
+    <section class="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-amber-50/40 via-white to-slate-50 border-b border-slate-200 text-left">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         
-        <!-- Emblema Rural Original de Chacabuco -->
-        <div class="flex items-center justify-center mb-6">
-          <div class="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-[#111827] border border-white/[0.12] shadow-md">
-            <div class="bg-white p-1 rounded-lg">
-              <img src="/propuestas/segu24/assets/logo-rural-chacabuco.png" alt="Logo Seguridad Rural Chacabuco" class="h-6 w-auto object-contain" width="24" height="24">
+        <div class="lg:col-span-7">
+          
+          <!-- Emblema de Especialidad Rural -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-amber-300 text-slate-800 text-xs font-bold mb-6 shadow-xs">
+            <img src="/propuestas/segu24/assets/logo-rural-chacabuco.png" alt="Escudo Rural Chacabuco" class="h-4 w-auto" width="16" height="16">
+            <span>Especialistas en Zona Rural · Chacabuco, Rawson, O'Higgins y Región</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-bold font-display text-slate-900 tracking-[-0.03em] leading-[1.14] mb-6">
+            Seguridad Rural, Cámaras Solares y Monitoreo para <span class="relative whitespace-nowrap"><span class="relative z-10 text-slate-900">Campos y Establecimientos</span><span class="absolute bottom-1.5 left-0 w-full h-3 bg-[#fdc60e]/50 -z-0"></span></span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed font-normal">
+            Protegé tu casco de estancia, galpones de maquinaria, silobolsas y tranqueras con sistemas 100% autónomos. Funcionan de forma ininterrumpida sin depender de red eléctrica ni señal de celular convencional.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10">
+            <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Me%20interesa%20un%20relevamiento%20t%C3%A9cnico%20para%20proteger%20un%20campo%20en%20Chacabuco."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2.5 bg-[#fdc60e] hover:bg-[#eab308] text-slate-950 font-extrabold text-sm px-8 py-4 rounded-xl shadow-xs active:scale-[0.98] transition-all cursor-pointer">
+              <span>Solicitar Relevamiento en mi Campo</span>
+            </a>
+
+            <a href="tel:08109999629" 
+               class="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm px-6 py-4 rounded-xl border border-slate-200 transition-all">
+              <span>Llamar al 0810-999-9629</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-200 text-xs text-slate-600">
+            <div>
+              <strong class="text-slate-900 block font-semibold mb-0.5">Alimentación Solar:</strong>
+              <span>Paneles con baterías de ciclo profundo.</span>
             </div>
-            <span class="text-xs font-semibold text-slate-200">Solución Especializada para Chacabuco, Rawson, O'Higgins y Región</span>
+            <div>
+              <strong class="text-slate-900 block font-semibold mb-0.5">Largo Alcance:</strong>
+              <span>Barreras perimetrales y radioenlace.</span>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <strong class="text-slate-900 block font-semibold mb-0.5">Alerta a Patrulla:</strong>
+              <span>Aviso directo a Patrulla Rural Chacabuco.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 relative">
+            <img src="/propuestas/segu24/assets/campo_rural_solar.webp" 
+                 alt="Cámaras de Seguridad y Alarmas en Campos de Chacabuco" 
+                 class="w-full h-80 sm:h-96 object-cover" 
+                 width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 text-left">
+              <span class="text-xs font-bold text-slate-900 block">Monitoreo Perimetral Rural</span>
+              <p class="text-xs text-slate-600 mt-0.5">Detección temprana de intrusión antes de que ingresen a los lotes o galpones.</p>
+            </div>
           </div>
         </div>
 
-        <h1 class="text-3xl sm:text-5xl font-bold font-display text-white tracking-[-0.03em] leading-tight mb-6">
-          Seguridad Rural, Cámaras Solares y Monitoreo para <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#fdc60e] via-amber-300 to-[#fdc60e]">Campos y Establecimientos</span>
-        </h1>
-
-        <p class="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Protegé tu casco, galpones de maquinaria agrícola, silobolsas y tranqueras con tecnología autónoma 100% solar y conectividad dedicada. Monitoreo permanente las 24 horas desde nuestra central local en Chacabuco.
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Me%20interesa%20un%20relevamiento%20para%20proteger%20un%20establecimiento%20rural%20en%20Chacabuco."
-             target="_blank"
-             rel="noopener noreferrer"
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#fdc60e] hover:bg-[#eab308] text-slate-950 font-bold text-sm px-8 py-3.5 rounded-full shadow-lg shadow-[#fdc60e]/20 active:scale-[0.98] transition-all cursor-pointer">
-            <span>Pedir Relevamiento para mi Campo</span>
-          </a>
-          <a href="/propuestas/segu24/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.06] hover:bg-white/[0.12] text-slate-200 text-sm px-7 py-3.5 rounded-full border border-white/[0.1] transition-all">
-            <span>← Volver a la Portada SEGU24</span>
-          </a>
-        </div>
       </div>
     </section>
 
-    <!-- 4 PUNTOS CRÍTICOS DEL CAMPO QUE RESUELVE SEGU24 -->
-    <section class="py-16 sm:py-20 px-4 sm:px-6 bg-[#080d17] border-b border-white/[0.08]">
-      <div class="max-w-5xl mx-auto">
+    <!-- ========================================== -->
+    <!-- 4 PILARES TECNOLÓGICOS DEL SERVICIO RURAL -->
+    <!-- ========================================== -->
+    <section id="tecnologia" class="py-16 sm:py-24 px-4 sm:px-6 bg-white border-b border-slate-200 text-left">
+      <div class="max-w-7xl mx-auto">
         
-        <div class="text-center max-w-xl mx-auto mb-12">
-          <span class="text-xs font-semibold uppercase tracking-wider text-[#fdc60e] bg-[#fdc60e]/10 px-3 py-1 rounded-full border border-[#fdc60e]/20">Ingeniería Aplicada al Agro</span>
-          <h2 class="text-2xl sm:text-3xl font-bold font-display text-white tracking-tight mt-3 mb-2">Diseñado para la Realidad Rural</h2>
-          <p class="text-xs sm:text-sm text-slate-400">Superamos los obstáculos del campo: falta de red eléctrica, ausencia de señal celular y grandes distancias perimetrales.</p>
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">Ingeniería para el Agro</span>
+          <h2 class="text-2xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight mt-3 mb-3">
+            Superamos los Obstáculos Habituales del Campo
+          </h2>
+          <p class="text-sm text-slate-600">Equipamiento diseñado específicamente para soportar intemperie, tormentas, polvo y aislamiento geográfico.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="p-6 rounded-3xl bg-[#111827] border border-white/[0.08]">
-            <div class="w-10 h-10 rounded-2xl bg-[#fdc60e]/20 text-[#fdc60e] flex items-center justify-center font-bold text-sm mb-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-[#fdc60e] text-slate-950 font-black flex items-center justify-center text-sm mb-4">
               01
             </div>
-            <h3 class="font-bold text-base text-white mb-2">Energía Solar con Respaldo de Baterías</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Instalamos paneles fotovoltaicos con baterías de ciclo profundo que garantizan funcionamiento ininterrumpido las 24 horas, incluso tras varios días nublados consecutivos.
+            <h3 class="font-bold text-base text-slate-900 mb-2">Energía Solar 24hs</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Paneles solares de alto rendimiento con acumuladores de gel que garantizan autonomía total incluso tras 5 días continuos de lluvia o niebla.
             </p>
           </div>
 
-          <div class="p-6 rounded-3xl bg-[#111827] border border-white/[0.08]">
-            <div class="w-10 h-10 rounded-2xl bg-[#fdc60e]/20 text-[#fdc60e] flex items-center justify-center font-bold text-sm mb-4">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-black flex items-center justify-center text-sm mb-4">
               02
             </div>
-            <h3 class="font-bold text-base text-white mb-2">Radioenlace y Conectividad Satelital</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              No dependés de la señal celular local. Enlazamos los puntos distantes de la estancia con la central y con tu teléfono mediante tecnología inalámbrica de largo alcance.
+            <h3 class="font-bold text-base text-slate-900 mb-2">Radioenlace Satelital</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Interconectamos cascos, galpones distantes y tranqueras principales a través de antenas inalámbricas de largo alcance sin cables ni fibra.
             </p>
           </div>
 
-          <div class="p-6 rounded-3xl bg-[#111827] border border-white/[0.08]">
-            <div class="w-10 h-10 rounded-2xl bg-[#fdc60e]/20 text-[#fdc60e] flex items-center justify-center font-bold text-sm mb-4">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-black flex items-center justify-center text-sm mb-4">
               03
             </div>
-            <h3 class="font-bold text-base text-white mb-2">Custodia de Maquinaria, Agroquímicos y Silobolsas</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Sensores perimetrales infrarrojos de exterior que detectan la aproximación a galpones de herramientas, cosechadoras o lotes de almacenamiento antes de que ocurra el daño.
+            <h3 class="font-bold text-base text-slate-900 mb-2">Custodia de Silobolsas</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Sensores perimetrales y cámaras de visión nocturna de hasta 500 metros que alertan ante roturas intencionales o robo de granos y hacienda.
             </p>
           </div>
 
-          <div class="p-6 rounded-3xl bg-[#111827] border border-white/[0.08]">
-            <div class="w-10 h-10 rounded-2xl bg-[#fdc60e]/20 text-[#fdc60e] flex items-center justify-center font-bold text-sm mb-4">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-black flex items-center justify-center text-sm mb-4">
               04
             </div>
-            <h3 class="font-bold text-base text-white mb-2">Monitoreo y Despacho Local 24hs</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Nuestros operadores en Santa Fe 211 conocen los caminos rurales de Chacabuco y coordinan el aviso inmediato a Patrulla Rural o personal del campo ante cualquier anomalía.
+            <h3 class="font-bold text-base text-slate-900 mb-2">Despacho en Caminos Rurales</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Nuestros operadores locales conocen los cuarteles rurales de Chacabuco y coordinan el aviso de urgencia con las autoridades correspondientes.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PREGUNTAS FRECUENTES DEL PRODUCTOR AGROPECUARIO -->
+    <!-- ========================================== -->
+    <section id="faq-campo" class="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50 border-b border-slate-200 text-left">
+      <div class="max-w-4xl mx-auto">
+        
+        <div class="text-center mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-600 bg-white border border-slate-200 px-3 py-1 rounded-full">Dudas Habituales</span>
+          <h2 class="text-2xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight mt-3 mb-3">
+            Preguntas Frecuentes sobre Seguridad Rural
+          </h2>
+          <p class="text-sm text-slate-600">Todo lo que necesitás saber antes de instalar un sistema en tu establecimiento.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
+            <h3 class="font-bold text-slate-900 text-base mb-2">¿Cómo funciona si en el campo no hay señal de celular?</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Utilizamos antenas direccionales de radioenlace y tecnología satelital para enviar la señal hasta un punto con conexión o directamente a nuestra central de monitoreo en Chacabuco.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
+            <h3 class="font-bold text-slate-900 text-base mb-2">¿Los animales sueltos o la fauna pueden disparar falsas alarmas?</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              No. Instalamos barreras infrarrojas de doble haz calibradas y cámaras con inteligencia artificial que discriminan el paso de liebres, zorros o ganado de la presencia humana.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
+            <h3 class="font-bold text-slate-900 text-base mb-2">¿Puedo ver las cámaras desde mi casa en el pueblo o la ciudad?</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Sí. A través de la aplicación oficial en tu teléfono podés ver las cámaras en vivo y grabaciones históricas de tus galpones y tranqueras desde cualquier lugar del país.
             </p>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- RECORDATORIO DE LA PROPUESTA PARA SEGU24 -->
-    <section class="py-14 sm:py-20 px-4 sm:px-6 bg-[#060911] border-t border-white/[0.08]">
-      <div class="max-w-3xl mx-auto p-7 sm:p-9 rounded-3xl bg-[#111827] border border-white/[0.12] text-center shadow-xl">
-        <span class="text-xs font-bold uppercase tracking-wider text-[#fdc60e] block mb-1">Demostración de Navegación</span>
-        <h3 class="text-xl sm:text-2xl font-bold font-display text-white mb-3">
-          Así funcionaría cada una de las páginas de servicio de SEGU24
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed mb-6">
-          En el <strong>Plan Integral de $350.000 ARS</strong> se incluyen hasta 8 páginas como esta (Alarmas Hogar, Seguridad Empresas, Seguridad Rural, Control de Accesos, Cámaras CCTV, etc.), cada una posicionada para búsquedas locales en Google en Chacabuco y la zona.
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="/propuestas/segu24/#propuesta-comercial" class="inline-flex items-center gap-2 bg-[#fdc60e] hover:bg-[#eab308] text-slate-950 font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all shadow-md active:scale-[0.98]">
-            <span>Ver Tabla de Precios y Condiciones</span> →
-          </a>
-          <a href="/propuestas/segu24/" class="inline-flex items-center gap-2 bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 text-xs px-5 py-3 rounded-full border border-white/[0.08] transition-all">
-            <span>Volver a la Portada</span>
+        <div class="mt-12 text-center">
+          <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Tengo%20una%20consulta%20espec%C3%ADfica%20sobre%20seguridad%20rural%20para%20un%20campo." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-[#fdc60e] hover:bg-[#eab308] text-slate-950 font-bold text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-xs transition-all active:scale-[0.98]">
+            <span>Consultar con un Asesor Técnico de Segu24</span>
           </a>
         </div>
+
       </div>
     </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN ERIK WEBSITE: POR QUÉ FUNCIONAN ESTAS PÁGINAS ESPECÍFICAS -->
+    <!-- (COLORES OFICIALES ERIKWBSITE: BLANCO, PIZARRA Y VERDE ESMERALDA) -->
+    <!-- ================================================================= -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 bg-slate-100 border-t-4 border-emerald-600 text-left">
+      <div class="max-w-4xl mx-auto p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-md">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold mb-4 shadow-xs">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+          <span>Estrategia SEO de Erik Website para SEGU24</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 tracking-tight mb-3">
+          ¿Por qué tu nueva web necesita páginas específicas como esta?
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+          Cuando un productor agropecuario busca en Google <em>"alarmas para campos en Chacabuco"</em> o <em>"cámaras solares para estancias"</em>, una página principal genérica pierde posiciones frente a la competencia. En cambio, <strong>una página dedicada con términos rurales exactos posiciona en los primeros lugares</strong> y convierte visitas en consultas reales de WhatsApp.
+        </p>
+
+        <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 mb-8 text-xs text-emerald-950 font-medium">
+          En el <strong>Plan Integral de $350.000 ARS</strong> se incluyen hasta <strong>8 páginas completas de servicio</strong> como esta (Alarmas Hogar, Seguridad Comercios, Seguridad Rural, CCTV, Monitoreo Agro, etc.), optimizadas con SEO local para dominar las búsquedas en Chacabuco.
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+          <a href="/propuestas/segu24/#propuesta-comercial-erik" 
+             class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl transition-all shadow-xs active:scale-[0.98]">
+            <span>Ver Tabla de Precios y Paquetes</span> →
+          </a>
+          <a href="/propuestas/segu24/" 
+             class="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs px-5 py-3.5 rounded-xl border border-slate-200 transition-all">
+            <span>Volver a la Portada SEGU24</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- MINI FOOTER -->
-  <footer class="bg-[#05080f] text-slate-500 py-6 text-center text-xs border-t border-white/[0.08]">
-    <div class="max-w-4xl mx-auto px-4">
-      <p>Boceto de navegación para <strong>SEGU24</strong> elaborado por <strong>Erik Website</strong> (Erik Ladstatter).</p>
-      <p class="mt-1 text-[11px] text-slate-600">Chacabuco, Provincia de Buenos Aires • Todos los derechos reservados © 2026</p>
+  <!-- FOOTER OFICIAL SEGU24 -->
+  <footer class="bg-slate-900 text-slate-400 py-10 px-4 sm:px-6 text-xs text-center border-t border-slate-800">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <p>SEGU24 Seguridad Electrónica & Central de Monitoreo · Santa Fe 211, Chacabuco, Buenos Aires.</p>
+      <p class="text-[11px] text-slate-500">Boceto funcional de demostración para el cliente · Derechos reservados © 2026</p>
     </div>
   </footer>
 
