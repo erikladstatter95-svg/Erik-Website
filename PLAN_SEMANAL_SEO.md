@@ -264,40 +264,30 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Lunes 16/11 — Eje Diseño Web y Conversión (Catálogos WhatsApp + Rubro Mueblerías y Fábricas de Muebles)
+### [x] Lunes 16/11 — Eje Diseño Web y Conversión (Completado: Boost Catálogo WhatsApp + Nuevo Artículo Mueblerías)
 
-#### A. Paso 1 — Cirugía / Boost Striking Distance (Pos 11.6 y 200 Impresiones en GSC)
-- **URL a Optimizar:** `/blog/como-crear-catalogo-online-pedidos-whatsapp/`
-- **Diagnóstico GSC:** Entró al Top 10 del sitio con **`200` impresiones** y **Posición `11.6`**, pero su `<title>` actual mide 76 caracteres (se trunca en Google) y solo tiene 2 FAQs. Consultas reales en GSC: `'catálogo digital whatsapp'` (Pos 28.2, 6 imp), `'catálogo de venta por whatsapp'` (6 imp), `'catálogo online whatsapp'` (4 imp), `'como hacer un catálogo en pdf para enviar por whatsapp'` (Pos 27.5, 2 imp), `'catalogo virtual whatsapp'`, `'¿cómo hacer una lista de pedidos en whatsapp?'`.
-- **Cirugía exacta a ejecutar en Paso 3:**
-  1. Acortar `<title>` de 76 a **56 caracteres**: `Cómo Crear un Catálogo Online con Pedidos por WhatsApp`
-  2. Ajustar `meta description` y primeras 10 palabras del Direct Answer iniciando con `"Crear un catálogo online con pedidos por WhatsApp..."` e integrando `catálogo digital para WhatsApp` y `catálogo de venta por WhatsApp`.
-  3. Agregar un nuevo `<h2>` #4: `4. Catálogo Digital en WhatsApp vs. Catálogo en PDF: Qué Convierte Más en Argentina` con tabla comparativa (peso en MB, actualización de precios en inflación, carrito automático con suma total vs. anotar a mano).
-  4. Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand` y actualización de Schema `FAQPage` + `dateModified: 2026-11-16T09:30:00-03:00`):
-     - FAQ 3: `¿Cuál es la diferencia entre el catálogo de WhatsApp Business y un catálogo online web con carrito?`
-     - FAQ 4: `¿Por qué no conviene enviar un catálogo en PDF por WhatsApp cuando cambian los precios?`
-     - FAQ 5: `¿Cómo hacer una lista de pedidos en WhatsApp que calcule el total automáticamente sin cobrar comisiones?`
-     - FAQ 6: `¿Cuánto cuesta crear un catálogo virtual para WhatsApp a medida en Argentina?`
+#### A. Paso 1 — Cirugía / Boost Striking Distance (Pos 11.6 y 200 Impresiones en GSC) [EJECUTADO]
+- **URL Optimizada:** `/blog/como-crear-catalogo-online-pedidos-whatsapp/`
+- **Diagnóstico GSC:** Entró al Top 10 del sitio con **`200` impresiones** y **Posición `11.6`**, pero su `<title>` anterior medía 76 caracteres y solo tenía 2 FAQs.
+- **Cirugía ejecutada:**
+  1. `<title>` acortado de 76 a **54 caracteres**: `Cómo Crear un Catálogo Online con Pedidos por WhatsApp`
+  2. `meta description` actualizada (157 caracteres) y Direct Answer Sturm ajustado en sus primeras 10 palabras con `catálogo digital para WhatsApp` y `catálogo de venta por WhatsApp`.
+  3. Nuevo `<h2>` #4 incorporado: `4. Catálogo Digital en WhatsApp vs. Catálogo en PDF: Qué Convierte Más en Argentina` con tabla comparativa HTML responsiva.
+  4. Ampliado de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand`) + actualización de Schema `FAQPage` y `dateModified: 2026-11-16T10:30:00-03:00`.
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo (0% Canibalización Verificada)
+#### B. Pasos 2, 3 y 4 — Publicación y Despliegue de Artículo Nuevo [EJECUTADO]
 - **Main Keyword:** `Páginas web para mueblerías y fábricas de muebles`
 - **Slug (Regla #18 — 5 palabras exactas):** `/blog/paginas-web-mueblerias-fabricas-muebles/`
-- **`<title>` (57 caracteres):** `Páginas Web para Mueblerías y Fábricas de Muebles 2026`
+- **`<title>` (54 caracteres):** `Páginas Web para Mueblerías y Fábricas de Muebles 2026`
 - **`<h1>`:** `Páginas Web para Mueblerías y Fábricas de Muebles a Medida en Argentina: Catálogo y Cotizador por WhatsApp`
 - **`meta description` (154 caracteres):** `Páginas web para mueblerías y fábricas de muebles a medida en Argentina. Mostrá tu catálogo de sillones, cocinas y placares y cotizá directo en WhatsApp.`
-- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
-  > **Las páginas web para mueblerías y fábricas de muebles** permiten exhibir catálogos de sillones, mesas, amoblamientos de cocina y placares a medida con medidas, telas y terminaciones reales, enviando cada consulta pre-filtrada directo a tu WhatsApp sin pagar comisiones por venta.
-- **Categoría en `blog/index.html`:** `diseno` (*Diseño Web & Conversión*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_paginas_web_mueblerias_fabricas_muebles.png` — Fotografía realista en showroom/taller de carpintería y diseño de muebles en Argentina (carpintero/diseñador mostrando muestras de melamina/madera maciza y tablet con catálogo web de amoblamientos de cocina y botón de WhatsApp; pastilla `"MUEBLERÍAS & FÁBRICAS"` y sello `erikwebsite.com`).
-- **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. Por qué las mueblerías y carpinterías pierden ventas cuando solo muestran fotos sueltas en Instagram</h2>`
-  - `<h2>2. Qué debe incluir una página web para fábricas de muebles, amoblamientos de cocina y tapicerías</h2>` (Con tabla comparativa HTML: *Solo Instagram / Marketplace de Facebook* vs. *Tienda E-Commerce con Comisiones* vs. *Catálogo Web + Cotizador de Medidas a WhatsApp ($150.000 ARS)*).
-  - `<h2>3. Cómo filtrar pedidos de muebles a medida (largo, alto, tela y localidad de envío) antes de hablar por WhatsApp</h2>`
-  - `<h2>4. Posicionamiento en Google Maps para mueblerías y showrooms: cómo captar clientes de tu zona</h2>`
-- **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
-  - `/blog/como-crear-catalogo-online-pedidos-whatsapp/`
-  - `/blog/catalogo-pdf-canva-vs-catalogo-web/`
-  - `/blog/paginas-web-fabricas-aberturas-aluminio-pvc-dvh-steel-framing/`
+- **Direct Answer Sturm:** Cumplido en primeras 8 palabras con Main Keyword exacta.
+- **Categoría en `blog/index.html`:** `diseno` (*Diseño Web & Conversión* — Mostrando 181 guías).
+- **Imagen Editorial Dual-Sync (`images/` y `public/images/`):** `guia_paginas_web_mueblerias_fabricas_muebles.png` (383.1 KB, cuantizada con PIL, pastilla `"MUEBLERÍAS & FÁBRICAS"` y sello `erikwebsite.com`).
+- **Estructura y Componentes:** 4 secciones `<h2>`, tabla comparativa HTML (*Solo Instagram / Facebook* vs *Tienda E-Commerce con Comisiones* vs *Catálogo Web + Cotizador de Medidas a WhatsApp*), 6 FAQs interactivas con GA4 tracking y marcado `Schema.org` (`BlogPosting`, `BreadcrumbList`, `FAQPage`).
+- **Interlinking Verificado:** Enlaces hacia `/blog/como-crear-catalogo-online-pedidos-whatsapp/`, `/blog/catalogo-pdf-canva-vs-catalogo-web/`, `/blog/paginas-web-fabricas-aberturas-aluminio-pvc-dvh-steel-framing/`, `/blog/como-poner-agregar-negocio-local-google-maps-gratis/` y llamadas a cotización.
+- **Registro & Compilación:** Añadido a `blog/index.html`, `vite.config.js`, `sitemap.xml` y `public/sitemap.xml` (**200 URLs canónicas** en total). Build en Vite limpio en 10.91s (`0 errores`).
+- **Notificaciones Oficiales:** Google Indexing API v3 (`200 OK` en ambas URLs), GSC Sitemap enviado, IndexNow API (`202 Accepted`) y Bing Webmaster API (`200 OK`).
   - `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`
   - `/#demos` y `/#precios`
 - **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**

@@ -561,6 +561,24 @@
     - Compilación en Vite exitosa en 15.80s con 0 errores.
     - Auditoría de enlaces internos (`scratch/audit_all_internal_links.py`) con 0 enlaces rotos.
     - Verificación estricta de Regla #17: 0 emojis decorativos en todo el documento.
+- [x] **2026-11-16 (Ejecución de Lunes 16/11 — Eje Diseño Web y Conversión):**
+  - **Boost Striking Distance en `/blog/como-crear-catalogo-online-pedidos-whatsapp/`:**
+    - `<title>` optimizado de 76 a **54 caracteres**: `Cómo Crear un Catálogo Online con Pedidos por WhatsApp`.
+    - `meta description` actualizada (157 chars) y Direct Answer Sturm ajustado en las primeras 10 palabras integrando `catálogo digital para WhatsApp` y `catálogo de venta por WhatsApp`.
+    - Incorporada nueva Sección 4 con tabla comparativa HTML responsiva: `4. Catálogo Digital en WhatsApp vs. Catálogo en PDF: Qué Convierte Más en Argentina`.
+    - Ampliado de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand`) + Schema `FAQPage` y `dateModified: 2026-11-16T10:30:00-03:00`.
+  - **Nuevo Artículo de Nicho Comercial en `/blog/paginas-web-mueblerias-fabricas-muebles/`:**
+    - Main Keyword: `Páginas web para mueblerías y fábricas de muebles` (5 palabras exactas, slug alineado a Regla #18).
+    - `<title>` de **54 caracteres**, `<h1>` con cotizador y catálogo, `meta description` de 154 caracteres y Direct Answer Sturm en primeras 8 palabras.
+    - 4 secciones `<h2>`, tabla comparativa HTML (*Solo Instagram/Facebook* vs *E-commerce tradicional con comisiones* vs *Catálogo Web + Cotizador a WhatsApp por $150.000 ARS*).
+    - 6 FAQs interactivas con GA4 tracking y marcado `Schema.org` (`BlogPosting`, `BreadcrumbList`, `FAQPage`).
+    - Fotografía editorial auténtica procesada con PIL (`guia_paginas_web_mueblerias_fabricas_muebles.png`, 383.1 KB, sincronizada en `images/` y `public/images/`).
+    - Añadido a `blog/index.html` (**181 guías activas**), `vite.config.js`, `sitemap.xml` y `public/sitemap.xml` (**200 URLs canónicas**).
+  - **Infraestructura y Notificaciones:**
+    - 0 enlaces rotos (`audit_all_internal_links.py`).
+    - Build exitoso en Vite (`npm run build`) en 10.91s con 0 errores.
+    - Notificaciones enviadas: Google Indexing API v3 (`200 OK` en ambas URLs), GSC sitemap enviado con éxito, IndexNow API (`202 Accepted`), Bing Webmaster API (`200 OK`).
+  - **Filtro de Tráfico GA4:** Capa 1 (`id="ew-internal-filter"` client-side con `?soy_erik=1` y `localhost`) activa en las 214 páginas bloqueando de inmediato los eventos de GA4 y Meta Pixel de la navegación de Erik. Reportado diagnóstico de Capa 2 (Google Analytics Admin API deshabilitada en el proyecto de GCP `483493239372`, mientras que Google Analytics Data API para reportes opera normalmente).
 
 
 
