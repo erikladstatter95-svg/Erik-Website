@@ -53,7 +53,7 @@
   <!-- ========================================== -->
   <!-- BARRA PRIVADA DE NAVEGACIÓN Y AVISO PROYECTO -->
   <!-- ========================================== -->
-  <aside aria-label="Aviso de propuesta privada" class="bg-slate-900 text-slate-200 text-[11px] sm:text-xs py-2 px-4 font-medium tracking-tight border-b border-slate-800 sticky top-0 z-50">
+  <aside aria-label="Aviso de propuesta privada" class="bg-[#242223] text-slate-200 text-[11px] sm:text-xs py-2 px-4 font-medium tracking-tight border-b border-black/20 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-2">
       <div class="flex items-center gap-2">
         <span class="inline-block w-2 h-2 rounded-full bg-[#fdc60e] animate-pulse"></span>
@@ -106,13 +106,37 @@
         <img src="/propuestas/segu24/assets/logo-segu24.png" alt="SEGU24 Seguridad Electrónica & Central de Monitoreo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]" width="180" height="45">
       </a>
 
-      <nav class="hidden lg:flex items-center gap-7 text-xs font-bold text-slate-700 tracking-tight">
+      <nav class="hidden md:flex items-center gap-7 text-xs font-bold text-slate-700 tracking-tight">
         <a href="/propuestas/segu24/" class="hover:text-slate-950 transition-colors">← Portada Inicio</a>
-        <a href="/propuestas/segu24/#hogar" class="hover:text-slate-950 transition-colors">Hogar</a>
-        <a href="/propuestas/segu24/#comercios" class="hover:text-slate-950 transition-colors">Comercios</a>
-        <span class="text-slate-950 font-extrabold border-b-2 border-[#fdc60e] pb-1">Seguridad Rural (Página Activa)</span>
+        
+        <div class="relative group py-2">
+          <button type="button" class="flex items-center gap-1.5 text-slate-950 font-extrabold border-b-2 border-[#fdc60e] pb-0.5 focus:outline-none cursor-pointer">
+            <span>Servicios</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          
+          <div class="absolute top-full left-0 w-64 p-2 bg-white rounded-2xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
+            <a href="/propuestas/segu24/#hogar" class="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+              <strong class="block text-slate-900 font-bold text-xs">Alarmas para Hogar</strong>
+              <span class="text-[11px] text-slate-500 font-normal">Protección para casas y familias</span>
+            </a>
+            <a href="/propuestas/segu24/#comercios" class="block p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+              <strong class="block text-slate-900 font-bold text-xs">Comercios y PyMEs</strong>
+              <span class="text-[11px] text-slate-500 font-normal">Control comercial y cámaras CCTV</span>
+            </a>
+            <a href="/propuestas/segu24/seguridad-rural-campos/" class="block p-2.5 rounded-xl bg-amber-50/60 hover:bg-amber-50 transition-colors border border-amber-200/60 mt-1">
+              <div class="flex items-center justify-between">
+                <strong class="block text-slate-900 font-bold text-xs">Seguridad Rural (Campos)</strong>
+                <span class="text-[9px] bg-[#fdc60e] text-slate-950 font-black px-1.5 py-0.5 rounded-full">Activa</span>
+              </div>
+              <span class="text-[11px] text-slate-600 font-normal">Silos, estancias y paneles solares</span>
+            </a>
+          </div>
+        </div>
+
         <a href="#tecnologia" class="hover:text-slate-950 transition-colors">Tecnología Solar</a>
         <a href="#faq-campo" class="hover:text-slate-950 transition-colors">Preguntas Frecuentes</a>
+        <a href="/propuestas/segu24/#nosotros" class="hover:text-slate-950 transition-colors">Nosotros & Contacto</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
@@ -331,7 +355,7 @@
         </p>
 
         <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 mb-8 text-xs text-emerald-950 font-medium">
-          En el <strong>Plan Integral de $350.000 ARS</strong> se incluyen hasta <strong>8 páginas completas de servicio</strong> como esta (Alarmas Hogar, Seguridad Comercios, Seguridad Rural, CCTV, Monitoreo Agro, etc.), optimizadas con SEO local para dominar las búsquedas en Chacabuco.
+          En el <strong>Plan Integral de $350.000 ARS</strong> se incluye la Home más <strong>hasta 8 páginas completas de servicio</strong> como esta (a razón de $25.000 c/u, ahorrando $40.000 frente al valor individual de $30.000 por página), optimizadas con SEO local para dominar las búsquedas en Chacabuco.
         </div>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
@@ -351,10 +375,16 @@
   </main>
 
   <!-- FOOTER OFICIAL SEGU24 -->
-  <footer class="bg-slate-900 text-slate-400 py-10 px-4 sm:px-6 text-xs text-center border-t border-slate-800">
+  <footer class="bg-[#242223] text-slate-400 py-10 px-4 sm:px-6 text-xs text-center border-t border-[#3b3839]">
     <div class="max-w-4xl mx-auto space-y-2">
-      <p>SEGU24 Seguridad Electrónica & Central de Monitoreo · Santa Fe 211, Chacabuco, Buenos Aires.</p>
-      <p class="text-[11px] text-slate-500">Boceto funcional de demostración para el cliente · Derechos reservados © 2026</p>
+      <div class="bg-white px-3 py-1.5 rounded-xl inline-block mb-2">
+        <img src="/propuestas/segu24/assets/logo-segu24.png" alt="SEGU24" class="h-6 w-auto" width="120" height="30">
+      </div>
+      <p>SEGU24 Seguridad Electrónica y Monitoreo · Santa Fe 211, Chacabuco, Buenos Aires.</p>
+      <p class="text-[11px] text-slate-400">
+        <span>Todos los derechos reservados 2026 · </span>
+        <span>Página creada por <a href="https://erikwebsite.com" target="_blank" rel="noopener" class="text-slate-300 hover:text-white underline font-medium">Erik Website</a></span>
+      </p>
     </div>
   </footer>
 

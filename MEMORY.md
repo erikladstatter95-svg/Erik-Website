@@ -613,7 +613,10 @@
     - Ubicada estrictamente al final, tras el cierre del footer de SEGU24.
     - Con los colores oficiales de **Erik Website (Blanco + Verde Esmeralda `#16a34a` / `#15803d`)**.
     - Explicación concisa de por qué dejar Wix (velocidad en 0.8s, contacto móvil en 1 toque y SEO limpio).
-    - Paquetes claros: Plan Base Home ($150.000 ARS) y Plan Integral con 8 Páginas SEO ($350.000 ARS), adicionales $20.000 / $80.000 pack 5, y mantenimiento $20.000/mes.
+    - Paquetes claros: Plan Base Home ($150.000 ARS) y Plan Integral con 8 Páginas SEO ($350.000 ARS). Páginas individuales a $30.000 ARS c/u o en bloques recurrentes de a 8 páginas por $200.000 ARS ($25.000 c/u, ahorran $40.000 frente al costo individual de $240.000). Mantenimiento mensual $20.000/mes (mes 1 bonificado) y rediseño de página aprobada a $30.000.
+    - Footer de Segu24 incluye atribución limpia: `Página creada por Erik Website` con link a `https://erikwebsite.com`.
+    - Cabecera simplificada con dropdown de `Servicios` (*Alarmas Hogar*, *Comercios*, *Seguridad Rural*), `App Móvil` y `Nosotros & Contacto` (eliminados badges y botones redundantes).
+    - Reemplazado azul navy por el tono de grafito carbón `#373435` / `#242223` del logo oficial de SEGU24.
   - **Verificaciones:** Compilación exitosa en Vite (`npm run build`), 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis (Regla #17), `noindex, nofollow` estricto (Regla #20).
 
 
