@@ -9,6 +9,7 @@ export default {
     "./terminos/**/*.html",
     "./privacidad/**/*.html",
     "./demos/**/*.{html,js}",
+    "./propuestas/**/*.{html,js}",
     "./src/**/*.{html,js}",
   ],
   theme: {

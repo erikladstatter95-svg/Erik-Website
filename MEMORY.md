@@ -598,15 +598,25 @@
   - Vinculado en `vite.config.js` (`propuestas_template`), compilado en Vite en 9.75s con 0 errores y 0 enlaces rotos (`audit_all_internal_links.py`).
 - [x] **2026-11-16 (Boceto y Propuesta Multi-Página para SEGU24 — Chacabuco, Bs. As.):**
   - **Dossier & Diagnóstico:** Basado en la auditoría de `clientes/segu24.com.ar.md` (empresa de seguridad electrónica y central de monitoreo en Chacabuco fundada en 2007, Rubén Barrón, técnicos certificados Alonso Hnos, con web en Wix congelada en 2018 y teléfonos no clickeables).
-  - **Página Principal de Propuesta (`/propuestas/segu24/`):** Estética tecnológica en Azul Marino (`#0b132b`), Cobalto y Ámbar, solución a la falla de teléfonos no clickeables (`0810-999-9629` y WhatsApp directos), los 3 pilares de servicio (Hogar, Comercios, Campos), cotizador interactivo por WhatsApp y comparativa comercial transparente.
-  - **Página de Servicio Específico (`/propuestas/segu24/seguridad-rural-campos/`):** Demostración real de cómo navega y posiciona una página interna dedicada al mayor ticket de la zona (paneles solares, enlace satelital, custodia de maquinaria agrícola y silobolsas con despacho en caminos rurales de Chacabuco).
+  - **Solución al Bug de Purga de Tailwind:** Se añadió `"./propuestas/**/*.{html,js}"` en el array `content` de `tailwind.config.js` y se configuró fallback inline en `<body>`, solucionando el problema donde los estilos no se compilaban y la pantalla se mostraba blanca sobre blanco.
+  - **Identidad Corporativa y Paleta Real Extraída (`design-master`):**
+    - Extracción del logo oficial en alta resolución (`logo-segu24.png`, 2388x836 RGBA) y del escudo rural (`logo-rural-chacabuco.png`), sincronizados en `propuestas/segu24/assets/` y `public/propuestas/segu24/assets/`.
+    - Paleta auténtica de seguridad: Amarillo Dorado / Advertencia (`#fdc60e`), Pizarra Oscura (`#0b0f19`, `#111827`, `#1e293b`), Azul Cobalto/Alonso y Verde Esmeralda para WhatsApp.
+    - Contenedor de logo en píldora blanca contrastada de alta legibilidad.
+  - **Página Principal de Propuesta (`/propuestas/segu24/`):**
+    - Barra de propuesta privada y banner explicativo del boceto interactivo.
+    - Teléfonos 0810-999-9629 y WhatsApp 100% clickeables en celulares.
+    - Comparativa visual de alto impacto: *Tu Web Actual (Wix 2018) vs Esta Nueva Versión a Medida*.
+    - Los 3 pilares de servicio (Hogar, Comercios, Campos) con microinteracciones y radio concéntrico.
+    - Cotizador interactivo con armado automático de mensaje de WhatsApp.
+  - **Página de Servicio Específico (`/propuestas/segu24/seguridad-rural-campos/`):** Demostración real de cómo navega y posiciona una página interna dedicada al mayor ticket de la zona (paneles solares, radioenlace satelital, custodia de maquinaria agrícola y silobolsas con despacho en caminos rurales de Chacabuco).
   - **Estructura Comercial & Reglas Claras:**
-    - Plan Base Rediseño Home: $150.000 ARS.
+    - Plan Base Rediseño Home: $150.000 ARS (pago único).
     - Plan Integral Web + 8 Páginas de Servicios SEO: $350.000 ARS ($150k + $200k).
     - Páginas adicionales: $20.000 ARS individual / $80.000 ARS pack de 5.
-    - Mantenimiento mensual: $20.000 ARS/mes (hosting, SSL, cambios menores de precios y teléfonos incluidos).
+    - Mantenimiento mensual: $20.000 ARS/mes (hosting, SSL, cambios menores de precios y teléfonos incluidos, mes 1 bonificado).
     - Regla de rediseño o agregado posterior: $20.000 ARS por página.
-  - **Verificaciones:** `noindex, nofollow`, 0 emojis decorativos (Regla #17), vinculación en `vite.config.js`, compilación en Vite en 5.93s y 0 enlaces rotos (`audit_all_internal_links.py`).
+  - **Verificaciones:** `noindex, nofollow`, 0 emojis decorativos (Regla #17), vinculación en `vite.config.js`, compilación en Vite exitosa y 0 enlaces rotos (`audit_all_internal_links.py`).
 
 
 
