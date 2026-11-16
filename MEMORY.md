@@ -549,6 +549,18 @@
   - **Implementación Global de Filtro de Tráfico Interno para GA4, Clarity y Meta Pixel (`id="ew-internal-filter"` en las 214 páginas activas):**
     - Desactiva automáticamente GA4 (`window['ga-disable-G-KWD0WYVK4J'] = true` y bloqueo de `gtag.js`), Microsoft Clarity y Meta Pixel (`PageView` y `Contact`) en `localhost`/`127.0.0.1` y en cualquier navegador donde se abra una sola vez `https://erikwebsite.com/?soy_erik=1` (guardando `localStorage.setItem('ew_ignore_analytics', '1')` con banner visual de confirmación; reversible con `?soy_erik=0`).
     - Se inyectó además la etiqueta GA4 (`G-KWD0WYVK4J`) en las 26 guías iniciales del blog que no la tenían y se reparó el `<title>` escapado en `<head>` de los 6 artículos del sábado 14/11.
+- [x] **2026-11-15 (Auditoría UI/UX & Rediseño Contextual con `design-master` en `index.html`):**
+  - **Coherencia y Tono de Voz Comercial:**
+    - Se refinó el titular H2 de la sección `#precios` que utilizaba una traducción literal e informal del framework de Alex Hormozi (*"Una propuesta donde sería estúpido decir que no"*), sustituyéndolo por un titular comercial de alta autoridad y persuasión: *"Una propuesta transparente donde todo el trabajo técnico queda resuelto"*.
+    - Se profesionalizó el badge de oferta de precios (`Oferta Grand Slam • Todo Resuelto` -> `Propuesta Completa • Llave en Mano`) y se ajustó el mensaje predeterminado de WhatsApp para prospectos serios (`data-wa-msg`).
+    - Se aclaró el badge de ahorro en el desglose de precios (`Ahorro Total de $210.000 ARS` frente al valor completo de $360.000 ARS de componentes y bonos combinados).
+  - **Refinamiento de Iconografía y UI Craft (Regla #17):**
+    - Se erradicaron los caracteres de texto plano `✕` y `✓` en la comparativa de `#solucion`, reemplazándolos por iconos vectoriales SVG inline de 16x16px ultra nítidos y accesibles (`stroke-width="2.5"`).
+    - Se reparó el enlace vacío `<a href="#">` en el pie de página global, reemplazándolo por `<a href="/" aria-label="Ir al inicio de erikwebsite.com">`.
+  - **Verificaciones:**
+    - Compilación en Vite exitosa en 15.80s con 0 errores.
+    - Auditoría de enlaces internos (`scratch/audit_all_internal_links.py`) con 0 enlaces rotos.
+    - Verificación estricta de Regla #17: 0 emojis decorativos en todo el documento.
 
 
 
