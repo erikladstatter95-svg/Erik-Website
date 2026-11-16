@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Tráfico Interno -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+          window['ew_analytics_blocked'] = true;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Privado: No Indexar ni Seguir por Buscadores -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Boceto y Propuesta Técnica para SEGU24 | Erik Website</title>
+  <meta name="description" content="Propuesta de rediseño web y boceto funcional a medida para SEGU24 (Seguridad Electrónica & Central de Monitoreo Chacabuco).">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos compilada -->
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#0b132b] text-slate-100 antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
+
+  <!-- BARRA SUPERIOR DE PROPUESTA PRIVADA -->
+  <aside aria-label="Aviso de propuesta privada" class="bg-slate-950 text-white text-[11px] sm:text-xs py-2 px-4 text-center font-medium tracking-tight flex items-center justify-between border-b border-white/[0.08] sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Boceto de Rediseño y Propuesta para: <strong class="text-white font-semibold">SEGU24 (Chacabuco, Bs. As.)</strong></span>
+      </div>
+      <div class="flex items-center gap-3 text-[11px] text-slate-400">
+        <span>Preparado por Erik Website</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="#propuesta-comercial" class="text-amber-400 hover:text-amber-300 font-semibold underline">
+          Ver Inversión y Precios
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- BANNER DE AVISO DE BORRADOR -->
+  <div class="bg-blue-950/80 border-b border-blue-800/40 py-2.5 px-4 text-center">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-xs text-blue-200">
+      <span class="font-bold uppercase tracking-wider text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded-full">Boceto Interactivo</span>
+      <p>Esta es una muestra interactiva para visualizar la navegación y la tecnología. Hacé clic en <strong>"Seguridad Rural / Campos"</strong> para probar la navegación a una página interna de servicio.</p>
+    </div>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL SEGU24 (EJEMPLO CONECTADO Y CON TELÉFONOS CLIQUEABLES) -->
+  <header class="bg-[#0b132b]/90 backdrop-blur-xl border-b border-white/[0.08] sticky top-[37px] sm:top-[33px] z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Marca SEGU24 -->
+      <a href="/propuestas/segu24/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-display font-black text-white text-lg tracking-tight shadow-md shadow-blue-600/30">
+          S24
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-lg sm:text-xl text-white tracking-wider leading-none">SEGU<span class="text-blue-500">24</span></span>
+          <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest mt-0.5">Central de Monitoreo · Chacabuco</span>
+        </div>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300 tracking-tight">
+        <a href="/propuestas/segu24/" class="text-white hover:text-blue-400 transition-colors">Inicio</a>
+        <a href="#hogar" class="hover:text-white transition-colors">Alarmas Hogar</a>
+        <a href="#empresas" class="hover:text-white transition-colors">Comercios</a>
+        <!-- Enlace a la subpágina de servicio extra -->
+        <a href="/propuestas/segu24/seguridad-rural-campos/" class="text-amber-400 hover:text-amber-300 flex items-center gap-1.5 transition-colors font-bold">
+          <span>Seguridad Rural (Campo)</span>
+          <span class="text-[9px] uppercase tracking-wider bg-amber-400/20 text-amber-300 px-1.5 py-0.5 rounded-full border border-amber-400/30">Página Extra</span>
+        </a>
+        <a href="#instaladores" class="hover:text-white transition-colors">Instaladores</a>
+        <a href="#propuesta-comercial" class="text-emerald-400 hover:text-emerald-300 transition-colors">Propuesta y Precios</a>
+      </nav>
+
+      <!-- Botones de Contacto Directo (SOLUCIÓN A LA FALLA CRÍTICA DE WIX) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- 0810 Cliqueable -->
+        <a href="tel:08109999629" 
+           class="hidden lg:inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-slate-200 border border-white/[0.1] transition-all"
+           title="Llamar a la Central de Emergencias">
+          <svg aria-hidden="true" class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <span>0810-999-9629</span>
+        </a>
+
+        <!-- WhatsApp Clickeable con Mensaje -->
+        <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Quiero%20consultar%20por%20un%20sistema%20de%20alarmas%20y%20monitoreo%20para%20mi%20propiedad."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-md shadow-emerald-900/30 active:scale-[0.98] transition-all cursor-pointer">
+          <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span class="hidden sm:inline">WhatsApp Ventas</span>
+          <span class="sm:hidden">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO SECTION (IMPACTO COMERCIAL Y AUTORIDAD) -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-[#0b132b] via-[#111c44] to-[#0b132b] border-b border-white/[0.08]">
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        
+        <!-- Badge de Confianza -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-300 text-xs font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Central Propia de Monitoreo en Chacabuco · Santa Fe 211
+        </div>
+
+        <!-- H1 Estratégico (Lo que faltaba por completo en Wix) -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold font-display text-white tracking-[-0.03em] leading-[1.12] mb-6">
+          Monitoreo de Alarmas y Seguridad 24 Horas en <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">Chacabuco y la Región</span>
+        </h1>
+
+        <!-- Subtítulo de Autoridad -->
+        <p class="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
+          Protegé a tu familia, negocio o campo con tecnología certificada <strong>Alonso Hnos</strong> y operadores locales que conocen tu zona. Respuesta humana inmediata ante cualquier emergencia.
+        </p>
+
+        <!-- Botones de Acción Inmediata -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
+          <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Quiero%20solicitar%20un%20presupuesto%20para%20instalar%20alarmas%20y%20monitoreo."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-blue-600/30 active:scale-[0.98] transition-all cursor-pointer">
+            <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Cotizá tu Sistema por WhatsApp</span>
+          </a>
+
+          <a href="/propuestas/segu24/seguridad-rural-campos/" 
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.06] hover:bg-white/[0.12] text-amber-300 font-semibold text-sm px-6 py-3.5 rounded-full border border-amber-400/30 active:scale-[0.98] transition-all">
+            <span>Ver Servicio Rural (Campos)</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Barra de Confianza (Trust Pillars) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-6 border-t border-white/[0.08] text-xs text-slate-300">
+          <div class="flex items-center justify-center gap-2">
+            <span class="text-blue-400 font-bold text-base">+17</span>
+            <span>Años de Trayectoria (2007)</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Certificados Alonso Hnos</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+            <span>Central Local en Chacabuco</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span>Cobertura Urbana y Rural</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOS 3 PILARES DE SERVICIO -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 bg-[#0e1633] border-b border-white/[0.08]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">Soluciones Especializadas</span>
+          <h2 class="text-2xl sm:text-4xl font-bold font-display text-white tracking-tight mt-3 mb-3">Sistemas de Seguridad a Medida</h2>
+          <p class="text-xs sm:text-sm text-slate-300">Cada propiedad tiene riesgos diferentes. Diseñamos e instalamos el equipamiento justo para cada necesidad.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          
+          <!-- Pilar 1: Hogar -->
+          <div class="p-7 rounded-3xl bg-white/[0.03] border border-white/[0.08] hover:border-blue-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Hogar & Familia</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Sistemas anti-entradera, sensores de movimiento para interior y exterior, botones antipánico fijos y móviles, y control total desde la aplicación en tu celular.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                <li class="flex items-center gap-2">✓ Alerta inmediata al celular y a la central</li>
+                <li class="flex items-center gap-2">✓ Batería de respaldo anti-corte de luz</li>
+                <li class="flex items-center gap-2">✓ Sensores inmunes a mascotas</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Quiero%20consultar%20por%20alarmas%20para%20mi%20hogar." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1.5">
+              <span>Cotizar Alarma Hogar</span> →
+            </a>
+          </div>
+
+          <!-- Pilar 2: Comercios -->
+          <div class="p-7 rounded-3xl bg-white/[0.03] border border-white/[0.08] hover:border-blue-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Comercios & PyMEs</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Protección comercial integral: cámaras CCTV de alta definición, barreras perimetrales, detección de intrusión nocturna y sirenas de alta potencia con luz estroboscópica.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                <li class="flex items-center gap-2">✓ Grabación continua en la nube / DVR</li>
+                <li class="flex items-center gap-2">✓ Control de aperturas y cierres fuera de hora</li>
+                <li class="flex items-center gap-2">✓ Despacho inmediato de asistencia</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5492352520211?text=Hola%20Segu24!%20Quiero%20consultar%20por%20seguridad%20para%20mi%20comercio%20o%20empresa." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+              <span>Cotizar Seguridad Comercial</span> →
+            </a>
+          </div>
+
+          <!-- Pilar 3: Campos (Destacado Especial con Link a Página de Servicio) -->
+          <div class="p-7 rounded-3xl bg-gradient-to-b from-amber-950/30 to-[#0e1633] border-2 border-amber-500/40 hover:border-amber-400 transition-all flex flex-col justify-between group relative overflow-hidden shadow-lg shadow-amber-950/20">
+            <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-xl">
+              Especialidad Chacabuco
+            </div>
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h3 class="font-bold text-lg text-white mb-2">Seguridad Rural & Campos</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Protección para cascos de estancia, galpones de maquinaria, silos y tranqueras. Funciona en zonas sin señal de celular ni tendido eléctrico convencional.
+              </p>
+              <ul class="space-y-2 text-xs text-amber-200/80 mb-6">
+                <li class="flex items-center gap-2">✓ Alimentación por paneles solares</li>
+                <li class="flex items-center gap-2">✓ Cámaras de largo alcance con visión nocturna</li>
+                <li class="flex items-center gap-2">✓ Alerta temprana anti-robo de cereal y ganado</li>
+              </ul>
+            </div>
+            <!-- Botón hacia la subpágina extra del servicio -->
+            <a href="/propuestas/segu24/seguridad-rural-campos/" 
+               class="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-all shadow-sm">
+              <span>Ver Página de Seguridad Rural</span> →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR RÁPIDO INTERACTIVO (LEAD MAGNET) -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 bg-[#0b132b] border-b border-white/[0.08]">
+      <div class="max-w-3xl mx-auto p-7 sm:p-9 rounded-3xl bg-white/[0.03] border border-white/[0.08] shadow-lg">
+        <div class="text-center mb-8">
+          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Cotizador Rápido</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-display text-white tracking-tight mt-3 mb-2">Calculá tu Sistema de Monitoreo</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Seleccioná tu tipo de propiedad y te enviamos la propuesta por WhatsApp al instante.</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); const p = document.getElementById('cot-tipo').value; const a = document.getElementById('cot-amb').value; const url = 'https://wa.me/5492352520211?text=' + encodeURIComponent('Hola Segu24! Quiero cotizar un sistema de alarma para: ' + p + ' con cobertura de: ' + a); window.open(url, '_blank');" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="cot-tipo" class="block text-xs font-semibold text-slate-300 mb-1.5">¿Qué querés proteger?</label>
+              <select id="cot-tipo" class="w-full bg-[#111c44] border border-white/[0.12] rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-blue-500">
+                <option value="Casa / Departamento en Chacabuco">Casa / Departamento familiar</option>
+                <option value="Comercio / Local a la calle">Comercio / Local a la calle</option>
+                <option value="Campo / Establecimiento Rural">Campo / Zona Rural / Chacra</option>
+                <option value="Galpón / Depósito de mercadería">Galpón / Depósito / Taller</option>
+              </select>
+            </div>
+            <div>
+              <label for="cot-amb" class="block text-xs font-semibold text-slate-300 mb-1.5">Nivel de cobertura requerido:</label>
+              <select id="cot-amb" class="w-full bg-[#111c44] border border-white/[0.12] rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-blue-500">
+                <option value="Kit Básico (1 acceso + 1 sensor)">Kit Básico (Ingreso principal + sensor interior)</option>
+                <option value="Kit Completo (Accesos + Sensores + App)">Kit Completo (Múltiples accesos + App celular)</option>
+                <option value="Kit Avanzado con Cámaras CCTV">Kit Avanzado (Alarma monitoreada + Cámaras HD)</option>
+                <option value="Sistema Perimetral Solar para Campo">Sistema Perimetral Solar para Campo</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" 
+                  class="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer">
+            <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Consultar Presupuesto Exacto por WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE PROPUESTA COMERCIAL, PRECIOS Y CONDICIONES (PARA RUBÉN BARRÓN Y EQUIPO) -->
+    <section id="propuesta-comercial" class="py-20 sm:py-28 px-4 sm:px-6 bg-[#070c1d] border-t border-white/[0.08]">
+      <div class="max-w-4xl mx-auto">
+        
+        <div class="text-center mb-14">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20">
+            Propuesta Técnico-Comercial de Desarrollo
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-bold font-display text-white tracking-[-0.03em] mt-3 mb-4">
+            Plan de Trabajo y Precios Claros para SEGU24
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            Eliminamos el Wix obsoleto de 2018, borramos los productos demo de prueba indexados y construimos una plataforma rápida, moderna y orientada a captar abonados en Chacabuco y el campo.
+          </p>
+        </div>
+
+        <!-- COMPARATIVA DE PLANES -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          
+          <!-- PLAN 1: REDISEÑO HOME BASE -->
+          <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.08] flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-400 block mb-1">Opción Inicial</span>
+              <h3 class="text-2xl font-bold font-display text-white mb-2">Rediseño Página Principal</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                Reemplazo total de la Home actual por una Landing Page moderna en código ultrarrápido, con teléfonos y WhatsApp clickeables y cotizador directo.
+              </p>
+
+              <div class="mb-6 pb-6 border-b border-white/[0.08]">
+                <span class="text-3xl sm:text-4xl font-extrabold font-display text-white tabular-nums">$150.000</span>
+                <span class="text-xs text-slate-400 ml-1">ARS (pago único)</span>
+              </div>
+
+              <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                <li class="flex items-center gap-2.5">✓ Home completa con los 3 pilares (Hogar, Comercio, Campo)</li>
+                <li class="flex items-center gap-2.5">✓ Botones directos a WhatsApp y teléfono 0810 clickeables</li>
+                <li class="flex items-center gap-2.5">✓ Cotizador interactivo integrado con WhatsApp</li>
+                <li class="flex items-center gap-2.5">✓ Optimización de Google Maps y ficha de negocio</li>
+                <li class="flex items-center gap-2.5">✓ 5 días hábiles de entrega con hasta 2 revisiones</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Soy%20de%20Segu24%20y%20quiero%20aprobar%20el%20Plan%20Base%20de%20Redise%C3%B1o%20de%20la%20Home%20por%20$150.000."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full py-3 px-5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-white text-xs font-semibold text-center transition-all">
+              Aprobar Rediseño Home ($150.000)
+            </a>
+          </div>
+
+          <!-- PLAN 2: SITIO WEB INTEGRAL MULTI-PÁGINA (RECOMENDADO) -->
+          <div class="p-8 rounded-3xl bg-gradient-to-b from-blue-950/40 via-blue-900/20 to-transparent border-2 border-blue-500 shadow-xl shadow-blue-950/50 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-bl-xl shadow-sm">
+              Recomendado para Dominar Chacabuco
+            </div>
+
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">Solución Integral</span>
+              <h3 class="text-2xl font-bold font-display text-white mb-2">Web Completa + 8 Servicios SEO</h3>
+              <p class="text-xs text-slate-200 leading-relaxed mb-6">
+                La Home principal rediseñada más <strong>hasta 8 páginas individuales de servicios</strong> (Alarmas Hogar, Seguridad Rural, CCTV, Monitoreo Agro, etc.) optimizadas para posicionar en Google.
+              </p>
+
+              <div class="mb-6 pb-6 border-b border-white/[0.08]">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-3xl sm:text-4xl font-extrabold font-display text-white tabular-nums">$350.000</span>
+                  <span class="text-xs text-slate-400">ARS finales</span>
+                </div>
+                <span class="text-[11px] text-emerald-400 font-medium">($150.000 Home + $200.000 por hasta 8 páginas de servicio)</span>
+              </div>
+
+              <ul class="space-y-3 text-xs text-slate-200 mb-8">
+                <li class="flex items-center gap-2.5">✓ <strong>Todo lo del Plan Base incluido</strong></li>
+                <li class="flex items-center gap-2.5">✓ <strong>Hasta 8 páginas completas de servicio</strong> (como la demo rural)</li>
+                <li class="flex items-center gap-2.5">✓ <strong>SEO On-Page específico</strong> en cada servicio para búsquedas locales</li>
+                <li class="flex items-center gap-2.5">✓ <strong>Limpieza total de Wix:</strong> desindexación de los "soy-un-producto"</li>
+                <li class="flex items-center gap-2.5">✓ <strong>Redirecciones 301</strong> para no perder ningún enlace histórico</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Soy%20de%20Segu24%20y%20quiero%20aprobar%20el%20Plan%20Integral%20de%20Web%20+%208%20P%C3%A1ginas%20por%20$350.000."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full py-4 px-6 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold text-center shadow-lg shadow-blue-600/30 active:scale-[0.98] transition-all cursor-pointer">
+              Aprobar Plan Integral ($350.000) por WhatsApp
+            </a>
+          </div>
+
+        </div>
+
+        <!-- REGLAS DE PRECIOS ADICIONALES Y MANTENIMIENTO -->
+        <div class="p-7 sm:p-9 rounded-3xl bg-white/[0.02] border border-white/[0.06] space-y-6 text-xs text-slate-300">
+          <h3 class="font-bold text-base text-white tracking-tight flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            Reglas Claras, Páginas Adicionales y Soporte Mensual
+          </h3>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.04]">
+              <strong class="text-white block font-semibold mb-1">Servicios adicionales más allá de los 8 incluidos:</strong>
+              <p class="text-slate-400">
+                Si en el futuro o en el armado inicial desean agregar más páginas de servicios:
+                <br>• <strong>$20.000 ARS</strong> por página individual adicional.
+                <br>• <strong>$80.000 ARS</strong> por Pack de 5 páginas ($16.000 c/u, ahorran $20.000).
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.04]">
+              <strong class="text-white block font-semibold mb-1">Mantenimiento y Soporte Continuo ($20.000/mes):</strong>
+              <p class="text-slate-400">
+                ¡Primer mes 100% bonificado! A partir del mes 2 incluye hosting de alta velocidad, certificado SSL, copias de seguridad y <strong>cambios menores de precios, teléfonos, fotos o información sin costo extra</strong>.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.04]">
+              <strong class="text-white block font-semibold mb-1">Estrategia de Blog / Artículos SEO Mensuales:</strong>
+              <p class="text-slate-400">
+                La creación de artículos de blog educativos para posicionar en Google se cotiza aparte según el volumen mensual acordado (ej: 2, 4 u 8 artículos mensuales).
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.04]">
+              <strong class="text-white block font-semibold mb-1">Política de Rediseño Posterior:</strong>
+              <p class="text-slate-400">
+                Entregamos la web lista y aprobada con hasta 2 rondas de revisiones. Si más adelante desean rediseñar completamente desde cero una página ya aprobada, el costo es de <strong>$20.000 ARS</strong> por página.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-slate-400">
+              <span>Condición de Pago: <strong>50% de anticipo</strong> para congelar agenda y <strong>50% contra entrega final</strong> aprobada.</span>
+            </div>
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Soy%20de%20Segu24%20y%20quiero%20hacer%20una%20consulta%20sobre%20la%20propuesta%20web."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-amber-400 hover:text-amber-300 font-bold underline whitespace-nowrap">
+              Consultar dudas con Erik por WhatsApp →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MINI FOOTER -->
+  <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs border-t border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 space-y-1">
+      <p>Propuesta técnica confidencial elaborada por <strong>Erik Website</strong> (Erik Ladstatter) para <strong>SEGU24</strong>.</p>
+      <p class="text-[11px] text-slate-600">Santa Fe 211, Chacabuco, Provincia de Buenos Aires • Todos los derechos reservados © 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>

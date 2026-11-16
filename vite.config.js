@@ -251,6 +251,8 @@ export default defineConfig({
         blog_paginas_web_mueblerias_fabricas_muebles: resolve(__dirname, 'blog/paginas-web-mueblerias-fabricas-muebles/index.html'),
         // Propuestas privadas a clientes (noindex)
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
+        propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),
+        propuestas_segu24_rural: resolve(__dirname, 'propuestas/segu24/seguridad-rural-campos/index.html'),
       },
     },
   },

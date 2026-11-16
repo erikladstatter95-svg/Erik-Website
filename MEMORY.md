@@ -596,6 +596,17 @@
   - Creación del directorio y plantilla base `propuestas/template/index.html` con `<meta name="robots" content="noindex, nofollow">` y filtro `id="ew-internal-filter"`.
   - Diseñado con barra superior de propuesta exclusiva (`Propuesta y Boceto Exclusivo para [Cliente] · Validez 7 días`), banner de advertencia de borrador preliminar, hero y servicios del cliente, tarjeta de alcance llave en mano ($150.000 ARS setup, 5 días de entrega, 50/50 pago) y botón de aprobación directa a WhatsApp.
   - Vinculado en `vite.config.js` (`propuestas_template`), compilado en Vite en 9.75s con 0 errores y 0 enlaces rotos (`audit_all_internal_links.py`).
+- [x] **2026-11-16 (Boceto y Propuesta Multi-Página para SEGU24 — Chacabuco, Bs. As.):**
+  - **Dossier & Diagnóstico:** Basado en la auditoría de `clientes/segu24.com.ar.md` (empresa de seguridad electrónica y central de monitoreo en Chacabuco fundada en 2007, Rubén Barrón, técnicos certificados Alonso Hnos, con web en Wix congelada en 2018 y teléfonos no clickeables).
+  - **Página Principal de Propuesta (`/propuestas/segu24/`):** Estética tecnológica en Azul Marino (`#0b132b`), Cobalto y Ámbar, solución a la falla de teléfonos no clickeables (`0810-999-9629` y WhatsApp directos), los 3 pilares de servicio (Hogar, Comercios, Campos), cotizador interactivo por WhatsApp y comparativa comercial transparente.
+  - **Página de Servicio Específico (`/propuestas/segu24/seguridad-rural-campos/`):** Demostración real de cómo navega y posiciona una página interna dedicada al mayor ticket de la zona (paneles solares, enlace satelital, custodia de maquinaria agrícola y silobolsas con despacho en caminos rurales de Chacabuco).
+  - **Estructura Comercial & Reglas Claras:**
+    - Plan Base Rediseño Home: $150.000 ARS.
+    - Plan Integral Web + 8 Páginas de Servicios SEO: $350.000 ARS ($150k + $200k).
+    - Páginas adicionales: $20.000 ARS individual / $80.000 ARS pack de 5.
+    - Mantenimiento mensual: $20.000 ARS/mes (hosting, SSL, cambios menores de precios y teléfonos incluidos).
+    - Regla de rediseño o agregado posterior: $20.000 ARS por página.
+  - **Verificaciones:** `noindex, nofollow`, 0 emojis decorativos (Regla #17), vinculación en `vite.config.js`, compilación en Vite en 5.93s y 0 enlaces rotos (`audit_all_internal_links.py`).
 
 
 
