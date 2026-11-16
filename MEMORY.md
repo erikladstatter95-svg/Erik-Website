@@ -561,6 +561,11 @@
     - Compilación en Vite exitosa en 15.80s con 0 errores.
     - Auditoría de enlaces internos (`scratch/audit_all_internal_links.py`) con 0 enlaces rotos.
     - Verificación estricta de Regla #17: 0 emojis decorativos en todo el documento.
+- [x] **2026-11-16 (Integración Global del Módulo Google Preferred Source en todo el Blog):**
+  - **Script Asíncrono Oficial:** Integrado `https://news.google.com/swg/js/v1/publisher.js` con carga `async` en `<head>` en las 181 guías de `/blog/` (pautas de `modern-web-guidance` para no penalizar LCP ni INP).
+  - **Módulo Visual Hallmark:** Diseñado e insertado al pie de cada artículo con isotipo SVG oficial de Google, badge de *Google Search & AI Overviews*, copy de autoridad y el contenedor interactivo `<div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>`.
+  - **Impacto AEO / GEO:** Permite a lectores fidelizados marcar `erikwebsite.com` como fuente preferida, habilitando la etiqueta «Preferida» en AI Overviews y mayor frecuencia en Top Stories / Google Discover.
+  - **Verificaciones:** Compilación en Vite en 5.98s con 0 errores y 0 enlaces rotos (`audit_all_internal_links.py`).
 - [x] **2026-11-16 (Ejecución de Lunes 16/11 — Eje Diseño Web y Conversión):**
   - **Boost Striking Distance en `/blog/como-crear-catalogo-online-pedidos-whatsapp/`:**
     - `<title>` optimizado de 76 a **54 caracteres**: `Cómo Crear un Catálogo Online con Pedidos por WhatsApp`.
