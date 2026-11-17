@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  
   <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
   <script id="ew-internal-filter">
     (function() {
@@ -35,15 +34,15 @@
       } catch (e) {}
     })();
   </script>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-KWD0WYVK4J');
   </script>
 
@@ -56,40 +55,259 @@
       })(window, document, "clarity", "script", "ytkayi2nwu");
   </script>
 
-  
-  
-      <title>Demo Web Contable | Páginas Web por Erik Website</title>
-  <meta name="description" content="Página web lista para usar para contadores. Mejorá tu presencia online y recibí consultas por WhatsApp. Entrega en 3 a 5 días.">
+  <title>Estudio Sánchez & Asoc. | Asesoría Contable, Impositiva y Legal</title>
+  <meta name="description" content="Estudio contable para PyMEs, comercios y profesionales. Liquidación de impuestos ARCA/AFIP, sueldos, balances y asesoría tributaria. Cobertura en San Juan y todo el país.">
   <link rel="canonical" href="https://erikwebsite.com/demos/contable/">
 
   <!-- Open Graph / Redes Sociales & WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://erikwebsite.com/demos/contable/">
-  <meta property="og:title" content="Demo Web Contable | Páginas Web por Erik Website">
-  <meta property="og:description" content="Página web lista para usar para contadores. Mejorá tu presencia online y recibí consultas por WhatsApp. Entrega en 3 a 5 días.">
+  <meta property="og:title" content="Estudio Sánchez & Asoc. | Asesoría Contable y Tributaria">
+  <meta property="og:description" content="Estudio contable para PyMEs, comercios y profesionales. Liquidación de impuestos, sueldos, balances y asesoría fiscal 100% digital.">
   <meta property="og:image" content="https://erikwebsite.com/images/og_contable.jpg">
   <meta property="og:image:secure_url" content="https://erikwebsite.com/images/og_contable.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Demo Web para Estudios Contables - Erik Website">
+  <meta property="og:image:alt" content="Estudio Sánchez y Asociados - Asesoramiento Contable e Impositivo">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Erik Website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://erikwebsite.com/demos/contable/">
-  <meta name="twitter:title" content="Demo Web Contable | Páginas Web por Erik Website">
-  <meta name="twitter:description" content="Página web lista para usar para contadores. Mejorá tu presencia online y recibí consultas por WhatsApp. Entrega en 3 a 5 días.">
+  <meta name="twitter:title" content="Estudio Sánchez & Asoc. | Asesoría Contable y Tributaria">
+  <meta name="twitter:description" content="Estudio contable para PyMEs, comercios y profesionales. Liquidación de impuestos, sueldos y balances sin papeles ni sorpresas.">
   <meta name="twitter:image" content="https://erikwebsite.com/images/og_contable.jpg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
+  <!-- Tipografía Editorial Playfair Display & Inter (Inspiración Estudio Paz) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/src/styles/main.css">
-<!-- Schema.org AccountingService & FAQPage -->
+
+  <style>
+    :root {
+      --ink: #0A0A0A;
+      --ink-2: #141412;
+      --ink-3: #1C1C19;
+      --fg: #111111;
+      --gold: #C8A96E;
+      --gold-hi: #E0C68F;
+      --gold-soft: rgba(200, 169, 110, 0.12);
+      --gold-line: rgba(200, 169, 110, 0.28);
+      --gold-ink: #7F6329;
+      --bg: #F4F4F0;
+      --bg-alt: #F7F7F4;
+      --surface: #FFFFFF;
+      --border: #E0E0DA;
+      --muted: #55554F;
+      --radius: 16px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1A1A1A;
+      background-color: var(--bg);
+    }
+
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Headings con cursiva editorial */
+    .h-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+    .h-editorial em {
+      font-style: italic;
+      color: var(--gold-ink);
+      font-weight: 400;
+    }
+    .on-dark .h-editorial em {
+      color: var(--gold-hi);
+    }
+
+    /* Eyebrow con línea dorada fina */
+    .paz-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-ink);
+    }
+    .paz-eyebrow::before {
+      content: '';
+      width: 26px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.85;
+    }
+    .on-dark .paz-eyebrow {
+      color: var(--gold);
+    }
+
+    /* Botón Dorado Champagne */
+    .btn-gold {
+      background: var(--gold);
+      color: #0A0A0A;
+      font-weight: 600;
+      font-size: 13.5px;
+      border-radius: 12px;
+      padding: 13px 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.28s var(--ease);
+      box-shadow: 0 4px 16px -3px rgba(200, 169, 110, 0.45);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-gold:hover {
+      background: var(--gold-hi);
+      box-shadow: 0 10px 28px -6px rgba(200, 169, 110, 0.75);
+      transform: translateY(-1.5px);
+    }
+    .btn-gold:active {
+      transform: scale(0.98);
+    }
+
+    /* Botón Ghost Dark */
+    .btn-ghost-dark {
+      background: transparent;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-weight: 500;
+      font-size: 13.5px;
+      border-radius: 12px;
+      padding: 13px 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-ghost-dark:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-1px);
+    }
+
+    /* Header Scrolled & Progress */
+    .header-scrolled {
+      background-color: rgba(10, 10, 10, 0.94) !important;
+      backdrop-filter: blur(14px) !important;
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5) !important;
+    }
+    #prog {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--gold);
+      transition: width 0.1s linear;
+    }
+
+    /* Tarjetas de Servicio */
+    .srv-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s var(--ease);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .srv-card:hover {
+      border-color: var(--gold-line);
+      box-shadow: 0 18px 40px -14px rgba(10,10,10,0.12);
+      transform: translateY(-3px);
+    }
+    .srv-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      line-height: 1;
+      color: var(--gold-ink);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    /* Spotlight radial */
+    [data-spot] {
+      position: relative;
+    }
+    [data-spot]::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), var(--gold-soft), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      z-index: 1;
+    }
+    [data-spot]:hover::before {
+      opacity: 1;
+    }
+
+    /* Anillo dorado alrededor de retrato */
+    .gold-ring {
+      position: relative;
+    }
+    .gold-ring::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1.5px solid var(--gold-line);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    /* Chips del Wizard */
+    .wiz-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1E293B;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      user-select: none;
+    }
+    .wiz-chip:hover {
+      border-color: var(--gold-ink);
+      background: rgba(200, 169, 110, 0.06);
+    }
+    .wiz-chip.active-chip {
+      border-color: var(--gold-ink);
+      background: #FAF7F0;
+      color: #0A0A0A;
+      font-weight: 600;
+      box-shadow: 0 0 0 1.5px var(--gold-ink);
+    }
+  </style>
+
+  <!-- Schema.org AccountingService & FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -97,13 +315,13 @@
       {
         "@type": "AccountingService",
         "@id": "https://erikwebsite.com/demos/contable/#accountant",
-        "name": "Estudio Contable Sánchez y Asociados",
+        "name": "Estudio Sánchez & Asoc. | Contable, Impositivo y Societario",
         "url": "https://erikwebsite.com/demos/contable/",
-        "telephone": "+5492645000000",
-        "priceRange": "$",
+        "telephone": "+5492645185359",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Rivadavia 420 Este",
+          "streetAddress": "Mitre 420 Oeste",
           "addressLocality": "San Juan Capital",
           "addressRegion": "San Juan",
           "addressCountry": "AR"
@@ -115,34 +333,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "¿Cuánto demora el trámite de alta de Monotributo y factura electrónica?",
+            "name": "¿Cómo es el trámite si ya tengo contador y deseo cambiarme?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El alta en AFIP y DGR San Juan con punto de venta habilitado se realiza en 24 a 48 hs hábiles."
+              "text": "Es un procedimiento habitual y transparente. Nos contactamos con el profesional saliente de manera formal y cordial para solicitar la documentación de cierre y las claves delegadas sin interrumpir las liquidaciones ni exponer a su empresa a multas."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Qué incluye el abono mensual de asesoría para comercios y PyMEs?",
+            "name": "¿Cuánto demora el alta de Monotributo o Responsable Inscripto con factura electrónica?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Liquidación mensual de Ingresos Brutos, IVA, Ganancias, Libro de Sueldos y asesoría tributaria continua."
+              "text": "El alta en ARCA / AFIP y Rentas con el punto de venta digital habilitado para emitir comprobantes se resuelve en un plazo de 24 a 48 horas hábiles."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Me ayudan a regularizar deudas fiscales acumuladas en planes de pago?",
+            "name": "¿Me ayudan a consolidar deudas impositivas acumuladas o intimaciones?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sí, consolidamos deudas fiscales ante AFIP y Rentas en los planes de facilidades con mejores condiciones."
+              "text": "Sí. Realizamos una auditoría de la cuenta tributaria y consolidamos las obligaciones en planes de facilidades vigentes de hasta 48 cuotas o moratorias provinciales, frenando de inmediato intimaciones o embargos."
             }
           },
           {
             "@type": "Question",
-            "name": "¿La atención es presencial o se puede gestionar todo a distancia?",
+            "name": "¿Tengo que llevar carpetas con papeles o toda la gestión es digital?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Atendemos en nuestras oficinas en San Juan Capital o 100% online por WhatsApp y nube."
+              "text": "Nuestra metodología es 100% digital. Los comprobantes y facturas se envían por foto de WhatsApp o nube compartida, y usted recibe mensualmente los volantes de pago y reportes claros de forma digital."
             }
           }
         ]
@@ -150,6 +368,7 @@
     ]
   }
   </script>
+
   <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -177,384 +396,918 @@
       }
     }, true);
   </script>
-  <!-- End Meta Pixel Code -->
 </head>
-<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
   <!-- Meta Pixel noscript Fallback -->
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
   </noscript>
-<!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 3) -->
-  <aside class="sticky top-0 z-50 bg-slate-950 text-white text-xs border-b border-slate-800 shadow-md">
+
+  <!-- BARRA DE NAVEGACIÓN ENTRE VARIACIONES (CLUSTER 3) -->
+  <aside class="sticky top-0 z-50 bg-[#0A0A0A] text-white text-xs border-b border-white/10 shadow-md">
     <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-        <span class="font-bold text-slate-300">Categoría: Autoridad, Servicios y Bienestar</span>
-        <span class="text-slate-500 hidden sm:inline">•</span>
-        <span class="text-slate-400 text-[11px] hidden sm:inline">5 Variaciones de diseño:</span>
+        <span class="w-2 h-2 rounded-full bg-[#C8A96E]"></span>
+        <span class="font-bold text-neutral-300">Variación Demostrativa: Estudio Contable</span>
+        <span class="text-neutral-500 hidden sm:inline">•</span>
+        <span class="text-neutral-400 text-[11px] hidden sm:inline">Cluster Servicios Profesionales</span>
       </div>
 
       <!-- Selector de variaciones con Tabs -->
-      <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 overflow-x-auto w-full sm:w-auto order-3 sm:order-2 no-scrollbar py-1 sm:py-1">
-        <a href="/demos/abogados/" class="min-touch-target shrink-0 px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
+      <div class="flex items-center gap-1 bg-neutral-900/90 p-1 rounded-xl border border-white/10 overflow-x-auto w-full sm:w-auto order-3 sm:order-2 no-scrollbar py-1">
+        <a href="/demos/abogados/" class="min-touch-target shrink-0 px-3 py-1.5 rounded-lg font-medium text-xs text-neutral-400 hover:text-white transition-colors whitespace-nowrap">
           1. Abogados
         </a>
-        <a href="/demos/urgencias-hogar/" class="min-touch-target shrink-0 px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
+        <a href="/demos/urgencias-hogar/" class="min-touch-target shrink-0 px-3 py-1.5 rounded-lg font-medium text-xs text-neutral-400 hover:text-white transition-colors whitespace-nowrap">
           <span class="sm:hidden">2. Urgencias</span><span class="hidden sm:inline">2. Urgencias Hogar</span>
         </a>
-        <a href="/demos/contable/" class="min-touch-target shrink-0 px-3 py-2 rounded-lg font-bold text-xs bg-blue-600 text-white shadow-xs whitespace-nowrap">
+        <a href="/demos/contable/" class="min-touch-target shrink-0 px-3 py-1.5 rounded-lg font-bold text-xs bg-[#C8A96E] text-[#0A0A0A] shadow-xs whitespace-nowrap">
           <span class="sm:hidden">3. Contable</span><span class="hidden sm:inline">3. Estudio Contable</span>
         </a>
-        <a href="/demos/fitness/" class="min-touch-target shrink-0 px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
+        <a href="/demos/fitness/" class="min-touch-target shrink-0 px-3 py-1.5 rounded-lg font-medium text-xs text-neutral-400 hover:text-white transition-colors whitespace-nowrap">
           <span class="sm:hidden">4. Personal Trainer</span><span class="hidden sm:inline">4. Personal Trainer</span>
         </a>
-        <a href="/demos/estudio-fitness/" class="min-touch-target shrink-0 px-3 py-2 rounded-lg font-medium text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
+        <a href="/demos/estudio-fitness/" class="min-touch-target shrink-0 px-3 py-1.5 rounded-lg font-medium text-xs text-neutral-400 hover:text-white transition-colors whitespace-nowrap">
           <span class="sm:hidden">5. Pilates Studio</span><span class="hidden sm:inline">5. Estudio de Pilates</span>
         </a>
       </div>
 
       <!-- Controles de navegación -->
       <div class="flex items-center gap-2">
-        <a href="/demos/urgencias-hogar/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Variación anterior">
+        <a href="/demos/urgencias-hogar/" class="w-9 h-9 inline-flex items-center justify-center rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-300 transition-colors" title="Variación anterior">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </a>
-        <a href="/demos/fitness/" class="w-11 h-11 inline-flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors" title="Siguiente variación">
+        <a href="/demos/fitness/" class="w-9 h-9 inline-flex items-center justify-center rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-300 transition-colors" title="Siguiente variación">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </a>
-        <a href="/" class="tap-bounce min-touch-target inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-2 rounded-lg transition-colors">
+        <a href="/" class="min-touch-target inline-flex items-center gap-1.5 bg-[#C8A96E] hover:bg-[#E0C68F] text-[#0A0A0A] font-bold px-3 py-1.5 rounded-lg transition-colors">
           <span>Salir al Portfolio</span>
         </a>
       </div>
     </div>
   </aside>
 
-  <!-- NAVBAR ESTUDIO CONTABLE -->
-  <header id="contable-header" class="sticky top-9 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-200">
+  <!-- NAVBAR PRINCIPAL DEL ESTUDIO CONTABLE (Estilo Estudio Paz) -->
+  <header id="contable-header" class="sticky top-9 z-40 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/10 transition-all duration-300 relative">
+    <span id="prog" aria-hidden="true"></span>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between py-3">
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-xl bg-blue-900 text-white flex items-center justify-center font-black text-xl shadow-xs">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+      
+      <!-- Brand Identidad -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#141412] border border-[#C8A96E]/40 text-[#C8A96E] flex items-center justify-center font-editorial text-xl font-bold shadow-xs group-hover:border-[#C8A96E] transition-colors">
+          S
         </div>
         <div class="flex flex-col">
-          <span class="font-display font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">Sánchez y Asoc.</span>
-          <span class="text-[10px] font-bold text-blue-700 uppercase tracking-wider">Estudio Contable y Tributario</span>
+          <span class="font-editorial text-lg sm:text-xl font-semibold text-white tracking-tight leading-tight">
+            Estudio Sánchez &amp; Asoc.
+          </span>
+          <span class="text-[10.5px] font-medium text-[#C8A96E] tracking-wider uppercase">
+            San Juan · Contable, Impositivo y Legal
+          </span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-        <a href="#servicios" class="hover:text-blue-900 transition-colors">Servicios</a>
-        <a href="#experiencia" class="hover:text-blue-900 transition-colors">El Estudio</a>
-        <a href="#proceso" class="hover:text-blue-900 transition-colors">Cómo Trabajamos</a>
-        <a href="#faq" class="hover:text-blue-900 transition-colors">Preguntas</a>
+      <!-- Menú Desktop -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-medium text-neutral-300">
+        <a href="#diferencial" class="hover:text-[#C8A96E] transition-colors">Por Qué Elegirnos</a>
+        <a href="#servicios" class="hover:text-[#C8A96E] transition-colors">Servicios</a>
+        <a href="#gestion-digital" class="hover:text-[#C8A96E] transition-colors">Gestión Digital</a>
+        <a href="#equipo" class="hover:text-[#C8A96E] transition-colors">El Estudio</a>
+        <a href="#diagnostico" class="hover:text-[#C8A96E] transition-colors">Diagnóstico</a>
+        <a href="#faq" class="hover:text-[#C8A96E] transition-colors">Preguntas</a>
       </nav>
 
-      <button data-wa-msg="Hola Estudio Sánchez! Quisiera solicitar una consulta sobre asesoramiento contable e impositivo en San Juan."
-              class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        <span>Diagnóstico Fiscal Gratuito</span>
-      </button>
+      <!-- Botón Diagnóstico -->
+      <div class="flex items-center gap-3">
+        <button data-wa-msg="Hola Estudio Sánchez! Quisiera solicitar un diagnóstico contable e impositivo inicial para mi empresa."
+                class="btn-gold min-touch-target">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Diagnóstico Fiscal</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main class="flex-grow">
-    <!-- HERO CORPORATIVO CON FOTO REAL -->
-    <section class="pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-blue-50/50 via-white to-slate-100">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
+    
+    <!-- ═══ 1. HERO ON-DARK (ATMÓSFERA EDITORIAL INSPIRADA EN ESTUDIO PAZ) ═══ -->
+    <section class="on-dark relative bg-[#0A0A0A] text-white pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-white/10">
+      <!-- Aura dorada sutil en el fondo -->
+      <div class="absolute -top-32 right-0 w-[550px] h-[550px] bg-[#C8A96E]/10 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-[350px] h-[350px] bg-[#C8A96E]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-3xl space-y-6">
           
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div data-hero-anim class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-900 text-xs font-semibold">
-              <span class="w-2 h-2 rounded-full bg-blue-700 animate-pulse"></span>
-              <span>Matrícula CPCESJ (Consejo Profesional de Ciencias Económicas de San Juan)</span>
+          <div data-hero-anim class="paz-eyebrow">
+            Asesoramiento Tributario, Contable y Societario
+          </div>
+
+          <h1 data-hero-anim class="h-editorial text-3xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.12]">
+            Tranquilidad contable y fiscal <em>para empresas que piensan en crecer</em>
+          </h1>
+
+          <p data-hero-anim class="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+            Gestión impositiva ante ARCA / AFIP, sueldos, balances y asesoramiento corporativo en un solo lugar. Metodología 100% digital, sin trámites en papel ni multas por vencimiento.
+          </p>
+
+          <div data-hero-anim class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Estudio%20S%C3%A1nchez!%20Quisiera%20coordinar%20una%20consulta%20contable%20e%20impositiva."
+               target="_blank" rel="noopener noreferrer"
+               class="btn-gold">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Hablar con el Estudio</span>
+            </a>
+
+            <a href="#servicios" class="btn-ghost-dark">
+              <span>Ver servicios</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 2. TRUST BAND (BANDA DE CONFIANZA HORIZONTAL ON-DARK) ═══ -->
+    <div class="bg-[#0A0A0A] border-b border-white/10 py-8 px-4 sm:px-6 relative z-10">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#C8A96E]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" stroke-width="1.8"/><line x1="16" x2="16" y1="2" y2="6" stroke-width="1.8"/><line x1="8" x2="8" y1="2" y2="6" stroke-width="1.8"/><line x1="3" x2="21" y1="10" y2="10" stroke-width="1.8"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-white">Desde 2012</p>
+            <p class="text-xs text-neutral-400 mt-0.5 leading-relaxed">Más de una década de solvencia y trayectoria contable.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#C8A96E]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-white">Equipo Matriculado</p>
+            <p class="text-xs text-neutral-400 mt-0.5 leading-relaxed">Matrículas activas ante el CPCESJ y CPCECABA.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#C8A96E]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-white">+250 PyMEs y Comercios</p>
+            <p class="text-xs text-neutral-400 mt-0.5 leading-relaxed">Empresas comerciales, industriales y de servicios.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#C8A96E]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-white">Metodología 100% Digital</p>
+            <p class="text-xs text-neutral-400 mt-0.5 leading-relaxed">Gestión en la nube, WhatsApp y cero carpetas en papel.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ 3. POR QUÉ ELEGIRNOS (EL DIFERENCIAL — ESTILO ESTUDIO PAZ) ═══ -->
+    <section id="diferencial" class="py-20 sm:py-28 bg-[#F7F7F4] border-b border-[#E0E0DA]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mb-14">
+          <span class="paz-eyebrow">Por qué elegirnos</span>
+          <h2 class="h-editorial text-2xl sm:text-4xl lg:text-[42px] text-[#0A0A0A] font-normal mt-3 mb-4">
+            Un estudio diferente,<br><em>para empresas que buscan previsibilidad</em>
+          </h2>
+          <p class="text-[#55554F] text-sm sm:text-base leading-relaxed font-light">
+            No somos un estudio tradicional de expedientes en papel. Combinamos rigor técnico con herramientas en la nube para que tengas claridad absoluta de tus números y ninguna sorpresa a fin de mes.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <div data-spot class="bg-white rounded-2xl p-8 border border-[#E0E0DA] shadow-xs flex flex-col justify-between transition-all duration-300 hover:border-[#C8A96E]/40 hover:shadow-md">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-[#FAF7F0] border border-[#C8A96E]/30 flex items-center justify-center text-[#7F6329] mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-3">Rigor Profesional &amp; Matrícula</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed">
+                Declaraciones juradas presentadas en término, auditorías contables rigurosas y defensa activa ante inspecciones de ARCA / AFIP o Rentas San Juan.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0F0EB] text-[11px] font-semibold text-[#7F6329] uppercase tracking-wider">
+              Solvencia Técnica
+            </div>
+          </div>
+
+          <div data-spot class="bg-white rounded-2xl p-8 border border-[#E0E0DA] shadow-xs flex flex-col justify-between transition-all duration-300 hover:border-[#C8A96E]/40 hover:shadow-md">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-[#FAF7F0] border border-[#C8A96E]/30 flex items-center justify-center text-[#7F6329] mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-3">Metodología 100% Digital</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed">
+                Enviás comprobantes por foto, recibís tus volantes de pago (VEP) con anticipación y consultás tus balances en línea sin moverte de tu oficina ni perder tiempo en traslados.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0F0EB] text-[11px] font-semibold text-[#7F6329] uppercase tracking-wider">
+              Sin Trámites en Papel
+            </div>
+          </div>
+
+          <div data-spot class="bg-white rounded-2xl p-8 border border-[#E0E0DA] shadow-xs flex flex-col justify-between transition-all duration-300 hover:border-[#C8A96E]/40 hover:shadow-md">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-[#FAF7F0] border border-[#C8A96E]/30 flex items-center justify-center text-[#7F6329] mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              </div>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-3">Atención Personalizada</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed">
+                Hablás directo con los contadores que llevan tus cuentas. Sin intermediarios, sin bots molestos y con respuestas claras para cuidar la rentabilidad de tu negocio.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0F0EB] text-[11px] font-semibold text-[#7F6329] uppercase tracking-wider">
+              Contacto Humano Directo
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 4. SERVICIOS CONTABLES COMPLETOS (GRID NUMERADA 01 A 06) ═══ -->
+    <section id="servicios" class="py-20 sm:py-28 bg-white border-b border-[#E0E0DA]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mb-14">
+          <span class="paz-eyebrow">Nuestros Servicios</span>
+          <h2 class="h-editorial text-2xl sm:text-4xl lg:text-[42px] text-[#0A0A0A] font-normal mt-3 mb-4">
+            Soluciones integrales para<br><em>cada área de su empresa</em>
+          </h2>
+          <p class="text-[#55554F] text-sm sm:text-base leading-relaxed font-light">
+            Seis áreas de práctica especializadas para que delegues con absoluta tranquilidad fiscal y administrativa.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          
+          <!-- 01 Contabilidad & Balances -->
+          <article class="srv-card" data-spot>
+            <div>
+              <p class="srv-num">01</p>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-2.5">Contabilidad &amp; Balances</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed mb-4">
+                Confección de Estados Contables anuales, certificaciones de ingresos para bancos y licitaciones, auditorías externas y rubricación de libros digitales.
+              </p>
+            </div>
+            <button data-wa-msg="Hola Estudio Sánchez! Quisiera consultar por el servicio de Balances y Estados Contables."
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-[#7F6329] hover:text-[#0A0A0A] transition-colors mt-4 pt-3 border-t border-[#F0F0EB] cursor-pointer">
+              <span>Consultar este servicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </article>
+
+          <!-- 02 Impuestos & ARCA -->
+          <article class="srv-card" data-spot>
+            <div>
+              <p class="srv-num">02</p>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-2.5">Impuestos &amp; Régimen Fiscal</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed mb-4">
+                Liquidación mensual de IVA (Libro IVA Digital), Ganancias, Bienes Personales, Ingresos Brutos (DGR y Convenio Multilateral), moratorias y planes de pago.
+              </p>
+            </div>
+            <button data-wa-msg="Hola Estudio Sánchez! Quisiera consultar por la liquidación mensual de Impuestos e IVA."
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-[#7F6329] hover:text-[#0A0A0A] transition-colors mt-4 pt-3 border-t border-[#F0F0EB] cursor-pointer">
+              <span>Consultar este servicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </article>
+
+          <!-- 03 Sueldos & RRHH -->
+          <article class="srv-card" data-spot>
+            <div>
+              <p class="srv-num">03</p>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-2.5">Recursos Humanos &amp; Sueldos</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed mb-4">
+                Liquidación quincenal y mensual de haberes, Libro de Sueldos Digital, confección y presentación F. 931 AFIP, altas/bajas tempranas y encuadre en convenios de trabajo.
+              </p>
+            </div>
+            <button data-wa-msg="Hola Estudio Sánchez! Necesito asesoramiento para liquidar Sueldos y Cargas Sociales de mi personal."
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-[#7F6329] hover:text-[#0A0A0A] transition-colors mt-4 pt-3 border-t border-[#F0F0EB] cursor-pointer">
+              <span>Consultar este servicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </article>
+
+          <!-- 04 Monotributo & Autónomos -->
+          <article class="srv-card" data-spot>
+            <div>
+              <p class="srv-num">04</p>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-2.5">Monotributo &amp; Autónomos</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed mb-4">
+                Alta integral en 24 a 48 hs con facturación electrónica configurada, recategorizaciones semestrales obligatorias y control constante de topes de facturación.
+              </p>
+            </div>
+            <button data-wa-msg="Hola Estudio Sánchez! Quisiera consultar por el servicio de Monotributo y Facturación."
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-[#7F6329] hover:text-[#0A0A0A] transition-colors mt-4 pt-3 border-t border-[#F0F0EB] cursor-pointer">
+              <span>Consultar este servicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </article>
+
+          <!-- 05 Sociedades & Legal -->
+          <article class="srv-card" data-spot>
+            <div>
+              <p class="srv-num">05</p>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-2.5">Sociedades &amp; Contratos</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed mb-4">
+                Constitución y transformación societaria (SRL, SA, SAS), redacción de estatutos, actas de directorio, trámites ante personería jurídica y blindaje contractual.
+              </p>
+            </div>
+            <button data-wa-msg="Hola Estudio Sánchez! Quisiera consultar para constituir una Sociedad (SRL / SA)."
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-[#7F6329] hover:text-[#0A0A0A] transition-colors mt-4 pt-3 border-t border-[#F0F0EB] cursor-pointer">
+              <span>Consultar este servicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </article>
+
+          <!-- 06 Finanzas & Diagnóstico -->
+          <article class="srv-card" data-spot>
+            <div>
+              <p class="srv-num">06</p>
+              <h3 class="font-editorial text-xl font-semibold text-[#0A0A0A] mb-2.5">Finanzas &amp; Prevención Fiscal</h3>
+              <p class="text-xs sm:text-sm text-[#55554F] leading-relaxed mb-4">
+                Planificación financiera, control de flujo de fondos, optimización fiscal dentro del marco legal vigente y recupero de retenciones bancarias acumuladas.
+              </p>
+            </div>
+            <button data-wa-msg="Hola Estudio Sánchez! Quisiera coordinar un Diagnóstico Preventivo para mi empresa."
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-[#7F6329] hover:text-[#0A0A0A] transition-colors mt-4 pt-3 border-t border-[#F0F0EB] cursor-pointer">
+              <span>Consultar este servicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 5. GESTIÓN DIGITAL & NUBE PYME (ON-DARK SHOWCASE ESTILO ESTUDIO PAZ) ═══ -->
+    <section id="gestion-digital" class="on-dark py-20 sm:py-28 bg-[#0A0A0A] text-white border-b border-white/10 relative overflow-hidden">
+      <!-- Glow ambiental -->
+      <div class="absolute top-1/2 -left-32 w-96 h-96 bg-[#C8A96E]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        <div class="max-w-3xl mb-14">
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <span class="paz-eyebrow">Innovación en Gestión</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium bg-white/5 border border-[#C8A96E]/30 text-[#C8A96E]">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Metodología 100% Digital y Nube
+            </span>
+          </div>
+
+          <h2 class="h-editorial text-2xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight mt-3 mb-4">
+            El control de sus números,<br><em>sin papeles ni pérdidas de tiempo</em>
+          </h2>
+
+          <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+            Una dinámica ágil y transparente: facturación electrónica contra ARCA, envío de gastos por foto de WhatsApp, seguimiento de vencimientos y reportes claros para tomar decisiones estratégicas.
+          </p>
+        </div>
+
+        <!-- Bento Grid de Gestión Digital -->
+        <div class="grid lg:grid-cols-12 gap-6">
+          
+          <!-- Card Ancha: Tablero Contable Mensual -->
+          <div class="lg:col-span-7 bg-[#141412] border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-spot>
+            <div>
+              <div class="flex items-center justify-between pb-5 border-b border-white/10 mb-6">
+                <div>
+                  <p class="text-xs uppercase font-medium text-neutral-400 tracking-wider">Tablero de Control Empresarial</p>
+                  <p class="font-editorial text-lg text-white font-semibold mt-0.5">Su empresa al día en una sola vista</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                  AL DÍA
+                </span>
+              </div>
+
+              <!-- Simulación de Métricas Claras -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+                <div class="bg-white/5 p-3.5 rounded-xl border border-white/5">
+                  <span class="text-[11px] text-neutral-400 block">Facturación Mes</span>
+                  <span class="text-base sm:text-lg font-bold text-white font-editorial mt-1 block">$18.450.000</span>
+                  <span class="text-[10px] text-emerald-400">Comprobantes ARCA OK</span>
+                </div>
+                <div class="bg-white/5 p-3.5 rounded-xl border border-white/5">
+                  <span class="text-[11px] text-neutral-400 block">Libro IVA Digital</span>
+                  <span class="text-base sm:text-lg font-bold text-[#C8A96E] font-editorial mt-1 block">Presentado</span>
+                  <span class="text-[10px] text-neutral-400">F. 2002 validado</span>
+                </div>
+                <div class="bg-white/5 p-3.5 rounded-xl border border-white/5 col-span-2 sm:col-span-1">
+                  <span class="text-[11px] text-neutral-400 block">Sueldos F.931</span>
+                  <span class="text-base sm:text-lg font-bold text-white font-editorial mt-1 block">Liquidado</span>
+                  <span class="text-[10px] text-emerald-400">VEP generado a tiempo</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-neutral-300 leading-relaxed font-light">
+                Sin esperar a fin de mes ni llamar desesperado: usted sabe exactamente qué se pagó, qué vence la semana que viene y cuál es el resultado contable real de su negocio.
+              </p>
             </div>
 
-            <h1 data-hero-anim class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 leading-tight">
-              Tranquilidad fiscal y contable para hacer crecer tu negocio sin multas
-            </h1>
+            <!-- Chips -->
+            <div class="flex flex-wrap gap-2 pt-6 mt-6 border-t border-white/10">
+              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-neutral-300">Facturación ARCA</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-neutral-300">Libro Sueldos Digital</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-neutral-300">Flujo de Fondos</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[#C8A96E]">Alertas por WhatsApp</span>
+            </div>
+          </div>
 
-            <p data-hero-anim class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Asesoramos a <strong>Monotributistas, Comercios, Empresas y Profesionales</strong> en San Juan. Liquidación puntual de impuestos, sueldos, moratorias y defensa ante inspecciones de AFIP o Rentas San Juan.
+          <!-- Cards Laterales -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            
+            <div class="bg-[#141412] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between" data-spot>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-[#C8A96E]/15 border border-[#C8A96E]/30 text-[#C8A96E] flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-editorial text-lg text-white font-semibold">Carga de Gastos por WhatsApp</h3>
+                  <p class="text-xs text-neutral-300 mt-1.5 leading-relaxed font-light">
+                    Sube una foto del ticket o reenvía la factura electrónica recibida. Nuestro equipo la procesa, deduce y computa en el mes sin que acumules cajas de papel.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#141412] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between" data-spot>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-[#C8A96E]/15 border border-[#C8A96E]/30 text-[#C8A96E] flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-editorial text-lg text-white font-semibold">Avisos Preventivos de Vencimiento</h3>
+                  <p class="text-xs text-neutral-300 mt-1.5 leading-relaxed font-light">
+                    Le avisamos con 5 días hábiles de antelación sobre cada vencimiento impositivo con el VEP pre-armado, garantizando que nunca pague intereses punitorios por olvido.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 6. EL ESTUDIO Y AUTORIDAD (ESTILO RETRATO EDITORIAL ESTUDIO PAZ) ═══ -->
+    <section id="equipo" class="py-20 sm:py-28 bg-[#F7F7F4] border-b border-[#E0E0DA]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Retrato con marco y sello -->
+          <div class="lg:col-span-5">
+            <div class="gold-ring rounded-2xl overflow-hidden shadow-xl border border-[#E0E0DA] bg-white">
+              <div class="aspect-4/3 relative overflow-hidden bg-neutral-100">
+                <img src="/images/contable_reunion.jpg" 
+                     alt="Reunión de asesoría contable y tributaria en Estudio Sánchez y Asociados San Juan" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/85 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-5 right-5 text-white">
+                  <p class="font-editorial text-lg font-semibold">Cr. Martín Sánchez</p>
+                  <p class="text-[11px] text-[#C8A96E] font-medium tracking-wide">Socio Fundador · Matrícula CPCESJ N° 1.840</p>
+                </div>
+              </div>
+              <div class="p-4 bg-white border-t border-[#F0F0EB] flex items-center justify-between text-xs text-[#55554F]">
+                <span>Sede Central San Juan</span>
+                <span class="font-semibold text-[#7F6329]">Atención Presencial &amp; Digital</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texto de Autoridad & Firma -->
+          <div class="lg:col-span-7 space-y-5">
+            <span class="paz-eyebrow">El Estudio</span>
+            <h2 class="h-editorial text-2xl sm:text-4xl text-[#0A0A0A] font-normal leading-tight">
+              Liderado por profesionales <em>comprometidos con su tranquilidad fiscal</em>
+            </h2>
+
+            <p class="text-sm sm:text-base text-[#55554F] leading-relaxed font-light">
+              El <strong>Estudio Sánchez &amp; Asoc.</strong> nació con una premisa clara: brindar a las empresas argentinas un asesoramiento impositivo y contable que combine solidez técnica con agilidad moderna.
             </p>
 
-            <div data-hero-anim class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <button data-wa-msg="Hola Estudio Sánchez! Quisiera coordinar una consulta contable para mi negocio en San Juan."
-                      class="min-touch-target tap-bounce w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg transition-all cursor-pointer">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                <span>Consultar por WhatsApp Ahora</span>
+            <p class="text-sm sm:text-base text-[#55554F] leading-relaxed font-light">
+              Con sede central en San Juan Capital y cobertura digital en todo el país, asesoramos a comercios, empresas familiares, industrias y profesionales que necesitan respuestas concretas y una planificación tributaria ordenada.
+            </p>
+
+            <div class="pt-4 border-t border-[#E0E0DA]">
+              <p class="font-editorial text-base text-[#0A0A0A] font-semibold">Cr. Martín Sánchez</p>
+              <p class="text-xs text-[#7F6329] font-medium">Contador Público Nacional · Matrícula CPCESJ N° 1.840</p>
+            </div>
+
+            <!-- Métricas -->
+            <div class="grid grid-cols-3 gap-4 pt-4">
+              <div>
+                <p class="font-editorial text-2xl sm:text-3xl font-semibold text-[#0A0A0A]">+12 Años</p>
+                <p class="text-[11px] text-[#55554F] mt-0.5">Trayectoria en Cuyo</p>
+              </div>
+              <div>
+                <p class="font-editorial text-2xl sm:text-3xl font-semibold text-[#0A0A0A]">+250</p>
+                <p class="text-[11px] text-[#55554F] mt-0.5">PyMEs Asesoradas</p>
+              </div>
+              <div>
+                <p class="font-editorial text-2xl sm:text-3xl font-semibold text-[#7F6329]">100%</p>
+                <p class="text-[11px] text-[#55554F] mt-0.5">Gestión Digital en Nube</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 7. DÓNDE ESTAMOS / COBERTURA (ON-DARK ESTILO ESTUDIO PAZ) ═══ -->
+    <section class="on-dark py-20 bg-[#141412] text-white border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="paz-eyebrow">Dónde Estamos</span>
+          <h2 class="h-editorial text-2xl sm:text-4xl text-white font-normal mt-3 mb-3">
+            Presencia en San Juan<br><em>y cobertura en todo el país</em>
+          </h2>
+          <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+            Sede central en San Juan Capital y gestión remota con herramientas digitales seguras. La distancia nunca es un problema para llevar sus números al día.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          
+          <div class="bg-[#1C1C19] border border-white/10 p-6 rounded-2xl" data-spot>
+            <div class="w-8 h-8 rounded-lg bg-[#C8A96E]/20 text-[#C8A96E] flex items-center justify-center font-editorial font-bold mb-4">
+              01
+            </div>
+            <h3 class="font-editorial text-lg text-white font-semibold mb-2">Sede Central San Juan</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed font-light mb-3">
+              Calle Mitre 420 Oeste, San Juan Capital. Reuniones presenciales, sala de firmas y auditorías in situ.
+            </p>
+            <span class="text-[11px] text-[#C8A96E] font-medium">Atención de Lunes a Viernes</span>
+          </div>
+
+          <div class="bg-[#1C1C19] border border-white/10 p-6 rounded-2xl" data-spot>
+            <div class="w-8 h-8 rounded-lg bg-[#C8A96E]/20 text-[#C8A96E] flex items-center justify-center font-editorial font-bold mb-4">
+              02
+            </div>
+            <h3 class="font-editorial text-lg text-white font-semibold mb-2">Corredor CABA &amp; Buenos Aires</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed font-light mb-3">
+              Asesoramiento tributario y societario remoto para empresas de servicios, tecnología y comercios de Buenos Aires.
+            </p>
+            <span class="text-[11px] text-[#C8A96E] font-medium">Gestión Remota &amp; Nube</span>
+          </div>
+
+          <div class="bg-[#1C1C19] border border-white/10 p-6 rounded-2xl" data-spot>
+            <div class="w-8 h-8 rounded-lg bg-[#C8A96E]/20 text-[#C8A96E] flex items-center justify-center font-editorial font-bold mb-4">
+              03
+            </div>
+            <h3 class="font-editorial text-lg text-white font-semibold mb-2">Cobertura Federal</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed font-light mb-3">
+              Clientes y empresas en Mendoza, Córdoba, Santa Fe y el resto de las provincias con liquidación de Convenio Multilateral.
+            </p>
+            <span class="text-[11px] text-[#C8A96E] font-medium">100% Sin Traslados</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 8. TESTIMONIOS REALES ═══ -->
+    <section class="py-20 sm:py-28 bg-white border-b border-[#E0E0DA]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-xl text-center mx-auto mb-14">
+          <span class="paz-eyebrow justify-center">Testimonios</span>
+          <h2 class="h-editorial text-2xl sm:text-4xl text-[#0A0A0A] font-normal mt-3 mb-3">
+            Lo que dicen<br><em>nuestros clientes</em>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <div class="bg-[#F7F7F4] p-7 rounded-2xl border border-[#E0E0DA] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-[#C8A96E] mb-4">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-xs sm:text-sm text-[#0A0A0A] leading-relaxed italic font-light mb-4">
+                "Excelente atención y seguimiento. Antes teníamos sorpresas y multas por presentaciones a destiempo con otro estudio. Con el Estudio Sánchez todo es previsible y 100% digital."
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#E0E0DA]">
+              <p class="font-editorial text-sm font-semibold text-[#0A0A0A]">Dr. Esteban R.</p>
+              <p class="text-[11px] text-[#55554F]">Clínica Médica Privada · San Juan</p>
+            </div>
+          </div>
+
+          <div class="bg-[#F7F7F4] p-7 rounded-2xl border border-[#E0E0DA] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-[#C8A96E] mb-4">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-xs sm:text-sm text-[#0A0A0A] leading-relaxed italic font-light mb-4">
+                "La liquidación de sueldos de nuestros 14 empleados y el Libro de Sueldos Digital funciona como un reloj suizo. Nos ahorran horas de estrés cada mes."
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#E0E0DA]">
+              <p class="font-editorial text-sm font-semibold text-[#0A0A0A]">Mariana C.</p>
+              <p class="text-[11px] text-[#55554F]">Distribuidora Mayorista de Alimentos</p>
+            </div>
+          </div>
+
+          <div class="bg-[#F7F7F4] p-7 rounded-2xl border border-[#E0E0DA] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-[#C8A96E] mb-4">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-xs sm:text-sm text-[#0A0A0A] leading-relaxed italic font-light mb-4">
+                "Constituimos nuestra SRL en tiempo récord y armaron los balances para calificar en el banco. Respuestas claras por WhatsApp, sin tecnicismos innecesarios."
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#E0E0DA]">
+              <p class="font-editorial text-sm font-semibold text-[#0A0A0A]">Ing. Lucas V.</p>
+              <p class="text-[11px] text-[#55554F]">Constructora &amp; Desarrollos Inmobiliarios</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ 9. DIAGNÓSTICO FISCAL INTERACTIVO (WIZARD EN 3 PASOS INSPIRADO EN ESTUDIO PAZ) ═══ -->
+    <section id="diagnostico" class="py-20 sm:py-28 bg-[#F7F7F4] border-b border-[#E0E0DA]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <span class="paz-eyebrow justify-center">Diagnóstico Express</span>
+          <h2 class="h-editorial text-2xl sm:text-4xl text-[#0A0A0A] font-normal mt-3 mb-3">
+            ¿Prefiere un diagnóstico<br><em>a medida en 3 pasos?</em>
+          </h2>
+          <p class="text-[#55554F] text-sm leading-relaxed font-light">
+            Indique su condición actual y qué necesita resolver. Le enviamos una propuesta clara y sin compromiso directo por WhatsApp.
+          </p>
+        </div>
+
+        <!-- Wizard Card -->
+        <div id="fiscal-wizard" class="bg-white rounded-2xl border border-[#E0E0DA] shadow-sm p-6 sm:p-10">
+          
+          <!-- Paso 1 -->
+          <div class="mb-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-[#0A0A0A] text-[#C8A96E] text-xs font-bold flex items-center justify-center">1</span>
+              <p class="text-xs uppercase font-bold text-[#0A0A0A] tracking-wider">Situación Fiscal Actual</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button type="button" class="wiz-chip active-chip" data-grp="fiscal" data-val="Responsable Inscripto (IVA)">
+                Resp. Inscripto (IVA)
+              </button>
+              <button type="button" class="wiz-chip" data-grp="fiscal" data-val="Monotributista">
+                Monotributista
+              </button>
+              <button type="button" class="wiz-chip" data-grp="fiscal" data-val="Sociedad (SRL / SA)">
+                Sociedad (SRL / SA)
+              </button>
+              <button type="button" class="wiz-chip" data-grp="fiscal" data-val="Nuevo Emprendimiento">
+                Nuevo Emprendimiento
               </button>
             </div>
           </div>
 
-          <!-- CARD FOTO CONTADOR -->
-          <div data-hero-anim class="lg:col-span-5">
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl space-y-4">
-              <div class="relative rounded-xl overflow-hidden aspect-4/3 border border-slate-100">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" 
-                     alt="Cdor. Martín Sánchez - Contador público matriculado en el CPCESJ San Juan" 
-                     class="w-full h-full object-cover object-top">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-                <div class="absolute bottom-3 left-4 right-4 text-white">
-                  <p class="font-bold text-base">Cdor. Martín Sánchez</p>
-                  <p class="text-blue-300 text-xs">Contador Público Nacional • Matrícula CPCESJ N° 1.840</p>
-                </div>
-              </div>
-              <div class="space-y-2 text-xs text-slate-600 pt-1">
-                <p>✓ Atención personalizada directa con el profesional asignado.</p>
-                <p>✓ Alertas de vencimientos por WhatsApp para no pagar intereses.</p>
-                <p>✓ Sede: Calle Mitre 420 Oeste, San Juan Capital.</p>
-              </div>
+          <!-- Paso 2 -->
+          <div class="mb-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-[#0A0A0A] text-[#C8A96E] text-xs font-bold flex items-center justify-center">2</span>
+              <p class="text-xs uppercase font-bold text-[#0A0A0A] tracking-wider">¿Qué Necesita Resolver Principalmente?</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button type="button" class="wiz-chip active-chip" data-grp="necesidad" data-val="Liquidación Mensual de Impuestos">
+                Liquidación Mensual de Impuestos (IVA, IIBB, Ganancias)
+              </button>
+              <button type="button" class="wiz-chip" data-grp="necesidad" data-val="Sueldos y Cargas Sociales (F.931)">
+                Liquidación de Sueldos y Libro Digital
+              </button>
+              <button type="button" class="wiz-chip" data-grp="necesidad" data-val="Regularizar Deudas y Planes de Pago">
+                Regularizar Deudas y Planes de Pago en AFIP/ARCA
+              </button>
+              <button type="button" class="wiz-chip" data-grp="necesidad" data-val="Balances y Estados Contables">
+                Balances y Certificación de Ingresos para Bancos
+              </button>
             </div>
           </div>
 
+          <!-- Paso 3 -->
+          <div class="mb-8">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-[#0A0A0A] text-[#C8A96E] text-xs font-bold flex items-center justify-center">3</span>
+              <p class="text-xs uppercase font-bold text-[#0A0A0A] tracking-wider">Escala o Personal</p>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5">
+              <button type="button" class="wiz-chip" data-grp="escala" data-val="Solo el titular (Sin empleados)">
+                Sin empleados
+              </button>
+              <button type="button" class="wiz-chip active-chip" data-grp="escala" data-val="1 a 5 empleados">
+                1 a 5 empleados
+              </button>
+              <button type="button" class="wiz-chip" data-grp="escala" data-val="Más de 5 empleados">
+                Más de 5 empleados
+              </button>
+            </div>
+          </div>
+
+          <!-- Resumen & Enviar -->
+          <div class="bg-[#FAF7F0] border border-[#C8A96E]/40 rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+            <div class="space-y-1">
+              <p class="text-xs uppercase font-semibold text-[#7F6329] tracking-wider">Resumen de Consulta</p>
+              <p class="text-sm font-semibold text-[#0A0A0A]">
+                <span id="wiz-res-fiscal">Responsable Inscripto (IVA)</span> • <span id="wiz-res-necesidad">Liquidación Mensual de Impuestos</span>
+              </p>
+              <p class="text-xs text-[#55554F]">
+                Escala: <span id="wiz-res-escala" class="font-medium text-[#0A0A0A]">1 a 5 empleados</span> · Diagnóstico confidencial sin cargo
+              </p>
+            </div>
+
+            <button id="wiz-submit-btn" 
+                    data-wa-msg="Hola Estudio Sánchez! Completé el diagnóstico en su web: Soy Responsable Inscripto (IVA), mi principal necesidad es Liquidación Mensual de Impuestos y mi escala es 1 a 5 empleados. Quisiera coordinar una consulta contable."
+                    class="btn-gold w-full sm:w-auto shrink-0">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Pedir Diagnóstico a WhatsApp</span>
+            </button>
+          </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- SECCIÓN SERVICIOS CONTABLES COMPLETOS -->
-    <section id="servicios" class="py-20 bg-white border-y border-slate-200 reveal-on-scroll">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-3 py-1 rounded-full">Soluciones Fiscales</span>
-          <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-slate-900 mt-3 mb-2">Servicios Impositivos y Contables</h2>
-          <p class="text-slate-600 text-sm">Planes mensuales adaptados a la escala de tu actividad.</p>
+    <!-- ═══ 10. PREGUNTAS FRECUENTES (FAQ ACORDEÓN) ═══ -->
+    <section id="faq" class="py-20 sm:py-28 bg-white border-b border-[#E0E0DA]">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-12">
+          <span class="paz-eyebrow justify-center">Dudas Frecuentes</span>
+          <h2 class="h-editorial text-2xl sm:text-4xl text-[#0A0A0A] font-normal mt-3 mb-3">
+            Antes de escribirnos,<br><em>puede que ya esté respondido</em>
+          </h2>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="space-y-3.5">
           
-          <!-- PLAN 1: MONOTRIBUTO -->
-          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-600 transition-all flex flex-col justify-between group">
-            <div class="space-y-3">
-              <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Independientes</span>
-              <h3 class="font-display font-bold text-lg text-slate-900 group-hover:text-blue-900 transition-colors">Monotributo y Autónomos</h3>
-              <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
-                <li>• Alta en AFIP y Rentas DGI San Juan</li>
-                <li>• Recategorizaciones semestrales obligatorias</li>
-                <li>• Emisión y configuración de Factura Electrónica</li>
-                <li>• Planes de pago de deudas y moratorias</li>
-                <li>• Declaración jurada de Ingresos Brutos</li>
-              </ul>
+          <details name="faq-accordion" class="group bg-[#F7F7F4] rounded-xl border border-[#E0E0DA] transition-colors open:border-[#C8A96E]/50">
+            <summary class="flex items-center justify-between p-5 text-left font-editorial text-base text-[#0A0A0A] font-medium cursor-pointer list-none select-none">
+              <span>¿Cómo es el procedimiento si ya tengo contador y quiero cambiarme?</span>
+              <span class="text-[#7F6329] group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#55554F] leading-relaxed border-t border-[#E0E0DA]/60">
+              Es un trámite habitual y profesional. Solicitamos al profesional anterior el cierre formal de la documentación (últimas DDJJ, balances, papeles de trabajo y claves delegadas) sin fricciones, asegurando que su actividad comercial continúe sin un solo día de interrupción ni riesgo de multas.
             </div>
-            <button data-wa-service="Abono Monotributo" data-wa-msg="Hola Estudio Sánchez! Quisiera consultar por el servicio de Monotributo en San Juan." 
-                    class="tap-bounce min-touch-target w-full mt-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition-colors cursor-pointer">
-              Consultar Monotributo
-            </button>
-          </div>
+          </details>
 
-          <!-- PLAN 2: RESPONSABLES INSCRIPTOS -->
-          <div class="bg-slate-50 rounded-2xl p-6 border-2 border-blue-600 shadow-md flex flex-col justify-between group">
-            <div class="space-y-3">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Comercios</span>
-                <span class="bg-blue-100 text-blue-900 text-[10px] font-bold px-2 py-0.5 rounded-full">Más Solicitado</span>
-              </div>
-              <h3 class="font-display font-bold text-lg text-slate-900 group-hover:text-blue-900 transition-colors">Responsables Inscriptos</h3>
-              <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
-                <li>• Liquidación mensual de IVA (Libro IVA Digital)</li>
-                <li>• Impuesto a las Ganancias y Bienes Personales</li>
-                <li>• Convenio Multilateral e Ingresos Brutos</li>
-                <li>• Recupero y cómputo de retenciones bancarias</li>
-                <li>• Asesoramiento para optimización fiscal legal</li>
-              </ul>
+          <details name="faq-accordion" class="group bg-[#F7F7F4] rounded-xl border border-[#E0E0DA] transition-colors open:border-[#C8A96E]/50">
+            <summary class="flex items-center justify-between p-5 text-left font-editorial text-base text-[#0A0A0A] font-medium cursor-pointer list-none select-none">
+              <span>¿Cuánto demora el alta en ARCA / AFIP y la factura electrónica?</span>
+              <span class="text-[#7F6329] group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#55554F] leading-relaxed border-t border-[#E0E0DA]/60">
+              Con su número de CUIT y Clave Fiscal nivel 3, el alta impositiva en Monotributo o Régimen General con habilitación de puntos de venta digitales se concreta en un plazo de 24 a 48 horas hábiles, dejándolo listo para facturar.
             </div>
-            <button data-wa-service="Abono Responsable Inscripto" data-wa-msg="Hola Estudio Sánchez! Quisiera consultar por el abono para Responsables Inscriptos en San Juan." 
-                    class="tap-bounce min-touch-target w-full mt-6 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition-colors cursor-pointer">
-              Consultar Responsable Inscripto
-            </button>
-          </div>
+          </details>
 
-          <!-- PLAN 3: SUELDOS Y RRHH -->
-          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-600 transition-all flex flex-col justify-between group">
-            <div class="space-y-3">
-              <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Personal</span>
-              <h3 class="font-display font-bold text-lg text-slate-900 group-hover:text-blue-900 transition-colors">Sueldos y Cargas Sociales</h3>
-              <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
-                <li>• Liquidación mensual y quincenal de sueldos</li>
-                <li>• Confección y presentación F. 931 AFIP</li>
-                <li>• Libro de Sueldos Digital</li>
-                <li>• Altas y bajas tempranas de empleados</li>
-                <li>• Aplicación de convenios (Comercio, UOCRA, etc.)</li>
-              </ul>
+          <details name="faq-accordion" class="group bg-[#F7F7F4] rounded-xl border border-[#E0E0DA] transition-colors open:border-[#C8A96E]/50">
+            <summary class="flex items-center justify-between p-5 text-left font-editorial text-base text-[#0A0A0A] font-medium cursor-pointer list-none select-none">
+              <span>¿Cómo me ayudan si tengo deudas fiscales acumuladas o intimaciones?</span>
+              <span class="text-[#7F6329] group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#55554F] leading-relaxed border-t border-[#E0E0DA]/60">
+              Realizamos una auditoría inmediata de su estado de cuenta en ARCA y Rentas, detectamos inconsistencias y consolidamos la deuda en los planes de pago vigentes más convenientes (hasta 48 cuotas) o moratorias, frenando posibles embargos bancarios de forma preventiva.
             </div>
-            <button data-wa-service="Liquidación de Sueldos" data-wa-msg="Hola Estudio Sánchez! Necesito asesoramiento para liquidar sueldos y cargas sociales de mi negocio." 
-                    class="tap-bounce min-touch-target w-full mt-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition-colors cursor-pointer">
-              Consultar Sueldos
-            </button>
-          </div>
+          </details>
 
-          <!-- PLAN 4: BALANCES Y AUDITORÍA -->
-          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-600 transition-all flex flex-col justify-between group">
-            <div class="space-y-3">
-              <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Empresas</span>
-              <h3 class="font-display font-bold text-lg text-slate-900 group-hover:text-blue-900 transition-colors">Balances y Sociedades</h3>
-              <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
-                <li>• Confección de Estados Contables anuales</li>
-                <li>• Certificaciones de ingresos para bancos y créditos</li>
-                <li>• Constitución de Sociedades (SRL, SA)</li>
-                <li>• Auditoría contable externa</li>
-                <li>• Presentación digital ante el CPCESJ</li>
-              </ul>
+          <details name="faq-accordion" class="group bg-[#F7F7F4] rounded-xl border border-[#E0E0DA] transition-colors open:border-[#C8A96E]/50">
+            <summary class="flex items-center justify-between p-5 text-left font-editorial text-base text-[#0A0A0A] font-medium cursor-pointer list-none select-none">
+              <span>¿Tengo que llevar carpetas con papeles o toda la gestión es digital?</span>
+              <span class="text-[#7F6329] group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#55554F] leading-relaxed border-t border-[#E0E0DA]/60">
+              Nuestra metodología es 100% digital. Los comprobantes y facturas se envían por foto de WhatsApp o nube compartida, y usted recibe mensualmente los volantes de pago y reportes claros de forma digital, sin necesidad de traslados físicos.
             </div>
-            <button data-wa-service="Balances y Sociedades" data-wa-msg="Hola Estudio Sánchez! Necesito certificar un balance o ingresos para un crédito en San Juan." 
-                    class="tap-bounce min-touch-target w-full mt-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition-colors cursor-pointer">
-              Consultar Balances
-            </button>
-          </div>
+          </details>
 
         </div>
+
       </div>
     </section>
 
-    <!-- SOBRE EL ESTUDIO CONTABLE -->
-    <section id="experiencia" class="py-16 sm:py-24 bg-white border-y border-slate-200 reveal-on-scroll">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
-          
-          <div class="lg:col-span-5">
-            <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-slate-100 aspect-4/3 bg-slate-100">
-              <img src="/images/contable_reunion.jpg" 
-                   alt="Reunión de asesoría tributaria y contable corporativa en Estudio Sánchez y Asociados San Juan" 
-                   class="w-full h-full object-cover">
-              <div class="absolute bottom-4 left-4 right-4 bg-slate-900/95 backdrop-blur-md p-3.5 rounded-xl text-white border border-slate-800">
-                <p class="font-bold text-sm">Cdor. Martín Sánchez</p>
-                <p class="text-blue-300 text-xs font-medium">Matrícula CPCESJ N° 1.840 • Sede Central San Juan</p>
-              </div>
-            </div>
-          </div>
+    <!-- ═══ 11. CTA FINAL ON-DARK (CIERRE DE ALTO IMPACTO) ═══ -->
+    <section class="on-dark py-20 sm:py-28 bg-[#0A0A0A] text-white text-center relative overflow-hidden border-b border-white/10">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
+        
+        <span class="paz-eyebrow justify-center">Inicie su Consulta</span>
+        
+        <h2 class="h-editorial text-3xl sm:text-5xl text-white font-normal leading-[1.15]">
+          ¿Listo para tomar el control<br><em>de la contabilidad de su empresa?</em>
+        </h2>
 
-          <div class="lg:col-span-7 space-y-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-3 py-1 rounded-full">Autoridad Profesional</span>
-            <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-slate-900">
-              El Estudio: Experiencia, Rigor y Cercanía
-            </h2>
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-              En <strong>Sánchez y Asociados</strong> combinamos más de una década de experiencia en materia tributaria, societaria y laboral en San Juan con una metodología 100% digital.
-            </p>
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Creemos que el rol del contador moderno no es solo liquidar impuestos a fin de mes, sino ser un aliado estratégico que te alerte a tiempo sobre beneficios fiscales, evite multas innecesarias y ordene tus números para que tu negocio crezca sobre bases sólidas.
-            </p>
+        <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light max-w-xl mx-auto">
+          Una conversación de 15 minutos puede ahorrarle multas, tiempo y dolores de cabeza. Hablemos sin compromiso.
+        </p>
 
-            <div class="grid sm:grid-cols-3 gap-4 pt-3 border-t border-slate-200">
-              <div>
-                <p class="font-display font-extrabold text-2xl text-blue-900">+12 Años</p>
-                <p class="text-xs text-slate-500">De Trayectoria en San Juan</p>
-              </div>
-              <div>
-                <p class="font-display font-extrabold text-2xl text-blue-900">+250</p>
-                <p class="text-xs text-slate-500">Empresas Asesoradas</p>
-              </div>
-              <div>
-                <p class="font-display font-extrabold text-2xl text-blue-900">100% Digital</p>
-                <p class="text-xs text-slate-500">Sin Trámites en Papel</p>
-              </div>
-            </div>
-          </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <a href="https://wa.me/5492645185359?text=Hola%20Estudio%20S%C3%A1nchez!%20Quisiera%20coordinar%20una%20consulta%20con%20el%20estudio." 
+             target="_blank" rel="noopener noreferrer"
+             class="btn-gold w-full sm:w-auto">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Escribirnos por WhatsApp</span>
+          </a>
 
+          <a href="#diagnostico" class="btn-ghost-dark w-full sm:w-auto">
+            <span>Completar diagnóstico</span>
+          </a>
         </div>
+
       </div>
     </section>
 
-    <!-- CÓMO TRABAJAMOS -->
-    <section id="proceso" class="py-16 bg-slate-100 border-b border-slate-200 reveal-on-scroll">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-xl mx-auto mb-12">
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-3 py-1 rounded-full">Metodología</span>
-          <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 mt-3">Comenzá en 3 pasos sencillos</h2>
+    <!-- ═══ 12. FOOTER INSTITUCIONAL DEL ESTUDIO CONTABLE ═══ -->
+    <footer class="bg-[#141412] text-neutral-400 py-12 text-xs border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <div class="md:col-span-5 space-y-3">
+          <p class="font-editorial text-lg text-white font-semibold">Estudio Sánchez &amp; Asoc.</p>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            Asesoramiento contable, impositivo, societario y laboral para empresas, PyMEs y profesionales de toda la Argentina.
+          </p>
+          <p class="text-[11px] text-[#C8A96E]">
+            Matrícula Activa CPCESJ N° 1.840 · San Juan Capital
+          </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <span class="text-blue-900 font-black text-2xl">01.</span>
-            <h3 class="font-bold text-slate-900 text-base mt-2 mb-1.5">Diagnóstico Fiscal Gratuito</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Revisamos el estado de tu CUIT en AFIP y Rentas para detectar deudas, retenciones no aprovechadas o riesgos de intimación.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <span class="text-blue-900 font-black text-2xl">02.</span>
-            <h3 class="font-bold text-slate-900 text-base mt-2 mb-1.5">Regularización Inmediata</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Consolidamos tus obligaciones en planes de pago convenientes y ordenamos tu facturación electrónica.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <span class="text-blue-900 font-black text-2xl">03.</span>
-            <h3 class="font-bold text-slate-900 text-base mt-2 mb-1.5">Gestión Mensual sin Estrés</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Mes a mes recibís tus volantes de pago con anticipación y un reporte claro de tu situación contable por WhatsApp.
-            </p>
-          </div>
+        <div class="md:col-span-4 space-y-2">
+          <p class="text-xs uppercase font-bold text-white tracking-wider">Contacto &amp; Sedes</p>
+          <p class="text-xs text-neutral-400">Calle Mitre 420 Oeste, San Juan Capital</p>
+          <p class="text-xs text-neutral-400">Atención digital y presencial: Lunes a Viernes de 8:30 a 17:30 hs</p>
+          <p class="text-xs text-neutral-400">WhatsApp oficial: +54 9 264 518-5359</p>
         </div>
+
+        <div class="md:col-span-3 space-y-2">
+          <p class="text-xs uppercase font-bold text-white tracking-wider">Áreas de Práctica</p>
+          <ul class="space-y-1 text-xs text-neutral-400">
+            <li>• Auditoría &amp; Balances</li>
+            <li>• Impuestos &amp; Régimen ARCA</li>
+            <li>• Sueldos &amp; Libro Digital</li>
+            <li>• Sociedades &amp; Contratos</li>
+          </ul>
+        </div>
+
       </div>
-    </section>
+    </footer>
 
-    <!-- PREGUNTAS FRECUENTES -->
-    <section id="faq" class="py-16 bg-white reveal-on-scroll">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-3 py-1 rounded-full">Dudas Frecuentes</span>
-          <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 mt-3">Preguntas habituales</h2>
-        </div>
-
-        <div data-accordion class="space-y-3">
-          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
-            <button type="button" class="accordion-trigger w-full flex items-center justify-between p-4 text-left font-bold text-sm text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer" aria-expanded="false">
-              <span>¿Qué necesito para que empiecen a llevar mi contabilidad?</span>
-              <svg class="w-4 h-4 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="accordion-content-grid">
-              <div class="accordion-inner px-4 pb-4 pt-1 text-xs text-slate-600 leading-relaxed">
-                Únicamente tu número de CUIT y Clave Fiscal nivel 3. Nosotros nos encargamos de auditar el estado de tu cuenta tributaria y solicitar las delegaciones necesarias sin que tengas que hacer trámites presenciales.
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
-            <button type="button" class="accordion-trigger w-full flex items-center justify-between p-4 text-left font-bold text-sm text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer" aria-expanded="false">
-              <span>¿Cómo hago si tengo deudas viejas en AFIP o Rentas San Juan?</span>
-              <svg class="w-4 h-4 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="accordion-content-grid">
-              <div class="accordion-inner px-4 pb-4 pt-1 text-xs text-slate-600 leading-relaxed">
-                Evaluamos si aplicás a planes de facilidades de pago vigentes (hasta 48 cuotas) o moratorias provinciales, frenando de inmediato intimaciones o posibles embargos bancarios.
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
-            <button type="button" class="accordion-trigger w-full flex items-center justify-between p-4 text-left font-bold text-sm text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer" aria-expanded="false">
-              <span>¿Puedo cambiarme de contador a mitad de año?</span>
-              <svg class="w-4 h-4 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="accordion-content-grid">
-              <div class="accordion-inner px-4 pb-4 pt-1 text-xs text-slate-600 leading-relaxed">
-                Sí, es un procedimiento totalmente normal y habitual. Solicitamos la documentación al profesional anterior de manera cordial y ordenada para continuar las liquidaciones sin interrupción.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- FOOTER CON BACKLINK A ERIK WEB STUDIO -->
-  <footer class="pb-24 sm:pb-8 bg-slate-950 text-slate-400 py-8 text-xs border-t border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div>
-        <p class="font-display font-bold text-slate-200 text-sm">Estudio Contable Sánchez y Asociados</p>
-        <p class="text-slate-400">Calle Mitre 420 Oeste, San Juan Capital • Matrícula CPCESJ N° 1.840</p>
-      </div>
-      <div class="text-slate-400 text-xs flex flex-wrap items-center justify-center sm:justify-end gap-2">
-        <span>Plantilla demostrativa • Diseñado y desarrollado por <a href="/" class="text-blue-400 font-bold hover:underline">erikwebsite.com</a></span>
-        <span>•</span>
-        <a href="/terminos" class="text-slate-400 hover:text-slate-200 underline">Términos y Condiciones</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- SECCIÓN PROMOCIONAL Y PRECIOS ERIK WEBSITE (Verde Esmeralda y Blanco) -->
+  <!-- ═══ 13. SECCIÓN PROMOCIONAL Y PRECIOS ERIK WEBSITE (Verde Esmeralda y Blanco) ═══ -->
   <section id="erikwebsite-cta" class="py-16 sm:py-20 bg-slate-900 text-white border-t-4 border-emerald-500 relative overflow-hidden">
     <!-- Glow sutil esmeralda -->
     <div class="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -611,31 +1364,31 @@
             <h3 class="text-xs uppercase font-bold tracking-wider text-slate-400 mb-2">Tu web incluye todo resuelto:</h3>
             
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Diseño a medida ultrarrápido:</strong> Abre al instante en celulares sin demoras.</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Dominio oficial + Hosting SSL seguro:</strong> Todos los trámites técnicos incluidos.</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Auditoría y optimización de Google Maps:</strong> Para destacar en tu zona.</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Redacción comercial incluida:</strong> Con sólo 3 audios tuyos redactamos todo.</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Conexión directa a WhatsApp:</strong> Botones rápidos con mensajes pre-cargados.</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Mantenimiento mensual continuo:</strong> Hasta 3 cambios de textos/precios por mes.</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <span class="text-emerald-600 font-bold text-base leading-none">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span><strong>Entrega en 3 a 5 días hábiles</strong> con 2 rondas de revisiones incluidas.</span>
             </div>
           </div>
@@ -651,7 +1404,7 @@
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
             </svg>
-            <span>Pedir mi Web por WhatsApp (264-518-5359)</span>
+            <span>Pedir mi Web por WhatsApp</span>
           </a>
 
           <a href="/" target="_blank" class="text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1">
@@ -665,8 +1418,8 @@
     </div>
   </section>
 
-  <!-- FOOTER OFICIAL ERIK WEBSITE -->
-    <footer class="pb-24 sm:pb-8 bg-slate-950 text-slate-400 py-6 text-xs border-t border-slate-800 overflow-hidden">
+  <!-- ═══ 14. FOOTER OFICIAL ERIK WEBSITE ═══ -->
+  <footer class="pb-24 sm:pb-8 bg-slate-950 text-slate-400 py-6 text-xs border-t border-slate-800 overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
       <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
         <a href="/" class="font-display font-bold text-white text-sm hover:text-emerald-400 transition-colors">
@@ -685,8 +1438,7 @@
     </div>
   </footer>
 
-
-  <!-- BOTÓN VOLVER ARRIBA (MOBILE & DESKTOP) -->
+  <!-- ═══ BOTÓN VOLVER ARRIBA (MOBILE & DESKTOP) ═══ -->
   <button id="btn-scroll-top"
           class="fixed bottom-20 sm:bottom-5 left-3.5 sm:left-5 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/85 hover:bg-slate-900 text-white rounded-full flex items-center justify-center shadow-lg backdrop-blur-xs border border-slate-700/60 opacity-0 pointer-events-none translate-y-3 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           aria-label="Volver arriba">
@@ -695,7 +1447,7 @@
     </svg>
   </button>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP (CONTACTAR A ERIK) -->
+  <!-- ═══ BOTÓN FLOTANTE WHATSAPP (CONTACTAR A ERIK) ═══ -->
   <aside class="demo-wa-float fixed bottom-20 sm:bottom-5 right-3.5 sm:right-5 z-50 flex items-center group">
     <span class="hidden sm:inline-block mr-3 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-slate-800">
       Consultar por esta web
@@ -705,23 +1457,23 @@
        rel="noopener noreferrer"
        class="w-11 h-11 sm:w-14 sm:h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl shadow-emerald-950/20 transition-transform duration-200 hover:scale-110 active:scale-95 cursor-pointer focus:outline-hidden focus:ring-4 focus:ring-emerald-300"
        aria-label="Contactar a Erik por WhatsApp sobre este diseño web">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
       </svg>
     </a>
   </aside>
 
-  <!-- BARRA DE ACCIÓN FIJA INFERIOR PARA CELULARES (MOBILE ACTION DOCK) -->
-  <aside class="mobile-action-dock block sm:hidden bg-slate-900/95 border-t border-slate-800 shadow-2xl">
+  <!-- ═══ BARRA DE ACCIÓN FIJA INFERIOR PARA CELULARES (MOBILE ACTION DOCK) ═══ -->
+  <aside class="mobile-action-dock block sm:hidden bg-[#0A0A0A]/95 border-t border-white/10 shadow-2xl">
     <div class="flex items-center justify-between gap-3">
       <div class="flex flex-col">
-        <span class="text-xs font-bold text-white leading-tight">Cdor. Martín Sánchez</span>
-        <span class="text-[10px] text-blue-300 font-medium">Estudio Contable San Juan</span>
+        <span class="text-xs font-semibold text-white leading-tight font-editorial">Estudio Sánchez &amp; Asoc.</span>
+        <span class="text-[10px] text-[#C8A96E] font-medium">Asesoría Contable San Juan</span>
       </div>
-      <button data-wa-msg="Hola Estudio Sánchez! Quisiera solicitar una consulta sobre asesoramiento contable e impositivo en San Juan."
-              class="tap-bounce min-touch-target inline-flex items-center gap-2 bg-blue-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg cursor-pointer">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        <span>Diagnóstico Fiscal</span>
+      <button data-wa-msg="Hola Estudio Sánchez! Quisiera solicitar una consulta sobre asesoramiento contable e impositivo."
+              class="btn-gold text-xs py-2 px-3.5 rounded-xl cursor-pointer">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Diagnóstico</span>
       </button>
     </div>
   </aside>

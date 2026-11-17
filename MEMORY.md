@@ -640,6 +640,27 @@
     - 0 emojis (Regla #17).
     - Compilación limpia en Vite (`npm run build`) en 17.41s con 0 errores y 0 advertencias.
     - Notificaciones enviadas: Google Indexing API v3 (`200 OK` en las 5 URLs), GSC sitemap enviado con éxito, IndexNow API (`202 Accepted` en 5 URLs) y Bing Webmaster API `SubmitUrlBatch` (`200 OK`).
+- [x] **2026-11-17 (Rediseño Estético y Estructural de la Demo Contable `/demos/contable/` con `design-master` inspirado en Estudio Paz):**
+  - **Inspiración Visual & Dirección de Arte:** Adopción del ADN estético de `estudiopaz.com.ar` (estética editorial sobria, prestigio y rigor corporativo para estudios contables de alto nivel, adaptado a código limpio sin dependencias pesadas ni copias de contenido).
+  - **Par Tipográfico & Jerarquía Editorial:** `Playfair Display` para titulares con acentos selectivos en cursiva (`em`) combinada con `Inter` (300 a 700) para el cuerpo y componentes de interfaz.
+  - **Paleta de Lujo & Ritmo Dual (Dark Ink & Warm Alabaster):**
+    - Deep Ink `#0A0A0A`, Warm Charcoal `#141412`, `#1C1C19`.
+    - Champagne Gold `#C8A96E`, Luminous Gold `#E0C68F`, Línea dorada sutil y oro accesible `#7F6329` para textos sobre fondos claros.
+    - Alabastro cálido `#F7F7F4` y blanco puro `#FFFFFF`.
+  - **Componentes y Estructura Transformada:**
+    - Navbar con brand editorial, scroll progress bar dorada `#prog` y botón `btn-gold` con glow sutil en hover.
+    - Hero cinemático `on-dark` con tipografía Playfair Display, palabras clave en cursiva dorada y botones `btn-gold` + `btn-ghost-dark`.
+    - Trust Band horizontal de 4 columnas en dark ink (*Desde 2012*, *Equipo Matriculado CPCESJ*, *+250 PyMEs Asesoradas*, *Metodología 100% Digital*).
+    - Sección "Por qué elegirnos" con 3 tarjetas de lujo y efecto spotlight (`data-spot`).
+    - Grilla de Servicios 3x2 con números grandes en serif dorada (`01` a `06`) y trigger directo a WhatsApp.
+    - Sección "Gestión Digital & Nube PyME" en dark ink con previsualización de tablero empresarial, comprobantes por foto en WhatsApp y alertas preventivas.
+    - Retrato editorial con anillo dorado (`gold-ring`), credenciales y firma institucional de Cr. Martín Sánchez.
+    - Presencia en San Juan y cobertura remota a todo el país.
+    - Testimonios con estrellas SVG doradas y comillas tipográficas.
+    - Wizard interactivo de "Diagnóstico Fiscal en 3 Pasos" con selección dinámica de chips y generación automática del mensaje para WhatsApp.
+    - Acordeón FAQ con Schema.org y CTA final de alto impacto.
+  - **Verificaciones:** Compilación limpia en Vite (8.54s), 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis decorativos (Regla #17) y preservación estricta de la sección comercial de Erik Website (`#erikwebsite-cta` de $150.000 / $20.000) y controles flotantes.
+
 
 
 
