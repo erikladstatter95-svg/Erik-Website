@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?</title>
+  <meta name="description" content="Google Tag Manager vs GA4 directo en código: comparativa real de peso en JavaScript, impacto en Core Web Vitals (INP/LCP) y cuándo conviene usar cada uno.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?">
+  <meta property="og:description" content="Google Tag Manager vs GA4 directo en código: comparativa real de peso en JavaScript, impacto en Core Web Vitals (INP/LCP) y cuándo conviene usar cada uno.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_google_tag_manager_vs_ga4_seo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?">
+  <meta name="twitter:description" content="Google Tag Manager vs GA4 directo en código: comparativa real de peso en JavaScript, impacto en Core Web Vitals (INP/LCP) y cuándo conviene usar cada uno.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_google_tag_manager_vs_ga4_seo.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/#article",
+      "headline": "Google Tag Manager vs. GA4 Directo (gtag.js): Qué Conviene Más para tu Velocidad Web y el SEO",
+      "description": "Google Tag Manager vs GA4 directo en código: comparativa real de peso en JavaScript, impacto en Core Web Vitals (INP/LCP) y cuándo conviene usar cada uno.",
+      "image": "https://erikwebsite.com/images/guia_google_tag_manager_vs_ga4_seo.png",
+      "datePublished": "2026-11-17T09:30:00-03:00",
+      "dateModified": "2026-11-17T09:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Tag Manager vs GA4 Directo",
+          "item": "https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Google Tag Manager reemplaza a Google Analytics 4 o trabajan juntos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No lo reemplaza. Google Tag Manager es un contenedor que transporta e inyecta scripts, mientras que GA4 es la plataforma que recopila, procesa y genera los reportes de datos. Si instalás Tag Manager solo sin crear una etiqueta de GA4 adentro, no registrarás ninguna visita."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué Google Tag Manager puede bajar la puntuación de PageSpeed Insights en celulares?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque el script gtm.js añade entre 30 y 80 KB de JavaScript inicial que debe ser descargado, parseado y ejecutado por el procesador del teléfono móvil. Si además se configuran muchos disparadores de clics generales, el hilo principal se satura, empeorando el Total Blocking Time (TBT) y el Interaction to Next Paint (INP)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se pueden medir clics al botón de WhatsApp y cotizadores interactivos sin usar Google Tag Manager?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, de manera nativa y mucho más liviana. Con un listener de JavaScript estándar en tu código (addEventListener) podés disparar la función gtag('event', 'whatsapp_click', {...}) al instante cada vez que un usuario toca el botón de contacto, sin intermediarios ni demoras de red."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Si tengo Meta Pixel y Google Analytics 4 necesito obligatoriamente Google Tag Manager?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No es necesario. Para una PyME, comercio o profesional que solo utiliza Google Analytics 4 y el Píxel de Meta, incluir ambos scripts directamente en el HTML con carga asíncrona es más rápido, más fácil de auditar y produce una web sensiblemente más veloz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si instalo el código de GA4 directo en el HTML y además lo cargo dentro de GTM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se produce una duplicación de datos: cada visita enviará dos eventos page_view idénticos al mismo tiempo, lo que inflará artificialmente el tráfico un 100%, distorsionará el porcentaje de rebote y arruinará la precisión de tus métricas de conversión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo excluir mi propia IP o mis visitas de prueba en Google Analytics 4 para no alterar las métricas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Podés crear un filtro de tráfico interno en el panel de GA4 ingresando tu dirección IP pública, o utilizar una capa en código local mediante un parámetro URL (?soy_erik=1) que guarde una clave en localStorage y desactive gtag automáticamente cuando navegás tu sitio."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-neutral-50 text-neutral-800 antialiased selection:bg-emerald-500 selection:text-white">
+  <!-- Meta Pixel noscript Fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+  </noscript>
+
+  <!-- NAVBAR UNIFICADO -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg sm:text-xl text-slate-900 tracking-tight flex items-center">
+        <span>Erik <span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-slate-600 tracking-tight">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-700 transition-colors font-semibold text-emerald-600">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-700 transition-colors font-semibold text-slate-600">San Juan</a>
+        <a href="/blog/" class="text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5">Blog</a>
+      </nav>
+
+      <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Leí%20tu%20guía%20sobre%20GTM%20vs%20GA4%20directo%20y%20quiero%20consultar%20por%20la%20velocidad%20y%20analítica%20de%20mi%20web."
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-10 sm:py-16">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- BREADCRUMBS -->
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-slate-900 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-slate-700 truncate">Google Tag Manager vs GA4 Directo</span>
+      </nav>
+
+      <!-- ENCABEZADO -->
+      <header class="mb-8">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full mb-3">
+          Analítica & Performance Web
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
+          Google Tag Manager vs. GA4 Directo (gtag.js): Qué Conviene Más para tu Velocidad Web y el SEO
+        </h1>
+
+        <div class="flex items-center gap-3 text-xs text-slate-500 pb-6 border-b border-slate-200">
+          <span>Por <strong>Erik Ladstatter</strong></span>
+          <span>•</span>
+          <span>Actualizado: 17 de noviembre de 2026</span>
+          <span>•</span>
+          <span>Lectura: 8 minutos</span>
+        </div>
+      </header>
+
+      <!-- RESPUESTA DIRECTA (AEO / GEO BLOCK - REGLA STURM #4) -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200 mb-8 text-slate-800">
+        <p class="font-bold text-slate-900 text-base mb-2">
+          Respuesta directa: ¿cuál conviene elegir entre GTM y GA4 directo en código?
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700">
+          <strong>Elegir entre Google Tag Manager vs. GA4 directo (<code>gtag.js</code>)</strong> depende de cuántos píxeles y herramientas de marketing uses: insertar GA4 directo en código es más liviano y rápido para los Core Web Vitals de una PyME, mientras que GTM solo se justifica cuando administrás múltiples etiquetas complejas sin tocar el código. Para sitios corporativos, landing pages de servicios y comercios locales con medición de WhatsApp y formularios, GA4 directo ahorra tiempo de ejecución en el navegador y mejora el rendimiento móvil.
+        </p>
+      </div>
+
+      <!-- IMAGEN PRINCIPAL (CRITERIO VISUAL STURM) -->
+      <figure class="my-8 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/images/guia_google_tag_manager_vs_ga4_seo.png" 
+             alt="Especialista en analítica y velocidad web comparando métricas de Google Tag Manager frente a GA4 directo en pantallas de trabajo" 
+             class="w-full h-auto object-cover" 
+             loading="eager" 
+             decoding="async"
+             width="1200" 
+             height="675">
+        <figcaption class="px-4 py-3 text-xs text-slate-500 bg-slate-50 border-t border-slate-200">
+          La elección entre GA4 directo o Google Tag Manager influye directamente en el consumo de JavaScript y en el Interaction to Next Paint (INP) en dispositivos móviles.
+        </figcaption>
+      </figure>
+
+      <!-- CONTENIDO DEL ARTICULO -->
+      <div class="prose prose-slate max-w-none space-y-6 text-slate-700 leading-relaxed text-base">
+        
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          1. ¿Es lo mismo tener Google Tag Manager (GTM) que instalar el código de GA4 directo?
+        </h2>
+        <p>
+          Una confusión muy habitual entre dueños de negocios y emprendedores es pensar que <strong>Google Tag Manager (GTM)</strong> y <strong>Google Analytics 4 (GA4)</strong> son dos versiones del mismo sistema o herramientas que compiten entre sí. En realidad cumplen funciones totalmente distintas dentro de tu ecosistema web:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Google Analytics 4 (GA4):</strong> Es el motor de analítica. Es la herramienta encargada de procesar los datos de las visitas, saber de qué ciudades provienen, calcular el tiempo de lectura, registrar qué botones tocan y mostrarte informes de conversiones. Para funcionar necesita un identificador de medición (como <code>G-KWD0WYVK4J</code>).</li>
+          <li><strong>Google Tag Manager (GTM):</strong> Es una caja de herramientas o "contenedor". No mide nada por su cuenta ni guarda reportes de visitas. Su único objetivo es permitir que un equipo de marketing agregue o quite scripts externos (como GA4, Meta Pixel, Hotjar o Google Ads) desde un panel web sin tener que editar los archivos HTML del sitio.</li>
+        </ul>
+        <p>
+          Si instalás el script de Google Tag Manager en tu página web pero no configuras ninguna etiqueta dentro de su panel, la web descargará el script de GTM pero <strong>no registrará ninguna visita en Google Analytics</strong>. Por el contrario, si pegás la etiqueta oficial de GA4 (<code>gtag.js</code>) directamente en el <code>&lt;head&gt;</code> de tus páginas, la medición comenzará a funcionar de forma inmediata, sin intermediarios.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          2. Comparativa Técnica: GA4 Directo (gtag.js) vs. Google Tag Manager en Velocidad y SEO
+        </h2>
+        <p>
+          Cada línea de JavaScript externa que agregás a tu sitio compite por los recursos del procesador del celular del visitante. La siguiente tabla resume las diferencias técnicas y el impacto real que tiene cada opción en el rendimiento y la administración de tu web:
+        </p>
+
+        <!-- TABLA COMPARATIVA -->
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3.5">Factor Evaluado</th>
+                <th class="px-4 py-3.5">GA4 Directo (gtag.js)</th>
+                <th class="px-4 py-3.5">Google Tag Manager (gtm.js)</th>
+                <th class="px-4 py-3.5 text-emerald-400">Impacto en el Negocio</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Peso inicial de JavaScript</td>
+                <td class="px-4 py-3.5 text-emerald-700 font-semibold">~28 a 35 KB (gzipped)</td>
+                <td class="px-4 py-3.5 text-amber-700">~60 a 110 KB + etiquetas internas</td>
+                <td class="px-4 py-3.5">Menor consumo de datos móviles al navegar en 4G/5G.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Impacto en Core Web Vitals</td>
+                <td class="px-4 py-3.5 text-emerald-700 font-semibold">Mínimo (carga asíncrona limpia)</td>
+                <td class="px-4 py-3.5 text-rose-700 font-medium">Medio a Alto (evaluación de triggers en CPU)</td>
+                <td class="px-4 py-3.5">Google premia sitios con tiempos de respuesta bajo 200 ms.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Medición de WhatsApp y Leads</td>
+                <td class="px-4 py-3.5">Evento directo en JS (1 línea)</td>
+                <td class="px-4 py-3.5">Requiere crear Variable, Trigger y Tag</td>
+                <td class="px-4 py-3.5">El listener nativo en código nunca se desconfigura por error.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Independencia de Marketing</td>
+                <td class="px-4 py-3.5">Requiere tocar el código HTML</td>
+                <td class="px-4 py-3.5 text-emerald-700 font-semibold">Autonomía total desde panel web</td>
+                <td class="px-4 py-3.5">GTM permite a agencias crear campañas sin pedir acceso al hosting.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Riesgo de scripts obsoletos</td>
+                <td class="px-4 py-3.5 text-emerald-700 font-semibold">Nulo (control estricto en repositorio)</td>
+                <td class="px-4 py-3.5 text-amber-700">Alto (quedan tags viejos activos sin usar)</td>
+                <td class="px-4 py-3.5">Los píxeles abandonados siguen ralentizando el celular de los clientes.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Filtro de visitas propias</td>
+                <td class="px-4 py-3.5 text-emerald-700 font-semibold">Control nativo por parámetro o IP</td>
+                <td class="px-4 py-3.5">Reglas de excepción en GTM</td>
+                <td class="px-4 py-3.5">Evita que tus propias pruebas inflen falsamente los datos de venta.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          3. Cómo impacta un contenedor pesado de Tag Manager en tus Core Web Vitals (LCP e INP)
+        </h2>
+        <p>
+          Google utiliza las métricas de <strong>Core Web Vitals</strong> como factor de posicionamiento técnico para determinar la calidad de experiencia de usuario en dispositivos móviles. Dentro de estas métricas, dos se ven especialmente afectadas por el uso indiscriminado de gestores de etiquetas:
+        </p>
+        <ul class="list-disc pl-6 space-y-3">
+          <li>
+            <strong>Interaction to Next Paint (INP):</strong> Mide cuánto tarda la pantalla en reaccionar visualmente cuando un visitante toca un botón, abre un menú desplegable o interactúa con una pestaña. Cuando se utiliza Google Tag Manager con disparadores genéricos de tipo "Todos los clics en elementos", cada toque del usuario obliga al navegador a evaluar decenas de reglas antes de permitir que la interfaz se actualice. Si esa demora supera los <strong>200 milisegundos</strong>, Google califica el sitio como deficiente.
+          </li>
+          <li>
+            <strong>Largest Contentful Paint (LCP) y Total Blocking Time (TBT):</strong> Si el script <code>gtm.js</code> compite por el ancho de banda y bloquea el hilo principal durante la descarga inicial, la tipografía corporativa y la imagen principal tardan más en renderizarse. En sitios evaluados con <a href="/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/" class="text-emerald-700 font-semibold hover:underline">PageSpeed Insights y Core Web Vitals</a>, esto suele restar entre 15 y 30 puntos en la puntuación móvil.
+          </li>
+        </ul>
+        <p>
+          Por esta razón, en sitios web de alta ingeniería y páginas de presentación profesional (como podés comprobar en nuestra <a href="/demos/arquitectura/" class="text-emerald-700 font-semibold hover:underline">demo interactiva de arquitectura</a>), la medición de eventos se programa directamente en código limpio. Esto permite mantener animaciones fluidas a 60 cuadros por segundo y registrar cada interacción sin agregar bibliotecas superfluas.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          4. Cuándo conviene usar GA4 directo en código limpio y cuándo sí tiene sentido migrar a GTM
+        </h2>
+        <p>
+          La decisión no pasa por cuál herramienta es "mejor", sino por la complejidad operativa de tu negocio y quién se encarga de administrar el marketing digital:
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 my-6">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-2.5 py-0.5 rounded-full mb-2">
+              Recomendado para el 85% de las PyMEs
+            </span>
+            <h3 class="font-bold text-slate-900 text-base mb-2">Cuándo elegir GA4 Directo (gtag.js)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              Es la opción ideal para estudios profesionales, constructoras, distribuidoras, empresas de servicios y landing pages comerciales que solo necesitan:
+            </p>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc pl-4">
+              <li>Google Analytics 4 para tráfico orgánico y referencias.</li>
+              <li>Píxel de Meta para campañas en Facebook e Instagram.</li>
+              <li>Medición directa de clics al botón de WhatsApp (mirá nuestra guía de <a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="text-emerald-700 font-semibold hover:underline">cómo instalar GA4 y medir clics en WhatsApp</a>).</li>
+              <li>Máxima velocidad de carga en teléfonos móviles y 100/100 en PageSpeed.</li>
+            </ul>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 px-2.5 py-0.5 rounded-full mb-2">
+              Marketing Avanzado y Multi-Canal
+            </span>
+            <h3 class="font-bold text-slate-900 text-base mb-2">Cuándo sí tiene sentido migrar a GTM</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              Google Tag Manager se vuelve indispensable en proyectos con requerimientos publicitarios continuos:
+            </p>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc pl-4">
+              <li>Tiendas con e-commerce complejo y carritos con remarketing dinámico.</li>
+              <li>Equipos de pauta que prueban nuevos canales cada semana (TikTok, LinkedIn, Pinterest, Twitter Ads).</li>
+              <li>Herramientas de mapas de calor y grabación de sesiones (Hotjar, Microsoft Clarity).</li>
+              <li>Contratos con agencias externas que necesitan libertad para crear tags sin acceso al servidor.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Si al revisar tu consola en Google Search Console notás problemas de indexación o páginas lentas causadas por scripts de terceros, revisá nuestra guía sobre <a href="/blog/errores-google-search-console-seo/" class="text-emerald-700 font-semibold hover:underline">cómo corregir errores de Google Search Console</a> o solicitá una <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:underline">auditoría SEO técnica completa</a> de tu sitio.
+        </p>
+
+        <!-- CTA COMERCIAL -->
+        <div class="my-10 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">
+            Desarrollo Web en Código Limpio · Sin Scripts Innecesarios
+          </span>
+          <h3 class="text-xl sm:text-2xl font-extrabold font-display mb-3">
+            ¿Querés una página web ultrarrápida con métricas de conversión reales?
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Desarrollamos tu Landing Page en código a medida por $150.000 ARS finales (pago único), con Google Analytics 4 y Meta Pixel configurados de forma nativa para medir cada consulta de WhatsApp sin ralentizar la carga ni penalizar tus Core Web Vitals.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3.5">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Leí%20tu%20guía%20de%20GTM%20vs%20GA4%20y%20quiero%20cotizar%20una%20página%20web%20rápida%20con%20analítica%20profesional." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-lg">
+              <span>Consultar por WhatsApp</span>
+            </a>
+            <a href="/#demos" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/15 transition-all">
+              <span>Ver Demos y Precios ($150.000 ARS)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Google Tag Manager reemplaza a Google Analytics 4 o trabajan juntos?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              No lo reemplaza. Google Tag Manager es un contenedor que transporta e inyecta scripts, mientras que GA4 es la plataforma que recopila, procesa y genera los reportes de datos. Si instalás Tag Manager solo sin crear una etiqueta de GA4 adentro, no registrarás ninguna visita.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué Google Tag Manager puede bajar la puntuación de PageSpeed Insights en celulares?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Porque el script gtm.js añade entre 30 y 80 KB de JavaScript inicial que debe ser descargado, parseado y ejecutado por el procesador del teléfono móvil. Si además se configuran muchos disparadores de clics generales, el hilo principal se satura, empeorando el Total Blocking Time (TBT) y el Interaction to Next Paint (INP).
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se pueden medir clics al botón de WhatsApp y cotizadores interactivos sin usar Google Tag Manager?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Sí, de manera nativa y mucho más liviana. Con un listener de JavaScript estándar en tu código (addEventListener) podés disparar la función gtag('event', 'whatsapp_click', {...}) al instante cada vez que un usuario toca el botón de contacto, sin intermediarios ni demoras de red.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Si tengo Meta Pixel y Google Analytics 4 necesito obligatoriamente Google Tag Manager?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              No es necesario. Para una PyME, comercio o profesional que solo utiliza Google Analytics 4 y el Píxel de Meta, incluir ambos scripts directamente en el HTML con carga asíncrona es más rápido, más fácil de auditar y produce una web sensiblemente más veloz.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué pasa si instalo el código de GA4 directo en el HTML y además lo cargo dentro de GTM?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Se produce una duplicación de datos: cada visita enviará dos eventos page_view idénticos al mismo tiempo, lo que inflará artificialmente el tráfico un 100%, distorsionará el porcentaje de rebote y arruinará la precisión de tus métricas de conversión.
+            </p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo excluir mi propia IP o mis visitas de prueba en Google Analytics 4 para no alterar las métricas?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Podés crear un filtro de tráfico interno en el panel de GA4 ingresando tu dirección IP pública, o utilizar una capa en código local mediante un parámetro URL (?soy_erik=1) que guarde una clave en localStorage y desactive gtag automáticamente cuando navegás tu sitio.
+            </p>
+          </details>
+        </div>
+
+      </div>
+    
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search & AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER UNIFICADO -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

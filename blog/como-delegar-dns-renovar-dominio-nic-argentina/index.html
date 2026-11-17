@@ -71,7 +71,7 @@
     });
   </script>
 
-  <title>Cómo delegar un dominio en NIC Argentina, cambiar DNS y renovar tu .com.ar (2026) | Erik Website</title>
+  <title>Cómo Delegar Dominio en NIC Argentina y Renovar .com.ar</title>
   <meta name="description" content="Guía paso a paso para delegar un dominio .com.ar en NIC Argentina (TAD), cambiar DNS a Cloudflare o Hostinger, cuánto tarda en propagar y cómo renovar antes del vencimiento.">
   <link rel="canonical" href="https://erikwebsite.com/blog/como-delegar-dns-renovar-dominio-nic-argentina/">
 
@@ -112,7 +112,7 @@
         "description": "Guía técnica paso a paso para delegar un dominio .com.ar en NIC Argentina desde Trámites a Distancia (TAD), configurar servidores DNS de Cloudflare o hosting y renovar dominios próximos a vencer.",
         "url": "https://erikwebsite.com/blog/como-delegar-dns-renovar-dominio-nic-argentina/",
         "datePublished": "2026-10-28T10:00:00-03:00",
-        "dateModified": "2026-10-28T10:00:00-03:00",
+        "dateModified": "2026-11-17T09:30:00-03:00",
         "author": {
           "@type": "Person",
           "name": "Erik Ladstatter",
@@ -184,6 +184,22 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "El registro en NIC.ar dura exactamente 1 año. Cuando vence, entra en un período de gracia de 30 días corridos donde el sitio web y los correos corporativos dejan de funcionar a los pocos días, pero todavía podés renovarlo desde tu cuenta. Pasados esos 30 días, entra en proceso de baja (15 días adicionales) y se libera al público, permitiendo que cualquier tercero o bot de revendedores lo registre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pongo en 'Host' al delegar en NIC Argentina si mi servidor me dio una dirección IP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NIC Argentina no permite escribir números de IP directamente (como 192.0.2.1) salvo que crees un Autodelegado. La solución recomendada es crear una cuenta gratuita en Cloudflare, ingresar en NIC.ar los dos servidores DNS de Cloudflare (ej. lara.ns.cloudflare.com) y configurar la dirección IP de tu servidor web en el panel DNS de Cloudflare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto sale renovar un dominio .com.ar en NIC Argentina en 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El arancel oficial de renovación anual en NIC Argentina para dominios .com.ar tiene el mismo valor que el alta inicial (aproximadamente $8.500 ARS por año pagando por VEP o Homebanking directamente al Estado nacional, sin comisiones ni intermediarios en dólares)."
             }
           }
         ]
@@ -474,6 +490,42 @@
           Preguntas frecuentes sobre delegación DNS y renovación en NIC.ar
         </h2>
         <div class="space-y-3">
+          <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+              <span>¿Cómo delegar un dominio en NIC.ar paso a paso desde TAD?</span>
+              <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              Ingresá a Trámites a Distancia (TAD) con CUIT y Clave Fiscal de ARCA, entrá a <em>NIC Argentina - Operaciones sobre dominios</em>, hacé clic en <strong>Delegar</strong> junto a tu dominio .com.ar, elegí <em>Agregar una nueva delegación</em>, ingresá el Host 1 y Host 2 de tu servidor o Cloudflare y presioná <strong>Guardar Cambios</strong> y <strong>Ejecutar Cambios</strong>.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+              <span>¿Cuánto tarda NIC Argentina en delegar un dominio o cambiar los DNS?</span>
+              <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              NIC Argentina regenera su zona maestra cada 30 a 60 minutos luego de presionar "Ejecutar Cambios". La propagación en los proveedores de internet locales (Personal Flow, Movistar, Claro, Telecentro) demora habitualmente entre <strong>1 y 6 horas</strong>, con un plazo máximo técnico de 24 horas.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+              <span>¿Por qué mi dominio en NIC Argentina dice "No Delegado" aunque ya lo pagué?</span>
+              <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              El estado <strong>No Delegado</strong> significa que sos el titular legal del nombre .com.ar, pero todavía no le indicaste a NIC.ar en qué servidor web está alojada tu página. Hasta que no cargues al menos dos DNS (Host primario y secundario) y guardes los cambios, el dominio no mostrará ninguna página web.
+            </p>
+          </details>
+          <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+            <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
+              <span>¿Qué pasa si no renuevo mi dominio en NIC Argentina a tiempo?</span>
+              <span class="text-emerald-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              El registro dura exactamente 1 año. Al vencer, tenés un <strong>período de gracia de 30 días corridos</strong> donde el sitio web se suspende, pero podés renovarlo desde tu cuenta de TAD. Pasados esos 30 días, entra en baja (15 días más) y se libera al público general para que cualquiera lo registre.
+            </p>
+          </details>
           <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
             <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between">
               <span>¿Qué pongo en "Host" al delegar en NIC Argentina si mi servidor me dio una dirección IP?</span>

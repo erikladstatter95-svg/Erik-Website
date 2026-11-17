@@ -618,6 +618,28 @@
     - Cabecera simplificada con dropdown de `Servicios` (*Alarmas Hogar*, *Comercios*, *Seguridad Rural*), `App Móvil` y `Nosotros & Contacto` (eliminados badges y botones redundantes).
     - Reemplazado azul navy por el tono de grafito carbón `#373435` / `#242223` del logo oficial de SEGU24.
   - **Verificaciones:** Compilación exitosa en Vite (`npm run build`), 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis (Regla #17), `noindex, nofollow` estricto (Regla #20).
+- [x] **2026-11-17 (Semana 2 · Martes 17/11 — Eje Especialista SEO, Velocidad e IA):**
+  - **Boost 1 (`/blog/como-delegar-dns-renovar-dominio-nic-argentina/` — Pos `6.9` y `78` impr en GSC):**
+    - `<title>` acortado de 96 a **56 caracteres**: `Cómo Delegar Dominio en NIC Argentina y Renovar .com.ar`.
+    - Ampliado de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand`) + Schema `FAQPage` y `dateModified: 2026-11-17T09:30:00-03:00` cubriendo estado *"No Delegado"*, cambio a DNS de Cloudflare y tiempos de propagación.
+  - **Boost 2 (`/blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/` y `/blog/portfolio-web-arquitectos-estudios-de-arquitectura/`):**
+    - Acortados `<title>` a **57 caracteres** (`Páginas Web para Constructoras y Estudios de Arquitectura`) y **49 caracteres** (`Portfolio Web para Arquitectos y Obras: Guía 2026`).
+    - Agregado en ambas guías el bloque destacado de prueba en vivo hacia la nueva **Demo Interactiva `/demos/arquitectura/`** (*VÉRTICE · Arquitectura & Gestión de Obras*), destacando el portfolio filtrable, el slider interactivo antes/después, consorcios y cotizador de m² a WhatsApp.
+    - Ampliado a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified: 2026-11-17T09:30:00-03:00`.
+  - **Nuevo Artículo de Autoridad SEO en `/blog/google-tag-manager-vs-ga4-seo/`:**
+    - Main Keyword: `Google Tag Manager vs GA4 directo` (6 palabras naturales, slug exacto Regla #18).
+    - `<title>` de **56 caracteres**: `Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?`.
+    - `<h1>`: `Google Tag Manager vs. GA4 Directo (gtag.js): Qué Conviene Más para tu Velocidad Web y el SEO`.
+    - `meta description` de 156 caracteres y Direct Answer Sturm en primeras 8 palabras.
+    - Tabla comparativa técnica HTML (peso de scripts, ejecución en hilo principal / INP, medición de clics a WhatsApp y riesgo de tags obsoletos).
+    - 6 FAQs interactivas con GA4 tracking y marcado `Schema.org` (`BlogPosting`, `BreadcrumbList`, `FAQPage`).
+    - Fotografía editorial auténtica de especialista en analítica en Buenos Aires con dual monitor mostrando métricas Core Web Vitals en verde y dashboard GA4 (`guia_google_tag_manager_vs_ga4_seo.png`, 316.6 KB, dual-sync en `images/` y `public/images/`).
+    - Añadido a `blog/index.html` (**182 guías activas**), `vite.config.js`, `sitemap.xml` y `public/sitemap.xml` (**201 URLs canónicas**).
+  - **Infraestructura & Notificaciones Oficiales:**
+    - 0 enlaces rotos (`audit_all_internal_links.py`).
+    - 0 emojis (Regla #17).
+    - Compilación limpia en Vite (`npm run build`) en 17.41s con 0 errores y 0 advertencias.
+    - Notificaciones enviadas: Google Indexing API v3 (`200 OK` en las 5 URLs), GSC sitemap enviado con éxito, IndexNow API (`202 Accepted` en 5 URLs) y Bing Webmaster API `SubmitUrlBatch` (`200 OK`).
 
 
 

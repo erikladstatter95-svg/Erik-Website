@@ -300,24 +300,25 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Martes 17/11 — Eje Especialista SEO, Velocidad e IA (Boost Diseño Web Maduro + Demo Arquitectura + Nuevo Artículo SEO: GTM vs GA4)
+### [x] Martes 17/11 — Eje Especialista SEO, Velocidad e IA (Boost Diseño Web Maduro + Demo Arquitectura + Nuevo Artículo SEO: GTM vs GA4) [COMPLETADO]
 
 > **Regla de Maduración (14+ días):** Como los artículos de la categoría SEO fueron publicados hace pocos días en el Sprint, no se tocan hasta que cumplan su ventana de maduración en Search Console. En su lugar, ejecutamos el Boost sobre páginas maduras de **Diseño Web / NIC.ar** e integramos la nueva **Demo de Arquitectura (`/demos/arquitectura/`)** en el cluster de Arquitectos y Constructoras.
 
-#### A. Paso 1 — Doble Cirugía / Boost en Diseño Web Maduro + Integración de `/demos/arquitectura/`
+#### A. Paso 1 — Doble Cirugía / Boost en Diseño Web Maduro + Integración de `/demos/arquitectura/` [EJECUTADO]
 1. **Boost 1 (`/blog/como-delegar-dns-renovar-dominio-nic-argentina/` — `78` impr y Posición `6.9` en GSC, 18 días de antigüedad):**
-   - **Diagnóstico GSC:** Posiciona en **Puesto `6.9`** con `78` impresiones reales, pero su `<title>` actual mide **96 caracteres** (se corta en Google) y solo tiene **2 FAQs**.
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 96 a **56 caracteres**: `Cómo Delegar Dominio en NIC Argentina y Renovar .com.ar`
-     - Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand` y actualización de Schema `FAQPage` + `dateModified: 2026-11-17T09:30:00-03:00`) cubriendo estado *"No Delegado"*, cambio de DNS a Cloudflare/hosting y tiempos de propagación.
+   - **Diagnóstico GSC:** Posiciona en **Puesto `6.9`** con `78` impresiones reales, pero su `<title>` actual medía **96 caracteres** (se cortaba en Google) y solo tenía **2 FAQs**.
+   - **Cirugía ejecutada en Paso 3:**
+     - Acortado `<title>` de 96 a **56 caracteres**: `Cómo Delegar Dominio en NIC Argentina y Renovar .com.ar`
+     - Ampliado de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` con evento GA4 `faq_expand` y actualización de Schema `FAQPage` + `dateModified: 2026-11-17T09:30:00-03:00`) cubriendo estado *"No Delegado"*, cambio de DNS a Cloudflare/hosting y tiempos de propagación.
 2. **Boost 2 (`/blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/` y `/blog/portfolio-web-arquitectos-estudios-de-arquitectura/` — Integración de `/demos/arquitectura/`):**
-   - **Diagnóstico:** Ambas guías maduras tienen `<title>` largos (102 y 74 caracteres), solo 2 FAQs y **aún no enlazan a la nueva Demo Interactiva `/demos/arquitectura/`** (*VÉRTICE · Arquitectura & Gestión de Obras*).
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de Constructoras/Arquitectura de 102 a **57 caracteres**: `Páginas Web para Constructoras y Estudios de Arquitectura`
-     - Agregar en ambas guías un bloque destacado de **Prueba en Vivo hacia `/demos/arquitectura/`** (destacando el Portfolio filtrable por tipología, el Slider Interactivo Antes/Después para remodelaciones, la sección de Consorcios & Ley 257 y el Cotizador de Obra por m² conectado a WhatsApp).
-     - Ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
+   - **Diagnóstico:** Ambas guías maduras tenían `<title>` largos (102 y 74 caracteres), solo 2 FAQs y **aún no enlazaban a la nueva Demo Interactiva `/demos/arquitectura/`** (*VÉRTICE · Arquitectura & Gestión de Obras*).
+   - **Cirugía ejecutada en Paso 3:**
+     - Acortado `<title>` de Constructoras/Arquitectura de 102 a **57 caracteres**: `Páginas Web para Constructoras y Estudios de Arquitectura`
+     - Acortado `<title>` de Portfolio Arquitectos a **49 caracteres**: `Portfolio Web para Arquitectos y Obras: Guía 2026`
+     - Agregado en ambas guías un bloque destacado de **Prueba en Vivo hacia `/demos/arquitectura/`** (destacando el Portfolio filtrable por tipología, el Slider Interactivo Antes/Después para remodelaciones, la sección de Consorcios & Ley 257 y el Cotizador de Obra por m² conectado a WhatsApp).
+     - Ampliado a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified: 2026-11-17T09:30:00-03:00`.
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO (0% Canibalización Verificada)
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO (0% Canibalización Verificada) [EJECUTADO]
 - **Main Keyword:** `Google Tag Manager vs GA4 directo`
 - **Slug (Regla #18 — 6 palabras naturales):** `/blog/google-tag-manager-vs-ga4-seo/`
 - **`<title>` (56 caracteres):** `Google Tag Manager vs GA4 Directo: ¿Cuál Conviene 2026?`
@@ -326,7 +327,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 - **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
   > **Elegir entre Google Tag Manager vs. GA4 directo (`gtag.js`)** depende de cuántos píxeles y herramientas de marketing uses: insertar GA4 directo en código es más liviano y rápido para los Core Web Vitals de una PyME, mientras que GTM solo se justifica cuando administrás múltiples etiquetas complejas sin tocar el código.
 - **Categoría en `blog/index.html`:** `seo` (*Auditoría SEO, Velocidad e IA*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_google_tag_manager_vs_ga4_seo.png` — Especialista en analítica y performance web en oficina de Buenos Aires comparando en doble monitor el rendimiento de carga (`gtag.js` limpio con métricas Core Web Vitals en verde vs contenedor de scripts) junto a métricas de conversión de WhatsApp; pastilla `"ANALÍTICA & PERFORMANCE"` y sello `erikwebsite.com`.
+- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_google_tag_manager_vs_ga4_seo.png` (316.6 KB, dual-sync con `public/images/`) — Especialista en analítica y performance web en oficina de Buenos Aires comparando en doble monitor el rendimiento de carga (`gtag.js` limpio con métricas Core Web Vitals en verde vs contenedor de scripts) junto a métricas de conversión de WhatsApp; pastilla `"ANALÍTICA & PERFORMANCE"` y sello `erikwebsite.com`.
 - **Estructura de Subtítulos `<h2>`:**
   - `<h2>1. ¿Es lo mismo tener Google Tag Manager (GTM) que instalar el código de GA4 directo?</h2>`
   - `<h2>2. Comparativa Técnica: GA4 Directo (gtag.js) vs. Google Tag Manager en Velocidad y SEO</h2>` (Tabla comparativa HTML: Peso de scripts, ejecución en hilo principal / INP, facilidad para medir `whatsapp_click` y `generate_lead`, riesgo de contenedores inflados por agencias).
@@ -345,6 +346,12 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
   4. `¿Si tengo Meta Pixel y Google Analytics 4 necesito obligatoriamente Google Tag Manager?`
   5. `¿Qué pasa si instalo el código de GA4 directo en el HTML y además lo cargo dentro de GTM?`
   6. `¿Cómo excluir mi propia IP o mis visitas de prueba en Google Analytics 4 para no alterar las métricas?`
+
+#### C. Métricas de Infraestructura y Notificaciones (Martes 17/11 Concluido)
+- **Inventario Total Actualizado:** **182 guías activas** en `/blog/index.html` (34 en Auditoría SEO, Velocidad e IA) y **201 URLs canónicas** en `sitemap.xml` / `public/sitemap.xml`.
+- **Auditoría de Enlaces Internos:** 0 enlaces rotos (`audit_all_internal_links.py` 100% limpio en todo el sitio).
+- **Compilación de Producción:** `npm run build` en 17.41s con 0 errores y 0 advertencias.
+- **Notificaciones Oficiales:** Google Indexing API v3 (`200 OK` en las 5 URLs), GSC Sitemap (`sitemap.xml` enviado con éxito), IndexNow (`202 Accepted` en 5 URLs) y Bing Webmaster API `SubmitUrlBatch` (`200 OK`).
 
 ---
 
