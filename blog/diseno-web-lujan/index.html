@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Web en Luján: Páginas para Empresas y Comercios</title>
+  <meta name="description" content="Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.">
+  <link rel="canonical" href="https://erikwebsite.com/blog/diseno-web-lujan/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://erikwebsite.com/blog/diseno-web-lujan/">
+  <meta property="og:title" content="Diseño Web en Luján: Páginas para Empresas y Comercios">
+  <meta property="og:description" content="Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_diseno_web_lujan.png">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diseño Web en Luján: Páginas para Empresas y Comercios">
+  <meta name="twitter:description" content="Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_diseno_web_lujan.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/diseno-web-lujan/#article",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://erikwebsite.com/#website",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/"
+      },
+      "headline": "Diseño de Páginas Web en Luján (Buenos Aires): Desarrollo Rápido y Google Maps para Empresas, Turismo y Profesionales",
+      "description": "Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.",
+      "inLanguage": "es-AR",
+      "mainEntityOfPage": "https://erikwebsite.com/blog/diseno-web-lujan/",
+      "datePublished": "2026-11-18T09:30:00-03:00",
+      "dateModified": "2026-11-18T09:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://erikwebsite.com/images/guia_diseno_web_lujan.png",
+        "width": 1200,
+        "height": 675
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/diseno-web-lujan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Diseño web en Luján",
+          "item": "https://erikwebsite.com/blog/diseno-web-lujan/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/diseno-web-lujan/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta hacer una página web profesional en Luján en 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una landing page profesional en código limpio a medida para una empresa, comercio o servicio en Luján tiene un valor de $150.000 ARS finales (pago único: 50% al iniciar y 50% contra entrega). Se entrega lista en 3 a 5 días hábiles con dominio .com.ar, hosting de alta velocidad bonificado el primer mes y botón directo a WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto demora la entrega de la página web y qué material tengo que enviar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Demoramos exactamente entre 3 y 5 días hábiles. Vos solo nos mandás fotos de tu negocio o catálogo, tu logotipo y un par de audios de WhatsApp contándonos qué vendés. Nosotros redactamos los textos comerciales, estructuramos la propuesta y configuramos todo el aspecto técnico."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sirve para restaurantes de campo en Carlos Keen, quintas y hoteles en Luján?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, es el formato ideal para captar al público de fin de semana que viaja desde CABA y Zona Norte. La página carga al instante en celulares, muestra el menú de campo o las comodidades del alojamiento y permite reservar mesa o consultar disponibilidad directamente por WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo hacen para que mi empresa o estudio de arquitectura del corredor Ruta 6 / Acceso Oeste aparezca en Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Optimizamos tu ficha de Google Maps vinculada a tu web, configuramos el marcado Schema.org LocalBusiness y redactamos el código semántico para que Google asocie tu negocio a las búsquedas de Luján, Open Door, Jáuregui y el corredor de Ruta 6."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El pago de $150.000 ARS es único o estoy obligado a pagar una mensualidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El pago de $150.000 ARS es único y el sitio web es 100% de tu propiedad. El primer mes de hosting y soporte técnico está bonificado; luego contás con un abono opcional de mantenimiento por $20.000 ARS mensuales sin contratos forzosos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Me ayudan a registrar el dominio .com.ar en NIC Argentina y configurar el correo corporativo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Totalmente. Te guiamos paso a paso para delegar tu dominio .com.ar oficial a tu nombre en NIC Argentina y configuramos casillas de correo corporativo profesionales para que proyectes máxima confianza comercial."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <!-- Meta Pixel noscript Fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+  </noscript>
+
+  <!-- NAVBAR UNIFICADO -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg sm:text-xl text-slate-900 tracking-tight flex items-center">
+        <span>Erik <span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-slate-600 tracking-tight">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-700 transition-colors font-semibold text-emerald-600">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-700 transition-colors font-semibold text-slate-600">San Juan</a>
+        <a href="/blog/" class="text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5">Blog</a>
+      </nav>
+
+      <a href="https://wa.me/5492645185359?text=Hola%20Erik%21%20Soy%20de%20Luj%C3%A1n%20y%20quiero%20consultar%20por%20el%20dise%C3%B1o%20de%20mi%20p%C3%A1gina%20web."
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-10 sm:py-16">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- BREADCRUMBS -->
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-slate-900 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-slate-700 truncate">Diseño web en Luján</span>
+      </nav>
+
+      <!-- ENCABEZADO -->
+      <header class="mb-8">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full mb-3">
+          Luján · Corredor Oeste · Provincia de Buenos Aires
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
+          Diseño de Páginas Web en Luján (Buenos Aires): Desarrollo Rápido y Google Maps para Empresas, Turismo y Profesionales
+        </h1>
+
+        <div class="flex items-center gap-3 text-xs text-slate-500 pb-6 border-b border-slate-200">
+          <span>Por <strong>Erik Ladstatter</strong></span>
+          <span>•</span>
+          <span>Publicado: 18 de noviembre de 2026</span>
+          <span>•</span>
+          <span>Lectura: 7 minutos</span>
+        </div>
+      </header>
+
+      <!-- RESPUESTA DIRECTA (AEO / GEO BLOCK - REGLA STURM #4) -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200 mb-8 text-slate-800">
+        <p class="font-bold text-slate-900 text-base mb-2">
+          Respuesta directa: ¿cómo contratar diseño web en Luján y cuánto cuesta en 2026?
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700"><strong>El servicio de diseño web en Luján (Provincia de Buenos Aires)</strong> permite a empresas industriales del corredor Acceso Oeste y Ruta 6, alojamientos turísticos, comercios del centro y profesionales independientes captar clientes todos los días desde Google y Google Maps con una Landing Page en código a medida por <strong>$150.000 ARS finales</strong> (pago único: 50% al iniciar y 50% contra entrega). Se entrega lista para usar en 3 a 5 días hábiles, con dominio <code>.com.ar</code> propio, carga sub-1 segundo en celulares y botón directo a WhatsApp sin pagar comisiones por venta.
+        </p>
+      </div>
+
+      <!-- IMAGEN PRINCIPAL (CRITERIO VISUAL STURM) -->
+      <figure class="my-8 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/images/guia_diseno_web_lujan.png" 
+             alt="Estudio y oficina moderna en Luján Buenos Aires con laptop mostrando diseño web responsivo con mapa local y botón de WhatsApp" 
+             class="w-full h-auto object-cover" 
+             loading="eager" 
+             decoding="async"
+             width="1200" 
+             height="675">
+        <figcaption class="px-4 py-3 text-xs text-slate-500 bg-slate-50 border-t border-slate-200">
+          En Luján, Carlos Keen y el corredor de Ruta 6, una página web ultrarrápida conecta las búsquedas de Google directamente con tu WhatsApp.
+        </figcaption>
+      </figure>
+
+      <!-- CONTENIDO DEL ARTÍCULO -->
+      <div class="prose prose-slate max-w-none space-y-6 text-slate-700 leading-relaxed text-base">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          1. Por qué las empresas, cabañas y comercios de Luján tienen una oportunidad única en Google hoy
+        </h2>
+        <p>
+          El partido de <strong>Luján</strong>, ubicado en un punto neurálgico del oeste bonaerense sobre el eje de la Ruta Nacional 5, el Acceso Oeste y la Ruta Provincial 6, vive una transformación económica acelerada. Con más de 110.000 habitantes y una combinación virtuosa entre historia, industria pesada, agro y turismo de escapada, el mercado digital presenta una demanda creciente con una competencia que en su mayoría sigue utilizando sitios lentos o perfiles desactualizados de redes sociales.
+        </p>
+        <p>
+          En este escenario, tener una web moderna permite liderar en cuatro polos estratégicos del partido:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Polo Industrial y Logístico Ruta 6 / Acceso Oeste:</strong> Empresas metalúrgicas, distribuidoras mayoristas, depósitos logísticos y fabricantes de aberturas que necesitan captar clientes B2B en todo el corredor que conecta Luján con General Rodríguez, Moreno y la vecina ciudad de <a href="/blog/diseno-web-pilar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Pilar</a>.</li>
+          <li><strong>Desarrollos Urbanísticos y Barrios Privados:</strong> Constructoras, corralones y estudios de arquitectura que intervienen en clubes de campo y barrios cerrados de Open Door, Comarcas de Luján y Cortínez. Para este segmento, podés ver nuestra <a href="/demos/arquitectura/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">demo interactiva para estudios de arquitectura y obras</a> con cotizador por m² y portfolio filtrable.</li>
+          <li><strong>Turismo Rural y Gastronomía de Escapada:</strong> Restaurantes de campo, quintas de eventos, estancias y cabañas en <strong>Carlos Keen</strong>, Jáuregui y Olivera, donde los turistas de CABA y Zona Norte buscan dónde almorzar o pasar el fin de semana directamente desde el celular en la ruta.</li>
+          <li><strong>Comercios y Servicios Profesionales del Centro de Luján:</strong> Clínicas médicas, odontólogos, abogados, contadores y comercios de la calle San Martín y Av. Humberto Primo que buscan recibir consultas pre-filtradas en WhatsApp sin depender de comisiones de intermediarios.</li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          2. Qué incluye nuestra propuesta de diseño web en Luján por $150.000 ARS finales
+        </h2>
+        <p>
+          Muchas agencias tradicionales en el corredor oeste cotizan páginas web en presupuestos que superan los $500.000 ARS, demoran semanas en entregar y montan sitios sobre plantillas infladas de WordPress que tardan más de 5 segundos en abrir en celulares.
+        </p>
+        <p>
+          En <strong>Erik Website</strong> apostamos por una solución transparente y eficiente: desarrollamos tu página en código limpio a medida (HTML5, Tailwind CSS y JavaScript optimizado), garantizando que cargue en <strong>menos de 1 segundo</strong> en cualquier dispositivo móvil.
+        </p>
+
+        <!-- TABLA COMPARATIVA -->
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs not-prose">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+              <tr>
+                <th class="px-4 py-3.5">Aspecto</th>
+                <th class="px-4 py-3.5">Agencia Tradicional / WordPress</th>
+                <th class="px-4 py-3.5 text-emerald-400">Erik Website ($150.000 ARS)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-xs sm:text-sm">
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Inversión inicial</td>
+                <td class="px-4 py-3.5">$450.000 a $900.000 ARS</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">$150.000 ARS finales (pago único)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Velocidad de carga en celular</td>
+                <td class="px-4 py-3.5">4 a 8 segundos (pierde el 50% de visitas)</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Menos de 1 segundo (Core Web Vitals en verde)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Plazo de entrega real</td>
+                <td class="px-4 py-3.5">30 a 60 días hábiles</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">3 a 5 días hábiles llave en mano</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Redacción y armado comercial</td>
+                <td class="px-4 py-3.5">Te exigen entregar los textos armados</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Incluida: con tus audios redactamos todo</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Hosting y Mantenimiento</td>
+                <td class="px-4 py-3.5">Abonos altos obligatorios por contrato</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">1° mes gratis · Luego opcional $20.000 ARS/mes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          3. Posicionamiento en Google Maps para negocios de Luján, Jáuregui, Pueblo Nuevo y Carlos Keen
+        </h2>
+        <p>
+          El 80% de los vecinos y turistas que buscan un servicio en Luján no escriben la dirección web en el navegador: buscan en Google o abren Google Maps desde su celular. Si tu negocio no figura entre los primeros tres resultados del mapa local (el codiciado <em>Local 3-Pack</em>), estás perdiendo llamados y consultas todos los días frente a competidores que sí están visibles.
+        </p>
+        <p>
+          Al programar tu sitio web, aplicamos un protocolo de sincronización total con Google Maps:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Datos Estructurados Schema.org LocalBusiness:</strong> Le indicamos de forma inequívoca al algoritmo de Google el nombre exacto de tu negocio, dirección física en Luján, teléfono comercial, coordenadas de geolocalización y horarios de atención. Si todavía no diste de alta tu ficha, podés seguir nuestra guía paso a paso sobre <a href="/blog/como-poner-agregar-negocio-local-google-maps-gratis/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">cómo agregar tu negocio local en Google Maps gratis</a>.</li>
+          <li><strong>Consistencia NAP (Name, Address, Phone):</a></strong> Garantizamos que la información de contacto sea idéntica en tu sitio web, en tu perfil de empresa en Google y en tus redes sociales, un factor determinante para ganar autoridad orgánica local.</li>
+          <li><strong>Integración con el Corredor Oeste:</strong> Conectamos tu página con las guías de referencia de <a href="/blog/diseno-web-zona-oeste/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">diseño web en Zona Oeste</a> y <a href="/blog/diseno-web-pilar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">diseño web en Pilar</a> para captar tráfico regional calificado.</li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-6">
+          4. Cómo convertir las búsquedas de turistas y empresas del corredor Oeste en consultas de WhatsApp
+        </h2>
+        <p>
+          Una página web no debe ser un folleto estático guardado en un cajón digital: debe funcionar como un vendedor activo las 24 horas del día. En Argentina, la gran mayoría de las ventas y contrataciones se cierran en una conversación directa de WhatsApp.
+        </p>
+        <p>
+          Por eso, nuestras páginas web incorporan botones flotantes con textos pre-armados según el servicio que el cliente está mirando. Si tenés una cabaña en Carlos Keen, el botón dirá automáticamente: <em>"Hola! Quisiera consultar disponibilidad y tarifas para el fin de semana"</em>; si tenés un taller de aberturas o fábrica de muebles, el mensaje dirá: <em>"Hola! Quisiera solicitar un presupuesto de aberturas a medida"</em>. Esto elimina la fricción y aumenta hasta un 300% la tasa de contacto efectivo.
+        </p>
+        <p>
+          Y si ya tenés un sitio web funcionando en Luján pero sentís que no te genera consultas o carga demasiado lento, podés solicitar nuestro servicio de <a href="/auditoria-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Auditoría SEO y optimización de velocidad</a> para identificar exactamente qué puntos técnicos están frenando tu crecimiento.
+        </p>
+
+        <!-- CTA COMERCIAL -->
+        <div class="my-10 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl not-prose">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">
+            Desarrollo Web Llave en Mano · Entrega en 3 a 5 Días
+          </span>
+          <h3 class="text-xl sm:text-2xl font-extrabold font-display mb-3">
+            ¿Querés una página web profesional para tu empresa o negocio en Luján?
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Desarrollamos tu landing page en código limpio de carga instantánea por $150.000 ARS finales (pago único), lista en 3 a 5 días hábiles con dominio propio, correo corporativo, optimización para Google Maps y 2 rondas de revisión.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-3.5">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik%21%20Soy%20de%20Luj%C3%A1n%20y%20quiero%20consultar%20por%20el%20dise%C3%B1o%20de%20mi%20p%C3%A1gina%20web." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-lg">
+              <span>Consultar por WhatsApp</span>
+            </a>
+            <a href="/#demos" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/15 transition-all">
+              <span>Ver Demos y Precios ($150.000 ARS)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes sobre diseño web en Luján
+        </h2>
+        <div class="space-y-4 not-prose">
+          
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cuesta hacer una página web profesional en Luján en 2026?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Una landing page profesional en código limpio a medida para una empresa, comercio o servicio en Luján tiene un valor de $150.000 ARS finales (pago único: 50% al iniciar y 50% contra entrega). Se entrega lista en 3 a 5 días hábiles con dominio .com.ar, hosting de alta velocidad bonificado el primer mes y botón directo a WhatsApp.</p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto demora la entrega de la página web y qué material tengo que enviar?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Demoramos exactamente entre 3 y 5 días hábiles. Vos solo nos mandás fotos de tu negocio o catálogo, tu logotipo y un par de audios de WhatsApp contándonos qué vendés. Nosotros redactamos los textos comerciales, estructuramos la propuesta y configuramos todo el aspecto técnico.</p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Sirve para restaurantes de campo en Carlos Keen, quintas y hoteles en Luján?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Sí, es el formato ideal para captar al público de fin de semana que viaja desde CABA y Zona Norte. La página carga al instante en celulares, muestra el menú de campo o las comodidades del alojamiento y permite reservar mesa o consultar disponibilidad directamente por WhatsApp.</p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo hacen para que mi empresa o estudio de arquitectura del corredor Ruta 6 / Acceso Oeste aparezca en Google?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Optimizamos tu ficha de Google Maps vinculada a tu web, configuramos el marcado Schema.org LocalBusiness y redactamos el código semántico para que Google asocie tu negocio a las búsquedas de Luján, Open Door, Jáuregui y el corredor de Ruta 6.</p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿El pago de $150.000 ARS es único o estoy obligado a pagar una mensualidad?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">El pago de $150.000 ARS es único y el sitio web es 100% de tu propiedad. El primer mes de hosting y soporte técnico está bonificado; luego contás con un abono opcional de mantenimiento por $20.000 ARS mensuales sin contratos forzosos.</p>
+          </details>
+
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Me ayudan a registrar el dominio .com.ar en NIC Argentina y configurar el correo corporativo?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">Totalmente. Te guiamos paso a paso para delegar tu dominio .com.ar oficial a tu nombre en NIC Argentina y configuramos casillas de correo corporativo profesionales para que proyectes máxima confianza comercial.</p>
+          </details>
+
+        </div>
+
+      </div>
+    
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search & AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Nivel 1: Identidad y Navegación Principal -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <!-- Nivel 2: Cierre Legal y Micro-créditos -->
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

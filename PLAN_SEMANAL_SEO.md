@@ -355,7 +355,15 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Miércoles 18/11 — Eje Diseño Web y Localidades (Boost Zona Sur GBA + Ciudad Nueva: Luján)
+### [x] Miércoles 18/11 — Eje Diseño Web y Localidades (Completado: Boost Zona Sur GBA + Nuevo Artículo Luján)
+
+> **Estado:** COMPLETADO CON ÉXITO.
+> - **Boost Aplicado:** `/blog/diseno-web-zona-sur/` (`<title>` optimizado a 56 chars, H2 #2 reestructurado con queries comerciales de GSC, 6 FAQs interactivas + Schema FAQPage, dateModified actualizado).
+> - **Nuevo Artículo Publicado:** `/blog/diseno-web-lujan/` (Main Keyword: `Diseño web en Luján`, slug natural de 4 palabras, Direct Answer Sturm, tabla comparativa, 6 FAQs, 0 emojis, imagen PIL optimizada 255.8 KB).
+> - **Interlinking Bidireccional:** Enlace desde `/blog/diseno-web-zona-oeste/` hacia `/blog/diseno-web-lujan/` y enlaces internos hacia `/blog/diseno-web-pilar/`, `/blog/diseno-web-zona-oeste/`, `/demos/arquitectura/`, `/auditoria-seo/`.
+> - **Registro & Build:** Card añadida en `blog/index.html` (categoría `maps`), contador actualizado a 183 guías, ruta registrada en `vite.config.js`, sitemaps sincronizados con 202 URLs canónicas (`sitemap.xml` y `public/sitemap.xml`).
+> - **Verificación:** 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis (Regla #17), build Vite limpio (`npm run build` en 28.22s).
+> - **Indexación:** Notificación a Google Indexing API v3 (`200 OK`), GSC Sitemap ping, IndexNow (`202 Accepted`) y Bing Webmaster API (`200 OK`).
 
 #### A. Paso 1 — Cirugía / Boost Geográfico en "Striking Distance" (Pos 9.0 a 19.5 en GSC)
 - **URL a Optimizar:** `/blog/diseno-web-zona-sur/`
@@ -366,13 +374,10 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
   - `'diseño web hosting y seo zona sur'` (`Pos 11.8`, 4 imp)
   - `'diseño web posicionamiento seo zona sur'` (`Pos 19.5`, 2 imp)
   - `'diseño web landing page google ads zona sur'` (`Pos 21.0`, 2 imp)
-- **Cirugía exacta a ejecutar en Paso 3:**
-  1. Optimizar `<title>` a **56 caracteres**: `Diseño Web, Hosting y SEO en Zona Sur GBA: Precios 2026`
-  2. Actualizar `<h2>` #2 a: `Diseño web, Landing Page, Hosting y Posicionamiento SEO en Zona Sur: Todo Resuelto en un Solo Lugar` e incluir las frases exactas `'diseño web landing page y hosting zona sur'`, `'diseño web para Google Ads en Zona Sur'` y enlace a la nueva demo `/demos/arquitectura/` para estudios y constructoras del corredor Canning / Lomitas / Quilmes.
-  3. Ampliar de 3 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-18T09:30:00-03:00`):
-     - FAQ 4: `¿El servicio de diseño web en Zona Sur incluye el hosting rápido y el certificado SSL?`
-     - FAQ 5: `¿Hacen Landing Pages optimizadas para campañas de Google Ads y Meta Ads en Zona Sur?`
-     - FAQ 6: `¿Cómo funciona el posicionamiento SEO local para superar a mi competencia en Quilmes, Lomas, Avellaneda y Lanús?`
+- **Cirugía ejecutada:**
+  1. `<title>` optimizado a **56 caracteres**: `Diseño Web, Hosting y SEO en Zona Sur GBA: Precios 2026`
+  2. `<h2>` #2 actualizado a: `Diseño web, Landing Page, Hosting y Posicionamiento SEO en Zona Sur: Todo Resuelto en un Solo Lugar` incluyendo las frases exactas `'diseño web landing page y hosting zona sur'`, `'diseño web para Google Ads en Zona Sur'` y enlace a la nueva demo `/demos/arquitectura/` para estudios y constructoras del corredor Canning / Lomitas / Quilmes.
+  3. Ampliado de 3 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-18T09:30:00-03:00`).
 
 #### B. Paso 2 — Outline Maestro de Artículo Nuevo (Regla #16: 1 Sola Ciudad · 0% Canibalización)
 - **Main Keyword:** `Diseño web en Luján`
@@ -380,28 +385,10 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 - **`<title>` (55 caracteres):** `Diseño Web en Luján: Páginas para Empresas y Comercios`
 - **`<h1>`:** `Diseño de Páginas Web en Luján (Buenos Aires): Desarrollo Rápido y Google Maps para Empresas, Turismo y Profesionales`
 - **`meta description` (155 caracteres):** `Diseño web en Luján (Provincia de Buenos Aires). Páginas web rápidas desde $150.000 ARS para empresas del corredor Acceso Oeste, turismo, agro y comercios.`
-- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
-  > **El servicio de diseño web en Luján (Provincia de Buenos Aires)** permite a empresas industriales del corredor Acceso Oeste y Ruta 6, alojamientos turísticos, comercios del centro y profesionales independientes captar clientes todos los días desde Google y Google Maps con una Landing Page en código a medida por $150.000 ARS finales.
-- **Categoría en `blog/index.html`:** `maps` (*SEO Local & Google Maps*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_diseno_web_lujan.png` — Vista editorial luminosa de estudio profesional/comercio moderno en Luján con referencia arquitectónica sutil del centro histórico/corredor productivo del Oeste bonaerense y laptop mostrando sitio web corporativo con mapa local y botón de WhatsApp; pastilla `"DISEÑO WEB LUJÁN"` y sello `erikwebsite.com`.
-- **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. Por qué las empresas, cabañas y comercios de Luján tienen una oportunidad única en Google hoy</h2>` (Polo industrial Ruta 6 / Acceso Oeste, desarrollos urbanísticos y estudios de arquitectura en clubes de campo, turismo en Carlos Keen / Cortínez / Open Door, y servicios profesionales en el centro de Luján).
-  - `<h2>2. Qué incluye nuestra propuesta de diseño web en Luján por $150.000 ARS finales</h2>` (Tabla comparativa: Agencia tradicional / WordPress lento vs. Desarrollo en Código Limpio en 3 a 5 días hábiles).
-  - `<h2>3. Posicionamiento en Google Maps para negocios de Luján, Jáuregui, Pueblo Nuevo y Carlos Keen</h2>`
-  - `<h2>4. Cómo convertir las búsquedas de turistas y empresas del corredor Oeste en consultas de WhatsApp</h2>`
-- **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
-  - `/blog/diseno-web-zona-oeste/`
-  - `/blog/diseno-web-pilar/`
-  - `/demos/arquitectura/` (para desarrolladoras, arquitectos y constructoras de barrios privados en Luján / Open Door)
-  - `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`
-  - `/auditoria-seo/` (además de añadir enlace entrante desde `/blog/diseno-web-zona-oeste/` hacia `/blog/diseno-web-lujan/`).
-- **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
-  1. `¿Cuánto cuesta hacer una página web profesional en Luján en 2026?`
-  2. `¿Cuánto demora la entrega de la página web y qué material tengo que enviar?`
-  3. `¿Sirve para restaurantes de campo en Carlos Keen, quintas y hoteles en Luján?`
-  4. `¿Cómo hacen para que mi empresa o estudio de arquitectura del corredor Ruta 6 / Acceso Oeste aparezca en Google?`
-  5. `¿El pago de $150.000 ARS es único o estoy obligado a pagar una mensualidad?`
-  6. `¿Me ayudan a registrar el dominio .com.ar en NIC Argentina y configurar el correo corporativo?`
+- **Direct Answer Sturm:** Cumplido con Main Keyword en las primeras palabras.
+- **Categoría en `blog/index.html`:** `maps` (*Google Maps y Posicionamiento Local*, total 42 guías).
+- **Imagen Editorial:** `images/guia_diseno_web_lujan.png` y `public/images/guia_diseno_web_lujan.png` (255.8 KB).
+- **Interlinking:** Bidireccional verificado y auditado (0 enlaces rotos).
 
 ---
 

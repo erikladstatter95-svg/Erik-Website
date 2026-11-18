@@ -1010,8 +1010,8 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/diseno-web-zona-sur/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-18T09:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -1221,6 +1221,12 @@
   <url>
     <loc>https://erikwebsite.com/blog/google-tag-manager-vs-ga4-seo/</loc>
     <lastmod>2026-11-17T09:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/diseno-web-lujan/</loc>
+    <lastmod>2026-11-18T09:30:00-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

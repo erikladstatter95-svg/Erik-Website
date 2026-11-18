@@ -550,7 +550,7 @@
     - Respetando la **Regla de Maduración (14+ días)**, no se tocan los artículos recientes del Sprint SEO; todos los Boosts de la semana apuntan a guías maduras de **Diseño Web, NIC.ar, Comparativas BoFu, Ciudades y Arquitectura**, tejiendo además la nueva **Demo de Arquitectura (`/demos/arquitectura/`)**:
       1. **Lunes 16/11:** Boost `/blog/como-crear-catalogo-online-pedidos-whatsapp/` (Pos 11.6, 200 impr) + Nuevo `/blog/paginas-web-mueblerias-fabricas-muebles/`
       2. **Martes 17/11:** Doble Boost Diseño Web Maduro (`/blog/como-delegar-dns-renovar-dominio-nic-argentina/` Pos 6.9, 78 impr + integración de `/demos/arquitectura/` en `/blog/paginas-web-constructoras-desarrolladoras-arquitectura-argentina/` y `/blog/portfolio-web-arquitectos-estudios-de-arquitectura/`) + Nuevo SEO `/blog/google-tag-manager-vs-ga4-seo/`
-      3. **Miércoles 18/11:** Boost `/blog/diseno-web-zona-sur/` (Pos 9.0–19.5 en 5 queries comerciales + enlace a `/demos/arquitectura/`) + Nuevo `/blog/diseno-web-lujan/` (Regla #16)
+      3. [x] **Miércoles 18/11 (Completado):** Boost `/blog/diseno-web-zona-sur/` (Pos 9.0–19.5 en 5 queries comerciales + enlace a `/demos/arquitectura/`) + Nuevo `/blog/diseno-web-lujan/` (Regla #16)
       4. **Jueves 19/11:** Doble Boost Comparativas Diseño Web Maduras (`/blog/precios-shopify-argentina-conviene/` 34 impr + `/blog/hacer-landing-page-canva-sirve-para-vender/` Pos 6.0, 22 impr) + Nuevo SEO `/blog/seo-hoteles-cabanas-turismo-argentina/`
       5. **Viernes 20/11:** Doble Boost Herramientas & Cotizador (`/blog/generador-link-qr-whatsapp-gratis/` 50 impr + `/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` Pos 10.0 integrando el Cotizador de Obra de `/demos/arquitectura/`) + Nuevo Diseño Web `/blog/paginas-web-administracion-consorcios-countries/` (conectado a la sección *Consorcios & Ley 257* de `/demos/arquitectura/`)
       6. **Sábado 21/11:** Doble Boost Ciudades Maduras (`/blog/diseno-web-rosario/` 35 impr + `/blog/diseno-web-santa-fe/` 32 impr, integrando `/demos/arquitectura/`) + Nuevo SEO Local `/blog/estadisticas-google-business-profile-maps/`
@@ -660,6 +660,32 @@
     - Wizard interactivo de "Diagnóstico Fiscal en 3 Pasos" con selección dinámica de chips y generación automática del mensaje para WhatsApp.
     - Acordeón FAQ con Schema.org y CTA final de alto impacto.
   - **Verificaciones:** Compilación limpia en Vite (8.54s), 0 enlaces rotos (`audit_all_internal_links.py`), 0 emojis decorativos (Regla #17) y preservación estricta de la sección comercial de Erik Website (`#erikwebsite-cta` de $150.000 / $20.000) y controles flotantes.
+
+- **Miércoles 18/11/2026 — Ejecución Completa Eje Diseño Web y Localidades (Boost Zona Sur GBA + Nuevo Artículo Luján):**
+  - **Cirugía / Boost Aplicado (`/blog/diseno-web-zona-sur/`):**
+    - `<title>` optimizado a 56 caracteres: `Diseño Web, Hosting y SEO en Zona Sur GBA: Precios 2026`.
+    - `<h2>` #2 actualizado para responder directamente a 5 consultas comerciales de GSC (`'diseño web landing page y hosting zona sur'`, `'diseño web profesional en zona sur'`, `'diseño web para Google Ads en Zona Sur'`, `'diseño web posicionamiento seo zona sur'`).
+    - Enlace contextual hacia la demo interactiva `/demos/arquitectura/` para estudios y constructoras de Zona Sur (Canning, Lomitas, Quilmes).
+    - Ampliado a 6 FAQs interactivas (`<details name="faq-accordion">` con evento GA4 `faq_expand`), Schema.org `FAQPage` sincronizado y `dateModified: 2026-11-18T09:30:00-03:00`.
+  - **Nuevo Artículo Publicado (`/blog/diseno-web-lujan/`):**
+    - Main Keyword: `Diseño web en Luján`.
+    - Slug natural de 4 palabras: `/blog/diseno-web-lujan/` (Reglas #16 y #18).
+    - `<title>` (55 caracteres): `Diseño Web en Luján: Páginas para Empresas y Comercios`.
+    - `<h1>`: `Diseño de Páginas Web en Luján (Buenos Aires): Desarrollo Rápido y Google Maps para Empresas, Turismo y Profesionales`.
+    - Direct Answer Sturm en las primeras palabras con la Main Keyword.
+    - Tabla comparativa transparente ($150.000 ARS vs creadores gratuitos/WordPress lento).
+    - 6 FAQs interactivas + Schema `FAQPage`.
+    - Imagen editorial propia generada y optimizada con PIL: `images/guia_diseno_web_lujan.png` y `public/images/guia_diseno_web_lujan.png` (255.8 KB, 1200x675, pastilla y marca de agua).
+    - Interlinking bidireccional: enlace desde `/blog/diseno-web-zona-oeste/` hacia `/blog/diseno-web-lujan/` y enlaces internos hacia `/blog/diseno-web-pilar/`, `/demos/arquitectura/`, `/auditoria-seo/`, etc.
+  - **Integración y Configuración:**
+    - Card agregada en `blog/index.html` bajo categoría `maps` (42 guías en la categoría) y contador actualizado a 183 guías.
+    - Endpoint registrado en `vite.config.js`.
+    - Sitemaps actualizados a 202 URLs canónicas (`sitemap.xml` y `public/sitemap.xml`).
+  - **Auditoría y Despliegue:**
+    - 0 enlaces rotos (`audit_all_internal_links.py`).
+    - 0 emojis decorativos (Regla #17).
+    - Build de Vite exitoso en 28.22s.
+    - Notificación exitosa a Google Indexing API v3 (`200 OK`), GSC Sitemap ping, IndexNow (`202 Accepted`) y Bing Webmaster API (`200 OK`).
 
 
 
