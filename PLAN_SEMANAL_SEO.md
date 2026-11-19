@@ -392,144 +392,292 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Jueves 19/11 — Eje Especialista SEO por Rubro / CMS (Boost Diseño Web Comparativas Maduras: Shopify + Canva + Nuevo Artículo SEO: Hoteles y Cabañas)
-
-#### A. Paso 1 — Doble Cirugía / Boost en Comparativas de Diseño Web Maduras (>15 días en GSC)
-1. **Boost 1 (`/blog/precios-shopify-argentina-conviene/` — `34` impresiones en GSC, Pos `22.4`, 15 días de antigüedad):**
-   - **Diagnóstico GSC:** Acumula `34` impresiones al borde de entrar al Top 20, pero su `<title>` actual tiene **85 caracteres** y solo cuenta con **2 FAQs**.
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 85 a **55 caracteres**: `Precios de Shopify en Argentina 2026: ¿Conviene o No?`
-     - Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-19T09:30:00-03:00`) sobre dólar tarjeta, comisiones por pasarela local y alternativa en código propio.
-2. **Boost 2 (`/blog/hacer-landing-page-canva-sirve-para-vender/` — `22` impresiones en GSC, Posición `6.0`, 18 días de antigüedad):**
-   - **Diagnóstico GSC:** Ya está en **Puesto `6.0`** en la primera página de Google, pero tiene un `<title>` de **87 caracteres** y solo **2 FAQs**.
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 87 a **56 caracteres**: `Hacer una Página Web en Canva: ¿Sirve para Vender 2026?`
-     - Sumar enlace comparativo hacia nuestras demos reales (incluyendo `/demos/arquitectura/` y `/demos/estetica/`) para mostrar la diferencia visual entre un enlace de Canva y una web profesional.
-     - Ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
-
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO (0% Canibalización Verificada)
-- **Main Keyword:** `SEO para hoteles y cabañas en Argentina`
-- **Slug (Regla #18 — 6 palabras naturales):** `/blog/seo-hoteles-cabanas-turismo-argentina/`
-- **`<title>` (56 caracteres):** `SEO para Hoteles y Cabañas en Argentina: Más Reservas`
-- **`<h1>`:** `SEO para Hoteles, Cabañas y Alojamientos en Argentina: Cómo Conseguir Reservas Directas en Google sin Comisiones`
-- **`meta description` (156 caracteres):** `SEO para hoteles y cabañas en Argentina. Posicioná tu alojamiento en Google y Google Maps para recibir reservas directas por WhatsApp sin pagar 18% a OTAs.`
-- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
-  > **Una estrategia de SEO para hoteles y cabañas en Argentina** permite que tu complejo turístico aparezca en los primeros lugares de Google y Google Maps cuando un viajero busca alojamiento en tu destino, captando reservas directas por WhatsApp y ahorrando entre el 15% y el 22% de comisión por estadía que cobran las plataformas intermediarias.
-- **Categoría en `blog/index.html`:** `seo` (*Auditoría SEO, Velocidad e IA*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_seo_hoteles_cabanas_turismo_argentina.png` — Recepción cálida de hotel boutique / complejo de cabañas en destino turístico argentino (madera y piedra con vista a montañas) donde el dueño revisa en su notebook el posicionamiento en Google Maps y mensajes de reserva directa en WhatsApp; pastilla `"SEO TURISMO & HOTELES"` y sello `erikwebsite.com`.
-- **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. Cómo buscan alojamiento los turistas argentinos hoy (Google Maps, búsquedas por destino e IA)</h2>`
-  - `<h2>2. SEO Local en Google Business Profile vs. Comisiones de Booking y Airbnb: Matemática de Rentabilidad</h2>` (Tabla comparativa HTML de 100 estadías anuales: margen neto con OTAs vs. reserva directa SEO + WhatsApp).
-  - `<h2>3. Los 5 pilares técnicos del SEO para hoteles, complejos de cabañas y aparts en Argentina</h2>` (Velocidad móvil en ruta con 4G, Schema `LodgingBusiness` / `Hotel`, páginas de destino local y fotos optimizadas en WebP).
-  - `<h2>4. Cómo usar el Efecto Billboard: cuando el turista te descubre en una app pero te busca por tu nombre en Google</h2>`
-- **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
-  - `/blog/paginas-web-cabanas-hoteles-turismo/`
-  - `/blog/sistema-reservas-whatsapp-hoteles-cabanas-sin-comisiones/`
-  - `/blog/conseguir-resenas-google-maps-seo/`
-  - `/blog/diseno-web-bariloche/` y `/blog/diseno-web-villa-carlos-paz/`
-  - `/auditoria-seo/`
-- **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
-  1. `¿Cómo hago para que mi hotel o complejo de cabañas aparezca antes que Booking cuando buscan el nombre de mi alojamiento?`
-  2. `¿Cuánto tarda en hacer efecto el posicionamiento SEO para una temporada de verano o vacaciones de invierno?`
-  3. `¿Qué palabras clave buscan los viajeros argentinos antes de reservar una cabaña o hotel?`
-  4. `¿Cómo influyen las reseñas de los huéspedes en Google Maps para aparecer en el Top 3 de mi ciudad turística?`
-  5. `¿Puedo mantener mi perfil en plataformas turísticas y al mismo tiempo potenciar mi canal de reservas directas con SEO?`
-  6. `¿Qué datos estructurados (Schema.org) necesita la web de un hotel o cabaña para ser recomendada por ChatGPT y Google AI?`
+> **REVISIÓN ESTRATÉGICA DE MEDIO TÉRMINO (Jueves 19/11/2026 — Datos en Vivo GSC + GA4 + Bing + 32 CSVs + Google AR Autocomplete):**
+> - **Pulso actual (4 días después del domingo 15/11):** GSC saltó de `3.310` a **`4.772` impresiones (+44%)** y `44` consultas en *Striking Distance*; Bing `InIndex` subió de `10` a **`17` páginas (+70%)**; y **GA4 confirmó tráfico real de asistentes de IA (`AI Assistant`: 3 usuarios, 100% engaged)**: `chatgpt.com` derivando a `/blog/diseno-web-rosario/` y `/demos/odontologia/`, y `gemini.google.com` hacia `/blog/como-delegar-dns-renovar-dominio-nic-argentina/`.
+> - **Ajustes de Alto Impacto aplicados a Jueves, Viernes y Sábado:**
+>   1. Se reemplazaron 3 artículos nuevos de baja demanda o alto solapamiento (*Hoteles SEO* 67% overlap, *Consorcios* 0 sugerencias web en AR, *Estadísticas GBP* 1 sugerencia) por **3 keywords validadas por demanda real en Argentina (Google AR Autocomplete + CSVs), <= 50% solapamiento y sinergia directa con nuestras demos y tráfico real de IA**.
+>   2. Se reemplazaron 2 Boosts débiles (*Cotizador* 1 impr y *Santa Fe* fuera de eje) por páginas maduras con tracción explosiva y títulos truncados de 98–100c (**Hotmart** 32 impr / 1 clic / Pos 8.0 y **Google Maps Gratis** 101 impr / Pos 10.0).
+>   3. Se añadió un **Bloque 0 de Saneamiento Técnico** para corregir errores críticos detectados en la auditoría (11 artículos sin `/src/js/main.js`, Boost fallido del 13/11 en NIC.ar con 1.191 impr, desfase Schema FAQPage, `data-cat="geo"` huérfano y enlace 404 en `llms.txt`).
+> - **Regla obligatoria para el modelo ejecutor (Flash) en TODOS los días restantes:** Al terminar cualquier Bloque o Día, ejecutar obligatoriamente `python scratch/verify_article_hygiene.py --hub <archivos_tocados>`, `python scratch/audit_all_internal_links.py`, revisar `git diff --stat`, compilar `npm run build`, notificar a Google Indexing API v3 + GSC Sitemap + IndexNow + Bing Webmaster API, y hacer `git push origin main`.
 
 ---
 
-### [ ] Viernes 20/11 — Eje Diseño Web, Demos y Embudos (Boost QR WhatsApp + Boost Cotizador Online con Demo Arquitectura + Nuevo Artículo: Administración de Consorcios y Countries)
+### [ ] Bloque 0 — Saneamiento Técnico Urgente (Ejecutar Antes o en Paralelo al Jueves 19/11 · Sin Redacción de Artículos Nuevos)
 
-#### A. Paso 1 — Doble Cirugía / Boost en Herramientas, Embudos y Cotizador Interactivo
-1. **Boost 1 (`/blog/generador-link-qr-whatsapp-gratis/` — `1` clic, `50` impr (+194%), Pos `16.1`, 20 días de antigüedad):**
-   - **Consultas reales en GSC:** `'generar codigo qr para whatsapp'` (Pos 17.0, 11 imp), `'generador de qr whatsapp'` (Pos 16.0, 5 imp), `'codigo qr para whatsapp'` (Pos 28.0).
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 72 a **56 caracteres**: `Generador de QR y Link de WhatsApp Gratis (Sin Vencer)`
-     - Ajustar `<h2>` #1 a: `1. Cómo Generar un Código QR para WhatsApp Gratis y Sin Caducidad` inyectando las frases exactas de GSC (`generar codigo qr para whatsapp` y `generador de qr whatsapp`).
-     - Ampliar de 3 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified`).
-2. **Boost 2 (`/blog/cotizador-online-whatsapp-vs-carrito-compras-tradicional/` — Posición `10.0` en GSC + Integración Demo Arquitectura):**
-   - **Diagnóstico GSC:** Ya existe y posiciona en **Puesto `10.0`**, pero tiene un `<title>` de **78 caracteres**, solo **2 FAQs** y todavía no muestra el nuevo **Cotizador de Obra por m² de `/demos/arquitectura/`**.
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 78 a **56 caracteres**: `Cotizador Online y Calculadora de Presupuestos WhatsApp` (absorbiendo también la intención `'calculadora de presupuestos interactiva para páginas web'` sin canibalizar).
-     - Agregar en la sección de Demos en Vivo la tarjeta y enlace directo al **Cotizador de Obra de `/demos/arquitectura/`** (junto a `/demos/abogados/`, `/demos/fitness/`, `/demos/eventos/` y `/demos/urgencias-hogar/`).
-     - Ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
+> **Por qué es prioritario:** Corrige 4 fugas técnicas silenciosas que hoy frenan conversiones de WhatsApp, rastreo IA y posiciones en nuestras 3 URLs con más impresiones del sitio (`1.191`, `1.033` y `580` impr).
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo Conectado a `/demos/arquitectura/` (0% Canibalización Verificada)
-- **Main Keyword:** `Páginas web para administración de consorcios y countries`
-- **Slug (Regla #18 — 6 palabras naturales):** `/blog/paginas-web-administracion-consorcios-countries/`
-- **`<title>` (56 caracteres):** `Páginas Web para Administración de Consorcios y Barrios`
-- **`<h1>`:** `Páginas Web para Administración de Consorcios y Barrios Privados en Argentina: Cómo Captar Edificios y Mostrar Solvencia`
-- **`meta description` (155 caracteres):** `Páginas web para administración de consorcios, edificios y barrios privados en Argentina. Captá nuevos consejos de propietarios por Google y WhatsApp.`
-- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
-  > **Las páginas web para administración de consorcios y countries** permiten a administradores matriculados (RPA en CABA, GBA e interior del país) demostrar transparencia en liquidación de expensas, mantenimiento edilicio (Ley 257) y auditorías contables para captar nuevos edificios y barrios cerrados desde Google.
-- **Categoría en `blog/index.html`:** `diseno` (*Diseño Web & Conversión*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_paginas_web_administracion_consorcios_countries.png` — Administrador de consorcios profesional frente a edificio residencial moderno en Buenos Aires revisando en su tablet la página web institucional del estudio con formulario de cotización por cantidad de unidades funcionales; pastilla `"CONSORCIOS & COUNTRIES"` y sello `erikwebsite.com`.
-- **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. Cómo eligen nuevo administrador los Consejos de Propietarios cuando están cansados de la gestión anterior</h2>`
-  - `<h2>2. Qué debe mostrar la página web de una Administración de Consorcios y Barrios Cerrados para generar confianza inmediata</h2>` (Matrícula RPA, sistemas de liquidación claros, proveedores matriculados de obra/fachadas Ley 257 —enlazando a `/demos/arquitectura/`— y canal de emergencias).
-  - `<h2>3. Comparativa: Depender solo del boca en boca vs. Captar Edificios y Countries con una Landing Page con Pre-Cotizador</h2>` (Tabla comparativa HTML filtrando por cantidad de departamentos/lotes, amenities y localidad).
-  - `<h2>4. Posicionamiento en Google Maps para Administradores de Consorcios por barrio o zona</h2>`
-- **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
-  - `/demos/arquitectura/` (conectando directamente con el bloque *Consorcios, Edificios & Ley 257*)
-  - `/demos/contable/`
-  - `/blog/paginas-web-empresas-limpieza-finales-obra-tapizados/`
-  - `/blog/paginas-web-seguridad-privada-alarmas-monitoreo/`
-  - `/blog/paginas-web-estudios-contables-argentina/`
-- **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
-  1. `¿Cuánto cuesta una página web profesional para una administración de consorcios en Argentina?`
-  2. `¿Cómo filtrar en la web a los miembros del Consejo de Propietarios que buscan cambiar de administrador?`
-  3. `¿Qué datos conviene pedir en el cotizador antes de pasar a WhatsApp (cantidad de unidades funcionales, seguridad, amenities)?`
-  4. `¿Puedo enlazar en mi página web el acceso al sistema de liquidación de expensas que ya uso?`
-  5. `¿Cómo ayuda tener una web propia a conseguir consorcios en barrios específicos de CABA, Zona Norte, Zona Sur o ciudades del interior?`
-  6. `¿Cuánto demora el armado de la página web y qué información necesito enviar?`
+1. **Inyectar `<script type="module" src="/src/js/main.js"></script>` antes de `</body>` en los 11 artículos del Sprint 13–14/11 que quedaron sin JS activo** (hoy sus botones `data-wa-msg`, menú móvil y eventos GA4 `generate_lead`/`whatsapp_click`/`article_read_75` no disparan):
+   - `blog/actualizar-contenido-antiguo-seo-google/index.html`
+   - `blog/conseguir-resenas-google-maps-seo/index.html`
+   - `blog/eeat-google-autoridad-confianza-seo/index.html`
+   - `blog/mejorar-ctr-organico-titulos-google/index.html`
+   - `blog/migracion-web-seo-redirecciones-301/index.html`
+   - `blog/paginas-web-logistica-transporte/index.html`
+   - `blog/presupuesto-diseno-web-argentina/index.html`
+   - `blog/seguridad-web-certificados-ssl-https/index.html`
+   - `blog/seo-b2b-empresas-industriales-argentina/index.html`
+   - `blog/seo-internacional-etiqueta-hreflang-argentina/index.html`
+   - `blog/seo-vs-google-ads-argentina/index.html`
+2. **Reparar el Boost fantasma del 13/11 en nuestra URL #1 en impresiones + Paridad Schema `FAQPage` en el Top 3 de GSC (Reglas #21 y #22):**
+   - `/blog/como-registrar-dominio-com-ar-nic-argentina/` (**`1.191` impr en GSC**, hoy sigue con `<title>` de 88c, `FAQ: 2/2`, `mod: 2026-10-25` e imagen `guia_registrar_dominio_com_ar.png` de 614.9 KB > 490 KB):
+     - Acortar `<title>`, `og:title` y `twitter:title` a **53c**: `Comprar Dominio .ar y .com.ar en NIC Argentina (2026)`
+     - Actualizar `meta description` (147c): `Guía para comprar un dominio .ar o registrar un .com.ar en NIC Argentina en 2026: trámite con Clave Fiscal ARCA, precios en pesos y delegación DNS.`
+     - Ampliar de 2 a **6 FAQs con paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** cubriendo `'comprar dominio .ar'`, `'registro .com'`, `'nic ar'`, Clave Fiscal nivel 2 y diferencia `.ar` vs `.com.ar`.
+     - Cuantizar `images/guia_registrar_dominio_com_ar.png` por debajo de `450 KB` y sincronizar en `public/images/`.
+     - Actualizar `dateModified: 2026-11-19T10:00:00-03:00` y verificar con `verify_article_hygiene.py`.
+   - `/blog/como-crear-correo-corporativo-dominio-propio-gmail/` (**`1.033` impr**, hoy `6 <details>` vs `2 Schema`): sincronizar el JSON-LD `FAQPage` para que contenga las 6 preguntas exactas del HTML (6/6) y corregir cualquier tuteo neutro a voseo argentino.
+   - `/blog/dominio-com-vs-com-ar-cual-conviene-argentina/` (**`580` impr**, hoy `6 <details>` vs `3 Schema`): sincronizar el JSON-LD `FAQPage` a 6/6 exacto y corregir `"Puedes desbloquear"` por `"Podés desbloquear"` (Regla #25).
+3. **Saneamiento de taxonomía en `blog/index.html` (Regla #24):**
+   - Cambiar `data-cat="geo"` por `data-cat="maps"` en las 6 tarjetas provinciales huérfanas (`diseno-web-caba-buenos-aires`, `catamarca`, `la-rioja`, `santa-cruz`, `tierra-del-fuego`, `la-pampa`) — pasan a quedar visibles dentro de *Google Maps y Posicionamiento Local*.
+   - Sincronizar todos los contadores reales del `<select>` (`all`, `maps`, `servicios`, `ventas`, `dominios`).
+4. **Actualizar `llms.txt` y copiar a `public/llms.txt` (Regla #27):**
+   - Eliminar el enlace roto `/demos/medicina/` (404 inexistente).
+   - Agregar `/demos/arquitectura/` (*Vértice · Arquitectura, Reformas y Consorcios Ley 257*) y destacar el rediseño de `/demos/contable/`.
+   - Actualizar el contador del blog (`183+ Guías`) y añadir las guías pilares nuevas de SEO técnico (`/blog/seo-on-page-checklist-optimizacion/`, `/blog/schema-markup-datos-estructurados-seo/`, `/blog/seo-local-google-maps-argentina/`, `/blog/google-tag-manager-vs-ga4-seo/`).
+   - Verificar con `python scratch/verify_article_hygiene.py --hub` que devuelva **0 FAIL**.
 
 ---
 
-### [ ] Sábado 21/11 — Eje Especialista SEO Local, Maps y Analítica (Boost Diseño Web Ciudades Maduras: Rosario y Santa Fe + Nuevo Artículo SEO: Estadísticas de Google Business Profile)
+### [ ] Jueves 19/11 — Eje Especialista SEO por Rubro / CMS (Boosts Maduros: Shopify + Canva + Nuevo Artículo SEO: Odontólogos y Consultorios Dentales)
 
-#### A. Paso 1 — Doble Cirugía / Boost en Páginas de Diseño Web Maduras (>16 días en GSC)
-1. **Boost 1 (`/blog/diseno-web-rosario/` — `35` impresiones en GSC, 16 días de antigüedad, solo 2 FAQs):**
-   - **Diagnóstico GSC:** Es la segunda ciudad con más impresiones del país después de Mendoza (`35` impr), pero su `<title>` tiene 61 caracteres y solo cuenta con **2 FAQs**.
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` a **54 caracteres**: `Diseño Web en Rosario: Páginas y Google Maps (2026)`
-     - Incorporar enlace contextual a la nueva demo `/demos/arquitectura/` para estudios de arquitectura, constructoras y desarrolladoras de Rosario (Puerto Norte, Centro, Fisherton y Funes).
-     - Ampliar de 2 a **6 FAQs interactivas** (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage` + `dateModified: 2026-11-21T09:30:00-03:00`).
-2. **Boost 2 (`/blog/diseno-web-santa-fe/` — `32` impresiones en GSC, 16 días de antigüedad, `<title>` 70 chars y 2 FAQs):**
-   - **Diagnóstico GSC:** Acumula `32` impresiones, con `<title>` de 70 caracteres y solo **2 FAQs**.
-   - **Cirugía exacta a ejecutar en Paso 3:**
-     - Acortar `<title>` de 70 a **55 caracteres**: `Diseño Web en Santa Fe Capital: Precios y Maps 2026`
-     - Incorporar enlace contextual a `/demos/arquitectura/` y ampliar de 2 a **6 FAQs interactivas** con Schema `FAQPage` y `dateModified`.
+#### A. Paso 1 — Doble Cirugía / Boost en Comparativas Maduras (>18 días en GSC · Evidencia en Vivo 19/11)
 
-#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO Local / Maps (0% Canibalización Verificada)
-- **Main Keyword:** `Estadísticas de Google Business Profile`
-- **Slug (Regla #18 — 5 palabras exactas):** `/blog/estadisticas-google-business-profile-maps/`
-- **`<title>` (57 caracteres):** `Estadísticas de Google Business Profile: Medir Google Maps`
-- **`<h1>`:** `Estadísticas de Google Business Profile: Cómo Medir Llamadas, Clics a tu Web y Rutas en Google Maps`
-- **`meta description` (156 caracteres):** `Estadísticas de Google Business Profile (ex Google Mi Negocio): cómo leer el panel de rendimiento en Google Maps, medir clics a tu web y sumar etiquetas UTM.`
-- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
-  > **Las estadísticas de Google Business Profile (el panel de Rendimiento de Google Maps)** muestran exactamente cuántas personas buscaron tu rubro en tu ciudad, cuántas tocaron el botón de llamar, cuántas pidieron indicaciones para llegar a tu local y cuántas entraron a tu página web durante los últimos 6 meses.
-- **Categoría en `blog/index.html`:** `maps` (*SEO Local & Google Maps*)
-- **Imagen Editorial (`1200x675`, PIL `< 490 KB`):** `images/guia_estadisticas_google_business_profile_maps.png` — Dueño de negocio / consultor en Argentina analizando en laptop el panel de Rendimiento de Google Business Profile (gráficos de llamadas, solicitudes de cómo llegar, clics al sitio web y términos de búsqueda locales en Google Maps); pastilla `"MÉTRICAS GOOGLE MAPS"` y sello `erikwebsite.com`.
+1. **Boost 1 (`/blog/precios-shopify-argentina-conviene/` — Explotó de 34 a `63` impr (+85%), Pos `16.7`, 18 días de antigüedad):**
+   - **Consultas reales GSC + Google AR Autocomplete:**
+     - GSC: `'shopify argentina'` (**31 impr, Pos `13.2`** — a 3 puestos de Página 1), `'shopify precios'` (3 impr, Pos `21.0`), `'pagina web precios argentina'` (Pos `6.0`), `'cuanto se cobra una pagina web en argentina'` (Pos `8.0`).
+     - Autocomplete AR (12 sugerencias): `shopify argentina precios`, `cuanto cuesta shopify en argentina`, `comisiones mercado pago shopify`, `shopify argentina es confiable`, `shopify argentina que es y para que sirve`, `shopify argentina opiniones`.
+   - **Defectos actuales detectados:** `<title>` de **85c**, FAQ desfasado (`2 <details>` vs `3 Schema`), `dateModified: 2026-11-01`.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**53c**): `Precios de Shopify en Argentina 2026: ¿Conviene o No?`
+     - `meta description`, `og:description`, `twitter:description` (**146c**): `Precios reales de Shopify en Argentina en 2026: planes en dólares, impuestos, doble comisión con Mercado Pago y cuándo conviene una tienda propia.`
+     - Reforzar en el primer párrafo y `<h2>` #1 las frases exactas `'Shopify Argentina'` y `'precios de Shopify en Argentina'`, aclarando cómo funciona el cobro mensual en USD + la comisión extra del 2% al 0,5% por usar Mercado Pago como pasarela externa.
+     - Ampliar con **paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** respondiendo las preguntas reales de IA y Google AR:
+       1. `¿Cuánto cuesta Shopify por mes en Argentina en 2026 en pesos reales?`
+       2. `¿Shopify cobra comisión adicional si uso Mercado Pago en Argentina?`
+       3. `¿Qué es Shopify, para qué sirve y es confiable para vender desde Argentina?`
+       4. `¿Cómo se pagan las facturas de Shopify en dólares y qué impuestos aplican?`
+       5. `¿Conviene Shopify, Tiendanube o una página web propia sin comisiones por venta?`
+       6. `¿Cuándo conviene elegir una Landing Page o Catálogo por WhatsApp en lugar de Shopify?`
+     - Actualizar `dateModified: 2026-11-19T10:00:00-03:00` y enlazar hacia `/blog/precios-comisiones-tiendanube-alternativas-argentina/`, `/blog/woocommerce-vs-tiendanube-cual-conviene-argentina/` y `/blog/tienda-online-propia-cuando-conviene-argentina/`.
+
+2. **Boost 2 (`/blog/hacer-landing-page-canva-sirve-para-vender/` — `27` impr, Pos `7.3` en Página 1, 22 días de antigüedad):**
+   - **Consultas reales GSC + Google AR Autocomplete:**
+     - GSC: `'como hacer una landing page en canva'` (Pos `20.0`), `'landing page canva'` (Pos `23.0`).
+     - Autocomplete AR (15 sugerencias): `como hacer una landing page gratis en canva`, `pagina web en canva con dominio propio`, `publicar sitio web canva con dominio propio`, `pagina web en canva ejemplos`, `sirve canva para hacer pagina web`.
+   - **Defectos actuales detectados:** `<title>` de **87c**, `meta description` de **171c** (se corta), FAQ desfasado (`2 <details>` vs `3 Schema`), `dateModified: 2026-10-28`.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**55c**): `Hacer una Página Web en Canva: ¿Sirve para Vender 2026?`
+     - `meta description`, `og:description`, `twitter:description` (**146c**): `Cómo hacer una landing page o página web en Canva: sus límites reales en SEO, dominio propio y Píxel de Meta Ads, y cuándo pasar a una web propia.`
+     - Agregar bloque comparativo con enlaces a demos reales en código limpio (**`/demos/arquitectura/`**, **`/demos/contable/`** y **`/demos/estetica/`**) contrastando velocidad móvil, Píxel de Meta y SEO frente a una página armada en Canva.
+     - Ampliar con **paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** cubriendo:
+       1. `¿Puedo hacer una landing page gratis en Canva y usarla para vender?`
+       2. `¿Se puede conectar un dominio .com.ar propio a una página web hecha en Canva?`
+       3. `¿Por qué una página web de Canva no sirve para campañas de Meta Ads y Google Ads?`
+       4. `¿Posicionan en Google (SEO) las páginas creadas con Canva Sites?`
+       5. `¿Cómo se ven los diseños de Canva en celulares y por qué pierden clientes?`
+       6. `¿Qué alternativa conviene en Argentina si ya probé Canva y necesito vender en serio?`
+     - Actualizar `dateModified: 2026-11-19T10:00:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO por Rubro (`0%` Canibalización Verificada · Potencia Demo Citada por ChatGPT)
+
+> **Por qué se eligió esta keyword sobre Hoteles/Cabañas:** `SEO para hoteles y cabañas` arrojó **67% de solapamiento** con 2 guías existentes (ambas con 0 impresiones) y solo 3 sugerencias en Google AR. En cambio, **`SEO para odontólogos y consultorios dentales`** tiene **`0%` de canibalización**, **11 sugerencias activas en Google AR**, ticket alto por paciente (implantes/ortodoncia), y potencia directamente **`/demos/odontologia/`**, que **esta misma semana recibió visitas reales desde `chatgpt.com` en GA4 (100% engaged)**.
+
+- **Main Keyword:** `SEO para odontólogos y consultorios dentales`
+- **Slug (Regla #18 — 4 palabras limpias):** `/blog/seo-odontologos-consultorios-dentales/`
+- **`<title>` (57 caracteres):** `SEO para Odontólogos y Consultorios Dentales en Argentina`
+- **`<h1>` (69 caracteres — Regla #5 estricta):** `SEO para Odontólogos: Cómo Posicionar tu Consultorio en Google y Maps`
+- **`meta description` (154 caracteres):** `SEO para odontólogos y clínicas dentales en Argentina: cómo captar pacientes particulares de implantes y ortodoncia en Google y Google Maps sin pagar ads.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta · 54 palabras):**
+  > **El SEO para odontólogos y consultorios dentales** en Argentina consiste en optimizar tu página web y tu ficha de Google Maps para aparecer en el Top 3 cuando un paciente busca tratamientos rentables (implantes, ortodoncia invisible, carillas o guardia) en tu barrio, captando turnos particulares por WhatsApp sin depender mes a mes de anuncios pagos.
+- **Categoría real en `blog/index.html` (Regla #24):** `seo` (*Auditoría SEO, Velocidad e IA*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (ChatGPT, Perplexity, Google AI Overviews + Google AR Autocomplete):**
+  1. *Prompt IA:* *"¿Cómo conseguir más pacientes particulares para mi consultorio odontológico en Argentina sin depender de obras sociales?"*
+  2. *Prompt IA:* *"¿Qué palabras clave buscan los pacientes antes de sacar turno con un dentista en Google?"* (búsquedas por tratamiento + barrio: `implantes dentales [barrio]`, `ortodoncia invisible precio`, `odontólogo de guardia cerca de mí`).
+  3. *Prompt IA:* *"¿Cómo hacer que mi clínica dental aparezca primera en Google Maps frente a otros odontólogos de la zona?"*
+  4. *Prompt IA:* *"¿Qué requisitos E-E-A-T y YMYL exige Google para posicionar una web médica u odontológica?"* (matrícula MN/MP visible, autoría profesional real, Schema `Dentist` + `MedicalClinic`).
+  5. *Prompt IA:* *"¿Conviene invertir en SEO local o en Google Ads / Instagram Ads para una clínica dental?"*
+  - **Entidades concretas para citación GEO:** Matrícula profesional visible (MN / MP), categorías exactas de Google Business Profile (`Dentista`, `Clínica dental`, `Ortodoncista`, `Periodoncista`), Schema `Dentist`, tiempos reales de posicionamiento local (60–120 días), comparativa de costo por paciente particular (implante/ortodoncia vs inversión única de $150.000 ARS en web rápida + SEO local).
+- **Imagen Editorial (`1200x675`, PIL `< 490 KB`, dual-sync `images/` y `public/images/`):**
+  - Archivo: `images/guia_seo_odontologos_consultorios_dentales.png`
+  - Escena (Regla Visual Sturm): Recepción luminosa y moderna de consultorio odontológico en Argentina con odontólogo/a junto a mostrador mirando una tablet/monitor donde se ve un mapa local con el consultorio en posición #1 de Google Maps y una consulta entrante de turno por WhatsApp; luz natural limpia, sin textos diminutos ilegibles; pastilla superior izquierda `"SEO ODONTÓLOGOS"` y sello inferior derecho `erikwebsite.com`.
 - **Estructura de Subtítulos `<h2>`:**
-  - `<h2>1. Dónde ver las estadísticas de Google Business Profile en 2026 y qué significa cada métrica</h2>`
-  - `<h2>2. Las 4 métricas que importan para tu facturación: Términos de búsqueda, Llamadas, Cómo llegar y Clics al sitio web</h2>` (Tabla comparativa HTML explicando qué mide cada indicador, qué problema revela si está bajo y cómo mejorarlo).
-  - `<h2>3. El punto ciego de Google Maps: cómo agregar parámetros UTM al enlace de tu web para ver los clics de Maps dentro de GA4</h2>`
-  - `<h2>4. Cómo usar el informe de "Búsquedas" de tu ficha para descubrir nuevas palabras clave locales en tu ciudad</h2>`
-- **Interlinking Obligatorio (Regla #19 — Solo URLs reales verificadas):**
-  - `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`
-  - `/blog/por-que-mi-negocio-no-aparece-en-google-maps/`
-  - `/blog/conseguir-resenas-google-maps-seo/`
-  - `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/`
-  - `/auditoria-seo/`
-- **6 FAQs Interactivas (`<details name="faq-accordion">` + GA4 `faq_expand` + Schema `FAQPage`):**
-  1. `¿Cómo entro a ver las estadísticas de mi ficha de Google Maps desde el celular o la computadora?`
-  2. `¿Por qué Google Analytics 4 muestra como tráfico "Directo" u "Orgánico" las visitas que vienen desde Google Maps?`
-  3. `¿Cómo se arma un enlace con código UTM para el botón de "Sitio web" de Google Business Profile?`
-  4. `¿Google Maps mide cuando alguien hace clic en mi enlace de WhatsApp dentro de la ficha?`
-  5. `¿Qué significa que mi negocio tenga muchas "Visualizaciones en Maps" pero pocos clics a llamadas o sitio web?`
-  6. `¿Cada cuánto tiempo actualiza Google Business Profile el listado de palabras clave con las que me encontraron?`
+  1. `<h2>1. Cómo buscan dentista los pacientes particulares hoy (Google Maps, tratamientos y ChatGPT)</h2>`
+  2. `<h2>2. SEO Local vs. Obras Sociales y Anuncios Pagos: Matemática de un Consultorio Dental</h2>` *(Tabla comparativa HTML: Depender de Obras Sociales / Prepagas vs. Solo Instagram Ads vs. Web Rápida + SEO Local en Google Maps por tratamiento).*
+  3. `<h2>3. Los 5 pilares del SEO para clínicas dentales y odontólogos (E-E-A-T, Google Maps y Schema Dentist)</h2>` *(Páginas/secciones por tratamiento de alto margen, ficha GBP con categorías secundarias, reseñas con fotos del consultorio, matrícula visible para YMYL y velocidad sub-1s en celular).*
+  4. `<h2>4. Cómo convertir visitas de Google en turnos confirmados por WhatsApp (Ejemplo en vivo)</h2>` *(Enlace destacado a `/demos/odontologia/` como modelo real de estructura enfocada en turnos y especialidades).*
+- **Interlinking Obligatorio (100% verificado en disco — Regla #19):**
+  - **Salientes:** `/demos/odontologia/`, `/blog/paginas-web-marketing-odontologos-argentina/`, `/blog/seo-medicos-clinicas-argentina/`, `/blog/conseguir-resenas-google-maps-seo/`, `/blog/seo-local-google-maps-argentina/`, `/auditoria-seo/`.
+  - **Entrante obligatorio:** Agregar un enlace contextual desde `/blog/paginas-web-marketing-odontologos-argentina/` hacia `/blog/seo-odontologos-consultorios-dentales/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6 HTML `<details>` == JSON-LD `FAQPage` — Regla #22):**
+  1. `¿Cómo hago para que mi consultorio odontológico aparezca primero en Google Maps en mi barrio?`
+  2. `¿Qué diferencia hay entre hacer publicidad en Instagram y hacer SEO para odontólogos?`
+  3. `¿Qué tratamientos conviene posicionar primero en Google para atraer pacientes particulares?`
+  4. `¿Por qué Google es más exigente con el SEO de clínicas dentales y médicos (criterio YMYL y E-E-A-T)?`
+  5. `¿Cuánto tiempo tarda un consultorio dental en ver pacientes nuevos desde Google?`
+  6. `¿Necesito tener una página web propia o alcanza solo con la ficha gratuita de Google Maps?`
+- **Cierre técnico del Jueves (Flash):** Ejecutar `python scratch/verify_article_hygiene.py --hub blog/precios-shopify-argentina-conviene/index.html blog/hacer-landing-page-canva-sirve-para-vender/index.html blog/seo-odontologos-consultorios-dentales/index.html` -> `audit_all_internal_links.py` -> `git diff --stat` -> `npm run build` -> Notificar APIs (Google Indexing v3, GSC Sitemap, IndexNow, Bing) -> `git push origin main`.
+
+---
+
+### [ ] Viernes 20/11 — Eje Diseño Web, Demos y Embudos (Boosts Explosivos: Generador QR WhatsApp + Hotmart Funnel + Nuevo Artículo: Landing Page para Vender Cursos Online y Ebooks)
+
+#### A. Paso 1 — Doble Cirugía / Boost en Herramientas y Funnels con Tracción Real (>18 días en GSC)
+
+1. **Boost 1 (`/blog/generador-link-qr-whatsapp-gratis/` — Explotó de 50 a `106` impr (+112% en 4 días!), `1` clic, Pos `16.7`, 25 días de antigüedad):**
+   - **Consultas reales GSC + Google AR Autocomplete (33 sugerencias):**
+     - GSC: `'generar codigo qr para whatsapp'` (**14 impr, Pos `18.1`**), `'generador de qr whatsapp'` (**8 impr, Pos `15.0`**), `'generador de qr para whatsapp'` (3 impr, Pos `13.7`), `'generar qr para whatsapp'` (3 impr, Pos `23.3`).
+     - Autocomplete AR: `generar código qr para whatsapp gratis sin caducidad`, `generar codigo qr para whatsapp con mensaje`, `generar codigo qr para whatsapp business`, `generador de qr para grupo de whatsapp`, `generar codigo qr para whatsapp en canva`.
+   - **Defectos actuales detectados:** `<title>` de **72c**, solo **3 FAQs**, `dateModified: 2026-10-26`.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**54c**): `Generador de QR y Link de WhatsApp Gratis (Sin Vencer)`
+     - `meta description`, `og:description`, `twitter:description` (**148c**): `Generador de código QR para WhatsApp y link wa.me gratis sin caducidad. Creá tu QR con mensaje predefinido para local, catálogo o WhatsApp Business.`
+     - Optimizar `<h2>` #1 para incluir las frases exactas `'generar código qr para whatsapp'` y `'generador de qr whatsapp sin caducidad'` (sin romper el widget interactivo `whatsapp-tool.js` ni sus IDs!).
+     - Ampliar de 3 a **6 FAQs con paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** respondiendo las preguntas reales de Autocomplete + IA:
+       1. `¿Por qué muchos generadores de códigos QR para WhatsApp vencen después de 14 días y este no?`
+       2. `¿Cómo generar un código QR para WhatsApp Business con mensaje predefinido gratis?`
+       3. `¿Cómo escribir un número de Argentina (+54 9) para que el link wa.me funcione en todos los celulares?`
+       4. `¿Se puede generar un código QR que abra directamente un grupo de WhatsApp?`
+       5. `¿Conviene crear el QR de WhatsApp en Canva o con un generador estático directo?`
+       6. `¿Cuándo conviene pasar de un link suelto de WhatsApp a una Landing Page o Catálogo interactivo?`
+     - Actualizar `dateModified: 2026-11-20T09:30:00-03:00`.
+
+2. **Boost 2 (`/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/` — `32` impr, `1` clic orgánico, Pos `8.0` en Página 1, 18 días de antigüedad — Reemplaza a Cotizador que solo tenía 1 impr):**
+   - **Consultas reales GSC + Google AR Autocomplete (13 sugerencias):**
+     - GSC: Posición promedio **`8.0`** con 1 clic real y 32 impresiones, `'hotmart afiliados argentina'` (Pos `17.0`).
+     - Autocomplete AR: `hotmart argentina impuestos`, `hotmart argentina cuit`, `hotmart argentina opiniones`, `hotmart funciona en argentina`, `como vender en hotmart desde argentina`, `alternativas a hotmart`.
+   - **Defectos GRAVES actuales detectados:** `<title>` de **100 CARACTERES** (cortado por la mitad en Google!), `meta description` de **218 CARACTERES**, FAQ desfasado (`2 <details>` vs `3 Schema`), `dateModified: 2026-11-02`.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**57c**): `Hotmart en Argentina 2026: Comisiones, Impuestos y Funnel`
+     - `meta description`, `og:description`, `twitter:description` (**148c**): `Hotmart en Argentina en 2026: comisiones del 9,9%, impuestos, CUIT, retiros y cómo vender cursos o ebooks en pesos con tu propia Página Modo Funnel.`
+     - Reforzar bloque práctico sobre **impuestos en Argentina, CUIT/monotributo, comisiones del 9,9% + tarifa fija y retiros**, sumar enlace bidireccional hacia la nueva guía del día (`/blog/landing-page-vender-cursos-online/`) y destacar la prueba en vivo de **`/demos/funnel/`**.
+     - Ampliar con **paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** cubriendo:
+       1. `¿Hotmart funciona en Argentina en 2026 y qué comisiones cobra por cada venta?`
+       2. `¿Qué impuestos paga un comprador argentino cuando compra un curso o ebook en Hotmart?`
+       3. `¿Necesito CUIT o ser monotributista para vender y retirar plata de Hotmart en Argentina?`
+       4. `¿Cómo puedo vender mis cursos o ebooks en pesos argentinos con Mercado Pago y transferencia sin pagar 9,9%?`
+       5. `¿Qué diferencia hay entre vender en Hotmart y tener mi propia Página Modo Funnel?`
+       6. `¿Cuánto cuesta armar una Página Modo Funnel propia con Order Bump en Argentina?`
+     - Actualizar `dateModified: 2026-11-20T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo Diseño Web & Funnels (Conectado 1:1 a `/demos/funnel/` y Boost 2)
+
+> **Por qué se eligió esta keyword sobre Consorcios:** `pagina web administracion de consorcios` arrojó **0 sugerencias directas en Google AR**. En cambio, **`Landing page para vender cursos online`** capitaliza **500 búsquedas/mes en nuestros CSVs (`vender cursos online`, `funnel de conversión` Comp Baja 16/100, `embudo de conversion` Comp 19/100)**, **5 sugerencias directas en Google AR** (`landing page para vender cursos`, `crear pagina web para vender cursos online`, `vender ebooks en argentina`, `donde vender ebooks en argentina`), solo 50% de solapamiento léxico (intención 100% distinta a Canva) y vende directamente nuestra **Demo `/demos/funnel/`** ($150.000 ARS pago único).
+
+- **Main Keyword:** `Landing page para vender cursos online`
+- **Slug (Regla #18 — 5 palabras naturales):** `/blog/landing-page-vender-cursos-online/`
+- **`<title>` (56 caracteres):** `Landing Page para Vender Cursos Online y Ebooks en Pesos`
+- **`<h1>` (69 caracteres — Regla #5 estricta):** `Landing Page para Vender Cursos Online y Ebooks en Argentina sin 9,9%`
+- **`meta description` (152 caracteres):** `Landing page para vender cursos online y ebooks en Argentina: cobrá en pesos con Mercado Pago o transferencia sin comisiones del 9,9% y sumá Order Bump.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta · 53 palabras):**
+  > **Una landing page para vender cursos online y ebooks** en Argentina te permite cobrar en pesos por Mercado Pago o transferencia bancaria sin regalar el 9,9% a plataformas extranjeras ni recargar dólares al comprador, concentrando tu oferta, temario, testimonios, Order Bump y botón de compra en una sola página de alta conversión.
+- **Categoría real en `blog/index.html` (Regla #24):** `ventas` (*Embudos (Funnels) y Conversión*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (ChatGPT, Perplexity, Google AI Overviews + Google AR Autocomplete):**
+  1. *Prompt IA:* *"¿Cómo vender un curso online o ebook en Argentina sin usar Hotmart y cobrando en pesos?"*
+  2. *Prompt IA:* *"¿Dónde vender ebooks o plantillas digitales en Argentina con Mercado Pago y transferencia?"*
+  3. *Prompt IA:* *"¿Qué estructura exacta tiene que tener una landing page para vender un curso online que convierta anuncios de Instagram?"*
+  4. *Prompt IA:* *"¿Qué es un Order Bump y cuánto puede subir el ticket promedio de un archivo digital o curso?"*
+  5. *Prompt IA:* *"¿Conviene usar una plataforma con suscripción en dólares (Kajabi, Stan Store, Hotmart) o una landing page propia?"*
+  - **Entidades concretas para citación GEO:** Comparativa numérica real sobre 50 ventas de un curso de $40.000 ARS ($2.000.000 ARS facturados): Hotmart (~9,9% + tarifa fija + fricción dólar tarjeta) vs. Stan Store ($29–$99 USD/mes) vs. Página Modo Funnel Propia ($150.000 ARS pago único + Mercado Pago / Transferencia 10% OFF + Order Bump + Píxel de Meta `Contact`/`InitiateCheckout`).
+- **Imagen Editorial (`1200x675`, PIL `< 490 KB`, dual-sync `images/` y `public/images/`):**
+  - Archivo: `images/guia_landing_page_vender_cursos_online.png`
+  - Escena (Regla Visual Sturm): Creador/a de cursos o especialista en estudio luminoso de Argentina con micrófono de escritorio y notebook mostrando una página de ventas limpia (Modo Funnel) con botón de pago en pesos y celular al lado con notificaciones de ventas/consultas entrantes; pastilla superior izquierda `"FUNNELS & CURSOS"` y sello inferior derecho `erikwebsite.com`.
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Cómo vender cursos online y ebooks en Argentina sin que los impuestos y comisiones te frenen las ventas</h2>`
+  2. `<h2>2. Comparativa real: Hotmart / Stan Store vs. Tu Propia Landing Page Modo Funnel en Pesos</h2>` *(Tabla comparativa HTML con cálculo concreto sobre 50 ventas mensuales: comisión, facilidad de pago local, Píxel de Meta y propiedad de la base de alumnos).*
+  3. `<h2>3. Anatomía de una landing page de alta conversión para cursos y archivos digitales (con Order Bump)</h2>` *(1 sola columna sin menús de fuga, promesa clara, temario en acordeón, selector Transferencia 10% OFF vs Mercado Pago, Order Bump y prueba en vivo en **`/demos/funnel/`**).*
+  4. `<h2>4. Cómo entregar tu curso o ebook automáticamente y medir cada venta con Meta Pixel y GA4</h2>`
+- **Interlinking Obligatorio (100% verificado en disco — Regla #19):**
+  - **Salientes:** `/demos/funnel/`, `/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/`, `/blog/stan-store-argentina-precios-alternativa-pesos/`, `/blog/que-es-un-funnel-de-ventas-para-que-sirve-argentina/`, `/blog/paginas-web-academias-institutos-cursos-oficios/`, `/blog/embudo-de-ventas-por-whatsapp-argentina/`.
+  - **Entrante obligatorio:** Enlazar desde `/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/` (Boost 2 del mismo día) hacia `/blog/landing-page-vender-cursos-online/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6 HTML `<details>` == JSON-LD `FAQPage` — Regla #22):**
+  1. `¿Cómo puedo vender cursos online o ebooks en Argentina cobrando por Mercado Pago y transferencia?`
+  2. `¿Necesito pagar una plataforma mensual en dólares para alojar los videos o PDFs de mi curso?`
+  3. `¿Qué es un Order Bump en una landing page y cómo aumenta lo que gano por cada alumno?`
+  4. `¿Se puede conectar el Píxel de Meta Ads y Google Analytics 4 para medir qué anuncio vende más cursos?`
+  5. `¿Cuánto cuesta crear una landing page modo funnel para vender cursos o archivos digitales en Argentina?`
+  6. `¿Qué diferencia hay entre una academia completa con aulas y una Página Modo Funnel de oferta única?`
+- **Cierre técnico del Viernes (Flash):** Ejecutar `python scratch/verify_article_hygiene.py --hub blog/generador-link-qr-whatsapp-gratis/index.html blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/index.html blog/landing-page-vender-cursos-online/index.html` -> `audit_all_internal_links.py` -> `git diff --stat` -> `npm run build` -> Notificar APIs -> `git push origin main`.
+
+---
+
+### [ ] Sábado 21/11 — Eje Especialista SEO Local, Maps y Analítica (Boost GEO Citado por ChatGPT: Rosario + Boost Maps 101 Impr + Nuevo Artículo: Parámetros UTM en GA4 y Google Maps)
+
+#### A. Paso 1 — Doble Cirugía / Boost de Máximo Retorno (Citación IA Confirmada + Top Maps 101 Impr)
+
+1. **Boost 1 (`/blog/diseno-web-rosario/` — `35` impr en GSC + TRÁFICO REAL DE `chatgpt.com` EN GA4, 22 días de antigüedad):**
+   - **Por qué es prioritario en Sábado GEO/Local:** GA4 confirmó visitas reales desde **`chatgpt.com` hacia `/blog/diseno-web-rosario/` (100% engaged)**. Además posiciona en GSC para `'diseño web rosario'` (22 impr), `'diseño de paginas web rosario'` (7 impr, Pos `31.9`) y `'diseñador web rosario'` (3 impr, Pos `37.7`).
+   - **Defectos actuales detectados:** `<title>` de 61c (con `| Erik Website`), FAQ desfasado (`2 <details>` vs `3 Schema`), `dateModified: 2026-10-30`.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**53c**): `Diseño Web en Rosario: Páginas, Precios y Maps (2026)`
+     - `meta description`, `og:description`, `twitter:description` (**145c**): `Diseño de páginas web en Rosario desde $150.000 ARS finales: sitios ultrarrápidos con Google Maps y WhatsApp para empresas, comercios y estudios.`
+     - Reforzar bloque GEO con datos estructurados claros para mantener y multiplicar la citación en ChatGPT/Perplexity/Gemini (precio exacto $150.000 ARS, entrega en 3 a 5 días hábiles, cobertura Centro, Pichincha, Puerto Norte, Fisherton, Funes y Gran Rosario) y sumar enlaces contextuales a **`/demos/arquitectura/`** y **`/demos/contable/`** (estudios contables y profesionales de Rosario).
+     - Ampliar con **paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** cubriendo precios en Rosario, entrega remota vs presencial, Google Maps en Gran Rosario/Funes, dominio `.com.ar`, mantenimiento opcional y demos por rubro.
+     - Actualizar `dateModified: 2026-11-21T09:30:00-03:00`.
+
+2. **Boost 2 (`/blog/como-poner-agregar-negocio-local-google-maps-gratis/` — `101` impr en GSC, Pos `10.0` en Página 1, 22 días de antigüedad — Reemplaza a Santa Fe que pasa al Miércoles 25/11):**
+   - **Consultas reales GSC + Google AR Autocomplete (25 sugerencias):**
+     - GSC: `'como poner la ubicación de un negocio en google maps'` (**Pos `10.0`**), `'poner tu negocio en google maps'` (8 impr, Pos `42.6`), `'aparecer en google maps'` (8 impr), `'como agregar mi negocio a google maps'` (8 impr), `'registrar mi negocio en google maps'` (5 impr), `'como poner mi negocio en google maps'` (5 impr).
+     - Autocomplete AR: `como poner mi negocio en google maps gratis`, `como poner mi negocio en google maps desde mi celular`, `cuanto cuesta poner tu negocio en google maps`, `como poner mi negocio en google maps y waze`, `como poner visible mi negocio en google maps`.
+   - **Defectos GRAVES actuales detectados:** `<title>` de **98 CARACTERES**, `meta description` de **171 caracteres**, FAQ desfasado (`2 <details>` vs `3 Schema`), y un CTA metido como `<h2>` al final!
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**57c**): `Cómo Poner tu Negocio en Google Maps Gratis (Paso a Paso)`
+     - `meta description`, `og:description`, `twitter:description` (**150c**): `Cómo poner tu negocio en Google Maps gratis desde el celular o PC en Argentina: alta de ficha, verificación por video y claves para salir en el Top 3.`
+     - Convertir el último `<h2>` promocional en `<h3>` (higiene semántica), inyectar en el cuerpo las consultas exactas de Google AR (*hacer el alta desde el celular*, *por qué es 100% gratis*, *diferencia con Waze*) y sumar enlace hacia la nueva guía del sábado (`/blog/parametros-utm-google-analytics-4-maps/`).
+     - Ampliar con **paridad exacta 6/6 (`<details>` == JSON-LD `FAQPage`)** cubriendo:
+       1. `¿Cobran algo o cuánto cuesta poner mi negocio en Google Maps en Argentina?`
+       2. `¿Cómo puedo agregar la ubicación de mi negocio en Google Maps desde el celular?`
+       3. `¿Cómo aprobar la verificación por video de Google Maps si trabajo a domicilio o sin cartel?`
+       4. `¿Cuánto tarda en aparecer mi negocio visible en Google Maps después de verificarlo?`
+       5. `¿Al dar de alta mi local en Google Maps también aparece automáticamente en Waze?`
+       6. `¿Cómo puedo medir cuántas personas entran a mi página web desde mi ficha de Google Maps?`
+     - Actualizar `dateModified: 2026-11-21T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO Local & Analítica (`40%` Solapamiento Máximo · `12` Sugerencias Reales en Google AR)
+
+> **Por qué se mejoró el enfoque original (*Estadísticas GBP* -> *Parámetros UTM en GA4 + Google Maps*):** `estadisticas google business profile` solo tenía 1 sugerencia en Google AR y baja intención de acción. Al reenfocarla en **`Parámetros UTM en Google Analytics 4 y Google Maps`** (absorbiendo dentro de la guía cómo cruzar las estadísticas del panel de Google Business Profile con GA4), capturamos **12 sugerencias reales en Google AR** (`que son los parametros utm`, `utm google analytics 4`, `como ver las utm en google analytics 4`, `utm builder google analytics 4`, `estadisticas de google mi negocio`), mantenemos `0%` canibalización real y resolvemos el mayor punto ciego analítico de negocios locales y marketers.
+
+- **Main Keyword:** `Parámetros UTM en Google Analytics 4`
+- **Slug (Regla #18 — 6 palabras naturales):** `/blog/parametros-utm-google-analytics-4-maps/`
+- **`<title>` (56 caracteres):** `Parámetros UTM en Google Analytics 4: Medir Maps y Redes`
+- **`<h1>` (68 caracteres — Regla #5 estricta):** `Parámetros UTM en Google Analytics 4: Cómo Medir Google Maps y Redes`
+- **`meta description` (148 caracteres):** `Qué son los parámetros UTM en Google Analytics 4 y cómo crear enlaces etiquetados para medir clics reales desde Google Maps, Instagram y códigos QR.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta · 55 palabras):**
+  > **Los parámetros UTM en Google Analytics 4 (GA4)** son etiquetas cortas que se agregan al final de un enlace (`?utm_source=...&utm_medium=...`) para identificar con exactitud cuántas visitas y consultas de WhatsApp llegan desde tu ficha de Google Maps, tu biografía de Instagram, tus códigos QR impresos o cada campaña de anuncios.
+- **Categoría real en `blog/index.html` (Regla #24):** `maps` (*Google Maps y Posicionamiento Local*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (ChatGPT, Perplexity, Google AI Overviews + Google AR Autocomplete):**
+  1. *Prompt IA:* *"¿Qué son los parámetros UTM en Google Analytics 4 y para qué sirven en un negocio local?"*
+  2. *Prompt IA:* *"¿Por qué las visitas que vienen de Google Maps aparecen como tráfico Directo u Orgánico en GA4 y cómo arreglarlo?"*
+  3. *Prompt IA:* *"¿Cómo etiquetar el enlace del sitio web en Google Business Profile (Google Mi Negocio) sin romper el SEO ni las estadísticas?"*
+  4. *Prompt IA:* *"¿Dónde se ven los resultados de las etiquetas UTM dentro de los informes de Google Analytics 4?"* (ruta exacta: `Informes > Adquisición > Adquisición de tráfico > Fuente / Medio de la sesión` + `Campaña de la sesión`).
+  5. *Prompt IA:* *"¿Qué errores con las UTM arruinan los datos de GA4?"* (usar UTM en enlaces internos del propio sitio, mezclar mayúsculas/minúsculas como `Instagram` vs `instagram`, o no diferenciar `utm_source=google` de `utm_medium=organic`).
+  - **Entidades concretas para citación GEO:** Los 5 parámetros estándar (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`), ejemplo exacto listo para copiar en Google Business Profile (`https://tudominio.com.ar/?utm_source=google&utm_medium=organic&utm_campaign=gbp`), cruce con el panel de *Rendimiento / Estadísticas de Google Business Profile* (llamadas, rutas, búsquedas) y regla crítica de etiqueta `<link rel="canonical">` para que las UTM nunca dupliquen URLs en Google.
+- **Imagen Editorial (`1200x675`, PIL `< 490 KB`, dual-sync `images/` y `public/images/`):**
+  - Archivo: `images/guia_parametros_utm_google_analytics_4_maps.png`
+  - Escena (Regla Visual Sturm): Consultor de analítica / dueño de PyME en escritorio limpio mirando pantalla de laptop con gráficos de canales de adquisición (Google Maps, Instagram, QR) y celular al lado con una ficha de Google Maps abierta; iluminación natural de oficina moderna en Argentina; pastilla superior izquierda `"ANALÍTICA GA4 & MAPS"` y sello inferior derecho `erikwebsite.com`.
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Qué son los parámetros UTM en Google Analytics 4 y por qué arreglan el punto ciego de Google Maps</h2>`
+  2. `<h2>2. Los 5 parámetros UTM explicados con ejemplos reales para negocios en Argentina</h2>` *(Tabla comparativa HTML con ejemplos listos para copiar: Botón Sitio Web de Google Business Profile, Bio de Instagram, Cartel QR impreso en local, Firma de correo corporativo y Campaña de Meta Ads).*
+  3. `<h2>3. Cómo cruzar las estadísticas de Google Business Profile con tus informes UTM en GA4 paso a paso</h2>` *(Ruta exacta en GA4: Adquisición de tráfico -> Fuente/Medio + Campaña, cruzada con `whatsapp_click` y `generate_lead`, más las 4 métricas útiles del panel de Google Maps).*
+  4. `<h2>4. Los 4 errores con parámetros UTM que ensucian tus métricas (y cómo afecta al SEO si no tenés canonical)</h2>` *(Nunca usar UTM en enlaces internos, siempre minúsculas sin acentos ni espacios, consistencia de nombres y validación de `<link rel="canonical">`).*
+- **Interlinking Obligatorio (100% verificado en disco — Regla #19):**
+  - **Salientes:** `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`, `/blog/por-que-mi-negocio-no-aparece-en-google-maps/`, `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/`, `/blog/google-tag-manager-vs-ga4-seo/`, `/blog/generador-link-qr-whatsapp-gratis/`, `/auditoria-seo/`.
+  - **Entrante obligatorio:** Enlazar desde `/blog/como-poner-agregar-negocio-local-google-maps-gratis/` (Boost 2 del mismo día) y desde `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/` hacia `/blog/parametros-utm-google-analytics-4-maps/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6 HTML `<details>` == JSON-LD `FAQPage` — Regla #22):**
+  1. `¿Usar parámetros UTM en el enlace de Google Business Profile perjudica el SEO o duplica mi página en Google?`
+  2. `¿Dónde veo el tráfico de mis enlaces UTM paso a paso dentro de Google Analytics 4?`
+  3. `¿Cuál es la plantilla UTM recomendada para el botón de Sitio Web de Google Maps?`
+  4. `¿Puedo usar parámetros UTM dentro de los botones del menú o enlaces internos de mi propia web?`
+  5. `¿Cómo combino un código QR impreso con parámetros UTM para saber cuánta gente escanea mi vidriera o folleto?`
+  6. `¿Por qué las estadísticas de clics en Google Business Profile no coinciden exactamente al 100% con las sesiones de GA4?`
+- **Cierre técnico del Sábado (Flash):** Ejecutar `python scratch/verify_article_hygiene.py --hub blog/diseno-web-rosario/index.html blog/como-poner-agregar-negocio-local-google-maps-gratis/index.html blog/parametros-utm-google-analytics-4-maps/index.html` -> `audit_all_internal_links.py` -> `git diff --stat` -> `npm run build` -> Notificar APIs -> `git push origin main`.
 
 ---
 
 ## 6. Próximo Comando Dominical Programado (Domingo 22 de Noviembre de 2026)
-- **Ejecución de Auditoría Integral (Semana 3):** Correr `python scratch/sunday_seo_command.py` con **Argon (High)** para contrastar la evolución de impresiones, clics orgánicos, páginas en Bing (`InIndex`), conversiones GA4 (`generate_lead` / `whatsapp_click`) y el impacto de las 27 guías del Sprint + los 6 nuevos artículos y 8 Boosts de la Semana 2.
+- **Ejecución de Auditoría Integral (Semana 3):** Correr `python scratch/sunday_seo_command.py` para contrastar la evolución de impresiones (`4.772` al 19/11), clics orgánicos, páginas en Bing (`17` al 19/11), tráfico de asistentes de IA (`AI Assistant` en GA4) y conversiones `generate_lead` / `whatsapp_click`.
+- **Cola Pre-Validada de Boosts Maduros para Semana 3 (Lunes 23 al Sábado 28/11 — Ya detectados hoy en GSC):**
+  1. `/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/` (**76 impr, Pos `8.8`**, 9 queries en Pos 6.7–11.6 + visita orgánica real en GA4 — cumple 14 días el 21/11).
+  2. `/blog/crear-pagina-web-google-sites-sirve-para-negocio/` (**45 impr**, 4 queries en Página 1 Pos 5.0–8.0, `<title>` 84c, `meta desc` 189c, 2 FAQs).
+  3. `/blog/por-que-mi-negocio-no-aparece-en-google-maps/` (**57 impr**, `<title>` 84c, FAQ roto 2/4).
+  4. `/blog/diseno-web-santa-fe/` (32 impr, `<title>` 70c, FAQ roto 2/3) y `/blog/diseno-web-la-rioja/` (29 impr, `<title>` 84c) — en el **Miércoles 25/11** (eje Diseño Web y Localidades).
+  5. Evaluar a partir del **26/11** (ventana 14 días) el comportamiento de `/blog/seo-on-page-checklist-optimizacion/` (**111 impr en Pos `6.3` en solo 7 días!**) y decidir si cargar nuestras 30 Money Keywords en **SerpBear** (hoy en `0` rastreadas) o retirarlo del reporte dominical.

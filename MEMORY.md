@@ -52,15 +52,43 @@
       - Mantener los textos comerciales concisos o con placeholders estructurales claros (sin regalar el copywriting completo antes del anticipo).
       - Incluir la barra superior de propuesta exclusiva (`Propuesta para [Cliente] · Validez 7 días`), la tarjeta de alcance llave en mano ($150.000 ARS setup, 5 días hábiles, 50% anticipo y 50% contra entrega) y el botón directo para aprobar la propuesta y congelar el cupo semanal vía WhatsApp.
     - **Registro Técnico:** Añadir cada propuesta a `vite.config.js` (`propuestas_<cliente>`) para garantizar su compilación limpia y empaquetado estático.
+21. **Prohibición de `str.replace()` Ciego y Verificación Post-Cirugía Obligatoria (`verify_article_hygiene.py` + `git diff`):**
+    - Nunca ejecutar scripts de Boost con `.replace()` sobre strings adivinados de memoria sin validar que el reemplazo efectivamente ocurrió (`assert old in html` o inspección previa del archivo). El 13/11 un `.replace()` silencioso dejó sin aplicar el Boost de nuestra URL #1 en impresiones (`/blog/como-registrar-dominio-com-ar-nic-argentina/`, 1.191 impr) mientras se marcaba como `[x] Completado`.
+    - Antes de marcar cualquier artículo nuevo o Boost como completado, ejecutar obligatoriamente:
+      `python scratch/verify_article_hygiene.py --hub <archivo_modificado_1> <archivo_modificado_2>`
+      y verificar `git diff --stat` para confirmar que cada archivo editado realmente cambió en disco.
+22. **Paridad Estricta 1:1 entre HTML `<details>` y Schema JSON-LD `FAQPage`:**
+    - Cada vez que se crea un artículo o se amplían las preguntas frecuentes de un Boost (ej. de 2 a 6 FAQs), es obligatorio sincronizar el bloque JSON-LD `FAQPage` (`mainEntity`) para que tenga exactamente la misma cantidad y contenido que los `<details name="faq-accordion">` visibles en el HTML (`N == N`). Tener más o menos preguntas en Schema que en el HTML visible viola las directrices de datos estructurados de Google.
+23. **Checklist Técnico Innegociable de Plantilla en Todo Artículo (`/blog/*/index.html`):**
+    - Ningún artículo nuevo ni script generador puede publicarse sin incluir los 6 bloques técnicos verificados por `verify_article_hygiene.py`:
+      1. Filtro de tráfico interno Capa 1 (`id="ew-internal-filter"`) en `<head>`.
+      2. Google Analytics 4 (`G-KWD0WYVK4J`).
+      3. Meta Pixel (`1143177121539028`) + `<noscript>` al inicio de `<body>`.
+      4. Google Preferred Sources (`news.google.com/swg/js/v1/publisher.js` async + widget `<div google-add-preferred-source-btn ...>`).
+      5. `<script type="module" src="/src/js/main.js"></script>` antes de `</body>` (indispensable para que funcionen los botones `data-wa-msg`, menú móvil, `whatsapp_click`, `generate_lead`, `faq_expand` y `article_read_75` — su omisión rompió las conversiones en 11 artículos del sprint del 13–14/11).
+      6. Navbar unificada del blog sin `#demos` ni `#precios` (Regla #3).
+24. **Taxonomía Cerrada de `data-cat` y Contadores Sincronizados en `blog/index.html`:**
+    - Al registrar tarjetas en `blog/index.html`, usar exclusivamente una de las **9 claves válidas** del `<select>` de filtro: `seo`, `precios`, `maps` (incluye TODAS las provincias y ciudades), `servicios`, `negocios`, `rubros`, `redes`, `ventas` (funnels y conversión), `dominios`.
+    - Queda prohibido inventar claves inexistentes como `diseno` o `geo` (dejan tarjetas invisibles al filtrar). Cada vez que se suma una tarjeta, actualizar el contador exacto de esa categoría en el `<option>`, el total en `Todas las categorías (N)` y el span `Mostrando N guías`.
+25. **Límites Duros de Metadatos en Artículos/Boosts y Voseo Rioplatense Estricto:**
+    - `<title>`: **50 a 60 caracteres máximo** (sincronizado con `og:title` y `twitter:title`).
+    - `<h1>`: **45 a 75 caracteres máximo** (cumplimiento real de Regla #5; prohibido crear `<h1>` de 90–120 caracteres).
+    - `meta description`: **135 a 158 caracteres** (sincronizado con `og:description` y `twitter:description`; obligatorio acortar también en Boosts cuando el original supera 160c).
+    - **Voseo Argentino Consistente:** Redactar todo contenido en español con voseo rioplatense natural (*podés, tenés, buscás, elegís, querés*). Prohibido mezclar tuteo neutro (*puedes, tienes, quieres*) en textos o FAQs.
+26. **Doble Filtro de Demanda Real + Query Fan-Out IA Antes de Planificar Keywords o Boosts:**
+    - **Selección de Boosts:** Priorizar URLs con **>= 14 días de maduración** que cumplan al menos uno de estos criterios medidos en vivo: (a) tráfico real entrante de asistentes IA (`chatgpt.com`, `gemini.google.com`, `perplexity.ai` en GA4), (b) impresiones altas (`>= 25` impr en GSC) con `<title>` truncado (`> 62c`) o paridad FAQ rota, o (c) consultas comerciales en *Striking Distance* (Pos 4–20). No gastar un slot de Boost en páginas con `1` sola impresión si existen páginas maduras con `30–100+` impresiones en el mismo eje.
+    - **Selección de Artículos Nuevos:** Nunca elegir temas "de memoria". Toda keyword nueva debe superar: (1) `check_cannibalization.py` **< 60%** (nunca ≥ 70%), (2) demanda real verificada en los CSVs de Google Ads o **>= 4 sugerencias en Google Argentina Autocomplete** (`suggestqueries.google.com?gl=ar&hl=es-419`), y (3) inclusión explícita en el outline de un bloque de **Preguntas IA / Query Fan-Out** con las consultas conversacionales exactas que un usuario argentino le hace a ChatGPT/Perplexity/Google AI y las entidades numéricas concretas (precios en ARS, entes locales como ARCA/NIC.ar/Mercado Pago, tiempos reales) que habilitan citación GEO.
+27. **Sincronización Obligatoria de `llms.txt` y `public/llms.txt`:**
+    - Mantener `llms.txt` y `public/llms.txt` idénticos y actualizados cada vez que se lanza una demo nueva (ej. `/demos/arquitectura/`, `/demos/contable/`) o se publica un lote relevante de guías pilares. Verificar con `verify_article_hygiene.py --hub` que no contenga URLs inexistentes (404).
 
 ---
 
 ## 🗄️ Decisiones de Arquitectura
 - **Estrategia SEO + AEO + GEO:** Cada artículo del blog incorpora un bloque superior de **Respuesta Directa** (40–60 palabras para citación en Google AI Overviews, ChatGPT Search, Perplexity y Grok), encabezados `<h2>` formulados como preguntas reales de usuarios/IA (*Query Fan-Out*), tablas comparativas HTML y marcado estructurado `Schema.org` (`BlogPosting`, `BreadcrumbList`, `FAQPage`).
-- **Protocolo Operativo Semanal Híbrido (Argon High ➔ Flash 3.8 High):**
-  - **Domingo (Argon con High Reasoning):** Auditoría semanal (GSC, Bing, GA4, SerpBear) y resolución de los **Pasos 1 y 2 para toda la semana** (Lunes a Sábado): detección de canibalización, asignación de Boosts/H2 y diseño de **Outlines maestros cerrados** (Título ≤ 60 caracteres, slug alineado a la Main Keyword exacta, H1, Meta Description, Direct Answer Sturm en primeras 5–10 palabras, H2s y lista de FAQs sin techo rígido: mínimo 4, hasta 6 u 8 FAQs según complejidad temática para capturar People Also Ask y query fan-out de IAs).
-  - **Lunes a Sábado (Flash 3.8 con High Reasoning):** Ejecución ágil de los **Pasos 3 y 4** de cada día: redacción editorial apegada al outline maestro, imágenes PIL cuantizadas (`< 490 KB`), cero enlaces rotos (Regla #19), compilación limpia en Vite y notificaciones automáticas (Google Indexing API v3, sitemaps, Bing e IndexNow). Protege el consumo de créditos de Argon concentrándolo en una única sesión estratégica dominical.
-- **Script Local de Fan-Out (`scratch/free_alsoasked_ai_fanout.py`):** Herramienta propia gratuita en Python para recolectar preguntas de autocompletado y *People Also Ask* en Google Argentina (`gl=ar`, `hl=es-419`) sin depender de suscripciones pagas como AlsoAsked.
+- **Protocolo Operativo Semanal Híbrido (Planificación High Reasoning ➔ Ejecución Ágil):**
+  - **Domingo / Revisión Estratégica (Modelo High Reasoning):** Auditoría semanal (GSC, Bing, GA4, SerpBear) y resolución de los **Pasos 1 y 2 para toda la semana** (Lunes a Sábado): detección de canibalización (< 60%), validación de demanda en Google AR Autocomplete + CSVs, asignación de Boosts/H2 sobre páginas maduras (>= 14 días) y diseño de **Outlines maestros cerrados** (Título ≤ 60c, slug alineado a la Main Keyword, H1 ≤ 75c, Meta Description 135–158c, Direct Answer Sturm en primeras 5–10 palabras, bloque de Preguntas IA / Query Fan-Out, categoría `data-cat` válida, H2s, interlinking verificado en disco y 6 FAQs con paridad 1:1).
+  - **Lunes a Sábado (Modelo Ejecutor Ágil):** Ejecución de los **Pasos 3 y 4** de cada día apegada al outline maestro, imágenes PIL cuantizadas (`< 490 KB` dual-sync), validación automática obligatoria con `python scratch/verify_article_hygiene.py --hub <archivos>`, auditoría de enlaces (`scratch/audit_all_internal_links.py`), `git diff --stat`, compilación limpia en Vite (`npm run build`), notificaciones a Google Indexing API v3 / GSC Sitemap / IndexNow / Bing y `git push origin main`.
+- **Scripts Locales de Calidad y Fan-Out:** `scratch/free_alsoasked_ai_fanout.py` (autocompletado y preguntas Google Argentina `gl=ar`), `scratch/check_cannibalization.py` (solapamiento y Boost), `scratch/audit_all_internal_links.py` (0 enlaces rotos) y `scratch/verify_article_hygiene.py` (puerta de calidad técnica Reglas #3, #5, #7, #12, #13, #17, #22–#27).
 
 ---
 
@@ -686,6 +714,24 @@
     - 0 emojis decorativos (Regla #17).
     - Build de Vite exitoso en 28.22s.
     - Notificación exitosa a Google Indexing API v3 (`200 OK`), GSC Sitemap ping, IndexNow (`202 Accepted`) y Bing Webmaster API (`200 OK`).
+- [x] **2026-11-19 (Auditoría Profunda de Medio Término, Reglas #21–#27 y Re-optimización del Plan Restante de la Semana 2 en `PLAN_SEMANAL_SEO.md` — Sin Redacción):**
+  - **Pulso en Vivo (GSC + Bing + GA4 al 19/11/2026):**
+    - GSC saltó a **`4.772` impresiones (+44% en 4 días vs. 3.310 del domingo)** y `44` consultas en *Striking Distance* (Pos 4–20); nuevo clic orgánico en `/blog/registrar-marca-inpi-vs-dominio-com-ar-nic-argentina/` (Pos `6.3`); `/blog/generador-link-qr-whatsapp-gratis/` duplicó a `106` impr (+112%); `/blog/precios-shopify-argentina-conviene/` saltó a `63` impr (+85%, `'shopify argentina'` en Pos `13.2`).
+    - Bing `InIndex` subió de `10` a **`17` páginas (+70% en 4 días)**.
+    - GA4 registró **tráfico real de asistentes IA (`AI Assistant`: `3` usuarios, `3` sesiones, `100%` engaged)**: `chatgpt.com` hacia `/blog/diseno-web-rosario/` y `/demos/odontologia/`, y `gemini.google.com` hacia `/blog/como-delegar-dns-renovar-dominio-nic-argentina/`.
+  - **Errores Sistémicos Detectados y Bloqueados con Nuevas Reglas #21–#27 + Validador `scratch/verify_article_hygiene.py`:**
+    1. **Boosts fantasma por `.replace()` ciego (13/11):** `/blog/como-registrar-dominio-com-ar-nic-argentina/` (1.191 impr) y `/blog/paginas-web-empresas-limpieza-finales-obra-tapizados/` nunca cambiaron en disco (siguen con títulos de 88c y 93c).
+    2. **Desfase HTML `<details>` vs JSON-LD `FAQPage` en 62 artículos:** incluidos los Boosts del 14/11 (`como-crear-correo-corporativo-dominio-propio-gmail` 6/2; `dominio-com-vs-com-ar` 6/3).
+    3. **11 artículos del Sprint SEO (13–14/11) sin `/src/js/main.js`:** botones de WhatsApp y eventos GA4 inactivos hasta inyectar el script.
+    4. **Taxonomía `blog/index.html` desfasada:** 6 provincias con `data-cat="geo"` huérfano, el plan indicaba `diseno` (inexistente) y contadores de `servicios`/`ventas`/`dominios` desactualizados.
+    5. **`<h1>` de 93–120 caracteres violando Regla #5**, `meta description` > 160c sin recortar en Boosts, y mezcla puntual de tuteo neutro (`puedes`).
+    6. **`llms.txt` / `public/llms.txt` desactualizados** con URL 404 (`/demos/medicina/`), sin `/demos/arquitectura/` y contador congelado en 153 guías.
+    7. **SerpBear local en `0` keywords rastreadas.**
+  - **Reestructuración del Plan Restante (Bloque 0 de Saneamiento + Jueves 19/11 + Viernes 20/11 + Sábado 21/11) con Validación Real de Demanda (32 CSVs + Google AR Autocomplete + AI Query Fan-Out) y 33/33 Enlaces Verificados en Disco:**
+    - **Jueves 19/11:** Boosts Shopify (63 impr, Pos 13.2) + Canva (27 impr, Pos 7.3) + Nuevo **`/blog/seo-odontologos-consultorios-dentales/`** (0% canibalización, 11 sugerencias AR, potencia `/demos/odontologia/` ya citado por ChatGPT — reemplaza Hoteles/Cabañas que tenía 67% overlap).
+    - **Viernes 20/11:** Boosts Generador QR WhatsApp (106 impr) + **`/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/`** (32 impr, 1 clic, Pos 8.0, título 100c — reemplaza Cotizador que solo tenía 1 impr) + Nuevo **`/blog/landing-page-vender-cursos-online/`** (500/mes CSV + 5 sugerencias AR + sinergia 1:1 con `/demos/funnel/` y Hotmart — reemplaza Consorcios que tenía 0 sugerencias web en AR).
+    - **Sábado 21/11:** Boosts **`/blog/diseno-web-rosario/`** (35 impr + tráfico real de ChatGPT!) + **`/blog/como-poner-agregar-negocio-local-google-maps-gratis/`** (101 impr, Pos 10.0, título 98c — reemplaza Santa Fe, que pasa a Miércoles 25/11) + Nuevo **`/blog/parametros-utm-google-analytics-4-maps/`** (40% overlap, 12 sugerencias AR, absorbe estadísticas GBP + atribución real en GA4).
+    - Creado `scratch/verify_article_hygiene.py` como puerta de calidad obligatoria antes de cada `npm run build` y `git push`.
 
 
 
