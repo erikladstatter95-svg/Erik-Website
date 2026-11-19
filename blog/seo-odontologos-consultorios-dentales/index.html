@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO para Odontólogos y Consultorios Dentales en Argentina</title>
+  <meta name="description" content="SEO para odontólogos y clínicas dentales en Argentina: cómo captar pacientes particulares de implantes y ortodoncia en Google y Google Maps sin pagar ads.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SEO para Odontólogos y Consultorios Dentales en Argentina">
+  <meta property="og:description" content="SEO para odontólogos y clínicas dentales en Argentina: cómo captar pacientes particulares de implantes y ortodoncia en Google y Google Maps sin pagar ads.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_seo_odontologos_consultorios_dentales.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEO para Odontólogos y Consultorios Dentales en Argentina">
+  <meta name="twitter:description" content="SEO para odontólogos y clínicas dentales en Argentina: cómo captar pacientes particulares de implantes y ortodoncia en Google y Google Maps sin pagar ads.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_seo_odontologos_consultorios_dentales.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/#article",
+        "headline": "SEO para Odontólogos: Cómo Posicionar tu Consultorio en Google y Maps",
+        "description": "SEO para odontólogos y clínicas dentales en Argentina: cómo captar pacientes particulares de implantes y ortodoncia en Google y Google Maps sin pagar ads.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/guia_seo_odontologos_consultorios_dentales.png",
+          "width": 1200,
+          "height": 675
+        },
+        "datePublished": "2026-11-19T10:00:00-03:00",
+        "dateModified": "2026-11-19T10:00:00-03:00",
+        "inLanguage": "es-AR",
+        "author": {
+          "@type": "Person",
+          "name": "Erik Ladstatter",
+          "url": "https://erikwebsite.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Erik Website",
+          "url": "https://erikwebsite.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+          }
+        },
+        "mainEntityOfPage": "https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://erikwebsite.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://erikwebsite.com/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SEO para Odontólogos y Consultorios Dentales",
+            "item": "https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://erikwebsite.com/blog/seo-odontologos-consultorios-dentales/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo hago para que mi consultorio odontológico aparezca primero en Google Maps en mi barrio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tenés que elegir la categoría principal correcta (Dentista o Clínica dental), sumar categorías secundarias reales como Ortodoncista o Periodoncista, cargar fotos auténticas del consultorio, conseguir reseñas frecuentes donde los pacientes mencionen el tratamiento y enlazar tu ficha a una página web rápida con dirección y teléfono idénticos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia hay entre hacer publicidad en Instagram y hacer SEO para odontólogos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instagram interrumpe a personas que están mirando entretenimiento y genera muchas consultas frías pidiendo precio. El SEO en Google y Google Maps capta pacientes con necesidad concreta que ya buscan implantes, ortodoncia invisible o turno odontológico en tu zona, y sigue trayendo consultas aunque apagues los anuncios."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué tratamientos conviene posicionar primero en Google para atraer pacientes particulares?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Conviene priorizar tratamientos de mayor margen y búsqueda específica: implantes dentales, ortodoncia invisible con alineadores, carillas estéticas, rehabilitación oral, blanqueamiento y urgencias dentales combinados con tu barrio o ciudad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué Google es más exigente con el SEO de clínicas dentales y médicos (criterio YMYL y E-E-A-T)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Porque la odontología impacta en la salud de las personas (páginas YMYL). Google verifica señales reales de experiencia y autoridad: nombre completo del profesional, número de Matrícula Nacional o Provincial visible, formación universitaria, dirección comprobable en Google Maps y datos estructurados Dentist o MedicalClinic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo tarda un consultorio dental en ver pacientes nuevos desde Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En búsquedas locales de Google Maps y tratamientos por barrio los primeros movimientos visibles suelen darse entre 60 y 120 días, dependiendo de la competencia de tu ciudad, el historial de tu dominio y el ritmo de reseñas nuevas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito tener una página web propia o alcanza solo con la ficha gratuita de Google Maps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La ficha de Google Maps es el punto de partida, pero Google toma las señales de tu página web para confirmar qué tratamientos hacés, en qué zona atendés y si trabajás particular o con reintegro. Además, el paciente entra a tu web para ver tus casos Antes/Después y credenciales antes de pedir turno por WhatsApp."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <!-- Meta Pixel noscript Fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+  </noscript>
+
+  <!-- NAVBAR BLOG -->
+  <header id="main-nav" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg sm:text-xl text-slate-900 tracking-tight flex items-center">
+        <span>Erik <span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-slate-600 tracking-tight">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-700 transition-colors font-semibold text-emerald-600">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-700 transition-colors font-semibold text-slate-600">San Juan</a>
+        <a href="/blog/" class="text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5">Blog</a>
+      </nav>
+
+      <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20la%20gu%C3%ADa%20de%20SEO%20para%20odont%C3%B3logos%20y%20quiero%20posicionar%20mi%20consultorio%20en%20Google."
+         target="_blank"
+         rel="noopener noreferrer"
+         data-wa-msg="Hola Erik! Leí la guía de SEO para odontólogos y quiero posicionar mi consultorio en Google."
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-10 sm:py-16">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6">
+
+      <!-- BREADCRUMBS -->
+      <nav aria-label="Ruta de navegación" class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
+        <a href="/" class="hover:text-emerald-600">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-emerald-600">Blog</a>
+        <span>/</span>
+        <span class="text-slate-800 truncate">SEO para Odontólogos</span>
+      </nav>
+
+      <!-- ENCABEZADO -->
+      <header class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-4">
+          <span>Auditoría SEO, Velocidad e IA • Argentina 2026</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
+          SEO para Odontólogos: Cómo Posicionar tu Consultorio en Google y Maps
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 pb-6 border-b border-slate-200">
+          <span>Por <strong>Erik Ladstatter</strong></span>
+          <span>•</span>
+          <span>Publicado: 19 de noviembre de 2026</span>
+          <span>•</span>
+          <span>Lectura: 8 minutos</span>
+        </div>
+      </header>
+
+      <!-- RESPUESTA DIRECTA (AEO / GEO BLOCK - REGLA STURM) -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200 mb-8 text-slate-800">
+        <p class="font-bold text-slate-900 text-base mb-2">
+          Respuesta directa: ¿Cómo funciona el SEO para odontólogos en Argentina?
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700">
+          <strong>El SEO para odontólogos y consultorios dentales</strong> en Argentina consiste en optimizar tu página web y tu ficha de Google Maps para aparecer en el Top 3 cuando un paciente busca tratamientos rentables (implantes, ortodoncia invisible, carillas o guardia) en tu barrio, captando turnos particulares por WhatsApp sin depender mes a mes de anuncios pagos.
+        </p>
+      </div>
+
+      <!-- IMAGEN PRINCIPAL (CRITERIO VISUAL STURM) -->
+      <figure class="my-8 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/images/guia_seo_odontologos_consultorios_dentales.png"
+             alt="Odontólogo en consultorio dental moderno en Argentina revisando posicionamiento en Google Maps y consultas de turnos por WhatsApp"
+             class="w-full h-auto object-cover"
+             loading="eager"
+             decoding="async"
+             width="1200"
+             height="675">
+        <figcaption class="p-3 text-xs text-slate-500 text-center bg-slate-50 border-t border-slate-100">
+          Combinar una ficha optimizada en Google Maps con una web rápida por tratamiento atrae pacientes particulares listos para agendar turno. Foto erikwebsite.com.
+        </figcaption>
+      </figure>
+
+      <!-- CONTENIDO PRINCIPAL -->
+      <div class="space-y-8 text-slate-700 text-base leading-relaxed">
+
+        <p>
+          Muchos odontólogos en Argentina tienen la agenda llena de pacientes de obras sociales con aranceles atrasados o pagan todos los meses anuncios en Instagram que solo traen mensajes de "¿cuánto sale la limpieza?". Mientras tanto, los pacientes particulares dispuestos a pagar implantes, alineadores transparentes o rehabilitación estética hacen exactamente lo mismo: abren Google o le preguntan a ChatGPT qué clínica dental de confianza atiende cerca de su zona.
+        </p>
+        <p>
+          A diferencia de una red social donde tenés que grabar videos cada semana para seguir visible, un trabajo serio de <strong>posicionamiento orgánico para clínicas dentales</strong> construye un activo propio. Un solo paciente particular de implantes u ortodoncia invisible cubre con holgura la inversión inicial en infraestructura web y SEO local.
+        </p>
+
+        <!-- H2 1 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          1. Cómo buscan dentista los pacientes particulares hoy (Google Maps, tratamientos y ChatGPT)
+        </h2>
+        <p>
+          Cuando alguien decide hacerse un tratamiento dental particular, casi nunca busca la palabra genérica "odontología". Sus búsquedas en Google Argentina y en asistentes de IA siguen tres patrones concretos de alta intención de turno:
+        </p>
+        <ul class="space-y-3 pl-1">
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">1.</span>
+            <span><strong>Tratamiento específico + barrio o ciudad:</strong> por ejemplo, <em>"implantes dentales Palermo"</em>, <em>"ortodoncia invisible Córdoba"</em> o <em>"carillas de porcelana Rosario"</em>. Quien escribe eso ya decidió tratarse y está comparando dos o tres consultorios.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">2.</span>
+            <span><strong>Urgencia o cercanía en Google Maps:</strong> consultas desde el celular como <em>"odontólogo de guardia cerca de mí"</em> o <em>"clínica dental abierta hoy"</em>. Acá decide el Top 3 del mapa local, la calificación en estrellas y qué tan rápido abre tu botón de WhatsApp.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">3.</span>
+            <span><strong>Consultas conversacionales en ChatGPT, Perplexity y Google AI Overviews:</strong> preguntas largas como <em>"¿qué clínica de implantes dentales tiene buenas reseñas en mi ciudad y atiende particular?"</em>. Las IAs cruzan la información de tu sitio web (especialidades, matrícula, ubicación) con tus opiniones públicas en Google Maps.</span>
+          </li>
+        </ul>
+
+        <!-- H2 2 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          2. SEO Local vs. Obras Sociales y Anuncios Pagos: Matemática de un Consultorio Dental
+        </h2>
+        <p>
+          Elegir dónde poner tu tiempo y tu presupuesto depende de qué tipo de paciente querés sentar en el sillón. Esta comparativa resume el comportamiento real en consultorios de Argentina:
+        </p>
+
+        <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+              <tr>
+                <th class="p-4">Criterio Comercial</th>
+                <th class="p-4 text-rose-300">Solo Obras Sociales / Prepagas</th>
+                <th class="p-4 text-amber-300">Solo Instagram Ads</th>
+                <th class="p-4 text-emerald-300">Web Rápida + SEO Local en Google</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Intención del paciente</td>
+                <td class="p-4">Busca cobertura sin copago</td>
+                <td class="p-4">Curiosidad pasiva y muchos preguntones</td>
+                <td class="p-4 text-emerald-800 font-semibold">Búsqueda activa de turno y solución</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Rentabilidad por sillón</td>
+                <td class="p-4 text-rose-700">Aranceles bajos y cobro diferido</td>
+                <td class="p-4">Variable según el costo del clic cada mes</td>
+                <td class="p-4 text-emerald-800 font-semibold">Pacientes particulares (implantes, alineadores, estética)</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Qué pasa si dejás de invertir</td>
+                <td class="p-4">Dependencia total de la cartilla</td>
+                <td class="p-4 text-rose-700">Al pausar la tarjeta se frenan los mensajes</td>
+                <td class="p-4 text-emerald-800 font-semibold">Tu web y Maps siguen recibiendo consultas todo el año</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Plazo de resultados</td>
+                <td class="p-4">Inmediato pero con margen acotado</td>
+                <td class="p-4">Rápido mientras pagues pauta</td>
+                <td class="p-4">60 a 120 días en búsquedas locales por tratamiento</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Inversión de base</td>
+                <td class="p-4">Sin inversión digital propia</td>
+                <td class="p-4">Gasto mensual creciente en publicidad</td>
+                <td class="p-4 text-emerald-800 font-bold">$150.000 ARS web base (pago único) + auditoría SEO</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          La estrategia más inteligente para consultorios en crecimiento combina una web rápida pensada para SEO desde el día uno con campañas puntuales de Google Ads en los primeros meses mientras el posicionamiento orgánico madura. Así el consultorio factura desde la primera semana y baja su dependencia de anuncios a partir del tercer o cuarto mes.
+        </p>
+
+        <!-- H2 3 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          3. Los 5 pilares del SEO para clínicas dentales y odontólogos (E-E-A-T, Google Maps y Schema Dentist)
+        </h2>
+        <p>
+          Google clasifica a la odontología dentro del grupo <strong>YMYL (Your Money or Your Life)</strong>, igual que al resto de las especialidades médicas que detallamos en nuestra guía de <a href="/blog/seo-medicos-clinicas-argentina/" class="text-emerald-700 font-semibold hover:underline">SEO para médicos y clínicas en Argentina</a>. Eso implica que el buscador exige pruebas claras de idoneidad profesional antes de ubicarte arriba. Estos son los cinco pilares que marcan la diferencia:
+        </p>
+
+        <ol class="space-y-4 pl-2">
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">1.</span>
+            <div>
+              <strong>Bloques y subtítulos dedicados por tratamiento rentable:</strong> Si tu web tiene un solo párrafo genérico que dice "hacemos odontología general", nunca vas a rankear para <em>implantes dentales</em> ni <em>ortodoncia invisible</em>. Cada especialidad prioritaria debe tener su propia sección clara con preguntas frecuentes reales del paciente, tiempos de recuperación y modalidad de atención.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">2.</span>
+            <div>
+              <strong>Categorías precisas en Google Business Profile:</strong> En tu ficha de Google Maps elegí la categoría principal más cercana a tu práctica (<code>Dentista</code> o <code>Clínica dental</code>) y completá categorías secundarias oficiales según tu equipo: <code>Ortodoncista</code>, <code>Periodoncista</code>, <code>Endodoncista</code> o <code>Servicio de urgencias dentales</code>. Profundizamos todo este armado en la guía de <a href="/blog/seo-local-google-maps-argentina/" class="text-emerald-700 font-semibold hover:underline">SEO local y Google Maps en Argentina</a>.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">3.</span>
+            <div>
+              <strong>Señales reales de E-E-A-T y Matrícula visible (MN / MP):</strong> Mostrá el nombre y apellido completo del profesional o director médico, su <strong>Matrícula Nacional (MN) o Matrícula Provincial (MP)</strong>, universidad de egreso, posgrados y fotos reales del consultorio. Un sitio anónimo con fotos de banco de imágenes pierde confianza tanto para el paciente como para el algoritmo.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">4.</span>
+            <div>
+              <strong>Reseñas con mención de tratamiento y código QR en recepción:</strong> Diez opiniones recientes donde el paciente cuenta su experiencia con un implante o un tratamiento de conducto sin dolor valen más que cien estrellas mudas de hace cuatro años. Podés implementar el sistema paso a paso de nuestra guía sobre <a href="/blog/conseguir-resenas-google-maps-seo/" class="text-emerald-700 font-semibold hover:underline">cómo conseguir reseñas en Google Maps con QR</a> en el mostrador de tu secretaría.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">5.</span>
+            <div>
+              <strong>Código rápido en celular y datos estructurados Schema <code>Dentist</code> / <code>MedicalClinic</code>:</strong> Más del 85% de los turnos dentales se piden desde el teléfono. Si tu sitio tarda 5 segundos en abrir por un WordPress recargado o le faltan etiquetas JSON-LD (<code>Dentist</code>, horarios, dirección NAP idéntica a Google Maps, geolocalización y <code>FAQPage</code>), regalás el primer puesto al consultorio de la cuadra siguiente.
+            </div>
+          </li>
+        </ol>
+
+        <!-- H2 4 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          4. Cómo convertir visitas de Google en turnos confirmados por WhatsApp (Ejemplo en vivo)
+        </h2>
+        <p>
+          Subir a la primera página de Google sirve de poco si el paciente entra a tu sitio y se encuentra con un formulario largo que nadie responde o sin saber si atendés particular o por reintegro de prepagas. Una web odontológica orientada a conversión ordena tres elementos clave en menos de un segundo de carga:
+        </p>
+        <ul class="space-y-2.5 pl-1">
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">•</span>
+            <span><strong>Transparencia de modalidad:</strong> aclarar arriba si trabajás de forma particular, con factura para reintegro o con prepagas seleccionadas ahorra decenas de chats improductivos a tu secretaría.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">•</span>
+            <span><strong>Casos clínicos visuales Antes / Después:</strong> un deslizador interactivo liviano en el celular genera mucha más confianza que prometer "calidad y calidez".</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">•</span>
+            <span><strong>Botón de WhatsApp segmentado por especialidad:</strong> que el mensaje ya llegue prearmado indicando si consulta por implantes, alineadores, estética o control general.</span>
+          </li>
+        </ul>
+
+        <!-- BLOQUE DEMO INTERACTIVA -->
+        <div class="my-8 p-6 sm:p-8 rounded-3xl bg-teal-950 text-white border border-teal-800/60 shadow-md">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-teal-300 bg-teal-500/15 border border-teal-400/30 px-2.5 py-1 rounded-full">
+            Demo Odontológica en Vivo
+          </span>
+          <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-3 mb-2">
+            Recorré nuestra arquitectura web optimizada para clínicas dentales
+          </h3>
+          <p class="text-teal-100/90 text-sm mb-5 leading-relaxed">
+            Podés probar en tu celular cómo estructuramos una clínica odontológica en código limpio: carga instantánea, especialidades claras, deslizador interactivo Antes/Después y botones directos de turno por WhatsApp. Si además querés ver qué bloques comerciales debe incluir tu sitio, revisá nuestra guía de <a href="/blog/paginas-web-marketing-odontologos-argentina/" class="text-teal-300 font-semibold underline hover:text-white">páginas web y marketing para odontólogos</a>.
+          </p>
+          <a href="/demos/odontologia/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold text-sm px-5 py-3 rounded-xl transition-all shadow-sm">
+            <span>Probar Demo de Odontología en Vivo →</span>
+          </a>
+        </div>
+
+        <!-- CTA COMERCIAL -->
+        <div class="my-10 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl border border-slate-700/60">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-3">
+            Consultoría SEO & Desarrollo Web para Salud
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-bold font-display tracking-tight text-white mb-2">
+            ¿Querés que tu consultorio dental aparezca primero en Google?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Si ya tenés página web pero no trae turnos, revisamos tu sitio y tu ficha de Google Maps con nuestra <a href="/auditoria-seo/" class="text-emerald-400 font-semibold underline hover:text-emerald-300">Auditoría SEO Técnica</a> (diagnóstico inicial gratuito). Y si todavía no tenés web propia, armamos la Landing Page rápida de tu consultorio por <strong>$150.000 ARS finales (pago único)</strong> entregada en 3 a 5 días hábiles.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Tengo%20un%20consultorio%20odontol%C3%B3gico%20y%20quiero%20mejorar%20mi%20SEO%20en%20Google%20y%20Google%20Maps."
+               target="_blank"
+               rel="noopener noreferrer"
+               data-wa-msg="Hola Erik! Tengo un consultorio odontológico y quiero mejorar mi SEO en Google y Google Maps."
+               class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg text-sm cursor-pointer">
+              <span>Consultar por WhatsApp</span>
+            </a>
+            <a href="/auditoria-seo/"
+               class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3.5 rounded-xl transition-all text-sm border border-white/10">
+              <span>Ver Servicio de Auditoría SEO</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES (PARIDAD 6/6 CON SCHEMA FAQPAGE) -->
+        <section class="pt-6 border-t border-slate-200">
+          <h2 class="text-2xl font-bold font-display text-slate-900 mb-4">
+            Preguntas frecuentes sobre SEO para odontólogos
+          </h2>
+          <div class="space-y-3">
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cómo hago para que mi consultorio odontológico aparezca primero en Google Maps en mi barrio?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Tenés que elegir la categoría principal correcta (Dentista o Clínica dental), sumar categorías secundarias reales como Ortodoncista o Periodoncista, cargar fotos auténticas del consultorio, conseguir reseñas frecuentes donde los pacientes mencionen el tratamiento y enlazar tu ficha a una página web rápida con dirección y teléfono idénticos.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Qué diferencia hay entre hacer publicidad en Instagram y hacer SEO para odontólogos?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Instagram interrumpe a personas que están mirando entretenimiento y genera muchas consultas frías pidiendo precio. El SEO en Google y Google Maps capta pacientes con necesidad concreta que ya buscan implantes, ortodoncia invisible o turno odontológico en tu zona, y sigue trayendo consultas aunque apagues los anuncios.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Qué tratamientos conviene posicionar primero en Google para atraer pacientes particulares?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Conviene priorizar tratamientos de mayor margen y búsqueda específica: implantes dentales, ortodoncia invisible con alineadores, carillas estéticas, rehabilitación oral, blanqueamiento y urgencias dentales combinados con tu barrio o ciudad.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Por qué Google es más exigente con el SEO de clínicas dentales y médicos (criterio YMYL y E-E-A-T)?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Porque la odontología impacta en la salud de las personas (páginas YMYL). Google verifica señales reales de experiencia y autoridad: nombre completo del profesional, número de Matrícula Nacional o Provincial visible, formación universitaria, dirección comprobable en Google Maps y datos estructurados Dentist o MedicalClinic.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cuánto tiempo tarda un consultorio dental en ver pacientes nuevos desde Google?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                En búsquedas locales de Google Maps y tratamientos por barrio los primeros movimientos visibles suelen darse entre 60 y 120 días, dependiendo de la competencia de tu ciudad, el historial de tu dominio y el ritmo de reseñas nuevas.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Necesito tener una página web propia o alcanza solo con la ficha gratuita de Google Maps?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                La ficha de Google Maps es el punto de partida, pero Google toma las señales de tu página web para confirmar qué tratamientos hacés, en qué zona atendés y si trabajás particular o con reintegro. Además, el paciente entra a tu web para ver tus casos Antes/Después y credenciales antes de pedir turno por WhatsApp.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search & AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

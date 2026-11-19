@@ -251,6 +251,7 @@ export default defineConfig({
         blog_paginas_web_mueblerias_fabricas_muebles: resolve(__dirname, 'blog/paginas-web-mueblerias-fabricas-muebles/index.html'),
         blog_google_tag_manager_vs_ga4_seo: resolve(__dirname, 'blog/google-tag-manager-vs-ga4-seo/index.html'),
         blog_diseno_web_lujan: resolve(__dirname, 'blog/diseno-web-lujan/index.html'),
+        blog_seo_odontologos_consultorios_dentales: resolve(__dirname, 'blog/seo-odontologos-consultorios-dentales/index.html'),
         // Propuestas privadas a clientes (noindex)
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
         propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),

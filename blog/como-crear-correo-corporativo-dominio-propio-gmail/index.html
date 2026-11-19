@@ -72,14 +72,14 @@
   </script>
 
   <title>Correo con Dominio Propio en Gmail: Cómo Crearlo en 2026</title>
-  <meta name="description" content="Aprende cómo crear un correo corporativo con tu dominio propio (@tunegocio.com) y usarlo desde tu bandeja de Gmail gratis con Cloudflare y SMTP o con Google Workspace.">
+  <meta name="description" content="Aprendé cómo crear un correo corporativo con dominio propio (@tunegocio.com) y usarlo en Gmail gratis con Cloudflare y SMTP o Google Workspace.">
   <link rel="canonical" href="https://erikwebsite.com/blog/como-crear-correo-corporativo-dominio-propio-gmail/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://erikwebsite.com/blog/como-crear-correo-corporativo-dominio-propio-gmail/">
   <meta property="og:title" content="Correo con Dominio Propio en Gmail: Cómo Crearlo en 2026">
-  <meta property="og:description" content="Guía práctica 2026: cómo enviar y recibir emails profesionales con @tudominio.com desde tu cuenta de Gmail sin pagar mensualidades en dólares o cuándo elegir Google Workspace.">
+  <meta property="og:description" content="Aprendé cómo crear un correo corporativo con dominio propio (@tunegocio.com) y usarlo en Gmail gratis con Cloudflare y SMTP o Google Workspace.">
   <meta property="og:image" content="https://erikwebsite.com/images/guia_correo_corporativo_gmail.png">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Erik Website">
@@ -156,18 +156,50 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "¿Cómo usar mi dominio propio en Gmail gratis sin pagar Google Workspace?",
+            "name": "¿Puedo responder desde el celular con mi dirección @midominio.com?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Podés recibir correos gratis configurando los registros MX en Cloudflare Email Routing hacia tu Gmail personal, y enviar desde tu dirección @tudominio.com agregando un alias en 'Enviar mensaje como' dentro de Gmail utilizando el servidor smtp.gmail.com (puerto 587) junto con una Contraseña de Aplicación de 16 letras de tu cuenta de Google."
+              "text": "Sí. Una vez que agregás la dirección en 'Enviar mensaje como' desde la versión web de Gmail y marcás la opción 'Responder desde la misma dirección a la que se envió el mensaje', la app móvil de Gmail en Android y iPhone te permite elegir tu correo corporativo en el selector 'De:' al redactar o contestar cualquier mail."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Cuándo conviene pagar Google Workspace en lugar del método gratuito?",
+            "name": "¿Puedo crear más de una dirección como info@ y ventas@ gratis?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El método con Cloudflare + Gmail personal es ideal para profesionales independientes, consultorios y PyMEs de 1 a 3 personas que quieren ahorrar costos fijos en dólares. En cambio, Google Workspace (~6 a 7 USD mensuales por usuario) conviene cuando tenés un equipo grande que requiere administración centralizada de permisos, Google Drive compartido empresarial y auditoría de cuentas."
+              "text": "Totalmente. Cloudflare Email Routing te permite crear múltiples alias gratuitos bajo tu mismo dominio (por ejemplo, info@, presupuestos@, administracion@) y dirigir cada uno hacia la cuenta de Gmail que prefieras."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué mis correos con dominio propio caen en la carpeta de Spam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ocurre habitualmente por la falta de configuración de los registros SPF, DKIM y DMARC en la zona DNS de tu dominio, o por utilizar servidores de hosting compartido con mala reputación de IP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia hay entre Google Workspace y configurar Gmail gratis con POP3?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google Workspace es una suscripción en dólares con servidores dedicados de Google, almacenamiento corporativo en Drive y calendario compartido. La configuración vía POP3/SMTP utiliza un buzón de tu hosting pero te permite gestionar todo dentro de la interfaz familiar y gratuita de Gmail."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo tener correos corporativos ilimitados con mi propio dominio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende de tu plan de hosting web. La mayoría de los servidores cPanel profesionales permiten crear cuentas de correo ilimitadas (por ejemplo: ventas@, info@, gerencia@) sin pagar licencias adicionales por cada casilla."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa con mis correos si decido cambiar de empresa de hosting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Si tenés tu correo configurado mediante POP3 en Gmail, todos los mensajes recibidos e históricos quedan guardados de forma segura en tu cuenta de Google, sin riesgo de perder emails durante la migración de hosting."
             }
           }
         ]
@@ -498,7 +530,7 @@
               <span class="text-emerald-600 font-bold transition group-open:rotate-180">&#9662;</span>
             </summary>
             <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Si tienes tu correo configurado mediante POP3 en Gmail, todos los mensajes recibidos e históricos quedan guardados de forma segura en tu cuenta de Google, sin riesgo de perder emails durante la migración de hosting.
+              Si tenés tu correo configurado mediante POP3 en Gmail, todos los mensajes recibidos e históricos quedan guardados de forma segura en tu cuenta de Google, sin riesgo de perder emails durante la migración de hosting.
             </p>
           </details>
         </div>

@@ -402,7 +402,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Bloque 0 — Saneamiento Técnico Urgente (Ejecutar Antes o en Paralelo al Jueves 19/11 · Sin Redacción de Artículos Nuevos)
+### [x] Bloque 0 — Saneamiento Técnico Urgente (COMPLETADO 19/11 · 100% PASS en `verify_article_hygiene.py --hub`)
 
 > **Por qué es prioritario:** Corrige 4 fugas técnicas silenciosas que hoy frenan conversiones de WhatsApp, rastreo IA y posiciones en nuestras 3 URLs con más impresiones del sitio (`1.191`, `1.033` y `580` impr).
 
@@ -438,7 +438,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Jueves 19/11 — Eje Especialista SEO por Rubro / CMS (Boosts Maduros: Shopify + Canva + Nuevo Artículo SEO: Odontólogos y Consultorios Dentales)
+### [x] Jueves 19/11 — Eje Especialista SEO por Rubro / CMS (COMPLETADO: Boosts Shopify + Canva + Nuevo Artículo SEO Odontólogos)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Comparativas Maduras (>18 días en GSC · Evidencia en Vivo 19/11)
 
