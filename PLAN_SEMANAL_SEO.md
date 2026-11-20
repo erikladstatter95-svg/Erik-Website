@@ -519,7 +519,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Viernes 20/11 — Eje Diseño Web, Demos y Embudos (Boosts Explosivos: Generador QR WhatsApp + Hotmart Funnel + Nuevo Artículo: Landing Page para Vender Cursos Online y Ebooks)
+### [x] Viernes 20/11 — Eje Diseño Web, Demos y Embudos (COMPLETADO: Boosts QR WhatsApp + Hotmart Funnel + Nuevo Artículo Landing Page Vender Cursos Online)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Herramientas y Funnels con Tracción Real (>18 días en GSC)
 

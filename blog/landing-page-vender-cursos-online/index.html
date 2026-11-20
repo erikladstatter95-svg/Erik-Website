@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page para Vender Cursos Online y Ebooks en Pesos</title>
+  <meta name="description" content="Landing page para vender cursos online y ebooks en Argentina: cobrá en pesos con Mercado Pago o transferencia sin comisiones del 9,9% y sumá Order Bump.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/landing-page-vender-cursos-online/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Landing Page para Vender Cursos Online y Ebooks en Pesos">
+  <meta property="og:description" content="Landing page para vender cursos online y ebooks en Argentina: cobrá en pesos con Mercado Pago o transferencia sin comisiones del 9,9% y sumá Order Bump.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/landing-page-vender-cursos-online/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_landing_page_vender_cursos_online.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Landing Page para Vender Cursos Online y Ebooks en Pesos">
+  <meta name="twitter:description" content="Landing page para vender cursos online y ebooks en Argentina: cobrá en pesos con Mercado Pago o transferencia sin comisiones del 9,9% y sumá Order Bump.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_landing_page_vender_cursos_online.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://erikwebsite.com/blog/landing-page-vender-cursos-online/#article",
+        "headline": "Landing Page para Vender Cursos Online y Ebooks en Argentina sin 9,9%",
+        "description": "Landing page para vender cursos online y ebooks en Argentina: cobrá en pesos con Mercado Pago o transferencia sin comisiones del 9,9% y sumá Order Bump.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/images/guia_landing_page_vender_cursos_online.png",
+          "width": 1200,
+          "height": 675
+        },
+        "datePublished": "2026-11-20T09:30:00-03:00",
+        "dateModified": "2026-11-20T09:30:00-03:00",
+        "inLanguage": "es-AR",
+        "author": {
+          "@type": "Person",
+          "name": "Erik Ladstatter",
+          "url": "https://erikwebsite.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Erik Website",
+          "url": "https://erikwebsite.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://erikwebsite.com/images/logo_erikwebsite_ig.png"
+          }
+        },
+        "mainEntityOfPage": "https://erikwebsite.com/blog/landing-page-vender-cursos-online/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://erikwebsite.com/blog/landing-page-vender-cursos-online/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://erikwebsite.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://erikwebsite.com/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Landing Page para Vender Cursos Online",
+            "item": "https://erikwebsite.com/blog/landing-page-vender-cursos-online/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://erikwebsite.com/blog/landing-page-vender-cursos-online/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo puedo vender cursos online o ebooks en Argentina cobrando por Mercado Pago y transferencia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Con una Landing Page Modo Funnel conectada a tu link de cobro de Mercado Pago y a tu alias bancario con descuento por transferencia. El alumno elige cómo abonar en pesos desde el celular y te envía el comprobante directo a tu WhatsApp o recibe acceso automático al pagar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito pagar una plataforma mensual en dólares para alojar los videos o PDFs de mi curso?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No hace falta cuando vendés un curso grabado puntual, un taller o un ebook. Podés alojar los videos en listas privadas de YouTube o Vimeo y los PDFs o planillas en carpetas protegidas de Google Drive o Notion, entregando el acceso apenas se acredita el pago."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué es un Order Bump en una landing page y cómo aumenta lo que gano por cada alumno?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es una casilla interactiva justo antes del botón de pago que ofrece un complemento rápido a precio promocional (por ejemplo, sumar un pack de plantillas editables por $4.500 ARS adicionales). Entre el 20% y el 35% de los compradores la tildan, subiendo tu facturación con el mismo tráfico."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Se puede conectar el Píxel de Meta Ads y Google Analytics 4 para medir qué anuncio vende más cursos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. A diferencia de los enlaces tipo árbol o documentos PDF, en una Landing Page propia en código limpio dejamos configurados los eventos del Píxel de Meta y de Google Analytics 4 para que sepas exactamente qué anuncio de Instagram o Facebook generó cada clic de compra."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta crear una landing page modo funnel para vender cursos o archivos digitales en Argentina?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En Erik Website desarrollamos tu Página Modo Funnel completa en código a medida por $150.000 ARS finales (pago único, sin mensualidades obligatorias ni comisiones por venta), lista para publicar en 3 a 5 días hábiles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia hay entre una academia completa con aulas y una Página Modo Funnel de oferta única?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un portal de academia muestra decenas de cursos, menús y filtros para institutos con catálogo amplio. En cambio, una Página Modo Funnel elimina todas las distracciones y concentra toda la atención en vender un único curso estrella, mentoría o ebook con la máxima tasa de conversión."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <!-- Meta Pixel noscript Fallback -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" />
+  </noscript>
+
+  <!-- NAVBAR BLOG -->
+  <header id="main-nav" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg sm:text-xl text-slate-900 tracking-tight flex items-center">
+        <span>Erik <span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-slate-600 tracking-tight">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-700 transition-colors font-semibold text-emerald-600">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-emerald-700 transition-colors font-semibold text-slate-600">San Juan</a>
+        <a href="/blog/" class="text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5">Blog</a>
+      </nav>
+
+      <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20la%20gu%C3%ADa%20sobre%20Landing%20Page%20para%20vender%20cursos%20online%20y%20quiero%20armar%20mi%20propio%20funnel%20en%20pesos."
+         target="_blank"
+         rel="noopener noreferrer"
+         data-wa-msg="Hola Erik! Leí la guía sobre Landing Page para vender cursos online y quiero armar mi propio funnel en pesos."
+         class="inline-flex items-center gap-1.5 sm:gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xs transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow py-10 sm:py-16">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6">
+
+      <!-- BREADCRUMBS -->
+      <nav aria-label="Ruta de navegación" class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
+        <a href="/" class="hover:text-emerald-600">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-emerald-600">Blog</a>
+        <span>/</span>
+        <span class="text-slate-800 truncate">Landing Page para Vender Cursos Online</span>
+      </nav>
+
+      <!-- ENCABEZADO -->
+      <header class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-4">
+          <span>Embudos (Funnels) y Conversión • Argentina 2026</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
+          Landing Page para Vender Cursos Online y Ebooks en Argentina sin 9,9%
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 pb-6 border-b border-slate-200">
+          <span>Por <strong>Erik Ladstatter</strong></span>
+          <span>•</span>
+          <span>Publicado: 20 de noviembre de 2026</span>
+          <span>•</span>
+          <span>Lectura: 8 minutos</span>
+        </div>
+      </header>
+
+      <!-- RESPUESTA DIRECTA (AEO / GEO BLOCK - REGLA STURM) -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200 mb-8 text-slate-800">
+        <p class="font-bold text-slate-900 text-base mb-2">
+          Respuesta directa: ¿Por qué conviene una landing page propia para vender cursos o ebooks en Argentina?
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700">
+          <strong>Una landing page para vender cursos online y ebooks</strong> en Argentina te permite cobrar en pesos por Mercado Pago o transferencia bancaria sin regalar el 9,9% a plataformas extranjeras ni recargar dólares al comprador, concentrando tu oferta, temario, testimonios, Order Bump y botón de compra en una sola página de alta conversión.
+        </p>
+      </div>
+
+      <!-- IMAGEN PRINCIPAL (CRITERIO VISUAL STURM) -->
+      <figure class="my-8 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/images/guia_landing_page_vender_cursos_online.png"
+             alt="Creador de cursos online en Argentina trabajando en estudio moderno con su landing page modo funnel en pantalla para vender cursos y ebooks en pesos"
+             class="w-full h-auto object-cover"
+             loading="eager"
+             decoding="async"
+             width="1200"
+             height="675">
+        <figcaption class="p-3 text-xs text-slate-500 text-center bg-slate-50 border-t border-slate-100">
+          Tener tu propia Página Modo Funnel en pesos elimina la fricción de pago para tus alumnos locales y protege el 100% de tu margen. Foto erikwebsite.com.
+        </figcaption>
+      </figure>
+
+      <!-- CONTENIDO PRINCIPAL -->
+      <div class="space-y-8 text-slate-700 text-base leading-relaxed">
+
+        <p>
+          Si sos profesional, docente, entrenador, contador, psicólogo o creador de contenido en Argentina y armaste un curso grabado, un taller práctico o un ebook descargable, el cuello de botella casi nunca está en la calidad de tu material. El verdadero freno aparece cuando mandás a tus seguidores de Instagram a un checkout extranjero en dólares o intentás explicarles el temario uno por uno por mensaje privado.
+        </p>
+        <p>
+          Cuando un comprador argentino ve un precio expresado en moneda extranjera o descubre que su tarjeta le aplica percepciones impositivas sobre servicios digitales, abandona la página en segundos. En cambio, cuando entra a una <strong>landing page rápida en pesos con opción de Mercado Pago y descuento por transferencia bancaria</strong>, la tasa de cierre se multiplica.
+        </p>
+
+        <!-- H2 1 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          1. Cómo vender cursos online y ebooks en Argentina sin que los impuestos y comisiones te frenen las ventas
+        </h2>
+        <p>
+          La mayoría de los tutoriales en español recomiendan subir tu infoproducto a plataformas como Hotmart, Kajabi o Stan Store porque están pensados para mercados donde todos compran en dólares con un clic. En Argentina la realidad operativa del comprador y del creador es muy distinta:
+        </p>
+        <ul class="space-y-3 pl-1">
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">1.</span>
+            <span><strong>El comprador local prefiere transferencia (Alias/CBU) o Mercado Pago:</strong> más del 75% de las compras de cursos, guías PDF y plantillas dentro de Argentina se pagan con dinero en cuenta o transferencia inmediata desde el celular.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">2.</span>
+            <span><strong>El descuento del 9,9% más cargos fijos castiga los tickets bajos y medios:</strong> como vimos a fondo en nuestro análisis de <a href="/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/" class="text-emerald-700 font-semibold hover:underline">Hotmart en Argentina, sus comisiones e impuestos</a>, perder casi el 11% o 12% en cada inscripción más el costo de retiro internacional equivale a trabajar un mes entero gratis para la pasarela.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">3.</span>
+            <span><strong>Los constructores de bio-links cobran en dólares todos los meses:</strong> herramientas populares en redes sociales como las que analizamos en <a href="/blog/stan-store-argentina-precios-alternativa-pesos/" class="text-emerald-700 font-semibold hover:underline">Stan Store en Argentina y sus precios en dólares</a> exigen pagar entre $29 y $99 USD mensuales vendas o no vendas.</span>
+          </li>
+        </ul>
+
+        <!-- H2 2 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          2. Comparativa real: Hotmart / Stan Store vs. Tu Propia Landing Page Modo Funnel en Pesos
+        </h2>
+        <p>
+          Hagamos la cuenta con números concretos de Argentina. Imaginá que vendés un curso práctico o pack de ebooks a <strong>$40.000 ARS</strong> y lográs <strong>50 ventas en el mes</strong> ($2.000.000 ARS de facturación bruta):
+        </p>
+
+        <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase font-semibold">
+              <tr>
+                <th class="p-4">Indicador (Base: 50 ventas de $40.000 ARS)</th>
+                <th class="p-4 text-rose-300">Hotmart (9,9% + fijo USD)</th>
+                <th class="p-4 text-amber-300">Stan Store ($29 a $99 USD/mes)</th>
+                <th class="p-4 text-emerald-300">Landing Modo Funnel Propia</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Comisión de plataforma (mes)</td>
+                <td class="p-4 text-rose-700 font-medium">~$235.000 ARS descontados</td>
+                <td class="p-4">Abono fijo en dólar tarjeta</td>
+                <td class="p-4 text-emerald-800 font-bold">$0 de comisión por venta</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Medios de pago para Argentina</td>
+                <td class="p-4">Tarjeta con recargos impositivos</td>
+                <td class="p-4">Stripe / PayPal (en dólares)</td>
+                <td class="p-4 text-emerald-800 font-semibold">Transferencia (Alias) + Mercado Pago</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Disponibilidad del dinero</td>
+                <td class="p-4 text-rose-700">Retenido 14 a 30 días + retiro</td>
+                <td class="p-4">En cuenta externa en USD</td>
+                <td class="p-4 text-emerald-800 font-semibold">En el acto en tu banco o billetera</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Order Bump interactivo en pesos</td>
+                <td class="p-4">En USD (frena al comprador local)</td>
+                <td class="p-4">Solo en el plan de $99 USD/mes</td>
+                <td class="p-4 text-emerald-800 font-semibold">Incluido en el código sin costo mensual</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-900">Costo de desarrollo / alta</td>
+                <td class="p-4">$0 inicial (pero pagás en cada venta)</td>
+                <td class="p-4">$348 a $1.188 USD por año</td>
+                <td class="p-4 text-emerald-800 font-bold">$150.000 ARS (Pago único final)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Con solo las primeras 35 o 40 ventas de tu curso, lo que te ahorrás en comisiones de plataforma ya cubrió el costo total de tu propia Landing Page, y de ahí en adelante cada peso facturado queda limpio en tu cuenta.
+        </p>
+
+        <!-- H2 3 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          3. Anatomía de una landing page de alta conversión para cursos y archivos digitales (con Order Bump)
+        </h2>
+        <p>
+          A diferencia de un sitio institucional tradicional o de las <a href="/blog/paginas-web-academias-institutos-cursos-oficios/" class="text-emerald-700 font-semibold hover:underline">páginas web para academias e institutos con múltiples carreras</a>, una página de ventas para un curso o ebook específico aplica la estructura de <strong>embudo de columna única</strong> que explicamos en <a href="/blog/que-es-un-funnel-de-ventas-para-que-sirve-argentina/" class="text-emerald-700 font-semibold hover:underline">qué es un funnel de ventas en Argentina</a>:
+        </p>
+
+        <ol class="space-y-4 pl-2">
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">1.</span>
+            <div>
+              <strong>Cero barra de navegación con fugas:</strong> eliminamos los menús superiores que llevan al visitante a distraerse en "Quiénes somos" o "Blog". La página tiene un único objetivo: que la persona entienda la transformación de tu curso y se inscriba.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">2.</span>
+            <div>
+              <strong>Promesa concreta + video o portada de impacto arriba del pliegue:</strong> en los primeros 3 segundos en el celular el alumno ve qué problema puntual va a resolver, para quién está pensado y qué incluye el acceso inmediato.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">3.</span>
+            <div>
+              <strong>Temario desplegable por módulos y apilamiento de valor:</strong> en lugar de un muro interminable de texto, organizamos las clases o capítulos del ebook en acordeones limpios junto con el valor real de los bonos incluidos (plantillas, planillas de cálculo, grupo o certificado).
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">4.</span>
+            <div>
+              <strong>Selector de medio de pago local (Transferencia con 10% OFF vs. Mercado Pago):</strong> un interruptor interactivo permite al alumno elegir si prefiere pagar con tarjeta/dinero en Mercado Pago o aprovechar un descuento abonando por transferencia bancaria directa, reduciendo además tus comisiones de cobro.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-emerald-600 font-bold">5.</span>
+            <div>
+              <strong>Casilla de Order Bump en tiempo real:</strong> justo arriba del botón de inscripción colocamos una oferta complementaria de un solo toque (por ejemplo: <em>"Sumar pack de plantillas editables por +$4.500 ARS"</em>). Al tildarla, la página recalcula el total al instante y arma el pedido listo para cobrar.
+            </div>
+          </li>
+        </ol>
+
+        <!-- BLOQUE DEMO FUNNEL EN VIVO -->
+        <div class="my-8 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-emerald-500/30 shadow-md">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-2.5 py-1 rounded-full">
+            Simulador Interactivo en Vivo
+          </span>
+          <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-3 mb-2">
+            Probá ahora nuestra Demo de Página Modo Funnel con Order Bump
+          </h3>
+          <p class="text-slate-300 text-sm mb-5 leading-relaxed">
+            Entrá desde tu celular o computadora a nuestra demo interactiva: cambiá entre el <strong>Modo Ebook / Archivo Digital</strong> y el <strong>Modo Curso / Mentoría 1 a 1</strong>, alterná entre Transferencia (10% OFF) y Mercado Pago, y tildá la casilla del Order Bump para ver cómo recalcula el precio final en vivo.
+          </p>
+          <a href="/demos/funnel/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm px-5 py-3 rounded-xl transition-all shadow-sm">
+            <span>Probar Demo de Página Modo Funnel →</span>
+          </a>
+        </div>
+
+        <!-- H2 4 -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4 border-t border-slate-200">
+          4. Cómo entregar tu curso o ebook automáticamente y medir cada venta con Meta Pixel y GA4
+        </h2>
+        <p>
+          Una duda frecuente antes de salir de plataformas cerradas es cómo entregar el material sin volverse esclavo del teléfono. Existen dos flujos muy simples y probados en Argentina:
+        </p>
+        <ul class="space-y-3 pl-1">
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">•</span>
+            <span><strong>Flujo Automático con Mercado Pago:</strong> configurás en tu link de pago de Mercado Pago una URL de redirección automática post-compra hacia una página privada de bienvenida (con etiqueta <code>noindex</code>) donde el alumno ya tiene el botón de descarga del PDF o el acceso a las clases grabadas en YouTube Oculto, Vimeo o Google Drive.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold">•</span>
+            <span><strong>Flujo Híbrido con Transferencia + WhatsApp:</strong> ideal para cursos de ticket medio o alto y mentorías, integrando los principios de nuestro <a href="/blog/embudo-de-ventas-por-whatsapp-argentina/" class="text-emerald-700 font-semibold hover:underline">embudo de ventas por WhatsApp en Argentina</a>. El alumno elige transferencia con descuento, la landing genera el mensaje con el detalle exacto (curso + Order Bump + importe) y al adjuntarte el comprobante le enviás el acceso con una respuesta rápida en 5 segundos, quedándote además con su contacto directo para futuros lanzamientos.</span>
+          </li>
+        </ul>
+        <p>
+          En ambos casos, tu landing page en código limpio registra cada clic con el <strong>Píxel de Meta Ads (`Contact` / `InitiateCheckout`)</strong> y con <strong>Google Analytics 4 (`generate_lead`)</strong>, para que cuando inviertas en publicidad de Instagram sepas con precisión matemática qué video o anuncio te trae compradores reales.
+        </p>
+
+        <!-- CTA COMERCIAL -->
+        <div class="my-10 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl border border-slate-700/60">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-3">
+            Desarrollo Llave en Mano • Entrega en 3 a 5 Días
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-bold font-display tracking-tight text-white mb-2">
+            Lanzá tu curso o ebook con tu propia Página Modo Funnel en pesos
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Por <strong>$150.000 ARS finales (pago único, sin comisiones ni abonos obligatorios)</strong> diseñamos tu Landing Page Modo Funnel en código a medida: incluye calculadora interactiva de Order Bump, selector Transferencia / Mercado Pago, Píxel de Meta configurado, Google Analytics 4 y velocidad 100/100 en celulares.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Quiero%20armar%20una%20Landing%20Page%20Modo%20Funnel%20para%20vender%20mi%20curso%20o%20ebook%20en%20pesos."
+               target="_blank"
+               rel="noopener noreferrer"
+               data-wa-msg="Hola Erik! Quiero armar una Landing Page Modo Funnel para vender mi curso o ebook en pesos."
+               class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg text-sm cursor-pointer">
+              <span>Consultar por WhatsApp</span>
+            </a>
+            <a href="/demos/funnel/"
+               class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3.5 rounded-xl transition-all text-sm border border-white/10">
+              <span>Ver Demo Funnel en Vivo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES (PARIDAD 6/6 CON SCHEMA FAQPAGE) -->
+        <section class="pt-6 border-t border-slate-200">
+          <h2 class="text-2xl font-bold font-display text-slate-900 mb-4">
+            Preguntas frecuentes sobre landing pages para vender cursos
+          </h2>
+          <div class="space-y-3">
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cómo puedo vender cursos online o ebooks en Argentina cobrando por Mercado Pago y transferencia?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Con una Landing Page Modo Funnel conectada a tu link de cobro de Mercado Pago y a tu alias bancario con descuento por transferencia. El alumno elige cómo abonar en pesos desde el celular y te envía el comprobante directo a tu WhatsApp o recibe acceso automático al pagar.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Necesito pagar una plataforma mensual en dólares para alojar los videos o PDFs de mi curso?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                No hace falta cuando vendés un curso grabado puntual, un taller o un ebook. Podés alojar los videos en listas privadas de YouTube o Vimeo y los PDFs o planillas en carpetas protegidas de Google Drive o Notion, entregando el acceso apenas se acredita el pago.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Qué es un Order Bump en una landing page y cómo aumenta lo que gano por cada alumno?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Es una casilla interactiva justo antes del botón de pago que ofrece un complemento rápido a precio promocional (por ejemplo, sumar un pack de plantillas editables por $4.500 ARS adicionales). Entre el 20% y el 35% de los compradores la tildan, subiendo tu facturación con el mismo tráfico.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Se puede conectar el Píxel de Meta Ads y Google Analytics 4 para medir qué anuncio vende más cursos?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Sí. A diferencia de los enlaces tipo árbol o documentos PDF, en una Landing Page propia en código limpio dejamos configurados los eventos del Píxel de Meta y de Google Analytics 4 para que sepas exactamente qué anuncio de Instagram o Facebook generó cada clic de compra.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cuánto cuesta crear una landing page modo funnel para vender cursos o archivos digitales en Argentina?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                En Erik Website desarrollamos tu Página Modo Funnel completa en código a medida por <strong>$150.000 ARS finales (pago único, sin mensualidades obligatorias ni comisiones por venta)</strong>, lista para publicar en 3 a 5 días hábiles.
+              </p>
+            </details>
+            <details name="faq-accordion" class="group bg-white rounded-xl border border-slate-200 p-4">
+              <summary class="font-bold text-slate-900 cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Qué diferencia hay entre una academia completa con aulas y una Página Modo Funnel de oferta única?</span>
+                <span class="text-emerald-600 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                Un portal de academia muestra decenas de cursos, menús y filtros para institutos con catálogo amplio. En cambio, una Página Modo Funnel elimina todas las distracciones y concentra toda la atención en vender un único curso estrella, mentoría o ebook con la máxima tasa de conversión.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search & AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
