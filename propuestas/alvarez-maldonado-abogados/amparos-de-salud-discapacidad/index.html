@@ -32,14 +32,14 @@
   <meta name="description" content="Acciones de amparo de salud, discapacidad (CUD) y fertilidad asistida en San Juan. Reclamos urgentes contra Obras Sociales y Prepagas. Mitre 486 Oeste.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Outfit (Geometría Bauhaus idéntica a Architype Renner) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/src/styles/main.css">
 
-  <!-- Schema.org Service & FAQPage (Lo que le falta a las páginas internas de Moraga & Cía.) -->
+  <!-- Schema.org Service, BreadcrumbList & FAQPage (Lo que le falta a las páginas internas de Moraga & Cía.) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -65,6 +65,29 @@
           "@type": "AdministrativeArea",
           "name": "San Juan, Argentina"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://erikwebsite.com/propuestas/alvarez-maldonado-abogados/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Áreas de Práctica",
+            "item": "https://erikwebsite.com/propuestas/alvarez-maldonado-abogados/#areas"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Amparos de Salud y Discapacidad",
+            "item": "https://erikwebsite.com/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -101,203 +124,289 @@
   </script>
 
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #fcfaf9;
-      color: #1a1a1a;
+    :root {
+      --color-ink: #050505;
+      --color-paper: #fcfaf9;
+      --color-warm: #f8f5f2;
+      --color-sand: #e8e3df;
+      --color-map: #e8dfd6;
+      --color-graphite: #1a1a1a;
+      --color-charcoal: #232323;
+      --color-muted: #666666;
+      --color-stone: #97928f;
+      --color-brand: #b50027;
+      --color-accent: #e5352c;
     }
-    .writing-vertical-up {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+
+    body {
+      font-family: 'Outfit', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+      background-color: var(--color-paper);
+      color: var(--color-graphite);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .moraga-img-zoom {
+      will-change: transform, filter;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1), filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .moraga-gray {
+      filter: grayscale(100%) brightness(1.08) contrast(1.12);
+    }
+    .group:hover .moraga-img-zoom {
+      transform: translate3d(0, 0, 0) scale(1.035);
+      filter: grayscale(0%) brightness(1) contrast(1);
+    }
+
+    @media (min-width: 1024px) {
+      .lg-writing-vertical {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
     }
   </style>
 </head>
-<body class="bg-[#fcfaf9] text-[#1a1a1a] antialiased selection:bg-[#b50027] selection:text-white min-h-screen flex flex-col">
+<body class="bg-[#fcfaf9] text-[#1a1a1a] selection:bg-[#b50027] selection:text-white min-h-screen flex flex-col">
 
-  <!-- BARRA SUPERIOR DE PROPUESTA PRIVADA -->
-  <aside aria-label="Aviso de propuesta privada" class="bg-[#050505] text-stone-300 text-[11px] sm:text-xs py-2 px-4 font-medium tracking-tight border-b border-white/10 sticky top-0 z-[70]">
-    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-1.5">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-[#b50027] animate-pulse"></span>
-        <span>Ejemplo de Página de Especialidad SEO (1 de 8): <strong class="text-white">Amparos de Salud &amp; Discapacidad</strong></span>
-      </div>
-      <div class="flex items-center gap-3 text-[11px]">
-        <a href="/propuestas/alvarez-maldonado-abogados/" class="text-[#e5352c] hover:underline font-bold">
-          ← Volver a la Portada de Álvarez &amp; Maldonado
-        </a>
-        <span class="text-stone-600">|</span>
-        <a href="/propuestas/alvarez-maldonado-abogados/#propuesta-comercial-erik" class="text-emerald-400 hover:underline font-semibold">
-          Ver Planes ($150.000 / $350.000)
-        </a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- SIDEBAR IZQUIERDA 90PX EN DESKTOP / TOPBAR 64PX EN MOBILE -->
-  <aside aria-label="Navegación institucional" class="bg-[#050505] text-white border-b lg:border-b-0 lg:border-r border-white/10 sticky top-[33px] lg:fixed lg:top-[33px] lg:bottom-0 lg:left-0 lg:w-[90px] h-16 lg:h-[calc(100vh-33px)] px-5 lg:px-0 lg:py-8 flex lg:flex-col items-center justify-between z-[60]">
-    <a href="/propuestas/alvarez-maldonado-abogados/" class="text-[11px] font-bold tracking-[0.2em] uppercase text-white hover:text-[#e5352c] transition-colors lg:writing-vertical-up">
-      ← INICIO
+  <!-- 1. SIDEBAR IZQUIERDA 90PX EN DESKTOP / TOPBAR 64PX EN MOBILE (rr) -->
+  <aside aria-label="Barra institucional Álvarez & Maldonado" class="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between bg-[#050505] text-white px-5 border-b border-white/10 lg:border-b-0 lg:border-r lg:inset-y-0 lg:right-auto lg:h-auto lg:w-[90px] lg:flex-col lg:px-0 lg:pt-10 lg:pb-10 select-none">
+    <a href="/propuestas/alvarez-maldonado-abogados/" class="group flex items-center gap-2 text-[13px] leading-4 tracking-[0.12em] uppercase lg:flex-col">
+      <span class="lg-writing-vertical transition-colors group-hover:text-[#e5352c]">← inicio</span>
+      <span class="relative hidden h-[41px] w-[10px] lg:block" aria-hidden="true">
+        <span class="absolute bottom-0 left-0 w-px bg-white h-[41px] group-hover:bg-[#e5352c] transition-colors"></span>
+        <span class="absolute right-0 bottom-0 w-px bg-white h-[32px] group-hover:h-[41px] group-hover:bg-[#e5352c] transition-all duration-700"></span>
+      </span>
     </a>
 
-    <div class="hidden lg:flex flex-col items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#97928f] font-semibold">
+    <div class="hidden lg:flex flex-col items-center gap-1.5 text-[11px] uppercase tracking-widest text-white/50 font-mono">
       <span class="text-[#b50027] font-bold">01</span>
-      <span class="w-3 h-[1px] bg-white/15"></span>
-      <span>SALUD</span>
+      <span>/</span>
+      <span>09</span>
     </div>
 
-    <a href="/propuestas/alvarez-maldonado-abogados/" class="text-xs lg:text-[11px] font-bold tracking-[0.18em] uppercase text-white lg:writing-vertical-up whitespace-nowrap">
-      ÁLVAREZ <span class="text-[#b50027]">&amp;</span> MALDONADO<span class="text-[#b50027]">.</span>
+    <a href="/propuestas/alvarez-maldonado-abogados/" class="block">
+      <span class="text-[12px] lg:text-[13px] font-medium tracking-[0.22em] uppercase text-white lg-writing-vertical whitespace-nowrap block">
+        ÁLVAREZ &amp; MALDONADO<span class="text-[#b50027] font-bold">.</span>
+      </span>
     </a>
   </aside>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-  <div class="lg:pl-[90px] flex-grow flex flex-col">
-    <main class="flex-grow">
+  <!-- 2. CONTENIDO PRINCIPAL DE LA SUBPÁGINA SEO (Diseño jg + ph de Moraga & Cía.) -->
+  <main class="pt-16 lg:pt-0 lg:pl-[90px] flex-1">
 
-      <!-- HERO DE ESPECIALIDAD CON H1 SEMÁNTICO PROPIO Y RESPUESTA DIRECTA AEO/GEO -->
-      <section class="py-16 sm:py-24 px-6 sm:px-12 lg:px-16 bg-[#050505] text-white border-b border-white/10">
-        <div class="max-w-5xl mx-auto space-y-6">
-          <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-[#97928f]">
-            <a href="/propuestas/alvarez-maldonado-abogados/" class="hover:text-white">Inicio</a>
-            <span>/</span>
-            <a href="/propuestas/alvarez-maldonado-abogados/#areas-de-practica" class="hover:text-white">Áreas de Práctica</a>
-            <span>/</span>
-            <span class="text-[#b50027] font-bold">01. Amparos de Salud y Discapacidad</span>
-          </div>
+    <!-- Cabecera de Área de Práctica (Exacta a jg de Moraga pero con H1 real para SEO) -->
+    <article class="flex flex-col gap-12 p-6 pt-12 lg:p-[60px] max-w-[1320px] mx-auto">
+      
+      <header class="flex flex-col gap-5 border-b border-black/10 pb-10">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <nav aria-label="Breadcrumb" class="text-sm leading-5 font-medium tracking-[1.4px] text-[#b50027] uppercase flex items-center gap-2">
+            <a href="/propuestas/alvarez-maldonado-abogados/" class="text-[#666666] hover:text-black">Inicio</a>
+            <span class="text-[#97928f]">/</span>
+            <span>Áreas de práctica</span>
+            <span class="text-[#97928f]">/</span>
+            <span>01. Derecho a la Salud</span>
+          </nav>
 
-          <!-- H1 Real e Individual (Corrige el defecto #2 de Moraga & Cía.) -->
-          <h1 class="text-3xl sm:text-5xl font-bold tracking-[-0.02em] leading-[1.15] text-white">
-            Abogados de Amparos de <span class="text-[#b50027]">Salud</span>, Discapacidad y Obras Sociales en San Juan<span class="text-[#b50027]">.</span>
+          <a href="/propuestas/alvarez-maldonado-abogados/" class="inline-flex items-center gap-2 border border-black/80 px-5 py-2 text-xs uppercase tracking-widest text-black hover:bg-[#050505] hover:text-white transition-colors">
+            ← Volver al Deck Principal
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-12 pt-2">
+          <!-- H1 Real e Individual (Lo que en Moraga & Cía. era un modal H2 sin URL indexable) -->
+          <h1 class="text-[34px] leading-[1.15] font-medium lg:w-[460px] lg:shrink-0 lg:text-[44px] lg:leading-[52px] text-[#1a1a1a]">
+            Derecho a la Salud, <span class="text-[#b50027]">Amparos</span> y Discapacidad en San Juan<span class="text-[#b50027]">.</span>
           </h1>
 
-          <!-- Bloque de Respuesta Directa AEO / GEO para Google AI Overviews y ChatGPT -->
-          <div class="p-6 bg-[#1a1a1a] border-l-2 border-[#b50027] text-sm text-stone-300 leading-relaxed">
-            <strong class="text-white">Respuesta Directa:</strong> Un <strong>amparo de salud en San Juan</strong> permite exigir judicialmente, mediante una medida cautelar urgente (48 a 96 horas), que tu Obra Social o Medicina Prepaga cubra al 100% cirugías, medicación oncológica, prestaciones de discapacidad (Ley 24.901), tratamientos de fertilidad asistida o la afiliación inmediata de monotributistas.
+          <div class="lg:w-[680px] lg:pt-1.5 space-y-4">
+            <!-- Bloque de Respuesta Directa AEO / GEO en las primeras palabras (Fórmula Sturm) -->
+            <p class="text-justify text-lg leading-[27px] text-[#1b1c1b]">
+              Un <strong>amparo de salud en San Juan</strong> permite exigir judicialmente, mediante una medida cautelar de despacho urgente (48 a 96 horas), que tu Obra Social o Empresa de Medicina Prepaga cubra al 100% cirugías, medicación oncológica, prestaciones de discapacidad (Ley 24.901), tratamientos de fertilidad asistida o el alta inmediata de monotributistas.
+            </p>
+            <p class="text-sm text-[#666666]">
+              Sede Central: <strong>Mitre 486 Oeste, San Juan Capital</strong> · Patrocinio letrado con más de 30 años de trayectoria en fueros locales y federales.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Cuerpo Principal: Fotografía Vertical 395x597 Izquierda + Grilla de Servicios con Borde Carmesí Derecha (Exacto jg) -->
+      <section class="flex flex-col gap-6 lg:flex-row">
+        
+        <div class="group relative aspect-[395/560] w-full overflow-hidden lg:w-[395px] lg:shrink-0 bg-[#1a1a1a]">
+          <img src="/images/guia_web_abogados_argentina.png"
+               alt="Abogados especialistas en Amparos de Salud y Obras Sociales en San Juan"
+               class="moraga-img-zoom moraga-gray absolute inset-0 size-full object-cover"
+               width="400" height="560">
+        </div>
+
+        <div class="flex-1 bg-[#f1f1f1]/60 px-6 py-8 lg:px-[42px] lg:py-[42px] flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl leading-[28.8px] font-medium text-[#1a1a1a]">
+              Servicios Especializados en Derecho de la Salud<span class="text-[#b50027]">.</span>
+            </h2>
+
+            <ul class="mt-10 grid gap-x-12 gap-y-8 sm:grid-cols-2">
+              <li class="flex flex-col gap-2 border-l border-[#b50027] py-2 pl-5">
+                <h3 class="text-lg leading-[21.6px] font-medium text-[#1a1a1a]">
+                  Rechazo de Afiliación a Monotributistas<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-base leading-[21px] text-black/80">
+                  Intimación y acción de amparo urgente cuando la Obra Social niega el empadronamiento del monotributista o su grupo familiar o intenta aplicar períodos de carencia ilegales sobre el PMO.
+                </p>
+              </li>
+
+              <li class="flex flex-col gap-2 border-l border-[#b50027] py-2 pl-5">
+                <h3 class="text-lg leading-[21.6px] font-medium text-[#1a1a1a]">
+                  Discapacidad Integral (Ley 24.901 · CUD)<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-base leading-[21px] text-black/80">
+                  Cobertura 100% sin topes en maestra de apoyo escolar (DAI), acompañante terapéutico, fonoaudiología, psicopedagogía, transporte adaptado, sillas posturales e internación domiciliaria.
+                </p>
+              </li>
+
+              <li class="flex flex-col gap-2 border-l border-[#b50027] py-2 pl-5">
+                <h3 class="text-lg leading-[21.6px] font-medium text-[#1a1a1a]">
+                  Cirugías, Prótesis y Medicación Oncológica<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-base leading-[21px] text-black/80">
+                  Medidas cautelares urgentes ante demoras en la entrega de drogas de alto costo, tratamientos biológicos o negativa a cubrir la prótesis específica indicada por el médico cirujano.
+                </p>
+              </li>
+
+              <li class="flex flex-col gap-2 border-l border-[#b50027] py-2 pl-5">
+                <h3 class="text-lg leading-[21.6px] font-medium text-[#1a1a1a]">
+                  Fertilidad y Reproducción Asistida (Ley 26.862)<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-base leading-[21px] text-black/80">
+                  Exigencia judicial de autorización integral para tratamientos de baja y alta complejidad (FIV/ICSI), medicación hormonal al 100%, estudios diagnósticos y criopreservación.
+                </p>
+              </li>
+            </ul>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-            <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Necesito%20iniciar%20un%20Amparo%20de%20Salud%20%2F%20reclamo%20contra%20una%20Obra%20Social%20en%20San%20Juan."
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-3 bg-[#b50027] hover:bg-[#e5352c] text-white font-bold text-xs uppercase tracking-[0.14em] px-8 py-4 transition-colors">
-              <span>Evaluar Amparo Urgente por WhatsApp</span>
-              <span>→</span>
+          <div class="mt-12 pt-6 border-t border-black/10 flex flex-wrap items-center justify-between gap-4">
+            <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Necesito%20iniciar%20un%20Amparo%20de%20Salud%20en%20San%20Juan."
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex border border-[#b50027] bg-[#b50027] hover:bg-[#e5352c] text-white px-[30px] py-3.5 text-base leading-4 transition-colors duration-500">
+              Evaluar Amparo Urgente por WhatsApp (264 5618327) →
             </a>
-            <span class="text-xs text-[#97928f] self-center">
-              Sede Mitre 486 Oeste, San Juan Capital · Tel: 264 5618327
-            </span>
+            <a href="https://turnito.app/c/4GnGb2fcSzD8yT"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex border border-black/80 px-[28px] py-3.5 text-base leading-4 text-black hover:bg-[#050505] hover:text-white transition-colors duration-500">
+              Reservar Turno en Mitre 486 Oeste
+            </a>
           </div>
         </div>
+
       </section>
 
-      <!-- CASOS QUE RESOLVEMOS EN SAN JUAN -->
-      <section class="py-16 sm:py-24 px-6 sm:px-12 lg:px-16 bg-[#fcfaf9] border-b border-[#e8e3df]">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl sm:text-4xl font-bold text-[#1a1a1a] tracking-[-0.02em] mb-10">
-            ¿Cuándo corresponde iniciar un <span class="text-[#b50027]">amparo</span> de salud<span class="text-[#b50027]">?</span>
-          </h2>
-
-          <div class="grid sm:grid-cols-2 gap-6">
-            <div class="p-7 bg-[#f8f5f2] border border-[#e8e3df]">
-              <span class="text-xs font-mono text-[#b50027] font-bold block mb-2">01 / MONOTRIBUTISTAS</span>
-              <h3 class="text-lg font-bold text-[#1a1a1a] mb-2">Rechazo de Afiliación a Monotributistas<span class="text-[#b50027]">.</span></h3>
-              <p class="text-xs text-[#666666] leading-relaxed">
-                Si hiciste el alta o opción de cambio en el monotributo y la Obra Social se niega a empadronarte o te impone "períodos de carencia" para no brindarte cobertura médica, intimamos y presentamos amparo para tu alta inmediata.
-              </p>
+      <!-- Bloque de Preguntas Frecuentes (Estilo mh de Moraga & Cía. con borde izquierdo carmesí activo y paridad 1:1 Schema FAQPage) -->
+      <section class="bg-[#f8f5f2] px-6 py-12 lg:px-[60px] lg:py-[60px] border border-black/10">
+        <div class="grid gap-12 lg:grid-cols-12 items-start">
+          
+          <div class="lg:col-span-5 flex flex-col gap-5">
+            <div class="flex items-center gap-3">
+              <span class="text-xs tracking-[1.8px] text-[#b50027]">02</span>
+              <span class="h-px w-8 bg-[#050505]"></span>
             </div>
-
-            <div class="p-7 bg-[#f8f5f2] border border-[#e8e3df]">
-              <span class="text-xs font-mono text-[#b50027] font-bold block mb-2">02 / DISCAPACIDAD (CUD)</span>
-              <h3 class="text-lg font-bold text-[#1a1a1a] mb-2">Cobertura 100% en Discapacidad (Ley 24.901)<span class="text-[#b50027]">.</span></h3>
-              <p class="text-xs text-[#666666] leading-relaxed">
-                Reclamamos la cobertura total sin topes arbitrarios en maestra de apoyo escolar, acompañante terapéutico, centro de día, transporte adaptado, fonoaudiología, audífonos y sillas posturales.
-              </p>
-            </div>
-
-            <div class="p-7 bg-[#f8f5f2] border border-[#e8e3df]">
-              <span class="text-xs font-mono text-[#b50027] font-bold block mb-2">03 / FERTILIDAD ASISTIDA</span>
-              <h3 class="text-lg font-bold text-[#1a1a1a] mb-2">Tratamientos de Reproducción Asistida<span class="text-[#b50027]">.</span></h3>
-              <p class="text-xs text-[#666666] leading-relaxed">
-                Bajo la Ley 26.862 exigimos la autorización integral de tratamientos de fertilidad de baja y alta complejidad (FIV/ICSI), medicación hormonal al 100%, estudios genéticos y criopreservación.
-              </p>
-            </div>
-
-            <div class="p-7 bg-[#f8f5f2] border border-[#e8e3df]">
-              <span class="text-xs font-mono text-[#b50027] font-bold block mb-2">04 / CIRUGÍAS Y MEDICACIÓN</span>
-              <h3 class="text-lg font-bold text-[#1a1a1a] mb-2">Medicamentos de Alto Costo y Prótesis<span class="text-[#b50027]">.</span></h3>
-              <p class="text-xs text-[#666666] leading-relaxed">
-                Cuando la obra social demora la entrega de drogas oncológicas, biológicos o ofrece una prótesis nacional distinta a la importada indicada por tu médico cirujano, activamos una medida cautelar urgente.
-              </p>
-            </div>
+            <h2 class="text-[28px] leading-[1.15] font-medium lg:text-[34px]">
+              Preguntas frecuentes sobre Amparos de Salud en San Juan<span class="text-[#b50027]">.</span>
+            </h2>
+            <p class="text-base leading-6 text-[#444748] text-justify">
+              Requisitos y tiempos procesales reales para destrabar prestaciones médicas urgentes en la provincia de San Juan.
+            </p>
           </div>
-        </div>
-      </section>
 
-      <!-- PREGUNTAS FRECUENTES DE LA SUBPÁGINA -->
-      <section class="py-16 sm:py-20 px-6 sm:px-12 lg:px-16 bg-[#f8f5f2] border-b border-[#e8e3df]">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-8">
-            Preguntas frecuentes sobre Amparos de Salud en San Juan<span class="text-[#b50027]">.</span>
-          </h2>
-
-          <div class="space-y-3">
-            <details name="faq-accordion" class="group bg-[#fcfaf9] border border-[#e8e3df] open:border-[#b50027]" open>
-              <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-sm text-[#1a1a1a] list-none">
-                <span>¿Cuánto demora en salir una medida cautelar en un amparo de salud en San Juan?</span>
-                <span class="text-[#b50027] text-lg">+</span>
+          <div class="lg:col-span-7 flex flex-col">
+            <details name="faq-accordion" class="group border-t border-black/15 last:border-b" open>
+              <summary class="border-l-2 border-transparent group-open:border-[#b50027] pl-5 transition-colors duration-500 flex w-full items-center justify-between gap-4 py-5 text-left text-base leading-[22px] tracking-[0.4px] uppercase font-medium cursor-pointer list-none">
+                <span><span class="mr-3 text-xs text-[#b50027]">01</span>¿Cuánto demora en salir una medida cautelar en un amparo de salud en San Juan?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <div class="px-5 pb-5 text-xs sm:text-sm text-[#666666] leading-relaxed">
+              <div class="border-l-2 border-[#b50027] pl-5 pb-6 text-justify text-base leading-6 text-black/80">
                 Una vez presentada la acción de amparo con la orden médica y la negativa o silencio de la Obra Social/Prepaga, los juzgados suelen resolver la medida cautelar de urgencia entre las 48 horas y los 5 días hábiles.
               </div>
             </details>
 
-            <details name="faq-accordion" class="group bg-[#fcfaf9] border border-[#e8e3df] open:border-[#b50027]">
-              <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-sm text-[#1a1a1a] list-none">
-                <span>¿Pueden negarme la afiliación a una Obra Social por ser Monotributista?</span>
-                <span class="text-[#b50027] text-lg">+</span>
+            <details name="faq-accordion" class="group border-t border-black/15 last:border-b">
+              <summary class="border-l-2 border-transparent group-open:border-[#b50027] pl-5 transition-colors duration-500 flex w-full items-center justify-between gap-4 py-5 text-left text-base leading-[22px] tracking-[0.4px] uppercase font-medium cursor-pointer list-none">
+                <span><span class="mr-3 text-xs text-[#b50027]">02</span>¿Pueden negarme la afiliación a una Obra Social por ser Monotributista?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <div class="px-5 pb-5 text-xs sm:text-sm text-[#666666] leading-relaxed">
+              <div class="border-l-2 border-[#b50027] pl-5 pb-6 text-justify text-base leading-6 text-black/80">
                 No. Las Obras Sociales del sistema nacional están obligadas por ley a recibir a los monotributistas y su grupo familiar sin imponer períodos de carencia ilegales para las prestaciones del Programa Médico Obligatorio (PMO).
               </div>
             </details>
 
-            <details name="faq-accordion" class="group bg-[#fcfaf9] border border-[#e8e3df] open:border-[#b50027]">
-              <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-sm text-[#1a1a1a] list-none">
-                <span>¿Qué cubre al 100% el Certificado Único de Discapacidad (CUD) mediante reclamo legal?</span>
-                <span class="text-[#b50027] text-lg">+</span>
+            <details name="faq-accordion" class="group border-t border-black/15 last:border-b">
+              <summary class="border-l-2 border-transparent group-open:border-[#b50027] pl-5 transition-colors duration-500 flex w-full items-center justify-between gap-4 py-5 text-left text-base leading-[22px] tracking-[0.4px] uppercase font-medium cursor-pointer list-none">
+                <span><span class="mr-3 text-xs text-[#b50027]">03</span>¿Qué cubre al 100% el Certificado Único de Discapacidad (CUD) mediante reclamo legal?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <div class="px-5 pb-5 text-xs sm:text-sm text-[#666666] leading-relaxed">
+              <div class="border-l-2 border-[#b50027] pl-5 pb-6 text-justify text-base leading-6 text-black/80">
                 La Ley 24.901 garantiza cobertura integral al 100% en terapias de rehabilitación, maestra de apoyo escolar, acompañante terapéutico, transporte, medicación, prótesis e internación domiciliaria.
               </div>
             </details>
           </div>
+
         </div>
       </section>
 
-      <!-- BLOQUE EXPLICATIVO DE ERIK WEBSITE SOBRE PÁGINAS DE ESPECIALIDAD SEO -->
-      <section class="py-16 px-6 sm:px-12 bg-slate-100 border-t-4 border-emerald-600">
-        <div class="max-w-4xl mx-auto p-8 rounded-3xl bg-white border border-slate-200 shadow-md">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3">
-            Arquitectura SEO de Erik Website para Álvarez &amp; Maldonado
-          </span>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">
-            ¿Por qué esta página individual atrae a los mejores clientes desde Google?
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-            En la web chilena de referencia (<em>Moraga &amp; Cía.</em>), las áreas de práctica eran simples ventanas flotantes sin encabezado propio que Google no podía posicionar por separado. En cambio, con esta estructura en el <strong>Plan Integral ($350.000 ARS)</strong>, cada una de sus 8 especialidades principales tiene su propia URL, su propio <code>&lt;h1&gt;</code> y su propio bloque de Respuesta Directa para dominar las búsquedas en San Juan.
+      <!-- Otras Áreas de Práctica (Exacta al pie de jg de Moraga & Cía.) -->
+      <section class="flex flex-col gap-5 pt-4">
+        <h2 class="text-2xl leading-10 text-[#b50027] font-medium">Otras áreas de práctica en San Juan</h2>
+        <div class="grid gap-4 sm:grid-cols-3">
+          
+          <a href="/propuestas/alvarez-maldonado-abogados/" class="group flex flex-col h-[380px] bg-white border border-black/10 overflow-hidden">
+            <div class="relative flex-1 overflow-hidden bg-[#1a1a1a]">
+              <img src="/images/guia_portfolio_web_arquitectos_estudios.png" alt="Consumidor, Daños y Fraudes Bancarios" class="moraga-img-zoom moraga-gray absolute inset-0 size-full object-cover">
+            </div>
+            <div class="flex items-center justify-between gap-4 px-4 py-4 font-medium text-black">
+              <span class="text-lg leading-[23.4px]">Consumidor y Fraudes Bancarios<span class="text-[#b50027]">.</span></span>
+              <span class="transition-transform duration-500 group-hover:translate-x-1">→</span>
+            </div>
+          </a>
+
+          <a href="/propuestas/alvarez-maldonado-abogados/" class="group flex flex-col h-[380px] bg-white border border-black/10 overflow-hidden">
+            <div class="relative flex-1 overflow-hidden bg-[#1a1a1a]">
+              <img src="/images/guia_diseno_web_san_juan.png" alt="Herencias y Sucesiones en San Juan" class="moraga-img-zoom moraga-gray absolute inset-0 size-full object-cover">
+            </div>
+            <div class="flex items-center justify-between gap-4 px-4 py-4 font-medium text-black">
+              <span class="text-lg leading-[23.4px]">Herencias y Sucesiones<span class="text-[#b50027]">.</span></span>
+              <span class="transition-transform duration-500 group-hover:translate-x-1">→</span>
+            </div>
+          </a>
+
+          <a href="/propuestas/alvarez-maldonado-abogados/" class="group flex flex-col h-[380px] bg-white border border-black/10 overflow-hidden">
+            <div class="relative flex-1 overflow-hidden bg-[#1a1a1a]">
+              <img src="/images/guia_web_arquitectos_constructoras.png" alt="Inmuebles y Prescripción Adquisitiva" class="moraga-img-zoom moraga-gray absolute inset-0 size-full object-cover">
+            </div>
+            <div class="flex items-center justify-between gap-4 px-4 py-4 font-medium text-black">
+              <span class="text-lg leading-[23.4px]">Inmuebles y Usucapión<span class="text-[#b50027]">.</span></span>
+              <span class="transition-transform duration-500 group-hover:translate-x-1">→</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Nota Técnica de Erik Website -->
+      <aside class="p-6 lg:p-8 bg-[#050505] text-white border-l-4 border-emerald-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div class="space-y-1 max-w-2xl">
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-400">Demostración de Subpágina SEO (1 de 8) · Erik Website</span>
+          <p class="text-sm text-white/85 leading-relaxed">
+            Esta página mantiene exactamente la misma estética del Drawer de <em>Moraga &amp; Cía.</em>, pero existe como un documento HTML real con su propio <code>&lt;title&gt;</code>, <code>&lt;h1&gt;</code> y Schema <code>Service</code> para posicionar en Google San Juan cuando alguien busca un abogado especialista.
           </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="/propuestas/alvarez-maldonado-abogados/#propuesta-comercial-erik" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold">
-              Ver Planes y Precios en la Portada →
-            </a>
-            <a href="/propuestas/alvarez-maldonado-abogados/" class="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200">
-              ← Volver a la Portada Principal
-            </a>
-          </div>
         </div>
-      </section>
+        <a href="/propuestas/alvarez-maldonado-abogados/" class="shrink-0 border border-white/80 px-6 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+          ← Volver a la Portada
+        </a>
+      </aside>
 
-    </main>
-  </div>
+    </article>
+
+  </main>
 </body>
 </html>
