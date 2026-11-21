@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Tráfico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+          window['ew_analytics_blocked'] = true;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Álvarez & Maldonado Estudio Jurídico en San Juan | +30 Años de Trayectoria</title>
+  <meta name="description" content="Estudio Jurídico Álvarez & Maldonado en San Juan (Mitre 486 Oeste). Más de 30 años de trayectoria en Amparos de Salud, Sucesiones, Consumidor, Inmuebles y Sociedades.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Inspiración Architype Renner / Bauhaus Geométrica) & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Schema.org LegalService & FAQPage (SEO 100/100 real en HTML, sin parches ocultos de 1x1px) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "@id": "https://erikwebsite.com/propuestas/alvarez-maldonado-abogados/#legalservice",
+        "name": "Álvarez & Maldonado Estudio Jurídico",
+        "description": "Estudio jurídico con más de 30 años de trayectoria en la provincia de San Juan. Especialistas en Amparos de Salud, Discapacidad, Defensa del Consumidor, Sucesiones, Inmuebles, Contratos y Sociedades.",
+        "url": "https://erikwebsite.com/propuestas/alvarez-maldonado-abogados/",
+        "telephone": "+5492645618327",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mitre 486 Oeste",
+          "addressLocality": "San Juan Capital",
+          "addressRegion": "San Juan",
+          "postalCode": "J5400",
+          "addressCountry": "AR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/alvarez.maldonado.abogados/"
+        ],
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Provincia de San Juan, Argentina"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://erikwebsite.com/propuestas/alvarez-maldonado-abogados/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Dónde se encuentra ubicado el Estudio Jurídico Álvarez & Maldonado y cómo agendo una consulta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nuestra sede central se encuentra en calle Mitre 486 Oeste, San Juan Capital. Podés coordinar tu consulta presencial o virtual escribiéndonos directamente por WhatsApp al 264 5618327 o reservando turno online."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué hacer si mi Obra Social o Prepaga rechaza una cobertura médica, cirugía o afiliación de monotributo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ante negativas arbitrarias de obras sociales o prepagas en tratamientos, medicación, discapacidad o fertilidad, interponemos acciones de amparo de salud con medida cautelar urgente para exigir la cobertura integral inmediata."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo actuar si me vaciaron la cuenta bancaria o sacaron un préstamo a mi nombre por estafa virtual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bajo la Ley de Defensa del Consumidor, los bancos tienen deber de seguridad objetiva. Gestionamos la impugnación urgente, medida cautelar para frenar descuentos de haberes y demanda por restitución de fondos y daño punitivo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué documentación necesito para iniciar una sucesión o sanear un inmueble por prescripción adquisitiva en San Juan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para sucesiones se requiere el acta de defunción, partidas que acrediten el vínculo y títulos de los bienes. Para prescripción adquisitiva (usucapión), relevamos planos, impuestos pagos y pruebas de posesión continua durante 20 años."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Tokens Exactos extraídos de Moraga & Cía. (@layer theme) */
+      --color-ink: #050505;
+      --color-graphite: #1a1a1a;
+      --color-charcoal: #232323;
+      --color-paper: #fcfaf9;
+      --color-warm: #f8f5f2;
+      --color-sand: #e8e3df;
+      --color-map: #e8dfd6;
+      --color-muted: #666666;
+      --color-stone: #97928f;
+      --color-brand: #b50027;
+      --color-accent: #e5352c;
+      --spacing-sidebar: 90px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--color-paper);
+      color: var(--color-graphite);
+    }
+
+    .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-serif-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Escritura vertical de la Sidebar de 90px estilo Moraga & Cía. */
+    .writing-vertical-up {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    /* Transición fotográfica Editorial: B&W de alto contraste a Color real + Zoom 1.8s sobre UN SOLO nodo <img> (sin duplicar DOM) */
+    .moraga-photo {
+      filter: grayscale(100%) brightness(1.08) contrast(1.12);
+      transform: scale(1);
+      transition: filter 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .group:hover .moraga-photo,
+    .moraga-photo-wrap:hover .moraga-photo {
+      filter: grayscale(0%) brightness(1) contrast(1);
+      transform: scale(1.035);
+    }
+
+    /* Curva Bezier Editorial para Drawers y Menú */
+    .ease-editorial {
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  </style>
+</head>
+<body class="bg-[#fcfaf9] text-[#1a1a1a] antialiased selection:bg-[#b50027] selection:text-white min-h-screen flex flex-col">
+
+  <!-- ===================================================================== -->
+  <!-- BARRA PRIVADA DE PROPUESTA ERIK WEBSITE (STICKY TOP)                  -->
+  <!-- ===================================================================== -->
+  <aside aria-label="Aviso de propuesta privada" class="bg-[#050505] text-stone-300 text-[11px] sm:text-xs py-2 px-4 font-medium tracking-tight border-b border-white/10 sticky top-0 z-[70]">
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-1.5">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-[#b50027] animate-pulse"></span>
+        <span>Boceto Interactivo a Medida para: <strong class="text-white font-semibold">Álvarez & Maldonado Estudio Jurídico (San Juan)</strong></span>
+      </div>
+      <div class="flex items-center gap-3 text-[11px]">
+        <a href="/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/" class="text-stone-300 hover:text-white underline hidden md:inline">
+          Ver Subpágina SEO (Amparos de Salud)
+        </a>
+        <span class="text-stone-600 hidden md:inline">|</span>
+        <a href="#propuesta-comercial-erik" class="text-emerald-400 hover:text-emerald-300 font-bold">
+          Ver Diagnóstico SEO y Planes de Erik Website ↓
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===================================================================== -->
+  <!-- SIDEBAR FIJA IZQUIERDA EN DESKTOP (90px) / TOPBAR EN MOBILE (64px)    -->
+  <!-- Inspirada 1:1 en la arquitectura visual de Moraga & Cía.             -->
+  <!-- ===================================================================== -->
+  <aside aria-label="Navegación institucional" class="bg-[#050505] text-white border-b lg:border-b-0 lg:border-r border-white/10 sticky top-[33px] lg:fixed lg:top-[33px] lg:bottom-0 lg:left-0 lg:w-[90px] h-16 lg:h-[calc(100vh-33px)] px-5 lg:px-0 lg:py-8 flex lg:flex-col items-center justify-between z-[60] select-none">
+    
+    <!-- Botón MENU con doble línea paralela animada -->
+    <button type="button" id="btn-open-menu" aria-label="Abrir menú de navegación" class="group flex lg:flex-col items-center gap-3 cursor-pointer focus:outline-none py-2">
+      <div class="flex lg:flex-row items-center gap-1.5">
+        <span class="block w-6 lg:w-[1.5px] h-[1.5px] lg:h-9 bg-white transition-all duration-500 group-hover:bg-[#e5352c]"></span>
+        <span class="block w-4 lg:w-[1.5px] h-[1.5px] lg:h-6 bg-white/70 transition-all duration-500 group-hover:w-6 lg:group-hover:h-9 group-hover:bg-[#e5352c]"></span>
+      </div>
+      <span class="text-[11px] font-bold tracking-[0.22em] uppercase text-white/90 group-hover:text-[#e5352c] transition-colors lg:writing-vertical-up">
+        MENU
+      </span>
+    </button>
+
+    <!-- Indicador Jurisdicción / Trayectoria -->
+    <div class="hidden lg:flex flex-col items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-[#97928f] font-semibold">
+      <span class="text-[#b50027] font-bold">SJ</span>
+      <span class="w-3 h-[1px] bg-white/15"></span>
+      <span>+30A</span>
+    </div>
+
+    <!-- Identidad Vertical en Desktop / Horizontal en Mobile -->
+    <a href="#inicio" class="flex items-center gap-2.5 lg:flex-col group" title="Álvarez & Maldonado Estudio Jurídico">
+      <span class="text-xs sm:text-sm lg:text-[11px] font-bold tracking-[0.18em] uppercase text-white lg:writing-vertical-up whitespace-nowrap">
+        ÁLVAREZ <span class="text-[#b50027]">&amp;</span> MALDONADO<span class="text-[#b50027]">.</span>
+      </span>
+    </a>
+
+    <!-- Botón rápido mobile WhatsApp -->
+    <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Quisiera%20realizar%20una%20consulta%20jur%C3%ADdica."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="lg:hidden inline-flex items-center gap-1.5 bg-[#b50027] text-white text-[11px] font-bold px-3 py-1.5 rounded-none tracking-wider uppercase">
+      <span>Consultar</span>
+    </a>
+  </aside>
+
+  <!-- ===================================================================== -->
+  <!-- MENÚ FULLSCREEN OVERLAY (NUMERACIÓN EDITORIAL 01..06 + PUNTO CARMESÍ) -->
+  <!-- ===================================================================== -->
+  <div id="fullscreen-menu" class="fixed inset-0 lg:left-[90px] top-[33px] bg-[#050505]/98 backdrop-blur-xl text-white z-[65] opacity-0 pointer-events-none transition-opacity duration-500 ease-editorial flex flex-col justify-between p-8 sm:p-14 lg:p-20 overflow-y-auto">
+    <div class="flex items-center justify-between border-b border-white/10 pb-6">
+      <div class="flex items-center gap-3">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-[#b50027] font-semibold">Navegación Institucional</span>
+        <span class="text-stone-600">•</span>
+        <span class="text-xs text-[#97928f]">Mitre 486 Oeste, San Juan Capital</span>
+      </div>
+      <button type="button" id="btn-close-menu" class="text-xs uppercase tracking-[0.2em] text-stone-400 hover:text-white flex items-center gap-2 cursor-pointer py-2 px-3 border border-white/15">
+        <span>Cerrar</span>
+        <span class="text-lg leading-none">×</span>
+      </button>
+    </div>
+
+    <nav class="my-auto py-8 grid md:grid-cols-2 gap-x-12 gap-y-5">
+      <a href="#inicio" class="menu-nav-link group flex items-baseline gap-4 py-2 border-b border-white/[0.06]">
+        <span class="text-[11px] font-mono text-[#97928f]">01</span>
+        <span class="text-2xl sm:text-4xl lg:text-[42px] font-bold uppercase tracking-tight text-white group-hover:text-[#e5352c] transition-colors">Portada<span class="text-[#b50027]">.</span></span>
+      </a>
+      <a href="#la-firma" class="menu-nav-link group flex items-baseline gap-4 py-2 border-b border-white/[0.06]">
+        <span class="text-[11px] font-mono text-[#97928f]">02</span>
+        <span class="text-2xl sm:text-4xl lg:text-[42px] font-bold uppercase tracking-tight text-white group-hover:text-[#e5352c] transition-colors">La Firma (+30 Años)<span class="text-[#b50027]">.</span></span>
+      </a>
+      <a href="#areas-de-practica" class="menu-nav-link group flex items-baseline gap-4 py-2 border-b border-white/[0.06]">
+        <span class="text-[11px] font-mono text-[#97928f]">03</span>
+        <span class="text-2xl sm:text-4xl lg:text-[42px] font-bold uppercase tracking-tight text-white group-hover:text-[#e5352c] transition-colors">9 Áreas de Práctica<span class="text-[#b50027]">.</span></span>
+      </a>
+      <a href="#triaje-juridico" class="menu-nav-link group flex items-baseline gap-4 py-2 border-b border-white/[0.06]">
+        <span class="text-[11px] font-mono text-[#97928f]">04</span>
+        <span class="text-2xl sm:text-4xl lg:text-[42px] font-bold uppercase tracking-tight text-white group-hover:text-[#e5352c] transition-colors">Diagnóstico de Caso<span class="text-[#b50027]">.</span></span>
+      </a>
+      <a href="#actualidad-legal" class="menu-nav-link group flex items-baseline gap-4 py-2 border-b border-white/[0.06]">
+        <span class="text-[11px] font-mono text-[#97928f]">05</span>
+        <span class="text-2xl sm:text-4xl lg:text-[42px] font-bold uppercase tracking-tight text-white group-hover:text-[#e5352c] transition-colors">En 30' Te Explico<span class="text-[#b50027]">.</span></span>
+      </a>
+      <a href="#contacto" class="menu-nav-link group flex items-baseline gap-4 py-2 border-b border-white/[0.06]">
+        <span class="text-[11px] font-mono text-[#97928f]">06</span>
+        <span class="text-2xl sm:text-4xl lg:text-[42px] font-bold uppercase tracking-tight text-white group-hover:text-[#e5352c] transition-colors">Sede &amp; Turnos<span class="text-[#b50027]">.</span></span>
+      </a>
+    </nav>
+
+    <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#97928f]">
+      <div>
+        <strong class="text-white uppercase tracking-wider">Sede San Juan Capital:</strong> Mitre 486 Oeste · Tel / WhatsApp: 264 5618327
+      </div>
+      <a href="/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/" class="text-[#e5352c] hover:underline font-semibold">
+        Ver Página SEO Dedicada: Amparos de Salud y Discapacidad →
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- CONTENEDOR PRINCIPAL (CON MARGEN IZQUIERDO DE 90PX EN DESKTOP)        -->
+  <!-- ===================================================================== -->
+  <div class="lg:pl-[90px] flex-grow flex flex-col">
+    <main class="flex-grow">
+
+      <!-- ================================================================= -->
+      <!-- 01. HERO CINEMÁTICO FULL-VIEWPORT (OBSIDIANA #050505 & CARMESÍ)    -->
+      <!-- ================================================================= -->
+      <section id="inicio" class="min-h-[88svh] bg-[#050505] text-white relative overflow-hidden flex items-center border-b border-white/10">
+        <!-- Gradiente radial sutil estilo Moraga & Cía. -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_30%,rgba(181,0,39,0.16),transparent_60%)] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-16 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 lg:gap-14 items-center relative z-10">
+          
+          <!-- Columna Editorial Izquierda (7 cols) -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-[#97928f]">01</span>
+              <span class="w-8 h-[1px] bg-[#b50027]"></span>
+              <span class="text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-[#b50027]">
+                Estudio Jurídico en San Juan · +30 Años de Trayectoria
+              </span>
+            </div>
+
+            <!-- H1 con el "Truco del Punto Rojo" y {palabra} destacada en carmesí -->
+            <h1 class="text-[32px] sm:text-[44px] lg:text-[52px] font-bold tracking-[-0.02em] leading-[1.15] text-white max-w-[680px]">
+              Más de tres décadas defendiendo tu <span class="text-[#b50027]">patrimonio</span>, tu salud y tus derechos con rigor jurídico<span class="text-[#b50027]">.</span>
+            </h1>
+
+            <p class="text-stone-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+              Desde nuestra sede en <strong>Mitre 486 Oeste (San Juan Capital)</strong>, brindamos patrocinio letrado en <strong>Amparos de Salud y Discapacidad, Defensa del Consumidor, Sucesiones, Inmuebles, Contratos y Sociedades</strong> con estrategia procesal firme y trato directo.
+            </p>
+
+            <!-- Botonera Dual (WhatsApp Directo + Agenda Turnito / Triaje) -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Necesito%20asesoramiento%20jur%C3%ADdico%20y%20quisiera%20coordinar%20una%20consulta."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center gap-3 bg-[#b50027] hover:bg-[#e5352c] text-white font-semibold text-xs sm:text-sm uppercase tracking-[0.14em] px-8 py-4 transition-colors">
+                <span>Iniciar Consulta por WhatsApp</span>
+                <span class="text-base leading-none">→</span>
+              </a>
+
+              <a href="#areas-de-practica"
+                 class="inline-flex items-center justify-center gap-2 bg-white/[0.05] hover:bg-white/[0.1] text-white border border-white/15 font-medium text-xs sm:text-sm uppercase tracking-[0.14em] px-7 py-4 transition-colors">
+                <span>Explorar 9 Áreas de Práctica</span>
+              </a>
+            </div>
+
+            <!-- Barra Inferior de Credenciales Verificables -->
+            <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-6 max-w-xl">
+              <div>
+                <span class="block text-2xl sm:text-3xl font-bold text-white tabular-nums">+30<span class="text-[#b50027]">.</span></span>
+                <span class="text-[11px] text-[#97928f] uppercase tracking-wider block mt-1">Años en Tribunales SJ</span>
+              </div>
+              <div>
+                <span class="block text-2xl sm:text-3xl font-bold text-white tabular-nums">09<span class="text-[#b50027]">.</span></span>
+                <span class="text-[11px] text-[#97928f] uppercase tracking-wider block mt-1">Áreas Especializadas</span>
+              </div>
+              <div>
+                <span class="block text-2xl sm:text-3xl font-bold text-white">Mitre 486 O<span class="text-[#b50027]">.</span></span>
+                <span class="text-[11px] text-[#97928f] uppercase tracking-wider block mt-1">Capital · San Juan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Composición Arquitectónica B&W a Color (5 cols) -->
+          <div class="lg:col-span-5">
+            <div class="moraga-photo-wrap relative bg-[#1a1a1a] border border-white/15 overflow-hidden group">
+              <div class="aspect-[4/5] overflow-hidden relative">
+                <img src="/images/guia_web_abogados_argentina.png"
+                     alt="Estudio Jurídico Álvarez & Maldonado en San Juan Capital"
+                     class="w-full h-full object-cover moraga-photo"
+                     width="600" height="750">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/25 to-transparent"></div>
+              </div>
+
+              <!-- Tarjeta Editorial Inferior sobre la Fotografía -->
+              <div class="p-6 sm:p-8 bg-[#050505]/90 backdrop-blur-md border-t border-white/10">
+                <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#97928f] mb-2">
+                  <span>Sede Central San Juan</span>
+                  <span class="text-[#b50027] font-bold">● Atención Activa</span>
+                </div>
+                <p class="text-lg font-bold text-white tracking-tight">
+                  Álvarez &amp; Maldonado Estudio Jurídico<span class="text-[#b50027]">.</span>
+                </p>
+                <p class="text-xs text-stone-400 mt-1 leading-relaxed">
+                  Mitre 486 Oeste, San Juan Capital · A metros del Polo Judicial y Foro de Abogados de San Juan.
+                </p>
+                <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                  <span class="text-stone-300 font-medium">Contacto Directo: 264 5618327</span>
+                  <a href="https://turnito.app/c/4GnGb2fcSzD8yT" target="_blank" rel="noopener noreferrer" class="text-[#e5352c] hover:underline font-semibold uppercase tracking-wider text-[11px]">
+                    Agenda Turnito →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 02. LA FIRMA: +30 AÑOS DE SOLIDEZ EN SAN JUAN (ALABASTRO #fcfaf9) -->
+      <!-- ================================================================= -->
+      <section id="la-firma" class="py-20 sm:py-28 px-6 sm:px-12 lg:px-16 bg-[#fcfaf9] border-b border-[#e8e3df]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Encabezado Editorial Izquierdo (5 cols) -->
+          <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-[#97928f]">02</span>
+              <span class="w-8 h-[1px] bg-[#b50027]"></span>
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#b50027]">La Firma</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-[40px] font-bold text-[#1a1a1a] tracking-[-0.02em] leading-[1.18]">
+              Un referente de <span class="text-[#b50027]">confianza</span> y solidez jurídica en la provincia de San Juan<span class="text-[#b50027]">.</span>
+            </h2>
+
+            <p class="text-sm text-[#666666] leading-relaxed">
+              Pasá el cursor sobre las fotografías o fichas para experimentar la transición de escala de grises a color y explorar nuestros pilares de actuación.
+            </p>
+
+            <div class="p-6 bg-[#f8f5f2] border-l-2 border-[#b50027] space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-[#b50027] block">Filosofía de Trabajo</span>
+              <p class="text-xs sm:text-sm text-[#1a1a1a] leading-relaxed font-medium">
+                Combinamos más de 30 años de experiencia litigando en los tribunales sanjuaninos con una comunicación clara, ágil y sin tecnicismos innecesarios.
+              </p>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Narrativa Justificada Editorial + Bloques de Autoridad (7 cols) -->
+          <div class="lg:col-span-7 space-y-10">
+            <div class="grid sm:grid-cols-2 gap-6 text-sm text-[#232323] leading-6 text-justify hyphens-auto">
+              <p>
+                En <strong>Álvarez &amp; Maldonado Estudio Jurídico</strong> entendemos que detrás de cada expediente hay una familia esperando una cobertura médica vital, herederos que necesitan resguardar el patrimonio familiar o una empresa sanjuanina que requiere seguridad jurídica en sus contratos y sociedades.
+              </p>
+              <p>
+                Nuestra práctica abarca desde <strong>procesos urgentes y acciones de amparo</strong> ante negativas de obras sociales o fraudes bancarios, hasta el saneamiento integral de inmuebles por <strong>prescripción adquisitiva</strong>, sucesiones complejas y litigios civiles y comerciales en toda la provincia de San Juan.
+              </p>
+            </div>
+
+            <!-- Grilla de 3 Pilares Diferenciales con estética Arena (#e8e3df) -->
+            <div class="grid sm:grid-cols-3 gap-5 pt-4">
+              <div class="p-6 bg-[#f8f5f2] border border-[#e8e3df] hover:border-[#b50027] transition-colors">
+                <span class="text-xs font-mono text-[#97928f] block mb-3">02.1</span>
+                <h3 class="text-base font-bold text-[#1a1a1a] mb-2">Procesos Urgentes<span class="text-[#b50027]">.</span></h3>
+                <p class="text-xs text-[#666666] leading-relaxed">
+                  Interposición inmediata de medidas cautelares y amparos de salud, discapacidad y fertilidad cuando el tiempo es crítico.
+                </p>
+              </div>
+
+              <div class="p-6 bg-[#f8f5f2] border border-[#e8e3df] hover:border-[#b50027] transition-colors">
+                <span class="text-xs font-mono text-[#97928f] block mb-3">02.2</span>
+                <h3 class="text-base font-bold text-[#1a1a1a] mb-2">Resguardo Patrimonial<span class="text-[#b50027]">.</span></h3>
+                <p class="text-xs text-[#666666] leading-relaxed">
+                  Sucesiones, prescripción adquisitiva de inmuebles, blindaje de contratos de alquiler y ejecuciones de deudas.
+                </p>
+              </div>
+
+              <div class="p-6 bg-[#f8f5f2] border border-[#e8e3df] hover:border-[#b50027] transition-colors">
+                <span class="text-xs font-mono text-[#97928f] block mb-3">02.3</span>
+                <h3 class="text-base font-bold text-[#1a1a1a] mb-2">Claridad en 30 Segundos<span class="text-[#b50027]">.</span></h3>
+                <p class="text-xs text-[#666666] leading-relaxed">
+                  Traducimos el derecho a respuestas concretas para que tomes decisiones informadas desde la primera consulta en Mitre 486 Oeste.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 03. LAS 9 ÁREAS DE PRÁCTICA (CON DRAWER INTERACTIVO + URL SEO)    -->
+      <!-- Extraídas 1:1 de sus Reels y Destacadas reales de Instagram       -->
+      <!-- ================================================================= -->
+      <section id="areas-de-practica" class="py-20 sm:py-28 px-6 sm:px-12 lg:px-16 bg-[#f8f5f2] border-b border-[#e8e3df]">
+        <div class="max-w-7xl mx-auto">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-mono text-[#97928f]">03</span>
+                <span class="w-8 h-[1px] bg-[#b50027]"></span>
+                <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#b50027]">Especialidades Jurídicas</span>
+              </div>
+              <h2 class="text-3xl sm:text-[42px] font-bold text-[#1a1a1a] tracking-[-0.02em] leading-[1.15]">
+                Nuestras <span class="text-[#b50027]">áreas</span> de práctica en San Juan<span class="text-[#b50027]">.</span>
+              </h2>
+            </div>
+            <p class="text-xs sm:text-sm text-[#666666] max-w-md">
+              Seleccioná cualquier área para abrir su ficha técnica deslizable (Drawer) o visitá la página dedicada optimizada para motores de búsqueda.
+            </p>
+          </div>
+
+          <!-- Grilla Editorial de 9 Áreas de Práctica -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Área 01: Salud y Amparos (Con link a Subpágina SEO Demo + Drawer) -->
+            <article class="bg-[#fcfaf9] border-2 border-[#b50027] p-7 flex flex-col justify-between relative group hover:shadow-xl transition-all">
+              <div class="absolute top-0 right-0 bg-[#b50027] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+                Página SEO Demo Activa
+              </div>
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">01 / PROCESOS URGENTES</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Derecho a la Salud y Amparos<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Acciones de amparo con medida cautelar urgente ante negativas de Obras Sociales y Prepagas, rechazos de afiliación a monotributistas, cirugías y medicación de alto costo.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Amparos contra Obras Sociales y Prepagas</li>
+                  <li>Negativa de afiliación a Monotributistas</li>
+                  <li>Cobertura 100% de cirugías, prótesis y oncología</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between gap-2">
+                <button type="button" data-open-area="salud" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha Rápida +
+                </button>
+                <a href="/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/" class="text-xs font-bold uppercase tracking-wider text-[#b50027] hover:text-[#e5352c]">
+                  Ver Página SEO →
+                </a>
+              </div>
+            </article>
+
+            <!-- Área 02: Discapacidad y Fertilidad -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">02 / COBERTURA INTEGRAL</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Discapacidad y Fertilidad<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Exigencia legal de prestaciones integrales bajo la Ley 24.901 (CUD) y cobertura completa de tratamientos de fertilidad y reproducción médicamente asistida.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Maestra integradora, acompañante y transporte</li>
+                  <li>Tratamientos de Fertilidad Asistida (Ley 26.862)</li>
+                  <li>Internación domiciliaria y rehabilitación</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="discapacidad" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 03: Consumidor, Daños y Fraudes Bancarios -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">03 / DEFENSA PATRIMONIAL</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Consumidor, Daños y Bancos<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  ¿Te vaciaron la cuenta bancaria o sacaron un crédito a tu nombre? Accionamos contra bancos, financieras, planes de ahorro y empresas por estafas virtuales y daños.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Cuentas bancarias vaciadas y phishing</li>
+                  <li>Freno de débitos de préstamos fraudulentos</li>
+                  <li>Indemnización por daños y perjuicios</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="consumidor" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 04: Herencias y Sucesiones -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">04 / TRANSMISIÓN DE BIENES</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Herencias y Sucesiones<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Declaratoria de herederos, inscripción y venta por tracto abreviado, partición de herencias con o sin acuerdo entre coherederos y planificación sucesoria.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Declaratoria de herederos ágil en San Juan</li>
+                  <li>Venta de inmuebles por tracto abreviado</li>
+                  <li>Acuerdos de partición y cesión de derechos</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="sucesiones" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 05: Inmuebles y Prescripción Adquisitiva -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">05 / DERECHOS REALES</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Inmuebles y Prescripción Adquisitiva<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Juicios de usucapión (posesión veinteañal) para obtener la escritura definitiva de tu terreno o vivienda, escrituración judicial, reivindicaciones y desalojos.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Prescripción adquisitiva (Usucapión) en San Juan</li>
+                  <li>Saneamiento de títulos y boletos de compraventa</li>
+                  <li>Desalojos y acciones posesorias</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="inmuebles" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 06: Alquileres y Contratos -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">06 / SEGURIDAD CONTRACTUAL</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Alquileres y Contratos<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Redacción, revisión y blindaje de contratos de locación habitacional, comercial y rural. Resolución de conflictos entre propietarios e inquilinos sobre reparaciones y expensas.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Contratos de alquiler actualizados al régimen vigente</li>
+                  <li>Rescisión, garantías y reclamo de mejoras</li>
+                  <li>Contratos civiles, comerciales y agropecuarios</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="alquileres" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 07: Sociedades y Empresas -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">07 / DERECHO CORPORATIVO</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Contratos y Sociedades<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Constitución yestructuración de sociedades comerciales (SRL, SA, SAS), protocolos de empresas familiares, reformas estatutarias y asesoría jurídica continua para PyMEs.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Constitución de SRL, SA y SAS en San Juan</li>
+                  <li>Conflictos societarios y acuerdos de socios</li>
+                  <li>Abono jurídico preventivo para empresas</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="sociedades" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 08: Ejecuciones y Cobros -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">08 / RECUPERO DE ACTIVOS</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Ejecuciones y Cobros<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Juicios ejecutivos para el cobro rápido de cheques rechazados, pagarés, facturas conformadas, alquileres adeudados y traba de embargos preventivos.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Ejecución de pagarés y cheques sin fondos</li>
+                  <li>Cobro ejecutivo de alquileres y expensas</li>
+                  <li>Embargos preventivos e inhibición de bienes</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="ejecuciones" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+            <!-- Área 09: Restricción a la Capacidad y Familia -->
+            <article class="bg-[#fcfaf9] border border-[#e8e3df] hover:border-[#1a1a1a] p-7 flex flex-col justify-between group transition-all">
+              <div>
+                <span class="text-xs font-mono text-[#97928f] block mb-3">09 / PROTECCIÓN DE LA PERSONA</span>
+                <h3 class="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#b50027] transition-colors">
+                  Restricción a la Capacidad<span class="text-[#b50027]">.</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-5">
+                  Procesos judiciales de determinación de la capacidad jurídica, designación de sistemas de apoyo y curatela para proteger la salud y el patrimonio de familiares vulnerables.
+                </p>
+                <ul class="space-y-2 text-xs text-[#232323] border-l-2 border-[#b50027] pl-3.5 mb-6">
+                  <li>Determinación de capacidad y sistemas de apoyo</li>
+                  <li>Autorizaciones judiciales y resguardo de bienes</li>
+                  <li>Derecho de familia y acuerdos patrimoniales</li>
+                </ul>
+              </div>
+              <div class="pt-4 border-t border-[#e8e3df] flex items-center justify-between">
+                <button type="button" data-open-area="capacidad" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027] cursor-pointer">
+                  Abrir Ficha y Requisitos →
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 04. TRIAJE JURÍDICO INTERACTIVO (LO QUE LE FALTA A MORAGA & CÍA.)  -->
+      <!-- Convierte visitas de Instagram/Google en mensajes calificados WA  -->
+      <!-- ================================================================= -->
+      <section id="triaje-juridico" class="py-20 sm:py-28 px-6 sm:px-12 lg:px-16 bg-[#050505] text-white border-b border-white/10">
+        <div class="max-w-5xl mx-auto">
+          
+          <div class="text-left mb-12">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-xs font-mono text-[#97928f]">04</span>
+              <span class="w-8 h-[1px] bg-[#b50027]"></span>
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#b50027]">Pre-Diagnóstico Confidencial</span>
+            </div>
+            <h2 class="text-3xl sm:text-[40px] font-bold text-white tracking-[-0.02em] leading-[1.18]">
+              Seleccioná tu situación para derivarte con el <span class="text-[#b50027]">especialista</span> indicado<span class="text-[#b50027]">.</span>
+            </h2>
+            <p class="text-sm text-stone-400 mt-2 max-w-2xl">
+              Elegí el motivo de tu consulta y el nivel de urgencia para enviar un resumen ordenado al WhatsApp de nuestra sede en Mitre 486 Oeste.
+            </p>
+          </div>
+
+          <div class="bg-[#1a1a1a] border border-white/15 p-6 sm:p-10 grid lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Paso 1 y 2 (7 cols) -->
+            <div class="lg:col-span-7 space-y-6">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-[#97928f] block mb-3">Paso 01 / Materia del Caso</span>
+                <div class="grid sm:grid-cols-2 gap-2.5" id="triaje-materia-group">
+                  <button type="button" data-materia="Amparo de Salud / Obra Social / Discapacidad" data-docs="Negativa o respuesta de la Obra Social/Prepaga, orden médica actualizada y credencial o CUD." class="triaje-btn active text-left p-3.5 border border-[#b50027] bg-[#b50027]/15 text-white text-xs font-bold cursor-pointer transition-all">
+                    01. Amparo de Salud / Discapacidad
+                  </button>
+                  <button type="button" data-materia="Estafa Bancaria / Cuenta Vaciada / Consumidor" data-docs="Capturas de movimientos o préstamos no reconocidos, denuncia policial/bancaria y últimos resúmenes." class="triaje-btn text-left p-3.5 border border-white/15 bg-white/[0.03] hover:border-white/40 text-stone-300 text-xs font-semibold cursor-pointer transition-all">
+                    02. Cuenta Vaciada / Consumidor
+                  </button>
+                  <button type="button" data-materia="Herencias y Sucesiones" data-docs="Partida de defunción, partidas de nacimiento de los herederos y detalle de inmuebles o vehículos." class="triaje-btn text-left p-3.5 border border-white/15 bg-white/[0.03] hover:border-white/40 text-stone-300 text-xs font-semibold cursor-pointer transition-all">
+                    03. Herencias y Sucesiones
+                  </button>
+                  <button type="button" data-materia="Inmuebles / Prescripción Adquisitiva / Alquileres" data-docs="Boleto de compraventa, contrato de locación o comprobantes de impuestos y posesión del inmueble." class="triaje-btn text-left p-3.5 border border-white/15 bg-white/[0.03] hover:border-white/40 text-stone-300 text-xs font-semibold cursor-pointer transition-all">
+                    04. Inmuebles / Usucapión / Alquileres
+                  </button>
+                  <button type="button" data-materia="Sociedades, Contratos o Ejecuciones" data-docs="Contrato social, pagarés, cheques o documentación comercial que respalde la operación." class="triaje-btn text-left p-3.5 border border-white/15 bg-white/[0.03] hover:border-white/40 text-stone-300 text-xs font-semibold cursor-pointer transition-all sm:col-span-2">
+                    05. Sociedades, Contratos Comerciales o Ejecuciones de Deuda
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-[#97928f] block mb-3">Paso 02 / Modalidad Preferida</span>
+                <div class="grid grid-cols-2 gap-2.5" id="triaje-modalidad-group">
+                  <button type="button" data-modalidad="Consulta Presencial en Mitre 486 Oeste (San Juan)" class="modalidad-btn active p-3 border border-[#b50027] bg-[#b50027]/15 text-white text-xs font-bold cursor-pointer text-left">
+                    Presencial en Mitre 486 Oeste
+                  </button>
+                  <button type="button" data-modalidad="Consulta Preliminar por WhatsApp / Videollamada" class="modalidad-btn p-3 border border-white/15 bg-white/[0.03] text-stone-300 text-xs font-semibold cursor-pointer text-left">
+                    WhatsApp / Videollamada
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resumen y Disparo a WhatsApp (5 cols) -->
+            <div class="lg:col-span-5 bg-[#050505] border border-white/15 p-6 space-y-5">
+              <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <span class="text-[11px] font-mono uppercase tracking-widest text-[#97928f]">Ficha de Derivación</span>
+                <span class="text-[11px] font-bold text-[#b50027]">WhatsApp 264 5618327</span>
+              </div>
+
+              <div class="space-y-3 text-xs">
+                <div>
+                  <span class="text-[#97928f] block">Área seleccionada:</span>
+                  <strong id="triaje-res-materia" class="text-white text-sm block mt-0.5">Amparo de Salud / Obra Social / Discapacidad</strong>
+                </div>
+                <div>
+                  <span class="text-[#97928f] block">Documentación útil para la entrevista:</span>
+                  <p id="triaje-res-docs" class="text-stone-300 mt-0.5 leading-relaxed">
+                    Negativa o respuesta de la Obra Social/Prepaga, orden médica actualizada y credencial o CUD.
+                  </p>
+                </div>
+              </div>
+
+              <a id="triaje-wa-link"
+                 href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Necesito%20asesoramiento%20por%20un%20caso%20de%20Amparo%20de%20Salud%20%2F%20Obra%20Social%20%2F%20Discapacidad%20(Consulta%20Presencial%20en%20Mitre%20486%20Oeste)."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full py-4 px-5 bg-[#b50027] hover:bg-[#e5352c] text-white font-bold text-xs uppercase tracking-[0.14em] flex items-center justify-center gap-2 transition-colors">
+                <span>Enviar Consulta al Estudio</span>
+                <span>→</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 05. ACTUALIDAD LEGAL: "EN 30' TE EXPLICO" (PUENTE IG -> GOOGLE)   -->
+      <!-- Toma sus reels reales y los convierte en autoridad indexable SEO  -->
+      <!-- ================================================================= -->
+      <section id="actualidad-legal" class="py-20 sm:py-28 px-6 sm:px-12 lg:px-16 bg-[#e8dfd6] text-[#232323] border-b border-[#d6cbc0]">
+        <div class="max-w-7xl mx-auto">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-mono text-[#666666]">05</span>
+                <span class="w-8 h-[1px] bg-[#b50027]"></span>
+                <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#b50027]">Cápsulas Jurídicas &amp; Insights</span>
+              </div>
+              <h2 class="text-3xl sm:text-[40px] font-bold text-[#1a1a1a] tracking-[-0.02em] leading-[1.15]">
+                En 30 segundos te <span class="text-[#b50027]">explico</span>: guías legales claras<span class="text-[#b50027]">.</span>
+              </h2>
+            </div>
+            <p class="text-xs sm:text-sm text-[#232323]/80 max-w-md">
+              Nuestras respuestas directas a las consultas más urgentes de nuestros clientes en San Juan sobre obras sociales, bancos y alquileres.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            
+            <!-- Cápsula 1: Monotributistas y Obras Sociales (De su Reel real) -->
+            <article class="bg-[#fcfaf9] p-7 border border-[#d6cbc0] flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-[#b50027] block mb-2">Salud · Obras Sociales</span>
+                <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">
+                  ¿Sos monotributista y la Obra Social se niega a afiliarte o exige períodos de carencia<span class="text-[#b50027]">?</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-6">
+                  Muchas obras sociales rechazan arbitrariamente al monotributista o le imponen esperas ilegales para cubrir prestaciones del PMO. Cómo intimar formalmente y activar un amparo de salud en San Juan.
+                </p>
+              </div>
+              <a href="/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/" class="text-xs font-bold uppercase tracking-wider text-[#b50027] hover:underline">
+                Leer Guía de Amparos de Salud →
+              </a>
+            </article>
+
+            <!-- Cápsula 2: Te vaciaron la cuenta bancaria (De su Reel real) -->
+            <article class="bg-[#fcfaf9] p-7 border border-[#d6cbc0] flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-[#b50027] block mb-2">Consumidor · Bancos</span>
+                <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">
+                  ¿Te vaciaron la cuenta bancaria o sacaron un préstamo preaprobado por estafa virtual<span class="text-[#b50027]">?</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-6">
+                  El banco es responsable por las fallas de seguridad de su sistema homebanking. Qué pasos seguir en las primeras 48 horas para frenar el descuento de cuotas y recuperar tu dinero.
+                </p>
+              </div>
+              <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Vi%20su%20publicaci%C3%B3n%20sobre%20cuentas%20vaciadas%20%2F%20estafas%20bancarias%20y%20necesito%20asesoramiento." target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027]">
+                Consultar Caso Bancario →
+              </a>
+            </article>
+
+            <!-- Cápsula 3: Alquileres quién paga (De su Reel real) -->
+            <article class="bg-[#fcfaf9] p-7 border border-[#d6cbc0] flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-[#b50027] block mb-2">Inmuebles · Locaciones</span>
+                <h3 class="text-lg font-bold text-[#1a1a1a] mb-3">
+                  Alquileres en San Juan: ¿quién debe pagar los arreglos estructurales y las expensas<span class="text-[#b50027]">?</span>
+                </h3>
+                <p class="text-xs text-[#666666] leading-relaxed mb-6">
+                  Diferencias clave entre mantenimiento ordinario a cargo del locatario y reparaciones urgentes o estructurales que corresponden al propietario según el Código Civil y Comercial.
+                </p>
+              </div>
+              <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Necesito%20asesoramiento%20sobre%20un%20contrato%20de%20alquiler." target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wider text-[#1a1a1a] hover:text-[#b50027]">
+                Consultar por Alquileres →
+              </a>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 06. PREGUNTAS FRECUENTES (PARIDAD 1:1 CON SCHEMA FAQPAGE)         -->
+      <!-- ================================================================= -->
+      <section id="faq" class="py-20 sm:py-24 px-6 sm:px-12 lg:px-16 bg-[#fcfaf9] border-b border-[#e8e3df]">
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-xs font-mono text-[#97928f]">06</span>
+              <span class="w-8 h-[1px] bg-[#b50027]"></span>
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#b50027]">Dudas Frecuentes</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-[#1a1a1a] tracking-[-0.02em]">
+              Preguntas frecuentes antes de <span class="text-[#b50027]">consultar</span><span class="text-[#b50027]">.</span>
+            </h2>
+          </div>
+
+          <div class="space-y-3">
+            <details name="faq-accordion" class="group bg-[#f8f5f2] border border-[#e8e3df] open:border-[#b50027] transition-colors" open>
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-sm sm:text-base text-[#1a1a1a] list-none">
+                <span>¿Dónde se encuentra ubicado el Estudio Jurídico Álvarez &amp; Maldonado y cómo agendo una consulta?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-xs sm:text-sm text-[#666666] leading-relaxed">
+                Nuestra sede central se encuentra en calle <strong>Mitre 486 Oeste, San Juan Capital</strong>. Podés coordinar tu consulta presencial o virtual escribiéndonos directamente por WhatsApp al <strong>264 5618327</strong> o reservando turno online en nuestra agenda.
+              </div>
+            </details>
+
+            <details name="faq-accordion" class="group bg-[#f8f5f2] border border-[#e8e3df] open:border-[#b50027] transition-colors">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-sm sm:text-base text-[#1a1a1a] list-none">
+                <span>¿Qué hacer si mi Obra Social o Prepaga rechaza una cobertura médica, cirugía o afiliación de monotributo?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-xs sm:text-sm text-[#666666] leading-relaxed">
+                Ante negativas arbitrarias de obras sociales o prepagas en tratamientos, medicación, discapacidad o fertilidad, interponemos acciones de amparo de salud con medida cautelar urgente para exigir la cobertura integral inmediata.
+              </div>
+            </details>
+
+            <details name="faq-accordion" class="group bg-[#f8f5f2] border border-[#e8e3df] open:border-[#b50027] transition-colors">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-sm sm:text-base text-[#1a1a1a] list-none">
+                <span>¿Cómo actuar si me vaciaron la cuenta bancaria o sacaron un préstamo a mi nombre por estafa virtual?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-xs sm:text-sm text-[#666666] leading-relaxed">
+                Bajo la Ley de Defensa del Consumidor, los bancos tienen deber de seguridad objetiva. Gestionamos la impugnación urgente, medida cautelar para frenar descuentos de haberes y demanda por restitución de fondos y daño punitivo.
+              </div>
+            </details>
+
+            <details name="faq-accordion" class="group bg-[#f8f5f2] border border-[#e8e3df] open:border-[#b50027] transition-colors">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-sm sm:text-base text-[#1a1a1a] list-none">
+                <span>¿Qué documentación necesito para iniciar una sucesión o sanear un inmueble por prescripción adquisitiva en San Juan?</span>
+                <span class="text-[#b50027] text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-xs sm:text-sm text-[#666666] leading-relaxed">
+                Para sucesiones se requiere el acta de defunción, partidas que acrediten el vínculo y títulos de los bienes. Para prescripción adquisitiva (usucapión), relevamos planos, impuestos pagos y pruebas de posesión continua durante 20 años.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 07. CONTACTO Y SEDE CENTRAL MITRE 486 OESTE (CIERRE DE LA FIRMA)  -->
+      <!-- ================================================================= -->
+      <section id="contacto" class="py-20 sm:py-24 px-6 sm:px-12 lg:px-16 bg-[#050505] text-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#b50027]">Contacto Institucional</span>
+            <h2 class="text-3xl sm:text-5xl font-bold tracking-[-0.02em] leading-tight">
+              Agendá tu consulta en nuestra sede de <span class="text-[#b50027]">Mitre 486 Oeste</span><span class="text-[#b50027]">.</span>
+            </h2>
+            <p class="text-stone-400 text-sm sm:text-base max-w-xl leading-relaxed">
+              Atención personalizada en San Juan Capital. Escribinos por WhatsApp para una evaluación preliminar o reservá tu horario en nuestra agenda online.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-5 pt-4 text-xs">
+              <div class="p-5 bg-[#1a1a1a] border border-white/10">
+                <span class="text-[#97928f] uppercase tracking-wider block mb-1">Dirección Física</span>
+                <strong class="text-white text-sm block">Mitre 486 Oeste</strong>
+                <span class="text-stone-400">Capital, San Juan</span>
+              </div>
+              <div class="p-5 bg-[#1a1a1a] border border-white/10">
+                <span class="text-[#97928f] uppercase tracking-wider block mb-1">WhatsApp Directo</span>
+                <strong class="text-white text-sm block">264 5618327</strong>
+                <span class="text-stone-400">Consultas y Derivaciones</span>
+              </div>
+              <div class="p-5 bg-[#1a1a1a] border border-white/10">
+                <span class="text-[#97928f] uppercase tracking-wider block mb-1">Instagram Oficial</span>
+                <strong class="text-white text-sm block">@alvarez.maldonado.abogados</strong>
+                <span class="text-stone-400">+30 años de trayectoria</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-[#1a1a1a] border border-white/15 p-8 space-y-5">
+            <h3 class="text-xl font-bold text-white">Canales de Reserva Inmediata<span class="text-[#b50027]">.</span></h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Elegí cómo preferís coordinar tu entrevista con nuestro equipo de abogados:
+            </p>
+            <a href="https://wa.me/5492645618327?text=Hola%20Estudio%20%C3%81lvarez%20%26%20Maldonado!%20Quisiera%20coordinar%20una%20consulta%20en%20Mitre%20486%20Oeste."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full py-4 px-6 bg-[#b50027] hover:bg-[#e5352c] text-white font-bold text-xs uppercase tracking-[0.14em] flex items-center justify-center gap-2 transition-colors">
+              <span>Coordinar por WhatsApp (264 5618327)</span>
+              <span>→</span>
+            </a>
+            <a href="https://turnito.app/c/4GnGb2fcSzD8yT"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full py-4 px-6 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-white font-semibold text-xs uppercase tracking-[0.14em] flex items-center justify-center gap-2 transition-colors">
+              <span>Reservar Turno en Turnito.app</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER INSTITUCIONAL DEL ESTUDIO -->
+      <footer class="bg-[#050505] text-[#97928f] py-8 px-6 sm:px-12 lg:px-16 border-t border-white/10 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <strong class="text-white">ÁLVAREZ &amp; MALDONADO ESTUDIO JURÍDICO<span class="text-[#b50027]">.</span></strong> · Mitre 486 Oeste, Capital, San Juan.
+          </div>
+          <div>
+            <span>Diseño y Arquitectura SEO por <a href="https://erikwebsite.com" target="_blank" rel="noopener" class="text-white hover:text-[#e5352c] underline">Erik Website</a></span>
+          </div>
+        </div>
+      </footer>
+
+      <!-- ================================================================= -->
+      <!-- ================================================================= -->
+      <!-- 08. SECCIÓN ERIK WEBSITE: DIAGNÓSTICO SEO Y PROPUESTA COMERCIAL   -->
+      <!-- (Colores Oficiales Erik Website: Blanco, Pizarra y Esmeralda)     -->
+      <!-- ================================================================= -->
+      <!-- ================================================================= -->
+      <section id="propuesta-comercial-erik" class="py-20 sm:py-28 px-6 sm:px-12 bg-slate-100 text-slate-900 border-t-4 border-emerald-600">
+        <div class="max-w-5xl mx-auto">
+
+          <div class="text-center mb-14">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold mb-4">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+              <span>Propuesta Exclusiva para Álvarez &amp; Maldonado · Erik Website (San Juan)</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-bold font-display text-slate-900 tracking-[-0.03em] mb-4">
+              Estética Internacional + Posicionamiento #1 en Google San Juan
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Hoy ustedes tienen más de 30 años de prestigio, oficina en Mitre 486 Oeste y excelentes reels en Instagram (<em>"En 30' te explico"</em>), pero en la biografía solo figura el enlace de Turnito y <strong>no aparecen cuando un sanjuanino busca un abogado urgente en Google</strong>.
+            </p>
+          </div>
+
+          <!-- Por qué esta arquitectura supera a los estudios internacionales (Caso Moraga & Cía.) -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 mb-12 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+              ¿Qué hicimos en este boceto para Álvarez &amp; Maldonado?
+            </h3>
+            <div class="grid sm:grid-cols-3 gap-4 text-xs text-slate-600 pt-2">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <strong class="text-slate-900 block font-bold mb-1">1. Diseño Editorial "Quiet Luxury":</strong>
+                Tomamos la estética de los grandes estudios corporativos internacionales (barra vertical negra de 90px, tonos alabastro y piedra, fotos en blanco y negro que cobran color) adaptada a la identidad sobria de Álvarez &amp; Maldonado.
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <strong class="text-slate-900 block font-bold mb-1">2. SEO Técnico 100/100 (Sin errores de indexación):</strong>
+                A diferencia de las webs hechas en plantillas pesadas o React mal configurado que Google no puede leer, esta plataforma está escrita en código HTML semántico puro que carga en menos de 0.8 segundos y posiciona cada especialidad en San Juan.
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <strong class="text-slate-900 block font-bold mb-1">3. Filtro Previo a WhatsApp + Turnito:</strong>
+                En lugar de mandar el tráfico de Instagram a un calendario frío, la web educa al cliente, filtra su caso (Salud, Sucesión, Bancos, Inmuebles) y lo deriva listo para cerrar al WhatsApp 264 5618327 o a Turnito.
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETAS DE PLANES Y PRECIOS CLAROS -->
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+            <!-- PLAN 1: PORTADA INSTITUCIONAL ($150.000 ARS) -->
+            <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Opción Base</span>
+                <h3 class="text-2xl font-bold font-display text-slate-900 mb-2">Portada Institucional Completa</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                  Todo el sitio principal que están viendo arriba: presentación del estudio, las 9 áreas con fichas desplegables, triaje interactivo a WhatsApp, integración con Turnito y Google Maps.
+                </p>
+
+                <div class="mb-6 pb-6 border-b border-slate-100">
+                  <span class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 tabular-nums">$150.000</span>
+                  <span class="text-xs text-slate-500 ml-1">ARS (pago único)</span>
+                </div>
+
+                <ul class="space-y-3 text-xs text-slate-700 mb-8 font-medium">
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> Diseño Editorial de Alta Gama (Desktop + Celulares)</li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> Las 9 Áreas de Práctica con fichas interactivas</li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> Triaje Jurídico directo al WhatsApp 264 5618327</li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> Optimización de ficha en Google Maps (Mitre 486 Oeste)</li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> Entrega en 5 días hábiles (1º mes de hosting bonificado)</li>
+                </ul>
+              </div>
+
+              <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Somos%20del%20Estudio%20%C3%81lvarez%20%26%20Maldonado%20y%20queremos%20avanzar%20con%20la%20Opci%C3%B3n%20Base%20de%20Portada%20Institucional%20por%20$150.000."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full py-3.5 px-5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold text-center transition-all">
+                Elegir Portada Institucional ($150.000)
+              </a>
+            </div>
+
+            <!-- PLAN 2: ESTUDIO LÍDER + 8 PÁGINAS SEO DE ESPECIALIDADES ($350.000 ARS) -->
+            <div class="p-8 rounded-3xl bg-white border-2 border-emerald-600 shadow-xl flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-bl-xl">
+                Recomendado para Posicionar en Google SJ
+              </div>
+
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">Dominio Orgánico en San Juan</span>
+                <h3 class="text-2xl font-bold font-display text-slate-900 mb-2">Web Principal + 8 Páginas SEO de Áreas</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                  La Portada Institucional más <strong>8 páginas individuales dedicadas a sus especialidades más rentables</strong> (como la demo de Amparos de Salud que armamos) para posicionar cada búsqueda específica en Google San Juan.
+                </p>
+
+                <div class="mb-6 pb-6 border-b border-slate-100">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 tabular-nums">$350.000</span>
+                    <span class="text-xs text-slate-500">ARS finales</span>
+                  </div>
+                  <span class="text-[11px] text-emerald-700 font-bold">($150.000 Portada + $200.000 por el Pack de 8 Páginas SEO dedicadas)</span>
+                </div>
+
+                <ul class="space-y-3 text-xs text-slate-700 mb-8 font-medium">
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> <strong>Todo lo del Plan Base incluido</strong></li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> <strong>8 Páginas SEO individuales:</strong> Amparos de Salud, Discapacidad/Fertilidad, Estafas Bancarias/Consumidor, Sucesiones, Prescripción Adquisitiva, Alquileres, Sociedades y Ejecuciones</li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> <strong>Estructura AEO/GEO para aparecer en Google y ChatGPT</strong> cuando buscan abogados en San Juan</li>
+                  <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-bold">✓</span> <strong>Schema LegalService + FAQPage individual</strong> en cada especialidad</li>
+                </ul>
+              </div>
+
+              <div class="space-y-2.5">
+                <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Somos%20del%20Estudio%20%C3%81lvarez%20%26%20Maldonado%20y%20queremos%20aprobar%20el%20Plan%20Integral%20(Web%20+%208%20P%C3%A1ginas%20SEO)%20por%20$350.000."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold text-center block shadow-md transition-all">
+                  Aprobar Plan Integral ($350.000) por WhatsApp
+                </a>
+                <a href="/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/"
+                   class="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-xs font-bold text-center block border border-emerald-200 transition-all">
+                  Ver Ejemplo en Vivo de Página SEO: Amparos de Salud →
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Condiciones transparentes -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <strong class="text-slate-900 block text-sm">Modalidad de Trabajo en San Juan (50% Anticipo / 50% Contra Entrega):</strong>
+              <p>Mantenimiento opcional de $20.000 ARS/mes (1º mes sin cargo, incluye hosting ultrarrápido, SSL y actualización de textos o nuevos reels). También podemos coordinar una reunión presencial en su estudio de Mitre 486 Oeste.</p>
+            </div>
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vimos%20el%20boceto%20para%20%C3%81lvarez%20%26%20Maldonado%20y%20queremos%20hacerte%20una%20consulta."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="shrink-0 px-5 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition-colors">
+              Hablar con Erik por WhatsApp →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- DRAWER LATERAL DESLIZABLE DE ÁREA DE PRÁCTICA (ESTILO MORAGA & CÍA.)  -->
+  <!-- ===================================================================== -->
+  <div id="area-drawer-backdrop" class="fixed inset-0 lg:left-[90px] top-[33px] bg-black/50 backdrop-blur-md z-[68] opacity-0 pointer-events-none transition-opacity duration-500">
+    <div id="area-drawer-panel" class="bg-[#fcfaf9] text-[#1a1a1a] w-full max-w-2xl h-full overflow-y-auto p-8 sm:p-12 border-r border-[#e8e3df] shadow-2xl -translate-x-full transition-transform duration-500 ease-editorial flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between border-b border-[#e8e3df] pb-5 mb-8">
+          <span id="drawer-code" class="text-xs font-mono uppercase tracking-widest text-[#b50027]">ÁREA DE PRÁCTICA</span>
+          <button type="button" id="btn-close-drawer" class="w-9 h-9 border border-[#1a1a1a]/20 flex items-center justify-center text-lg hover:rotate-90 hover:border-[#b50027] hover:text-[#b50027] transition-all cursor-pointer">
+            ×
+          </button>
+        </div>
+
+        <h3 id="drawer-title" class="text-2xl sm:text-4xl font-bold text-[#1a1a1a] tracking-tight mb-4">
+          Derecho a la Salud y Amparos.
+        </h3>
+
+        <p id="drawer-desc" class="text-sm text-[#666666] leading-relaxed mb-8">
+          Descripción detallada del área de práctica.
+        </p>
+
+        <div class="p-6 bg-[#f8f5f2] border-l-2 border-[#b50027] mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#b50027] block mb-3">Actuaciones Habituales en San Juan:</span>
+          <ul id="drawer-list" class="space-y-2.5 text-xs sm:text-sm text-[#1a1a1a] font-medium"></ul>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-[#e8e3df] flex flex-col sm:flex-row gap-3">
+        <a id="drawer-wa-btn"
+           href="https://wa.me/5492645618327"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex-1 py-4 px-6 bg-[#b50027] hover:bg-[#e5352c] text-white font-bold text-xs uppercase tracking-[0.14em] text-center transition-colors">
+          Consultar este Caso por WhatsApp →
+        </a>
+        <a href="/propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/"
+           class="py-4 px-5 bg-[#1a1a1a] hover:bg-black text-white font-semibold text-xs uppercase tracking-[0.12em] text-center transition-colors">
+          Ver Página SEO Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVIDAD JS: MENÚ FULLSCREEN, DRAWER DE ÁREAS Y TRIAJE WA       -->
+  <!-- ===================================================================== -->
+  <script>
+    (function() {
+      // 1. Menú Fullscreen
+      var menu = document.getElementById('fullscreen-menu');
+      var btnOpen = document.getElementById('btn-open-menu');
+      var btnClose = document.getElementById('btn-close-menu');
+      var navLinks = document.querySelectorAll('.menu-nav-link');
+
+      function toggleMenu(show) {
+        if (!menu) return;
+        if (show) {
+          menu.classList.remove('opacity-0', 'pointer-events-none');
+          menu.classList.add('opacity-100');
+        } else {
+          menu.classList.remove('opacity-100');
+          menu.classList.add('opacity-0', 'pointer-events-none');
+        }
+      }
+
+      if (btnOpen) btnOpen.addEventListener('click', function() { toggleMenu(true); });
+      if (btnClose) btnClose.addEventListener('click', function() { toggleMenu(false); });
+      navLinks.forEach(function(l) {
+        l.addEventListener('click', function() { toggleMenu(false); });
+      });
+
+      // 2. Base de datos de las 9 Áreas para el Drawer Deslizable
+      var AREAS = {
+        salud: {
+          code: '01 / PROCESOS URGENTES DE SALUD',
+          title: 'Derecho a la Salud y Amparos.',
+          desc: 'Interponemos acciones de amparo de salud con medidas cautelares de despacho urgente en San Juan frente a negativas arbitrarias, silencios o demoras de Obras Sociales y Empresas de Medicina Prepaga.',
+          items: [
+            'Rechazo de afiliación o carencias ilegales a Monotributistas',
+            'Cobertura 100% de cirugías, prótesis importadas y tratamientos oncológicos',
+            'Medicamentos de alto costo y enfermedades poco frecuentes',
+            'Continuidad de cobertura ante cambios laborales o jubilación'
+          ]
+        },
+        discapacidad: {
+          code: '02 / LEY 24.901 Y LEY 26.862',
+          title: 'Discapacidad y Fertilidad Asistida.',
+          desc: 'Tutela legal efectiva para personas con Certificado Único de Discapacidad (CUD) y familias que requieren tratamientos de reproducción médicamente asistida de baja y alta complejidad.',
+          items: [
+            'Cobertura integral de prestaciones de rehabilitación, fonoaudiología y psicopedagogía',
+            'Maestra de apoyo / integradora escolar y acompañante terapéutico',
+            'Transporte especial e internación domiciliaria',
+            'Tratamientos de fertilidad asistida, medicación y criopreservación'
+          ]
+        },
+        consumidor: {
+          code: '03 / DEFENSA DEL CONSUMIDOR Y BANCOS',
+          title: 'Consumidor, Daños y Fraudes Bancarios.',
+          desc: 'Representación firme frente a bancos, financieras, concesionarias y empresas de servicios ante estafas electrónicas, cobros indebidos e incumplimientos contractuales.',
+          items: [
+            'Cuentas bancarias vaciadas (phishing) y préstamos preaprobados fraudulentos',
+            'Medida cautelar para suspender débitos de cuotas sobre sueldos o jubilaciones',
+            'Reclamos contra planes de ahorro automotor y seguros',
+            'Demandas por daño emergente, daño moral y daño punitivo'
+          ]
+        },
+        sucesiones: {
+          code: '04 / DERECHO SUCESORIO',
+          title: 'Herencias y Sucesiones en San Juan.',
+          desc: 'Tramitamos procesos sucesorios ab-intestato y testamentarios buscando la vía procesal más rápida y económica para que los herederos puedan disponer legalmente de los bienes.',
+          items: [
+            'Declaratoria de herederos e inscripción registral de inmuebles y automotores',
+            'Venta directa por sistema de tracto abreviado',
+            'Partición privada o judicial de bienes hereditarios',
+            'Cesión de derechos hereditarios y planificación patrimonial familiar'
+          ]
+        },
+        inmuebles: {
+          code: '05 / DERECHOS REALES E INMUEBLES',
+          title: 'Inmuebles y Prescripción Adquisitiva.',
+          desc: 'Saneamiento jurídico de propiedades urbanas y rurales en la provincia de San Juan para transformar la posesión de años en título de propiedad inscripto.',
+          items: [
+            'Juicio de Prescripción Adquisitiva (Usucapión veinteañal y decenal)',
+            'Juicios de escrituración por boletos de compraventa antiguos',
+            'Desalojos, interdictos y acciones reivindicatorias',
+            'División de condominio entre copropietarios'
+          ]
+        },
+        alquileres: {
+          code: '06 / LOCACIONES URBANAS Y COMERCIALES',
+          title: 'Alquileres y Contratos.',
+          desc: 'Redacción estratégica de contratos de alquiler y resolución de controversias sobre actualizaciones, reparaciones urgentes, garantías y restitución del inmueble.',
+          items: [
+            'Redacción de contratos de alquiler habitacional, comercial y temporario',
+            'Determinación legal de quién paga arreglos estructurales y expensas',
+            'Intimaciones por incumplimiento, rescisión anticipada y entrega de llaves',
+            'Ejecución de alquileres adeudados contra inquilinos y garantes'
+          ]
+        },
+        sociedades: {
+          code: '07 / DERECHO SOCIETARIO Y EMPRESARIAL',
+          title: 'Contratos y Sociedades.',
+          desc: 'Estructuración legal de negocios y acompañamiento permanente para comerciantes, profesionales y empresas familiares de San Juan.',
+          items: [
+            'Constitución e inscripción de SRL, SA y SAS',
+            'Redacción de contratos comerciales, distribución, suministro y fideicomisos',
+            'Prevención y resolución de conflictos entre socios',
+            'Asesoría jurídica externa mensual para empresas'
+          ]
+        },
+        ejecuciones: {
+          code: '08 / PROCESOS EJECUTIVOS',
+          title: 'Ejecuciones y Cobros Judiciales.',
+          desc: 'Acciones judiciales rápidas para el recupero de créditos documentados con medidas cautelares inmediatas sobre cuentas y bienes del deudor.',
+          items: [
+            'Ejecución de cheques rechazados, pagarés y letras de cambio',
+            'Cobro judicial de alquileres y expensas comunes',
+            'Traba de embargos preventivos y ejecutivos',
+            'Negociación de convenios de pago con garantías reales o personales'
+          ]
+        },
+        capacidad: {
+          code: '09 / FAMILIA Y CAPACIDAD JURÍDICA',
+          title: 'Restricción a la Capacidad y Familia.',
+          desc: 'Acompañamiento humano y técnico en procesos de restricción a la capacidad para designar apoyos que cuiden la salud y administren los bienes de personas vulnerables.',
+          items: [
+            'Juicios de determinación de la capacidad jurídica y designación de apoyos',
+            'Curatelas, rendición de cuentas y autorizaciones judiciales de venta',
+            'Trámites conexos para pensiones, obras sociales y cobertura de salud',
+            'Acuerdos de familia y protección de adultos mayores'
+          ]
+        }
+      };
+
+      var backdrop = document.getElementById('area-drawer-backdrop');
+      var panel = document.getElementById('area-drawer-panel');
+      var btnCloseDrawer = document.getElementById('btn-close-drawer');
+      var dCode = document.getElementById('drawer-code');
+      var dTitle = document.getElementById('drawer-title');
+      var dDesc = document.getElementById('drawer-desc');
+      var dList = document.getElementById('drawer-list');
+      var dWa = document.getElementById('drawer-wa-btn');
+
+      function openDrawer(key) {
+        var data = AREAS[key];
+        if (!data || !backdrop || !panel) return;
+        dCode.textContent = data.code;
+        dTitle.textContent = data.title;
+        dDesc.textContent = data.desc;
+        dList.innerHTML = data.items.map(function(it) {
+          return '<li class="flex items-start gap-2.5"><span class="text-[#b50027] font-bold">•</span><span>' + it + '</span></li>';
+        }).join('');
+        var msg = 'Hola Estudio Álvarez & Maldonado! Quisiera realizar una consulta sobre ' + data.title.replace('.', '');
+        dWa.setAttribute('href', 'https://wa.me/5492645618327?text=' + encodeURIComponent(msg));
+
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100');
+        panel.classList.remove('-translate-x-full');
+        panel.classList.add('translate-x-0');
+      }
+
+      function closeDrawer() {
+        if (!backdrop || !panel) return;
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        panel.classList.remove('translate-x-0');
+        panel.classList.add('-translate-x-full');
+      }
+
+      document.querySelectorAll('[data-open-area]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          openDrawer(btn.getAttribute('data-open-area'));
+        });
+      });
+      if (btnCloseDrawer) btnCloseDrawer.addEventListener('click', closeDrawer);
+      if (backdrop) {
+        backdrop.addEventListener('click', function(e) {
+          if (e.target === backdrop) closeDrawer();
+        });
+      }
+
+      // 3. Triaje Jurídico Interactivo
+      var selectedMateria = 'Amparo de Salud / Obra Social / Discapacidad';
+      var selectedModalidad = 'Consulta Presencial en Mitre 486 Oeste (San Juan)';
+      var resMateria = document.getElementById('triaje-res-materia');
+      var resDocs = document.getElementById('triaje-res-docs');
+      var waLink = document.getElementById('triaje-wa-link');
+
+      function updateTriaje() {
+        if (resMateria) resMateria.textContent = selectedMateria;
+        var msg = 'Hola Estudio Álvarez & Maldonado! Necesito asesoramiento por un caso de ' + selectedMateria + ' (' + selectedModalidad + ').';
+        if (waLink) waLink.setAttribute('href', 'https://wa.me/5492645618327?text=' + encodeURIComponent(msg));
+      }
+
+      document.querySelectorAll('.triaje-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.triaje-btn').forEach(function(b) {
+            b.className = 'triaje-btn text-left p-3.5 border border-white/15 bg-white/[0.03] hover:border-white/40 text-stone-300 text-xs font-semibold cursor-pointer transition-all';
+          });
+          btn.className = 'triaje-btn active text-left p-3.5 border border-[#b50027] bg-[#b50027]/15 text-white text-xs font-bold cursor-pointer transition-all';
+          selectedMateria = btn.getAttribute('data-materia');
+          if (resDocs) resDocs.textContent = btn.getAttribute('data-docs');
+          updateTriaje();
+        });
+      });
+
+      document.querySelectorAll('.modalidad-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.modalidad-btn').forEach(function(b) {
+            b.className = 'modalidad-btn p-3 border border-white/15 bg-white/[0.03] text-stone-300 text-xs font-semibold cursor-pointer text-left';
+          });
+          btn.className = 'modalidad-btn active p-3 border border-[#b50027] bg-[#b50027]/15 text-white text-xs font-bold cursor-pointer text-left';
+          selectedModalidad = btn.getAttribute('data-modalidad');
+          updateTriaje();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

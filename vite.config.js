@@ -257,6 +257,8 @@ export default defineConfig({
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
         propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),
         propuestas_segu24_rural: resolve(__dirname, 'propuestas/segu24/seguridad-rural-campos/index.html'),
+        propuestas_alvarez_maldonado: resolve(__dirname, 'propuestas/alvarez-maldonado-abogados/index.html'),
+        propuestas_alvarez_maldonado_salud: resolve(__dirname, 'propuestas/alvarez-maldonado-abogados/amparos-de-salud-discapacidad/index.html'),
       },
     },
   },
