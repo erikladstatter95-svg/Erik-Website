@@ -40,7 +40,7 @@
   <!-- Hub del Blog -->
   <url>
     <loc>https://erikwebsite.com/blog/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-21T09:30:00-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/como-poner-agregar-negocio-local-google-maps-gratis/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-21T09:30:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -240,7 +240,7 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/diseno-web-rosario/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-21T09:30:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -1040,7 +1040,7 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-21T09:30:00-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1239,6 +1239,12 @@
   <url>
     <loc>https://erikwebsite.com/blog/landing-page-vender-cursos-online/</loc>
     <lastmod>2026-11-20T09:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/parametros-utm-google-analytics-4-maps/</loc>
+    <lastmod>2026-11-21T09:30:00-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

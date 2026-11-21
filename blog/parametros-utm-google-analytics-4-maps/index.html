@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1143177121539028');
+  if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parámetros UTM en Google Analytics 4: Medir Maps y Redes</title>
+  <meta name="description" content="Qué son los parámetros UTM en Google Analytics 4 y cómo crear enlaces etiquetados para medir clics reales desde Google Maps, Instagram y códigos QR.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Erik Ladstatter">
+  <meta name="geo.region" content="AR">
+  <link rel="canonical" href="https://erikwebsite.com/blog/parametros-utm-google-analytics-4-maps/">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#059669">
+
+  <!-- Open Graph / WhatsApp / Redes Sociales -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Parámetros UTM en Google Analytics 4: Medir Maps y Redes">
+  <meta property="og:description" content="Qué son los parámetros UTM en Google Analytics 4 y cómo crear enlaces etiquetados para medir clics reales desde Google Maps, Instagram y códigos QR.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_parametros_utm_google_analytics_4_maps.png">
+  <meta property="og:url" content="https://erikwebsite.com/blog/parametros-utm-google-analytics-4-maps/">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Parámetros UTM en Google Analytics 4: Medir Maps y Redes">
+  <meta name="twitter:description" content="Qué son los parámetros UTM en Google Analytics 4 y cómo crear enlaces etiquetados para medir clics reales desde Google Maps, Instagram y códigos QR.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_parametros_utm_google_analytics_4_maps.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- JSON-LD Structured Data: BlogPosting + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Parámetros UTM en Google Analytics 4: Cómo Medir Google Maps y Redes",
+      "description": "Qué son los parámetros UTM en Google Analytics 4 y cómo crear enlaces etiquetados para medir clics reales desde Google Maps, Instagram y códigos QR.",
+      "image": "https://erikwebsite.com/images/guia_parametros_utm_google_analytics_4_maps.png",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/favicon.svg"
+        }
+      },
+      "datePublished": "2026-11-21T09:30:00-03:00",
+      "dateModified": "2026-11-21T09:30:00-03:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://erikwebsite.com/blog/parametros-utm-google-analytics-4-maps/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog y Recursos",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Parámetros UTM en GA4 y Google Maps",
+          "item": "https://erikwebsite.com/blog/parametros-utm-google-analytics-4-maps/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Usar parámetros UTM en el enlace de Google Business Profile perjudica el SEO o duplica mi página en Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No perjudica el posicionamiento local ni genera contenido duplicado siempre que tu página web tenga declarada correctamente la etiqueta <link rel='canonical'> apuntando a la URL limpia sin parámetros. Así Google indexa una sola dirección oficial mientras Google Analytics 4 registra la procedencia exacta de la visita."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde veo el tráfico de mis enlaces UTM paso a paso dentro de Google Analytics 4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entrá a tu propiedad de Google Analytics 4 y abrí Informes > Adquisición > Adquisición de tráfico. En el selector principal de la tabla cambiá la dimensión a Fuente / Medio de la sesión y sumá como dimensión secundaria (+) Campaña de la sesión. Ahí verás desglosadas las sesiones y eventos como whatsapp_click de cada enlace UTM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la plantilla UTM recomendada para el botón de Sitio Web de Google Maps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La estructura estándar más limpia es agregar ?utm_source=google&utm_medium=organic&utm_campaign=gbp al final de tu dominio principal. Si tenés más de una sucursal o querés diferenciar el botón de turnos del enlace principal, podés sumar &utm_content=sucursal_centro o &utm_content=boton_turnos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo usar parámetros UTM dentro de los botones del menú o enlaces internos de mi propia web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nunca. Poner parámetros UTM en un enlace interno de tu propio sitio reinicia la sesión en Google Analytics 4 y borra la fuente original por la que entró el cliente (por ejemplo, si llegó por un anuncio o por Google Search, pasa a figurar como si hubiera venido del botón interno). Para medir clics internos usá eventos de GA4."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo combino un código QR impreso con parámetros UTM para saber cuánta gente escanea mi vidriera o folleto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Antes de generar el código QR, armá la URL de tu página agregando ?utm_source=qr_impreso&utm_medium=offline&utm_campaign=vidriera_local y convertí ese enlace completo en tu imagen QR estática. Cada vez que alguien escanee el cartel con la cámara del celular, GA4 lo contabilizará separado del resto del tráfico."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué las estadísticas de clics en Google Business Profile no coinciden exactamente al 100% con las sesiones de GA4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es normal que exista una diferencia del 10% al 20% porque el panel de Google Business Profile cuenta cada toque en el botón de sitio web, mientras que Google Analytics 4 cuenta sesiones reales donde la página terminó de cargar con JavaScript activo y sin bloqueadores de anuncios."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+
+<body class="bg-[#fafafa] text-neutral-900 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" /></noscript>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa]/85 backdrop-blur-md border-b border-black/[0.06]">
+    <nav class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Navegación principal">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-display font-bold text-sm tracking-tight group-hover:scale-105 transition-transform">
+          EW
+        </div>
+        <span class="font-display font-bold text-base tracking-tight text-neutral-900">Erik<span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-600">
+        <a href="/" class="hover:text-neutral-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-500 transition-colors font-semibold text-emerald-500">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-neutral-900 transition-colors">San Juan</a>
+        <a href="/blog/" class="text-emerald-600 font-semibold">Blog</a>
+      </div>
+
+      <button data-wa-lead
+              data-wa-phone="5492645185359"
+              data-wa-context="Lectura: Parámetros UTM en GA4 y Google Maps (Navbar)"
+              data-wa-text="Hola Erik, leí tu guía sobre parámetros UTM en Google Analytics 4 y Google Maps y quiero hacerte una consulta."
+              class="inline-flex items-center gap-2 text-xs font-semibold text-white bg-neutral-900 hover:bg-emerald-600 px-4 py-2 rounded-lg transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="pt-28 pb-20">
+    <article class="max-w-3xl mx-auto px-5">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="mb-6 text-xs text-neutral-500 flex items-center gap-2 flex-wrap">
+        <a href="/" class="hover:text-emerald-600 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-emerald-600 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-neutral-800 font-medium">Parámetros UTM en GA4 y Google Maps</span>
+      </nav>
+
+      <!-- Meta Category & Reading Time -->
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+          Analítica GA4 &amp; Google Maps
+        </span>
+        <span class="text-xs text-neutral-500">Por <strong>Erik Ladstatter</strong> · 21 de noviembre de 2026 · Lectura de 8 min</span>
+      </div>
+
+      <!-- H1 Title (68 characters) -->
+      <h1 class="font-display font-bold text-3xl sm:text-5xl text-neutral-900 tracking-tight leading-[1.12] mb-6">
+        Parámetros UTM en Google Analytics 4: Cómo Medir Google Maps y Redes
+      </h1>
+
+      <!-- Direct Answer Box (AEO / GEO Optimized - Edward Sturm Standard) -->
+      <div class="bg-emerald-50/70 border-l-4 border-emerald-600 rounded-r-2xl p-5 sm:p-6 mb-8">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1.5">
+          Respuesta directa
+        </p>
+        <p class="text-neutral-800 text-base leading-relaxed font-normal">
+          <strong>Los parámetros UTM en Google Analytics 4 (GA4)</strong> son etiquetas cortas que se agregan al final de un enlace (<code class="text-xs bg-white px-1.5 py-0.5 rounded border border-emerald-200">?utm_source=...&amp;utm_medium=...</code>) para identificar con exactitud cuántas visitas y consultas de WhatsApp llegan desde tu ficha de Google Maps, tu biografía de Instagram, tus códigos QR impresos o cada campaña de anuncios.
+        </p>
+      </div>
+
+      <!-- Featured Image -->
+      <figure class="mb-10 rounded-2xl overflow-hidden border border-black/[0.08] shadow-md bg-neutral-100">
+        <img src="/images/guia_parametros_utm_google_analytics_4_maps.png"
+             alt="Consultor de analítica digital revisando parámetros UTM en Google Analytics 4 junto a una ficha de Google Maps en celular"
+             class="w-full h-auto object-cover"
+             width="1200" height="675"
+             loading="eager">
+        <figcaption class="px-4 py-3 text-xs text-neutral-500 bg-white border-t border-black/[0.05]">
+          Etiquetar el botón de sitio web en Google Business Profile y tus canales externos permite separar qué visitas y clientes vienen del mapa frente al buscador tradicional o Instagram.
+        </figcaption>
+      </figure>
+
+      <!-- Article Body -->
+      <div class="prose prose-neutral max-w-none space-y-8 text-neutral-700 leading-relaxed text-base sm:text-lg">
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            1. Qué son los parámetros UTM en Google Analytics 4 y por qué arreglan el punto ciego de Google Maps
+          </h2>
+          <p class="mb-4">
+            Cuando un potencial cliente encuentra tu comercio, estudio o consultorio en la aplicación móvil de Google Maps y toca el botón <strong>"Sitio web"</strong>, ocurre un problema silencioso que confunde a la mayoría de los dueños de negocios: muchas veces esa visita entra a <strong>Google Analytics 4</strong> mezclada dentro de la bolsa genérica de tráfico <em>Direct</em> (Directo) o agrupada con todas las búsquedas orgánicas de <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">google / organic</code> sin decirte que vino desde el mapa.
+          </p>
+          <p class="mb-4">
+            Lo mismo pasa cuando alguien toca el enlace en tu biografía de Instagram desde la app del teléfono o escanea un cartel impreso en el mostrador de tu local: si el navegador interno no envía un encabezado de referencia claro, GA4 no sabe quién trajo a esa persona y le adjudica la conversión a tráfico directo.
+          </p>
+          <p>
+            Los <strong>parámetros UTM</strong> (sigla de <em>Urchin Tracking Module</em>) eliminan esa ceguera analítica. Son pequeños fragmentos de texto que añadís después de un signo de interrogación (<code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">?</code>) al final de tu URL. No cambian nada de lo que ve el visitante en pantalla, pero le entregan a GA4 una ficha técnica exacta con el origen, el medio y el nombre de la acción comercial que generó el clic. Si todavía no diste de alta tu perfil local, empezá primero por nuestra guía sobre <a href="/blog/como-poner-agregar-negocio-local-google-maps-gratis/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">cómo poner tu negocio en Google Maps gratis paso a paso</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            2. Los 5 parámetros UTM explicados con ejemplos reales para negocios en Argentina
+          </h2>
+          <p class="mb-4">
+            Aunque el estándar contempla cinco etiquetas, en el día a día de un negocio local o servicio profesional las tres primeras son obligatorias para que Google Analytics 4 clasifique bien el canal, y las dos últimas son opcionales para afinar pruebas:
+          </p>
+          <ul class="list-disc pl-6 space-y-2.5 text-neutral-700 mb-6">
+            <li><strong><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_source</code> (Fuente - Obligatorio):</strong> Identifica la plataforma o lugar específico de donde proviene el usuario. Ejemplos: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">google</code>, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">instagram</code>, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">qr_mostrador</code>, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">newsletter</code>.</li>
+            <li><strong><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_medium</code> (Medio - Obligatorio):</strong> Define el mecanismo o categoría general del tráfico. Para respetar las agrupaciones nativas de canales en GA4 conviene usar términos estándar como <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">organic</code>, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">social</code>, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">cpc</code> (anuncios pagos), <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">email</code> u <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">offline</code>.</li>
+            <li><strong><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_campaign</code> (Campaña - Obligatorio):</strong> Nombra la iniciativa o activo puntual para que lo reconozcas rápido en la tabla. Por ejemplo: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">gbp</code> (Google Business Profile), <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">bio_perfil</code> o <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">promo_primavera</code>.</li>
+            <li><strong><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_content</code> (Contenido - Opcional):</strong> Sirve para distinguir dos enlaces que apuntan a la misma web desde el mismo lugar (por ejemplo, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">boton_sitio_web</code> frente a <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">link_reservas_turnos</code> dentro de tu ficha de Maps, o dos sucursales distintas).</li>
+            <li><strong><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_term</code> (Término - Opcional):</strong> Pensado originalmente para palabras clave de búsqueda paga, hoy se usa poco salvo en campañas manuales muy específicas.</li>
+          </ul>
+
+          <p class="mb-4">
+            En la siguiente tabla tenés las <strong>5 plantillas UTM listas para copiar y adaptar</strong> con tu propio dominio (reemplazando <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">tudominio.com.ar</code> por la dirección de tu web):
+          </p>
+
+          <div class="overflow-x-auto rounded-2xl border border-neutral-200 shadow-xs my-6">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-neutral-900 text-white">
+                  <th class="p-4 font-display font-semibold">Dónde vas a pegar el enlace</th>
+                  <th class="p-4 font-display font-semibold">Cómo se verá en GA4 (Fuente / Medio)</th>
+                  <th class="p-4 font-display font-semibold text-emerald-400">Parámetros UTM listos para agregar a tu URL</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-neutral-200 bg-white">
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">1. Botón "Sitio Web" en Google Maps (GBP)</td>
+                  <td class="p-4 text-neutral-600"><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">google / organic</code> (Campaña: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">gbp</code>)</td>
+                  <td class="p-4 text-emerald-800 font-mono text-xs break-all">?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gbp</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">2. Link de Turnos / Productos en Google Maps</td>
+                  <td class="p-4 text-neutral-600"><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">google / organic</code> (Contenido: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">turnos</code>)</td>
+                  <td class="p-4 text-emerald-800 font-mono text-xs break-all">?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gbp&amp;utm_content=turnos</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">3. Enlace en Biografía de Instagram</td>
+                  <td class="p-4 text-neutral-600"><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">instagram / social</code> (Campaña: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">bio</code>)</td>
+                  <td class="p-4 text-emerald-800 font-mono text-xs break-all">?utm_source=instagram&amp;utm_medium=social&amp;utm_campaign=bio</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">4. Cartel QR impreso en vidriera o tarjeta</td>
+                  <td class="p-4 text-neutral-600"><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">qr_impreso / offline</code> (Campaña: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">vidriera</code>)</td>
+                  <td class="p-4 text-emerald-800 font-mono text-xs break-all">?utm_source=qr_impreso&amp;utm_medium=offline&amp;utm_campaign=vidriera</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">5. Anuncio pago en Meta Ads (Instagram / FB)</td>
+                  <td class="p-4 text-neutral-600"><code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">meta / cpc</code> (Campaña: <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">leads_mes</code>)</td>
+                  <td class="p-4 text-emerald-800 font-mono text-xs break-all">?utm_source=meta&amp;utm_medium=cpc&amp;utm_campaign=leads_mes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <em>Nota clave sobre el ejemplo 1:</em> Elegimos <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_source=google</code> y <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_medium=organic</code> con <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">utm_campaign=gbp</code> a propósito. De esa forma, Google Analytics 4 sigue reconociendo esas visitas como <strong>Búsqueda Orgánica (Organic Search)</strong> en tus gráficos generales, pero cuando filtrás por campaña podés separar al instante cuántas visitas trajo tu ficha del mapa frente a los resultados clásicos del buscador. Y si querés crear códigos QR para folletos o mostradores, podés combinar la plantilla 4 con nuestro <a href="/blog/generador-link-qr-whatsapp-gratis/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">generador de link y QR de WhatsApp gratis</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            3. Cómo cruzar las estadísticas de Google Business Profile con tus informes UTM en GA4 paso a paso
+          </h2>
+          <p class="mb-4">
+            El panel interno de <strong>Rendimiento (Estadísticas) de Google Business Profile</strong> te muestra cuatro métricas de lo que ocurre <em>antes</em> de que el usuario entre a tu sitio: cuántas personas vieron tu ficha en la búsqueda o en el mapa, qué términos escribieron, cuántas tocaron el botón <strong>Llamar</strong>, cuántas pidieron <strong>Cómo llegar (rutas de GPS)</strong> y cuántas hicieron clic en <strong>Sitio web</strong>.
+          </p>
+          <p class="mb-4">
+            Sin embargo, el panel de Google Maps se queda ciego apenas la persona aterriza en tu página: no sabe si ese visitante leyó tus precios, si rebotó a los dos segundos o si tocó tu botón flotante de WhatsApp. Al tener instalado nuestro seguimiento de conversiones (explicado paso a paso en la guía sobre <a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">cómo instalar Google Analytics 4 y medir clics a WhatsApp</a> o mediante <a href="/blog/google-tag-manager-vs-ga4-seo/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">Google Tag Manager vs. GA4</a>), podés unir ambas mitades en menos de un minuto siguiendo esta ruta:
+          </p>
+
+          <div class="space-y-4 my-6">
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 1: Abrí el informe de Adquisición de tráfico en GA4</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                En el menú izquierdo de Google Analytics 4 hacé clic en <strong>Informes &gt; Adquisición &gt; Adquisición de tráfico</strong>.
+              </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 2: Cambiá la dimensión principal a Fuente / Medio de la sesión</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Arriba de la primera columna de la tabla, tocá el desplegable que por defecto dice <em>"Grupo de canales principal de la sesión"</em> y seleccioná <strong>"Fuente / Medio de la sesión"</strong>.
+              </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 3: Agregá la columna secundaria de Campaña</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Tocá el signo <strong>"+"</strong> azul al lado del selector y buscá <strong>"Campaña de la sesión"</strong>. Ahora vas a ver una fila específica para <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">google / organic</code> con la campaña <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">gbp</code>.
+              </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 4: Filtrá la columna Eventos clave por whatsapp_click o generate_lead</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Desplazate hacia la derecha en la misma tabla hasta la columna de <strong>Eventos</strong> o <strong>Eventos clave</strong> y seleccioná <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">whatsapp_click</code> o <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">generate_lead</code>. Así sabrás exactamente cuántos presupuestos reales te trajo Google Maps este mes frente a Instagram o tus campañas pagas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            4. Los 4 errores con parámetros UTM que ensucian tus métricas (y cómo afecta al SEO si no tenés canonical)
+          </h2>
+          <p class="mb-4">
+            Etiquetar enlaces lleva treinta segundos, pero cometer alguno de estos cuatro descuidos técnicos puede distorsionar tus informes de GA4 o generar problemas de indexación si tu web está mal construida:
+          </p>
+          <ol class="list-decimal pl-6 space-y-3 text-neutral-700 mb-6">
+            <li><strong>Poner parámetros UTM en enlaces internos de tu propia web (Error fatal):</strong> Jamás agregues <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">?utm_source=...</code> a un botón de tu menú, un banner interno o un enlace de un artículo a otro dentro de tu mismo dominio. Si un usuario entró gracias a Google Maps y toca un enlace interno con UTM, GA4 corta la sesión original y empieza una nueva adjudicándole la venta al banner interno.</li>
+            <li><strong>Mezclar mayúsculas, tildes o espacios:</strong> Para Google Analytics 4, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">Instagram</code>, <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">instagram</code> e <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">IG</code> son tres fuentes distintas. Escribí siempre todo en <strong>minúsculas, sin tildes y usando guiones bajos (<code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">_</code>)</strong> en lugar de espacios.</li>
+            <li><strong>No tener configurada la etiqueta <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">&lt;link rel="canonical"&gt;</code> en tu página:</strong> Cuando pegás un enlace con UTM en Google Business Profile, el robot de Google lo rastrea. Si tu página no declara en el código <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">&lt;head&gt;</code> cuál es su URL canónica limpia (por ejemplo <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">https://tudominio.com.ar/</code>), corrés el riesgo de que se indexen URLs duplicadas con parámetros. En todas las páginas que desarrollamos en código limpio y auditamos desde nuestro servicio de <a href="/auditoria-seo/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">Auditoría SEO técnica</a> dejamos la etiqueta canónica blindada de fábrica.</li>
+            <li><strong>Esperar que los clics de Google Maps den 0 si la ficha está invisible:</strong> Si armaste el enlace UTM perfecto pero recibís cero sesiones desde <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">campaign=gbp</code>, el problema no es GA4 sino la visibilidad de tu perfil local. Revisá en ese caso nuestro diagnóstico sobre <a href="/blog/por-que-mi-negocio-no-aparece-en-google-maps/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">por qué tu negocio no aparece en Google Maps y cómo destrabarlo</a>.</li>
+          </ol>
+        </section>
+
+        <!-- FAQ Section (6/6 Exact Parity with JSON-LD FAQPage) -->
+        <section class="pt-4">
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-6">
+            Preguntas frecuentes sobre parámetros UTM en GA4 y Google Maps
+          </h2>
+
+          <div class="space-y-4">
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Usar parámetros UTM en el enlace de Google Business Profile perjudica el SEO o duplica mi página en Google?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                No perjudica el posicionamiento local ni genera contenido duplicado siempre que tu página web tenga declarada correctamente la etiqueta <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">&lt;link rel='canonical'&gt;</code> apuntando a la URL limpia sin parámetros. Así Google indexa una sola dirección oficial mientras Google Analytics 4 registra la procedencia exacta de la visita.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Dónde veo el tráfico de mis enlaces UTM paso a paso dentro de Google Analytics 4?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Entrá a tu propiedad de Google Analytics 4 y abrí Informes &gt; Adquisición &gt; Adquisición de tráfico. En el selector principal de la tabla cambiá la dimensión a Fuente / Medio de la sesión y sumá como dimensión secundaria (+) Campaña de la sesión. Ahí verás desglosadas las sesiones y eventos como whatsapp_click de cada enlace UTM.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cuál es la plantilla UTM recomendada para el botón de Sitio Web de Google Maps?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                La estructura estándar más limpia es agregar <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gbp</code> al final de tu dominio principal. Si tenés más de una sucursal o querés diferenciar el botón de turnos del enlace principal, podés sumar <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">&amp;utm_content=sucursal_centro</code> o <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">&amp;utm_content=boton_turnos</code>.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Puedo usar parámetros UTM dentro de los botones del menú o enlaces internos de mi propia web?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Nunca. Poner parámetros UTM en un enlace interno de tu propio sitio reinicia la sesión en Google Analytics 4 y borra la fuente original por la que entró el cliente (por ejemplo, si llegó por un anuncio o por Google Search, pasa a figurar como si hubiera venido del botón interno). Para medir clics internos usá eventos de GA4.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cómo combino un código QR impreso con parámetros UTM para saber cuánta gente escanea mi vidriera o folleto?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Antes de generar el código QR, armá la URL de tu página agregando <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">?utm_source=qr_impreso&amp;utm_medium=offline&amp;utm_campaign=vidriera_local</code> y convertí ese enlace completo en tu imagen QR estática. Cada vez que alguien escanee el cartel con la cámara del celular, GA4 lo contabilizará separado del resto del tráfico.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Por qué las estadísticas de clics en Google Business Profile no coinciden exactamente al 100% con las sesiones de GA4?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Es normal que exista una diferencia del 10% al 20% porque el panel de Google Business Profile cuenta cada toque en el botón de sitio web, mientras que Google Analytics 4 cuenta sesiones reales donde la página terminó de cargar con JavaScript activo y sin bloqueadores de anuncios.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="bg-neutral-900 text-white rounded-3xl p-7 sm:p-10 mt-10 border border-emerald-500/20 shadow-xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">
+            Desarrollo Web + Analítica GA4 &amp; Google Maps
+          </span>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
+            ¿Querés una página web ultrarrápida con GA4, eventos de WhatsApp y Google Maps listos para medir cada cliente?
+          </h3>
+          <p class="text-neutral-300 text-sm sm:text-base mb-6 leading-relaxed">
+            Por <strong>$150.000 ARS finales (pago único)</strong> desarrollamos tu Landing Page en código limpio en 3 a 5 días hábiles, vinculada a tu ficha de Google Maps con parámetros UTM y eventos reales de conversión en Google Analytics 4.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button data-wa-lead
+                    data-wa-phone="5492645185359"
+                    data-wa-context="Lectura: Parámetros UTM en GA4 y Google Maps (CTA Final)"
+                    data-wa-text="Hola Erik, leí tu guía sobre parámetros UTM en GA4 y Google Maps y quiero consultar por mi página web o auditoría."
+                    class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-display font-bold text-sm px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-lg shadow-emerald-500/20">
+              <span>Consultar por WhatsApp</span>
+              <span>→</span>
+            </button>
+            <a href="/auditoria-seo/"
+               class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-display font-semibold text-sm px-5 py-3.5 rounded-xl transition-all">
+              <span>Ver Servicio de Auditoría SEO</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search &amp; AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
