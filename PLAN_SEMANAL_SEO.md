@@ -134,7 +134,56 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-## 4. Histórico de Semanas Ejecutadas (Semana 1: Lunes 9 al Sábado 14 de Noviembre de 2026 — Completada)
+### Semana 3 — Domingo 22 de Noviembre de 2026 (Auditoría Forense Completa vs. Semana 2)
+
+#### A. Tabla Comparativa de Crecimiento Semanal (Semana 2 vs. Semana 3)
+
+| Indicador Clave (KPI) | Semana 2 (15/11/2026) | Semana 3 (22/11/2026) | Variación Semanal |
+| :--- | :--- | :--- | :--- |
+| **URLs Canónicas en `sitemap.xml` / `public/sitemap.xml`** | `199` URLs | **`205` URLs** | **+6 URLs (+3,0%)** |
+| **Guías Activas en `/blog/index.html`** | `180` guías | **`186` guías** (`49` Maps / `35` SEO / `28` Precios / `22` Rubros) | **+6 guías (+3,3%)** |
+| **Impresiones Totales GSC (28d completos `24/10–20/11`)** | `3.310` impr | **`7.055` impr** (`6.021` en reporte corto) | **+113,1% vs. S2 (+392% vs. S1)** |
+| **Tendencia Real 7d vs. 7d Previos en GSC (`14–20/11` vs `7–13/11`)** | `2.043` impr / `1` clic | **`3.587` impr / `1` clic** (`159` URLs activas en 28d) | **+75,6% impr semanales reales · CTR estancado (`0,10%`)** |
+| **Clics Orgánicos en Google Search Console (28d)** | `7` clics | **`7` clics** (`+1` nuevo en INPI vs. NIC.ar) | **0 crecimiento neto (cuello de botella CTR + autoridad)** |
+| **Consultas en "Striking Distance" (Pos 4.0 a 20.0 en GSC)** | `37` consultas | **`52` consultas** (`18` páginas en Pos `<= 16` con `>= 10` impr) | **+15 consultas (+40,5%)** |
+| **Páginas en el Índice de Bing (`InIndex`)** | `10` páginas | **`19` páginas** | **+9 páginas (+90,0%)** |
+| **Páginas Rastreadas por Bing (`CrawledPages` 7d)** | `42` páginas | **`39` páginas** | **-3 páginas (-7,1%)** |
+| **Errores de Rastreo en Bing (`CrawlErrors` / `Code4xx`)** | `0` errores | **`4` errores (`Code4xx: 2`)** | **CAUSA HALLADA: IndexNow enviado con key equivocada + `/src/css/style.css` en `404.html`** |
+| **Impresiones en Bing Webmaster Tools** | `1` impr | **`3` impr** (`Pos 6.0` en NIC DNS) | **+200%** |
+| **GA4 Tráfico de Asistentes IA (`AI Assistant` 7d)** | *0 registrado* | **`3` usuarios (`3` ses., `100%` engaged)** | **ChatGPT (`rosario`, `/demos/odontologia/`) + Gemini (`delegar-dns`)** |
+| **GA4 Tráfico Directo vs. Bots (7d)** | `23` u. (S1) | **`39` u. (`17` EE.UU. `0%` eng. = bots + `16` AR)** | **Ruido de bots en Direct; activar `?soy_erik=1` en PC y celular** |
+| **GA4 `generate_lead` & `whatsapp_click` (7d)** | `4` conv. (`3` u.) | **`4` `generate_lead` + `4` `whatsapp_click` (`3` u.)** | **Leads en `/demos/contable/`, `/demos/estudio-fitness/`, `/demos/vajilla/`** |
+| **GA4 `view_demo` / `article_read_75` (7d)** | `18` lecturas (`7` u.) | **`8` `view_demo` (`4` u.) · `12` `article_read_75` (`9` u.)** | **+28,6% usuarios con lectura profunda >75%** |
+| **Backlinks Externos (`InLinks` Bing / Referrals GA4)** | `0` en Bing | **`0` en Bing (`uaqtours.com.ar` 5 ses., `3dmon.shop` 2 ses.)** | **Cuello de botella #1 para saltar de Pos 6–15 al Top 1–3** |
+| **SerpBear Local (`database.sqlite`)** | `0` rastreadas | **Base local inexistente (`False`)** | **Retirar del reporte dominical o instalar instancia** |
+
+#### B. Radiografía Forense de Fallos Críticos Detectados en Todo el Sitio (22/11/2026)
+1. **BUG CRÍTICO DE CONVERSIÓN (Botones WhatsApp 100% MUERTOS + Teléfono Erróneo):** `src/js/whatsapp.js` solo escucha `[data-wa-msg]` y `<a href*="wa.me">`. Sin embargo, **`/blog/como-poner-agregar-negocio-local-google-maps-gratis/`** (`101` impr, Pos `10.0`!) y **`/blog/parametros-utm-google-analytics-4-maps/`** usan `<button data-wa-lead ...>` sin manejador de clic (el usuario hace clic y NO pasa nada). Además, el CTA final de la guía de Google Maps tenía un teléfono erróneo (`5492644869263` en vez de `5492645185359`).
+2. **BUG CRÍTICO DE ACCESIBILIDAD/UX (Texto NEGRO sobre Fondo NEGRO en 15 artículos):** `15` artículos en modo oscuro (`bg-neutral-950`) tienen las preguntas de los acordeones `<summary>` en `text-slate-900`, volviéndolas ilegibles: `/blog/por-que-mi-negocio-no-aparece-en-google-maps/` (`74` impr) y 14 ciudades (`bahia-blanca`, `comodoro-rivadavia`, `corrientes`, `jujuy`, `la-plata`, `lomas-de-zamora`, `mar-del-plata`, `parana`, `pilar`, `posadas-misiones`, `resistencia-chaco`, `salta`, `santa-fe`, `tandil`).
+3. **DOBLE DISPARO DE META PIXEL (`Contact` x2) Y FUGA DEL FILTRO INTERNO (`62` archivos):** `index.html`, `en/index.html`, `san-juan/index.html`, `blog/index.html` y `58` artículos todavía contienen un listener inline viejo (`trackCustom', 'Whatsapp'`) que NO revisa `window._ewIgnoreAnalytics` y dispara `Contact` dos veces junto con `src/js/whatsapp.js`.
+4. **CAUSA DE LOS ERRORES `Code4xx` EN BING + REDIRECCIONES STUB QUE ROBAN IMPRESIONES EN GSC:**
+   - El archivo real de IndexNow es `public/e7a9c4b2f8d143e6a0b5c8d9e2f1a3b4.txt` (`e7a9c4b2f8d143e6a0b5c8d9e2f1a3b4`), pero en scripts de notificación se envió otra clave inexistente, provocando `404` (`Code4xx`) cuando Bing intentaba verificarla.
+   - `public/404.html` referencia `<link rel="stylesheet" href="/src/css/style.css">` (inexistente en producción -> otro `404`).
+   - **No existe `public/_redirects`** para Cloudflare Pages: los 15 stubs usan `<meta http-equiv="refresh">` (HTTP `200 OK`), por lo que Google sigue mostrando URLs viejas en GSC como `/blog/diseno-web-rosario-santa-fe/` (**27 impr** compitiendo con `/blog/diseno-web-rosario/`!) y `/blog/diseno-web-zona-norte-tigre-nordelta-vicente-lopez/` (Pos `6.0`).
+5. **DEUDA DE HIGIENE GLOBAL EN LOS 186 ARTÍCULOS Y PESO DEL HUB:**
+   - `100` artículos aún superan `60c` en `<title>` (`55` superan `75c`), `80` superan `78c` en `<h1>`, `71` superan `160c` en `meta description`, `56` tienen paridad FAQ HTML vs. Schema rota, `86` imágenes superan `490 KB` (incluyendo `guia_configurar_correo_corporativo_outlook.png` de **960 KB**, página #1 en clics!), y `1` artículo (`blog/crawl-budget-optimizacion-rastreo-google/index.html`) quedó sin `/src/js/main.js`.
+   - `blog/index.html` alcanzó **`571 KB`** de HTML estático (`186` tarjetas juntas en el DOM) — planificar paginación/carga diferida en Semana 4.
+   - `public/ai-catalog.json` está desactualizado (no incluye `/auditoria-seo/` ni `/en/`) y `public/robots.txt` debe sumar `Disallow: /propuestas/`.
+6. **MONEY PAGES Y SEÑAL POSITIVA EN POSICIONES (POR QUÉ LOS CLICS SIGUEN EN 7):**
+   - **Evolución positiva real tras los saneamientos del 16–19/11:** `como-registrar-dominio-com-ar` saltó de Pos `75.4 -> 56.3` (`1.474` impr), `correo-corporativo-gmail` de `79.8 -> 53.1` (`1.399` impr), `dominio-com-vs-com-ar` de `60.7 -> 44.1` (`653` impr), `como-crear-catalogo-online` entró a **Página 1 Pos `9.5`** (`442` impr), `como-delegar-dns` subió a **Top 5 Pos `5.3`** (`131` impr), `precios-shopify` saltó de `19.0 -> 9.7` (`86` impr) y `diseno-web-zona-sur` de `18.2 -> 10.1` (`58` impr).
+   - **Alerta en Money Pages:** `/san-juan/` tiene solo `2` impr (Pos `60.5`) y `/auditoria-seo/` `19` impr (Pos `63.9`). Con `0` backlinks externos registrados en Bing, **necesitamos ejecutar acciones Off-Page** (ficha de Google Business Profile de Erik Website en San Juan + enlaces `"Desarrollado por Erik Website"` en clientes + perfiles de autoridad) en paralelo al blog.
+   - **Citación IA Confirmada:** El usuario humano que llegó desde `chatgpt.com` a `/blog/diseno-web-rosario/` disparó `article_read_75` y `2` aperturas de `faq_expand`, y el de `chatgpt.com` a `/demos/odontologia/` también leyó `>75%`.
+
+- **Canibalizaciones Detectadas Hoy con `check_cannibalization.py` (Convertidas en Boost o Descartadas):**
+  - `'como usar google search console paso a paso'` -> **75% solapamiento** con `/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/`. **Acción:** Absorber como Boost el Sábado 28/11.
+  - `'google analytics 4 eventos de conversion'` -> **56% solapamiento** + `0` sugerencias AR + choque directo de intención con `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/`. **Acción:** Descartada; reemplazada el Sábado 28/11 por **`Bing Webmaster Tools e IndexNow: Cómo Aparecer en Bing y ChatGPT`** (`10` sugerencias AR, `0%` canibalización).
+  - `'paginas web para opticas'` -> solo `1` sugerencia en Google AR y `67%` solapamiento léxico. **Acción:** Reemplazada el Lunes 23/11 por **`WordPress Hackeado: Cómo Limpiarlo o Migrar a Código Seguro`** (`5` sugerencias AR, `50%` solapamiento, dolor comercial urgente).
+
+---
+
+## 4. Histórico de Semanas Ejecutadas
+
+### Semana 1: Lunes 9 al Sábado 14 de Noviembre de 2026 — Completada
 
 > **Directriz de la Semana:** Cada día combina **1 Cirugía / Boost de optimización** sobre páginas con impresiones en GSC + **1 Guía Nueva 0% canibalizada con slug corto de 3 a 5 palabras** (Regla #18), alternando Lunes/Miércoles/Viernes (Diseño Web) y Martes/Jueves/Sábado (SEO).
 
@@ -258,7 +307,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-## 5. Plan de Ataque para Esta Semana (Semana 2: Lunes 16 al Sábado 21 de Noviembre de 2026) — Pasos 1 y 2 Completos en Argon High
+### Semana 2: Lunes 16 al Sábado 21 de Noviembre de 2026 — Completada
 
 > **Directriz Operativa Híbrida (Argon High ➔ Flash 3.8 High):** Todos los **Pasos 1 (Selección de Boosts Quirúrgicos + Verificación 0% Canibalización)** y **Pasos 2 (Outlines Maestros Cerrados con Regla #18 de Slug natural, Fórmula Sturm de 4 puntos y 6 FAQs interactivas)** de Lunes a Sábado ya están resueltos y validados aquí abajo por **Argon (High Reasoning)**. De lunes a sábado solo debés cambiar a **Flash 3.8 (High)** y pedir: *"Ejecutá los pasos 3 y 4 del [Día]"*.
 
@@ -673,11 +722,328 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-## 6. Próximo Comando Dominical Programado (Domingo 22 de Noviembre de 2026)
-- **Ejecución de Auditoría Integral (Semana 3):** Correr `python scratch/sunday_seo_command.py` para contrastar la evolución de impresiones (`4.772` al 19/11), clics orgánicos, páginas en Bing (`17` al 19/11), tráfico de asistentes de IA (`AI Assistant` en GA4) y conversiones `generate_lead` / `whatsapp_click`.
-- **Cola Pre-Validada de Boosts Maduros para Semana 3 (Lunes 23 al Sábado 28/11 — Ya detectados hoy en GSC):**
-  1. `/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/` (**76 impr, Pos `8.8`**, 9 queries en Pos 6.7–11.6 + visita orgánica real en GA4 — cumple 14 días el 21/11).
-  2. `/blog/crear-pagina-web-google-sites-sirve-para-negocio/` (**45 impr**, 4 queries en Página 1 Pos 5.0–8.0, `<title>` 84c, `meta desc` 189c, 2 FAQs).
-  3. `/blog/por-que-mi-negocio-no-aparece-en-google-maps/` (**57 impr**, `<title>` 84c, FAQ roto 2/4).
-  4. `/blog/diseno-web-santa-fe/` (32 impr, `<title>` 70c, FAQ roto 2/3) y `/blog/diseno-web-la-rioja/` (29 impr, `<title>` 84c) — en el **Miércoles 25/11** (eje Diseño Web y Localidades).
-  5. Evaluar a partir del **26/11** (ventana 14 días) el comportamiento de `/blog/seo-on-page-checklist-optimizacion/` (**111 impr en Pos `6.3` en solo 7 días!**) y decidir si cargar nuestras 30 Money Keywords en **SerpBear** (hoy en `0` rastreadas) o retirarlo del reporte dominical.
+## 5. Plan de Ataque para Esta Semana (Semana 3: Lunes 23 al Sábado 28 de Noviembre de 2026) — Bloque 0 + Pasos 1 y 2 Resueltos
+
+> **Directriz Operativa:** Antes de iniciar la tanda del Lunes 23/11, ejecutar el **Bloque 0 de Saneamiento Técnico de Emergencia** que resuelve fallos críticos reales de conversión, accesibilidad, Meta Pixel, Bing 4xx y redirecciones 301. Todos los **Pasos 1 (Selección de Boosts Maduros >= 14 días + Control de Canibalización < 60%)** y **Pasos 2 (Outlines Maestros Cerrados con Regla #18 de Slug corto, Fórmula Sturm de 4 puntos, Bloque Query Fan-Out IA, Reglas #25–#30 y Paridad 6/6 en FAQs)** de Lunes a Sábado están validados abajo. Al ejecutar cada día: completar Pasos 3 y 4, correr `python scratch/verify_article_hygiene.py --hub <archivos_tocados>`, `python scratch/audit_all_internal_links.py`, `git diff --stat`, `npm run build`, notificar a Google Indexing API v3 + GSC Sitemap + IndexNow (con la clave real `e7a9c4b2f8d143e6a0b5c8d9e2f1a3b4`) + Bing Webmaster API y hacer `git push origin main`.
+
+---
+
+### [ ] Bloque 0 — Saneamiento Técnico de Emergencia (Ejecutar Primero — Impacto Directo en Conversiones, UX, Bing y Core Web Vitals)
+
+1. **Reparar botones de WhatsApp MUERTOS (`data-wa-lead`) y teléfono erróneo (`5492644869263` -> `5492645185359`):**
+   - Corregir `blog/como-poner-agregar-negocio-local-google-maps-gratis/index.html` (2 botones muertos + teléfono `5492644869263` erróneo) y `blog/parametros-utm-google-analytics-4-maps/index.html` (2 botones muertos) para usar `data-wa-msg` y `data-wa-phone="5492645185359"`.
+   - Blindar `src/js/whatsapp.js` para que también inicialice botones `[data-wa-lead]` leyendo `data-wa-text` como red de seguridad.
+2. **Reparar contraste roto (texto negro `text-slate-900` sobre fondo oscuro `bg-neutral-950`) en 15 artículos:**
+   - Cambiar `text-slate-900` por `text-white` dentro de `<summary>` en `blog/por-que-mi-negocio-no-aparece-en-google-maps/index.html` y las 14 guías de ciudades oscuras (`bahia-blanca`, `comodoro-rivadavia`, `corrientes`, `jujuy`, `la-plata`, `lomas-de-zamora`, `mar-del-plata`, `parana`, `pilar`, `posadas-misiones`, `resistencia-chaco`, `salta`, `santa-fe`, `tandil`).
+3. **Eliminar el doble disparo de Meta Pixel (`Contact` x2) y fuga de `?soy_erik=1` en 62 archivos:**
+   - Remover el listener inline duplicado (`trackCustom', 'Whatsapp'`) en `index.html`, `en/index.html`, `san-juan/index.html`, `blog/index.html` y los `58` artículos legacy para que `src/js/whatsapp.js` sea el único emisor de eventos respetando `window._ewIgnoreAnalytics`.
+4. **Inyectar `/src/js/main.js` faltante:** Agregar `<script type="module" src="/src/js/main.js"></script>` antes de `</body>` en `blog/crawl-budget-optimizacion-rastreo-google/index.html`.
+5. **Resolver los `Code4xx` en Bing y activar Redirecciones HTTP `301` Reales en Cloudflare Pages:**
+   - Crear `public/_redirects` con reglas `301` reales para los 15 stubs (especialmente `/blog/diseno-web-rosario-santa-fe/* /blog/diseno-web-rosario/ 301` y demás ciudades/demos combinadas).
+   - Corregir `404.html` y `public/404.html` (eliminar `<link rel="stylesheet" href="/src/css/style.css">` roto y typo `rounded-xml`).
+   - Sumar `Disallow: /propuestas/` en `robots.txt` y `public/robots.txt`, y actualizar `public/ai-catalog.json` con `/auditoria-seo/`, `/en/` y demos clave.
+   - Re-enviar el batch de IndexNow con la clave física real `e7a9c4b2f8d143e6a0b5c8d9e2f1a3b4`.
+6. **Optimizar en lote las 86 imágenes del blog > 490 KB (PIL 256 colores dual-sync `images/` + `public/images/`):**
+   - Priorizando `guia_configurar_correo_corporativo_outlook.png` (`960 KB` en la página #1 de clics en GSC) y el resto de imágenes pesadas hasta dejar el 100% debajo de `450 KB`.
+
+---
+
+### [ ] Lunes 23/11 — Eje Diseño Web y Conversión (Boost Google Sites + Boost Catálogo Canva + Nuevo Artículo WordPress Hackeado)
+
+#### A. Paso 1 — Doble Cirugía / Boost en Comparativas Maduras (>25 días en GSC)
+1. **Boost 1 (`/blog/crear-pagina-web-google-sites-sirve-para-negocio/` — `66` impr en GSC, 4 queries en Página 1 Pos `5.0–8.0`, 28 días de antigüedad):**
+   - **Diagnóstico GSC:** Posiciona en **Pos `5.0`** para `'crear página web en google'`, **Pos `7.0`** para `'crear tu propia pagina web gratis google'` y `'creador paginas web google'`, y **Pos `8.0`** para `'hacer pagina web con google'` (`6` impr), pero su `<title>` mide **84 caracteres**, la `meta description` mide **189 caracteres** (se corta) y solo tiene **2 FAQs**.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**55c**): `Crear Web en Google Sites: ¿Sirve para un Negocio 2026?`
+     - `meta description`, `og:description`, `twitter:description` (**147c**): `Crear una página web con Google Sites gratis: sus límites reales en SEO, dominio .com.ar y Píxel de Meta Ads, y cuándo pasar a una web profesional.`
+     - Incorporar un bloque comparativo directo respondiendo `'hacer pagina web con google'` vs. landing profesional a medida ($150.000 ARS) con enlaces hacia `/blog/hacer-landing-page-canva-sirve-para-vender/` y `/#demos`.
+     - Ampliar de 2 a **6 FAQs con paridad exacta 6/6 (`<details name="faq-accordion">` == JSON-LD `FAQPage`)** y `dateModified: 2026-11-23T09:30:00-03:00`.
+2. **Boost 2 (`/blog/catalogo-pdf-canva-vs-catalogo-web/` — `12` impr, Pos `6.3` en Página 1, 27 días de antigüedad):**
+   - **Diagnóstico:** Tiene `<title>` de **80 caracteres**, `meta description` de **177 caracteres** y solo **2 FAQs**.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**53c**): `Catálogo PDF en Canva vs. Catálogo Web: Qué Vende Más`
+     - `meta description`, `og:description`, `twitter:description` (**149c**): `Catálogo en PDF hecho en Canva vs. catálogo web interactivo con pedidos por WhatsApp: comparativa real de peso móvil, SEO y ventas en Argentina 2026.`
+     - Enlazar hacia `/blog/como-crear-catalogo-online-pedidos-whatsapp/` (ya en `442` impr, Pos `9.5` en Página 1) y ampliar a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-23T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo Diseño Web & Migración Segura (`50%` Solapamiento · `5` Sugerencias Reales en Google AR)
+> **Por qué reemplaza a Ópticas:** `pagina web para optica` arrojó solo `1` sugerencia en Google AR y `67%` solapamiento léxico. **`WordPress hackeado`** tiene **`5` sugerencias reales de dolor urgente en Google AR** (`wordpress hackeado`, `limpiar wordpress hackeado`, `recuperar wordpress hackeado`, `wordpress fue hackeado`), **`50%` overlap (`0%` choque de intención)** y convierte directo a dueños desesperados hacia nuestra **migración a código estático blindado ($150.000 ARS pago único)** o nuestra **Auditoría SEO y Seguridad (`/auditoria-seo/`)**.
+
+- **Main Keyword:** `WordPress hackeado`
+- **Slug (Regla #18 — 5 palabras limpias):** `/blog/wordpress-hackeado-limpiar-migrar-seguro/`
+- **`<title>` (56 caracteres):** `WordPress Hackeado: Cómo Limpiarlo o Migrar a Web Segura`
+- **`<h1>` (63 caracteres — Regla #5):** `WordPress Hackeado: Cómo Recuperarlo o Migrar a Código Blindado`
+- **`meta description` (150 caracteres):** `¿Tu WordPress fue hackeado con virus, redirecciones a casinos o alerta roja de Google? Paso a paso para limpiarlo o migrar a una web estática segura.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
+  > **Si tu WordPress fue hackeado** y redirige a páginas de spam, muestra texto en japonés en Google o activa el cartel rojo de sitio engañoso, primero cambiá contraseñas del hosting y eliminá plugins desactualizados, y evaluá si conviene pagar limpieza recurrente o migrar a código estático a medida sin base de datos ni vulnerabilidades.
+- **Categoría real en `blog/index.html` (Regla #24):** `dominios` (*Dominios, Correo y Seguridad Técnica*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo:**
+  1. *"¿Cómo sé si mi sitio en WordPress fue hackeado aunque en mi celular se vea normal?"* (cloaking hacia Googlebot, redirecciones móviles, spam japonés en `site:tudominio.com.ar`).
+  2. *"¿Por qué hackean tan seguido los sitios WordPress de PyMEs en Argentina (plugins nulled, Elementor viejo, wp-login sin protección)?"*
+  3. *"¿Cómo limpiar un WordPress hackeado y pedir revisión en Google Search Console para sacar el cartel rojo de seguridad?"*
+  4. *"¿Cuánto cuesta limpiar un WordPress infectado frente a rehacer la página en código estático blindado ($150.000 ARS pago único)?"*
+- **Imagen Editorial (`1200x675`, PIL `< 450 KB`, dual-sync `images/` y `public/images/`):** `guia_wordpress_hackeado_limpiar_migrar_seguro.png` (Desarrollador web en estudio luminoso de Argentina revisando alerta de seguridad en laptop y código limpio blindado con escudo verde en pantalla secundaria; pastilla `"SEGURIDAD & MIGRACIÓN"` y sello `erikwebsite.com`).
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Las 5 señales de que tu WordPress fue hackeado (incluso si todavía carga)</h2>`
+  2. `<h2>2. Paso a paso para contener el daño y limpiar un WordPress infectado sin perder el dominio</h2>`
+  3. `<h2>3. Cómo sacar el aviso rojo de Google Safe Browsing desde Google Search Console</h2>`
+  4. `<h2>4. Limpiar WordPress vs. Migrar a Código Estático Blindado: costos reales en Argentina 2026</h2>` *(Tabla comparativa HTML responsiva: costo anual, vulnerabilidades, mantenimiento, velocidad)*
+- **Interlinking Verificado (Regla #19):** `/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/`, `/blog/como-saber-si-mi-pagina-web-esta-penalizada-google/`, `/blog/seguridad-web-certificados-ssl-https/`, `/blog/wordpress-vs-codigo-a-medida-velocidad/`, `/auditoria-seo/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6):**
+  1. `¿Cómo me doy cuenta si mi página en WordPress está hackeada con malware o spam japonés?`
+  2. `¿Si cambio la contraseña de WordPress se elimina el virus automáticamente?`
+  3. `¿Por qué mi web redirige a páginas de apuestas o anuncios solo cuando entran desde Google?`
+  4. `¿Cómo elimino la pantalla roja de sitio peligroso de Google Chrome después de limpiar la web?`
+  5. `¿Una página web hecha en código estático a medida (HTML, Tailwind y JS) puede sufrir los mismos hackeos de WordPress?`
+  6. `¿Cuánto cuesta migrar un WordPress hackeado a una página web nueva y segura en Argentina?`
+
+---
+
+### [ ] Martes 24/11 — Eje Especialista SEO, Velocidad, Infraestructura e IA (Boost #1 Ferozo 175 Impr + Boost INPI vs NIC.ar + Nuevo Artículo `llms.txt`)
+
+#### A. Paso 1 — Doble Cirugía / Boost en Páginas Maduras de Altísima Tracción
+1. **Boost 1 (`/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/` — `175` impr en GSC [+130% en 3 días!], Pos `8.9`, 15 días de antigüedad):**
+   - **Radiografía Quirúrgica GSC:** `'ferozo webmail'` (**88 impr, Pos `8.8`**), `'ferozo.email'` (**21 impr, Pos `10.2`**), `'ferozo webmail outlook'` (7 impr, Pos `9.7`), `'ferozo email'` (5 impr, Pos `9.8`), `'ferozo.mail'` (3 impr, Pos `6.7`).
+   - **Defectos detectados:** `<title>` `61c` (>60c), `<h1>` `101c` (>78c), solo `3` FAQs.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**53c**): `Ferozo Webmail vs. Gmail y Outlook Corporativo (Guía)`
+     - `<h1>` (**60c** — Regla #5): `Ferozo Webmail (DonWeb) vs. Gmail y Outlook Corporativo 2026`
+     - Inyectar en `<h2>` y párrafos las variantes reales `'ferozo.email'` y `'ferozo webmail en Outlook / Gmail'` (acceso POP/IMAP/SMTP y límites de Roundcube frente a Google Workspace o Cloudflare + Gmail).
+     - Ampliar de 3 a **6 FAQs con paridad 6/6** y `dateModified: 2026-11-24T09:30:00-03:00`.
+2. **Boost 2 (`/blog/registrar-marca-inpi-vs-dominio-com-ar-nic-argentina/` — `22` impr + `1` CLIC ORGÁNICO REAL, Pos `6.4`, 18 días de antigüedad):**
+   - **Defectos GRAVES detectados:** `<title>` **81c**, `<h1>` **100c**, `meta description` **169c** y **FAQ DESFASADO (`2 <details>` vs `3 Schema`)**!
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**53c**): `Registrar Marca en INPI vs. Dominio .com.ar en NIC.ar`
+     - `<h1>` (**65c**): `Registrar Marca en INPI vs. Dominio .com.ar: Qué Protege Cada Uno`
+     - `meta description`, `og:description`, `twitter:description` (**152c**): `Diferencia legal entre registrar una marca en el INPI y comprar un dominio .com.ar en NIC Argentina: costos, tiempos y cómo blindar tu nombre comercial.`
+     - Ampliar a **6 FAQs con paridad exacta 6/6** + `dateModified: 2026-11-24T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO & IA (`50%` Solapamiento · `9` Sugerencias Reales en Google AR)
+- **Main Keyword:** `Archivo llms.txt para SEO e IA`
+- **Slug (Regla #18 — 5 palabras limpias):** `/blog/archivo-llms-txt-seo-ia/`
+- **`<title>` (57 caracteres):** `Archivo llms.txt para SEO e IA: Cómo Crearlo para ChatGPT`
+- **`<h1>` (62 caracteres — Regla #5):** `Archivo llms.txt para SEO e IA: Guía para ChatGPT y Perplexity`
+- **`meta description` (148 caracteres):** `Qué es el archivo llms.txt para SEO e IA, cómo crearlo paso a paso en tu web y por qué ayuda a que ChatGPT, Perplexity y Gemini citen tus servicios.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
+  > **El archivo `llms.txt` para SEO e IA** es un documento Markdown simple alojado en la raíz de tu dominio (`/llms.txt`) que resume tus servicios, precios, páginas clave y preguntas frecuentes en texto limpio para que ChatGPT, Perplexity, Claude y Google Gemini lean y citen tu negocio sin perderse en el HTML.
+- **Categoría real en `blog/index.html` (Regla #24):** `seo` (*Auditoría SEO, Velocidad e IA*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (`9` sugerencias AR: `que es llms txt`, `llms txt seo`, `llms txt yoast seo`):**
+  1. *"¿Qué es exactamente el archivo llms.txt y en qué se diferencia de robots.txt y sitemap.xml?"*
+  2. *"¿Cómo escribir y estructurar un archivo llms.txt efectivo para una empresa o PyME en Argentina?"*
+  3. *"¿Es obligatorio tener llms-full.txt o alcanza con llms.txt en la raíz del sitio?"*
+  4. *"¿Cómo validar que los bots de IA (GPTBot, PerplexityBot, Google-Extended) puedan leer tu llms.txt sin bloqueos de Cloudflare?"*
+- **Imagen Editorial (`1200x675`, PIL `< 450 KB`, dual-sync):** `guia_archivo_llms_txt_seo_ia.png` (Monitor de desarrollador en estudio mostrando un archivo Markdown limpio `/llms.txt` con estructura de secciones junto a citación de marca en respuesta de IA; pastilla `"AEO / GEO & LLMS.TXT"` y sello `erikwebsite.com`).
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Qué es el archivo llms.txt y por qué importa para aparecer citado en ChatGPT y Perplexity</h2>`
+  2. `<h2>2. Diferencias clave entre llms.txt, robots.txt y sitemap.xml en tu arquitectura SEO</h2>` *(Tabla comparativa HTML: destinatario, formato, ubicación, rol AEO/GEO)*
+  3. `<h2>3. Cómo crear tu archivo llms.txt paso a paso (con plantilla lista para copiar)</h2>`
+  4. `<h2>4. Errores comunes en Cloudflare, WordPress (Yoast/RankMath) y sitios estáticos con llms.txt</h2>`
+- **Interlinking Verificado (Regla #19):** `/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/`, `/blog/robots-txt-sitemap-xml-seo/`, `/blog/schema-markup-datos-estructurados-seo/`, `/auditoria-seo/`, `/llms.txt` (mención como caso práctico).
+- **6 FAQs Interactivas (Paridad exacta 6/6):**
+  1. `¿Qué es el archivo llms.txt y para qué sirve en SEO e inteligencia artificial?`
+  2. `¿El archivo llms.txt reemplaza al robots.txt o al sitemap.xml?`
+  3. `¿Dónde se guarda el archivo llms.txt en un sitio en código limpio o en WordPress?`
+  4. `¿Google usa el archivo llms.txt para posicionar en AI Overviews?`
+  5. `¿Qué pasa si Cloudflare bloquea a GPTBot o PerplexityBot cuando intentan leer mi web?`
+  6. `¿Qué información comercial conviene incluir dentro de llms.txt para captar clientes en Argentina?`
+
+---
+
+### [ ] Miércoles 25/11 — Eje Diseño Web y Localidades (Boost Santa Fe + Boost La Rioja + Nuevo Artículo Avellaneda · Regla #16)
+
+#### A. Paso 1 — Doble Cirugía / Boost Geográfico Maduro (Pre-validado en GSC)
+1. **Boost 1 (`/blog/diseno-web-santa-fe/` — `32` impr en GSC, 23 días de antigüedad):**
+   - **Diagnóstico GSC:** `'diseño web santa fe'` (`17` impr), `'diseño web en santa fe'` (`15` impr, Pos `36.7`). Defectos actuales: `<title>` **70c**, `meta description` **160c**, **FAQ DESFASADO (`2 <details>` vs `3 Schema`)**.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**53c**): `Diseño Web en Santa Fe Capital: Precios y Maps (2026)`
+     - `meta description`, `og:description`, `twitter:description` (**148c**): `Diseño de páginas web en Santa Fe Capital desde $150.000 ARS finales: sitios ultrarrápidos con Google Maps y WhatsApp para comercios y profesionales.`
+     - Enlazar hacia `/blog/diseno-web-rosario/` y `/blog/diseno-web-rafaela/` + ampliar a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-25T09:30:00-03:00`.
+2. **Boost 2 (`/blog/diseno-web-la-rioja/` — `29` impr en GSC, 16 días de antigüedad):**
+   - **Diagnóstico GSC:** `'diseño paginas web la rioja'` (`18` impr), `'diseño web rioja'` (`7` impr), `'diseño web la rioja'` (`4` impr). Defectos: `<title>` **84c**, `<h1>` **83c**, `meta description` **164c**, solo **3 FAQs**.
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**54c**): `Diseño Web en La Rioja: Páginas, Precios y Maps (2026)`
+     - `<h1>` (**64c**): `Diseño Web en La Rioja: Páginas Rápidas y Google Maps para PyMEs`
+     - `meta description`, `og:description`, `twitter:description` (**142c**): `Diseño de páginas web en La Rioja desde $150.000 ARS finales: sitios veloces para comercios, turismo, profesionales y empresas con Google Maps.`
+     - Ampliar a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-25T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo Ciudad Específica (Regla #16 · Vol `50`/mes CSV · Comp `0/100`)
+- **Main Keyword:** `Diseño web en Avellaneda` (`diseño web avellaneda`: `50` búsquedas/mes y Competencia **`0/100` Bajo** en CSV local; 0% solapamiento geográfico real).
+- **Slug (Regla #18 y #16 — 3 palabras limpias):** `/blog/diseno-web-avellaneda/`
+- **`<title>` (56 caracteres):** `Diseño Web en Avellaneda: Páginas, Precios y Google Maps`
+- **`<h1>` (61 caracteres — Regla #5):** `Diseño Web en Avellaneda: Páginas para Comercios e Industrias`
+- **`meta description` (149 caracteres):** `Diseño web en Avellaneda (Zona Sur GBA) desde $150.000 ARS finales: páginas veloces en código limpio con Google Maps y WhatsApp en 3 a 5 días hábiles.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
+  > **El diseño web en Avellaneda** (Zona Sur del Gran Buenos Aires) te permite tener una página profesional en código limpio por $150.000 ARS finales en 3 a 5 días hábiles, conectada a Google Maps y WhatsApp para captar consultas en Avellaneda Centro, Piñeyro, Gerli, Sarandí, Wilde y Dock Sud.
+- **Categoría real en `blog/index.html` (Regla #24):** `maps` (*Google Maps y Posicionamiento Local*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo:**
+  1. *"¿Cuánto cuesta hacer una página web profesional para una pyme o comercio en Avellaneda?"*
+  2. *"¿Conviene contratar una agencia local cara con abonos en WordPress o una landing en código limpio a pago único?"*
+  3. *"¿Cómo posicionar un negocio de Avellaneda (taller, clínica, fábrica, estudio o comercio en Av. Mitre) en Google Maps?"*
+  4. *"¿Cuánto demora el diseño y entrega de la web y qué se necesita para empezar?"*
+- **Imagen Editorial (`1200x675`, PIL `< 450 KB`, dual-sync):** `guia_diseno_web_avellaneda.png` (Vista editorial moderna de Avellaneda / polo comercial sobre Av. Mitre con comercio/oficina local trabajando en notebook con web corporativa y ficha de Google Maps; pastilla `"AVELLANEDA · ZONA SUR"` y sello `erikwebsite.com`).
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Cómo buscan proveedores y servicios los clientes en Avellaneda y Zona Sur GBA</h2>`
+  2. `<h2>2. Precios de Diseño Web en Avellaneda: Landing a Medida ($150.000) vs. Agencias y WordPress</h2>` *(Tabla comparativa HTML responsiva)*
+  3. `<h2>3. Qué negocios e industrias de Avellaneda (Piñeyro, Sarandí, Wilde y Centro) convierten más con web propia</h2>`
+  4. `<h2>4. Cómo posicionar tu ficha de Google Maps en Avellaneda frente a competidores de CABA</h2>`
+- **Interlinking Verificado (Regla #19 — Refuerza el Cluster Zona Sur en Pos 10.1):** Enlazar bidireccionalmente con `/blog/diseno-web-zona-sur/`, `/blog/diseno-web-quilmes/`, `/blog/diseno-web-lomas-de-zamora/`, `/blog/como-poner-agregar-negocio-local-google-maps-gratis/`, `/demos/arquitectura/`, `/demos/contable/`, `/demos/urgencias-hogar/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6):**
+  1. `¿Cuánto sale hacer una página web en Avellaneda en 2026?`
+  2. `¿Trabajan con comercios e industrias de Piñeyro, Sarandí, Wilde, Gerli y Dock Sud?`
+  3. `¿Qué diferencia hay entre una landing page en código limpio y una página en WordPress o Tiendanube?`
+  4. `¿La página incluye optimización para aparecer en Google Maps en Avellaneda?`
+  5. `¿Cuánto tardan en entregar la web y cómo se envía la información del negocio?`
+  6. `¿Qué incluye el mantenimiento mensual opcional de $20.000 ARS?`
+
+---
+
+### [ ] Jueves 26/11 — Eje Especialista SEO por Rubro / CMS (Boost WordPress/Wix Yoast + Boost Tiendanube + Nuevo Artículo SEO Shopify)
+
+#### A. Paso 1 — Doble Cirugía / Boost en Comparativas SEO de CMS Maduras
+1. **Boost 1 (`/blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/` — `17` impr, `'wix seo'` Pos `6.0`, `'seo en wix'` Pos `13.0`, 14 días el 22/11):**
+   - **Defectos detectados:** `<h1>` **85c** (>78c) y solo **4 FAQs**.
+   - **Cirugía exacta para Paso 3:**
+     - Acortar `<h1>` a **63c**: `SEO en WordPress y Wix: ¿Alcanza con Yoast SEO para Posicionar?`
+     - Reforzar en `<h2>` las consultas exactas `'SEO en Wix'`, `'servicio SEO Wix'` (`8` impr) y por qué los semáforos verdes de Yoast no reemplazan la arquitectura semántica ni la velocidad LCP/INP.
+     - Ampliar de 4 a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-26T09:30:00-03:00`.
+2. **Boost 2 (`/blog/precios-comisiones-tiendanube-alternativas-argentina/` — `33` impr en GSC, Pos `10.7`, `'precios tiendanube'` Pos `9.0`, `'tiendanube cobra comision por venta'` Pos `8.0`, 20 días de antigüedad):**
+   - **Defectos detectados:** `<h1>` **93c** (>78c) y solo **4 FAQs**.
+   - **Cirugía exacta para Paso 3:**
+     - Acortar `<h1>` a **66c**: `Precios y Comisiones de Tiendanube en Argentina 2026: Alternativas`
+     - Sumar enlace contextual hacia el nuevo artículo del día (`/blog/seo-shopify-argentina/`) y hacia `/blog/precios-shopify-argentina-conviene/`.
+     - Ampliar de 4 a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-26T09:30:00-03:00`.
+   - *(Higiene adicional del día: reparar la paridad rota `FAQ=2/3` en `/blog/woocommerce-vs-tiendanube-cual-conviene-argentina/` si da el margen).*
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO por CMS (`50%` Solapamiento · `11` Sugerencias Reales en Google AR)
+- **Main Keyword:** `SEO para Shopify en Argentina`
+- **Slug (Regla #18 — 3 palabras limpias):** `/blog/seo-shopify-argentina/`
+- **`<title>` (56 caracteres):** `SEO para Shopify en Argentina 2026: Guía para Posicionar`
+- **`<h1>` (63 caracteres — Regla #5):** `SEO para Shopify en Argentina: Cómo Posicionar tu Tienda Online`
+- **`meta description` (146 caracteres):** `Guía de SEO para Shopify en Argentina: cómo optimizar colecciones, productos, velocidad móvil, URLs y evitar duplicados para vender sin pagar ads.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
+  > **El SEO para Shopify en Argentina** requiere corregir las limitaciones técnicas nativas de la plataforma (como URLs duplicadas de colecciones y productos, etiquetas automáticas que generan contenido fino y apps pesadas que frenan el celular) para rankear en Google sin depender del costo creciente de Meta Ads.
+- **Categoría real en `blog/index.html` (Regla #24):** `seo` (*Auditoría SEO, Velocidad e IA*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (`11` sugerencias AR: `seo shopify`, `app seo shopify`, `seo shopify tutorial`, `seo shopify checklist`):**
+  1. *"¿Es bueno Shopify para SEO en Google Argentina o tiene desventajas frente a WooCommerce y código propio?"*
+  2. *"¿Cómo evitar las URLs duplicadas (`/collections/.../products/...`) y manejar la etiqueta `canonical` en Shopify?"*
+  3. *"¿Qué apps de SEO para Shopify sirven realmente y cuáles ralentizan la tienda?"*
+  4. *"¿Cómo optimizar fichas de producto, colecciones y Schema `Product` con precios en pesos argentinos (ARS)?"*
+- **Imagen Editorial (`1200x675`, PIL `< 450 KB`, dual-sync):** `guia_seo_shopify_argentina.png` (Emprendedor/especialista en e-commerce en Argentina revisando en laptop una ficha de producto Shopify optimizada junto a métricas de tráfico orgánico y velocidad móvil; pastilla `"SEO E-COMMERCE · SHOPIFY"` y sello `erikwebsite.com`).
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Qué tan bueno es el SEO nativo de Shopify en Argentina (lo bueno y los 4 problemas ocultos)</h2>`
+  2. `<h2>2. Checklist técnico de SEO para Shopify: colecciones, URLs canónicas y Schema Product en ARS</h2>`
+  3. `<h2>3. Apps de SEO para Shopify vs. Velocidad Web: qué instalar y qué eliminar para no perder Core Web Vitals</h2>` *(Tabla comparativa HTML)*
+  4. `<h2>4. Cuándo conviene escalar tu Shopify con SEO y cuándo migrar a catálogo web propio sin comisiones</h2>`
+- **Interlinking Verificado (Regla #19):** Enlace bidireccional con `/blog/precios-shopify-argentina-conviene/` (que está en `86` impr y Pos `11.8`), `/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/`, `/blog/etiqueta-canonica-redireccion-301-seo/`, `/blog/seo-on-page-checklist-optimizacion/`, `/auditoria-seo/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6):**
+  1. `¿Shopify posiciona bien en Google Argentina comparado con Tiendanube o WooCommerce?`
+  2. `¿Cómo solucionar las URLs duplicadas de productos dentro de colecciones en Shopify?`
+  3. `¿Qué app de SEO conviene instalar en Shopify sin volver lenta la tienda en celulares?`
+  4. `¿Cómo optimizar el peso de las fotos de productos en Shopify para mejorar el LCP?`
+  5. `¿Se puede editar el archivo robots.txt y el sitemap en Shopify?`
+  6. `¿Conviene invertir en SEO para Shopify si recién arranco o necesito ventas rápidas por WhatsApp?`
+
+---
+
+### [ ] Viernes 27/11 — Eje Diseño Web, Demos y Embudos (Boost Inmobiliarias 76 Impr + Boost Ads Instagram 67 Impr + Nuevo Artículo Mercado Pago)
+
+#### A. Paso 1 — Doble Cirugía / Boost en Páginas Comerciales Maduras (>15 días en GSC)
+1. **Boost 1 (`/blog/paginas-web-para-inmobiliarias-argentina/` — `76` impr en GSC, `'pagina web inmobiliarias'` `11` impr Pos `12.8`, 22 días de antigüedad):**
+   - **Defectos detectados hoy:** `meta description` **174c** (>160c) y **FAQ DESFASADO (`4 <details>` vs `3 Schema` — Regla #22)**.
+   - **Cirugía exacta para Paso 3:**
+     - `meta description`, `og:description`, `twitter:description` (**152c**): `Páginas web para inmobiliarias en Argentina: catálogo rápido de propiedades, filtro directo a WhatsApp y posicionamiento local sin depender de portales.`
+     - Agregar bloque destacado hacia **`/demos/arquitectura/`** (referencia de portfolio visual de propiedades/obras y cotizador interactivo) y **`/#demos`**, más enlace contextual a `/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/`. *(Nota Regla #19: NO enlazar a `/demos/inmobiliaria/` porque es un stub de redirección).*
+     - Ampliar a **6 FAQs con paridad exacta 6/6** + `dateModified: 2026-11-27T09:30:00-03:00`.
+2. **Boost 2 (`/blog/cuanto-cuesta-publicidad-instagram-argentina-mercadopago/` — `67` impr en GSC, `'instagram publicidad precio'` Pos `5.5`, `'cuanto cobra instagram por publicidad'` Pos `10.0`, 15 días de antigüedad):**
+   - **Defectos detectados:** `<h1>` **105c** (>78c) y solo **3 FAQs**.
+   - **Cirugía exacta para Paso 3:**
+     - Acortar `<h1>` a **60c**: `Cuánto Cuesta la Publicidad en Instagram en Argentina (2026)`
+     - Reforzar por qué pagar pauta con Mercado Pago sin tener una Landing Page rápida con Píxel de Meta quema presupuesto en curiosos, enlazando hacia `/blog/anuncios-instagram-facebook-clics-sin-ventas-whatsapp/` y al nuevo artículo del día (`/blog/integrar-mercado-pago-pagina-web/`).
+     - Ampliar de 3 a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-27T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo Diseño Web & Pagos (`45%` Solapamiento · `12` Sugerencias Reales en Google AR)
+- **Main Keyword:** `Integrar Mercado Pago en página web`
+- **Slug (Regla #18 — 5 palabras limpias):** `/blog/integrar-mercado-pago-pagina-web/`
+- **`<title>` (56 caracteres):** `Integrar Mercado Pago en tu Página Web en Argentina 2026`
+- **`<h1>` (64 caracteres — Regla #5):** `Cómo Integrar Mercado Pago en tu Página Web sin Comisiones Extra`
+- **`meta description` (147 caracteres):** `Cómo integrar Mercado Pago en tu página web en Argentina: Checkout Pro, links de pago, comisiones reales por acreditación y cuándo cobrar en pesos.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
+  > **Integrar Mercado Pago en tu página web** en Argentina se puede hacer mediante un botón/link de pago directo (sin backend complejo), con Checkout Pro (redirección segura al entorno de Mercado Pago) o Checkout API, permitiéndote cobrar con tarjetas, débito o dinero en cuenta sin pagar comisiones mensuales de Shopify ni Tiendanube.
+- **Categoría real en `blog/index.html` (Regla #24):** `ventas` (*Embudos (Funnels) y Conversión*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (`12` sugerencias AR: `integrar mercado pago a mi web`, `integrar mercado pago`, `integrar mercado pago a woocommerce`):**
+  1. *"¿Qué diferencia hay entre pegar un Link de Pago, usar Checkout Pro o integrar Checkout Bricks / API de Mercado Pago?"*
+  2. *"¿Cuánto cobra de comisión Mercado Pago en Argentina por cada venta online según el plazo de acreditación (en el acto vs. 10/18/35 días)?"*
+  3. *"¿Cómo combinar Mercado Pago con un descuento por transferencia bancaria (alias/CBU) en una Landing Modo Funnel?"*
+  4. *"¿Se necesita tener certificado SSL HTTPS y cuenta empresa o alcanza con una cuenta estándar de Mercado Pago?"*
+- **Imagen Editorial (`1200x675`, PIL `< 450 KB`, dual-sync):** `guia_integrar_mercado_pago_pagina_web.png` (Comerciante o emprendedor argentino en escritorio con notebook mostrando página web propia con selector de pago en pesos y celular con acreditación en cuenta local; pastilla `"PAGOS & CONVERSIÓN"` y sello `erikwebsite.com`).
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Las 3 formas de integrar Mercado Pago en tu página web (Link de Pago, Checkout Pro y API)</h2>` *(Tabla comparativa HTML: complejidad, seguridad, comisiones plataforma, ideal para)*
+  2. `<h2>2. Comisiones reales de Mercado Pago en Argentina 2026 y cómo ofrecer 10% OFF por transferencia</h2>`
+  3. `<h2>3. Cómo conectar Mercado Pago + Pedido por WhatsApp en una Landing Modo Funnel ($150.000 ARS)</h2>` *(Prueba en vivo en `/demos/funnel/`)*
+  4. `<h2>4. Requisitos técnicos obligatorios: HTTPS, credenciales públicas/privadas y webhook de confirmación</h2>`
+- **Interlinking Verificado (Regla #19):** `/demos/funnel/`, `/blog/landing-page-vender-cursos-online/`, `/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/`, `/blog/precios-comisiones-tiendanube-alternativas-argentina/`, `/blog/seguridad-web-certificados-ssl-https/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6):**
+  1. `¿Cómo puedo integrar Mercado Pago en una página web hecha en HTML o código limpio?`
+  2. `¿Cuánto cobra Mercado Pago de comisión por vender en una página web en Argentina?`
+  3. `¿Qué es Checkout Pro de Mercado Pago y por qué es más seguro para PyMEs y creadores?`
+  4. `¿Puedo cobrar por transferencia sin comisión y dejar Mercado Pago solo para cuotas con tarjeta?`
+  5. `¿Es obligatorio tener certificado SSL (candado HTTPS) para usar Mercado Pago en mi web?`
+  6. `¿Qué pasa si vendo servicios a medida o muebles: conviene cobrar online directo o cerrar por WhatsApp?`
+
+---
+
+### [ ] Sábado 28/11 — Eje Especialista SEO Local, Maps, Bing y Citación IA (Boost Maps 74 Impr + Boost Indexación GSC Absorbing 75% + Nuevo Artículo Bing Webmaster Tools & IndexNow)
+
+#### A. Paso 1 — Doble Cirugía / Boost en Guías Maduras de Maps e Indexación
+1. **Boost 1 (`/blog/por-que-mi-negocio-no-aparece-en-google-maps/` — `74` impr en GSC, 23 días de antigüedad):**
+   - **Diagnóstico GSC:** `'porque no aparece mi negocio en google maps'` (`27` impr), `'mi negocio no aparece en google maps'` (`15` impr), `'no aparezco en google maps'` (`4` impr, Pos `43.2`).
+   - **Defectos GRAVES detectados:** `<title>` **84c**, `meta description` **167c**, **FAQ DESFASADO (`2 <details>` vs `4 Schema` — Regla #22)** y contraste roto (`text-slate-900` sobre fondo oscuro, ya incluido en Bloque 0).
+   - **Cirugía exacta para Paso 3:**
+     - `<title>`, `og:title`, `twitter:title` (**55c**): `Por Qué mi Negocio No Aparece en Google Maps y Solución`
+     - `meta description`, `og:description`, `twitter:description` (**151c**): `Por qué mi negocio no aparece en Google Maps y cómo solucionarlo en 2026: verificación, categoría principal, reseñas, consistencia NAP y web vinculada.`
+     - Ampliar a **6 FAQs con paridad exacta 6/6** (`text-white` en `<summary>`) + enlazar hacia `/blog/como-poner-agregar-negocio-local-google-maps-gratis/` + `dateModified: 2026-11-28T09:30:00-03:00`.
+2. **Boost 2 — Keyword Absorbing `75%` Overlap (`/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/` — `56` impr + `1` clic orgánico, `'forzar indexacion google'` Pos `16.5`, 14 días exactos):**
+   - **Absorción por Canibalización (`check_cannibalization.py`):** La keyword `'como usar google search console paso a paso'` dio **75% de solapamiento** con esta URL y `/blog/errores-google-search-console-seo/`. **No creamos URL nueva:** inyectamos el tutorial práctico `'Cómo usar Google Search Console paso a paso para verificar e indexar tu web'` (incluyendo `Inspección de URLs`, `Solicitar indexación`, `Sitemaps`) como nueva Sección `<h2>` y FAQs dentro de esta guía, enlazando además a la nueva guía de Bing/IndexNow del día.
+   - **Cirugía exacta para Paso 3:**
+     - Acortar `<h1>` de 84c a **59c**: `Por Qué Mi Página Web No Aparece en Google y Cómo Indexarla`
+     - Ampliar de 4 a **6 FAQs con paridad 6/6** + `dateModified: 2026-11-28T09:30:00-03:00`.
+
+#### B. Paso 2 — Outline Maestro de Artículo Nuevo SEO, Bing & ChatGPT (`0%` Canibalización · `10` Sugerencias Reales en Google AR)
+> **Por qué reemplaza a Eventos GA4:** `google analytics 4 eventos de conversion` dio `0` sugerencias exactas en Google AR y `56%` de solapamiento directo con nuestra guía existente `/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/`. En cambio, **`Bing Webmaster Tools e IndexNow`** arroja **`10` sugerencias reales en Google AR**, **`0%` canibalización real**, resuelve un vacío casi total en español argentino y conecta directo con **ChatGPT Search y Microsoft Copilot** (que consumen el índice de Bing y ya nos traen visitas con 100% de engagement en GA4).
+
+- **Main Keyword:** `Bing Webmaster Tools e IndexNow`
+- **Slug (Regla #18 — 5 palabras limpias):** `/blog/bing-webmaster-tools-indexnow-chatgpt/`
+- **`<title>` (57 caracteres):** `Bing Webmaster Tools e IndexNow: Aparecer en Bing y ChatGPT`
+- **`<h1>` (63 caracteres — Regla #5):** `Bing Webmaster Tools e IndexNow: Cómo Aparecer en Bing y ChatGPT`
+- **`meta description` (150 caracteres):** `Cómo configurar Bing Webmaster Tools e IndexNow en tu web paso a paso: verificá tu dominio desde Search Console, indexá rápido y salí citado en ChatGPT.`
+- **Direct Answer Sturm (Primeras 5–10 palabras con Main Keyword exacta):**
+  > **Configurar Bing Webmaster Tools e IndexNow** te permite importar tu dominio en dos clics desde Google Search Console, notificar cada página nueva al instante sin esperar semanas de rastreo y habilitar que tu negocio aparezca tanto en Bing y Copilot como en las respuestas web de ChatGPT Search.
+- **Categoría real en `blog/index.html` (Regla #24):** `seo` (*Auditoría SEO, Velocidad e IA*)
+- **Preguntas IA / Query Fan-Out a responder en el cuerpo (`10` sugerencias AR: `bing webmaster tools`, `bing webmaster tools tutorial`, `bing webmaster tools indexnow`, `como aparecer en bing`):**
+  1. *"¿Para qué sirve Bing Webmaster Tools en Argentina si casi todos usan Google?"* (Respuesta GEO: Bing alimenta el índice de búsqueda web de ChatGPT Search, Microsoft Copilot, DuckDuckGo y Yahoo).
+  2. *"¿Cómo verificar mi sitio web en Bing Webmaster Tools importando directamente desde Google Search Console?"*
+  3. *"¿Qué es el protocolo IndexNow, cómo se valida el archivo `.txt` de clave en la raíz y por qué un archivo mal nombrado genera errores 4xx?"*
+  4. *"¿Cómo evitar errores de rastreo 4xx/301 en Bing Webmaster Tools y enviar el sitemap XML correctamente?"*
+- **Imagen Editorial (`1200x675`, PIL `< 450 KB`, dual-sync):** `guia_bing_webmaster_tools_indexnow_chatgpt.png` (Consultor SEO en estudio moderno de Argentina con monitor mostrando panel limpio de indexación y estado verde junto a celular abierto con búsqueda de marca en asistente de IA; pastilla `"BING, INDEXNOW & IA"` y sello `erikwebsite.com`).
+- **Estructura de Subtítulos `<h2>`:**
+  1. `<h2>1. Por qué Bing Webmaster Tools importa hoy en Argentina: el puente directo hacia ChatGPT Search</h2>`
+  2. `<h2>2. Cómo dar de alta tu web en Bing Webmaster Tools en 2 minutos (importando desde Search Console)</h2>`
+  3. `<h2>3. Qué es IndexNow y cómo configurarlo sin generar errores 404 en el rastreo</h2>` *(Tabla comparativa HTML: rastreo tradicional lento vs. Google Indexing API vs. protocolo abierto IndexNow)*
+  4. `<h2>4. Cómo leer Crawl Stats, Sitemaps y corregir errores 4xx para multiplicar tus páginas indexadas</h2>`
+- **Interlinking Verificado (Regla #19):** `/blog/archivo-llms-txt-seo-ia/`, `/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/`, `/blog/robots-txt-sitemap-xml-seo/`, `/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/`, `/auditoria-seo/`.
+- **6 FAQs Interactivas (Paridad exacta 6/6):**
+  1. `¿Vale la pena configurar Bing Webmaster Tools si mi negocio solo vende en Argentina?`
+  2. `¿Es verdad que aparecer en el índice de Bing ayuda a que ChatGPT recomiende mi página web?`
+  3. `¿Cómo puedo verificar mi sitio en Bing Webmaster Tools sin tocar registros DNS ni código?`
+  4. `¿Qué es IndexNow y qué pasa si subo mal el archivo de texto de verificación en mi servidor?`
+  5. `¿Puedo usar Bing Webmaster Tools y Google Search Console al mismo tiempo sin perjudicar mi SEO?`
+  6. `¿Por qué Bing tarda en indexar todas las URLs de mi sitemap aunque no tenga errores técnicos?`
+
+---
+
+## 6. Próximo Comando Dominical Programado (Domingo 29 de Noviembre de 2026)
+- **Ejecución de Auditoría Integral (Semana 4):** Correr `python scratch/sunday_seo_command.py` para contrastar la evolución desde los `7.055` impr (28d) / `3.587` impr (7d) / `52` Striking Distance / `19` páginas en Bing / `3` usuarios `AI Assistant` registrados el **22/11/2026**.
+- **Evaluación Post-Bloque 0 y Post-Maduración 14 Días (Publicado 12–14/11 -> Madura 26–28/11):**
+  1. Confirmar `0` botones WhatsApp muertos, `0` errores `Code4xx` en Bing (tras corregir `INDEXNOW_KEY` y `public/_redirects` HTTP 301), `0` doble conteo en Meta Pixel y caída de peso en las 86 imágenes cuantizadas.
+  2. Auditar **`/blog/seo-on-page-checklist-optimizacion/`** (`225` impr, Pos `6.7`, cumple 14 días el **26/11**) y **`/blog/presupuesto-diseno-web-argentina/`** (`122` impr, Pos `29.9`, cumple 14 días el **27/11**) como candidatos #1 de Boost en Semana 4.
+  3. Planificar la **optimización estructural de `blog/index.html`** (hoy en `571 KB` / 186 tarjetas en DOM) con paginación o carga por lotes para proteger los Core Web Vitals.
+  4. Revisar avance del frente **Off-Page** (ficha Google Business Profile de Erik Website en San Juan + enlaces `"Desarrollado por Erik Website"` en webs de clientes + perfiles de autoridad) para destrabar `/san-juan/`, `/auditoria-seo/` y el salto de Pos 6–15 al Top 1–3.
