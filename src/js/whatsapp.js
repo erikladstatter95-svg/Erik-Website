@@ -115,13 +115,16 @@ export function trackWhatsAppConversion(element, customMsg = '') {
 }
 
 export function initWhatsAppButtons(defaultPhone = DEFAULT_PORTFOLIO_PHONE) {
-  const buttons = document.querySelectorAll('[data-wa-msg]');
+  const buttons = document.querySelectorAll('[data-wa-msg], [data-wa-lead]');
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const phone = btn.getAttribute('data-wa-phone') || defaultPhone;
-      let msg = btn.getAttribute('data-wa-msg') || 'Hola! Me gustaría solicitar más información.';
+      let msg =
+        btn.getAttribute('data-wa-msg') ||
+        btn.getAttribute('data-wa-text') ||
+        'Hola! Me gustaría solicitar más información.';
 
       const service = btn.getAttribute('data-wa-service');
       if (service) {

@@ -218,19 +218,6 @@
     fbq('init', '1143177121539028');
     if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
 
-    // Listener global para capturar únicamente clics reales a WhatsApp
-    document.addEventListener('click', function(e) {
-      var target = e.target.closest('a, button');
-      if (!target) return;
-      var href = target.getAttribute('href') || '';
-      var hasWa = target.hasAttribute('data-wa-msg');
-      if (hasWa || href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
-          window.fbq('trackCustom', 'Whatsapp', { content_name: 'WhatsApp Click' });
-        }
-      }
-    }, true);
   </script>
   <!-- End Meta Pixel Code -->
 </head>

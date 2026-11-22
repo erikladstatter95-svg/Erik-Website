@@ -155,7 +155,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 | **GA4 `generate_lead` & `whatsapp_click` (7d)** | `4` conv. (`3` u.) | **`4` `generate_lead` + `4` `whatsapp_click` (`3` u.)** | **Leads en `/demos/contable/`, `/demos/estudio-fitness/`, `/demos/vajilla/`** |
 | **GA4 `view_demo` / `article_read_75` (7d)** | `18` lecturas (`7` u.) | **`8` `view_demo` (`4` u.) · `12` `article_read_75` (`9` u.)** | **+28,6% usuarios con lectura profunda >75%** |
 | **Backlinks Externos (`InLinks` Bing / Referrals GA4)** | `0` en Bing | **`0` en Bing (`uaqtours.com.ar` 5 ses., `3dmon.shop` 2 ses.)** | **Cuello de botella #1 para saltar de Pos 6–15 al Top 1–3** |
-| **SerpBear Local (`database.sqlite`)** | `0` rastreadas | **Base local inexistente (`False`)** | **Retirar del reporte dominical o instalar instancia** |
+| **SerpBear Local (`C:\Users\erikl\.gemini\tools\serpbear`)** | `0` (ruta mal configurada) | **`748` keywords sincronizadas (`erikwebsite.com`)** | **Corregida ruta en `sunday_seo_command.py` + detectadas 29 canibalizaciones reales en GSC** |
 
 #### B. Radiografía Forense de Fallos Críticos Detectados en Todo el Sitio (22/11/2026)
 1. **BUG CRÍTICO DE CONVERSIÓN (Botones WhatsApp 100% MUERTOS + Teléfono Erróneo):** `src/js/whatsapp.js` solo escucha `[data-wa-msg]` y `<a href*="wa.me">`. Sin embargo, **`/blog/como-poner-agregar-negocio-local-google-maps-gratis/`** (`101` impr, Pos `10.0`!) y **`/blog/parametros-utm-google-analytics-4-maps/`** usan `<button data-wa-lead ...>` sin manejador de clic (el usuario hace clic y NO pasa nada). Además, el CTA final de la guía de Google Maps tenía un teléfono erróneo (`5492644869263` en vez de `5492645185359`).
@@ -728,7 +728,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Bloque 0 — Saneamiento Técnico de Emergencia (Ejecutar Primero — Impacto Directo en Conversiones, UX, Bing y Core Web Vitals)
+### [x] Bloque 0 — Saneamiento Técnico de Emergencia (COMPLETADO 22/11/2026 — 0 Defectos en Todo el Sitio)
 
 1. **Reparar botones de WhatsApp MUERTOS (`data-wa-lead`) y teléfono erróneo (`5492644869263` -> `5492645185359`):**
    - Corregir `blog/como-poner-agregar-negocio-local-google-maps-gratis/index.html` (2 botones muertos + teléfono `5492644869263` erróneo) y `blog/parametros-utm-google-analytics-4-maps/index.html` (2 botones muertos) para usar `data-wa-msg` y `data-wa-phone="5492645185359"`.

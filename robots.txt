@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-# Excluir taxonomías o parámetros dinámicos si se usan
+# Excluir propuestas privadas a clientes y taxonomías dinámicas
+Disallow: /propuestas/
 Disallow: /tags/
 Disallow: /categorias/
 

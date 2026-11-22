@@ -1,0 +1,34 @@
+# Redirecciones HTTP 301 reales (Cloudflare Pages) - Generado desde stubs legacy
+# Evita canibalizacion con meta-refresh HTTP 200 y transfiere autoridad SEO
+
+/blog/diseno-web-bariloche-comodoro-rivadavia-patagonia /blog/diseno-web-bariloche/ 301
+/blog/diseno-web-bariloche-comodoro-rivadavia-patagonia/ /blog/diseno-web-bariloche/ 301
+/blog/diseno-web-mar-del-plata-la-plata-bahia-blanca /blog/diseno-web-mar-del-plata/ 301
+/blog/diseno-web-mar-del-plata-la-plata-bahia-blanca/ /blog/diseno-web-mar-del-plata/ 301
+/blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia /blog/diseno-web-posadas-misiones/ 301
+/blog/diseno-web-misiones-corrientes-chaco-posadas-resistencia/ /blog/diseno-web-posadas-misiones/ 301
+/blog/diseno-web-puerto-madryn-trelew /blog/diseno-web-puerto-madryn/ 301
+/blog/diseno-web-puerto-madryn-trelew/ /blog/diseno-web-puerto-madryn/ 301
+/blog/diseno-web-rafaela-venado-tuerto /blog/diseno-web-rafaela/ 301
+/blog/diseno-web-rafaela-venado-tuerto/ /blog/diseno-web-rafaela/ 301
+/blog/diseno-web-rio-cuarto-villa-maria /blog/diseno-web-rio-cuarto/ 301
+/blog/diseno-web-rio-cuarto-villa-maria/ /blog/diseno-web-rio-cuarto/ 301
+/blog/diseno-web-rosario-santa-fe /blog/diseno-web-rosario/ 301
+/blog/diseno-web-rosario-santa-fe/ /blog/diseno-web-rosario/ 301
+/blog/diseno-web-salta-jujuy /blog/diseno-web-salta/ 301
+/blog/diseno-web-salta-jujuy/ /blog/diseno-web-salta/ 301
+/blog/diseno-web-zona-norte-tigre-nordelta-vicente-lopez /blog/diseno-web-zona-norte/ 301
+/blog/diseno-web-zona-norte-tigre-nordelta-vicente-lopez/ /blog/diseno-web-zona-norte/ 301
+/blog/diseno-web-zona-oeste-moron-ituzaingo-castelar-ramos-mejia /blog/diseno-web-zona-oeste/ 301
+/blog/diseno-web-zona-oeste-moron-ituzaingo-castelar-ramos-mejia/ /blog/diseno-web-zona-oeste/ 301
+/blog/tiendanube-linktree-vs-web-propia /blog/tiendanube-linktree-vs-web-propia-a-medida/ 301
+/blog/tiendanube-linktree-vs-web-propia/ /blog/tiendanube-linktree-vs-web-propia-a-medida/ 301
+/blog/wordpress-vs-codigo-a-medida /blog/wordpress-vs-codigo-a-medida-velocidad/ 301
+/blog/wordpress-vs-codigo-a-medida/ /blog/wordpress-vs-codigo-a-medida-velocidad/ 301
+/demos/inmobiliaria /demos/funnel/ 301
+/demos/inmobiliaria/ /demos/funnel/ 301
+/demos/taller /blog/paginas-web-talleres-mecanicos-lubricentros-argentina/ 301
+/demos/taller/ /blog/paginas-web-talleres-mecanicos-lubricentros-argentina/ 301
+/demos/veterinaria /blog/paginas-web-veterinarias-pet-shops-argentina/ 301
+/demos/veterinaria/ /blog/paginas-web-veterinarias-pet-shops-argentina/ 301
+/terminos.html /terminos/ 301

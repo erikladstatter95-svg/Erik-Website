@@ -1,7 +1,7 @@
 {
   "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
   "name": "Erik Website",
-  "description": "Desarrollo de páginas web profesionales y ultrarrápidas de alta conversión para comercios, profesionales y PyMEs en Argentina.",
+  "description": "Plataforma de ingeniería web de alta conversión, desarrollo a medida en código limpio y consultoría SEO técnica (AEO/GEO) en San Juan y toda Argentina.",
   "url": "https://erikwebsite.com/",
   "provider": {
     "name": "Erik Ladstatter",
@@ -9,22 +9,52 @@
   },
   "resources": [
     {
-      "name": "Servicio de Diseño Web Pro",
+      "name": "Servicio de Diseño Web y Landings Modo Funnel",
       "type": "service",
       "url": "https://erikwebsite.com/",
-      "description": "Sitios web rápidos con botón directo a WhatsApp y optimización de Google Maps por $150.000 ARS."
+      "description": "Sitios web ultrarrápidos (< 1s) con botón directo a WhatsApp, Google Maps y medición GA4 por $150.000 ARS finales (pago único)."
     },
     {
-      "name": "Diseño Web en San Juan",
+      "name": "Auditoría SEO Técnica, Velocidad Core Web Vitals y Posicionamiento",
+      "type": "service",
+      "url": "https://erikwebsite.com/auditoria-seo/",
+      "description": "Auditoría SEO técnica llave en mano (Done-For-You) para sitios existentes en WordPress, Tiendanube, Wix, Shopify o código propio."
+    },
+    {
+      "name": "Diseño Web y Consultor SEO en San Juan",
       "type": "service",
       "url": "https://erikwebsite.com/san-juan/",
-      "description": "Desarrollo local en San Juan Capital, Rivadavia, Santa Lucía y Rawson."
+      "description": "Desarrollo web y posicionamiento en Google Maps para comercios, empresas y profesionales en San Juan Capital, Rivadavia, Santa Lucía y Rawson."
     },
     {
-      "name": "Blog y Guías de Presencia Digital",
+      "name": "International Web Design Services (USD)",
+      "type": "service",
+      "url": "https://erikwebsite.com/en/",
+      "description": "Custom sub-1s landing pages and conversion-focused web development for international clients ($199 USD one-time setup)."
+    },
+    {
+      "name": "Demo Interactiva: Arquitectura, Reformas y Consorcios (Vértice)",
+      "type": "demo",
+      "url": "https://erikwebsite.com/demos/arquitectura/",
+      "description": "Portfolio filtrable, comparador antes/después y cotizador de obra por m2 conectado a WhatsApp."
+    },
+    {
+      "name": "Demo Interactiva: Estudio Contable e Impositivo",
+      "type": "demo",
+      "url": "https://erikwebsite.com/demos/contable/",
+      "description": "Estética editorial moderna con diagnóstico fiscal interactivo para PyMEs y monotributistas."
+    },
+    {
+      "name": "Demo Interactiva: Página Modo Funnel con Order Bump",
+      "type": "demo",
+      "url": "https://erikwebsite.com/demos/funnel/",
+      "description": "Landing de oferta única para cursos online, ebooks y mentorías en pesos argentinos sin comisiones de plataformas extranjeras."
+    },
+    {
+      "name": "Blog y Guías de Diseño Web, Google Maps y SEO (186 Guías)",
       "type": "documentation",
       "url": "https://erikwebsite.com/blog/",
-      "description": "Artículos informativos sobre costos de páginas web en Argentina, Google Maps y conversión a WhatsApp."
+      "description": "186 guías prácticas sobre precios web en Argentina, Google Maps, dominios NIC.ar, correo corporativo, analítica GA4 y posicionamiento SEO/IA."
     }
   ]
 }
