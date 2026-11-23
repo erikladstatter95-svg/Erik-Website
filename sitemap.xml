@@ -40,7 +40,7 @@
   <!-- Hub del Blog -->
   <url>
     <loc>https://erikwebsite.com/blog/</loc>
-    <lastmod>2026-11-21T09:30:00-03:00</lastmod>
+    <lastmod>2026-11-23T09:30:00-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -60,7 +60,7 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/catalogo-pdf-canva-vs-catalogo-web/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-23T09:30:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -120,7 +120,7 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/crear-pagina-web-google-sites-sirve-para-negocio/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-23T09:30:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -728,7 +728,7 @@
   </url>
   <url>
     <loc>https://erikwebsite.com/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-23T09:30:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -1245,6 +1245,12 @@
   <url>
     <loc>https://erikwebsite.com/blog/parametros-utm-google-analytics-4-maps/</loc>
     <lastmod>2026-11-21T09:30:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/</loc>
+    <lastmod>2026-11-23T09:30:00-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

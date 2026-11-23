@@ -748,7 +748,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Lunes 23/11 — Eje Diseño Web y Conversión (Boost Google Sites + Boost Catálogo Canva + Nuevo Artículo WordPress Hackeado)
+### [x] Lunes 23/11 — Eje Diseño Web y Conversión (Boost Google Sites + Boost Catálogo Canva + Nuevo Artículo WordPress Hackeado)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Comparativas Maduras (>25 días en GSC)
 1. **Boost 1 (`/blog/crear-pagina-web-google-sites-sirve-para-negocio/` — `66` impr en GSC, 4 queries en Página 1 Pos `5.0–8.0`, 28 días de antigüedad):**

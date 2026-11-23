@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1143177121539028');
+  if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordPress Hackeado: Cómo Limpiarlo o Migrar a Web Segura</title>
+  <meta name="description" content="¿Tu WordPress fue hackeado con virus, redirecciones a casinos o alerta roja de Google? Paso a paso para limpiarlo o migrar a una web estática segura.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Erik Ladstatter">
+  <meta name="geo.region" content="AR">
+  <link rel="canonical" href="https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#059669">
+
+  <!-- Open Graph / WhatsApp / Redes Sociales -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WordPress Hackeado: Cómo Limpiarlo o Migrar a Web Segura">
+  <meta property="og:description" content="¿Tu WordPress fue hackeado con virus, redirecciones a casinos o alerta roja de Google? Paso a paso para limpiarlo o migrar a una web estática segura.">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_wordpress_hackeado_limpiar_migrar_seguro.png">
+  <meta property="og:url" content="https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WordPress Hackeado: Cómo Limpiarlo o Migrar a Web Segura">
+  <meta name="twitter:description" content="¿Tu WordPress fue hackeado con virus, redirecciones a casinos o alerta roja de Google? Paso a paso para limpiarlo o migrar a una web estática segura.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_wordpress_hackeado_limpiar_migrar_seguro.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- JSON-LD Structured Data: BlogPosting + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "WordPress Hackeado: Cómo Recuperarlo o Migrar a Código Blindado",
+      "description": "¿Tu WordPress fue hackeado con virus, redirecciones a casinos o alerta roja de Google? Paso a paso para limpiarlo o migrar a una web estática segura.",
+      "image": "https://erikwebsite.com/images/guia_wordpress_hackeado_limpiar_migrar_seguro.png",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/favicon.svg"
+        }
+      },
+      "datePublished": "2026-11-23T09:30:00-03:00",
+      "dateModified": "2026-11-23T09:30:00-03:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog y Recursos",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WordPress Hackeado: Limpiar o Migrar",
+          "item": "https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo me doy cuenta si mi página en WordPress está hackeada con malware o spam japonés?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Buscá site:tudominio.com.ar en Google. Si ves títulos en japonés o chino vendiendo zapatillas, casinos o medicamentos que no existen en tu web, o si al entrar desde el celular te redirige a páginas externas, tu WordPress tiene malware inyectado en wp-config.php o en la base de datos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Si cambio la contraseña de WordPress se elimina el virus automáticamente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cambiar solo la clave de wp-admin no borra las puertas traseras (backdoors) que los bots dejaron en archivos PHP del servidor o dentro de carpetas ocultas de plugins. Para recuperar un WordPress hackeado hay que limpiar archivos de núcleo, revisar la base de datos y recién después rotar todas las claves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué mi web redirige a páginas de apuestas o anuncios solo cuando entran desde Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Esa técnica se llama cloaking condicional: el script malicioso detecta si la visita viene de Google o de un teléfono nuevo y la desvía hacia enlaces de afiliados o apuestas, mientras que al dueño del sitio (que ya tiene cookies guardadas o entra directo) le muestra la página normal para tardar semanas en ser descubierto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo elimino la pantalla roja de sitio peligroso de Google Chrome después de limpiar la web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una vez eliminado todo el código malicioso y las URLs infectadas, entrá a Google Search Console, abrí la pestaña Seguridad y acciones manuales > Problemas de seguridad, marcá que corregiste las incidencias y enviá la solicitud de revisión. Google suele retirar la pantalla roja en 24 a 72 horas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Una página web hecha en código estático a medida (HTML, Tailwind y JS) puede sufrir los mismos hackeos de WordPress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Las páginas estáticas modernas no tienen base de datos MySQL, ni panel /wp-admin público, ni decenas de plugins de terceros en PHP. Al desplegarse como archivos estáticos en Cloudflare con HTTPS estricto, se elimina prácticamente el 100% de la superficie de ataque automática que sufren los sitios WordPress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta migrar un WordPress hackeado a una página web nueva y segura en Argentina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En Erik Website diseñamos y migramos tu Landing Page comercial a código estático blindado por $150.000 ARS finales (pago único, lista en 3 a 5 días hábiles), conservando tu dominio .com.ar, tus URLs clave y tu posicionamiento en Google Maps sin pagar alquileres ni parches mensuales."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+
+<body class="bg-[#fafafa] text-neutral-900 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt="" /></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 left-0 right-0 z-50 bg-[#fafafa]/85 backdrop-blur-md border-b border-black/[0.06]">
+    <nav class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Navegación principal">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-display font-bold text-sm tracking-tight group-hover:scale-105 transition-transform">
+          EW
+        </div>
+        <span class="font-display font-bold text-base tracking-tight text-neutral-900">Erik<span class="text-emerald-600">Website</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-600">
+        <a href="/" class="hover:text-neutral-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="hover:text-emerald-500 transition-colors font-semibold text-emerald-500">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-neutral-900 transition-colors">San Juan</a>
+        <a href="/blog/" class="text-emerald-600 font-semibold">Blog</a>
+      </div>
+
+      <button data-wa-phone="5492645185359"
+              data-wa-msg="Hola Erik, mi WordPress fue hackeado o tiene alertas de seguridad y quiero consultar para recuperarlo o migrar a código blindado."
+              class="inline-flex items-center gap-2 text-xs font-semibold text-white bg-neutral-900 hover:bg-emerald-600 px-4 py-2 rounded-lg transition-all cursor-pointer">
+        <span>Consultar por WhatsApp</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="pt-14 sm:pt-20 pb-20">
+    <article class="max-w-3xl mx-auto px-5">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="mb-6 text-xs text-neutral-500 flex items-center gap-2 flex-wrap">
+        <a href="/" class="hover:text-emerald-600 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-emerald-600 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-neutral-800 font-medium">WordPress Hackeado: Limpiar o Migrar</span>
+      </nav>
+
+      <!-- Meta Category & Reading Time -->
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+          Seguridad Web &amp; Migración
+        </span>
+        <span class="text-xs text-neutral-500">Por <strong>Erik Ladstatter</strong> · 23 de noviembre de 2026 · Lectura de 8 min</span>
+      </div>
+
+      <!-- H1 Title (63 characters) -->
+      <h1 class="font-display font-bold text-3xl sm:text-5xl text-neutral-900 tracking-tight leading-[1.12] mb-6">
+        WordPress Hackeado: Cómo Recuperarlo o Migrar a Código Blindado
+      </h1>
+
+      <!-- Direct Answer Box (AEO / GEO Optimized - Edward Sturm Standard) -->
+      <div class="bg-emerald-50/70 border-l-4 border-emerald-600 rounded-r-2xl p-5 sm:p-6 mb-8">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1.5">
+          Respuesta directa
+        </p>
+        <p class="text-neutral-800 text-base leading-relaxed font-normal">
+          <strong>Si tu WordPress fue hackeado</strong> y redirige a páginas de spam, muestra texto en japonés en Google o activa el cartel rojo de sitio engañoso, primero cambiá contraseñas del hosting y eliminá plugins desactualizados, y evaluá si conviene pagar limpieza recurrente o migrar a código estático a medida sin base de datos ni vulnerabilidades.
+        </p>
+      </div>
+
+      <!-- Featured Image -->
+      <figure class="mb-10 rounded-2xl overflow-hidden border border-black/[0.08] shadow-md bg-neutral-100">
+        <img src="/images/guia_wordpress_hackeado_limpiar_migrar_seguro.png"
+             alt="Especialista web analizando alerta de seguridad en WordPress hackeado y migración a sitio estático blindado"
+             class="w-full h-auto object-cover"
+             width="1200" height="675"
+             loading="eager">
+        <figcaption class="px-4 py-3 text-xs text-neutral-500 bg-white border-t border-black/[0.05]">
+          Pasar de un WordPress vulnerable lleno de plugins a una arquitectura estática elimina el riesgo de inyecciones SQL, spam japonés y caídas en campañas de anuncios.
+        </figcaption>
+      </figure>
+
+      <!-- Article Body -->
+      <div class="prose prose-neutral max-w-none space-y-8 text-neutral-700 leading-relaxed text-base sm:text-lg">
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            1. Las 5 señales de que tu WordPress fue hackeado (incluso si todavía carga)
+          </h2>
+          <p class="mb-4">
+            La mayoría de los dueños de PyMEs en Argentina descubren que su sitio <strong>WordPress fue hackeado</strong> cuando ya perdieron ventas o cuando un cliente les manda captura del teléfono avisando que el enlace abre una página de apuestas. Los ataques modernos no tiran la portada abajo: actúan en silencio mediante <em>cloaking</em> para seguir robando tráfico de Google durante semanas.
+          </p>
+          <ul class="list-disc pl-6 space-y-2.5 text-neutral-700 mb-4">
+            <li><strong>1. Resultados en japonés o casino en Google (<code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">site:tudominio.com.ar</code>):</strong> Si hacés esa búsqueda y aparecen cientos de páginas raras con caracteres asiáticos, pastillas o productos falsos que jamás cargaste, tenés el clásico hackeo <em>Japanese Keyword Hack</em>.</li>
+            <li><strong>2. Redirecciones solo desde celulares o desde Google:</strong> El virus verifica si entrás desde el buscador en un teléfono nuevo y te manda a enlaces publicitarios, pero si vos abrís tu web escribiendo la URL directa en la compu de tu oficina, la ves normal.</li>
+            <li><strong>3. Usuarios administradores fantasma o plugins desconocidos:</strong> Al entrar a <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">/wp-admin</code> ves cuentas de administrador creadas sin tu permiso o plugins que nadie instaló.</li>
+            <li><strong>4. Pantalla roja de Google Chrome ("Sitio engañoso"):</strong> Google detectó malware activo y bloqueó el acceso antes de mostrar tu página. Además Meta Ads y Google Ads rechazan automáticamente tus campañas.</li>
+            <li><strong>5. Consumo del 100% de CPU en tu hosting (Ferozo / cPanel / Hostinger):</strong> Scripts PHP ocultos envían miles de correos spam desde tu servidor, haciendo que la web tarde 15 segundos en abrir o que te suspendan la cuenta.</li>
+          </ul>
+          <p>
+            Si sospechás que Chrome o el buscador ya bloquearon tu dominio, revisá también nuestra guía sobre <a href="/blog/como-saber-si-mi-pagina-web-esta-penalizada-google/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">cómo saber si tu página web está penalizada o marcada como insegura por Google</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            2. Paso a paso para contener el daño y limpiar un WordPress infectado sin perder el dominio
+          </h2>
+          <p class="mb-4">
+            ¿Por qué hackean tan seguido las páginas WordPress de comercios y profesionales en Argentina? En el 90% de los casos la puerta de entrada es un <strong>plugin desactualizado</strong> (como Elementor, Contact Form 7 o constructores visuales viejos), una plantilla pirata (<em>nulled</em>) bajada con código malicioso oculto, o contraseñas débiles en <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-login.php</code>.
+          </p>
+          <p class="mb-4">
+            Si necesitás <strong>limpiar tu WordPress hackeado</strong> de inmediato antes de decidir una migración definitiva, seguí este orden estricto (no sirve solo cambiar la clave de WordPress si el archivo infectado sigue en el servidor):
+          </p>
+
+          <div class="space-y-4 my-6">
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 1: Cambiá las contraseñas del hosting, FTP, base de datos y WordPress</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Entrá al panel de tu hosting (cPanel, Ferozo o hPanel), cambiá la contraseña principal del panel, la de la base de datos MySQL y regenerá las claves de seguridad (<em>Salts</em>) en <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-config.php</code> para expulsar sesiones abiertas.
+              </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 2: Reemplazá los archivos del núcleo (<code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-admin</code> y <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-includes</code>)</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Descargá una copia oficial limpia desde wordpress.org y sobrescribí esas dos carpetas por completo. Revisá también la carpeta <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-content/uploads/</code> buscando archivos <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">.php</code> escondidos donde solo debería haber fotos.
+              </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 3: Eliminá plugins obsoletos y usuarios administradores extra</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Borrá cualquier plugin que no uses o que haya sido abandonado por su autor, eliminá usuarios administrativos sospechosos y corré un escáner de integridad (como Wordfence) para detectar código ofuscado en <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">functions.php</code> o <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">.htaccess</code>.
+              </p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-black/[0.07] shadow-xs">
+              <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Paso 4: Verificá tu SSL y que no haya backdoors en tareas Cron</h3>
+              <p class="text-sm text-neutral-600 leading-relaxed">
+                Revisá las tareas programadas del hosting (Cron Jobs) por si el atacante dejó un comando automático que vuelve a descargar el virus cada madrugada, y comprobá que tu <a href="/blog/seguridad-web-certificados-ssl-https/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">certificado SSL HTTPS</a> cargue sin contenido mixto.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            3. Cómo sacar el aviso rojo de Google Safe Browsing desde Google Search Console
+          </h2>
+          <p class="mb-4">
+            Aunque hayas borrado hasta la última línea del virus en el servidor, Chrome no quita el cartel rojo solo: tenés que avisarle manualmente a Google que el peligro desapareció.
+          </p>
+          <ol class="list-decimal pl-6 space-y-2.5 text-neutral-700 mb-4">
+            <li>Ingresá a <strong>Google Search Console</strong> con la propiedad verificada de tu dominio.</li>
+            <li>En el menú izquierdo abrí <strong>Seguridad y acciones manuales &gt; Problemas de seguridad</strong>.</li>
+            <li>Verificá los ejemplos de URLs o inyecciones de código que Google detectó y confirmá que ya responden con código limpio o con error 404/410 si eran URLs falsas del spam.</li>
+            <li>Marcá la casilla <strong>"Solucioné todos los problemas"</strong> y hacé clic en <strong>Solicitar revisión</strong> explicando brevemente qué archivos limpiaste o que migraste a una arquitectura estática nueva.</li>
+          </ol>
+          <p>
+            Si además necesitás cambiar de servidor o reconstruir tus URLs sin perder el posicionamiento que ya tenías, seguí el protocolo exacto en nuestra guía para <a href="/blog/migrar-wordpress-otro-hosting-o-codigo-limpio/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">migrar WordPress a otro hosting o a código limpio sin perder SEO</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">
+            4. Limpiar WordPress vs. Migrar a Código Estático Blindado: costos reales en Argentina 2026
+          </h2>
+          <p class="mb-4">
+            Acá es donde muchos comerciantes toman la decisión equivocada: pagan $80.000 o $120.000 ARS a un programador para que "limpie" el WordPress infectado, pero siguen usando la misma plantilla pesada con 25 plugins y base de datos expuesta. Tres meses después, un nuevo agujero de seguridad en un plugin vuelve a infectar la web.
+          </p>
+          <p class="mb-4">
+            Si tu sitio es una web de servicios, catálogo o landing comercial (y no un diario con 5.000 notas diarias ni un portal autoadministrable complejo), comparar <a href="/blog/wordpress-vs-codigo-a-medida-velocidad/" class="text-emerald-600 font-semibold underline hover:text-emerald-700">WordPress frente a código estático a medida</a> te muestra por qué migrar corta el problema de raíz:
+          </p>
+
+          <div class="overflow-x-auto rounded-2xl border border-neutral-200 shadow-xs my-6">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-neutral-900 text-white">
+                  <th class="p-4 font-display font-semibold">Factor Técnico y Costo</th>
+                  <th class="p-4 font-display font-semibold">Limpiar WordPress Actual</th>
+                  <th class="p-4 font-display font-semibold text-emerald-400">Migrar a Código Estático Blindado (Erik Website)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-neutral-200 bg-white">
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">Inversión en Argentina 2026</td>
+                  <td class="p-4 text-neutral-600">$80.000 a $180.000 ARS cada limpieza + hosting pago</td>
+                  <td class="p-4 text-emerald-700 font-semibold">$150.000 ARS finales (pago único, llave en mano)</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">Base de datos y panel /wp-admin</td>
+                  <td class="p-4 text-red-600 font-medium">Expuestos 24/7 a bots automáticos e inyección SQL</td>
+                  <td class="p-4 text-emerald-700 font-semibold">No existen (0% superficie de ataque WordPress)</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">Mantenimiento de seguridad</td>
+                  <td class="p-4 text-neutral-600">Obligatorio cada semana (actualizar plugins y PHP)</td>
+                  <td class="p-4 text-emerald-700 font-semibold">Sin parches obligatorios (1.º mes gratis, luego opcional)</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-semibold text-neutral-900">Velocidad en celulares (LCP)</td>
+                  <td class="p-4 text-neutral-600">3 a 6 segundos (plugins de seguridad frenan aún más)</td>
+                  <td class="p-4 text-emerald-700 font-semibold">Instantánea (menos de 1 segundo en 4G/5G)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- FAQ Section (6/6 Exact Parity with JSON-LD FAQPage) -->
+        <section class="pt-4">
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-neutral-900 mb-6">
+            Preguntas frecuentes sobre WordPress hackeado y migración segura
+          </h2>
+
+          <div class="space-y-4">
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cómo me doy cuenta si mi página en WordPress está hackeada con malware o spam japonés?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Buscá <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">site:tudominio.com.ar</code> en Google. Si ves títulos en japonés o chino vendiendo zapatillas, casinos o medicamentos que no existen en tu web, o si al entrar desde el celular te redirige a páginas externas, tu WordPress tiene malware inyectado en <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-config.php</code> o en la base de datos.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Si cambio la contraseña de WordPress se elimina el virus automáticamente?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                No. Cambiar solo la clave de <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">wp-admin</code> no borra las puertas traseras (backdoors) que los bots dejaron en archivos PHP del servidor o dentro de carpetas ocultas de plugins. Para recuperar un WordPress hackeado hay que limpiar archivos de núcleo, revisar la base de datos y recién después rotar todas las claves.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Por qué mi web redirige a páginas de apuestas o anuncios solo cuando entran desde Google?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Esa técnica se llama <em>cloaking</em> condicional: el script malicioso detecta si la visita viene de Google o de un teléfono nuevo y la desvía hacia enlaces de afiliados o apuestas, mientras que al dueño del sitio (que ya tiene cookies guardadas o entra directo) le muestra la página normal para tardar semanas en ser descubierto.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cómo elimino la pantalla roja de sitio peligroso de Google Chrome después de limpiar la web?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                Una vez eliminado todo el código malicioso y las URLs infectadas, entrá a Google Search Console, abrí la pestaña <strong>Seguridad y acciones manuales &gt; Problemas de seguridad</strong>, marcá que corregiste las incidencias y enviá la solicitud de revisión. Google suele retirar la pantalla roja en 24 a 72 horas.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Una página web hecha en código estático a medida (HTML, Tailwind y JS) puede sufrir los mismos hackeos de WordPress?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                No. Las páginas estáticas modernas no tienen base de datos MySQL, ni panel <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">/wp-admin</code> público, ni decenas de plugins de terceros en PHP. Al desplegarse como archivos estáticos en Cloudflare con HTTPS estricto, se elimina prácticamente el 100% de la superficie de ataque automática que sufren los sitios WordPress.
+              </p>
+            </details>
+
+            <details name="faq-accordion" class="group bg-white p-5 rounded-2xl border border-black/[0.07] transition-all">
+              <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                <span>¿Cuánto cuesta migrar un WordPress hackeado a una página web nueva y segura en Argentina?</span>
+                <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+              </summary>
+              <p class="text-sm text-neutral-600 leading-relaxed mt-3">
+                En Erik Website diseñamos y migramos tu Landing Page comercial a código estático blindado por <strong>$150.000 ARS finales (pago único, lista en 3 a 5 días hábiles)</strong>, conservando tu dominio <code class="text-xs bg-neutral-100 px-1.5 py-0.5 rounded">.com.ar</code>, tus URLs clave y tu posicionamiento en Google Maps sin pagar alquileres ni parches mensuales.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="bg-neutral-900 text-white rounded-3xl p-7 sm:p-10 mt-10 border border-emerald-500/20 shadow-xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">
+            Migración Blindada + Auditoría SEO de Seguridad
+          </span>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
+            ¿Tu WordPress fue hackeado o está lento y querés pasarlo a código limpio para siempre?
+          </h3>
+          <p class="text-neutral-300 text-sm sm:text-base mb-6 leading-relaxed">
+            Por <strong>$150.000 ARS finales (pago único)</strong> reconstruimos tu web en código estático ultrarrápido (sin plugins vulnerables ni base de datos), limpiamos las alertas en Google Search Console y te entregamos el sitio blindado en 3 a 5 días hábiles.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button data-wa-phone="5492645185359"
+                    data-wa-msg="Hola Erik, leí tu guía sobre WordPress hackeado y quiero consultar para migrar o auditar la seguridad de mi página web."
+                    class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-display font-bold text-sm px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-lg shadow-emerald-500/20">
+              <span>Consultar por WhatsApp</span>
+              <span>→</span>
+            </button>
+            <a href="/auditoria-seo/"
+               class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-display font-semibold text-sm px-5 py-3.5 rounded-xl transition-all">
+              <span>Ver Servicio de Auditoría SEO</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search &amp; AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER GLOBAL (2 NIVELES - MOBILE FIRST) -->
+  <footer class="bg-[#161617] text-neutral-400 py-10 border-t border-white/[0.08] text-xs overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div class="space-y-1">
+          <a href="/" class="font-display font-semibold text-white tracking-tight text-sm hover:text-emerald-400 transition-colors">
+            erikwebsite.com
+          </a>
+          <p class="text-neutral-400 text-xs">
+            Diseño web profesional, desarrollo a medida y SEO en Argentina.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página" class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2.5 text-xs">
+          <a href="/" class="text-neutral-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/auditoria-seo/" class="text-emerald-400 hover:text-emerald-300 font-medium transition-colors">Auditoría SEO</a>
+          <a href="/san-juan/" class="text-neutral-300 hover:text-white transition-colors">San Juan</a>
+          <a href="/blog/" class="text-neutral-300 hover:text-white transition-colors">Blog</a>
+          <a href="/terminos" class="text-neutral-400 hover:text-white transition-colors">Términos y Condiciones</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] text-neutral-500">
+        <p>© 2026 erikwebsite.com. Todos los derechos reservados.</p>
+        <p>San Juan, Argentina • Diseñado y optimizado para celulares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

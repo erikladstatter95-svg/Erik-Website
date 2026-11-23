@@ -254,6 +254,7 @@ export default defineConfig({
         blog_seo_odontologos_consultorios_dentales: resolve(__dirname, 'blog/seo-odontologos-consultorios-dentales/index.html'),
         blog_landing_page_vender_cursos_online: resolve(__dirname, 'blog/landing-page-vender-cursos-online/index.html'),
         blog_parametros_utm_google_analytics_4_maps: resolve(__dirname, 'blog/parametros-utm-google-analytics-4-maps/index.html'),
+        blog_wordpress_hackeado_limpiar_migrar_seguro: resolve(__dirname, 'blog/wordpress-hackeado-limpiar-migrar-seguro/index.html'),
         // Propuestas privadas a clientes (noindex)
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
         propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),
