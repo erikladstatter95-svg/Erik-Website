@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivo llms.txt para SEO e IA: Cómo Crearlo para ChatGPT</title>
+  <meta name="description" content="Qué es el archivo llms.txt para SEO e IA, cómo crearlo paso a paso en tu web y por qué ayuda a que ChatGPT, Perplexity y Gemini citen tus servicios.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Archivo llms.txt para SEO e IA: Cómo Crearlo para ChatGPT">
+  <meta property="og:description" content="Qué es el archivo llms.txt para SEO e IA, cómo crearlo paso a paso en tu web y por qué ayuda a que ChatGPT, Perplexity y Gemini citen tus servicios.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_archivo_llms_txt_seo_ia.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Archivo llms.txt para SEO e IA: Cómo Crearlo para ChatGPT">
+  <meta name="twitter:description" content="Qué es el archivo llms.txt para SEO e IA, cómo crearlo paso a paso en tu web y por qué ayuda a que ChatGPT, Perplexity y Gemini citen tus servicios.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_archivo_llms_txt_seo_ia.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/#article",
+      "headline": "Archivo llms.txt para SEO e IA: Guía para ChatGPT y Perplexity",
+      "description": "Qué es el archivo llms.txt para SEO e IA, cómo crearlo paso a paso en tu web y por qué ayuda a que ChatGPT, Perplexity y Gemini citen tus servicios.",
+      "inLanguage": "es-AR",
+      "mainEntityOfPage": "https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/",
+      "datePublished": "2026-11-24T09:30:00-03:00",
+      "dateModified": "2026-11-24T09:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/favicon.svg"
+        }
+      },
+      "image": "https://erikwebsite.com/images/guia_archivo_llms_txt_seo_ia.png",
+      "breadcrumb": {
+        "@id": "https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Archivo llms.txt para SEO e IA",
+          "item": "https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es exactamente el archivo llms.txt y dónde se coloca?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es un archivo de texto plano en formato Markdown ubicado en la raíz del dominio (por ejemplo, tudominio.com/llms.txt). Resume los servicios, precios y páginas clave de tu sitio para que los modelos de inteligencia artificial lo lean sin ruido de código HTML ni scripts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El archivo llms.txt reemplaza al robots.txt o al sitemap.xml?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cada archivo cumple un rol distinto: robots.txt indica qué rutas pueden rastrear los bots, sitemap.xml entrega el listado completo de URLs canónicas a Google y Bing, y llms.txt funciona como un mapa editorial curado en Markdown para asistentes de IA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sirve tener llms.txt en una PyME o estudio profesional en Argentina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Cuando un potencial cliente pregunta en ChatGPT o Perplexity por un proveedor en su ciudad, los modelos buscan fuentes claras con alcance, precios y datos de contacto verificables. Un llms.txt bien escrito reduce ambigüedades sobre qué hacés y dónde operás."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Google penaliza o exige tener un archivo llms.txt para rankear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google no exige ni penaliza por tener o no un llms.txt en el buscador tradicional. Es un estándar emergente de optimización para motores generativos (GEO/AEO) que complementa a Schema.org, el contenido bien estructurado y la velocidad de carga."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo hago si mi web está en Vite, Next.js o WordPress para servir /llms.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En proyectos con Vite o Astro se guarda en la carpeta public/llms.txt para que se copie a la raíz al compilar. En WordPress podés subirlo por FTP a public_html o servirlo mediante un plugin ligero o regla de servidor con cabecera text/plain y UTF-8."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué información nunca debe faltar dentro de llms.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un título H1 con el nombre de tu marca, una descripción breve en blockquote con tu propuesta de valor y ubicación geográfica, tus páginas principales de servicios con URLs absolutas, y enlaces a tus guías técnicas o preguntas clave."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20sobre%20llms.txt%20y%20quiero%20optimizar%20mi%20web%20para%20IA."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Archivo llms.txt para SEO e IA</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            AEO / GEO &amp; Inteligencia Artificial
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 24 de noviembre de 2026 · 7 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Archivo llms.txt para SEO e IA: Guía para ChatGPT y Perplexity
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            El <strong>archivo llms.txt para SEO e IA</strong> es un documento en formato Markdown ubicado en la raíz de tu dominio (<code>tudominio.com/llms.txt</code>) que resume tus servicios, precios y guías principales en texto limpio. Permite que ChatGPT, Perplexity y Gemini entiendan tu negocio en segundos sin procesar menús HTML, banners ni scripts de JavaScript.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_archivo_llms_txt_seo_ia.png"
+               alt="Especialista SEO estructurando archivo llms.txt en Markdown para posicionamiento en ChatGPT, Perplexity y Google AI"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Qué es el archivo llms.txt y por qué importa para el SEO en IA
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Cuando un usuario le pregunta a ChatGPT o Perplexity por un servicio específico en Argentina, los rastreadores de inteligencia artificial tienen un límite estricto de tiempo y ventana de contexto. Si tu web está armada con constructores pesados, popups y cientos de etiquetas <code>&lt;div&gt;</code> anidadas, el modelo gasta recursos filtrando ruido visual antes de llegar a tu propuesta comercial.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          La propuesta de <code>llms.txt</code> resuelve este cuello de botella ofreciendo un índice curado en Markdown plano. Al igual que explicamos en nuestra guía de <a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">SEO para Inteligencia Artificial en ChatGPT y Google AI</a>, cuanto más directa y verificable sea la arquitectura de datos de tu dominio, mayor es la probabilidad de que los asistentes generativos te citen como fuente de referencia.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Diferencias clave entre llms.txt, robots.txt y sitemap.xml
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Uno de los errores más frecuentes es pensar que crear un <code>llms.txt</code> reemplaza los archivos técnicos tradicionales del buscador. En realidad, los tres trabajan juntos como capas complementarias de tu infraestructura web:
+        </p>
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3.5">Archivo</th>
+                <th class="px-4 py-3.5">Formato</th>
+                <th class="px-4 py-3.5">Función Principal</th>
+                <th class="px-4 py-3.5 text-emerald-400">Quién lo lee</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900"><code>/robots.txt</code></td>
+                <td class="px-4 py-3.5">Texto plano (directivas)</td>
+                <td class="px-4 py-3.5">Autorizar o bloquear carpetas y bots</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Googlebot, Bingbot, OAI-SearchBot</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900"><code>/sitemap.xml</code></td>
+                <td class="px-4 py-3.5">XML estructurado</td>
+                <td class="px-4 py-3.5">Listar todas las URLs canónicas y fechas</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Motores de búsqueda tradicionales</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900"><code>/llms.txt</code></td>
+                <td class="px-4 py-3.5">Markdown curado</td>
+                <td class="px-4 py-3.5">Resumir entidad, oferta, precios y enlaces clave</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">LLMs, agentes de IA y herramientas RAG</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si todavía no auditaste tus permisos de rastreo ni tu mapa XML, revisá primero nuestra guía técnica sobre <a href="/blog/robots-txt-sitemap-xml-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">robots.txt y sitemap XML en SEO</a> para asegurarte de no estar bloqueando accidentalmente a los rastreadores.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Cómo crear y estructurar tu archivo llms.txt paso a paso
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          La especificación oficial sigue una jerarquía Markdown minimalista y fácil de mantener. Podés ver cómo lo implementamos en producción en <a href="/llms.txt" class="text-emerald-700 font-semibold underline hover:text-emerald-800">erikwebsite.com/llms.txt</a> y usar esta plantilla base adaptada para una empresa o estudio profesional en Argentina:
+        </p>
+        <pre class="bg-slate-900 text-slate-100 rounded-2xl p-5 text-xs sm:text-sm overflow-x-auto leading-relaxed border border-slate-800"><code># Nombre de tu Empresa o Estudio
+
+&gt; Descripción directa en una o dos oraciones: qué hacés, para quién trabajás, en qué ciudad o país operás y cuál es tu diferencial medible.
+
+## Servicios Principales
+- [Auditoría SEO y Posicionamiento GEO](https://tudominio.com/auditoria-seo/): Diagnóstico técnico, Core Web Vitals, Search Console y optimización para buscadores e IA.
+- [Servicio Principal B2B](https://tudominio.com/servicio-principal/): Alcance concreto, plazos de entrega y modalidad de contratación.
+
+## Datos Verificables y Contacto
+- Ubicación: San Juan y atención remota en toda Argentina
+- WhatsApp comercial: +54 9 264 518-5359
+- Mapa del Sitio Oficial: https://tudominio.com/sitemap.xml
+
+## Guías de Referencia
+- [Guía clave del sector](https://tudominio.com/blog/guia-clave/): Resumen en una línea de qué resuelve este artículo.</code></pre>
+        <ol class="list-decimal pl-6 space-y-2 text-slate-600">
+          <li><strong>Encabezado H1 único:</strong> colocá el nombre exacto de tu marca o razón social comercial.</li>
+          <li><strong>Cita en blockquote (<code>&gt;</code>):</strong> escribí un resumen concreto con tu ciudad, servicio y propuesta de valor sin adjetivos vacíos.</li>
+          <li><strong>Secciones H2 con enlaces Markdown:</strong> listá tus páginas comerciales y tus mejores guías con URLs absolutas <code>https://</code> y una descripción útil al lado de cada enlace.</li>
+          <li><strong>Ubicación en la raíz:</strong> subí el archivo como <code>llms.txt</code> en la carpeta raíz pública (<code>public/llms.txt</code> en Vite o <code>public_html/llms.txt</code> en hosting tradicional) con codificación UTF-8.</li>
+        </ol>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          4. Buenas prácticas, errores comunes y mantenimiento
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Para que tu <code>llms.txt</code> sume autoridad real y no quede desactualizado en dos semanas, combiná el archivo Markdown con datos estructurados en cada página (<a href="/blog/schema-markup-datos-estructurados-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">cómo implementar Schema Markup JSON-LD en SEO</a>) y evitá estas fallas habituales:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-600">
+          <li><strong>No hacer relleno de palabras clave:</strong> escribir listas interminables de sinónimos sin contexto empeora la comprensión semántica del modelo.</li>
+          <li><strong>No incluir URLs con redirecciones 301 o parámetros UTM:</strong> cada enlace dentro del archivo debe apuntar a la URL canónica exacta que figura en tu <code>sitemap.xml</code>.</li>
+          <li><strong>Sincronizar cada nuevo artículo o servicio:</strong> si publicás una nueva guía o modificás precios, actualizá también tu <code>llms.txt</code> en el mismo despliegue.</li>
+          <li><strong>Verificar la respuesta HTTP 200:</strong> comprobá abriendo <code>tudominio.com/llms.txt</code> en el navegador que devuelva texto plano limpio y no una página 404 personalizada en HTML.</li>
+        </ul>
+
+        <!-- CTA COMERCIAL -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-950 text-white border border-emerald-800 shadow-xl text-center">
+          <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">Especialista SEO &amp; GEO en Argentina</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display mt-2 mb-3">
+            ¿Querés que tu web aparezca recomendada en Google y en respuestas de IA?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Auditamos tu arquitectura técnica, implementamos Schema JSON-LD, archivo llms.txt, sitemaps y bloques citables para captar consultas reales en Google, ChatGPT y Perplexity.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20gu%C3%ADa%20sobre%20archivo%20llms.txt%20y%20quiero%20optimizar%20mi%20web%20para%20SEO%20e%20IA."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg text-center">
+              Consultar por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué es exactamente el archivo llms.txt y dónde se coloca?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Es un archivo de texto plano en formato Markdown ubicado en la raíz del dominio (por ejemplo, tudominio.com/llms.txt). Resume los servicios, precios y páginas clave de tu sitio para que los modelos de inteligencia artificial lo lean sin ruido de código HTML ni scripts.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿El archivo llms.txt reemplaza al robots.txt o al sitemap.xml?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">No. Cada archivo cumple un rol distinto: robots.txt indica qué rutas pueden rastrear los bots, sitemap.xml entrega el listado completo de URLs canónicas a Google y Bing, y llms.txt funciona como un mapa editorial curado en Markdown para asistentes de IA.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Sirve tener llms.txt en una PyME o estudio profesional en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. Cuando un potencial cliente pregunta en ChatGPT o Perplexity por un proveedor en su ciudad, los modelos buscan fuentes claras con alcance, precios y datos de contacto verificables. Un llms.txt bien escrito reduce ambigüedades sobre qué hacés y dónde operás.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Google penaliza o exige tener un archivo llms.txt para rankear?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Google no exige ni penaliza por tener o no un llms.txt en el buscador tradicional. Es un estándar emergente de optimización para motores generativos (GEO/AEO) que complementa a Schema.org, el contenido bien estructurado y la velocidad de carga.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo hago si mi web está en Vite, Next.js o WordPress para servir /llms.txt?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">En proyectos con Vite o Astro se guarda en la carpeta public/llms.txt para que se copie a la raíz al compilar. En WordPress podés subirlo por FTP a public_html o servirlo mediante un plugin ligero o regla de servidor con cabecera text/plain y UTF-8.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué información nunca debe faltar dentro de llms.txt?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Un título H1 con el nombre de tu marca, una descripción breve en blockquote con tu propuesta de valor y ubicación geográfica, tus páginas principales de servicios con URLs absolutas, y enlaces a tus guías técnicas o preguntas clave.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search &amp; AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <span class="font-display font-bold text-white text-base">Erik Website</span>
+        <p class="mt-2 text-slate-400">Desarrollo web de alta conversión y posicionamiento SEO estratégico en Argentina.</p>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Servicios SEO</span>
+        <ul class="space-y-1.5">
+          <li><a href="/auditoria-seo/" class="hover:text-emerald-400">Auditoría SEO Profesional</a></li>
+          <li><a href="/san-juan/" class="hover:text-emerald-400">Diseño Web en San Juan</a></li>
+          <li><a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/" class="hover:text-emerald-400">SEO para Inteligencia Artificial</a></li>
+          <li><a href="/blog/robots-txt-sitemap-xml-seo/" class="hover:text-emerald-400">Robots.txt y Sitemap XML</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Herramientas Gratuitas</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400">Generador QR WhatsApp</a></li>
+          <li><a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="hover:text-emerald-400">Instalar GA4 y Píxel</a></li>
+          <li><a href="/blog/schema-markup-datos-estructurados-seo/" class="hover:text-emerald-400">Schema Markup JSON-LD</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Contacto Directo</span>
+        <p class="text-slate-400 mb-2">San Juan, Argentina · Atención a todo el país</p>
+        <a href="https://wa.me/5492645185359" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Escribirme por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-slate-800 text-center text-slate-500">
+      <p>© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

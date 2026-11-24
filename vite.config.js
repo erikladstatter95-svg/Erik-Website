@@ -255,6 +255,7 @@ export default defineConfig({
         blog_landing_page_vender_cursos_online: resolve(__dirname, 'blog/landing-page-vender-cursos-online/index.html'),
         blog_parametros_utm_google_analytics_4_maps: resolve(__dirname, 'blog/parametros-utm-google-analytics-4-maps/index.html'),
         blog_wordpress_hackeado_limpiar_migrar_seguro: resolve(__dirname, 'blog/wordpress-hackeado-limpiar-migrar-seguro/index.html'),
+        blog_archivo_llms_txt_seo_ia: resolve(__dirname, 'blog/archivo-llms-txt-seo-ia/index.html'),
         // Propuestas privadas a clientes (noindex)
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
         propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),

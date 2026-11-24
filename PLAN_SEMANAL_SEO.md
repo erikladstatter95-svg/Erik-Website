@@ -798,7 +798,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Martes 24/11 — Eje Especialista SEO, Velocidad, Infraestructura e IA (Boost #1 Ferozo 175 Impr + Boost INPI vs NIC.ar + Nuevo Artículo `llms.txt`)
+### [x] Martes 24/11 — Eje Especialista SEO, Velocidad, Infraestructura e IA (Boost #1 Ferozo 175 Impr + Boost INPI vs NIC.ar + Nuevo Artículo `llms.txt`)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Páginas Maduras de Altísima Tracción
 1. **Boost 1 (`/blog/ferozo-webmail-roundcube-vs-gmail-outlook-corporativo/` — `175` impr en GSC [+130% en 3 días!], Pos `8.9`, 15 días de antigüedad):**
