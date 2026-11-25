@@ -55,5 +55,5 @@
 - WordPress Hackeado (Limpiar o Migrar a Código Blindado): https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/
 - Archivo llms.txt para SEO e IA (ChatGPT y Perplexity): https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/
 - Generador Gratuito de Link y QR de WhatsApp sin Caducidad: https://erikwebsite.com/blog/generador-link-qr-whatsapp-gratis/
-- Hub Completo del Blog (188 Guías): https://erikwebsite.com/blog/
+- Hub Completo del Blog (189 Guías): https://erikwebsite.com/blog/
 - Mapa del Sitio Oficial: https://erikwebsite.com/sitemap.xml

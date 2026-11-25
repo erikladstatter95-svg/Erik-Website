@@ -848,7 +848,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Miércoles 25/11 — Eje Diseño Web y Localidades (Boost Santa Fe + Boost La Rioja + Nuevo Artículo Avellaneda · Regla #16)
+### [x] Miércoles 25/11 — Eje Diseño Web y Localidades (Boost Santa Fe + Boost La Rioja + Nuevo Artículo Avellaneda · Regla #16)
 
 #### A. Paso 1 — Doble Cirugía / Boost Geográfico Maduro (Pre-validado en GSC)
 1. **Boost 1 (`/blog/diseno-web-santa-fe/` — `32` impr en GSC, 23 días de antigüedad):**
