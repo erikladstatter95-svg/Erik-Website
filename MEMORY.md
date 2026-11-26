@@ -821,6 +821,8 @@
 - [x] **2026-11-26 (Regla #31 — Honestidad SEO y Eliminación de Promesas de "Primer Lugar en Google"):**
   - **Regla #31 (Honestidad SEO):** Queda estrictamente prohibido prometer o afirmar en `og:description`, títulos, copys o artículos que "hacemos que tu página aparezca primera en Google" o "garantizamos el primer lugar". El posicionamiento orgánico depende del algoritmo de Google y la competencia; siempre debe comunicarse como **"posicionarte lo más alto posible / competir por los primeros lugares / escalar posiciones con ingeniería técnica"**.
   - Corregidos `auditoria-seo/index.html` (`og:description` y párrafo principal), `san-juan/index.html`, `blog/index.html`, `propuestas/alvarez-maldonado-abogados/` y `11` artículos del blog.
+- [x] **2026-11-26 (Activación IndexNow Oficial en Bing para `erikwebsite.com`):**
+  - Alojada la API Key oficial de Bing IndexNow (`361e05fea98a46139b7ba6e961b91cbf`) en `public/361e05fea98a46139b7ba6e961b91cbf.txt` y raíz, desplegada a `main` y validada vía `POST https://api.indexnow.org/indexnow` (`200 OK`).
 
 
 
