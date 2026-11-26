@@ -45,6 +45,7 @@
 - Auditoría de Velocidad Web y Core Web Vitals (LCP, INP y CLS): https://erikwebsite.com/blog/auditoria-velocidad-web-core-web-vitals-lcp-inp-google/
 - Por Qué Mi Página Web No Aparece en Google y Cómo Indexarla: https://erikwebsite.com/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/
 - SEO para Tiendanube y Tiendas Online en Argentina: https://erikwebsite.com/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/
+- SEO para Shopify en Argentina (Colecciones, Canónicas y Velocidad): https://erikwebsite.com/blog/seo-shopify-argentina/
 - Posicionamiento SEO en WordPress y Wix (¿Sirve Yoast SEO?): https://erikwebsite.com/blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/
 - SEO para Inmobiliarias y Desarrolladoras en Argentina: https://erikwebsite.com/blog/seo-para-inmobiliarias-desarrolladoras-argentina-google/
 - Cómo Instalar Google Analytics 4 (GA4) y Medir Clics a WhatsApp: https://erikwebsite.com/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/
@@ -55,5 +56,5 @@
 - WordPress Hackeado (Limpiar o Migrar a Código Blindado): https://erikwebsite.com/blog/wordpress-hackeado-limpiar-migrar-seguro/
 - Archivo llms.txt para SEO e IA (ChatGPT y Perplexity): https://erikwebsite.com/blog/archivo-llms-txt-seo-ia/
 - Generador Gratuito de Link y QR de WhatsApp sin Caducidad: https://erikwebsite.com/blog/generador-link-qr-whatsapp-gratis/
-- Hub Completo del Blog (189 Guías): https://erikwebsite.com/blog/
+- Hub Completo del Blog (190 Guías): https://erikwebsite.com/blog/
 - Mapa del Sitio Oficial: https://erikwebsite.com/sitemap.xml

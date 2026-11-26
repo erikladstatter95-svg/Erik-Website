@@ -896,7 +896,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Jueves 26/11 — Eje Especialista SEO por Rubro / CMS (Boost WordPress/Wix Yoast + Boost Tiendanube + Nuevo Artículo SEO Shopify)
+### [x] Jueves 26/11 — Eje Especialista SEO por Rubro / CMS (Boost WordPress/Wix Yoast + Boost Tiendanube + Nuevo Artículo SEO Shopify)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Comparativas SEO de CMS Maduras
 1. **Boost 1 (`/blog/posicionamiento-seo-wordpress-wix-yoast-seo-sirve/` — `17` impr, `'wix seo'` Pos `6.0`, `'seo en wix'` Pos `13.0`, 14 días el 22/11):**

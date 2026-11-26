@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO para Shopify en Argentina 2026: Guía para Posicionar</title>
+  <meta name="description" content="Guía de SEO para Shopify en Argentina: cómo optimizar colecciones, productos, velocidad móvil, URLs y evitar duplicados para vender sin pagar ads.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/seo-shopify-argentina/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SEO para Shopify en Argentina 2026: Guía para Posicionar">
+  <meta property="og:description" content="Guía de SEO para Shopify en Argentina: cómo optimizar colecciones, productos, velocidad móvil, URLs y evitar duplicados para vender sin pagar ads.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/seo-shopify-argentina/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_seo_shopify_argentina.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEO para Shopify en Argentina 2026: Guía para Posicionar">
+  <meta name="twitter:description" content="Guía de SEO para Shopify en Argentina: cómo optimizar colecciones, productos, velocidad móvil, URLs y evitar duplicados para vender sin pagar ads.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_seo_shopify_argentina.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/seo-shopify-argentina/#article",
+      "headline": "SEO para Shopify en Argentina: Cómo Posicionar tu Tienda Online",
+      "description": "Guía de SEO para Shopify en Argentina: cómo optimizar colecciones, productos, velocidad móvil, URLs y evitar duplicados para vender sin pagar ads.",
+      "inLanguage": "es-AR",
+      "mainEntityOfPage": "https://erikwebsite.com/blog/seo-shopify-argentina/",
+      "datePublished": "2026-11-26T09:30:00-03:00",
+      "dateModified": "2026-11-26T09:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/favicon.svg"
+        }
+      },
+      "image": "https://erikwebsite.com/images/guia_seo_shopify_argentina.png",
+      "breadcrumb": {
+        "@id": "https://erikwebsite.com/blog/seo-shopify-argentina/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/seo-shopify-argentina/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO para Shopify en Argentina",
+          "item": "https://erikwebsite.com/blog/seo-shopify-argentina/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/seo-shopify-argentina/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Shopify posiciona bien en Google Argentina comparado con Tiendanube o WooCommerce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Shopify tiene mejor infraestructura global de servidor y tiempos de respuesta (TTFB) que muchos hostings compartidos de WooCommerce, y más flexibilidad en código Liquid que Tiendanube, aunque requiere corregir sus URLs duplicadas nativas y controlar las apps instaladas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo solucionar las URLs duplicadas de productos dentro de colecciones en Shopify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Por defecto muchos temas enlazan los productos con /collections/nombre/products/producto, aunque la etiqueta canonical apunta a /products/producto. La solución recomendada es editar el snippet de la grilla de productos en Liquid para que enlace directamente a product.url sin la ruta de colección."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué app de SEO conviene instalar en Shopify sin volver lenta la tienda en celulares?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para editar títulos, meta descripciones, URLs y texto alt no necesitás ninguna app paga: Shopify ya lo trae nativo. Solo conviene sumar una app liviana si necesitás redirecciones masivas o Schema Product avanzado en JSON-LD sin tocar código Liquid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo optimizar el peso de las fotos de productos en Shopify para mejorar el LCP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subí las imágenes ya recortadas a proporción uniforme (por ejemplo 1200x1200 px) y comprimidas por debajo de 150 KB antes de cargarlas, definí atributos width y height en el tema para evitar CLS y evitá sliders pesados en la primera pantalla del celular."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede editar el archivo robots.txt y el sitemap en Shopify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El sitemap.xml se genera automáticamente y no requiere edición manual. En cambio, desde Liquid podés crear la plantilla robots.txt.liquid para agregar reglas Disallow sobre filtros de etiquetas (?q=, /collections/*+*) que desperdician crawl budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Conviene invertir en SEO para Shopify si recién arranco o necesito ventas rápidas por WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si recién empezás y vendés un catálogo acotado en pesos argentinos, pagar Shopify en dólares + apps + pauta puede ahogar tu margen. En ese caso conviene validar primero con una landing rápida o catálogo propio a WhatsApp, y usar SEO en Shopify cuando ya tenés volumen recurrente de búsquedas de marca y categorías."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20de%20SEO%20para%20Shopify%20en%20Argentina%20y%20quiero%20optimizar%20mi%20tienda."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">SEO para Shopify en Argentina</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            SEO E-commerce · Shopify
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 26 de noviembre de 2026 · 8 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          SEO para Shopify en Argentina: Cómo Posicionar tu Tienda Online
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            <strong>El SEO para Shopify en Argentina</strong> requiere corregir las limitaciones técnicas nativas de la plataforma (como URLs duplicadas de colecciones y productos, etiquetas automáticas que generan contenido fino y apps pesadas que frenan el celular) para rankear en Google sin depender del costo creciente de Meta Ads.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_seo_shopify_argentina.png"
+               alt="Especialista en e-commerce en Argentina optimizando SEO para Shopify en laptop con métricas de tráfico orgánico y velocidad móvil"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Qué tan bueno es el SEO nativo de Shopify en Argentina (lo bueno y los 4 problemas ocultos)
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Muchos dueños de marcas pasan de <a href="/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Tiendanube</a> o WooCommerce a Shopify buscando estabilidad y mejor diseño. A favor, Shopify incluye CDN global rápido, HTTPS automático, edición de títulos/meta descripciones y <code>sitemap.xml</code> autogenerado. Sin embargo, apenas cargás más de 30 productos aparecen cuatro trabas técnicas que frenan tu tráfico orgánico en Google Argentina:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-600">
+          <li><strong>Rutas duplicadas de producto:</strong> por defecto los enlaces internos de las colecciones apuntan a <code>/collections/zapatillas/products/modelo-x</code> en lugar de la URL canónica limpia <code>/products/modelo-x</code>.</li>
+          <li><strong>Páginas basura por etiquetas (tags) y filtros:</strong> combinaciones como <code>/collections/ropa/talle-m+negro</code> se indexan como páginas vacías o repetidas.</li>
+          <li><strong>Scripts de apps de terceros:</strong> instalar 8 o 10 apps (reseñas, popups de descuento, chats, upsells) derrumba el LCP y el INP en celulares con 4G.</li>
+          <li><strong>Prefijos rígidos en la URL:</strong> Shopify obliga a usar <code>/collections/</code>, <code>/products/</code> y <code>/pages/</code>, por lo que la jerarquía semántica debe compensarse con buen enlazado interno y colecciones curadas.</li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Checklist técnico de SEO para Shopify: colecciones, URLs canónicas y Schema Product en ARS
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Antes de pagar ninguna extensión mensual en la App Store de Shopify, aplicá este orden de prioridades en tu tienda (si todavía no dominás las bases, complementalo con nuestro <a href="/blog/seo-on-page-checklist-optimizacion/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">checklist de SEO On-Page</a> y la guía de <a href="/blog/etiqueta-canonica-redireccion-301-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">etiqueta canónica y redirecciones 301</a>):
+        </p>
+        <ol class="list-decimal pl-6 space-y-2 text-slate-600">
+          <li><strong>Colecciones orientadas a intención de compra:</strong> creá colecciones por término exacto que buscan tus clientes en Argentina (por ejemplo <code>/collections/sillones-escandinavos</code>), con un único <code>&lt;h1&gt;</code> y un texto útil de 150–250 palabras arriba o abajo de la grilla.</li>
+          <li><strong>Limpiar los enlaces de la grilla en Liquid:</strong> reemplazá <code>within: collection</code> en tu plantilla de tarjeta de producto para que todo el enlazado interno apunte directo a la URL canónica <code>/products/...</code>.</li>
+          <li><strong>Validar Schema <code>Product</code> con moneda <code>ARS</code>:</strong> verificá en Google Search Console que tus productos envíen <code>priceCurrency: "ARS"</code>, <code>availability</code> y reseñas reales sin errores de SKU o marca faltante.</li>
+          <li><strong>Redirecciones 301 al pausar productos sin stock:</strong> si discontinuás un SKU que ya posicionaba, redirigilo a la colección madre o al reemplazo en <em>Online Store &gt; Navigation &gt; View URL redirects</em>.</li>
+        </ol>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Apps de SEO para Shopify vs. Velocidad Web: qué instalar y qué eliminar para no perder Core Web Vitals
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          El error más costoso en Shopify es instalar "todo-en-uno" de SEO prometiendo optimización automática con un clic. En la práctica, esas apps inyectan JavaScript extra en cada carga y cobran suscripciones en dólares por tareas que Shopify ya resuelve de fábrica:
+        </p>
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3.5">Tarea SEO</th>
+                <th class="px-4 py-3.5">¿Necesita App Paga?</th>
+                <th class="px-4 py-3.5 text-emerald-400">Cómo resolverlo sin frenar la tienda</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Títulos, metas y URLs</td>
+                <td class="px-4 py-3.5">No (Nativo)</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Editor nativo "Search engine listing" en cada ficha</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Texto Alt y peso de fotos</td>
+                <td class="px-4 py-3.5">No recomendado</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Comprimir antes de subir (&lt;150 KB) + Alt descriptivo manual</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Schema JSON-LD en ARS</td>
+                <td class="px-4 py-3.5">Opcional</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Snippet limpio directo en <code>theme.liquid</code> (0 scripts externos)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Bloquear filtros en robots.txt</td>
+                <td class="px-4 py-3.5">No (Liquid)</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Plantilla <code>robots.txt.liquid</code> nativa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          4. Cuándo conviene escalar tu Shopify con SEO y cuándo migrar a catálogo web propio sin comisiones
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si ya tenés una tienda consolidada que vende en dólares o con logística integrada de correo, pulir el SEO técnico de Shopify tiene un retorno altísimo porque reduce tu dependencia de Meta Ads. En cambio, si recién validás tus productos en Argentina y sentís que el abono en dólares más las comisiones comen tu rentabilidad, revisá nuestro desglose de <a href="/blog/precios-shopify-argentina-conviene/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">precios de Shopify en Argentina y cuándo conviene</a> frente a un catálogo web propio con cierre directo por WhatsApp y transferencia.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si querés saber exactamente qué errores de indexación, velocidad móvil o contenido duplicado frenan hoy tu tienda, podemos revisarlo punto por punto en nuestra <a href="/auditoria-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Auditoría SEO técnica llave en mano</a>.
+        </p>
+
+        <!-- CTA COMERCIAL -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-950 text-white border border-emerald-800 shadow-xl text-center">
+          <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">Especialista SEO E-commerce en Argentina</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display mt-2 mb-3">
+            ¿Querés que tu tienda en Shopify posicione en Google sin depender solo de anuncios?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Auditamos tus colecciones, corregimos URLs duplicadas en Liquid, optimizamos Core Web Vitals móviles y dejamos tu catálogo listo para captar tráfico orgánico real.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20gu%C3%ADa%20de%20SEO%20para%20Shopify%20en%20Argentina%20y%20quiero%20auditar%20mi%20tienda."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg text-center">
+              Consultar por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Shopify posiciona bien en Google Argentina comparado con Tiendanube o WooCommerce?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. Shopify tiene mejor infraestructura global de servidor y tiempos de respuesta (TTFB) que muchos hostings compartidos de WooCommerce, y más flexibilidad en código Liquid que Tiendanube, aunque requiere corregir sus URLs duplicadas nativas y controlar las apps instaladas.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo solucionar las URLs duplicadas de productos dentro de colecciones en Shopify?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Por defecto muchos temas enlazan los productos con /collections/nombre/products/producto, aunque la etiqueta canonical apunta a /products/producto. La solución recomendada es editar el snippet de la grilla de productos en Liquid para que enlace directamente a product.url sin la ruta de colección.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué app de SEO conviene instalar en Shopify sin volver lenta la tienda en celulares?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Para editar títulos, meta descripciones, URLs y texto alt no necesitás ninguna app paga: Shopify ya lo trae nativo. Solo conviene sumar una app liviana si necesitás redirecciones masivas o Schema Product avanzado en JSON-LD sin tocar código Liquid.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo optimizar el peso de las fotos de productos en Shopify para mejorar el LCP?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Subí las imágenes ya recortadas a proporción uniforme (por ejemplo 1200x1200 px) y comprimidas por debajo de 150 KB antes de cargarlas, definí atributos width y height en el tema para evitar CLS y evitá sliders pesados en la primera pantalla del celular.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Se puede editar el archivo robots.txt y el sitemap en Shopify?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">El sitemap.xml se genera automáticamente y no requiere edición manual. En cambio, desde Liquid podés crear la plantilla robots.txt.liquid para agregar reglas Disallow sobre filtros de etiquetas (?q=, /collections/*+*) que desperdician crawl budget.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Conviene invertir en SEO para Shopify si recién arranco o necesito ventas rápidas por WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Si recién empezás y vendés un catálogo acotado en pesos argentinos, pagar Shopify en dólares + apps + pauta puede ahogar tu margen. En ese caso conviene validar primero con una landing rápida o catálogo propio a WhatsApp, y usar SEO en Shopify cuando ya tenés volumen recurrente de búsquedas de marca y categorías.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search &amp; AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <span class="font-display font-bold text-white text-base">Erik Website</span>
+        <p class="mt-2 text-slate-400">Desarrollo web de alta conversión y posicionamiento SEO estratégico en Argentina.</p>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">SEO E-commerce</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/precios-shopify-argentina-conviene/" class="hover:text-emerald-400">Precios Shopify Argentina</a></li>
+          <li><a href="/blog/seo-para-tiendanube-ecommerce-argentina-posicionar-productos/" class="hover:text-emerald-400">SEO para Tiendanube</a></li>
+          <li><a href="/blog/etiqueta-canonica-redireccion-301-seo/" class="hover:text-emerald-400">Canónicas y 301</a></li>
+          <li><a href="/auditoria-seo/" class="hover:text-emerald-400">Auditoría SEO Profesional</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Herramientas y Guías</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/seo-on-page-checklist-optimizacion/" class="hover:text-emerald-400">Checklist SEO On-Page</a></li>
+          <li><a href="/blog/generador-link-qr-whatsapp-gratis/" class="hover:text-emerald-400">Generador QR WhatsApp</a></li>
+          <li><a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="hover:text-emerald-400">Instalar GA4 y Píxel</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Contacto Directo</span>
+        <p class="text-slate-400 mb-2">San Juan, Argentina · Atención a todo el país</p>
+        <a href="https://wa.me/5492645185359" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Escribirme por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-slate-800 text-center text-slate-500">
+      <p>© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
