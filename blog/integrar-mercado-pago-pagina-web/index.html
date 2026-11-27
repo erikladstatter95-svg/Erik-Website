@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrar Mercado Pago en tu Página Web en Argentina 2026</title>
+  <meta name="description" content="Cómo integrar Mercado Pago en tu página web en Argentina: Checkout Pro, links de pago, comisiones reales por acreditación y cuándo cobrar en pesos.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Integrar Mercado Pago en tu Página Web en Argentina 2026">
+  <meta property="og:description" content="Cómo integrar Mercado Pago en tu página web en Argentina: Checkout Pro, links de pago, comisiones reales por acreditación y cuándo cobrar en pesos.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_integrar_mercado_pago_pagina_web.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Integrar Mercado Pago en tu Página Web en Argentina 2026">
+  <meta name="twitter:description" content="Cómo integrar Mercado Pago en tu página web en Argentina: Checkout Pro, links de pago, comisiones reales por acreditación y cuándo cobrar en pesos.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_integrar_mercado_pago_pagina_web.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/#article",
+      "headline": "Cómo Integrar Mercado Pago en tu Página Web sin Comisiones Extra",
+      "description": "Cómo integrar Mercado Pago en tu página web en Argentina: Checkout Pro, links de pago, comisiones reales por acreditación y cuándo cobrar en pesos.",
+      "inLanguage": "es-AR",
+      "mainEntityOfPage": "https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/",
+      "datePublished": "2026-11-27T09:30:00-03:00",
+      "dateModified": "2026-11-27T09:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/favicon.svg"
+        }
+      },
+      "image": "https://erikwebsite.com/images/guia_integrar_mercado_pago_pagina_web.png",
+      "breadcrumb": {
+        "@id": "https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Integrar Mercado Pago en tu Página Web",
+          "item": "https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/integrar-mercado-pago-pagina-web/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo puedo integrar Mercado Pago en una página web hecha en HTML o código limpio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si vendés un servicio, curso o pack puntual, podés conectar un Link de Pago directo en el botón de compra sin servidor propio. Si necesitás montos dinámicos o carrito con múltiples productos, se usa Checkout Pro mediante un endpoint ligero en Cloudflare Workers o serverless que genera la preferencia de pago segura."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cobra Mercado Pago de comisión por vender en una página web en Argentina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del plazo en que quieras retirar el dinero: cobrar en el acto ronda el 6,39% + IVA, mientras que elegir acreditación a 10, 18 o 35 días reduce progresivamente la comisión de procesamiento hasta cerca del 1,99% a 3,49% + IVA (más retenciones impositivas según tu condición fiscal)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es Checkout Pro de Mercado Pago y por qué es más seguro para PyMEs y creadores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Checkout Pro redirige al comprador al entorno oficial de Mercado Pago para ingresar los datos de tarjeta o usar su dinero en cuenta y luego lo devuelve a tu página de gracias. Así tu sitio nunca almacena datos sensibles de tarjetas y reducís fricción de confianza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo cobrar por transferencia sin comisión y dejar Mercado Pago solo para cuotas con tarjeta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. En nuestras Landings Modo Funnel mostramos las dos opciones juntas: 10% o 15% OFF abonando por transferencia bancaria (alias/CBU enviado por WhatsApp con 0% de comisión) o pago en cuotas con tarjeta mediante Mercado Pago."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es obligatorio tener certificado SSL (candado HTTPS) para usar Mercado Pago en mi web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Tanto Mercado Pago Checkout Pro como Checkout Bricks/API exigen que tu dominio opere bajo protocolo HTTPS válido para proteger las credenciales y redirigir webhooks sin bloqueos del navegador."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si vendo servicios a medida o muebles: conviene cobrar online directo o cerrar por WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para servicios personalizados, aberturas, muebles o presupuestos variables conviene que la web filtre al cliente con un pre-cotizador y derive el detalle al WhatsApp (donde luego enviás un link de seña o alias), evitando comisiones innecesarias sobre el monto total."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20para%20integrar%20Mercado%20Pago%20en%20una%20p%C3%A1gina%20web%20y%20quiero%20consultar."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Integrar Mercado Pago en tu Página Web</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            Pagos &amp; Conversión · Argentina
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 27 de noviembre de 2026 · 7 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Cómo Integrar Mercado Pago en tu Página Web sin Comisiones Extra
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            <strong>Integrar Mercado Pago en tu página web</strong> en Argentina se puede hacer mediante un botón/link de pago directo (sin backend complejo), con Checkout Pro (redirección segura al entorno de Mercado Pago) o Checkout API, permitiéndote cobrar con tarjetas, débito o dinero en cuenta sin pagar comisiones mensuales de Shopify ni Tiendanube.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_integrar_mercado_pago_pagina_web.png"
+               alt="Emprendedor argentino revisando página web propia con selector de pago en pesos vía Mercado Pago y acreditación en celular"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Las 3 formas de integrar Mercado Pago en tu página web (Link de Pago, Checkout Pro y API)
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Muchos emprendedores y PyMEs creen que para cobrar en pesos desde su sitio web están obligados a alquilar plataformas caras como Tiendanube (revisá nuestro desglose de <a href="/blog/precios-comisiones-tiendanube-alternativas-argentina/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">precios y comisiones de Tiendanube en Argentina</a>). En realidad, Mercado Pago ofrece tres niveles de integración para conectar directo a tu dominio propio:
+        </p>
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3.5">Método</th>
+                <th class="px-4 py-3.5">Complejidad Técnica</th>
+                <th class="px-4 py-3.5">Seguridad y Redirección</th>
+                <th class="px-4 py-3.5 text-emerald-400">Ideal Para</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Botón / Link de Pago</td>
+                <td class="px-4 py-3.5">Cero (1 enlace en HTML)</td>
+                <td class="px-4 py-3.5">100% procesado en Mercado Pago</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">1 curso, ebook, seña fija o pack único</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Checkout Pro (Preferencias)</td>
+                <td class="px-4 py-3.5">Media (endpoint serverless)</td>
+                <td class="px-4 py-3.5">Redirige y vuelve con estado aprobado</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Carrito propio, order bump o múltiples ítems</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Checkout Bricks / API</td>
+                <td class="px-4 py-3.5">Alta (backend + webhooks)</td>
+                <td class="px-4 py-3.5">Formulario embebido en tu web + HTTPS</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Plataformas SaaS o suscripciones a medida</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Comisiones reales de Mercado Pago en Argentina 2026 y cómo ofrecer 10% OFF por transferencia
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Al cobrar desde tu web propia pagás únicamente la comisión financiera de Mercado Pago (sin sumar el 2% extra de plataformas de terceros). Ese porcentaje cambia según el plazo de acreditación que elijas en tu panel: retirar en el acto ronda el <strong>6,39% + IVA</strong>, mientras que esperar 10, 18 o 35 días baja la tasa de forma marcada.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si vendés productos digitales o servicios de ticket medio, podés evitar incluso las retenciones en dólares de plataformas extranjeras (como vimos en nuestra guía sobre <a href="/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Hotmart en Argentina y sus comisiones</a>) y sumar un incentivo inteligente: <strong>precio de lista en cuotas con Mercado Pago vs. 10% o 15% OFF por transferencia bancaria directa al alias</strong>, donde tu comisión es 0%.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Cómo conectar Mercado Pago + Pedido por WhatsApp en una Landing Modo Funnel ($150.000 ARS)
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Para creadores, academias y comercios que quieren vender rápido sin lidiar con configuraciones pesadas de WooCommerce, combinamos una <a href="/blog/landing-page-vender-cursos-online/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">landing page para vender cursos o servicios en pesos</a> con doble vía de cierre: pago inmediato con Mercado Pago (o transferencia) y respaldo directo en WhatsApp para destrabar dudas al instante.
+        </p>
+        <div class="my-6 p-6 rounded-2xl bg-emerald-50/80 border border-emerald-200">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Demo Interactiva en Vivo</span>
+          <h3 class="font-display font-bold text-slate-900 text-lg mt-1 mb-2">Probá nuestra Página Modo Funnel con Order Bump y selector de pago</h3>
+          <p class="text-sm text-slate-700">Entrá a la <a href="/demos/funnel/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">demo en vivo de Landing Modo Funnel</a> para ver cómo el comprador elige su producto principal, agrega un complemento opcional y pasa directo a pagar en pesos.</p>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          4. Requisitos técnicos obligatorios: HTTPS, credenciales públicas/privadas y webhook de confirmación
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si vas a implementar Checkout Pro o API, hay cuatro reglas de seguridad que no podés saltear para evitar rechazos o fraudes:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-600">
+          <li><strong>Certificado SSL activo (HTTPS):</strong> Mercado Pago exige candado de seguridad válido en todo el dominio (revisá nuestra guía de <a href="/blog/seguridad-web-certificados-ssl-https/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">seguridad web y certificados SSL HTTPS</a>).</li>
+          <li><strong>Nunca exponer el <code>Access Token</code> privado en el HTML o JavaScript del navegador:</strong> la clave privada solo debe vivir en variables de entorno del servidor o Cloudflare Worker; en el frontend únicamente va la <code>Public Key</code>.</li>
+          <li><strong>Configurar URLs de retorno (<code>back_urls</code>):</strong> definí páginas limpias de éxito, pendiente y error para medir la conversión real en Google Analytics 4 y el Píxel de Meta.</li>
+          <li><strong>Validar notificaciones Webhook:</strong> para entregas automáticas de accesos o descargas digitales, confirmá siempre el estado <code>approved</code> consultando la API desde el servidor antes de liberar el archivo.</li>
+        </ul>
+
+        <!-- CTA COMERCIAL -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-950 text-white border border-emerald-800 shadow-xl text-center">
+          <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">Landing Modo Funnel · Entrega en 3 a 5 Días</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display mt-2 mb-3">
+            ¿Querés vender tus servicios o cursos en pesos sin pagar comisiones mensuales?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Armamos tu Landing Page en código limpio por $150.000 ARS (pago único), conectada a tus botones de Mercado Pago, transferencia y WhatsApp con Píxel de Meta y GA4 incluidos.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20gu%C3%ADa%20sobre%20c%C3%B3mo%20integrar%20Mercado%20Pago%20en%20una%20p%C3%A1gina%20web%20y%20quiero%20presupuesto."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg text-center">
+              Consultar por WhatsApp
+            </a>
+            <a href="/demos/funnel/"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center">
+              Ver Demo Modo Funnel
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo puedo integrar Mercado Pago en una página web hecha en HTML o código limpio?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Si vendés un servicio, curso o pack puntual, podés conectar un Link de Pago directo en el botón de compra sin servidor propio. Si necesitás montos dinámicos o carrito con múltiples productos, se usa Checkout Pro mediante un endpoint ligero en Cloudflare Workers o serverless que genera la preferencia de pago segura.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cuánto cobra Mercado Pago de comisión por vender en una página web en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Depende del plazo en que quieras retirar el dinero: cobrar en el acto ronda el 6,39% + IVA, mientras que elegir acreditación a 10, 18 o 35 días reduce progresivamente la comisión de procesamiento hasta cerca del 1,99% a 3,49% + IVA (más retenciones impositivas según tu condición fiscal).</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué es Checkout Pro de Mercado Pago y por qué es más seguro para PyMEs y creadores?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Checkout Pro redirige al comprador al entorno oficial de Mercado Pago para ingresar los datos de tarjeta o usar su dinero en cuenta y luego lo devuelve a tu página de gracias. Así tu sitio nunca almacena datos sensibles de tarjetas y reducís fricción de confianza.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo cobrar por transferencia sin comisión y dejar Mercado Pago solo para cuotas con tarjeta?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. En nuestras Landings Modo Funnel mostramos las dos opciones juntas: 10% o 15% OFF abonando por transferencia bancaria (alias/CBU enviado por WhatsApp con 0% de comisión) o pago en cuotas con tarjeta mediante Mercado Pago.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Es obligatorio tener certificado SSL (candado HTTPS) para usar Mercado Pago en mi web?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. Tanto Mercado Pago Checkout Pro como Checkout Bricks/API exigen que tu dominio opere bajo protocolo HTTPS válido para proteger las credenciales y redirigir webhooks sin bloqueos del navegador.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué pasa si vendo servicios a medida o muebles: conviene cobrar online directo o cerrar por WhatsApp?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Para servicios personalizados, aberturas, muebles o presupuestos variables conviene que la web filtre al cliente con un pre-cotizador y derive el detalle al WhatsApp (donde luego enviás un link de seña o alias), evitando comisiones innecesarias sobre el monto total.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search &amp; AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <span class="font-display font-bold text-white text-base">Erik Website</span>
+        <p class="mt-2 text-slate-400">Desarrollo web de alta conversión y posicionamiento SEO estratégico en Argentina.</p>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Funnels y Pagos</span>
+        <ul class="space-y-1.5">
+          <li><a href="/demos/funnel/" class="hover:text-emerald-400">Demo Modo Funnel</a></li>
+          <li><a href="/blog/landing-page-vender-cursos-online/" class="hover:text-emerald-400">Vender Cursos Online</a></li>
+          <li><a href="/blog/hotmart-argentina-comisiones-impuestos-alternativa-funnel/" class="hover:text-emerald-400">Hotmart vs. Web Propia</a></li>
+          <li><a href="/blog/precios-comisiones-tiendanube-alternativas-argentina/" class="hover:text-emerald-400">Precios Tiendanube</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Seguridad y Analítica</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/seguridad-web-certificados-ssl-https/" class="hover:text-emerald-400">Certificados SSL HTTPS</a></li>
+          <li><a href="/blog/como-instalar-google-analytics-4-ga4-medir-clics-whatsapp/" class="hover:text-emerald-400">Instalar GA4 y Píxel</a></li>
+          <li><a href="/auditoria-seo/" class="hover:text-emerald-400">Auditoría SEO Profesional</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Contacto Directo</span>
+        <p class="text-slate-400 mb-2">San Juan, Argentina · Atención a todo el país</p>
+        <a href="https://wa.me/5492645185359" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Escribirme por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-slate-800 text-center text-slate-500">
+      <p>© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

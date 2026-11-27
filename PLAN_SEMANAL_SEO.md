@@ -944,7 +944,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Viernes 27/11 — Eje Diseño Web, Demos y Embudos (Boost Inmobiliarias 76 Impr + Boost Ads Instagram 67 Impr + Nuevo Artículo Mercado Pago)
+### [x] Viernes 27/11 — Eje Diseño Web, Demos y Embudos (Boost Inmobiliarias 76 Impr + Boost Ads Instagram 67 Impr + Nuevo Artículo Mercado Pago)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Páginas Comerciales Maduras (>15 días en GSC)
 1. **Boost 1 (`/blog/paginas-web-para-inmobiliarias-argentina/` — `76` impr en GSC, `'pagina web inmobiliarias'` `11` impr Pos `12.8`, 22 días de antigüedad):**

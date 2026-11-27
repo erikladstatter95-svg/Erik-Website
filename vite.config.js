@@ -258,6 +258,7 @@ export default defineConfig({
         blog_archivo_llms_txt_seo_ia: resolve(__dirname, 'blog/archivo-llms-txt-seo-ia/index.html'),
         blog_diseno_web_avellaneda: resolve(__dirname, 'blog/diseno-web-avellaneda/index.html'),
         blog_seo_shopify_argentina: resolve(__dirname, 'blog/seo-shopify-argentina/index.html'),
+        blog_integrar_mercado_pago_pagina_web: resolve(__dirname, 'blog/integrar-mercado-pago-pagina-web/index.html'),
         // Propuestas privadas a clientes (noindex)
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
         propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),
