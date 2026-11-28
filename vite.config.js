@@ -259,6 +259,7 @@ export default defineConfig({
         blog_diseno_web_avellaneda: resolve(__dirname, 'blog/diseno-web-avellaneda/index.html'),
         blog_seo_shopify_argentina: resolve(__dirname, 'blog/seo-shopify-argentina/index.html'),
         blog_integrar_mercado_pago_pagina_web: resolve(__dirname, 'blog/integrar-mercado-pago-pagina-web/index.html'),
+        blog_bing_webmaster_tools_indexnow_chatgpt: resolve(__dirname, 'blog/bing-webmaster-tools-indexnow-chatgpt/index.html'),
         // Propuestas privadas a clientes (noindex)
         propuestas_template: resolve(__dirname, 'propuestas/template/index.html'),
         propuestas_segu24: resolve(__dirname, 'propuestas/segu24/index.html'),

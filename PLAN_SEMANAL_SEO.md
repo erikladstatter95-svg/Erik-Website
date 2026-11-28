@@ -991,7 +991,7 @@ El slug de la URL **debe coincidir de forma natural y exacta con la Palabra Clav
 
 ---
 
-### [ ] Sábado 28/11 — Eje Especialista SEO Local, Maps, Bing y Citación IA (Boost Maps 74 Impr + Boost Indexación GSC Absorbing 75% + Nuevo Artículo Bing Webmaster Tools & IndexNow)
+### [x] Sábado 28/11 — Eje Especialista SEO Local, Maps, Bing y Citación IA (Boost Maps 74 Impr + Boost Indexación GSC Absorbing 75% + Nuevo Artículo Bing Webmaster Tools & IndexNow)
 
 #### A. Paso 1 — Doble Cirugía / Boost en Guías Maduras de Maps e Indexación
 1. **Boost 1 (`/blog/por-que-mi-negocio-no-aparece-en-google-maps/` — `74` impr en GSC, 23 días de antigüedad):**

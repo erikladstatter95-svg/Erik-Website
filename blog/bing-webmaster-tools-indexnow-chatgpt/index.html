@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+  <!-- Filtro de Trafico Interno (Capa 1: ?soy_erik=1 / localhost / localStorage) -->
+  <script id="ew-internal-filter">
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        var mode = p.get('soy_erik');
+        if (mode === '1') {
+          localStorage.setItem('ew_ignore_analytics', '1');
+        } else if (mode === '0') {
+          localStorage.removeItem('ew_ignore_analytics');
+        }
+        if (
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1' ||
+          localStorage.getItem('ew_ignore_analytics') === '1'
+        ) {
+          window._ewIgnoreAnalytics = true;
+          window['ga-disable-G-KWD0WYVK4J'] = true;
+        }
+        if (mode === '1' || mode === '0') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var b = document.createElement('div');
+            b.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:99999;background:#0f172a;color:#10b981;border:1px solid #10b981;padding:12px 18px;border-radius:10px;font-family:sans-serif;font-size:13px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.5);';
+            b.textContent = mode === '1'
+              ? 'Filtro Interno Activado: Tus visitas y clics en este navegador ya NO cuentan en GA4 ni Meta Pixel.'
+              : 'Filtro Interno Desactivado: Este navegador vuelve a enviar datos a GA4.';
+            document.body.appendChild(b);
+            setTimeout(function() { b.remove(); }, 6000);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bing Webmaster Tools e IndexNow: Aparecer en Bing y ChatGPT</title>
+  <meta name="description" content="Cómo configurar Bing Webmaster Tools e IndexNow en tu web paso a paso: verificá tu dominio desde Search Console, indexá rápido y salí citado en ChatGPT.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Bing Webmaster Tools e IndexNow: Aparecer en Bing y ChatGPT">
+  <meta property="og:description" content="Cómo configurar Bing Webmaster Tools e IndexNow en tu web paso a paso: verificá tu dominio desde Search Console, indexá rápido y salí citado en ChatGPT.">
+  <meta property="og:url" content="https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/">
+  <meta property="og:image" content="https://erikwebsite.com/images/guia_bing_webmaster_tools_indexnow_chatgpt.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Erik Website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bing Webmaster Tools e IndexNow: Aparecer en Bing y ChatGPT">
+  <meta name="twitter:description" content="Cómo configurar Bing Webmaster Tools e IndexNow en tu web paso a paso: verificá tu dominio desde Search Console, indexá rápido y salí citado en ChatGPT.">
+  <meta name="twitter:image" content="https://erikwebsite.com/images/guia_bing_webmaster_tools_indexnow_chatgpt.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1143177121539028');
+    if (!window._ewIgnoreAnalytics) fbq('track', 'PageView');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWD0WYVK4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window._ewIgnoreAnalytics) {
+      gtag('js', new Date());
+      gtag('config', 'G-KWD0WYVK4J');
+    }
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/#article",
+      "headline": "Bing Webmaster Tools e IndexNow: Cómo Aparecer en Bing y ChatGPT",
+      "description": "Cómo configurar Bing Webmaster Tools e IndexNow en tu web paso a paso: verificá tu dominio desde Search Console, indexá rápido y salí citado en ChatGPT.",
+      "inLanguage": "es-AR",
+      "mainEntityOfPage": "https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/",
+      "datePublished": "2026-11-28T09:30:00-03:00",
+      "dateModified": "2026-11-28T09:30:00-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Erik Ladstatter",
+        "url": "https://erikwebsite.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Erik Website",
+        "url": "https://erikwebsite.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://erikwebsite.com/favicon.svg"
+        }
+      },
+      "image": "https://erikwebsite.com/images/guia_bing_webmaster_tools_indexnow_chatgpt.png",
+      "breadcrumb": {
+        "@id": "https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://erikwebsite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://erikwebsite.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bing Webmaster Tools e IndexNow",
+          "item": "https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://erikwebsite.com/blog/bing-webmaster-tools-indexnow-chatgpt/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Vale la pena configurar Bing Webmaster Tools si mi negocio solo vende en Argentina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Aunque Google domina el buscador clásico, Bing alimenta la búsqueda web en tiempo real de ChatGPT Search, Microsoft Copilot (integrado en Windows y Edge), DuckDuckGo y Yahoo. Ignorar Bing hoy equivale a quedar invisible para miles de usuarios que consultan precios y proveedores en asistentes de IA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es verdad que aparecer en el índice de Bing ayuda a que ChatGPT recomiende mi página web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Cuando un usuario pregunta en ChatGPT por un servicio o comercio en su ciudad, el sistema combina su rastreador OAI-SearchBot con resultados en vivo del índice de Bing. Tener tus URLs limpias e indexadas en Bing aumenta tus chances de ser citado como fuente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo puedo verificar mi sitio en Bing Webmaster Tools sin tocar registros DNS ni código?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si ya tenés verificada tu web en Google Search Console, podés entrar a Bing Webmaster Tools con una cuenta de Microsoft o Google y elegir la opción Importar desde Google Search Console. En dos clics autorizás la lectura y tu dominio junto a sus sitemaps quedan verificados automáticamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es IndexNow y qué pasa si subo mal el archivo de texto de verificación en mi servidor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IndexNow es un protocolo abierto que avisa en segundos a Bing, Yandex y otros buscadores cada vez que creás o actualizás una URL. Si el archivo .txt con tu API Key no está en la raíz pública con respuesta 200 OK y el código exacto adentro, la API devolverá error 403 Forbidden y además generará errores 404 en tus logs de rastreo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo usar Bing Webmaster Tools y Google Search Console al mismo tiempo sin perjudicar mi SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Totalmente. Son paneles oficiales de diagnóstico independientes que leen el mismo sitemap.xml y robots.txt de tu sitio sin duplicar contenido ni generar ningún conflicto entre buscadores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué Bing tarda en indexar todas las URLs de mi sitemap aunque no tenga errores técnicos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bing asigna menor frecuencia de rastreo inicial a dominios nuevos o con pocos enlaces externos (InLinks). Para acelerar el proceso conviene activar IndexNow, enviar lotes diarios con la API SubmitUrlBatch y evitar redirecciones o enlaces rotos dentro de la web."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google Preferred Sources (Subscribe with Google) -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1143177121539028&ev=PageView&noscript=1" alt=""></noscript>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-display font-extrabold text-lg tracking-tight text-slate-900">
+        Erik <span class="text-emerald-600">Website</span>
+      </a>
+      <nav aria-label="Navegación principal" class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-slate-900 transition-colors">Inicio</a>
+        <a href="/auditoria-seo/" class="text-emerald-700 font-semibold hover:text-emerald-800 transition-colors hidden sm:inline">Auditoría SEO</a>
+        <a href="/san-juan/" class="hover:text-slate-900 transition-colors hidden sm:inline">San Juan</a>
+        <a href="/blog/" class="text-slate-900 font-semibold">Blog</a>
+        <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Vi%20tu%20gu%C3%ADa%20sobre%20Bing%20Webmaster%20Tools%20e%20IndexNow%20y%20quiero%20optimizar%20mi%20indexaci%C3%B3n."
+           target="_blank" rel="noopener noreferrer"
+           class="px-3.5 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-xs">
+          Consultar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-emerald-700">Inicio</a>
+      <span>/</span>
+      <a href="/blog/" class="hover:text-emerald-700">Blog</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Bing Webmaster Tools e IndexNow</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+            SEO Técnico · Bing &amp; ChatGPT
+          </span>
+          <span class="text-xs text-slate-400">Actualizado 28 de noviembre de 2026 · 7 min de lectura</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 leading-[1.15] mb-6">
+          Bing Webmaster Tools e IndexNow: Cómo Aparecer en Bing y ChatGPT
+        </h1>
+
+        <!-- BLOQUE DE RESPUESTA DIRECTA AEO / GEO -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 mb-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-2">
+            Respuesta Directa
+          </p>
+          <p class="text-sm sm:text-base text-slate-800 leading-relaxed">
+            <strong>Configurar Bing Webmaster Tools e IndexNow</strong> te permite importar tu dominio en dos clics desde Google Search Console, notificar cada página nueva al instante sin esperar semanas de rastreo y habilitar que tu negocio aparezca tanto en Bing y Copilot como en las respuestas web de ChatGPT Search.
+          </p>
+        </div>
+
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
+          <img src="/images/guia_bing_webmaster_tools_indexnow_chatgpt.png"
+               alt="Consultor SEO en estudio moderno revisando panel limpio de Bing Webmaster Tools e IndexNow junto a búsqueda en asistente de IA"
+               width="1200" height="675"
+               loading="eager" decoding="async"
+               class="w-full h-auto object-cover">
+        </figure>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-6 text-base leading-relaxed">
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          1. Por qué Bing Webmaster Tools importa hoy en Argentina: el puente directo hacia ChatGPT Search
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Durante años casi ninguna PyME o agencia en Argentina revisaba Bing porque Google concentraba más del 90% de las búsquedas tradicionales. Ese escenario cambió: hoy miles de potenciales clientes abren <strong>ChatGPT Search, Microsoft Copilot o DuckDuckGo</strong> para pedir recomendaciones de proveedores y presupuestos, y todos esos sistemas consultan en vivo el índice de Bing.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si querés capturar tráfico calificado desde inteligencia artificial (como detallamos en nuestra guía de <a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">SEO para ChatGPT, Perplexity y Google AI</a> y en el tutorial del <a href="/blog/archivo-llms-txt-seo-ia/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">archivo llms.txt para SEO e IA</a>), necesitás asegurarte de que Bing tenga tu dominio verificado y rastreable sin errores.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          2. Cómo dar de alta tu web en Bing Webmaster Tools en 2 minutos (importando desde Search Console)
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Si ya configuraste tu sitio siguiendo nuestra guía de <a href="/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">por qué tu página web no aparece en Google y cómo indexarla</a>, dar de alta Bing no requiere editar DNS ni subir etiquetas meta:
+        </p>
+        <ol class="list-decimal pl-6 space-y-2 text-slate-600">
+          <li><strong>Entrá a Bing Webmaster Tools:</strong> iniciá sesión con tu misma cuenta de Google en <em>bing.com/webmasters</em>.</li>
+          <li><strong>Elegí "Importar desde Google Search Console":</strong> autorizá la lectura temporal de tus propiedades verificadas y seleccioná tu dominio.</li>
+          <li><strong>Sincronizá el Sitemap XML:</strong> confirmá que tu <code>sitemap.xml</code> aparezca importado con estado correcto y sin rutas rotas (revisá nuestra guía de <a href="/blog/robots-txt-sitemap-xml-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">robots.txt y sitemap XML en SEO</a>).</li>
+        </ol>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          3. Qué es IndexNow y cómo configurarlo sin generar errores 404 en el rastreo
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          <strong>IndexNow</strong> es un protocolo abierto impulsado por Microsoft y Yandex que invierte la lógica tradicional: en vez de esperar días o semanas a que el robot vuelva a pasar por tu web, tu servidor le envía un aviso HTTP instantáneo cada vez que publicás o actualizás una URL.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Para activarlo sin fallos, generá tu API Key dentro de la pestaña <em>IndexNow</em> de Bing Webmaster Tools y alojá el archivo <code>TU_CLAVE.txt</code> (en UTF-8, con la clave exacta adentro y nada más) en la raíz pública de tu dominio para que responda <code>200 OK</code> en <code>https://tudominio.com/TU_CLAVE.txt</code>. Si enviás peticiones con una clave cuyo archivo <code>.txt</code> no existe en producción, la API devolverá <code>403 Forbidden</code> y Bing registrará errores <code>4xx</code> en tus estadísticas de rastreo.
+        </p>
+        <div class="overflow-x-auto my-6 rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left text-sm text-slate-700 bg-white">
+            <thead class="bg-slate-900 text-white text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3.5">Método de Indexación</th>
+                <th class="px-4 py-3.5">Velocidad de Aviso</th>
+                <th class="px-4 py-3.5">Buscadores / IA que Cubre</th>
+                <th class="px-4 py-3.5 text-emerald-400">Recomendación</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Rastreo pasivo (solo Sitemap)</td>
+                <td class="px-4 py-3.5">Días o semanas</td>
+                <td class="px-4 py-3.5">Todos</td>
+                <td class="px-4 py-3.5 font-semibold text-amber-700">Lento para sitios nuevos</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">Google Indexing API v3</td>
+                <td class="px-4 py-3.5">Minutos / Horas</td>
+                <td class="px-4 py-3.5">Google Search</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Clave para acelerar Googlebot</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3.5 font-bold text-slate-900">IndexNow + Bing SubmitUrlBatch</td>
+                <td class="px-4 py-3.5">Segundos / Horas</td>
+                <td class="px-4 py-3.5">Bing, ChatGPT Search, Copilot, Yandex</td>
+                <td class="px-4 py-3.5 font-semibold text-emerald-700">Imprescindible para visibilidad en IA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-10 mb-4">
+          4. Cómo leer Crawl Stats, Sitemaps y corregir errores 4xx para multiplicar tus páginas indexadas
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Una vez conectado Bing Webmaster Tools, revisá cada semana el reporte de <strong>Crawl Stats</strong> (estadísticas de rastreo) y la API de <strong>Inspección de URLs</strong>:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-600">
+          <li><strong>Eliminá enlaces internos rotos y errores 4xx:</strong> cada 404 que encuentra Bingbot desperdicia cuota de rastreo en sitios con pocos enlaces externos.</li>
+          <li><strong>Usá redirecciones HTTP 301 reales en servidor:</strong> si cambiaste un slug antiguo, evitá depender solo de redirecciones <code>meta refresh</code> en HTML porque muchos rastreadores las siguen tratando como páginas duplicadas.</li>
+          <li><strong>Auditá tu arquitectura completa:</strong> si ves que Bing o Google indexan solo una fracción de tu sitio, revisalo con nuestra <a href="/auditoria-seo/" class="text-emerald-700 font-semibold underline hover:text-emerald-800">Auditoría SEO técnica llave en mano</a>.</li>
+        </ul>
+
+        <!-- CTA COMERCIAL -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-950 text-white border border-emerald-800 shadow-xl text-center">
+          <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase">Especialista SEO &amp; GEO en Argentina</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display mt-2 mb-3">
+            ¿Querés que tu web esté 100% indexada en Google, Bing y ChatGPT?
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            Configuramos tu Search Console, Bing Webmaster Tools, IndexNow, archivo llms.txt y Schema JSON-LD para que tus servicios no pierdan visibilidad en buscadores ni asistentes de IA.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/5492645185359?text=Hola%20Erik!%20Le%C3%AD%20tu%20gu%C3%ADa%20de%20Bing%20Webmaster%20Tools%20e%20IndexNow%20y%20quiero%20mejorar%20la%20indexaci%C3%B3n%20de%20mi%20web."
+               target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg text-center">
+              Consultar por WhatsApp
+            </a>
+            <a href="/auditoria-seo/"
+               class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center">
+              Ver Servicio de Auditoría SEO
+            </a>
+          </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 pt-4">
+          Preguntas frecuentes
+        </h2>
+        <div class="space-y-4">
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Vale la pena configurar Bing Webmaster Tools si mi negocio solo vende en Argentina?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. Aunque Google domina el buscador clásico, Bing alimenta la búsqueda web en tiempo real de ChatGPT Search, Microsoft Copilot (integrado en Windows y Edge), DuckDuckGo y Yahoo. Ignorar Bing hoy equivale a quedar invisible para miles de usuarios que consultan precios y proveedores en asistentes de IA.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Es verdad que aparecer en el índice de Bing ayuda a que ChatGPT recomiende mi página web?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Sí. Cuando un usuario pregunta en ChatGPT por un servicio o comercio en su ciudad, el sistema combina su rastreador OAI-SearchBot con resultados en vivo del índice de Bing. Tener tus URLs limpias e indexadas en Bing aumenta tus chances de ser citado como fuente.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Cómo puedo verificar mi sitio en Bing Webmaster Tools sin tocar registros DNS ni código?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Si ya tenés verificada tu web en Google Search Console, podés entrar a Bing Webmaster Tools con una cuenta de Microsoft o Google y elegir la opción Importar desde Google Search Console. En dos clics autorizás la lectura y tu dominio junto a sus sitemaps quedan verificados automáticamente.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Qué es IndexNow y qué pasa si subo mal el archivo de texto de verificación en mi servidor?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">IndexNow es un protocolo abierto que avisa en segundos a Bing, Yandex y otros buscadores cada vez que creás o actualizás una URL. Si el archivo .txt con tu API Key no está en la raíz pública con respuesta 200 OK y el código exacto adentro, la API devolverá error 403 Forbidden y además generará errores 404 en tus logs de rastreo.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Puedo usar Bing Webmaster Tools y Google Search Console al mismo tiempo sin perjudicar mi SEO?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Totalmente. Son paneles oficiales de diagnóstico independientes que leen el mismo sitemap.xml y robots.txt de tu sitio sin duplicar contenido ni generar ningún conflicto entre buscadores.</p>
+          </details>
+          <details name="faq-accordion" class="group p-5 rounded-2xl bg-white border border-slate-200 transition-all">
+            <summary class="font-display font-bold text-slate-900 text-base cursor-pointer list-none flex items-center justify-between gap-4">
+              <span>¿Por qué Bing tarda en indexar todas las URLs de mi sitemap aunque no tenga errores técnicos?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0">▼</span>
+            </summary>
+            <p class="text-sm text-slate-600 mt-3">Bing asigna menor frecuencia de rastreo inicial a dominios nuevos o con pocos enlaces externos (InLinks). Para acelerar el proceso conviene activar IndexNow, enviar lotes diarios con la API SubmitUrlBatch y evitar redirecciones o enlaces rotos dentro de la web.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- Modulo Google Preferred Source (Fuente Preferida en Google) -->
+      <div class="mt-12 p-6 sm:p-7 rounded-3xl bg-neutral-50/80 border border-black/[0.06] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 not-prose">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-white border border-black/[0.08] shadow-2xs flex items-center justify-center flex-shrink-0">
+            <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold uppercase tracking-wider mb-1 border border-emerald-100/80">
+              Google Search &amp; AI Overviews
+            </div>
+            <h4 class="font-bold text-sm sm:text-base text-neutral-900 tracking-tight">¿Te resultó útil esta guía de erikwebsite.com?</h4>
+            <p class="text-xs text-neutral-500 leading-relaxed max-w-xl">
+              Agreganos como <strong>fuente preferida</strong> en Google para que nuestros tutoriales de diseño web y SEO aparezcan prioritarios con la etiqueta «Preferida» en tus búsquedas y respuestas de IA.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto flex justify-start sm:justify-end">
+          <div google-add-preferred-source-btn data-theme="light" data-lang="es"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <span class="font-display font-bold text-white text-base">Erik Website</span>
+        <p class="mt-2 text-slate-400">Desarrollo web de alta conversión y posicionamiento SEO estratégico en Argentina.</p>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Indexación e IA</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/archivo-llms-txt-seo-ia/" class="hover:text-emerald-400">Archivo llms.txt para IA</a></li>
+          <li><a href="/blog/seo-para-inteligencia-artificial-como-aparecer-chatgpt-perplexity-google/" class="hover:text-emerald-400">SEO para ChatGPT y Google AI</a></li>
+          <li><a href="/blog/robots-txt-sitemap-xml-seo/" class="hover:text-emerald-400">Robots.txt y Sitemap XML</a></li>
+          <li><a href="/auditoria-seo/" class="hover:text-emerald-400">Auditoría SEO Profesional</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Search Console y Web</span>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/por-que-mi-pagina-web-no-aparece-en-google-como-indexar/" class="hover:text-emerald-400">Cómo Indexar en Google</a></li>
+          <li><a href="/blog/errores-google-search-console-seo/" class="hover:text-emerald-400">Errores Search Console</a></li>
+          <li><a href="/san-juan/" class="hover:text-emerald-400">Diseño Web en San Juan</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-white block mb-2">Contacto Directo</span>
+        <p class="text-slate-400 mb-2">San Juan, Argentina · Atención a todo el país</p>
+        <a href="https://wa.me/5492645185359" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Escribirme por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-slate-800 text-center text-slate-500">
+      <p>© 2026 Erik Ladstatter. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
